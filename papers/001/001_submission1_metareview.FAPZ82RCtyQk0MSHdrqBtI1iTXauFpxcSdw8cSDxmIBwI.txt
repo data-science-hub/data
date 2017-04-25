@@ -1,0 +1,24 @@
+Decision: UNDECIDED
+
+In particular, the following problems identified by the reviewers need to be addressed:
+
+- Data availability: Your work does currently not follow our data availability requirements (see the paragraph on "Data" in the author guidelines: http://datasciencehub.net/guidelines.html)
+- The problem of Research Question 1, as noted by Reviewer 2 ("not actually a real research question")
+- Lacking discussion of implications, as noted by Reviewer 2
+- Problems with the contagion part of the analysis, as noted by Reviewer 3
+- Potential problems with the plots, as noted by Reviewer 3
+
+Below I also list some very minor comments and typos from my side.
+
+Typos and minor comments from my side (I might be wrong about some of the typos though):
+
+- "1.2 million of these tweets was" > "... were"
+- "The plot also introduce" > "... introduces"
+- "We note how the connectivity growth dimension spans three orders of magnitude [...] This
+means that some users’ followerships grows tens of times faster than the rate at which
+they follow others": Shouldn't it be (at least) "hundreds of times faster"?
+- I would be helpful if Figure 4 had labels for what the x and y axes stand for, instead of just "x" and "y".
+- "significantly less tweets" > "... fewer ..."
+- "similar amounts of retweets than broadcasters": not sure how to correctly phrase this but "similar ... than" sounds wrong to me
+- "does not appear set of" > "does not appear in the set of"
+

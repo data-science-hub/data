@@ -1,0 +1,72 @@
+Review by Floriana Gargiulo (http://orcid.org/0000-0001-9813-1815)
+
+Overall impression *:
+- Average
+
+Suggested decision *:
+- Undecided
+
+
+Reviewer's confidence *:
+- High
+
+
+Significance (Does the work address an important problem within the research
+fields covered by the journal?) *:
+- Moderate significance
+
+
+Background (Is the work appropriately based on and connected to the relevant
+related work?) *:
+- Comprehensive
+
+
+Novelty (For research papers: Does the work provide new insights or new methods
+of a substantial kind? For position papers: Does the work provide a novel and
+potentially disruptive view on the given topic? For survey papers: Does the work
+provide an overview that is unique in its scope or structure for the given
+topic?) *:
+- Limited novelty
+
+
+Technical quality (For research papers: Are the methods adequate for the
+addressed problem, are they correctly and thoroughly applied, and are their
+results interpreted in a sound manner? For position papers: Is the advocated
+position supported by sound and thorough arguments? For survey papers: Is the
+topic covered in a comprehensive and well balanced manner, are the covered
+approaches accurately described and compared, and are they placed in a
+convincing common framework?) *:
+- Good
+
+Presentation (Are the text, figures, and tables of the work accessible, pleasant
+to read, clearly structured, and free of major errors in grammar or style?) *:
+- Excellent
+
+Length of the manuscript *?
+- The length of this manuscript is about right
+
+Data availability *:
+- Not all used and produced data are FAIR and openly available in established
+  data repositories; authors need to fix this
+
+Summary of paper in a few sentences *:
+The paper presents a methodological framework to analyze the spreading of extremist contents on the web. In particular the focus is addressed on the case study of ISIS accounts on Twitter. 
+
+Reasons to accept *:
+The method for collecting data is based on a double level: an expert-based selection of the users to follow and a large data collection on the activity of the selected users. This methodology can be extremely useful in order to address the attention on the focal points where the extremist activity is centered. 
+
+The idea to use an indicator inspired by epidemics to assess the “opinion” contagion is interesting and can provide a good framework to analyze the propagation of radical behaviors on social networks.
+
+Reasons to reject *:
+What I will list in the following are NOT reasons to reject but rather points on which some more attention should be dedicated in the text and in the analyses. 
+
+The fact that the analysis excludes the content (and the included hashtags) of the tweets do not allow to understand how the selected users are focused on the ISIS contents. Are these users twitting only ISIS propaganda? If not, the tweets, after retweeted by external users could be a priori based on “neutral” content. The association of more radical content with “viral” ones in order to improve visibility is a well know phenomenon in Twitter. 
+Idem: the followers/friends network of the selected users could be based on features external to ISIS propaganda (school mates, family, etc.)
+Figure 6 should be put in relation with Figure 3: when the activity of a user is higher (Figure 3), it is much more probable that someone will adopt his content. Probably joining a timeline of the R0=RT/T could be useful to visualize an increase of the contagion. 
+How the histogram in Figure 8 is normalized? 
+A baseline comparison of ISIS accounts with a random sample of users could be useful to understand and detect anomalous behaviors. Is there a difference in the class partitioning respect to a random sample? Is the “contagion” process different from the baseline?
+Are the used data available on some repository?
+
+
+Further comments:
+

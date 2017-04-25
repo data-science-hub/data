@@ -1,0 +1,124 @@
+Review by Karsten Donnay (http://orcid.org/0000-0002-9080-6539)
+
+Overall impression *:
+- Good
+
+Suggested decision *:
+- Accept
+
+Reviewer's confidence *:
+- High
+
+Significance (Does the work address an important problem within the research
+fields covered by the journal?) *:
+- High significance
+
+Background (Is the work appropriately based on and connected to the relevant
+related work?) *:
+- Comprehensive
+
+Novelty (For research papers: Does the work provide new insights or new methods
+of a substantial kind? For position papers: Does the work provide a novel and
+potentially disruptive view on the given topic? For survey papers: Does the work
+provide an overview that is unique in its scope or structure for the given
+topic?) *:
+- Clear novelty
+
+Technical quality (For research papers: Are the methods adequate for the
+addressed problem, are they correctly and thoroughly applied, and are their
+results interpreted in a sound manner? For position papers: Is the advocated
+position supported by sound and thorough arguments? For survey papers: Is the
+topic covered in a comprehensive and well balanced manner, are the covered
+approaches accurately described and compared, and are they placed in a
+convincing common framework?) *:
+- Good
+
+Presentation (Are the text, figures, and tables of the work accessible, pleasant
+to read, clearly structured, and free of major errors in grammar or style?) *:
+- Good
+
+Length of the manuscript *?
+- The length of this manuscript is about right
+
+Data availability *:
+- Not all used and produced data are FAIR and openly available in established
+  data repositories; authors need to fix this
+
+Summary of paper in a few sentences *:
+The paper aims to shed light on online radicalisation dynamics by studying communication patterns of ISIS supporters on Twitter. The analysis relies on a corpus of human-coded pro-ISIS accounts studying their communication dynamics and their influence on the broader associated communication network. Characterising users based on their activity-connectivity relationship, the analysis reveals the differential influence of different classes of users in the sample studied. This may have implications for strategies designed to counter the spreading of radical content on social media. 
+
+Reasons to accept *:
+- Substantive Contribution:
+The paper provides an in-depth analysis of online dynamics both within a pro-ISIS aggregate on Twitter as well as its impact on other users. The application of the activity-connectivity framework to this question and the substantive and differentiated findings derived from this are highly relevant. This confirms the substantial influence of only a core set of users and could lead to better strategies with which the spreading of radical content on social media might be countered.
+
+- Novelty and Methodological Sophistication:
+The use of human-coded data on pro-ISIS accounts is novel and contrasts with approaches that rely on content analysis to identify radical online communities. In addition, the classification of users based on their activity-connectivity relationship is both methodologically sophisticated and appropriate. Together with the descriptive analyses of the pro-ISIS accounts, the analysis provides a novel and comprehensive take on the study of the spreading of radical content through social media.
+
+Reasons to reject *:
+As it stands there are a number of shortcomings that, I believe, can be addressed in a revised manuscript. Pending changes that carefully address these issues detailed under “Further Comments” below, I do not have any objections to the publication of the paper.
+
+Further comments:
+The issues raised here concern the framing of the study, the data used, the presentation of methods and results and the implications of this work. They are structured accordingly. 
+
+1) Framing:
+- RQ 1:
+The intention to identify a solid methodological framework is good and the paper demonstrates a set of best practices. However, simply applying such practices, in my view, is not actually a real research question. A research question would be to explore systematically whether the practices used here - human-coded accounts + retweets + mentions - provides a better coverage of such aggregates than alternative approaches. The author suggests that the alternatives are more limited but an explicit comparison is actually lacking.
+
+In my opinion, RQ 1 should therefore be dropped completely. Best practices can and should be mentioned in the method description, in fact, they should even be described in much greater detail. It may go beyond the scope of this contribution but having a human-coded dataset on pro-ISIS accounts would actually allow for the systematic comparison to other, alternative approaches for identifying these aggregates.
+
+- Comparison to related work:
+I was very surprised to read only a short mention of the recent work by Johnson et al. in Science under “Related Work”. It is my understanding that the method employed there goes beyond the usual keyword-based identification criticised by the author. Instead, Johnson et al. appear to use a much more elaborate scheme that also involves verification by human coders. This would then be much closer to the kind of data used in the present study in terms of completeness of coverage of such aggregates. A more in-depth discussion would therefore certainly be warranted.
+
+- Scope:
+Given potential concerns regarding the completeness of coverage of pro-ISIS activity on Twitter in the sample studied (see also comment on data below), I would advise to more clearly emphasise that this study only pertains to this very specific aggregate of pro-ISIS users identified by the Lucky Troll Club. This does not negatively affect the relevance of this work but simply clarifies its scope.
+
+
+2) Data
+- Data availability concerns:
+The first concern pertains to the Twitter data used. While the author uses OSoMe at Indiana University, he apparently had access to full tweets and meta information that goes beyond the simple summary statistics provided by the API. Barring similar access, researchers can therefore not actually readily reproduce his findings. In addition, no information was provided that would allow to exactly reconstitute the sample used. Information given in the text is too generic and I would suggest to either provide a much more detailed description (as supplementary material) or the code used to generate the dataset. Since Twitter data may not be shared, it is also customary to provide an index of Tweet IDs such that, given sufficient access, researchers can reconstitute the full sample used.
+
+The second concern is in relation to the list of 25,538 accounts obtained from the Lucky Troll Club. Neither this list of accounts was provided nor is any information given on how this list could be obtained. This list forms the basis of the analysis and should be made available through one of the recommended data repositories. In addition, a more detailed description of how these accounts were identified (if available) is sorely lacking. It is simply not possible to judge the quality of the coding without this information.
+
+- Data quality concerns:
+The papers mentions a Guardian report on the number of suspended accounts that is larger than those coded by the Lucky Troll Club. While this number is given for a longer period than that considered in this study, it still points to questions regarding the quality and completeness of the data. Validation against the suspension list only verifies true positive identification of suspended accounts. But how many accounts did the Lucky Troll Club incorrectly flag (false positives)? And more importantly, how many did they miss (false negatives)? It may be that evaluating this is beyond the scope of this paper but a more in-depth discussion of these issues and the potential problems of bias that might arise would still be necessary.
+
+- Dynamically changing sample properties:
+From the description of the data it is not clear when the Lucky Troll Club coded these accounts. Was it a continuous coding or did they stop after some time? Give that these accounts were suspended by Twitter, the underlying population of accounts was constantly changing, something that should be acknowledged. In particular, if accounts were identified only in a given period and then analysed for a longer period until their suspension, this could lead to at least two conceptual issues. First, what if pro-ISIS activity simply shifted to other accounts not identified yet? In this case, we are getting a potentially very biased view on pro-ISIS Twitter activity. Second, what are the implications from comparing an account that was suspended at the beginning of the study to one that was suspended last? Are they fully comparable? A short discussion of the sample as such would help clarify if and why these issues arise or not.
+
+- Sampling:
+The Gardenhose API is still a sample, why then not use the Search API (as mentioned elsewhere in the paper) to recover the full set of tweets send by the 25,538 accounts? Without access to the Powertrack API it is infeasible to get an even larger and more complete sample of retweets and mentions but for the initial “seed” of tweets from the pro-ISIS aggregate there appears to be no immediate reason to limit data to those in the Gardenhose. Rate limits do apply for the Search API but ~25,000 accounts should not be impossible to query.
+
+In addition, the manuscript only refers to mentions and retweets as means of expanding the sample beyond the original corpus of tweets from the 25,538 accounts. Is there any reason why the tweets of followers of these accounts were not also included? Is it a problem of data access?
+
+
+3) Presentation of methods and results
+- activity-connectivity map:
+The intuition for this methodology, in my view, is not stated clearly enough up-front. Its purpose only becomes clearer throughout the subsequent discussion. It would help to add a few sentences at the beginning of the respective section that give a clear motivation for using it and a simple intuition of what it represents. This would make the section more accessible.
+
+- followee distributional signature (Figure 2):
+The interpretation of the upward trend in the followee distribution is not fully clear. Parallels to similar results are drawn but no clear intuition is given of what this plateau in the pdf means.
+
+- identifying the most influential users:
+In Figure 2, is there a way to systematically delineate the tweeting behaviour of the most active and influential users from the “rest”. Is there, for example, a statistical cut-off in the scaling of the pdf? Visually, it appears that while the distribution is heavy-tailed it does not necessarily follow a power law throughout.
+
+- Common users:
+Why are there so few common users in Figure 7 and 8? Is it because of the filtering described in section 3.3? This point should be clarified.
+
+- Analogy to disease spreading:
+The analogy to disease spreading and the calculation of R_0 is intuitive at a superficial level. But are the assumptions underlying the corresponding models of disease spreading also true on Twitter? Or are there no such limiting assumptions? As is, the discussion is very cursory and would benefit from a more in-depth description. In particular, it should be made clearer why this is a valid framework for studying contagion on Twitter. For example, there is no reference provided that would illustrate the use of these arguments from disease modelling for the study of social media.
+
+- Retweet reproduction of common users:
+In Figure 8, there is a noticeable fraction of common users with a very high reproduction rate (>5). Otherwise, only influentials feature these magnitudes of reproduction rates. What is the interpretation of this? The finding is not directly intuitive and should be explained further. Generally, the discussion of the results in Figure 8 is perhaps a bit too short and cursory.
+
+
+4) Implications
+A discussion of the implications of this work appears to be largely lacking. This is a bit surprising since the whole contribution is framed as providing such insights. A number of the substantive findings, as they stand, could already allow to formulate such recommendations. Or, if not, why does the author not want to draw conclusions? The paper ends on a very cautionary note but no real reason is given.
+
+The question is whether we can, based on the analysis presented, make a recommendation for which group should be targeted first to curb activity most significantly? In addition, can one test some of these implications more explicitly or why not? For example, what effect does it have to remove all broadcasters of influentials from the sample? If the findings of this work are to inform Twitter policy or their strategy for suspending these accounts, the author should provide a much more elaborate interpretation of his results.
+
+There is also an important additional caveat to be made that arises from the fact that the present analysis is intentionally not considering tweet contents: content can decisively matter for the impact on potential supporters. For example, should we not target the accounts first that spread the most inciting messages? Or if not, why? How is the limited screening capacity of accounts best used to target these kinds of accounts? Are there potentially simple mechanisms that rely on social dynamics to enable detection? Maybe something like a permanent Lucky Troll Club of volunteers helping Twitter? There are indications in the current U.S. debate that these grassroots movements are playing an increasingly important role in policing the accuracy of content on social media.
+
+5) Minor points:
+- define astroturf campaigns (p.1)
+- incomplete reference: P. Suarez-Serrato, M. E. Roberts, C. Davis, and F. Menczer
+

@@ -1,0 +1,16 @@
+Decision: ACCEPT
+
+Two out of three reviewers had problems submitting their review through the
+system, which is why you only see one review on the paper page. I will send you
+the other two reviews in a separate email and we will add them to the page too.
+
+May I add my own two minor comments:
+
+- You introduce the Semantic Web via the phrase "the W3C produced an
+  international standard", while the Semantic Web is, as you also write further
+  below a *collection* of standards.
+
+- Your paper's scope is biomedicine, but this is not reflected by the title.
+  Wouldn't a title like "Knowledge-Based Data Science in Biomedicine" be more
+  accurate? But this is just a suggestion; I leave that to you.
+

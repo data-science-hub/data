@@ -1,0 +1,119 @@
+Review by Mark Thompson (http://orcid.org/0000-0002-7633-1442)
+
+Overall impression *:
+- Excellent
+* Good
+- Average
+- Weak
+- Bad
+
+Suggested decision *:
+* Accept
+- Undecided
+- Reject
+
+Reviewer's confidence *:
+* High
+- Medium
+- Low
+
+Significance (Does the work address an important problem within the research
+fields covered by the journal?) *:
+* High significance
+- Moderate significance
+- Low significance
+
+Background (Is the work appropriately based on and connected to the relevant
+related work?) *:
+* Comprehensive
+- Reasonable
+- Incomplete or inappropriate
+- Unable to judge
+
+Novelty (For research papers: Does the work provide new insights or new methods
+of a substantial kind? For position papers: Does the work provide a novel and
+potentially disruptive view on the given topic? For survey papers: Does the work
+provide an overview that is unique in its scope or structure for the given
+topic?) *:
+- Clear novelty
+* Limited novelty
+- Lack of novelty
+- Unable to judge
+
+Technical quality (For research papers: Are the methods adequate for the
+addressed problem, are they correctly and thoroughly applied, and are their
+results interpreted in a sound manner? For position papers: Is the advocated
+position supported by sound and thorough arguments? For survey papers: Is the
+topic covered in a comprehensive and well balanced manner, are the covered
+approaches accurately described and compared, and are they placed in a
+convincing common framework?) *:
+- Excellent
+* Good
+- Average
+- Weak
+- Bad
+- Unable to judge
+
+Presentation (Are the text, figures, and tables of the work accessible, pleasant
+to read, clearly structured, and free of major errors in grammar or style?) *:
+- Excellent
+* Good
+- Average
+- Weak
+- Bad
+
+Length of the manuscript *?
+- This manuscript is too long for what it presents and should therefore be
+  considerably shortened (below the general length limit)
+* The length of this manuscript is about right
+- The authors need to elaborate more on certain aspects and the manuscript
+  should therefore be extended (if the general length limit is already reached,
+  I urge the editor to allow for an exception)
+
+Data availability *:
+* All used and produced data (if any) are FAIR and openly available in
+  established data repositories
+- With exceptions that are admissible according to the data availability
+  guidelines, all used and produced data are FAIR and openly available in
+  established data repositories
+- Not all used and produced data are FAIR and openly available in established
+  data repositories; authors need to fix this
+
+Summary of paper in a few sentences *:
+[TEXT AREA]
+The paper makes the case for expanding research in knowledge-based data science. In doing so, it gives a short introduction to knowledge representation, a compact, yet comprehensive classification of knowledge-based inference and -finally- lists open challenges.
+
+Reasons to accept *:
+[TEXT AREA]
+The paper highlights a somewhat underrated (in the opinion of the author) aspect of data science, which he calls "Knowledge-based Data Science".
+
+Note that the paper does not make the case for (the success of) Knowledge-based Data Science by itself, but rather it calls for more research into this particular field. I think the latter is a valid position given the current state-of-the-art.
+
+The paper gives a (to my knowledge) novel classification which also serves as a good overview of previous and current knowledge-based inference methods. It is supported by up-to-date references.
+
+Much more can (and probably should) be said about this topic, but this paper provides a necessary and sufficient point of reference for further discussion.
+
+Reasons to reject *:
+[TEXT AREA]
+No major reasons to reject, but needs some refinement and clarification of terminology (see Further comments).
+
+Further comments:
+[TEXT AREA]
+Introduction:
+I think it would be beneficial to the paper if the author explicitly gives his definition of the concepts "(big) data", "knowledge" and "reasoning"/"inference" somewhere in the introduction. Presumably the stated examples of "ways in which a computational approach might act as if it knew something" are all different forms of reasoning? Is reasoning the same as "computational processing/manipulation of knowledge"?
+
+Section 1:
+There seems to be some unintended repetition or reordering of sentences in the transition between paragraph 1 and 2: "Much more contemporary ... entail ontological commitments", which makes it unclear how the older and the "much more contemporary work" are related.
+
+Section 1:
+"While the Semantic Web standards are intended.. knowledge". However I miss some acknowledgement of the trend(?) to capture primary research "data" as RDF, which may or may not support later generation of (new) knowledge. In the author's opinion, would that classify as just "(big) data"? Or is it an unintended use of the Semantic Web? Is this already covered by one of the types of inference (Section 2), or is it yet another type?
+
+Section 3:
+"As is clear from the NIH BD2K experience, .." A similar statement is also made in the introduction, but why is it clear? Is there (budgeting) data to support this?
+
+
+By submitting this form, you accept that the content above will be made public
+under CC-BY (https://creativecommons.org/licenses/by/4.0/) license. Furthermore,
+you accept that your name and ORCID identifier will be publicly linked to it,
+unless you opt to stay anonymous below.
+
