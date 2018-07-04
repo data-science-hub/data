@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.0 20120330//EN" "JATS-journalpublishing1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="position-paper">
+<front>
+<journal-meta>
+<journal-id journal-id-type="publisher-id">DS</journal-id>
+<journal-title-group><journal-title>Data Science</journal-title></journal-title-group>
+<issn pub-type="epub">2451-8492</issn><issn pub-type="ppub">2451-8484</issn><issn-l>2451-8484</issn-l>
+<publisher>
+<publisher-name>IOS Press</publisher-name><publisher-loc>Nieuwe Hemweg 6B, 1013 BG Amsterdam, The Netherlands</publisher-loc>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">DS010</article-id>
+<article-id pub-id-type="doi">10.3233/DS-170010</article-id>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Position Paper</subject></subj-group></article-categories>
+<title-group>
+<article-title>Genuine semantic publishing</article-title>
+</title-group>
+<contrib-group content-type="Editor">
+<contrib contrib-type="editor">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0003-0530-4305</contrib-id>
+<name><surname>Peroni</surname><given-names>Silvio</given-names></name>
+</contrib>
+</contrib-group>
+<contrib-group>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-1267-0234</contrib-id>
+<name><surname>Kuhn</surname><given-names>Tobias</given-names></name><xref ref-type="aff" rid="affa">a</xref><xref ref-type="corresp" rid="cor1">*</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0003-4727-9435</contrib-id>
+<name><surname>Dumontier</surname><given-names>Michel</given-names></name><xref ref-type="aff" rid="affb">b</xref>
+</contrib>
+<aff id="affa"><label>a</label>Department of Computer Science, <institution>Vrije Universiteit Amsterdam</institution>, <country>The Netherlands</country>. E-mail: <email>t.kuhn@vu.nl</email></aff>
+<aff id="affb"><label>b</label><institution>Maastricht University</institution>, Maastricht, <country>The Netherlands</country>. E-mail: <email>michel.dumontier@maastrichtuniversity.nl</email></aff>
+</contrib-group>
+<author-notes>
+<corresp id="cor1"><label>*</label>Corresponding author: Tobias Kuhn, Department of Computer Science, Vrije Universiteit Amsterdam, De Boelelaan 1081, 1081 HV Amsterdam, The Netherlands. E-mail: <email>t.kuhn@vu.nl</email>.</corresp>
+</author-notes>
+<pub-date date-type="preprint" publication-format="electronic"><day>17</day><month>10</month><year>2017</year></pub-date><pub-date date-type="pub" publication-format="electronic"><day>8</day><month>12</month><year>2017</year></pub-date><pub-date date-type="collection" publication-format="electronic"><year>2017</year></pub-date><volume>1</volume><issue>1-2</issue><fpage>139</fpage><lpage>154</lpage><history><date date-type="received"><day>16</day><month>06</month><year>2017</year></date><date date-type="accepted"><day>31</day><month>08</month><year>2017</year></date></history>
+<permissions><copyright-statement>© 2017 – IOS Press and the authors.</copyright-statement><copyright-year>2017</copyright-year>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/" license-type="open-access" xlink:type="simple">
+<license-p>This is an open access article distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/" xlink:type="simple">Creative Commons Attribution (CC BY 4.0) License</ext-link>, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions>
+<abstract>
+<p>Various approaches and systems have been presented in the context of scholarly communication for what has been called <italic>semantic publishing</italic>. Closer inspection, however, reveals that these approaches are mostly not about publishing semantic representations, as the name seems to suggest. Rather, they take the processes and outcomes of the current narrative-based publishing system for granted and only work with already published papers. This includes approaches involving semantic annotations, semantic interlinking, semantic integration, and semantic discovery, but with the semantics coming into play only after the publication of the original article. While these are interesting and important approaches, they fall short of providing a vision to transcend the current publishing paradigm. We argue here for taking the term <italic>semantic publishing</italic> literally and work towards a vision of <italic>genuine</italic> semantic publishing, where computational tools and algorithms can help us with dealing with the wealth of human knowledge by letting researchers capture their research results with formal semantics from the start, as integral components of their publications. We argue that these semantic components should furthermore cover at least the main claims of the work, that they should originate from the authors themselves, and that they should be fine-grained and light-weight for optimized re-usability and minimized publication overhead. This paper is in fact not just advocating our concept, but is itself a genuine semantic publication, thereby demonstrating and illustrating our points.</p>
+</abstract>
+<kwd-group>
+<label>Keywords</label>
+<kwd>Semantic publishing</kwd>
+<kwd>scholarly communication</kwd>
+<kwd>Linked Data</kwd>
+</kwd-group>
+</article-meta>
+</front>
+<body>
+<sec id="x1-10001">
+<label>1.</label>
+<title>Introduction</title>
+<p>Many scholars have pointed out that the classical way of publishing scientific articles is ill-suited to deal with the rapid growth of both, volume and complexity, of scientific contributions [<xref ref-type="bibr" rid="ref004">4</xref>,<xref ref-type="bibr" rid="ref039">39</xref>]. To overcome these problems, next generation scientific publishing [<xref ref-type="bibr" rid="ref015">15</xref>] has to respond to the increasing importance of datasets and software, and needs to provide methods to automatically organize reported scientific findings. Perhaps the most important shortcoming of the current publication system is that scientific papers do not come with formal semantics that could be processed, aggregated, and interpreted in an automated fashion.</p>
+<p>Semantic publishing [<xref ref-type="bibr" rid="ref018">18</xref>,<xref ref-type="bibr" rid="ref044">44</xref>,<xref ref-type="bibr" rid="ref045">45</xref>] is a general approach to tackle this problem of scholarly communication by using the concepts and tools of the Semantic Web and related fields. This idea was basically born together with the idea of the Semantic Web itself. In 2001, Tim Berners-Lee and James Hendler sketched how they expect researchers in the future to produce machine-readable descriptions of their experiments and findings, in the form of mark-up of their research papers or as independent representations made public on the web [<xref ref-type="bibr" rid="ref007">7</xref>]. Unfortunately, subsequent work has deviated from this general proposal.</p>
+<p>The topic of semantic publishing has received considerable attention during the last few years, most prominently in events that carry the term in their names, specifically the workshop series on Semantic Publishing (SePublica)<xref ref-type="fn" rid="fn1">1</xref><fn id="fn1"><label><sup>1</sup></label>
+<p><uri>http://sepublica.mywikipaper.org</uri></p></fn> and the Semantic Publishing Challenges at ESWC conferences [<xref ref-type="bibr" rid="ref020">20</xref>,<xref ref-type="bibr" rid="ref030">30</xref>,<xref ref-type="bibr" rid="ref049">49</xref>]. However, as we argue below, the presented approaches mostly interpret the term <italic>semantic publishing</italic> in a non-intuitive way. Instead of changing the publishing process, they mostly take existing classical publications as their starting point and simply apply semantic technologies on them, mostly without touching the publishing process or the object that is being published. This leads them to propose solutions that are quite conventional, and fall short of providing a vision for the long-term future. We argue here that we should aim for semantic publishing in the literal sense, which we call <italic>genuine semantic publishing</italic> to distinguish it from the existing term.</p>
+</sec>
+<sec id="x1-20002">
+<label>2.</label>
+<title>Semantic publishing</title>
+<p>Semantic publishing has been defined as “anything that enhances the meaning of a published journal article, facilitates its automated discovery, enables its linking to semantically related articles, provides access to data within the article in actionable form, or facilitates integration of data between papers” [<xref ref-type="bibr" rid="ref044">44</xref>], and this definition accurately reflects how the term “semantic publishing” has been used in the recent literature. We argue here, however, that this definition is in one way too restrictive and in another way too inclusive if we want to be faithful to the literal and intuitive meaning of the term and if we aim to follow the spirit of the Semantic Web vision.</p>
+<p>In our view, the definition above is too restrictive because semantic publications according to this definition are required to accompany a “journal article” or a “paper.” An entity that only contains a semantic representation of a scientific result, without an accompanying narrative article, could not be considered a semantic publication. On the other hand the definition is too inclusive, in our view, because it covers very shallow approaches that add little – if anything – to established approaches of publishing. For example, letting authors choose keywords from standardized vocabularies for their paper – as many journals do – in fact “enables its linking to semantically related articles,” and therefore by the definition above makes it a semantic publication. As another example, a semantic annotation performed by a third party on an article “enhances the meaning of a published journal article” and therefore would have to be called a semantic publication, even if the semantic annotation is not even made public. In general, the existing literature seems to interpret the term “semantic publishing” as “adding semantics to something that is published” instead of the more intuitive readings of “publishing something that is semantic” or “publishing in a semantic manner.” (We are using the word <italic>semantic</italic> in its narrow technical sense of <italic>carrying a formal logic-based representation of the content’s meaning</italic>.)</p>
+<p>We argue here for a more intuitive definition of <italic>semantic publishing</italic> that is broader in the sense that no narrative article needs to be present, and that is at the same time narrower in the sense that the semantic representation has to be a first-class object created and published by the authors. We propose the definition that <italic>genuine semantic publishing</italic> occurs when somebody publishes a work that includes authentic and fine-grained representations of its content in a shared and interoperable semantic notation, where these semantic representations have essential coverage and are a primary component of the published entity. We explain in more detail below what we mean by <italic>authentic</italic>, <italic>fine-grained</italic>, <italic>essential coverage</italic>, and <italic>primary component</italic>.</p>
+<fig id="x1-20011">
+<label>Fig. 1.</label>
+<caption>
+<p>The concept of <italic>genuine semantic publishing</italic> compared to what has been called <italic>semantic publishing</italic>, explained by an analogy where scientific papers are represented by boxes and formal semantics by flowers.</p>
+</caption>
+<graphic xlink:href="ds-1-ds010-g001.jpg"/>
+</fig>
+<p>Figure <xref rid="x1-20011">1</xref> illustrates our point with a simple analogy. Classical papers are shown on the left hand side as boxes that are closed and hard to access for automated techniques. Existing approaches to what has been called semantic publishing merely adorn this box with formal semantics – represented by flowers in the picture – but leave it closed. This adornment is very useful, to be sure, but it does not reach to the main content of the box. By only looking at the formal semantics, one can possibly find out the topic of the paper but not its main message. Moreover, the adornment is often attached at a later point, after the box has been shipped so to say, and is therefore not a proper part of it. Speaking in terms of this metaphorical image, we argue that we should open the box and let semantics bloom right from the inside. We should represent the paper’s main message with formal semantics. As we see on the right hand side of the figure, this metaphorically turns the box into a flowerpot. Now semantics is the main content, and the scientific paper has become a container for semantics instead of a closed box with a secondary usage as a pin board for semantic annotations.</p>
+<p>In the existing literature, we often encounter the implicit assumption that the semantic representation of knowledge has to start from a textual representation, and therefore writing a statement down in natural language always needs to be the first step. For example, we can read in a paper on semantic publishing that “learning how the brain creates and decodes meaning from text is essential if we are to provide better tools for scientific inquiry” and that we need to “train computers to help us read scientific text” [<xref ref-type="bibr" rid="ref018">18</xref>]. While these are certainly interesting problems, it is not obvious why they are essential if we take the approach of semantic publishing literally, i.e. if we ensure that the published artifacts come with semantic representations from the start. There is no law of nature that research findings can only be formalized after they have been expressed in a narrative text. It can very well be the other way round, such as a researcher writing a narrative text verbalizing existing formal statements she has come up with. More likely, these two will go hand in hand in an iterative process, much like manuscripts and their content typically being shaped through several rounds of revisions. It has in fact been argued – convincingly in our opinion – that this iterative process of scientific writing contributes in an important way to scientific understanding and discovery [<xref ref-type="bibr" rid="ref026">26</xref>], and therefore it seems beneficial for the semantic representations to participate in these iterations from the start, and not to come into play only at the point where the text is already finalized. However, many articles in the area of semantic publishing seem to make this implicit text-first assumption, as exemplified by papers presented at semantic publishing workshops claiming that “annotations on all levels pave the way for shared knowledge understanding” [<xref ref-type="bibr" rid="ref046">46</xref>] and that “semantic publishing [...] can be defined as the activity of enhancing a document” [<xref ref-type="bibr" rid="ref041">41</xref>], among many others (e.g. [<xref ref-type="bibr" rid="ref017">17</xref>,<xref ref-type="bibr" rid="ref022">22</xref>,<xref ref-type="bibr" rid="ref032">32</xref>]). The entire approach of <italic>semantic annotation</italic> is based on this text-first paradigm, which is a perfectly valid approach but is surely not the only possibility.</p>
+<p>We get a similar picture if we look at the Semantic Publishing Challenge held at the Semantic Web conferences ESWC from 2014 until 2017 [<xref ref-type="bibr" rid="ref020">20</xref>,<xref ref-type="bibr" rid="ref030">30</xref>,<xref ref-type="bibr" rid="ref049">49</xref>]. There were three tasks defined for each of these three challenges, but none of them actually deals with publishing. Instead they are about automatically extracting and interlinking semantic data from existing publications. Only the “in-use” task of the first challenge was general enough to not exclude publishing (“showcase the potential of Semantic Web technology for enhancing and assessing the quality of scientific production”), but it did not specifically mention the publishing process either. Unsurprisingly then, the approaches presented at these challenges deal with extraction from and annotation of articles that are already written and published (with the only exception being a paper introducing a publishing platform for Research Objects [<xref ref-type="bibr" rid="ref036">36</xref>]).</p>
+<p>To be clear, we do not mean to deny the value or importance of this body of existing work. To the contrary, these approaches are highly valuable to deal with the wealth of existing publications and those that will become available in the near future. Besides this important work, however, we also need clear and bold visions for the future on how we can improve the form in which such publications are created in the first place.</p>
+</sec>
+<sec id="x1-30003">
+<label>3.</label>
+<title>Related work</title>
+<p>Despite the prevalence of approaches that deal exclusively with semantic annotations and semantic interlinking of already published articles, there are a number of existing approaches where the artifacts to be published include from the start semantic representations that originate from the researchers themselves. They cover different aspects that we consider important for genuine semantic publishing. These approaches include Research Objects, executable papers, scholarly HTML, Structured Digital Abstracts, Micropublications, and Nanopublications.</p>
+<table-wrap id="x1-30011">
+<label>Table 1</label>
+<caption>
+<p>Properties of existing approaches on the publication of scientific artifacts containing semantic representations</p>
+</caption>
+<table frame="hsides" rules="groups">
+<thead>
+<tr>
+<td valign="top" align="left"/>
+<td valign="top" align="left"/>
+<td valign="top" align="center">Research Objects</td>
+<td valign="top" align="center">Executable papers</td>
+<td valign="top" align="center">Scholarly HTML</td>
+<td valign="top" align="center">Structured Digital Abstracts</td>
+<td valign="top" align="center">Micropublications</td>
+<td valign="top" align="center">Nanopublications</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top" align="left" rowspan="5"><bold>types of formal semantic representations:</bold></td>
+<td valign="top" align="left">–metadata</td>
+<td valign="top" align="center">✓</td>
+<td valign="top" align="center">✓</td>
+<td valign="top" align="center">✓</td>
+<td valign="top" align="center">✓</td>
+<td valign="top" align="center">✓</td>
+<td valign="top" align="center">✓</td>
+</tr>
+<tr>
+<td valign="top" align="left">– domain (input/output) data</td>
+<td valign="top" align="center">✓</td>
+<td valign="top" align="center">✓</td>
+<td valign="top" align="center"/>
+<td valign="top" align="center"/>
+<td valign="top" align="center"/>
+<td valign="top" align="center">✓</td>
+</tr>
+<tr>
+<td valign="top" align="left">– program code</td>
+<td valign="top" align="center">✓</td>
+<td valign="top" align="center">✓</td>
+<td valign="top" align="center"/>
+<td valign="top" align="center"/>
+<td valign="top" align="center"/>
+<td valign="top" align="center"/>
+</tr>
+<tr>
+<td valign="top" align="left">– arguments / discourse</td>
+<td valign="top" align="center"/>
+<td valign="top" align="center"/>
+<td valign="top" align="center">(✓)</td>
+<td valign="top" align="center"/>
+<td valign="top" align="center">✓</td>
+<td valign="top" align="center">(✓)</td>
+</tr>
+<tr>
+<td valign="top" align="left">– high-level claims</td>
+<td valign="top" align="center">(✓)</td>
+<td valign="top" align="center"/>
+<td valign="top" align="center">(✓)</td>
+<td valign="top" align="center">✓</td>
+<td valign="top" align="center"/>
+<td valign="top" align="center">✓</td>
+</tr>
+<tr>
+<td valign="top" align="left" rowspan="3"><bold>publishing unit:</bold></td>
+<td valign="top" align="left">– project level</td>
+<td valign="top" align="center">✓</td>
+<td valign="top" align="center"/>
+<td valign="top" align="center"/>
+<td valign="top" align="center"/>
+<td valign="top" align="center"/>
+<td valign="top" align="center"/>
+</tr>
+<tr>
+<td valign="top" align="left">– article level</td>
+<td valign="top" align="center"/>
+<td valign="top" align="center">✓</td>
+<td valign="top" align="center">✓</td>
+<td valign="top" align="center">✓</td>
+<td valign="top" align="center">✓</td>
+<td valign="top" align="center"/>
+</tr>
+<tr>
+<td valign="top" align="left">– statement level</td>
+<td valign="top" align="center"/>
+<td valign="top" align="center"/>
+<td valign="top" align="center"/>
+<td valign="top" align="center"/>
+<td valign="top" align="center"/>
+<td valign="top" align="center">✓</td>
+</tr>
+<tr>
+<td valign="top" align="left" rowspan="2"><bold>necessary components:</bold></td>
+<td valign="top" align="left">– formal semantic data</td>
+<td valign="top" align="center">✓</td>
+<td valign="top" align="center">✓</td>
+<td valign="top" align="center">(✓)</td>
+<td valign="top" align="center">✓</td>
+<td valign="top" align="center">✓</td>
+<td valign="top" align="center">✓</td>
+</tr>
+<tr>
+<td valign="top" align="left">– narrative text</td>
+<td valign="top" align="center"/>
+<td valign="top" align="center">✓</td>
+<td valign="top" align="center">✓</td>
+<td valign="top" align="center">✓</td>
+<td valign="top" align="center">✓</td>
+<td valign="top" align="center"/>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+<p>Research Objects<xref ref-type="fn" rid="fn2">2</xref><fn id="fn2"><label><sup>2</sup></label>
+<p><uri>http://www.researchobject.org</uri></p></fn> [<xref ref-type="bibr" rid="ref004">4</xref>,<xref ref-type="bibr" rid="ref005">5</xref>] are a proposal to extend the notion of a scientific publication beyond a narrative article to include additional resources like data, metadata, code, presentation slides, log files, and workflow definitions. In order to improve reusability and reproducibility of scientific findings, these different resources are interlinked and packaged together in zip files called Research Objects. These objects are therefore at a higher level of composition than classical articles, and we can say that their publishing unit is on the level of a <italic>project</italic> rather than the level of an article. The language RDF with its formal semantics is used as the underlying notation. The interpretation of a Research Object’s content, however, would typically be performed by a human user, at least according to the main motivating scenario [<xref ref-type="bibr" rid="ref004">4</xref>]. The authors claim that Research Objects can also include formally represented hypotheses and high-level findings, but no specifics are given about this. Later work by other researchers applied the proposed concepts and used embedded nanopublications (see below) to represent such higher-level claims and hypotheses [<xref ref-type="bibr" rid="ref024">24</xref>]. A similar approach could probably be followed to express arguments and scientific discourse, but no concrete proposal exists for that.</p>
+<p>From a different angle, a number of approaches have been proposed for what has been called <italic>executable papers</italic> (e.g. [<xref ref-type="bibr" rid="ref027">27</xref>,<xref ref-type="bibr" rid="ref035">35</xref>,<xref ref-type="bibr" rid="ref050">50</xref>]), in particular in response to the Executable Paper Grand Challenge<xref ref-type="fn" rid="fn3">3</xref><fn id="fn3"><label><sup>3</sup></label>
+<p><uri>http://www.executablepapers.com</uri></p></fn> organized by Elsevier in 2011. These approaches follow the same basic idea as the IPython Notebook<xref ref-type="fn" rid="fn4">4</xref><fn id="fn4"><label><sup>4</sup></label>
+<p><uri>http://ipython.org/notebook.html</uri></p></fn>, which has recently become very popular, to interweave narrative text with program code that can be executed in an interactive fashion by the reader to dynamically generate results in the form of tables and diagrams, and thereby to reproduce, verify, and explore the results. Many of the proposed solutions do not explicitly mention semantic interlinking or standardized vocabularies, and they are therefore a borderline case of semantic publishing. However, one can argue that source code is a kind of semantic representation, even though with procedural rather than declarative semantics. Naturally, these approaches focus on algorithms, their source code, and the corresponding input and output data, and do not target the formal representation of high-level claims and hypotheses.</p>
+<p>Yet another angle, with a focus on scientific writing instead of source code and datasets, is taken by various approaches on scholarly HTML, including the work of a W3C community group with that name<xref ref-type="fn" rid="fn5">5</xref><fn id="fn5"><label><sup>5</sup></label>
+<p><uri>https://www.w3.org/community/scholarlyhtml/</uri></p></fn>, that propose HTML-based replacements for today’s role of PDF as universal file format for scientific articles. Not all these approaches explicitly focus on formal semantics, but – in contrast to PDF – semantic markup comes very naturally with HTML via technologies such as RDFa (but with special reader software, similar features can be achieved with PDF [<xref ref-type="bibr" rid="ref001">1</xref>]). On a higher level, the Linked Research initiative [<xref ref-type="bibr" rid="ref010">10</xref>] proposes general principles and directions of how we should communicate research in the web age, including the use of semantically enriched HTML. Concrete solutions around scholarly HTML include RASH [<xref ref-type="bibr" rid="ref021">21</xref>] and Dokieli [<xref ref-type="bibr" rid="ref009">9</xref>], each with its own tools and philosophy. The semantic markup that comes automatically with such types of HTML articles is mostly on the meta level, for example about the authors, the structure of the article, and the references to other articles. Furthermore, as the term <italic>markup</italic> indicates, these semantic representations are mostly not independent statements but tightly linked to the narrative text. Some of these scholarly HTML approaches explicitly point to the possibility of using RDF and RDFa to formally represent not just metadata but also high-level claims, hypotheses, and arguments, but they do not focus on concrete guidelines in this respect. In general, these approaches and technologies can enable what we call genuine semantic publishing but following their guidelines alone is no guarantee for achieving it.</p>
+<p>Structured Digital Abstracts [<xref ref-type="bibr" rid="ref011">11</xref>,<xref ref-type="bibr" rid="ref043">43</xref>], having been first proposed ten years ago, are probably the oldest approach of this kind. Their basic idea is to require for articles to come with a machine-interpretable summary of the main claims, besides the classical abstract for human readers. They proposed to let authors themselves capture the claims of their own scientific contributions, such as a newly discovered protein-protein interaction, in a notation with formal semantics. Even though these abstracts are attached to narrative articles, the formally represented findings can be processed and interpreted independently from the narrative text. We proposed a similar approach in previous work with abstracts in controlled natural language [<xref ref-type="bibr" rid="ref028">28</xref>].</p>
+<p>Micropublications [<xref ref-type="bibr" rid="ref016">16</xref>] are a further approach, which puts the emphasis on the structure and interrelation of scientific arguments and their underlying pieces of evidence. The authors stress that the network of arguments is an essential part of science, of which claims and hypotheses are necessary but not sufficient ingredients. They argue that formal representations of scientific claims are often not practically feasible, whereas the structure among them can be captured more easily and is moreover more important and more valuable to help scientists with computer-aided knowledge management.</p>
+<p>Nanopublications, finally, are an approach to use the RDF language to represent “the smallest unit of publication” [<xref ref-type="bibr" rid="ref034">34</xref>] or “core scientific statements with associated context” [<xref ref-type="bibr" rid="ref025">25</xref>]. This statement-level approach is therefore at a more granular level than most other approaches whose unit of publication is at the article level. Nanopublications consist of three parts, each represented in RDF: an assertion containing the actual content in the form of an atomic small piece of knowledge (e.g. a scientific claim, or a data entry), a provenance part containing metadata about the origin and context of the assertion (e.g. how it was measured), and a publication information part with metadata about the nanopublication as a whole (e.g. when and by whom it was created). Even though the details of their integration into the scientific publishing workflow have remained largely unspecified, nanopublications have received considerable attention during the last few years, with several large dataset having been published in this format [<xref ref-type="bibr" rid="ref002">2</xref>,<xref ref-type="bibr" rid="ref012">12</xref>,<xref ref-type="bibr" rid="ref040">40</xref>].</p>
+<p>Table <xref rid="x1-30011">1</xref> summarizes the different types of approaches introduced above, showing that they cover different types of semantic representations. We also observe from the table that none of the existing approaches covers all aspects, but a complete coverage could be achieved by a combination of them. Executable papers, Structured Digital Abstracts, and Micropublications stick to the article as their unit of publication, whereas Research Objects operate at a higher level (at what we call the project level) and nanopublications at a lower one (statement level). All these approaches, except some flavors of scholarly HTML, mandate that formal semantic data are part of the published entity, but three out of the five approaches also require or assume that a narrative text accompanies the data. Not coincidentally, these are also the approaches that work on the article level, and therefore stick to the classical unit of publication. While none of the presented approaches has yet managed to find widespread acceptance, small practical and less intrusive steps have already been successfully implemented, such as the use of unambiguous references to biomedical resources in the form of Research Resource Identifiers (RRIDs) [<xref ref-type="bibr" rid="ref003">3</xref>].</p>
+<p>To summarize, there are a number of existing approaches that cover important aspects of what we think deserves the term <italic>semantic publishing</italic> under its intuitive interpretation, but they are normally overshadowed by the more conventional approaches of semantic annotation and semantic interlinking introduced above. These conventional approaches, in fact, advocate the term <italic>semantic publishing</italic> more visibly, whereas approaches like Research Objects often do not use the term at all. This situation can lead to a general impression that the conventional approaches are the best we can do to apply the ideas of the Semantic Web to scientific publishing. It is our goal to convince the readers of this paper otherwise. While none of the existing approaches covers all aspects that we consider important for genuine semantic publishing, they provide – as we will show below – important and highly valuable building blocks towards that endeavor.</p>
+<p>To conclude our discussion of related work, we would like to point out that a large number of general technologies have been developed in the last years that can serve as the basis for approaches on genuine semantic publishing. They come in the form of data formats, ontologies, and software tools. The Semantic Publishing and Referencing Ontologies (SPAR)<xref ref-type="fn" rid="fn6">6</xref><fn id="fn6"><label><sup>6</sup></label>
+<p><uri>http://sempublishing.sourceforge.net</uri></p></fn> [<xref ref-type="bibr" rid="ref037">37</xref>,<xref ref-type="bibr" rid="ref038">38</xref>], for example, are a highly valuable suite of ontologies to build semantic models and applications in the domain of scientific publishing. Other examples include the Annotation Ontology [<xref ref-type="bibr" rid="ref013">13</xref>] and W3C’s subsequent Web Annotation recommendations<xref ref-type="fn" rid="fn7">7</xref><fn id="fn7"><label><sup>7</sup></label>
+<p><uri>https://www.w3.org/annotation/</uri></p></fn>, which define how to connect (scientific) text to the respective formal representations, the PROV Ontology [<xref ref-type="bibr" rid="ref031">31</xref>] to model provenance of digital objects, and the Semanticscience Integrated Ontology (SIO) [<xref ref-type="bibr" rid="ref023">23</xref>] and the Linked Science Core Vocabulary<xref ref-type="fn" rid="fn8">8</xref><fn id="fn8"><label><sup>8</sup></label>
+<p><uri>http://linkedscience.org/lsc/ns/</uri></p></fn>, which cover the different kinds of entities in scientific workflows such as researchers, data, publications, and methods, as well as the relations between them. There is also existing work on modeling arguments and discourse with Semantic Web technology [<xref ref-type="bibr" rid="ref042">42</xref>], including approaches on formalizing uncertainty in scientific arguments [<xref ref-type="bibr" rid="ref019">19</xref>], as well as formal models of scientific experiments [<xref ref-type="bibr" rid="ref047">47</xref>] and evidence [<xref ref-type="bibr" rid="ref008">8</xref>].</p>
+</sec>
+<sec id="x1-40004">
+<label>4.</label>
+<title>Genuine semantic publishing</title>
+<p>As we have shown above, most approaches that go under the label <italic>semantic publishing</italic> are not actually about publishing, and the approaches that <italic>do</italic> target the publication of semantic representations cover different aspects thereof that only partly overlap. We therefore think that there is a need for clear criteria of <italic>genuine</italic> semantic publishing that include concerns about the authoritativeness and essential coverage of semantic representations, as well as their status in relation to narrative articles and their granularity level.</p>
+<p>The first aspect we would like to discuss here is what we call <italic>essential coverage</italic> of semantic representations with respect to the entity to be published. A representation has essential coverage with respect to a work if it covers (at least) the essence of the work. The essence of a work is its main message, which for scientific articles normally consists of the main claims, findings, and arguments. A semantic representation may not cover all aspects discussed and described throughout a scientific work, but for it to have essential coverage it has to cover the main points: If you had to summarize a paper in one sentence, the content of this sentence has to be present in the semantic representation too. One can also see it as a kind of democratization process of making automated agents first-class citizens: English-speaking agents (e.g. human researchers) get the main content of the work in their English-based representation (i.e. the narrative text); so RDF-speaking agents (e.g. Linked Data aware software) should also get the main content of the work in their RDF-based representation. As we will see below, this perspective aligns very well with the well-established web technique of content negotiation.</p>
+<p>Another important aspect is the authoritativeness of the source of the semantic representations, which determines their authenticity. Semantic representations can only be considered authentic if they originate from an agent that is authoritative in the given situation. In the case of the publication of a scientific result, the only authoritative source are the researchers (who are called <italic>authors</italic> in this context). Semantic representations of scientific results are only authentic if they are provided by the researchers themselves, and this relation can be made explicit with a precise provenance representation. It has long been known in the area of knowledge engineering that the process of formalizing expert knowledge is not merely a process of “transferring” or “converting” knowledge from existing representations inside the heads of experts to formal representations of a form that can be stored in a knowledge base. Rather it has to be seen as a creative <italic>modeling process</italic> [<xref ref-type="bibr" rid="ref014">14</xref>,<xref ref-type="bibr" rid="ref048">48</xref>] where formal structures are generated that existed only in an incomplete, implicit, and unconscious form in the experts’ heads. Explaining a result in a narrative is simpler than formally modeling it, in the sense that natural language allows the writer to remain vague and even ambiguous. Accurately modeling knowledge only from such a narrative text with its inherent vagueness and ambiguity is therefore in general not just difficult but strictly impossible without a further connection to the authoritative source. Genuine semantic publishing requires the authors of scientific results to perform the modeling task themselves, because they are – by definition – the only authoritative source. We claim that – contrary to many existing approaches – we should <italic>not</italic> try to relieve the authors of this burden (though we should of course try to help them). Otherwise, the semantic representations cannot be considered authoritative and should therefore not be considered part of the publication’s content (unless the person who produces the formal representations becomes a co-author). As Tim Berners-Lee and James Hendler made clear when the Semantic Web was just about to come into existence as a research field, it “involves asking people to make some extra effort” [<xref ref-type="bibr" rid="ref007">7</xref>]. In the case of scientific publishing, it involves asking authors to make the extra effort of providing formal semantic representations of their findings.</p>
+<p>To make the semantic representations first-class citizens, they furthermore need to have an existence in their own right. We cannot call something a genuine semantic publication if the semantic representations are attached to an already published article at a later point, or if they can only be interpreted in the context of the narrative article. Neither should these semantic representations be considered just another type of supplementary material, listed somewhere at the very end of the article as a noncommittal extra file. In fact, one of the defining properties and one of the big advantages of declarative and monotonic semantic notations like RDF is that statements are in an important sense self-explanatory and independent. Such a formal statement can be taken out of its context and stripped from natural language explanations attached to it, and it still means exactly the same thing, as far as the formal semantics are concerned.</p>
+<p>In turn, this self-explanatory and independent nature allows for publications of semantic representation to be very light-weight and fine-grained. More so than narrative texts, formal representations with declarative and monotonic semantics can be easily broken down into independent pieces, and therefore we should allow people to exploit this nice property. Such light-weight semantic publications might consists of just a single statement (like “X is related to Y”), and for larger chunks of semantic representations we should make it possible to refer to such individual statements in a fine-grained way (e.g. refer explicitly to the statement “A causes B” within a larger set of statements).</p>
+<p>Based on these arguments, we define that <italic>genuine semantic publishing</italic> needs to comply with the following criteria: 
+<list>
+<list-item id="x1-4002x1">
+<label>1.</label>
+<p>A scientific work needs to come with formal representations that are semantic, in the sense that they are not just machine processable but <italic>machine interpretable</italic>, and that are linked so they add to the existing formal body of knowledge.</p>
+</list-item>
+<list-item id="x1-4004x2">
+<label>2.</label>
+<p>These semantic representations might be underspecified but need to have <italic>essential coverage</italic> in the sense that they cover (at least) the core of the main claims of the given work.</p>
+</list-item>
+<list-item id="x1-4006x3">
+<label>3.</label>
+<p>They need to be <italic>authentic</italic> in the sense that the respective authoritative persons create or approve the semantic representations. Domain data can only come from the researchers, and metadata has to come from the people responsible for the form of the published work, i.e. the researchers and/or the editors.</p>
+</list-item>
+<list-item id="x1-4008x4">
+<label>4.</label>
+<p>The semantic representations need to be a <italic>primary</italic> component of the published work, made available together with everything else at the time of publication. They must furthermore have an independent existence in their own right and not merely be appended or attached to the main entity as noncommittal extra data.</p>
+</list-item>
+<list-item id="x1-4010x5">
+<label>5.</label>
+<p>The semantic representations and their containers need to be <italic>fine-grained and light-weight</italic>. Even though such semantic representations might often be published in larger collections, the publication of minimal additions and corrections needs to be possible without a large overhead.</p>
+</list-item>
+</list> 
+Most, maybe all, existing approaches on what has been called semantic publishing comply with the first criterion, but only a few of them propose or support representations that comply with the others. We illustrate below that these criteria are in fact not difficult to achieve with existing technologies.</p>
+<p>Here, we should briefly discuss an aspect that we deliberately left out of our criteria. Several of the related approaches introduced above (in particular executable papers and scholarly HTML) have a specific focus on how semantic representations can enhance the user experience in the form of interactivity. While we think such interactivity can be highly valuable, we argue for a clear distinction between publication and use, where interactivity belongs to the latter. It is precisely the benefit of formal semantic representations that they facilitate all kinds of subsequent (interactive) use but are agnostic about the precise circumstances and technology. Genuine semantic publications may therefore come with specific interactive features, but it is not appropriate to make that a strict requirement.</p>
+<p>Furthermore, it is probably helpful to briefly discuss and illustrate what types of claims a scientific work can make. A large part of the body of scientific work deals with what has been called “normal” or “puzzle-solving” science [<xref ref-type="bibr" rid="ref029">29</xref>]. In this type of science, known kinds of relations and properties are discovered for objects of known kinds, such as a statement that a given mutation of a given gene can be the cause for a given disease. Such types of statements are relatively straightforward to formalize, for example by connecting a concept identifier for the given gene mutation with the concept identifier for the given disease by the use of a relation denoting the causal relationship, possibly augmented with the needed qualifications and contexts (such as the species to which it applies). In a next step, such a statement as a whole can be formally linked to its authors and to the study from which they derived it (such as a clinical trial and its properties). If the authors represent these formula in a specific language like RDF (assuming existing established vocabularies cover all needed terms), save them in a file, and share and archive them on the web, then we have perfect case of a genuine semantic publication. The authors may want to add a narrative to it, but they do not need to, as the semantic representation speaks for itself. More disruptive and more abstract kinds of scientific contributions involve the criticism of existing concepts or arguments, and the advocation of new ones. In the most extreme case, this can consist of proposing a paradigm shift that can lead to a scientific revolution [<xref ref-type="bibr" rid="ref029">29</xref>]. By their nature, these types of contributions are harder to formalize, but it is always possible to at least make the action of criticizing or advocating explicit and to position the objects in the space of related concepts, arguments, or paradigms.</p>
+<p>Finally, before we move on to demonstrate in detail how advocating a new concept can be achieved with a genuine semantic publication, let us reflect for a moment on the potential impact of such a proposal. The machine-interpretability of publications’ main claims entails that software could automatically connect, aggregate, and reason about the body of published scientific work. For example, we could automatically answer complex questions or produce interactive science maps, not only at the meta-level of papers, authors and their relations, but also on the domain level of tangible and abstract concepts and objects of study. This will allow scientists (and others) to acquire a more accurate and more complete picture of the current state of science with much less effort, which in turn can accelerate scientific work and improve its quality. The support for small fine-grained publications can further speed up scientific discovery, as researchers no longer need to wait for a larger body of work to assemble, but can publish smaller findings as they come in. Results from such software solutions will never be error-free, but due to our authenticity requirement we can find out which authors are to blame for mistakes we find in the semantic representations, instead of some anonymous software component or human annotator. This in turn can put strong incentives on authors to provide good formal representations for their works. It is hard to foresee how all the involved technical – let alone social and institutional – aspects would unfold, but it is not hard to imagine that such technology could have a profound positive impact on the communication of science.</p>
+</sec>
+<sec id="x1-50005">
+<label>5.</label>
+<title>Genuine semantic publishing in action</title>
+<p>It turns out that all the technologies needed for applying genuine semantic publishing are already available and most of them are very mature and reliable. There are no technical obstacles preventing us from releasing our results from today on as genuine semantic publications, even though more work is needed on ontologies that cover all relevant aspects and areas and on nice and intuitive end-user interfaces to make this process as easy as possible.</p>
+<p>The paper that you are reading is in fact a genuine semantic publication. It has different representations for different types of usage. You might be reading these lines while sitting on a beach and reading from a sheet of paper printed from the article’s PDF version, or you might be reading it in your office from a web page in HTML format within your browser window. In either case, these representations contain the narrative text, which we carefully wrote to explain and motivate our ideas to human readers. But we also make our work available to software agents, for which we have different representations that consist of formal RDF statements instead of narrative text. Importantly, these RDF statements convey the same main message as the narrative text: They are different representations of the <italic>same</italic> work.</p>
+<p>To formally represent the main content of the paper, we can make use of existing ontologies and vocabularies, such as CiTO [<xref ref-type="bibr" rid="ref037">37</xref>] and SKOS [<xref ref-type="bibr" rid="ref033">33</xref>]. Specifically, our paper’s main message is the advocacy of the new concept of genuine semantic publishing, which can be expressed as follows in the Turtle RDF notation [<xref ref-type="bibr" rid="ref006">6</xref>]:</p><preformat><monospace>  p:paper cito:describes p:GenuineSemanticPublishing ;</monospace>
+<monospace>          cito:supports p:GenuineSemanticPublishing .</monospace>
+</preformat>
+<p>There is to our knowledge no existing ontology that would exactly capture the relation of a publication <italic>advocating</italic> a given concept, but the combination of the two relations <monospace>describes</monospace> and <monospace>supports</monospace> from the CiTO ontology comes close. We as authors should of course say a bit more about this new concept, most importantly that it is related to the existing concept of semantic publishing:</p><preformat><monospace>  p:GenuineSemanticPublishing skos:related dbpedia:Semantic_publishing .</monospace>
+</preformat>
+<p>And we can express our critical position on that concept:</p><preformat><monospace>  p:paper cito:critiques dbpedia:Semantic_publishing .</monospace>
+</preformat>
+<p>Next we can formally represent the five criteria based on which we define our new concept:</p><preformat><monospace>  p:GenuineSemanticPublishing skos:definition</monospace>
+<monospace>    p:GenuineSemanticPublishingCriteria .</monospace>
+
+<monospace>  p:GenuineSemanticPublishingCriteria dct:hasPart</monospace>
+<monospace>    p:GenuineSemanticPublishingCriterion1 .</monospace>
+
+<monospace>  p:GenuineSemanticPublishingCriterion1</monospace>
+<monospace>    dct:title "First criterion of genuine semantic publishing: machine</monospace>
+<monospace>      interpretability" ,</monospace>
+<monospace>    dct:description "A scientific work needs to come with formal representations</monospace>
+<monospace>      that are semantic, in the sense that ..." .</monospace>
+
+<monospace>  p:GenuineSemanticPublishingCriteria dct:hasPart</monospace>
+<monospace>    p:GenuineSemanticPublishingCriterion2 .</monospace>
+
+<monospace>  ...</monospace>
+</preformat>
+<p>We can try to capture part of the content of these criteria in RDF as well, but at some point we have to stop and be content with an informal description in natural language (at the latest when we hit the symbol grounding problem). However, we believe that it is always possible to build a formal representation of the main content at the highest level, such as introducing and advocating a new concept, even though we will mostly not be able to provide a complete formal definition. In this sense, such a representation is underspecified but has essential coverage.</p>
+<p>We would like to note here that – while we are confident in declaring that our own representation complies with our criteria – we do not intend to claim that it achieves them to the highest degree possible. It is, to the contrary, still a quite crude representation that leaves many details and aspects of our main claims and arguments untouched. For example, we state that our paper critiques the concept of semantic publishing, but we do not say why and in what way, namely that we claim its interpretation to be not intuitive and not visionary. We are not aware of any ontology that would allow us to express this, and we restricted ourselves for this demonstration to existing resources. More work will be needed on establishing such ontologies and best practices to facilitate more precise and more inclusive formal models of scientific findings and arguments, but the currently existing vocabularies already allow – at least in our case – to achieve a basic level of genuine semantic publishing.</p>
+<p>In any case, the benefits of such a representation of the main message of a paper might not seem obvious at this point. One of the main advantages comes when <italic>subsequent</italic> work starts referring to these formal representations. As a fictitious example, a subsequent paper might propose the concept of “advanced semantic publishing” that includes our criteria 1 to 4, but criticizes number 5 and suggests to replace it with a different one:</p><preformat><monospace>  p2:anotherPaper cito:describes p2:AdvancedSemanticPublishing ;</monospace>
+<monospace>                  cito:supports p2:AdvancedSemanticPublishing .</monospace>
+<monospace>  p2:AdvancedSemanticPublishing skos:related p:GenuineSemanticPublishing .</monospace>
+<monospace>  p2:anotherPaper cito:critiques p:GenuineSemanticPublishingCriterion5 .</monospace>
+<monospace>  p2:AdvancedSemanticPublishing skos:definition</monospace>
+<monospace>    p:AdvancedSemanticPublishingCriteria .</monospace>
+<monospace>  p2:AdvancedSemanticPublishingCriteria dct:hasPart</monospace>
+<monospace>    p:GenuineSemanticPublishingCriterion1 ,</monospace>
+<monospace>    p:GenuineSemanticPublishingCriterion2 ,</monospace>
+<monospace>    p:GenuineSemanticPublishingCriterion3 ,</monospace>
+<monospace>    p:GenuineSemanticPublishingCriterion4 ,</monospace>
+<monospace>    p2:AdvancedSemanticPublishingCriterion .</monospace>
+<monospace>  p2:AdvancedSemanticPublishingCriterion</monospace>
+<monospace>    dct:title "Criterion for advanced semantic publishing" ,</monospace>
+<monospace>    dct:description "..." .</monospace>
+</preformat>
+<p>This example shows how we can formally capture the high-level relation of papers’ content, and thereby place them in the wider context of the literature on the respective topic.</p>
+<p>The above RDF representations are interpretable by machines, and thereby automated software agents of all sorts can read and process them. Human readers, of course, normally prefer a natural text representation of a paper’s content. To account for such different demands, resources on the web can in general have different equivalent representations for different types of agents. <italic>Content negotiation</italic> can then be used in the background to find a suitable representation based on the agent’s request (mediated by the browser) and the available representation formats on the server side. Alternatively, we can use special kinds of hyperlinks on a landing page to achieve the same effect within HTML. We will use this landing page approach here for demonstration purposes because it makes the different representations more explicit, but the presence of a landing page is not required.</p>
+<p>Such a landing page links to the different (classical and semantic) representations of the work. With just a few lines of HTML code, we can define a canonical URL and some minimal metadata, such as title and authors of the work (more metadata is available in the actual representations):</p><preformat><monospace>  &lt;!DOCTYPE html&gt;</monospace>
+<monospace>  &lt;html&gt;</monospace>
+<monospace>  &lt;head&gt;</monospace>
+<monospace>  &lt;link rel="canonical" href="http://www.tkuhn.org/pub/sempub/"&gt;</monospace>
+<monospace>  &lt;title&gt;Genuine Semantic Publishing&lt;/title&gt;</monospace>
+<monospace>  &lt;/head&gt;</monospace>
+<monospace>  &lt;body&gt;</monospace>
+<monospace>  &lt;h1&gt;Genuine Semantic Publishing&lt;/h1&gt;</monospace>
+<monospace>  &lt;p&gt;by</monospace>
+<monospace>  &lt;a href="http://orcid.org/0000-0002-1267-0234" rel="author"&gt;Tobias Kuhn&lt;/a&gt; and</monospace>
+<monospace>  &lt;a href="http://orcid.org/0000-0003-4727-9435" rel="author"&gt;Michel Dumontier&lt;/a&gt;</monospace>
+<monospace>  &lt;/p&gt;</monospace>
+</preformat>
+<p>And then we can link to different representations of the content of the given work:</p><preformat><monospace>  &lt;p&gt;Content:&lt;/p&gt;</monospace>
+<monospace>  &lt;ul&gt;</monospace>
+<monospace>  &lt;li&gt;&lt;a rel="item" href="sempub.pdf"</monospace>
+<monospace>    type="application/pdf"&gt;as PDF&lt;/a&gt;&lt;/li&gt;</monospace>
+<monospace>  &lt;li&gt;&lt;a rel="item" href="sempub.dokieli.html"</monospace>
+<monospace>    type="text/html"&gt;as HTML/Dokieli&lt;/a&gt;&lt;/li&gt;</monospace>
+<monospace>  &lt;li&gt;&lt;a rel="item" href="sempub.rash.html"</monospace>
+<monospace>    type="text/html"&gt;as HTML/RASH&lt;/a&gt;&lt;/li&gt;</monospace>
+<monospace>  &lt;li&gt;&lt;a rel="item" href="sempub.ttl"</monospace>
+<monospace>    type="text/turtle"&gt;as RDF/Turtle&lt;/a&gt;&lt;/li&gt;</monospace>
+<monospace>  &lt;li&gt;&lt;a rel="item" href="sempub.trig"</monospace>
+<monospace>    type="application/trig"&gt;as RDF/TriG&lt;/a&gt;&lt;/li&gt;</monospace>
+<monospace>  &lt;/ul&gt;</monospace>
+<monospace>  &lt;/body&gt;</monospace>
+<monospace>  &lt;/html&gt;</monospace>
+</preformat>
+<p>Specifically, we link to the PDF version of this work, two flavors of HTML (Dokieli and RASH), and RDF representations in Turtle (without provenance information and metadata) and TriG (with provenance information and metadata in the form of nanopublications), thereby also showcasing how existing technologies can contribute to achieve genuine semantic publishing.</p>
+<fig id="x1-50012">
+<label>Fig. 2.</label>
+<caption>
+<p>The landing page pointing to different versions of the work.</p>
+</caption>
+<graphic xlink:href="ds-1-ds010-g002.jpg"/>
+</fig>
+<p>Figure <xref rid="x1-50012">2</xref> shows what such a minimal landing page looks like in a browser, and the respective data can be found online<xref ref-type="fn" rid="fn9">9</xref><fn id="fn9"><label><sup>9</sup></label>
+<p>See <uri>https://doi.org/10.6084/m9.figshare.5422726</uri> and <uri>http://www.tkuhn.org/pub/sempub/</uri>.</p></fn> and in the supplemental material. Importantly, these list items point to different representations of the <italic>same work</italic>, each covering the work’s main points and thereby satisfying the second requirement of genuine semantic publishing with respect to essential coverage. The RDF representations are machine interpretable, which addresses our first criterion, and the fact that they appear on the same level as the narrative papers shows that they are a primary component of the published work, satisfying the fourth criterion. The fact that we as authors created and approved all these representations moreover covers the third criterion of authenticity.</p>
+<p>To illustrate the last criterion of being fine-grained and light-weight, let us assume that somebody wanted to add at a later point just a single triple to assert the connection between our first criterion and the concept of Linked Data:</p><preformat><monospace>  p:GenuineSemanticPublishingCriterion1 skos:related dbpedia:Linked_data .</monospace>
+</preformat>
+<p>We can save this triple in a file and create a bare minimum landing page that could look as follows:</p><preformat><monospace>  &lt;!DOCTYPE html&gt;</monospace>
+<monospace>  &lt;html&gt;</monospace>
+<monospace>  &lt;head&gt;&lt;title&gt;Genuine Semantic Publishing and Linked Data&lt;/title&gt;&lt;/head&gt;</monospace>
+<monospace>  &lt;body&gt;</monospace>
+<monospace>  &lt;p&gt;</monospace>
+<monospace>  by &lt;a rel="author" href="http://orcid.org/0000-0002-1267-0234"&gt;Tobias Kuhn&lt;/a&gt;</monospace>
+<monospace>  &lt;/p&gt;</monospace>
+<monospace>  &lt;p&gt;Content:&lt;/p&gt;</monospace>
+<monospace>  &lt;ul&gt;</monospace>
+<monospace>  &lt;li&gt;&lt;a rel="item" href="sempubld.ttl" type="text/turtle"&gt;as RDF&lt;/a&gt;&lt;/li&gt;</monospace>
+<monospace>  &lt;/ul&gt;</monospace>
+<monospace>  &lt;/body&gt;</monospace>
+<monospace>  &lt;/html&gt;</monospace>
+</preformat>
+<p>Together, these two files, containing fewer than 500 bytes, form a complete publication according to our criteria. This demonstrates that fine-grained contributions down to single triples can be published in a very light-weight manner with an overhead of just a few hundred bytes.</p>
+</sec>
+<sec id="x1-60006">
+<label>6.</label>
+<title>Conclusions</title>
+<p>The downsides and limitations of the current scientific publishing paradigm have become apparent in many ways, from the researchers unable to deal with the avalanche of new papers published in their fields to the struggles of elevating scientific datasets to the level of appreciation they deserve. We argue that we need both, grand visions and small practical steps, to move forward and advance science communication, to make sure that the benefits of future breakthroughs are not offset by our inefficiency in communicating them.</p>
+<p>We have to make sure, however, that we do not confuse our grand vision with the small practical steps towards it. <italic>Semantic publishing</italic> was once a grand vision but the term was then hijacked by approaches implementing small practical steps. These small steps are certainly important, but they also made us lose sight of the longer-term vision.</p>
+<p>In this position paper, we aimed to focus again on the grand vision, which we propose to call <italic>genuine semantic publishing</italic>. We argued that genuine semantic publications should not only come with representations that are machine interpretable, but that these representations also need to have essential coverage of the work’s main claims, that they need to be authentic and approved by the authors, that they should form a primary component of the work, and that they should allow for fine-grained and light-weight contributions.</p>
+<p>By explaining how this very paper was written as a genuine semantic publication, we demonstrated that – as far as technology is concerned – the vision is not that grand after all. Technically, genuine semantic publications are at a basic level already feasible nowadays with established and mature technologies. But many grand challenges remain, including the development and deployment of stable overarching formal models that include aspects such as evidence and arguments, reliable domain ontologies for the various still under-resourced fields, intuitive user interfaces, data publishing infrastructures, methods for attribution and recognition of scientific efforts, and effective incentive structures. All these challenges can only be addressed, however, with a clear vision of how scientific publishing should develop in the future.</p>
+</sec>
+</body>
+<back>
+<ack>
+<title>Acknowledgements</title>
+<p>We would like to thank Silvio Peroni and Tim Clark for discussions on the topic, and the reviewers and Herbert van de Sompel for their very valuable suggestions to improve the article. Figure <xref rid="x1-20011">1</xref> was designed by Germán Barboza, from Cordero Producciones.<xref ref-type="fn" rid="fn10">10</xref><fn id="fn10"><label><sup>10</sup></label>
+<p><uri>http://designers.designcrowd.com/designer/32548/cordero-producciones</uri></p></fn></p></ack>
+<ref-list>
+<title>References</title>
+<ref id="ref001">
+<label>[1]</label><mixed-citation publication-type="journal"><string-name><given-names>T.K.</given-names> <surname>Attwood</surname></string-name>, <string-name><given-names>D.B.</given-names> <surname>Kell</surname></string-name>, <string-name><given-names>P.</given-names> <surname>McDermott</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Marsh</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Pettifer</surname></string-name> and <string-name><given-names>D.</given-names> <surname>Thorne</surname></string-name>, <article-title>Utopia documents: Linking scholarly literature with research data</article-title>, <source>Bioinformatics</source> <volume>26</volume>(<issue>18</issue>) (<year>2010</year>), <fpage>i568</fpage>–<lpage>i574</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1093/bioinformatics/btq383" xlink:type="simple">10.1093/bioinformatics/btq383</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref002">
+<label>[2]</label><mixed-citation publication-type="chapter"><string-name><given-names>J.M.</given-names> <surname>Banda</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Kuhn</surname></string-name>, <string-name><given-names>N.H.</given-names> <surname>Shah</surname></string-name> and <string-name><given-names>M.</given-names> <surname>Dumontier</surname></string-name>, <chapter-title>Provenance-centered dataset of drug–drug interactions</chapter-title>, in: <source>Proceedings of the 14th International Semantic Web Conference (ISWC 2015)</source>, <publisher-name>Springer</publisher-name>, <year>2015</year>, pp. <fpage>293</fpage>–<lpage>300</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1007/978-3-319-25010-6_18" xlink:type="simple">10.1007/978-3-319-25010-6_18</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref003">
+<label>[3]</label><mixed-citation publication-type="journal"><string-name><given-names>A.E.</given-names> <surname>Bandrowski</surname></string-name> and <string-name><given-names>M.E.</given-names> <surname>Martone</surname></string-name>, <article-title>RRIDs: A simple step toward improving reproducibility through rigor and transparency of experimental methods</article-title>, <source>Neuron</source> <volume>90</volume>(<issue>3</issue>) (<year>2016</year>), <fpage>434</fpage>–<lpage>436</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1016/j.neuron.2016.04.030" xlink:type="simple">10.1016/j.neuron.2016.04.030</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref004">
+<label>[4]</label><mixed-citation publication-type="journal"><string-name><given-names>S.</given-names> <surname>Bechhofer</surname></string-name>, <string-name><given-names>I.</given-names> <surname>Buchan</surname></string-name>, <string-name><given-names>D.</given-names> <surname>De Roure</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Missier</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Ainsworth</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Bhagat</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Couch</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Cruickshank</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Delderfield</surname></string-name>, <string-name><given-names>I.</given-names> <surname>Dunlop</surname></string-name> <etal>et al.</etal>, <article-title>Why linked data is not enough for scientists</article-title>, <source>Future Generation Computer Systems</source> <volume>29</volume>(<issue>2</issue>) (<year>2013</year>), <fpage>599</fpage>–<lpage>611</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1016/j.future.2011.08.004" xlink:type="simple">10.1016/j.future.2011.08.004</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref005">
+<label>[5]</label><mixed-citation publication-type="other"><string-name><given-names>S.</given-names> <surname>Bechhofer</surname></string-name>, <string-name><given-names>D.</given-names> <surname>De Roure</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Gamble</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Goble</surname></string-name> and <string-name><given-names>I.</given-names> <surname>Buchan</surname></string-name>, <chapter-title>Research objects: Towards exchange and reuse of digital knowledge</chapter-title>, in: <source>The Future of the Web for Collaborative Science</source>, <year>2010</year>, <comment>[Online]. Available at <uri>http://precedings.nature.com/documents/4626/version/1/files/npre20104626-1.pdf</uri></comment>.</mixed-citation>
+</ref>
+<ref id="ref006">
+<label>[6]</label><mixed-citation publication-type="other"><string-name><given-names>B.D.</given-names> <surname>Beckett</surname></string-name> and <string-name><given-names>T.</given-names> <surname>Berners-Lee</surname></string-name>, Turtle – terse RDF triple language, W3C Recommendation, 2011, [Online]. Available at <uri>https://www.w3.org/TeamSubmission/turtle/</uri>.</mixed-citation>
+</ref>
+<ref id="ref007">
+<label>[7]</label><mixed-citation publication-type="journal"><string-name><given-names>T.</given-names> <surname>Berners-Lee</surname></string-name> and <string-name><given-names>J.</given-names> <surname>Hendler</surname></string-name>, <article-title>Publishing on the semantic web</article-title>, <source>Nature</source> <volume>410</volume>(<issue>6832</issue>) (<year>2001</year>), <fpage>1023</fpage>–<lpage>1024</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1038/35074206" xlink:type="simple">10.1038/35074206</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref008">
+<label>[8]</label><mixed-citation publication-type="other"><string-name><given-names>B.M.H.</given-names> <surname>Brush</surname></string-name>, <string-name><given-names>K.</given-names> <surname>Shefchek</surname></string-name> and <string-name><given-names>M.</given-names> <surname>Haendel</surname></string-name>, <chapter-title>SEPIO: A semantic model for the integration and analysis of scientific evidence</chapter-title>, in: <source>ICBO/BioCreative</source>, <publisher-name>CEUR-WS</publisher-name>, <year>2016</year>, <comment>[Online]. Available at <uri>http://ceur-ws.org/Vol-1747/IT605_ICBO2016.pdf</uri></comment>.</mixed-citation>
+</ref>
+<ref id="ref009">
+<label>[9]</label><mixed-citation publication-type="chapter"><string-name><given-names>S.</given-names> <surname>Capadisli</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Guy</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Verborgh</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Lange</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Auer</surname></string-name> and <string-name><given-names>T.</given-names> <surname>Berners-Lee</surname></string-name>, <chapter-title>Decentralised authoring, annotations and notifications for a read–write web with dokieli</chapter-title>, in: <source>International Conference on Web Engineering</source>, <publisher-name>Springer</publisher-name>, <year>2017</year>, pp. <fpage>469</fpage>–<lpage>481</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1007/978-3-319-60131-1_33" xlink:type="simple">10.1007/978-3-319-60131-1_33</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref010">
+<label>[10]</label><mixed-citation publication-type="other"><string-name><given-names>S.</given-names> <surname>Capadisli</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Riedl</surname></string-name> and <string-name><given-names>S.</given-names> <surname>Auer</surname></string-name>, <chapter-title>Enabling accessible knowledge</chapter-title>, in: <source>CeDEM15: Conference for E-Democracy and Open Government</source>, <year>2015</year>, <comment>p. 257, [Online]. Available at <uri>http://csarven.ca/enabling-accessible-knowledge</uri></comment>.</mixed-citation>
+</ref>
+<ref id="ref011">
+<label>[11]</label><mixed-citation publication-type="journal"><string-name><given-names>A.</given-names> <surname>Ceol</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Chatr-Aryamontri</surname></string-name>, <string-name><given-names>L.</given-names> <surname>Licata</surname></string-name> and <string-name><given-names>G.</given-names> <surname>Cesareni</surname></string-name>, <article-title>Linking entries in protein interaction database to structured text: The FEBS letters experiment</article-title>, <source>FEBS letters</source> <volume>582</volume>(<issue>8</issue>) (<year>2008</year>), <fpage>1171</fpage>–<lpage>1177</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1016/j.febslet.2008.02.071" xlink:type="simple">10.1016/j.febslet.2008.02.071</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref012">
+<label>[12]</label><mixed-citation publication-type="other"><string-name><given-names>C.</given-names> <surname>Chichester</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Gaudet</surname></string-name>, <string-name><given-names>O.</given-names> <surname>Karch</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Groth</surname></string-name>, <string-name><given-names>L.</given-names> <surname>Lane</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Bairoch</surname></string-name>, <string-name><given-names>B.</given-names> <surname>Mons</surname></string-name> and <string-name><given-names>A.</given-names> <surname>Loizou</surname></string-name>, <article-title>Querying neXtProt nanopublications and their value for insights on sequence variants and tissue expression</article-title>, <source>Web Semantics: Science, Services and Agents on the World Wide Web</source> (<year>2014</year>). doi:<ext-link ext-link-type="doi" xlink:href="10.1016/j.websem.2014.05.001" xlink:type="simple">10.1016/j.websem.2014.05.001</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref013">
+<label>[13]</label><mixed-citation publication-type="other"><string-name><given-names>P.</given-names> <surname>Ciccarese</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Ocana</surname></string-name>, <string-name><given-names>L.J.G.</given-names> <surname>Castro</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Das</surname></string-name> and <string-name><given-names>T.</given-names> <surname>Clark</surname></string-name>, <article-title>An open annotation ontology for science on web 3.0</article-title>, <source>Journal of biomedical semantics</source> <volume>2</volume>(<issue>2</issue>) (<year>2011</year>), <elocation-id>1</elocation-id>. doi:<ext-link ext-link-type="doi" xlink:href="10.1186/2041-1480-2-S2-S4" xlink:type="simple">10.1186/2041-1480-2-S2-S4</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref014">
+<label>[14]</label><mixed-citation publication-type="journal"><string-name><given-names>W.J.</given-names> <surname>Clancey</surname></string-name>, <article-title>The knowledge level reinterpreted: Modeling how systems interact</article-title>, <source>Machine Learning</source> <volume>4</volume>(<issue>3–4</issue>) (<year>1989</year>), <fpage>285</fpage>–<lpage>291</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1007/BF00130715" xlink:type="simple">10.1007/BF00130715</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref015">
+<label>[15]</label><mixed-citation publication-type="journal"><string-name><given-names>T.</given-names> <surname>Clark</surname></string-name>, <article-title>Next generation scientific publishing and the web of data</article-title>, <source>Semantic Web</source> <volume>5</volume>(<issue>4</issue>) (<year>2014</year>), <fpage>257</fpage>–<lpage>259</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.3233/SW-140139" xlink:type="simple">10.3233/SW-140139</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref016">
+<label>[16]</label><mixed-citation publication-type="other"><string-name><given-names>T.</given-names> <surname>Clark</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Ciccarese</surname></string-name> and <string-name><given-names>C.</given-names> <surname>Goble</surname></string-name>, <article-title>Micropublications: A semantic model for claims, evidence, arguments and annotations in biomedical communications</article-title>, <source>Journal of Biomedical Semantics</source> <volume>5</volume>(<issue>1</issue>) (<year>2014</year>), <elocation-id>28</elocation-id>. doi:<ext-link ext-link-type="doi" xlink:href="10.1186/2041-1480-5-28" xlink:type="simple">10.1186/2041-1480-5-28</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref017">
+<label>[17]</label><mixed-citation publication-type="other"><string-name><given-names>A.C.S.</given-names> <surname>Croset</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Kafkas</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Liakata</surname></string-name> and <string-name><given-names>A.</given-names> <surname>Oellrich</surname></string-name>, <chapter-title>Exploring the generation and integration of publishable scientific facts using the concept of nano-publications</chapter-title>, in: <source>First Workshop on Semantic Publication (SePublica 2011)</source>, <publisher-name>CEUR-WS</publisher-name>, <year>2011</year>, <comment>[Online]. Available at <uri>http://ceur-ws.org/Vol-721/paper-02.pdf</uri></comment>.</mixed-citation>
+</ref>
+<ref id="ref018">
+<label>[18]</label><mixed-citation publication-type="journal"><string-name><given-names>A.</given-names> <surname>de Waard</surname></string-name>, <article-title>From proteins to fairytales: Directions in semantic publishing</article-title>, <source>Intelligent Systems, IEEE</source> <volume>25</volume>(<issue>2</issue>) (<year>2010</year>), <fpage>83</fpage>–<lpage>88</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1109/MIS.2010.49" xlink:type="simple">10.1109/MIS.2010.49</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref019">
+<label>[19]</label><mixed-citation publication-type="other"><string-name><given-names>A.</given-names> <surname>De Waard</surname></string-name> and <string-name><given-names>J.</given-names> <surname>Schneider</surname></string-name>, <chapter-title>Formalising uncertainty: An ontology of reasoning, certainty and attribution (ORCA)</chapter-title>, in: <source>Semantic Technologies Applied to Biomedical Informatics and Individualized Medicine</source>, <year>2012</year>, <comment>[Online]. Available at <uri>http://dl.acm.org/citation.cfm?id=2887634</uri></comment>.</mixed-citation>
+</ref>
+<ref id="ref020">
+<label>[20]</label><mixed-citation publication-type="chapter"><string-name><given-names>A.</given-names> <surname>Di Iorio</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Lange</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Dimou</surname></string-name> and <string-name><given-names>S.</given-names> <surname>Vahdati</surname></string-name>, <chapter-title>Semantic publishing challenge – assessing the quality of scientific output by information extraction and interlinking</chapter-title>, in: <source>Semantic Web Evaluation Challenge</source>, <publisher-name>Springer</publisher-name>, <year>2015</year>, pp. <fpage>65</fpage>–<lpage>80</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1007/978-3-319-25518-7_6" xlink:type="simple">10.1007/978-3-319-25518-7_6</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref021">
+<label>[21]</label><mixed-citation publication-type="other"><string-name><given-names>B.A.</given-names> <surname>Di Iorio</surname></string-name>, <string-name><given-names>A.G.</given-names> <surname>Nuzzolese</surname></string-name>, <string-name><given-names>F.</given-names> <surname>Osborne</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Peroni</surname></string-name>, <string-name><given-names>F.</given-names> <surname>Poggi</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Smith</surname></string-name>, <string-name><given-names>F.</given-names> <surname>Vitali</surname></string-name> and <string-name><given-names>J.</given-names> <surname>Zhao</surname></string-name>, <chapter-title>The RASH framework: Enabling HTML + RDF submissions in scholarly venues</chapter-title>, in: <source>Proceedings of the ISWC 2015 Posters &amp; Demonstrations Track</source>, <year>2015</year>, <comment>[Online]. Available at <uri>http://ceur-ws.org/Vol-1486/paper_72.pdf</uri></comment>.</mixed-citation>
+</ref>
+<ref id="ref022">
+<label>[22]</label><mixed-citation publication-type="other"><string-name><given-names>B.A.</given-names> <surname>Di Iorio</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Peroni</surname></string-name>, <string-name><given-names>F.</given-names> <surname>Vitali</surname></string-name> and <string-name><given-names>J.</given-names> <surname>Zingoni</surname></string-name>, <chapter-title>Semantic lenses to bring digital and semantic publishing together</chapter-title>, in: <source>Proceedings of the 4th International Workshop on Linked Science (LISC 2014)</source>, <publisher-name>CEUR-WS</publisher-name>, <year>2014</year>, <comment>[Online]. Available at <uri>http://dl.acm.org/citation.cfm?id=2878586</uri></comment>.</mixed-citation>
+</ref>
+<ref id="ref023">
+<label>[23]</label><mixed-citation publication-type="other"><string-name><given-names>M.</given-names> <surname>Dumontier</surname></string-name>, <string-name><given-names>C.J.</given-names> <surname>Baker</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Baran</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Callahan</surname></string-name>, <string-name><given-names>L.</given-names> <surname>Chepelev</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Cruz-Toledo</surname></string-name>, <string-name><given-names>N.R.</given-names> <surname>Del Rio</surname></string-name>, <string-name><given-names>G.</given-names> <surname>Duck</surname></string-name>, <string-name><given-names>L.I.</given-names> <surname>Furlong</surname></string-name>, <string-name><given-names>N.</given-names> <surname>Keath</surname></string-name> <etal>et al.</etal>, <article-title>The semanticscience integrated ontology (SIO) for biomedical research and knowledge discovery</article-title>, <source>Journal of biomedical semantics</source> <volume>5</volume>(<issue>1</issue>) (<year>2014</year>), <elocation-id>14</elocation-id>. doi:<ext-link ext-link-type="doi" xlink:href="10.1186/2041-1480-5-14" xlink:type="simple">10.1186/2041-1480-5-14</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref024">
+<label>[24]</label><mixed-citation publication-type="other"><string-name><given-names>A.</given-names> <surname>González-Beltrán</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Li</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Zhao</surname></string-name>, <string-name><given-names>M.S.</given-names> <surname>Avila-Garcia</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Roos</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Thompson</surname></string-name>, <string-name><given-names>E.</given-names> <surname>van der Horst</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Kaliyaperumal</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Luo</surname></string-name>, <string-name><given-names>T.-L.</given-names> <surname>Lee</surname></string-name> <etal>et al.</etal>, <article-title>From peer-reviewed to peer-reproduced in scholarly publishing: The complementary roles of data models and workflows in bioinformatics</article-title>, <source>PLOS one</source> <volume>10</volume>(<issue>7</issue>) (<year>2015</year>), <elocation-id>e0127612</elocation-id>. doi:<ext-link ext-link-type="doi" xlink:href="10.1371/journal.pone.0127612" xlink:type="simple">10.1371/journal.pone.0127612</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref025">
+<label>[25]</label><mixed-citation publication-type="journal"><string-name><given-names>P.</given-names> <surname>Groth</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Gibson</surname></string-name> and <string-name><given-names>J.</given-names> <surname>Velterop</surname></string-name>, <article-title>The anatomy of a nano-publication</article-title>, <source>Information Services and Use</source> <volume>30</volume>(<issue>1</issue>) (<year>2010</year>), <fpage>51</fpage>–<lpage>56</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.3233/ISU-2010-0613" xlink:type="simple">10.3233/ISU-2010-0613</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref026">
+<label>[26]</label><mixed-citation publication-type="journal"><string-name><given-names>F.L.</given-names> <surname>Holmes</surname></string-name>, <article-title>Scientific writing and scientific discovery</article-title>, <source>Isis</source> <volume>78</volume>(<issue>2</issue>) (<year>1987</year>), <fpage>220</fpage>–<lpage>235</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1086/354391" xlink:type="simple">10.1086/354391</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref027">
+<label>[27]</label><mixed-citation publication-type="journal"><string-name><given-names>M.</given-names> <surname>Kohlhase</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Corneli</surname></string-name>, <string-name><given-names>C.</given-names> <surname>David</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Ginev</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Jucovschi</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Kohlhase</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Lange</surname></string-name>, <string-name><given-names>B.</given-names> <surname>Matican</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Mirea</surname></string-name> and <string-name><given-names>V.</given-names> <surname>Zholudev</surname></string-name>, <article-title>The planetary system: Web 3.0 &amp; active documents for STEM</article-title>, <source>Procedia Computer Science</source> <volume>4</volume> (<year>2011</year>), <fpage>598</fpage>–<lpage>607</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1016/j.procs.2011.04.063" xlink:type="simple">10.1016/j.procs.2011.04.063</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref028">
+<label>[28]</label><mixed-citation publication-type="other"><string-name><given-names>T.</given-names> <surname>Kuhn</surname></string-name>, <string-name><given-names>L.</given-names> <surname>Royer</surname></string-name>, <string-name><given-names>N.E.</given-names> <surname>Fuchs</surname></string-name> and <string-name><given-names>M.</given-names> <surname>Schroeder</surname></string-name>, <chapter-title>Improving text mining with controlled natural language: A case study for protein interactions</chapter-title>, in: <source>3rd International Workshop on Data Integration in the Life Sciences 2006 (DILS’06)</source>, <publisher-name>Springer</publisher-name>, <year>2006</year>. doi:<ext-link ext-link-type="doi" xlink:href="10.1007/11799511_7" xlink:type="simple">10.1007/11799511_7</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref029">
+<label>[29]</label><mixed-citation publication-type="other"><string-name><given-names>T.S.</given-names> <surname>Kuhn</surname></string-name>, <source>The Structure of Scientific Revolutions</source>, <publisher-name>University of Chicago Press</publisher-name>, <year>1962</year>. ISBN:<isbn>9780226458113</isbn>.</mixed-citation>
+</ref>
+<ref id="ref030">
+<label>[30]</label><mixed-citation publication-type="chapter"><string-name><given-names>C.</given-names> <surname>Lange</surname></string-name> and <string-name><given-names>A.</given-names> <surname>Di Iorio</surname></string-name>, <chapter-title>Semantic publishing challenge – assessing the quality of scientific output</chapter-title>, in: <source>Semantic Web Evaluation Challenge</source>, <publisher-name>Springer</publisher-name>, <year>2014</year>, pp. <fpage>61</fpage>–<lpage>76</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1007/978-3-319-12024-9_8" xlink:type="simple">10.1007/978-3-319-12024-9_8</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref031">
+<label>[31]</label><mixed-citation publication-type="other"><string-name><given-names>T.</given-names> <surname>Lebo</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Sahoo</surname></string-name>, <string-name><given-names>D.</given-names> <surname>McGuinness</surname></string-name>, <string-name><given-names>K.</given-names> <surname>Belhajjame</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Cheney</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Corsar</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Garijo</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Soiland-Reyes</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Zednik</surname></string-name> and <string-name><given-names>J.</given-names> <surname>Zhao</surname></string-name>, PROV-O: The PROV ontology, W3C Recommendation, 2013, [Online]. Available at <uri>https://www.w3.org/TR/prov-o/</uri>.</mixed-citation>
+</ref>
+<ref id="ref032">
+<label>[32]</label><mixed-citation publication-type="other"><string-name><given-names>B.C.H.</given-names> <surname>Marcondes</surname></string-name>, <chapter-title>A semantic model for scholarly electronic publishing</chapter-title>, in: <source>First Workshop on Semantic Publication (SePublica 2011)</source>, <publisher-name>CEUR-WS</publisher-name>, <year>2011</year>, <comment>[Online]. Available at <uri>http://ceur-ws.org/Vol-721/paper-06.pdf</uri></comment>.</mixed-citation>
+</ref>
+<ref id="ref033">
+<label>[33]</label><mixed-citation publication-type="other"><string-name><given-names>B.A.</given-names> <surname>Miles</surname></string-name> and <string-name><given-names>S.</given-names> <surname>Bechhofer</surname></string-name>, SKOS simple knowledge organization system reference, W3C Recommendation, 2009, [Online]. Available at <uri>https://www.w3.org/TR/skos-reference/</uri>.</mixed-citation>
+</ref>
+<ref id="ref034">
+<label>[34]</label><mixed-citation publication-type="journal"><string-name><given-names>B.</given-names> <surname>Mons</surname></string-name>, <string-name><given-names>H.</given-names> <surname>van Haagen</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Chichester</surname></string-name>, <string-name><given-names>J.T.</given-names> <surname>den Dunnen</surname></string-name>, <string-name><given-names>G.</given-names> <surname>van Ommen</surname></string-name>, <string-name><given-names>E.</given-names> <surname>van Mulligen</surname></string-name>, <string-name><given-names>B.</given-names> <surname>Singh</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Hooft</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Roos</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Hammond</surname></string-name> <etal>et al.</etal>, <article-title>The value of data</article-title>, <source>Nature genetics</source> <volume>43</volume>(<issue>4</issue>) (<year>2011</year>), <fpage>281</fpage>–<lpage>283</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1038/ng0411-281" xlink:type="simple">10.1038/ng0411-281</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref035">
+<label>[35]</label><mixed-citation publication-type="journal"><string-name><given-names>P.</given-names> <surname>Nowakowski</surname></string-name>, <string-name><given-names>E.</given-names> <surname>Ciepiela</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Hareżlak</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Kocot</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Kasztelnik</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Bartyński</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Meizner</surname></string-name>, <string-name><given-names>G.</given-names> <surname>Dyk</surname></string-name> and <string-name><given-names>M.</given-names> <surname>Malawski</surname></string-name>, <article-title>The collage authoring environment</article-title>, <source>Procedia Computer Science</source> <volume>4</volume> (<year>2011</year>), <fpage>608</fpage>–<lpage>617</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1016/j.procs.2011.04.064" xlink:type="simple">10.1016/j.procs.2011.04.064</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref036">
+<label>[36]</label><mixed-citation publication-type="chapter"><string-name><given-names>B.R.</given-names> <surname>Palma</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Hołubowicz</surname></string-name>, <string-name><given-names>O.</given-names> <surname>Corcho</surname></string-name>, <string-name><given-names>J.M.</given-names> <surname>Gómez-Pérez</surname></string-name> and <string-name><given-names>C.</given-names> <surname>Mazurek</surname></string-name>, <chapter-title>ROHub – a digital library of research objects supporting scientists towards reproducible science</chapter-title>, in: <source>Semantic Web Evaluation Challenge</source>, <publisher-name>Springer</publisher-name>, <year>2014</year>, pp. <fpage>77</fpage>–<lpage>82</lpage>, <comment>[Online]</comment>. doi:<ext-link ext-link-type="doi" xlink:href="10.1007/978-3-319-12024-9_9" xlink:type="simple">10.1007/978-3-319-12024-9_9</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref037">
+<label>[37]</label><mixed-citation publication-type="journal"><string-name><given-names>S.</given-names> <surname>Peroni</surname></string-name> and <string-name><given-names>D.</given-names> <surname>Shotton</surname></string-name>, <article-title>FaBiO and CiTO: Ontologies for describing bibliographic resources and citations</article-title>, <source>Web Semantics: Science, Services and Agents on the World Wide Web</source> <volume>17</volume> (<year>2012</year>), <fpage>33</fpage>–<lpage>43</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1016/j.websem.2012.08.001" xlink:type="simple">10.1016/j.websem.2012.08.001</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref038">
+<label>[38]</label><mixed-citation publication-type="chapter"><string-name><given-names>S.</given-names> <surname>Peroni</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Shotton</surname></string-name> and <string-name><given-names>F.</given-names> <surname>Vitali</surname></string-name>, <chapter-title>Scholarly publishing and Linked Data: Describing roles, statuses, temporal and contextual extents</chapter-title>, in: <source>Proceedings of the 8th International Conference on Semantic Systems</source>, <publisher-name>ACM</publisher-name>, <year>2012</year>, pp. <fpage>9</fpage>–<lpage>16</lpage>.</mixed-citation>
+</ref>
+<ref id="ref039">
+<label>[39]</label><mixed-citation publication-type="journal"><string-name><given-names>J.</given-names> <surname>Priem</surname></string-name>, <article-title>Scholarship: Beyond the paper</article-title>, <source>Nature</source> <volume>495</volume>(<issue>7442</issue>) (<year>2013</year>), <fpage>437</fpage>–<lpage>440</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1038/495437a" xlink:type="simple">10.1038/495437a</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref040">
+<label>[40]</label><mixed-citation publication-type="other"><string-name><given-names>N.</given-names> <surname>Queralt-Rosinach</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Kuhn</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Chichester</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Dumontier</surname></string-name>, <string-name><given-names>F.</given-names> <surname>Sanz</surname></string-name>, <string-name><given-names>L.I.</given-names> <surname>Furlong</surname></string-name> <etal>et al.</etal>, <article-title>Publishing DisGeNET as nanopublications</article-title>, <source>Semantic Web – Interoperability, Usability, Applicability</source> (<year>2016</year>). doi:<ext-link ext-link-type="doi" xlink:href="10.3233/SW-150189" xlink:type="simple">10.3233/SW-150189</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref041">
+<label>[41]</label><mixed-citation publication-type="other"><string-name><given-names>B.A.</given-names> <surname>Ruiz-Iniesta</surname></string-name> and <string-name><given-names>O.</given-names> <surname>Corcho</surname></string-name>, <chapter-title>A review of ontologies for describing scholarly and scientific documents</chapter-title>, in: <source>4th Workshop on Semantic Publishing (SePublica 2014)</source>, <publisher-name>CEUR-WS</publisher-name>, <year>2014</year>, <comment>[Online]. Available at <uri>http://ceur-ws.org/Vol-1155/paper-07.pdf</uri></comment>.</mixed-citation>
+</ref>
+<ref id="ref042">
+<label>[42]</label><mixed-citation publication-type="journal"><string-name><given-names>J.</given-names> <surname>Schneider</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Groza</surname></string-name> and <string-name><given-names>A.</given-names> <surname>Passant</surname></string-name>, <article-title>A review of argumentation for the social semantic web</article-title>, <source>Semantic Web</source> <volume>4</volume>(<issue>2</issue>) (<year>2013</year>), <fpage>159</fpage>–<lpage>218</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.3233/SW-2012-0073" xlink:type="simple">10.3233/SW-2012-0073</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref043">
+<label>[43]</label><mixed-citation publication-type="other"><string-name><given-names>M.R.</given-names> <surname>Seringhaus</surname></string-name> and <string-name><given-names>M.B.</given-names> <surname>Gerstein</surname></string-name>, <article-title>Publishing perishing? Towards tomorrow’s information architecture</article-title>, <source>BMC bioinformatics</source> <volume>8</volume>(<issue>1</issue>) (<year>2007</year>), <elocation-id>17</elocation-id>. doi:<ext-link ext-link-type="doi" xlink:href="10.1186/1471-2105-8-17" xlink:type="simple">10.1186/1471-2105-8-17</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref044">
+<label>[44]</label><mixed-citation publication-type="journal"><string-name><given-names>D.</given-names> <surname>Shotton</surname></string-name>, <article-title>Semantic publishing: The coming revolution in scientific journal publishing</article-title>, <source>Learned Publishing</source> <volume>22</volume>(<issue>2</issue>) (<year>2009</year>), <fpage>85</fpage>–<lpage>94</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1087/2009202" xlink:type="simple">10.1087/2009202</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref045">
+<label>[45]</label><mixed-citation publication-type="other"><string-name><given-names>D.</given-names> <surname>Shotton</surname></string-name>, <string-name><given-names>K.</given-names> <surname>Portwin</surname></string-name>, <string-name><given-names>G.</given-names> <surname>Klyne</surname></string-name> and <string-name><given-names>A.</given-names> <surname>Miles</surname></string-name>, <article-title>Adventures in semantic publishing: Exemplar semantic enhancements of a research article</article-title>, <source>PLoS computational biology</source> <volume>5</volume>(<issue>4</issue>) (<year>2009</year>), <elocation-id>e1000361</elocation-id>. doi:<ext-link ext-link-type="doi" xlink:href="10.1371/journal.pcbi.1000361" xlink:type="simple">10.1371/journal.pcbi.1000361</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref046">
+<label>[46]</label><mixed-citation publication-type="other"><string-name><given-names>B.P.</given-names> <surname>Smrz</surname></string-name> and <string-name><given-names>J.</given-names> <surname>Dytrych</surname></string-name>, <chapter-title>Towards new scholarly communication: A case study of the 4A framework</chapter-title>, in: <source>First Workshop on Semantic Publication (SePublica 2011)</source>, <publisher-name>CEUR-WS</publisher-name>, <year>2011</year>, <comment>[Online]. Available at <uri>http://ceur-ws.org/Vol-721/paper-07.pdf</uri></comment>.</mixed-citation>
+</ref>
+<ref id="ref047">
+<label>[47]</label><mixed-citation publication-type="journal"><string-name><given-names>L.N.</given-names> <surname>Soldatova</surname></string-name> and <string-name><given-names>R.D.</given-names> <surname>King</surname></string-name>, <article-title>An ontology of scientific experiments</article-title>, <source>Journal of the Royal Society Interface</source> <volume>3</volume>(<issue>11</issue>) (<year>2006</year>), <fpage>795</fpage>–<lpage>803</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1098/rsif.2006.0134" xlink:type="simple">10.1098/rsif.2006.0134</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref048">
+<label>[48]</label><mixed-citation publication-type="journal"><string-name><given-names>R.</given-names> <surname>Studer</surname></string-name>, <string-name><given-names>V.R.</given-names> <surname>Benjamins</surname></string-name> and <string-name><given-names>D.</given-names> <surname>Fensel</surname></string-name>, <article-title>Knowledge engineering: Principles and methods</article-title>, <source>Data and Knowledge Engineering</source> <volume>25</volume>(<issue>1–2</issue>) (<year>1998</year>), <fpage>161</fpage>–<lpage>197</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1016/S0169-023X(97)00056-6" xlink:type="simple">10.1016/S0169-023X(97)00056-6</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref049">
+<label>[49]</label><mixed-citation publication-type="other"><string-name><given-names>S.</given-names> <surname>Vahdati</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Dimou</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Lange</surname></string-name> and <string-name><given-names>A.</given-names> <surname>Di Ioro</surname></string-name>, Semantic publishing challenge: Bootstrapping a value chain for scientific data, 2016, [Online]. Available at <uri>http://cs.unibo.it/save-sd/2016/papers/html/vahdati-savesd2016.html</uri>.</mixed-citation>
+</ref>
+<ref id="ref050">
+<label>[50]</label><mixed-citation publication-type="journal"><string-name><given-names>P.</given-names> <surname>Van Gorp</surname></string-name> and <string-name><given-names>S.</given-names> <surname>Mazanek</surname></string-name>, <article-title>Share: A web portal for creating and sharing executable research papers</article-title>, <source>Procedia Computer Science</source> <volume>4</volume> (<year>2011</year>), <fpage>589</fpage>–<lpage>597</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1016/j.procs.2011.04.062" xlink:type="simple">10.1016/j.procs.2011.04.062</ext-link>.</mixed-citation>
+</ref>
+</ref-list>
+</back>
+</article>

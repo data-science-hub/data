@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.0 20120330//EN" "JATS-journalpublishing1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="position-paper">
+<front>
+<journal-meta>
+<journal-id journal-id-type="publisher-id">DS</journal-id>
+<journal-title-group><journal-title>Data Science</journal-title></journal-title-group>
+<issn pub-type="epub">2451-8492</issn><issn pub-type="ppub">2451-8484</issn><issn-l>2451-8484</issn-l>
+<publisher>
+<publisher-name>IOS Press</publisher-name><publisher-loc>Nieuwe Hemweg 6B, 1013 BG Amsterdam, The Netherlands</publisher-loc>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">DS005</article-id>
+<article-id pub-id-type="doi">10.3233/DS-170005</article-id>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Position Paper</subject></subj-group></article-categories>
+<title-group>
+<article-title>Cross-disciplinary higher education of data science – beyond the computer science student</article-title>
+</title-group>
+<contrib-group content-type="Editor">
+<contrib contrib-type="editor">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-1267-0234</contrib-id>
+<name><surname>Kuhn</surname><given-names>Tobias</given-names></name>
+</contrib>
+</contrib-group>
+<contrib-group>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0003-3900-2057</contrib-id>
+<name><surname>Pournaras</surname><given-names>Evangelos</given-names></name><xref ref-type="aff" rid="affa"/>
+</contrib>
+<aff id="affa"><institution>Professorship of Computational Social Science</institution>, ETH Zurich, Clausiusstrasse 50, 8092, Zurich, <country>Switzerland</country>. E-mail: <email>epournaras@ethz.ch</email></aff>
+</contrib-group>
+<pub-date date-type="preprint" publication-format="electronic"><day>17</day><month>10</month><year>2017</year></pub-date><pub-date date-type="pub" publication-format="electronic"><day>8</day><month>12</month><year>2017</year></pub-date><pub-date date-type="collection" publication-format="electronic"><year>2017</year></pub-date><volume>1</volume><issue>1-2</issue><fpage>101</fpage><lpage>117</lpage><history><date date-type="received"><day>1</day><month>04</month><year>2017</year></date><date date-type="accepted"><day>27</day><month>05</month><year>2017</year></date></history>
+<permissions><copyright-statement>© 2017 – IOS Press and the authors.</copyright-statement><copyright-year>2017</copyright-year>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/" license-type="open-access" xlink:type="simple">
+<license-p>This is an open access article distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/" xlink:type="simple">Creative Commons Attribution (CC BY 4.0) License</ext-link>, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions>
+<abstract>
+<p>The majority of economic sectors are transformed by the abundance of data. Smart grids, smart cities, smart health, Industry 4.0 impose to domain experts requirements for data science skills in order to respond to their duties and the challenges of the digital society. Business training or replacing domain experts with computer scientists can be costly, limiting for the diversity in business sectors and can lead to sacrifice of invaluable domain knowledge. This paper illustrates experience and lessons learnt from the design and teaching of a novel cross-disciplinary data science course at a postgraduate level in a top-class university. The course design is approached from the perspectives of the constructivism and transformative learning theory. Students are introduced to a guideline for a group research project they need to deliver, which is used as a pedagogical artifact for students to unfold their data science skills as well as reflect within their team their domain and prior knowledge. In contrast to other related courses, the course content illustrated is designed to be self-contained for students of different discipline. Without assuming certain prior programming skills, students from different discipline are qualified to practice data science with open-source tools at all stages: data manipulation, interactive graphical analysis, plotting, machine learning and big data analytics. Quantitative and qualitative evaluation with interviews outlines invaluable lessons learnt.</p>
+</abstract>
+<kwd-group>
+<label>Keywords</label>
+<kwd>Education</kwd>
+<kwd>data science</kwd>
+<kwd>cross-discipline</kwd>
+<kwd>big data</kwd>
+<kwd>research methodology</kwd>
+<kwd>learning</kwd>
+<kwd>constructivism theory</kwd>
+<kwd>transformative theory</kwd>
+</kwd-group>
+</article-meta>
+</front>
+<body>
+<sec id="x1-10001">
+<label>1.</label>
+<title>Introduction</title>
+<p>The pervasiveness of Internet of Things and ubiquitous computing brings unprecedented transformations in several sectors of economy. Nowadays, design, operational, management and regulatory decisions in smart cities, smart grids, smart health services and Industry 4.0 rely on streams of massive data. This radically alters the skills set of domain experts required to automate, analyze and optimize such complex systems [<xref ref-type="bibr" rid="ref014">14</xref>]. Data science becomes of a paramount importance with research communities expressing active interest on the educational practices for data science [<xref ref-type="bibr" rid="ref012">12</xref>,<xref ref-type="bibr" rid="ref026">26</xref>]. Experts’ skills on statistics are not adequate as data may be unstructured, very large in size, may require real-time processing and advanced machine learning techniques that go beyond descriptive statistics [<xref ref-type="bibr" rid="ref014">14</xref>]. On the one hand, training domain experts to new skills of data science is costly and not all enterprises have the resources for this purpose. On the other hand, replacing the domain experts with computer scientists, who are formally trained on data science may result in imbalances in the job market and lack of diversity, cohesion and domain knowledge. Note that recent rapid development and significant discoveries in the areas of complex networks and biology, for instance mapping human genome, have been made with data science methodologies applied by domain experts rather than computer scientists [<xref ref-type="bibr" rid="ref033">33</xref>,<xref ref-type="bibr" rid="ref044">44</xref>]. There is ongoing research on introducing formal models for such discoveries [<xref ref-type="bibr" rid="ref029">29</xref>].</p>
+<p>Given the evident lack of plurality and the high interest for data scientists in the job market [<xref ref-type="bibr" rid="ref031">31</xref>,<xref ref-type="bibr" rid="ref048">48</xref>], academic institutes need to respond to their role and educate a broad range of scientists in data science with novel didactic and pedagogical approaches tailored beyond the computer science student. The experience aggregated by the design of such a novel educational course is the focus of this paper. The contributions of this paper are (i) the analysis of effects and implications by design choices made to address a cross-discipline approach to data science as well as (ii) lessons learnt after teaching a cross-disciplinary data science course for 3 years at a top-class university.</p>
+<p>The design and teaching of a postgraduate data science course in a cross-disciplinary context can benefit from the constructivism and transformative learning theory. By using research methodologies applied in data science research projects used as pedagogical artifacts, students can benefit from the concepts of the two learning theories: learners’ prior knowledge and experience as well as habits of mind and point of view.</p>
+<p>This paper illustrates the experience and lessons learnt from the design and teaching of a cross-discipline data science course at ETH Zurich. It shows how the course overcomes challenges observed in related courses reviewed in this paper such as creating a self-contained content or effectively choosing software tools for teaching, for instance, data manipulation and graphical analysis. Moreover, the diversity of (i) the students, (ii) the projects selected and (iii) the project teams is discussed along with its role to students’ success. The course and learning objectives, as defined within the Bloom’s taxonomy, are assessed with quantitative and qualitative information aggregated from official university evaluations as well as personal interviews conducted for the purpose of this paper. Several lessons learnt are derived related to the content size, the difficulty level, the role of diversity, the choice of software tools, the role of the research projects as a pedagogical artifact as well as the data requirements that students and lecturers need to take care of.</p>
+<p>This paper is outlined as follows: Section <xref rid="x1-20002">2</xref> discusses the perspective of learning theory on data science. Section <xref rid="x1-30003">3</xref> introduces the course “Data Science in Techno-socio-economic Systems” designed and taught at ETH Zurich. Section <xref rid="x1-40004">4</xref> illustrates the self-contained content of the course. Section <xref rid="x1-50005">5</xref> introduces the guideline of data science research projects and shares experiences on students’ work. Section <xref rid="x1-60006">6</xref> illustrates a quantitative and qualitative evaluation of the course and outlines future evaluation. Section <xref rid="x1-70007">7</xref> compares several aspects of the illustrated course with other data science educational programs and courses. Section <xref rid="x1-80008">8</xref> summarizes the lessons learnt and the societal implications of cross-disciplinary data science education. Finally, Section <xref rid="x1-90009">9</xref> concludes this paper.</p>
+</sec>
+<sec id="x1-20002">
+<label>2.</label>
+<title>Perspectives of learning theory on data science</title>
+<p>To the best of the author’s knowledge, there is very limited relevant work on how learning theory applies to data science education, and especially in the cross-discipline education of data science. This section discusses the perspective of two relevant theories in this context, the <italic>constructivism</italic> and <italic>transformative</italic> learning theory.</p>
+<p>A constructivism pedagogical approach to data science benefits from the prior knowledge and experiences on which learners of different background have been exposed [<xref ref-type="bibr" rid="ref009">9</xref>]. Beyond the technical computer science content of data science, the background knowledge that learners bring is invaluable to contextualize and develop data science knowledge and practices, as well as articulate a domain-specific reasoning via posing valid research questions and hypotheses from learners’ field of expertise [<xref ref-type="bibr" rid="ref016">16</xref>].</p>
+<p>Data science education with learning methods from the perspective of Papert’s constructionism [<xref ref-type="bibr" rid="ref038">38</xref>] promote the use of data science tools and techniques as self-learning artifacts to facilitate the construction of new knowledge [<xref ref-type="bibr" rid="ref001">1</xref>]: learning the actual data science methods and generate new knowledge from their applicability on a domain. In this sense, data science can be seen as an intellectual environment that students actively use as an evocative object [<xref ref-type="bibr" rid="ref047">47</xref>] to solve a domain problem, while this use entails practicing data science and therefore the development of new skills and knowledge. This view is in line with the learning approach of ‘to-think-with’ and ‘to-learn-with’ technology (data science in this context) [<xref ref-type="bibr" rid="ref042">42</xref>].</p>
+<p>The transformative learning theory is relevant to the education of data science in a cross-disciplinary context. The theory explains how learners revise and interpret meaning [<xref ref-type="bibr" rid="ref045">45</xref>] and articulates learning as the cognitive process of effecting change in a frame of reference composed of two dimensions: <italic>habits of mind</italic> and <italic>points of view</italic>. Emotions are involved [<xref ref-type="bibr" rid="ref027">27</xref>] and ideas may not be easily accepted if the pedagogical approach does not encounter the diversity of the learners, i.e. values, associations and concepts they have formed [<xref ref-type="bibr" rid="ref034">34</xref>]. This is especially relevant for cross-disciplinary data science education.</p>
+<p>For instance, consider the cognitive process of data speculation by learners of different disciplines, e.g. a (visual) exploratory analysis of residential energy demand data. Self-reflection on this process is evident given the habits of mind and view point of learners. An electrical engineer may speculate about system robustness, for instance power peaks causing blackouts. In contrast, an economist may interpret data in economic terms, meaning a power peak may imply low energy prices. And a social scientists may link power peaks to human behavior, for instance human mobility (returning back from work), residential activities and an overall certain lifestyle. Moreover, a computer scientist may find these data as privacy-intrusive given a prior knowledge on inference techniques capable of, for instance, detecting with high accuracy TV programs chosen by exclusively using data of the TV power consumption [<xref ref-type="bibr" rid="ref021">21</xref>]. Such ethical concerns may influence the individuals’ choices of the data analytics methods applied over sensitive personal data. The learning process as well as the educational content should encounter for this diversity and should have the capacity to be integrative of different learners’ experiences.</p>
+</sec>
+<sec id="x1-30003">
+<label>3.</label>
+<title>A cross-disciplinary data science course</title>
+<p>This section outlines a relevant cross-disciplinary data science course created at ETH Zurich. The 3-credit course entitled <italic>Data Science in Techno-socio-economic Systems</italic> is designed for MSc students and it is part of the department “Humanities, Social and Political Sciences” (GESS<xref ref-type="fn" rid="fn1">1</xref><fn id="fn1"><label><sup>1</sup></label>
+<p>Available at <uri>https://www.gess.ethz.ch/en/</uri> (last accessed: March 2017).</p></fn>). The course was designed in 2014 and has been running for the three years of 2015–2017 during spring semesters. The lecturers, including the author, have been two computer scientists with specialization in distributed systems and big data as well as a physicist. All lecturers have experience in multi-disciplinary research and work for the group “Computation Social Science” (COSS<xref ref-type="fn" rid="fn2">2</xref><fn id="fn2"><label><sup>2</sup></label>
+<p>Available at <uri>http://www.coss.ethz.ch</uri> (last accessed: March 2017).</p></fn>).</p>
+<table-wrap id="x1-30011">
+<label>Table 1</label>
+<caption>
+<p>Students’ educational direction participating in the course “Data Science in Techno-socio-economic systems”. The top-3 educational directions are indicated by the grey boxes and <italic>n</italic> denotes the number of students</p>
+</caption>
+<graphic xlink:href="ds-1-ds005-g001.jpg"/>
+</table-wrap>
+<p>Within the computer science curricula, ETH Zurich offers data science related courses for instance, data mining, big data, machine learning and others. Most of these courses are offered by renowned international experts and they concern state-of-the-art methods and techniques of data science, mainly from an academic viewpoint, i.e. analytical expressions and complexity analysis of machine learning algorithms. For this reason, most of these courses are mainly designed for students with a strong mathematical or computer science background. A similar trend is observed in the vast majority of science and technical universities as reviewed in Section <xref rid="x1-70007">7</xref>. The course “Data Science in Techno-socio-economic Systems” is designed to establish a broader scope of data science education that is highly cross-disciplinary, practical, yet, research-oriented. Without being an introductory course to the aforementioned more advanced and computer science-oriented courses, “Data Science in Techno-socio-economic Systems” minimizes the content overlap, while providing evident learning opportunities to students that attend more advanced courses to unfold advanced knowledge and skills in a new educational context.</p>
+<p>Table <xref rid="x1-30011">1</xref> illustrates the educational background of students participating in the course each year.<xref ref-type="fn" rid="fn3">3</xref><fn id="fn3"><label><sup>3</sup></label>
+<p>The students’ educational background is extracted from the students demographics available in the Supplementary Material.</p></fn> The following observations can be made: (i) Students from physics and computer science cover together almost half of the students throughout the years. (ii) The course gains significant popularity from students following the direction “Management, technology and economics”. (iii) Diversity in the directions increases over the years.</p>
+<p>Table <xref rid="x1-30022">2</xref> illustrates the semester status of the students who have participated.<xref ref-type="fn" rid="fn4">4</xref><fn id="fn4"><label><sup>4</sup></label>
+<p>The students’ semester status is extracted from the students demographics available in the Supplementary Material.</p></fn> There are three main categories of students attending the course: (i) 6th semester BSc students (last year BSc students), (ii) 2nd semester MSc students (first year MSc students) and (iii) PhD students. Therefore, the course succeeds to attract a broad range of students groups including mature BSc students, MSc students who early plan to get involved with data science education and PhD students who acquire data science skills in the their PhD project or intend to learn research methodologies applied in data science.</p>
+<table-wrap id="x1-30022">
+<label>Table 2</label>
+<caption>
+<p>Students’ semester status participating in the course “Data Science in Techno-socio-economic systems”. The top-3 semesters are indicated by the grey boxes and <italic>n</italic> denotes the number of students</p>
+</caption>
+<graphic xlink:href="ds-1-ds005-g002.jpg"/>
+</table-wrap>
+</sec>
+<sec id="x1-40004">
+<label>4.</label>
+<title>Self-contained data science education</title>
+<p>The goal of the course is to teach a large spectrum of postgraduate students data science and guide them to develop skills with which they can independently practice data science starting from data collection to oral/written presentation of results. Figure <xref rid="x1-40011">1</xref> illustrates learning objectives of the course according to Bloom’s taxonomy [<xref ref-type="bibr" rid="ref002">2</xref>]. The educational content relies on epistemic concepts of science and research in order to cultivate a problem-oriented mindset as well as confidence by learning rigorous methodologies and conventions: formulating research questions/hypotheses, presenting results in a quantitative manner, combining the behavioral and design science research strategies [<xref ref-type="bibr" rid="ref011">11</xref>].</p>
+<fig id="x1-40011">
+<label>Fig. 1.</label>
+<caption>
+<p>Learning objectives of the course “Data Science in Techno-socio-economic systems” according to Bloom’s taxonomy.</p>
+</caption>
+<graphic xlink:href="ds-1-ds005-g003.jpg"/>
+</fig>
+<p>Moreover, the education relies exclusively on open and free software. It has been shown that closed and proprietary software compromises empirical research and replication of results in data science [<xref ref-type="bibr" rid="ref015">15</xref>].</p>
+<p>Content-wise, the course covers the following topics:</p>
+<list list-type="bullet">
+<list-item>
+<p><bold>Fundamentals</bold>: data collection, data modeling, data manipulation, databases, plotting and visualization.</p>
+</list-item>
+<list-item>
+<p><bold>Data mining and machine learning</bold>: classification, decision-trees, clustering, prediction, neural networks and others.</p>
+</list-item>
+<list-item>
+<p><bold>Big data analytics</bold>: MapReduce, parallel computing, data streaming and social media.</p>
+</list-item>
+<list-item>
+<p><bold>Applications</bold>: smart grids, smart cities, traffic systems, social media, mobility, localization, activity recognition, privacy-preserving social sensing and mining.</p>
+</list-item>
+</list>
+<p>The course makes no assumption of pre-requisite knowledge, e.g. certain programming skills, and therefore, it is designed to build up a minimal knowledge at all stages of data science. Data manipulation proves to be one of the most challenging educational material to design here. It is the “makes your hands dirty” job, a critical requirement for the direct involvement of students in data science as it involves processing tabular data, removing missing values or outliers, aggregating, filtering, formatting and transforming data. Although most programming languages, e.g. python, scala, java, etc., provide advanced data manipulation methods, teaching a general-purpose programming language in a cross-disciplinary audience of students entails several drawbacks and limitations: (i) steep learning curve, especially for non-computer scientists, (ii) potential distraction from the main goals of the course, (iii) hard to make a choice for a programming language that would meet the expectations and desires of an heterogeneous audience [<xref ref-type="bibr" rid="ref050">50</xref>], (iv) may raise motivational issues for students who already perform data manipulation with a programming language of their convenience.</p>
+<p>The solution here has been AWK,<xref ref-type="fn" rid="fn5">5</xref><fn id="fn5"><label><sup>5</sup></label>
+<p>Available at <uri>https://www.gnu.org/software/gawk/manual/</uri> (last accessed: May 2017).</p></fn> a standardized interpreted unix programming language that is very easy to learn, it is a mature language with plenty of online learning material and serves the educational purpose of the course. AWK handles all I/O operations as well as resource management, i.e. memory, and therefore allows students to entirely focus on calculations over data. AWK has been a new experience for the vast majority of students, even for computer scientists with systems background who learn about the use of AWK in a new context: data science. Although there is very limited [<xref ref-type="bibr" rid="ref028">28</xref>] formal educational material of teaching AWK for data science, several online sources<xref ref-type="fn" rid="fn6">6</xref><fn id="fn6"><label><sup>6</sup></label>
+<p>Examples: <uri>http://www.gregreda.com/2013/07/15/unix-commands-for-data-science/</uri>, <uri>http://datascienceatthecommandline.com</uri>, <uri>http://john-hawkins.blogspot.ch/2013/09/using-awk-for-data-science.html</uri> (last accessed: May 2017).</p></fn> praise the features of the language for this purpose.</p>
+<p>Concerning databases, the focus is on running SQL queries. The free visual environment of MAMP<xref ref-type="fn" rid="fn7">7</xref><fn id="fn7"><label><sup>7</sup></label>
+<p>Available at <uri>https://www.mamp.info/en/</uri> (last accessed: May 2017).</p></fn> is used that comes with easy installation and configuration of Apache, PHP and MySQL. Moreover, the educational material on plotting includes Gnuplot<xref ref-type="fn" rid="fn8">8</xref><fn id="fn8"><label><sup>8</sup></label>
+<p>Available at <uri>http://gnuplot.sourceforge.net</uri> (last accessed: May 2017).</p></fn> that is free and open-source, supports graphical analysis, can interoperate with AWK and can provide high-quality graphics. Gephi<xref ref-type="fn" rid="fn9">9</xref><fn id="fn9"><label><sup>9</sup></label>
+<p>Available at <uri>https://gephi.org</uri> (last accessed: May 2017).</p></fn> is shown as a tool for studying and visualizing complex networks, although an extensive coverage of this topic is out of the scope of the course.</p>
+<p>The part on data mining and machine learning provides an overview to supervised and unsupervised machine learning algorithms and how to choose one for a certain problem. Teaching these algorithms from a mathematical perspective is covered in depth in other courses that require a narrower focus. Instead, this course aims at qualifying students to make informed decisions about the algorithms they use and their implications. For instance, it is shown that clustering of time series subsequences is meaningless despite a long lasting research that adopts this method [<xref ref-type="bibr" rid="ref030">30</xref>]. Similarly, extracting a user profile from historical discrete data by using the centroids of clusters may result in a profile that does not correspond to reality, as the mean may not appear in the historic data. The cluster medoids may be more relevant in such a case [<xref ref-type="bibr" rid="ref040">40</xref>]. Data over-fitting and under-fitting are discussed as well.</p>
+<p>The part on big data analytics covers batch vs. real-time data processing using Hadoop<xref ref-type="fn" rid="fn10">10</xref><fn id="fn10"><label><sup>10</sup></label>
+<p>Available at <uri>http://hadoop.apache.org</uri> (last accessed: May 2017).</p></fn> and Storm.<xref ref-type="fn" rid="fn11">11</xref><fn id="fn11"><label><sup>11</sup></label>
+<p>Available at <uri>http://storm.apache.org</uri> (last accessed: May 2017).</p></fn> Students are familiarized with the Hadoop architecture, job running, and terminology in addition to gaining a deep understanding of the MapReduce model. Several examples in pseudo-code are given, however, scripts and batch execution routines are illustrated as black boxes that students could use in their projects with lightweight modifications and the help of the tutors. Finally, emphasis is given on the challenges of big data such as distinguishing causation from correlations, especially spurious ones that appear when big data allow a massive number of variable combinations.</p>
+<p>The course is highly application-oriented. One of the goals of the course is to develop domain knowledge and expertise in a cross-disciplinary context. In other words, the students do not only apply data science methods in an application domain but instead they are given the opportunity to understand in more depth challenges of different domains and how data science methodologies can be used to tackle these challenges. Several case-study applications come from the multi-disciplinary research of the tutors [<xref ref-type="bibr" rid="ref020">20</xref>,<xref ref-type="bibr" rid="ref039">39</xref>,<xref ref-type="bibr" rid="ref040">40</xref>], adjusted in an educational context. They are accompanied by the datasets and the software code for the repeatability and expansion of the results by the students. To improve the cross-disciplinarity outcome of the course, lecturers of different discipline can give lectures about applications in the future. Moreover, earlier successful students’ projects are presented to develop a psychological construct of self-efficacy in the course [<xref ref-type="bibr" rid="ref007">7</xref>]. This proves to be particularly essential for students’ confidence and expectations at the beginning, when they define the goals of their projects.</p>
+</sec>
+<sec id="x1-50005">
+<label>5.</label>
+<title>Data science research projects</title>
+<p>Students are evaluated based on a group research project of 2–3 people that they have to carry out throughout the semester. The grade of the project covers entirely the grade of the course and it is formed based on the following criteria: (i) <italic>scientific clarity</italic>-25%, (ii) <italic>technical clarity</italic>-25%, (iii) <italic>writing and content presentation</italic>-25%, (iv) <italic>oral presentation</italic>-25%, (v) <italic>data generation and collection</italic>-10% bonus. The latter acknowledges the key role that data construction plays on scientific practices of theory development [<xref ref-type="bibr" rid="ref016">16</xref>].</p>
+<p>Unlike a more conventional project report, the research project for this course has several formal requirements that reflect on the knowledge quality of the course material required to successfully practice data science as well as effectively present results in writing and orally. In this sense, the research project can be seen as a pedagogical artifact reflecting on the constructivism learning theory [<xref ref-type="bibr" rid="ref009">9</xref>]. The project requirements are defined by an educational guideline that is based on fundamental epistemic concepts and conventions of research philosophy and strategy applied in the context of data science. The outline of the guideline is the following:</p>
+<list>
+<list-item id="x1-5001x5">
+<label>1.</label>
+<p><italic>Define the challenge</italic>.</p>
+</list-item>
+<list-item id="x1-5002x5">
+<label>2.</label>
+<p><italic>Define the outcome and its significance</italic>.</p>
+</list-item>
+<list-item id="x1-5003x5">
+<label>3.</label>
+<p><italic>Reason about a data science approach</italic>.</p>
+</list-item>
+<list-item id="x1-5004x5">
+<label>4.</label>
+<p><italic>Select the data sources</italic>.</p>
+</list-item>
+<list-item id="x1-5005x5">
+<label>5.</label>
+<p><italic>Define evaluation metrics and measurements</italic>.</p>
+</list-item>
+<list-item id="x1-5006x5">
+<label>6.</label>
+<p><italic>Build the data analytics pipeline</italic>.</p>
+</list-item>
+<list-item id="x1-5007x5">
+<label>7.</label>
+<p><italic>Perform validation and evaluation</italic>.</p>
+</list-item>
+<list-item id="x1-5008x5">
+<label>8.</label>
+<p><italic>Draw conclusions and future work</italic>.</p>
+</list-item>
+</list>
+<p>In Step 1, defining the challenge involves the formulation of a research question or hypothesis accompanied by related work. In other words, the students are encouraged to develop a problem-solving mindset from the very beginning of their project work. However, the guideline is not strict at this point as it is known that new research questions and hypotheses may become apparent during the exploratory data analysis. The outcome and the significance of a project in Step 2 concerns the broader positioning of students’ work in society. Is the outcome an artifact, such as an algorithm or an engineered system? Or just a better understanding of an observed phenomenon? Can the results be used to design a new policy? And for whom is the outcome relevant? An end user, a policy-maker or a system operator? A certain problem can be studied with other approaches beyond data science, for instance, agent-based simulation or analytical approaches. Justifying the intractability of a mathematical problem or reasoning about the data science approach is part of Step 3 of the guideline. The Step 4 of the guideline stands for the selection of data sources. Datasets need to meet project requirements, e.g. quality, size, format, granularity level etc. For instance, when a data science project on smart grid focuses on residential energy consumption, data about the aggregate load of a power grid are not relevant. In this case, residential smart meter energy data are required or advanced methods for energy disaggregation [<xref ref-type="bibr" rid="ref032">32</xref>]. The guideline encourages students to be quantitative in their presentations and for this reason they need to define specific meaningful metrics and measurements in Step 5. For instance, the relationships in a social network can be measured with topological and graph spectral properties. When these networks are temporal, the respective temporal metrics should be applied [<xref ref-type="bibr" rid="ref037">37</xref>]. The data analytics pipeline in Step 6 is the design of the data manipulation, processing and analytics performed. Step 7 suggests a high-quality presentation of quantitative results. Step 8 completes the guideline with explicitly stating the conclusions and future work.</p>
+<table-wrap id="x1-50093">
+<label>Table 3</label>
+<caption>
+<p>Students’ projects and diversity in their educational direction</p>
+</caption>
+<table frame="hsides" rules="groups">
+<thead>
+<tr>
+<td valign="top" align="left">Number</td>
+<td valign="top" align="center">Project</td>
+<td valign="top" align="center">Student 1</td>
+<td valign="top" align="center">Student 2</td>
+<td valign="top" align="center">Student 3</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top" align="left">1</td>
+<td valign="top" align="left">Graphical Analysis of Nervousnet Proximity Data</td>
+<td valign="top" align="left">Computer Science</td>
+<td valign="top" align="left"/>
+<td valign="top" align="left">–</td>
+</tr>
+<tr>
+<td valign="top" align="left">2</td>
+<td valign="top" align="left">How Can We Identify Crowds’ Behaviour Using Noise Data?</td>
+<td valign="top" align="left">Electrical engineering</td>
+<td valign="top" align="left">Physics</td>
+<td valign="top" align="left">–</td>
+</tr>
+<tr>
+<td valign="top" align="left">3</td>
+<td valign="top" align="left">Identifying community structures by geo-located Twitter data</td>
+<td valign="top" align="left">Environmental science and engineering</td>
+<td valign="top" align="left">Materials</td>
+<td valign="top" align="left">–</td>
+</tr>
+<tr>
+<td valign="top" align="left">4</td>
+<td valign="top" align="left">Topic extraction and analysis from scientific publications</td>
+<td valign="top" align="left">Biochemistry and physics</td>
+<td valign="top" align="left">Computational biology and bioinformatics</td>
+<td valign="top" align="left">Electrical engineering</td>
+</tr>
+<tr>
+<td valign="top" align="left">5</td>
+<td valign="top" align="left">Public Opinion on Climate Change</td>
+<td valign="top" align="left">Physics</td>
+<td valign="top" align="left">Physics</td>
+<td valign="top" align="left">–</td>
+</tr>
+<tr>
+<td valign="top" align="left">6</td>
+<td valign="top" align="left">Real-time human activity recognition from accelerometer data using Convolutional Neural Networks</td>
+<td valign="top" align="left">Computer science</td>
+<td valign="top" align="left">–</td>
+<td valign="top" align="left">–</td>
+</tr>
+<tr>
+<td valign="top" align="left">7</td>
+<td valign="top" align="left">Spurious relationships in Twitter data</td>
+<td valign="top" align="left">Physics</td>
+<td valign="top" align="left">Physics</td>
+<td valign="top" align="left">Physics</td>
+</tr>
+<tr>
+<td valign="top" align="left">8</td>
+<td valign="top" align="left">Are cyclists on the move according to weather conditions?</td>
+<td valign="top" align="left">Computer science</td>
+<td valign="top" align="left">Computer science</td>
+<td valign="top" align="left">Mechanical engineer</td>
+</tr>
+<tr>
+<td valign="top" align="left">9</td>
+<td valign="top" align="left">Identifying Opinion Leaders in Social Networks</td>
+<td valign="top" align="left">Computer science</td>
+<td valign="top" align="left">Computer science</td>
+<td valign="top" align="left">Computer science</td>
+</tr>
+<tr>
+<td valign="top" align="left">10</td>
+<td valign="top" align="left">Why do you leave your bicycle at home today? Factors that influence the number of bicycles in the city of Zurich</td>
+<td valign="top" align="left">Environmental Sciences and engineering</td>
+<td valign="top" align="left">Environmental Sciences and engineering</td>
+<td valign="top" align="left">–</td>
+</tr>
+<tr>
+<td valign="top" align="left">11</td>
+<td valign="top" align="left">A Case Study for Urban Stress Level Monitoring</td>
+<td valign="top" align="left">Mechanical engineering</td>
+<td valign="top" align="left">Architecture</td>
+<td valign="top" align="left">Mechanical engineering</td>
+</tr>
+<tr>
+<td valign="top" align="left">12</td>
+<td valign="top" align="left">Quantitative Evaluation of Gender Bias in Astronomy</td>
+<td valign="top" align="left">Physics</td>
+<td valign="top" align="left">Physics</td>
+<td valign="top" align="left">Physics</td>
+</tr>
+<tr>
+<td valign="top" align="left">13</td>
+<td valign="top" align="left">Analysis of Language Mobility using Twitter Messages</td>
+<td valign="top" align="left">Management, technology and economics</td>
+<td valign="top" align="left">Management, technology and economics</td>
+<td valign="top" align="left">Management, technology and economics</td>
+</tr>
+<tr>
+<td valign="top" align="left">14</td>
+<td valign="top" align="left">Sentiment Analysis on Twitter Data</td>
+<td valign="top" align="left">Computer science</td>
+<td valign="top" align="left">Computer science</td>
+<td valign="top" align="left">Computational biology and bioinformatics</td>
+</tr>
+<tr>
+<td valign="top" align="left">15</td>
+<td valign="top" align="left">Schizophrenia Classification Challenge Report</td>
+<td valign="top" align="left">Computer science</td>
+<td valign="top" align="left">Electrical engineering</td>
+<td valign="top" align="left">Electrical engineering</td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+<p>The guideline is presented to the students at the very first lecture followed by lectures with project examples that adhere to the guideline. Students are asked to deliver an early one-page proposal at the 3rd week of the semester outlining the challenge they tackle, why they employ a data science approach, what the related work is in the problem area and what data they intend to use. At the end of the semester, students deliver their report and present their project to the course instructors as well as all other students in the class, who can challenge their classmates with questions.</p>
+<p>Table <xref rid="x1-50093">3</xref> illustrates students’ projects during the first and the second year of the course. The following two key observations can be made: (i) The diversity of the projects is very high ranging from analysis of twitter data, mobile sensing, Internet of Things, analysis of scientific publications, analysis of traffic and environmental data, medical applications and other. (ii) The diversity of the students’ background in the teams formed is not high. The group formation trend is that students either form teams with colleagues they know from their own study program or they are more comfortable when they work together with people from the same background, even if they choose a project that is not in the domain area of their expertise, for instance Project 4 and 15.</p>
+<p>However there are some exceptions worth mentioning and discussing. For instance, Project 11 has been a challenging project, though very successful and resulted in a prestigious scientific publication in conference proceedings [<xref ref-type="bibr" rid="ref022">22</xref>]. This project was conducted by an architect and two mechanical engineers and involved an advanced data collection process in the context of smart cities using mobile phones, wearables and several environmental sensors carried by participants in the study. The goal of the project was to measure several urban qualities in a city path, for instance, greenery, stress, noise pollution and others. Project 13 is another successful project ran by students of the same, but highly inter-disciplinary study program and resulted in a scientific publication as well [<xref ref-type="bibr" rid="ref035">35</xref>]. The goal of the project is to measure the spatio-temporal language mobility evolution and detect real-world events as well as tourism patterns via Twitter and the analysis of 10TB of tweets.<xref ref-type="fn" rid="fn12">12</xref><fn id="fn12"><label><sup>12</sup></label>
+<p>Available at <uri>https://archive.org/details/twitterstream.</uri> (last accessed: May 2017).</p></fn></p>
+<p>There are also projects though that faced some serious challenges. For example, Project 10 studied correlations between the use of bicycles and the weather in Zurich. It proved not to be straightforward for the students to go beyond descriptive statistics and a regression analysis of the data without additional supervision effort. In this particularly case, the low diversity of the group played a critical role. At the end the students managed to compare classification results on weather phenomena between k-means clustering and the Gaussian Data finite mixture model fitted by the EM algorithm [<xref ref-type="bibr" rid="ref019">19</xref>]. Project 2 also proved to be especially challenging for the students due to the low data quality by privacy-preservation constraints introduced during the data collection process [<xref ref-type="bibr" rid="ref036">36</xref>]. In this case, the initial hypothesis was whether the activity of the Chaos Communication Congress<xref ref-type="fn" rid="fn13">13</xref><fn id="fn13"><label><sup>13</sup></label>
+<p>Available at <uri>https://www.ccc.de/en/</uri> (last accessed: May 2017).</p></fn> could be detected via noise sensors, for instance, parallel sessions, breaks, human interactions and other. During the 2014 edition of the congress, the Nervousnet<xref ref-type="fn" rid="fn14">14</xref><fn id="fn14"><label><sup>14</sup></label>
+<p>Available at <uri>http://www.nervousnet.ethz.ch</uri> (last accessed: May 2017).</p></fn> team deployed a smart phone platform for an anonymous privacy-preserving data collection that involves smart phone sensors as well as a GPS-free privacy-preserving localization mechanism using bluetooth beacons [<xref ref-type="bibr" rid="ref036">36</xref>]. As the platform relies on a volunteering and participatory data collection process, the collected dataset is highly sparse, yet contains data from a wide range of sensors. By exclusively narrowing the scope of the project down to the noise sensor, students could not detect events with a high accuracy and statistical confidence despite the heavy interpolation applied. However, during the project, they started experimenting with the other sensor data available and turned their project on mining sensor data into a sensor fusion project that improved the detection accuracy significantly. A lesson learnt here is that practicing data science under the constraint of privacy-preservation requires an explicit addressing in the data science course design with more advanced techniques and the education of alternative approaches, for instance, privacy-preserving data analytics using summarization and differential privacy [<xref ref-type="bibr" rid="ref039">39</xref>].</p>
+</sec>
+<sec id="x1-60006">
+<label>6.</label>
+<title>Course evaluation and students’ feedback</title>
+<p>The course has received so far two official evaluations by the students conducted on behalf of ETH Zurich. The general satisfaction has been 4.4/5.0 and the lecturers’ evaluation 4.5/5.0 on the following aspects: understandable and clear explanation of the subject, learning goals, lecture significance, motivation to active participation, and material made available.</p>
+<p>For the purpose of this paper, the author conducted interviews<xref ref-type="fn" rid="fn15">15</xref><fn id="fn15"><label><sup>15</sup></label>
+<p>The full text of the interviews is available in the Supplementary Material.</p></fn> with 5 students that attended the course during the first two years to acquire further information about its effectiveness within a cross-disciplinary educational scope and the research-oriented methodology on teaching data science. The educational background of the interviewees is outlined in Table <xref rid="x1-60014">4</xref>.</p>
+<table-wrap id="x1-60014">
+<label>Table 4</label>
+<caption>
+<p>Educational background of interviewees</p>
+</caption>
+<table frame="hsides" rules="groups">
+<thead>
+<tr>
+<td valign="top" align="left">Interviewee</td>
+<td valign="top" align="center">Direction</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top" align="left">1</td>
+<td valign="top" align="left">Architecture</td>
+</tr>
+<tr>
+<td valign="top" align="left">2</td>
+<td valign="top" align="left">Mechanical engineering</td>
+</tr>
+<tr>
+<td valign="top" align="left">3</td>
+<td valign="top" align="left">Computer science</td>
+</tr>
+<tr>
+<td valign="top" align="left">4</td>
+<td valign="top" align="left">Mechanical engineering</td>
+</tr>
+<tr>
+<td valign="top" align="left">5</td>
+<td valign="top" align="left">Management, technology and economics</td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+<p>The interview is guided by the following agenda questions:</p>
+<list>
+<list-item id="x1-6002x6">
+<label>1.</label>
+<p><italic>How effective was the course for you?</italic></p>
+</list-item>
+<list-item id="x1-6003x6">
+<label>2.</label>
+<p><italic>Was this course too easy or too hard for you?</italic></p>
+</list-item>
+<list-item id="x1-6004x6">
+<label>3.</label>
+<p><italic>If you are a computer scientist, what were beneficial and limiting factors after attending a data science course designed beyond the computer scientist?</italic></p>
+</list-item>
+<list-item id="x1-6005x6">
+<label>4.</label>
+<p><italic>If you are not a computer scientist, what were beneficial and limiting factors for you after attending a data science course taught by computer scientists and including other computer science students?</italic></p>
+</list-item>
+<list-item id="x1-6006x6">
+<label>5.</label>
+<p><italic>How successful was the course to provide you the minimum set of skills to practice data science?</italic></p>
+</list-item>
+<list-item id="x1-6007x6">
+<label>6.</label>
+<p><italic>How effective was in this course to learn doing research by practicing data science?</italic></p>
+</list-item>
+<list-item id="x1-6008x6">
+<label>7.</label>
+<p><italic>How effective was in this course to learn data science by doing some research?</italic></p>
+</list-item>
+</list>
+<p>Questions 6 and 7 reflect on how students perceive constructionism learning methods [<xref ref-type="bibr" rid="ref038">38</xref>], data science as an evocative object [<xref ref-type="bibr" rid="ref047">47</xref>] and the learning approach of ‘to-think-with’ and ‘to-learn-with’ technology (data science in this context) [<xref ref-type="bibr" rid="ref042">42</xref>]. Questions 3 and 4 reflect on how students experience the transformative learning approach [<xref ref-type="bibr" rid="ref045">45</xref>]. They are formulated from the perspective of the computer scientist vs. non-computer scientist to encounter the diversity [<xref ref-type="bibr" rid="ref034">34</xref>] and the dimensions within the frame of reference of the cognitive learning process [<xref ref-type="bibr" rid="ref045">45</xref>]: habits of mind and points of view.</p>
+<p>During the interviews, the effectiveness of the course was communicated by Interviewee 2 as “<italic>a very nice change from my normal study life</italic>” and “<italic>learnt a lot of interdisciplinary skills</italic>”. Interviewee 5 gave emphasis on group work by stating that “<italic>got to work closely with people, learn how they work and think, brainstorming and share ideas, make friends</italic>”. Interviewee 4 realized that “<italic>Later on in my studies I could see a lot of areas where a data science approach could be useful, so I am happy to tell that I acquired some basic skills to practice data science.</italic>”, while Interviewee 1 experienced the course as “<italic>a good overview for techniques in data science</italic>”. However, Interviewee 3 noticed that “<italic>I would like to have known more about the exact technical details of the example applications that were presented.</italic>” and “<italic>as a computer science student I really like the implementation details.</italic>” This indicates that it is very challenging to capture the right level of detail for a broad range of students with different expectations. This challenge is also identified in earlier work on data science education [<xref ref-type="bibr" rid="ref023">23</xref>].</p>
+<p>Interviewee 5 mentioned that the course had the “<italic>appropriate</italic>” difficulty level and Interviewee 3 found the course “<italic>relatively easy</italic>” as the interviewee felt “<italic>familiar with most technical details discussed during the course</italic>”. In contrast, Interviewee 2 said that the “<italic>course is one of the most complex and time intensive courses I did in GESS</italic>” but also mentioned that “<italic>the level was perfect to learn new skills</italic>”. In similar line is Interviewee 4 by stating that “<italic>the course was pretty hard for me, but the effort was worth it</italic>”. Interviewee 1 identified that the course “<italic>was challenging but not too hard, especially since we had to work in groups for our final projects</italic>”.</p>
+<p>Question 3 answered by Interviewee 3 revealed that “<italic>a lot of time the course was focused on data science technical stuff I was already familiar with</italic>”. However the student also stated that “<italic>A benefit was seeing all those applications on the real world, which we don’t usually focus on in computer science</italic>”. Question 4 was answered by the rest of the interviewees. Interviewee 2 mentioned that “<italic>I profited from knowledge and experience of other participants and lecturers and learned new terms of data science and statistics</italic>” but also stated that “<italic>I did not have a lot of background knowledge about the hard skills and libraries. This wasn’t limiting for the course but for the project we did, because we needed a lot of time to find the right sources and libraries</italic>”. Interviewee 5 listed as benefits “<italic>(i) coaching from the COSS team, (ii) learn about social data, opportunities, limitations, (iii) presentations by the other teams: gives ideas, insights and (iv) learn some new tools, e.g. mawk</italic>”. It was mentioned as limiting factor the “<italic>Too much material covered during the lectures</italic>”. Interviewee 4 found beneficial the “<italic>The way of thinking of a data scientist</italic>” while Interviewee 1 “<italic>would have preferred to have hands on examples/tutorials of various techniques in a given programming language</italic>”.</p>
+<p>The answers on Question 5 share similar remarks on the beneficial and limiting factors of Questions 3 and 4. Interviewee 5 mentioned “<italic>better to focus on the top-3 tools and techniques</italic>” with Interviewee 1 agreeing, though adding that “<italic>it helped point students in the right direction for which techniques might be useful for which questions</italic>”. Interviewee 2 reacted very positively by stating “<italic>Very successful, I learned the skills to approach a big data problem and subdividing it into smaller problems. I also got to know nice tools to do that in real problems such as Weka and scikit (a python library).</italic>” and Interviewee 4 “<italic>I could see a lot of areas where a data science approach could be useful, so I am happy to tell that I acquired some basic skills to practice data science.</italic>”</p>
+<p>Answers to Questions 6 and 7 have a high heterogeneity, evidently showing how students perceive the link between data science and research methodologies. For Interviewee 1, “<italic>was nice to learn techniques from other disciplines</italic>” and “<italic>nice to have a project to test your solutions</italic>”, though “<italic>could have helped to have intermediate homework/assignments as well</italic>”. Interviewee 2 finds doing research by practicing data science as “<italic>quite effective</italic>”, however, leaning data science by doing some research proves to be “<italic>quite time consuming</italic>”. Interviewee 4 confidently states that “<italic>if there wasn’t our project, I would not understand cluster-based approaches as I do so now</italic>” and supports that doing projects is “<italic>the best way to learn</italic>”. Interviewee 5 believes that this course should have “<italic>part of the lecture devoted to how to conduct research in general</italic>”, though practicing data science cannot obviously cover the whole broad spectrum of research methodology. In contrast, Interviewee 5 perceived the learning of data science by doing some research as “<italic>One of my best ETH experiences so far</italic>”.</p>
+<p>Although this evaluation provides several insights about the course performance, other aspects can be evaluated as part of future work: success in job market, lecturers’ multi-disciplinarity in the learning outcome, comparison to web science curricula [<xref ref-type="bibr" rid="ref013">13</xref>], applicability of this cross-disciplinary design other data science courses.</p>
+</sec>
+<sec id="x1-70007">
+<label>7.</label>
+<title>Comparison of related work on data science education</title>
+<p>There is an ongoing interest on data science education. Research work mainly focuses on the design of large undergraduate and postgraduate programs [<xref ref-type="bibr" rid="ref003">3</xref>,<xref ref-type="bibr" rid="ref004">4</xref>,<xref ref-type="bibr" rid="ref018">18</xref>,<xref ref-type="bibr" rid="ref023">23</xref>]. Data science is usually an organizational frame of the curriculum in which well-established courses lie such as programming, data mining, big data and machine learning.</p>
+<p>Nevertheless some limited earlier work illustrates experiences from recent courses tailored to data science. For instance, an inter-disciplinary approach to data science at Wright State University is earlier illustrated [<xref ref-type="bibr" rid="ref006">6</xref>]. In contrast to the course illustrated in this paper, the inter-disciplinarity is limited to students studying computer science and management of information systems. Moreover, the content mainly focuses on statistics and programming skills without covering topics such as big data or a broader range of data mining algorithms. Furthermore, the integration of data science related courses in the statistics curricula of six universities is earlier reviewed and comparison is made on the topics covered [<xref ref-type="bibr" rid="ref023">23</xref>]. From the six courses, only the one of the Smith College is entirely designed as an data science course. Moreover, the courses mainly focus on cultivating programming skills in R and other technologies. They do not involve research concepts and are not designed to function in a cross-disciplinary context. However the tutors of the courses identify challenges encountered in the course of ETH Zurich as well. For instance keeping students with varied computational skills and backgrounds on the same page and motivational level or assembling consistent material from different sources suggest space for improvement.</p>
+<p>There are also educational programs that mainly focus on massive open online courses of data science. Issues such as standards for sharing data [<xref ref-type="bibr" rid="ref049">49</xref>], technologies for these types of courses, e.g. OpenEdX are covered [<xref ref-type="bibr" rid="ref018">18</xref>]. Gamification is a promising concept to engage students in a cross-disciplinary context. For instance, the Learn2Mine [<xref ref-type="bibr" rid="ref005">5</xref>] platform uses notifications and badges as feedback and rewards. Earned badges mark progress that unlock the ability to earn “Learned” and “Mastery” status for lessons taught. Leaderboards promote the development of reputation and competition among learners. The potential exploration of these methods in the illustrated course is part of future work.</p>
+</sec>
+<sec id="x1-80008">
+<label>8.</label>
+<title>Lessons learnt and societal implications</title>
+<p>The design and teaching of the course “Data Science in Techno-socio-economic Systems” in a cross-disciplinary audience of students results in several lessons learnt that can be summarized as follows:</p>
+<list list-type="bullet">
+<list-item>
+<p><bold>Content size and level</bold>: Although the students express in overall a high satisfaction about the size of the material and the difficulty level, a few remarks indicate that there is space for improvement. The feedback suggests that working/lab sessions during the class may motivate further the non-computer scientists to improve their knowledge as well as the computer scientists to practice their skills during the course. Moreover, if the educational curriculum allows an increase in the course credits, the students could work on deliverables during the semester and undertake formal exams at the end of semester as a more systematic way to track and capitalize progress throughout the semester.</p>
+</list-item>
+<list-item>
+<p><bold>Diversity</bold>: It is shown that the proposed course design motivates a high level of diversity in the educational background of the participating students as well as in the projects students choose. However, the diversity of the teams can improve by accommodating the formation of teams, stretching more the role of diversity in the evident success of the projects or by incentivizing with a bonus grade cross-disciplinary teams.</p>
+</list-item>
+<list-item>
+<p><bold>Software tools</bold>: For a lecturer teaching data science in a cross-disciplinary audience, the choice of software tools is not straightforward and to certain extent it is a trade-off between the level of technical challenge and meeting the minimum course requirements. The opposing views of Interviewee 2 and 3 here are representative of the challenge that is also identified in earlier work [<xref ref-type="bibr" rid="ref023">23</xref>]. The experience gained from the course shows that the choice of AWK for data manipulation and Gnuplot for plotting and graphical analysis are some reference examples for how to deal with such trade-offs. A data scientist trained and relying on a broad spectrum of open-source software tools is more versatile in the job market than a data scientist trained for commercial software solutions. Moreover, rigorous evaluation and replication of results benefits from free and open-source tools [<xref ref-type="bibr" rid="ref015">15</xref>]. It is essential for tutors to cultivate in students the knowledge, skills and critical thinking required to independently make informed choices about the use of the most appropriate software tools for a certain data science task.</p>
+</list-item>
+<list-item>
+<p><bold>Research as a pedagogical artifact</bold>: The research project proves to be a highly rewarding experience for students to learn data science and evidently has a high pedagogical value within a cross-disciplinary educational context. Students acknowledge the challenge to apply rigorous scientific methodologies on which they may not have earlier formal training. However, the research projects undoubtedly have a motivational value, provide freedom to students to unfold their interests and they are an actual opportunity to apply data science skills in real-world problems. From theory perspective, a data science research project at a MSc level, in the way it is setup, serves well the constructivism and transformative learning theories: prior knowledge of learners, habits of minds, points of view find reflection. Research projects run the risk of being too ambitious in the scope of a semester course, may rely on false assumptions or lack focus and therefore require a significant level of personalized supervision and feedback as the transformative theory suggests [<xref ref-type="bibr" rid="ref043">43</xref>]. This is especially the case at the beginning during which tutors need to accommodate students’ confidence and convey a spirit of self-efficacy.</p>
+</list-item>
+<list-item>
+<p><bold>Data requirements</bold>: Data itself impose both explicit and implicit constraints on what a data scientist can learn from the data. The experience on the course shows that students can often overestimate or underestimate such constraints in data science projects. Factors such as quality, dimensionality, granularity as well as functional/non-functional requirements during data collection, for instance, informational self-determination and privacy-preservation alter the opportunity space on what someone can learn from data. Scraping the surface of the available data and putting under scrutiny different graphical views, aggregation levels and data transformations shapes the solution to a data science problem or even reshapes a new solution to a different problem that was not evident or intended before this process.</p>
+</list-item>
+</list>
+<p>The facilitation of cross-disciplinary data science education in university curricula qualifies a new generation of versatile professionals with the capability to communicate and work together with a broader range of experts. Moreover, making accessible data science to a wider range of domain experts can reduce business training costs. Similarly, academic education of data science with open-source and free software tools can reduce business costs on expensive commercial software suites.</p>
+<p>Data science education using research methodologies cultivates to citizens a higher awareness about what data mean, a cognitive reasoning based on empirical evidence, critical thinking and constructive doubt. In other words, it cultivates these mental capacities to withstand the challenges of our nowadays digital societies [<xref ref-type="bibr" rid="ref025">25</xref>] concerning the interpretation and wise use of information from (social) media [<xref ref-type="bibr" rid="ref017">17</xref>], populism leading to ineffective voting [<xref ref-type="bibr" rid="ref008">8</xref>,<xref ref-type="bibr" rid="ref010">10</xref>], privacy and autonomy violations from big data profiling technologies or profit-oriented recommender systems [<xref ref-type="bibr" rid="ref024">24</xref>,<xref ref-type="bibr" rid="ref041">41</xref>], manipulative actions and means of propaganda in social networks and beyond [<xref ref-type="bibr" rid="ref046">46</xref>].</p>
+</sec>
+<sec id="x1-90009">
+<label>9.</label>
+<title>Conclusion</title>
+<p>This paper concludes that cross-disciplinary data science education is highly challenging and requires a very different approach in the design of study courses than data science education exclusively for computer scientists. However, this paper shows that cross-disciplinary data science education is feasible and highly rewarding for students. The perspective of constructivism and transformative learning theory proves effective for the design of a novel course with these challenging requirements. In contrast to related courses, the position of this paper is that learning data science in this cross-disciplinary context has a value by itself as the students’ diversity and the blend of skills in collaborative research projects create multifaceted learning opportunities that cannot unfold otherwise. This is empirically shown via the design, development and teaching of a new cross-disciplinary data science course at a top-class university and the experiences aggregated throughout the lifetime of the course.</p>
+<p>This paper contributes lessons learnt such as how to make choices in regards to the content size and difficulty level, the diversity of students, students’ projects and project teams, the choice of software tools for different data science tasks, the use of research projects as a pedagogical artifact and how data requirements influence what a student can learn from data. Cross-disciplinary data science education qualifies more versatile data scientists in the job market, can reduce business costs for training and ultimately cultivate a more democratic and participatory citizen prepared to respond to the upcoming challenges of the digital society [<xref ref-type="bibr" rid="ref025">25</xref>].</p>
+</sec>
+</body>
+<back>
+<ack>
+<title>Acknowledgement</title>
+<p>Special thanks go to Dr. Izabela Moise for her contribution and our collaboration to design and run the MSc course “Data Science in Techno-socio-economic Systems”. The author would also like to thank Prof. Dr. Dirk Helbing, the Computational Social Science (COSS) group and the department of Humanities, Social and Political Sciences (GESS) at ETH Zurich for hosting and supporting this course. I am grateful to the interviewees, as well as all students attending this course for making cross-disciplinary education of data science such an enriching and constructive teaching experience. Last but not least, I would like to thank Pia Scherrer and Benno Volk for their feedback on the paper and the invaluable experience I had in their course “Foundations of Teaching and Learning” at ETH Zurich.</p></ack>
+<ref-list>
+<title>References</title>
+<ref id="ref001">
+<label>[1]</label><mixed-citation publication-type="journal"><string-name><given-names>E.</given-names> <surname>Ackermann</surname></string-name>, <article-title>Piaget’s constructivism, papert’s constructionism: What’s the difference</article-title>, <source>Future of Learning Group Publication</source> <volume>5</volume>(<issue>3</issue>) (<year>2001</year>), <fpage>438</fpage>. <uri>http://learning.media.mit.edu/content/publications/EA.Piaget%20_%20Papert.pdf</uri>.</mixed-citation>
+</ref>
+<ref id="ref002">
+<label>[2]</label><mixed-citation publication-type="other"><string-name><given-names>L.W.</given-names> <surname>Anderson</surname></string-name>, <string-name><given-names>D.R.</given-names> <surname>Krathwohl</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Airasian</surname></string-name>, <string-name><given-names>K.</given-names> <surname>Cruikshank</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Mayer</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Pintrich</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Raths</surname></string-name> and <string-name><given-names>M.</given-names> <surname>Wittrock</surname></string-name>, <source>A Taxonomy for Learning, Teaching and Assessing: A Revision of Bloom’s Taxonomy</source>, <publisher-name>Longman Publishing</publisher-name>, <publisher-loc>New York</publisher-loc>, <year>2001</year>. <uri>https://www.amazon.com/Taxonomy-Learning-Teaching-Assessing-Educational/dp/080131903X</uri>.</mixed-citation>
+</ref>
+<ref id="ref003">
+<label>[3]</label><mixed-citation publication-type="chapter"><string-name><given-names>P.</given-names> <surname>Anderson</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Bowring</surname></string-name>, <string-name><given-names>R.</given-names> <surname>McCauley</surname></string-name>, <string-name><given-names>G.</given-names> <surname>Pothering</surname></string-name> and <string-name><given-names>C.</given-names> <surname>Starr</surname></string-name>, <chapter-title>An undergraduate degree in data science: Curriculum and a decade of implementation experience</chapter-title>, in: <source>Proceedings of the 45th ACM Technical Symposium on Computer Science Education</source>, <publisher-name>ACM</publisher-name>, <year>2014</year>, pp. <fpage>145</fpage>–<lpage>150</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1145/2538862.2538936" xlink:type="simple">10.1145/2538862.2538936</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref004">
+<label>[4]</label><mixed-citation publication-type="chapter"><string-name><given-names>P.</given-names> <surname>Anderson</surname></string-name>, <string-name><given-names>J.</given-names> <surname>McGuffee</surname></string-name> and <string-name><given-names>D.</given-names> <surname>Uminsky</surname></string-name>, <chapter-title>Data science as an undergraduate degree</chapter-title>, in: <source>Proceedings of the 45th ACM Technical Symposium on Computer Science Education</source>, <publisher-name>ACM</publisher-name>, <year>2014</year>, pp. <fpage>705</fpage>–<lpage>706</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1145/2538862.2538868" xlink:type="simple">10.1145/2538862.2538868</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref005">
+<label>[5]</label><mixed-citation publication-type="chapter"><string-name><given-names>P.E.</given-names> <surname>Anderson</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Turner</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Dierksheide</surname></string-name> and <string-name><given-names>R.</given-names> <surname>McCauley</surname></string-name>, <chapter-title>An extensible online environment for teaching data science concepts through gamification</chapter-title>, in: <source>Frontiers in Education Conference (FIE), 2014 IEEE</source>, <publisher-name>IEEE</publisher-name>, <year>2014</year>, pp. <fpage>1</fpage>–<lpage>8</lpage>. <uri>https://doi.org/10.1109/FIE.2014.7044205</uri>.</mixed-citation>
+</ref>
+<ref id="ref006">
+<label>[6]</label><mixed-citation publication-type="other"><string-name><given-names>D.</given-names> <surname>Asamoah</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Doran</surname></string-name> and <string-name><given-names>S.</given-names> <surname>Schiller</surname></string-name>, Teaching the foundations of data science: An interdisciplinary approach, 2015, arXiv preprint <pub-id pub-id-type="arxiv">arXiv:1512.04456</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref007">
+<label>[7]</label><mixed-citation publication-type="journal"><string-name><given-names>A.</given-names> <surname>Bandura</surname></string-name>, <article-title>Self-efficacy: Toward a unifying theory of behavioral change</article-title>, <source>Psychological Review</source> <volume>84</volume>(<issue>2</issue>) (<year>1977</year>), <fpage>191</fpage>–<lpage>215</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1037/0033-295X.84.2.191" xlink:type="simple">10.1037/0033-295X.84.2.191</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref008">
+<label>[8]</label><mixed-citation publication-type="chapter"><string-name><given-names>J.</given-names> <surname>Bartlett</surname></string-name>, <chapter-title>Populism, social media and democratic strain</chapter-title>, in: <source>Democracy in Britain: Essays in Honour of James Cornford</source>, <year>2014</year>, pp. <fpage>91</fpage>–<lpage>96</lpage>. <uri>https://www.ippr.org/publications/democracy-in-britain-essays-in-honour-of-james-cornford</uri>.</mixed-citation>
+</ref>
+<ref id="ref009">
+<label>[9]</label><mixed-citation publication-type="journal"><string-name><given-names>R.E.</given-names> <surname>Bleicher</surname></string-name> and <string-name><given-names>J.</given-names> <surname>Lindgren</surname></string-name>, <article-title>Success in science learning and preservice science teaching self-efficacy</article-title>, <source>Journal of Science Teacher Education</source> <volume>16</volume>(<issue>3</issue>) (<year>2005</year>), <fpage>205</fpage>–<lpage>225</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1007/s10972-005-4861-1" xlink:type="simple">10.1007/s10972-005-4861-1</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref010">
+<label>[10]</label><mixed-citation publication-type="other"><string-name><given-names>G.</given-names> <surname>Brown</surname></string-name>, <chapter-title>Review of education in mathematics, data science and quantitative disciplines: Report to the group of eight universities</chapter-title>, in: <source>Group of Eight (NJ1)</source>, <year>2009</year>. <uri>https://go8.edu.au/sites/default/files/docs/go8mathsreview_0.pdf</uri>.</mixed-citation>
+</ref>
+<ref id="ref011">
+<label>[11]</label><mixed-citation publication-type="journal"><string-name><given-names>S.A.</given-names> <surname>Carlsson</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Henningsson</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Hrastinski</surname></string-name> and <string-name><given-names>C.</given-names> <surname>Keller</surname></string-name>, <article-title>Socio-technical is design science research: Developing design theory for is integration management</article-title>, <source>Information Systems and e-Business Management</source> <volume>9</volume>(<issue>1</issue>) (<year>2011</year>), <fpage>109</fpage>–<lpage>131</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1007/s10257-010-0140-6" xlink:type="simple">10.1007/s10257-010-0140-6</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref012">
+<label>[12]</label><mixed-citation publication-type="chapter"><string-name><given-names>N.L.</given-names> <surname>Cassel</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Posner</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Dicheva</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Goelman</surname></string-name>, <string-name><given-names>H.</given-names> <surname>Topi</surname></string-name> and <string-name><given-names>C.</given-names> <surname>Dichev</surname></string-name>, <chapter-title>Advancing data science for students of all majors</chapter-title>, in: <source>Proceedings of the 2017 ACM SIGCSE Technical Symposium on Computer Science Education</source>, <publisher-name>ACM</publisher-name>, <year>2017</year>, pp. <fpage>722</fpage>–<lpage>722</lpage>. <uri>https://doi.org/10.1145/3017680.3022362</uri>.</mixed-citation>
+</ref>
+<ref id="ref013">
+<label>[13]</label><mixed-citation publication-type="chapter"><string-name><given-names>E.</given-names> <surname>Coskun</surname></string-name> and <string-name><given-names>S.</given-names> <surname>White</surname></string-name>, <chapter-title>Evolving a web science curriculum</chapter-title>, in: <source>Proceedings of the 16th Koli Calling International Conference on Computing Education Research, Koli Calling ’16</source>, <publisher-name>ACM</publisher-name>, <publisher-loc>New York, NY, USA</publisher-loc>, <year>2016</year>, pp. <fpage>170</fpage>–<lpage>171</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1145/2999541.2999566" xlink:type="simple">10.1145/2999541.2999566</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref014">
+<label>[14]</label><mixed-citation publication-type="chapter"><string-name><given-names>T.H.</given-names> <surname>Davenport</surname></string-name> and <string-name><given-names>D.J.</given-names> <surname>Patil</surname></string-name>, <chapter-title>Data scientist: The sexiest job of the 21st century – a new breed of professional holds the key to capitalizing on big data opportunities. But these specialists aren’t easy to find – and the competition for them is fierce</chapter-title>, in: <source>Harvard Business Review</source>, <year>2012</year>, p. <fpage>70</fpage>. <uri>https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century</uri>.</mixed-citation>
+</ref>
+<ref id="ref015">
+<label>[15]</label><mixed-citation publication-type="other"><string-name><given-names>R.P.</given-names> <surname>Dos Santos</surname></string-name>, Big data as a mediator in science teaching: A proposal, 2014. <uri>https://arxiv.org/abs/1405.6328</uri>.</mixed-citation>
+</ref>
+<ref id="ref016">
+<label>[16]</label><mixed-citation publication-type="journal"><string-name><given-names>R.</given-names> <surname>Duschl</surname></string-name>, <article-title>Science education in three-part harmony: Balancing conceptual, epistemic, and social learning goals</article-title>, <source>Review of Research in Education</source> <volume>32</volume>(<issue>1</issue>) (<year>2008</year>), <fpage>268</fpage>–<lpage>291</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.3102/0091732X07309371" xlink:type="simple">10.3102/0091732X07309371</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref017">
+<label>[17]</label><mixed-citation publication-type="other"><string-name><given-names>U.</given-names> <surname>Eco</surname></string-name>, <source>Faith in Fakes</source>, <publisher-name>Random House</publisher-name>, <year>2014</year>. <uri>https://en.wikipedia.org/wiki/Faith_in_Fakes</uri>.</mixed-citation>
+</ref>
+<ref id="ref018">
+<label>[18]</label><mixed-citation publication-type="chapter"><string-name><given-names>G.</given-names> <surname>Fox</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Maini</surname></string-name>, <string-name><given-names>H.</given-names> <surname>Rosenbaum</surname></string-name> and <string-name><given-names>D.</given-names> <surname>Wild</surname></string-name>, <chapter-title>Data science and online education</chapter-title>, in: <source>Cloud Computing Technology and Science (CloudCom), 2015 IEEE 7th International Conference on</source>, <publisher-name>IEEE</publisher-name>, <year>2015</year>, pp. <fpage>582</fpage>–<lpage>587</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1109/CloudCom.2015.82" xlink:type="simple">10.1109/CloudCom.2015.82</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref019">
+<label>[19]</label><mixed-citation publication-type="journal"><string-name><given-names>C.</given-names> <surname>Fraley</surname></string-name> and <string-name><given-names>A.E.</given-names> <surname>Raftery</surname></string-name>, <article-title>Model-based clustering, discriminant analysis, and density estimation</article-title>, <source>Journal of the American Statistical Association</source> <volume>97</volume>(<issue>458</issue>) (<year>2002</year>), <fpage>611</fpage>–<lpage>631</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1198/016214502760047131" xlink:type="simple">10.1198/016214502760047131</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref020">
+<label>[20]</label><mixed-citation publication-type="chapter"><string-name><given-names>S.</given-names> <surname>Gambs</surname></string-name>, <string-name><given-names>M.-O.</given-names> <surname>Killijian</surname></string-name>, <string-name><given-names>I.</given-names> <surname>Moise</surname></string-name> and <string-name><given-names>M.N.</given-names> <surname>del Prado Cortez</surname></string-name>, <chapter-title>Mapreducing gepeto or towards conducting a privacy analysis on millions of mobility traces</chapter-title>, in: <source>Parallel and Distributed Processing Symposium Workshops &amp; PhD Forum (IPDPSW), 2013 IEEE 27th International</source>, <publisher-name>IEEE</publisher-name>, <year>2013</year>, pp. <fpage>1937</fpage>–<lpage>1946</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1109/IPDPSW.2013.180" xlink:type="simple">10.1109/IPDPSW.2013.180</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref021">
+<label>[21]</label><mixed-citation publication-type="chapter"><string-name><given-names>U.</given-names> <surname>Greveler</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Glösekötterz</surname></string-name>, <string-name><given-names>B.</given-names> <surname>Justusy</surname></string-name> and <string-name><given-names>D.</given-names> <surname>Loehr</surname></string-name>, <chapter-title>Multimedia content identification through smart meter power usage profiles</chapter-title>, in: <source>Proceedings of the International Conference on Information and Knowledge Engineering (IKE)</source>, <publisher-name>The Steering Committee of the World Congress in Computer Science, Computer Engineering and Applied Computing (WorldComp)</publisher-name>, <year>2012</year>, p. <fpage>1</fpage>. <uri>https://www.nds.rub.de/media/nds/veroeffentlichungen/2012/07/24/ike2012.pdf</uri>.</mixed-citation>
+</ref>
+<ref id="ref022">
+<label>[22]</label><mixed-citation publication-type="other"><string-name><given-names>D.</given-names> <surname>Griego</surname></string-name>, <string-name><given-names>V.</given-names> <surname>Buff</surname></string-name>, <string-name><given-names>E.</given-names> <surname>Hayoz</surname></string-name>, <string-name><given-names>I.</given-names> <surname>Moise</surname></string-name> and <string-name><given-names>E.</given-names> <surname>Pournaras</surname></string-name>, <chapter-title>Sensing and mining urban qualities in smart cities</chapter-title>, in: <source>Proceedings of the 31st IEEE International Conference on Advanced Information Networking and Applications – (AINA 2017)</source>, <publisher-name>IEEE</publisher-name>, <year>2017</year>. <uri>https://doi.org/10.1109/AINA.2017.14</uri>.</mixed-citation>
+</ref>
+<ref id="ref023">
+<label>[23]</label><mixed-citation publication-type="journal"><string-name><given-names>J.</given-names> <surname>Hardin</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Hoerl</surname></string-name>, <string-name><given-names>N.J.</given-names> <surname>Horton</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Nolan</surname></string-name>, <string-name><given-names>B.</given-names> <surname>Baumer</surname></string-name>, <string-name><given-names>O.</given-names> <surname>Hall-Holt</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Murrell</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Peng</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Roback</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Temple Lang</surname></string-name> <etal>et al.</etal>, <article-title>Data science in statistics curricula: Preparing students to “think with data”</article-title>, <source>The American Statistician</source> <volume>69</volume>(<issue>4</issue>) (<year>2015</year>), <fpage>343</fpage>–<lpage>353</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1080/00031305.2015.1077729" xlink:type="simple">10.1080/00031305.2015.1077729</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref024">
+<label>[24]</label><mixed-citation publication-type="chapter"><string-name><given-names>N.</given-names> <surname>Helberger</surname></string-name>, <string-name><given-names>K.</given-names> <surname>Karppinen</surname></string-name> and <string-name><given-names>L.</given-names> <surname>D’Acunto</surname></string-name>, <chapter-title>Exposure diversity as a design principle for recommender systems</chapter-title>, in: <source>Information, Communication &amp; Society</source>, <year>2016</year>, pp. <fpage>1</fpage>–<lpage>17</lpage>. <uri>https://doi.org/10.1080/1369118X.2016.1271900</uri>.</mixed-citation>
+</ref>
+<ref id="ref025">
+<label>[25]</label><mixed-citation publication-type="journal"><string-name><given-names>D.</given-names> <surname>Helbing</surname></string-name> and <string-name><given-names>E.</given-names> <surname>Pournaras</surname></string-name>, <article-title>Society: Build digital democracy</article-title>, <source>Nature</source> <volume>527</volume> (<year>2015</year>), <fpage>33</fpage>–<lpage>34</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1038/527033a" xlink:type="simple">10.1038/527033a</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref026">
+<label>[26]</label><mixed-citation publication-type="chapter"><string-name><given-names>B.</given-names> <surname>Howe</surname></string-name>, <string-name><given-names>M.J.</given-names> <surname>Franklin</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Freire</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Frew</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Kraska</surname></string-name> and <string-name><given-names>R.</given-names> <surname>Ramakrishnan</surname></string-name>, <chapter-title>Should we all be teaching intro to data science instead of intro to databases?</chapter-title> in: <source>Proceedings of the 2014 ACM SIGMOD International Conference on Management of Data</source>, <publisher-name>ACM</publisher-name>, <year>2014</year>, pp. <fpage>917</fpage>–<lpage>918</lpage>. <uri>https://doi.org/10.1145/2588555.2600092</uri>.</mixed-citation>
+</ref>
+<ref id="ref027">
+<label>[27]</label><mixed-citation publication-type="journal"><string-name><given-names>K.</given-names> <surname>Illeris</surname></string-name>, <article-title>Transformative learning in the perspective of a comprehensive learning theory</article-title>, <source>Journal of Transformative Education</source> <volume>2</volume>(<issue>2</issue>) (<year>2004</year>), <fpage>79</fpage>–<lpage>89</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1177/1541344603262315" xlink:type="simple">10.1177/1541344603262315</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref028">
+<label>[28]</label><mixed-citation publication-type="other"><string-name><given-names>J.</given-names> <surname>Janssens</surname></string-name>, <source>Data Science at the Command Line</source>, <publisher-name>O’Reilly Media</publisher-name>, <year>2014</year>. <uri>http://shop.oreilly.com/product/0636920032823.do</uri>.</mixed-citation>
+</ref>
+<ref id="ref029">
+<label>[29]</label><mixed-citation publication-type="other"><string-name><given-names>A.</given-names> <surname>Karpatne</surname></string-name>, <string-name><given-names>G.</given-names> <surname>Atluri</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Faghmous</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Steinbach</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Banerjee</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Ganguly</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Shekhar</surname></string-name>, <string-name><given-names>N.</given-names> <surname>Samatova</surname></string-name> and <string-name><given-names>V.</given-names> <surname>Kumar</surname></string-name>, Theory-guided data science: A new paradigm for scientific discovery, 2016, arXiv preprint <pub-id pub-id-type="arxiv">arXiv:1612.08544</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref030">
+<label>[30]</label><mixed-citation publication-type="chapter"><string-name><given-names>E.</given-names> <surname>Keogh</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Lin</surname></string-name> and <string-name><given-names>W.</given-names> <surname>Truppel</surname></string-name>, <chapter-title>Clustering of time series subsequences is meaningless: Implications for previous and future research</chapter-title>, in: <source>Data Mining, 2003. ICDM 2003. Third IEEE International Conference on</source>, <publisher-name>IEEE</publisher-name>, <year>2003</year>, pp. <fpage>115</fpage>–<lpage>122</lpage>. <uri>http://www.cs.ucr.edu/~eamonn/meaningless.pdf</uri>.</mixed-citation>
+</ref>
+<ref id="ref031">
+<label>[31]</label><mixed-citation publication-type="journal"><string-name><given-names>J.Y.</given-names> <surname>Kim</surname></string-name> and <string-name><given-names>C.K.</given-names> <surname>Lee</surname></string-name>, <article-title>An empirical analysis of requirements for data scientists using online job postings</article-title>, <source>International Journal of Software Engineering and Its Applications</source> <volume>10</volume>(<issue>4</issue>) (<year>2016</year>), <fpage>161</fpage>–<lpage>172</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.14257/ijseia.2016.10.4.15" xlink:type="simple">10.14257/ijseia.2016.10.4.15</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref032">
+<label>[32]</label><mixed-citation publication-type="chapter"><string-name><given-names>J.Z.</given-names> <surname>Kolter</surname></string-name> and <string-name><given-names>M.J.</given-names> <surname>Johnson</surname></string-name>, <chapter-title>Redd: A public data set for energy disaggregation research</chapter-title>, in: <source>Workshop on Data Mining Applications in Sustainability (SIGKDD)</source>, Vol. <volume>25</volume>, <conf-loc>San Diego, CA</conf-loc>, <year>2011</year>, pp. <fpage>59</fpage>–<lpage>62</lpage>. <uri>http://redd.csail.mit.edu/kolter-kddsust11.pdf</uri>.</mixed-citation>
+</ref>
+<ref id="ref033">
+<label>[33]</label><mixed-citation publication-type="journal"><string-name><given-names>V.</given-names> <surname>Marx</surname></string-name>, <article-title>Biology: The big challenges of big data</article-title>, <source>Nature</source> <volume>498</volume>(<issue>7453</issue>) (<year>2013</year>), <fpage>255</fpage>–<lpage>260</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1038/498255a" xlink:type="simple">10.1038/498255a</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref034">
+<label>[34]</label><mixed-citation publication-type="journal"><string-name><given-names>J.</given-names> <surname>Mezirow</surname></string-name>, <article-title>Transformative learning: Theory to practice</article-title>, <source>New Directions for Adult and Continuing Education</source> <volume>1997</volume>(<issue>74</issue>) (<year>1997</year>), <fpage>5</fpage>–<lpage>12</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1002/ace.7401" xlink:type="simple">10.1002/ace.7401</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref035">
+<label>[35]</label><mixed-citation publication-type="other"><string-name><given-names>I.</given-names> <surname>Moise</surname></string-name>, <string-name><given-names>E.</given-names> <surname>Gaere</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Merz</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Koch</surname></string-name> and <string-name><given-names>E.</given-names> <surname>Pournaras</surname></string-name>, <chapter-title>Tracking language mobility in the Twitter landscape</chapter-title>, in: <source>Proceedings of the 4th International Workshop on Data Science and Big Data Analytics (DSBDA 2016)</source>, <publisher-name>IEEE</publisher-name>, <year>2017</year>. <uri>https://doi.org/10.1109/ICDMW.2016.0099</uri>.</mixed-citation>
+</ref>
+<ref id="ref036">
+<label>[36]</label><mixed-citation publication-type="chapter"><string-name><given-names>F.</given-names> <surname>Musciotto</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Delpriori</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Castagno</surname></string-name> and <string-name><given-names>E.</given-names> <surname>Pournaras</surname></string-name>, <chapter-title>Mining social interactions in privacy-preserving temporal networks</chapter-title>, in: <source>Advances in Social Networks Analysis and Mining (ASONAM), 2016 IEEE/ACM International Conference on</source>, <publisher-name>IEEE</publisher-name>, <year>2016</year>, pp. <fpage>1103</fpage>–<lpage>1110</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1109/ASONAM.2016.7752378" xlink:type="simple">10.1109/ASONAM.2016.7752378</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref037">
+<label>[37]</label><mixed-citation publication-type="chapter"><string-name><given-names>V.</given-names> <surname>Nicosia</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Tang</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Mascolo</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Musolesi</surname></string-name>, <string-name><given-names>G.</given-names> <surname>Russo</surname></string-name> and <string-name><given-names>V.</given-names> <surname>Latora</surname></string-name>, <chapter-title>Graph metrics for temporal networks</chapter-title>, in: <source>Temporal Networks</source>, <publisher-name>Springer</publisher-name>, <year>2013</year>, pp. <fpage>15</fpage>–<lpage>40</lpage>. <uri>https://doi.org/10.1007/978-3-642-36461-7_2</uri>.</mixed-citation>
+</ref>
+<ref id="ref038">
+<label>[38]</label><mixed-citation publication-type="other"><string-name><given-names>S.</given-names> <surname>Papert</surname></string-name>, <source>Mindstorms: Children, Computers, and Powerful Ideas</source>, <publisher-name>Basic Books</publisher-name>, <year>1980</year>. <uri>https://en.wikipedia.org/wiki/Mindstorms_(book)</uri>.</mixed-citation>
+</ref>
+<ref id="ref039">
+<label>[39]</label><mixed-citation publication-type="other"><string-name><given-names>E.</given-names> <surname>Pournaras</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Nikolic</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Velásquez</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Trovati</surname></string-name>, <string-name><given-names>N.</given-names> <surname>Bessis</surname></string-name> and <string-name><given-names>D.</given-names> <surname>Helbing</surname></string-name>, <article-title>Self-regulatory information sharing in participatory social sensing</article-title>, <source>EPJ Data Science</source> <volume>5</volume>(<issue>1</issue>) (<year>2016</year>), <elocation-id>14</elocation-id>. doi:<ext-link ext-link-type="doi" xlink:href="10.1140/epjds/s13688-016-0074-4" xlink:type="simple">10.1140/epjds/s13688-016-0074-4</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref040">
+<label>[40]</label><mixed-citation publication-type="journal"><string-name><given-names>E.</given-names> <surname>Pournaras</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Vasirani</surname></string-name>, <string-name><given-names>R.E.</given-names> <surname>Kooij</surname></string-name> and <string-name><given-names>K.</given-names> <surname>Aberer</surname></string-name>, <article-title>Decentralized planning of energy demand for the management of robustness and discomfort</article-title>, <source>IEEE Transactions on Industrial Informatics</source> <volume>10</volume>(<issue>4</issue>) (<year>2014</year>), <fpage>2280</fpage>–<lpage>2289</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1109/TII.2014.2332114" xlink:type="simple">10.1109/TII.2014.2332114</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref041">
+<label>[41]</label><mixed-citation publication-type="chapter"><string-name><given-names>F.</given-names> <surname>Ricci</surname></string-name>, <string-name><given-names>L.</given-names> <surname>Rokach</surname></string-name> and <string-name><given-names>B.</given-names> <surname>Shapira</surname></string-name>, <chapter-title>Recommender systems: Introduction and challenges</chapter-title>, in: <source>Recommender Systems Handbook</source>, <publisher-name>Springer</publisher-name>, <year>2015</year>, pp. <fpage>1</fpage>–<lpage>34</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1007/978-1-4899-7637-6_1" xlink:type="simple">10.1007/978-1-4899-7637-6_1</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref042">
+<label>[42]</label><mixed-citation publication-type="other"><string-name><given-names>M.</given-names> <surname>Rosa</surname></string-name>, Constructing Identities through online Role Playing Game: relationships with the teaching and learning of mathematics in a distance learning course, PhD thesis, UNESP – São Paulo State University, 2008. <uri>https://arxiv.org/pdf/1405.6328.pdf</uri>.</mixed-citation>
+</ref>
+<ref id="ref043">
+<label>[43]</label><mixed-citation publication-type="journal"><string-name><given-names>G.M.</given-names> <surname>Slavich</surname></string-name> and <string-name><given-names>P.G.</given-names> <surname>Zimbardo</surname></string-name>, <article-title>Transformational teaching: Theoretical underpinnings, basic principles, and core methods</article-title>, <source>Educational Psychology Review</source> <volume>24</volume>(<issue>4</issue>) (<year>2012</year>), <fpage>569</fpage>–<lpage>608</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1007/s10648-012-9199-6" xlink:type="simple">10.1007/s10648-012-9199-6</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref044">
+<label>[44]</label><mixed-citation publication-type="journal"><string-name><given-names>O.</given-names> <surname>Sporns</surname></string-name>, <article-title>Making sense of brain network data</article-title>, <source>Nature Methods</source> <volume>10</volume>(<issue>6</issue>) (<year>2013</year>), <fpage>491</fpage>–<lpage>493</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1038/nmeth.2485" xlink:type="simple">10.1038/nmeth.2485</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref045">
+<label>[45]</label><mixed-citation publication-type="journal"><string-name><given-names>E.W.</given-names> <surname>Taylor</surname></string-name>, <article-title>Transformative learning theory</article-title>, <source>New Directions for Adult and Continuing Education</source> <volume>2008</volume>(<issue>119</issue>) (<year>2008</year>), <fpage>5</fpage>–<lpage>15</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1002/ace.301" xlink:type="simple">10.1002/ace.301</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref046">
+<label>[46]</label><mixed-citation publication-type="other"><string-name><given-names>D.</given-names> <surname>Trottier</surname></string-name> and <string-name><given-names>C.</given-names> <surname>Fuchs</surname></string-name>, <source>Social Media, Politics and the State: Protests, Revolutions, Riots, Crime and Policing in the Age of Facebook, Twitter and YouTube</source>, Vol. <volume>16</volume>, <publisher-name>Routledge</publisher-name>, <year>2014</year>. <ext-link ext-link-type="uri" xlink:href="https://www.routledge.com/Social-Media-Politics-and-the-State-Protests-Revolutions-Riots-Crime/Trottier-Fuchs/p/book/9781138798243">https://www.routledge.com/Social-Media-Politics-and-the-State-Protests-Revolutions-Riots-Crime/Trottier-Fuchs/p/book/9781138798243</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref047">
+<label>[47]</label><mixed-citation publication-type="other"><string-name><given-names>S.</given-names> <surname>Turkle</surname></string-name>, <source>Evocative Objects: Things We Think with</source>, <publisher-name>MIT Press</publisher-name>, <year>2011</year>. <uri>https://mitpress.mit.edu/books/evocative-objects</uri>.</mixed-citation>
+</ref>
+<ref id="ref048">
+<label>[48]</label><mixed-citation publication-type="chapter"><string-name><given-names>W.M.P.</given-names> <surname>Van der Aalst</surname></string-name>, <chapter-title>Data scientist: The engineer of the future</chapter-title>, in: <source>Enterprise Interoperability VI</source>, <publisher-name>Springer</publisher-name>, <year>2014</year>, pp. <fpage>13</fpage>–<lpage>26</lpage>. <uri>https://doi.org/10.1007/978-3-319-04948-9_2</uri>.</mixed-citation>
+</ref>
+<ref id="ref049">
+<label>[49]</label><mixed-citation publication-type="chapter"><string-name><given-names>K.</given-names> <surname>Veeramachaneni</surname></string-name>, <string-name><given-names>F.</given-names> <surname>Dernoncourt</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Taylor</surname></string-name> <string-name><given-names>Z.</given-names> <surname>Pardos</surname></string-name> and <string-name><given-names>U.-M.</given-names> <surname>O’Reilly</surname></string-name>, <chapter-title>Moocdb: Developing data standards for mooc data science</chapter-title>, in: <source>AIED 2013 Workshops Proceedings Volume</source>, <publisher-name>Citeseer</publisher-name>, <year>2013</year>, p. <fpage>17</fpage>. <uri>http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.368.1935</uri>.</mixed-citation>
+</ref>
+<ref id="ref050">
+<label>[50]</label><mixed-citation publication-type="other"><string-name><given-names>B.</given-names> <surname>Wixom</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Ariyachandra</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Douglas</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Goul</surname></string-name>, <string-name><given-names>B.</given-names> <surname>Gupta</surname></string-name>, <string-name><given-names>L.</given-names> <surname>Iyer</surname></string-name>, <string-name><given-names>U.</given-names> <surname>Kulkarni</surname></string-name>, <string-name><given-names>J.G.</given-names> <surname>Mooney</surname></string-name>, <string-name><given-names>G.</given-names> <surname>Phillips-Wren</surname></string-name> and <string-name><given-names>O.</given-names> <surname>Turetken</surname></string-name>, <source>The current state of business intelligence in academia: The arrival of big data</source> <volume>34</volume>(<issue>1</issue>) (<year>2014</year>), <elocation-id>1</elocation-id>. <uri>http://aisel.aisnet.org/cais/vol34/iss1/1/</uri>.</mixed-citation>
+</ref>
+</ref-list>
+</back>
+</article>

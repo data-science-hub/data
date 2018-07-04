@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.0 20120330//EN" "JATS-journalpublishing1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="position-paper">
+<front>
+<journal-meta>
+<journal-id journal-id-type="publisher-id">DS</journal-id>
+<journal-title-group><journal-title>Data Science</journal-title></journal-title-group>
+<issn pub-type="epub">2451-8492</issn><issn pub-type="ppub">2451-8484</issn><issn-l>2451-8484</issn-l>
+<publisher>
+<publisher-name>IOS Press</publisher-name><publisher-loc>Nieuwe Hemweg 6B, 1013 BG Amsterdam, The Netherlands</publisher-loc>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">DS011</article-id>
+<article-id pub-id-type="doi">10.3233/DS-170011</article-id>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Position Paper</subject></subj-group></article-categories>
+<title-group>
+<article-title>Thoughtful artificial intelligence: Forging a new partnership for data science and scientific discovery</article-title>
+</title-group>
+<contrib-group content-type="Editor">
+<contrib contrib-type="editor">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0003-4727-9435</contrib-id>
+<name><surname>Dumontier</surname><given-names>Michel</given-names></name>
+</contrib>
+</contrib-group>
+<contrib-group>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0001-8465-8341</contrib-id>
+<name><surname>Gil</surname><given-names>Yolanda</given-names></name><xref ref-type="aff" rid="affa"/>
+</contrib>
+<aff id="affa">Information Sciences Institute and Department of Computer Science, <institution>University of Southern California</institution>, Marina del Rey, CA, <country>USA</country>. E-mail: <email>gil@isi.edu</email></aff>
+</contrib-group>
+<pub-date date-type="preprint" publication-format="electronic"><day>19</day><month>10</month><year>2017</year></pub-date><pub-date date-type="pub" publication-format="electronic"><day>8</day><month>12</month><year>2017</year></pub-date><pub-date date-type="collection" publication-format="electronic"><year>2017</year></pub-date><volume>1</volume><issue>1-2</issue><fpage>119</fpage><lpage>129</lpage><history><date date-type="received"><day>24</day><month>07</month><year>2017</year></date><date date-type="accepted"><day>23</day><month>08</month><year>2017</year></date></history>
+<permissions><copyright-statement>© 2017 – IOS Press and the authors.</copyright-statement><copyright-year>2017</copyright-year>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/" license-type="open-access" xlink:type="simple">
+<license-p>This is an open access article distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/" xlink:type="simple">Creative Commons Attribution (CC BY 4.0) License</ext-link>, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions>
+<abstract>
+<p>Artificial intelligence will play an increasingly more prominent role in scientific research ecosystems, and will become indispensable as more interdisciplinary science questions are tackled. While in recent years computers have propelled science by crunching through data and leading to a data science revolution, qualitatively different scientific advances will result from advanced intelligent technologies for crunching through knowledge and ideas. We propose seven principles for developing <italic>thoughtful artificial intelligence</italic>, which will turn intelligent systems into partners for scientists. We present a personal perspective on a research agenda for thoughtful artificial intelligence, and discuss its potential for data science and scientific discovery.</p>
+</abstract>
+<kwd-group>
+<label>Keywords</label>
+<kwd>Data science</kwd>
+<kwd>scientific discovery</kwd>
+<kwd>thoughtful artificial intelligence</kwd>
+</kwd-group>
+</article-meta>
+</front>
+<body>
+<sec id="x1-10001">
+<label>1.</label>
+<title>Introduction</title>
+<p>Scientific research is accomplished by an ecosystem of contributors. From principal investigators that propose insightful problems, to graduate students that go deep into a specific question, to lab assistants that patiently sit through experiments, to undergraduates that contribute to simpler mundane tasks, there are a range of contributions made by people with different abilities and levels of experience. What kind of role could intelligent machines have in this ecosystem?</p>
+<p>Though I pose this question from the point of view of science, I believe it applies to data science just the same. Scientific discovery is arguably the hardest form of data science, where the goal is to understand rather than correlate, where the phenomena are deeply interacting rather than independent, and where new findings must be integrated with existing theories.</p>
+<p>In the last few decades, advances in data-intensive computing have pushed the envelope in the scale of the phenomena that can be studied. Well-designed data structures, efficient algorithms, and distributed computation work at unison to process large-scale data, leading to spectacular discoveries in diverse areas such as high-energy physics, biomedicine, and geosciences. In recent years, the incorporation of intelligent techniques for data mining and machine learning has given rise to data science, bringing powerful data-driven discovery capabilities to scientists [<xref ref-type="bibr" rid="ref033">33</xref>]. Indeed, a recent cover of Science states “artificial intelligence transforms science” [<xref ref-type="bibr" rid="ref035">35</xref>].</p>
+<p>However, the role of artificial intelligence systems, particularly in machine learning, has been reduced to solving a well-defined task where the data and techniques are given to them by the scientist. This limits our ability to tackle problems where the complexity of the data, the questions, and the tasks challenge our human capabilities to make discoveries. Confining intelligent machines to this data-intensive computing realm is severely limiting our ability to truly harness the potential of machines to enable us to take on larger problems.</p>
+<p><bold>I propose new research on</bold> <italic><bold>thoughtful artificial intelligence</bold></italic><bold>, which will provide significant new capabilities for data science and scientific discovery.</bold> Thoughtful artificial intelligence systems would be capable of seeking and using knowledge necessary to do a task in a rational, ethical, and proactive manner, and are designed to interact with people, with other sources of knowledge, and with other systems. In this paper, I put forward this vision and articulate seven principles for thoughtful artificial intelligence, and describe how they will bring data science to a new level. Providing these capabilities poses phenomenal challenges for artificial intelligence research.</p>
+<p>I also posit that future scientific endeavors will require partnerships of scientists and thoughtful artificial intelligence systems, where machines will pursue independently substantial aspects of the research and contribute their own discoveries. These intelligent systems should be capable of taking on significant problems by formulating their own research goals, proposing and testing hypotheses, designing theories, debating alternative options, and synthesizing new knowledge. They should be able to explain their reasoning, compare their lines of inference to other possible ones, and situate their findings. Intelligent systems should be able to communicate with scientists with different levels of expertise and understanding in a topic. To form a true partnership, they should be able to take guidance from scientists as well as provide guidance to them in turn.</p>
+<p>The paper begins with a discussion on the nature of the complexity of major unresolved questions in science, and why machine intelligence will be necessary to make headways. After a short overview of artificial intelligence research for scientific discovery, I propose seven principles for the development of thoughtful artificial intelligence. I then discuss a personal perspective on a research agenda to achieve this vision.</p>
+</sec>
+<sec id="x1-20002">
+<label>2.</label>
+<title>Science challenges in the new millennium</title>
+<p>Our capabilities to do research need to be augmented as scientific questions become significantly more complex. Compare the challenges of finding a cure for polio with finding a cure for cancer. Polio, a scourge that has affected humanity for millennia, was cured through a vaccine that was discovered by one scientist. We are now faced with understanding diseases such as glioblastoma, a brain cancer that takes very few months to go to advanced stages and is very hard to detect and to treat. Scientists with different specialties have different information about the problem, with disparate data on genomics, proteomics, transcriptomics, MRIs, clinical, therapies and drugs, etc.</p>
+<p>Important research questions are increasingly collaborative, requiring dozens, hundreds, and in some cases thousands of people in different disciplines to work together for months or years to produce results. This progression is described very well in [<xref ref-type="bibr" rid="ref002">2</xref>], where the individual researchers were the norm in the past (Galileo, Newton, Darwin) giving way to dual collaborations early in the 20th century (Watson and Crick) and transitioning to larger projects such as the human genome project. These collaborations have now become even more sophisticated and complex. For example, the discovery of the Higgs boson demonstrated a major mobilization of the particle physics community to build the Large Hadron Collider (LHC), carry out the Atlas and Compact Muon Solenoid (CMS) experiments, and analyze the resulting data, leading to articles with thousands of authors [<xref ref-type="bibr" rid="ref037">37</xref>]. Massive amounts of information were created and consumed by different subgroups of researchers in a painstaking and time-consuming manner. As a result, this kind of significant discovery only occurs occasionally and with significant coordination effort.</p>
+<p>Computers already play a significant role in this collaborative scientific research ecosystem, albeit mostly by crunching through the large amounts of data. Through high-end computing capabilities, we now see machines do petascale computations routinely. Through scalable databases and information retrieval capabilities, we know machines can store large amounts of information and help scientists sift through it. Through advances in machine learning, new discoveries have been made in climate research, ecosystems, materials science, and social sciences. The scientific advances due to these technologies would be inconceivable or impossible without them.</p>
+<p>As we look to the future, science challenges will be ever more complex, posing unprecedented challenges for scientists. In particle physics, the LHC will increase its collision rate by a factor of 10, and more sophisticated instruments such as the Long-Baseline Neutrino Facility (LBNF) will soon be a reality [<xref ref-type="bibr" rid="ref007">7</xref>,<xref ref-type="bibr" rid="ref032">32</xref>]. Other examples of these significant future science challenges include understanding the Earth as a system of systems, studying the brain from the molecular to the cellular to the organ level, detecting and managing natural hazards, protecting our environment with sustainable policies, curing cancer and other degenerative diseases, personalizing learning and on-demand training, and designing materials with desired properties. Other important scientific questions are not even being posed, since they are far out of reach given our current capabilities. The diversity and complexity of the data available for analysis, the amount of information to track, the amount of possible hypotheses and models to explore, and the amount of coordination across expertise areas all add up to closely related but fragmented information space that is extremely difficult to explore and manage. Even if important aspects of these problems can be solved, we want faster turnaround in the work and see new results in days or weeks rather than years of research.</p>
+</sec>
+<sec id="x1-30003">
+<label>3.</label>
+<title>Artificial intelligence in science</title>
+<p>Artificial intelligence has a long tradition in tackling scientific research as a problem-solving activity [<xref ref-type="bibr" rid="ref024">24</xref>,<xref ref-type="bibr" rid="ref026">26</xref>,<xref ref-type="bibr" rid="ref034">34</xref>]. Table <xref rid="x1-30011">1</xref> highlights examples of the aspects of scientific discovery that have been addressed by artificial intelligence research, mentioning a particular science targeted where the impact was most significant. This is not meant to be a comprehensive survey, but rather a sample of pioneering work on artificial intelligence for scientific discovery for readers unfamiliar with this literature. For more detailed overviews see [<xref ref-type="bibr" rid="ref016">16</xref>,<xref ref-type="bibr" rid="ref018">18</xref>,<xref ref-type="bibr" rid="ref021">21</xref>,<xref ref-type="bibr" rid="ref023">23</xref>,<xref ref-type="bibr" rid="ref036">36</xref>]. The goal here is to highlight two important things. First, the scientific challenges uncovered research challenges for artificial intelligence, and as a result new advances in artificial intelligence enabled significant new advances in science. Second, there is a wide diversity both in artificial intelligence research areas as well as in scientific domains.</p>
+<p>Today, many artificial intelligence technologies are familiar to scientists. They include machine learning, natural language processing, semantic networks and ontologies, causal reasoning, robotics, and image processing among others. There are numerous uses of these technologies across diverse areas of science. The impact of artificial intelligence in science is palpable and continues to expand. Many scientific advances have only been possible through the pursuit of new lines of research in artificial intelligence.</p>
+<table-wrap id="x1-30011">
+<label>Table 1</label>
+<caption>
+<p>Major activities in scientific discovery that have been a focus of artificial intelligence research</p>
+</caption>
+<table frame="hsides" rules="groups">
+<thead>
+<tr>
+<td valign="top" align="left"/>
+<td valign="top" align="center">Tasks</td>
+<td valign="top" align="center">Artificial Intelligence approaches and applications</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top" align="left"><italic>Problem formulation</italic></td>
+<td valign="top" align="left">∙ Awareness of related work in the literature<break/>∙ Connecting relevant published information<break/>∙ Generation of new plausible hypotheses</td>
+<td valign="top" align="left">∙ Extracting knowledge from publications about geological samples<break/> ∘ GeoDeepDive [<xref ref-type="bibr" rid="ref029">29</xref>]<break/>∙ Linking knowledge from diverse sources in biology<break/> ∘ Bio2RDF [<xref ref-type="bibr" rid="ref003">3</xref>]<break/>∙ Formulation of hypotheses given a knowledge base of known facts about biological entities<break/> ∘ Hanalyzer [<xref ref-type="bibr" rid="ref025">25</xref>], HyQue [<xref ref-type="bibr" rid="ref004">4</xref>]</td>
+</tr>
+<tr>
+<td valign="top" align="left"><italic>Experimentation and data collection</italic></td>
+<td valign="top" align="left">∙ Experiment design and execution<break/>∙ Autonomous data collection<break/>∙ Extracting knowledge from sensor readings</td>
+<td valign="top" align="left">∙ Hypothesis-driven design and execution of experiments in biology<break/> ∘ Robot Scientist [<xref ref-type="bibr" rid="ref022">22</xref>]<break/>∙ Robots for autonomous sensing and experimentation in field geology<break/> ∘ Nomad [<xref ref-type="bibr" rid="ref039">39</xref>]<break/>∙ Extracting knowledge from noisy classifications of remote sensing data for hydrology<break/> ∘ [<xref ref-type="bibr" rid="ref020">20</xref>]</td>
+</tr>
+<tr>
+<td valign="top" align="left"><italic>Data analysis</italic></td>
+<td valign="top" align="left">∙ Explore the space of hypotheses<break/>∙ Machine learning<break/>∙ Causal models</td>
+<td valign="top" align="left">∙ Explore the space of hypotheses consistent with data in organic chemistry<break/> ∘ Dendral [<xref ref-type="bibr" rid="ref026">26</xref>]<break/>∙ Bayesian classification of infrared astronomy data<break/> ∘ AutoClass [<xref ref-type="bibr" rid="ref006">6</xref>]<break/>∙ Causal networks for econometric modeling<break/> ∘ TETRAD [<xref ref-type="bibr" rid="ref030">30</xref>]<break/>∙ Integrating domain knowledge into equation discovery for population dynamics<break/> ∘ LAGRAMGE [<xref ref-type="bibr" rid="ref038">38</xref>]<break/>∙ Searching with genetic algorithms for laws that fit data in physics<break/> ∘ EUREKA [<xref ref-type="bibr" rid="ref031">31</xref>]</td>
+</tr>
+<tr>
+<td valign="top" align="left"><italic>Model revision</italic></td>
+<td valign="top" align="left">∙ Updating existing theories and models<break/>∙ Integrating prior knowledge<break/>∙ Understanding significance of results</td>
+<td valign="top" align="left">∙ Process models to revise hypotheses in paleoclimatology<break/> ∘ ACE [<xref ref-type="bibr" rid="ref001">1</xref>]<break/>∙ Integration of knowledge from diverse sources about molecular mechanism for diseases<break/> ∘ DiseaseConnect [<xref ref-type="bibr" rid="ref027">27</xref>]</td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+<p>In the coming years, I expect that we will see broader dissemination of these artificial intelligence techniques as well as further automation of scientific tasks. These intelligent systems will be embedded in all aspects of the scientific research ecosystem.</p>
+<p>I envision a much more expanded role for artificial intelligence in scientific discovery. Scientists will need intelligent systems with the ability to do independent inquiry, proactive learning, and deliberative reasoning. I envision a new generation of artificial intelligence systems that will enable a true partnership between scientists and machines. This partnership will be essential to tackle a new generation of science quests.</p>
+</sec>
+<sec id="x1-40004">
+<label>4.</label>
+<title>On humans and machines</title>
+<p>AI systems will become effective partners that will significantly enhance human abilities. Humans are clearly capable of being magnificent researchers, but even scientists with the best reputation make mistakes due to a number of factors:</p>
+<list list-type="bullet">
+<list-item>
+<p><italic>Cognitive limitations</italic>: Humans are resource limited in attention span, memory, and processing time. These cognitive limitations of humans lead to situations where someone misses something that is present in the data, because they run out of time to analyze it, or found something else more interesting, they forgot it, or could not figure out the solution. One obvious place where this happens is in reading the literature, where we are limited to absorbing only a small fraction of the published record as it grows faster than we can handle. [<xref ref-type="bibr" rid="ref029">29</xref>] describes an intelligent system that extracted more information about the rock record than an earlier 10-year manual effort.</p>
+</list-item>
+<list-item>
+<p><italic>Errors</italic>: Humans make mistakes, and we have all come to expect it. They may overlook something, record the wrong thing, ignore some important data, or reach the wrong conclusion. These errors can lead to limited coverage of the observations, or to misleading findings. Just recently, a graduate student failing to reproduce a key piece of research about economic growth and debt contacted the authors and discovered that the data for some countries had been omitted by mistake [<xref ref-type="bibr" rid="ref019">19</xref>].</p>
+</list-item>
+<list-item>
+<p><italic>Biases</italic>: Humans are biased. They will use a method that they know well even if newer better methods become available, just because of the required effort to learn new things and to change the research infrastructure often. There is also the well-known phenomenon of cognitive bias, where people tend to look for theories and interpretations that suit their own beliefs. [<xref ref-type="bibr" rid="ref001">1</xref>] discusses an intelligent system that analyzed data in published papers and generated hypotheses that the authors had missed.</p>
+</list-item>
+<list-item>
+<p><italic>Poor reporting</italic>: Humans are not great at recall and recounting. When people write scientific papers, they tend to focus on the big picture and not include details. Some details are not important, but others are and should be mentioned. Many studies have shown that this makes reproducibility extremely challenging for the vast majority of published scientific articles [<xref ref-type="bibr" rid="ref010">10</xref>].</p>
+</list-item>
+</list>
+<p>As our science endeavors grow in ambition, their complexity will exacerbate human shortcomings and limitations. Intelligent systems can help counter these human shortcomings, and we have already referred to some examples that were used to address them (e.g., [<xref ref-type="bibr" rid="ref029">29</xref>] and [<xref ref-type="bibr" rid="ref001">1</xref>]). Intelligent systems can be systematic, covering all the space of choices without ignoring any details. They are correct, in that they follow instructions to the letter. They are unbiased, considering all the plausible interpretations however unlikely. They can also do rigorous reporting, recording and presenting every aspect of their work with justifications and verifications if needed. These are all ideal qualities for capable research collaborators.</p>
+<p>At the same time, today’s intelligent systems have important limitations in areas where humans excel. Because intelligent systems are always built to perform specific tasks, they have very narrow knowledge. Therefore, they cannot put ideas in a broader context and understand the importance of a new result. They cannot think out of the box and change perspectives or reframe problems. They also cannot envision novel forms of thinking about a problem. Interestingly, these are areas where humans shine, through ingenious and creative perspectives, unconventional insights, priorities of science questions and goals, and awareness of the importance of results and ideas.</p>
+<p>These limitations of intelligent systems will be lifted as intelligent systems research progresses. Today’s intelligent systems provide very helpful but very specific and narrow capabilities. Tomorrow, they will become research assistants to scientists. But very soon they will develop into colleagues that can do valuable research contributions independently. Intelligent systems indeed have the potential to play an important role in the research ecosystem and become effective research partners for scientists. What would it take to build such intelligent machines?</p>
+</sec>
+<sec id="x1-50005">
+<label>5.</label>
+<title>Thoughtful artificial intelligence</title>
+<p>I propose a research agenda on a new generation of approaches that I will refer to as <italic>thoughtful artificial intelligence systems</italic> (<italic>ThAIs</italic>) that will become effective partners in data science and scientific discovery. ThAIs are defined by the following principles:</p>
+<list>
+<list-item id="x1-5001x5">
+<label>1.</label>
+<p><italic>Rationality principle</italic>: ThAIs behave according to expectations for an artificial intelligence, that is, their behavior to accomplish any task is governed by the knowledge that they possess.</p>
+</list-item>
+<list-item id="x1-5002x5">
+<label>2.</label>
+<p><italic>Context principle</italic>: ThAIs seek knowledge and resources that would be considered important about the context of their task in order to guide their behavior particularly in difficult or unusual cases. That is, their knowledge is not confined to the scope of their specific task. This comes with the ability to set out to expand their knowledge and seek to acquire it.</p>
+</list-item>
+<list-item id="x1-5003x5">
+<label>3.</label>
+<p><italic>Initiative principle</italic>: ThAIs learn new knowledge proactively, and can use a variety of mechanisms to acquire it (e.g., taught by others, learned from data, extracted from text, obtained by experimenting with the world, etc.). They are not just passive recipients of data or knowledge that is selected and prepared for them by people.</p>
+</list-item>
+<list-item id="x1-5004x5">
+<label>4.</label>
+<p><italic>Networking principle</italic>: ThAIs are connected to a network of resources (documents, services, sensors and effectors, people), which gives them the ability to seek and access new knowledge or capabilities needed for doing a task.</p>
+</list-item>
+<list-item id="x1-5005x5">
+<label>5.</label>
+<p><italic>Articulation principle</italic>: ThAIs can understand guidance and questions posed to them and respond not just with appropriate behavior but also with appropriate response back to the requester.</p>
+</list-item>
+<list-item id="x1-5006x5">
+<label>6.</label>
+<p><italic>Systems principle</italic>: ThAIs have basic engineering design properties (such as compositionality, abstraction, and connectivity) that support integration with other systems.</p>
+</list-item>
+<list-item id="x1-5007x5">
+<label>7.</label>
+<p><italic>Ethics principle</italic>: ThAIs incorporate responsible and ethical behaviors, in particular the ability to recognize and convey their limitations in making decisions and taking action.</p>
+</list-item>
+</list>
+<p>These principles are summarized in Table <xref rid="x1-50082">2</xref>. Current artificial intelligence systems aim to satisfy only one or a few of these principles, but not all. For example, game playing systems care about the rationality principle, conversational interfaces are designed with the articulation principle in mind, and semantic web systems have the networking principle at their core. Significant new capabilities will come from the combination of all these principles.</p>
+<p>ThAIs will represent a new generation of artificial intelligence systems that will be more resilient and resourceful, behave more responsibly, and have a sense of their role within a larger science ecosystem. ThAIs will be key to bringing data science to a new level. Scientists expect these principles from research partners, and intelligent systems will have to grow in all these directions in order to take a much-needed role as partners in data science and scientific discovery.</p>
+<table-wrap id="x1-50082">
+<label>Table 2</label>
+<caption>
+<p>Defining Principles for Thoughtful Artificial Intelligence Systems</p>
+</caption>
+<table frame="hsides" rules="groups">
+<thead>
+<tr>
+<td valign="top" align="left"/>
+<td valign="top" align="center">Principle</td>
+<td valign="top" align="center">Description</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top" align="left">1</td>
+<td valign="top" align="left">Rationality</td>
+<td valign="top" align="left">Behavior is governed by knowledge</td>
+</tr>
+<tr>
+<td valign="top" align="left">2</td>
+<td valign="top" align="left">Context</td>
+<td valign="top" align="left">Seek to understand the purpose and significance of tasks</td>
+</tr>
+<tr>
+<td valign="top" align="left">3</td>
+<td valign="top" align="left">Initiative</td>
+<td valign="top" align="left">Proactively new learn knowledge relevant to their task</td>
+</tr>
+<tr>
+<td valign="top" align="left">4</td>
+<td valign="top" align="left">Networking</td>
+<td valign="top" align="left">Access external sources of knowledge and capabilities</td>
+</tr>
+<tr>
+<td valign="top" align="left">5</td>
+<td valign="top" align="left">Articulation</td>
+<td valign="top" align="left">Respond with persuasive justifications and arguments</td>
+</tr>
+<tr>
+<td valign="top" align="left">6</td>
+<td valign="top" align="left">Systems</td>
+<td valign="top" align="left">Facilitate integration and collaboration with other systems</td>
+</tr>
+<tr>
+<td valign="top" align="left">7</td>
+<td valign="top" align="left">Ethics</td>
+<td valign="top" align="left">Behavior that conveys scope and limitations</td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+</sec>
+<sec id="x1-60006">
+<label>6.</label>
+<title>A research agenda for thoughtful artificial intelligence and its potential impact in data science and scientific discovery</title>
+<p>This section discusses major research challenges in developing ThAIs, and highlights some of our ongoing work towards this vision. I leave out the rationality principle because it has been discussed in depth elsewhere.</p>
+<sec id="x1-70006.1">
+<label>6.1.</label>
+<title>Networked ThAIs: Towards a scientific knowledge web</title>
+<p>Increasingly, knowledge about scientific entities of interest is captured in shared catalogs with metadata descriptions that enable scientists to find, compare, and relate those entities. Many ontologies reflect community agreements on standard ways to represent them. There is significant adoption of semantic web technologies in science. However, the establishment of links among scientific entities and the meaning of those links is largely done manually, as is the processing and understanding of the linked items. Networked ThAIs would need semantic links that they could find, interpret, exploit, and enrich.</p>
+<p>Current structured representations for shared scientific knowledge focus on ontological models that represent objects and their properties. Ontologies are widely used in data repositories to specify metadata in order to find and integrate datasets by reasoning about their descriptions [<xref ref-type="bibr" rid="ref003">3</xref>]. But scientific knowledge is much more than objects and properties, and scientists need support beyond querying and aggregating data based on basic properties. In order for ThAIs to access comprehensive scientific knowledge, we need to augment our current representations and capture more complex aspects of scientific research such as data analysis processes, hypotheses and claims, and synthesis of evidence from data [<xref ref-type="bibr" rid="ref008">8</xref>]. I am personally interested in computational processes for data analysis, and have developed semantic workflow representations to capture knowledge about how the properties of datasets affect how they should be analyzed, and how the assumptions of data analysis algorithms constrain their use in a data analysis method [<xref ref-type="bibr" rid="ref015">15</xref>]. The WINGS intelligent workflow system incorporates a variety of computational techniques that use those representations to assist scientists in: (1) finding appropriate workflows, (2) customizing existing workflows, (3) exploring the space of alternative workflow configurations, (4) correlating the results of exploratory executions, and (5) detecting commonly used workflow fragments. We publish workflows as web objects following linked open data principles [<xref ref-type="bibr" rid="ref009">9</xref>]. This enables other systems to examine, compare, and reuse these workflows, effectively building on another system’s scientific processes. This is a key building block towards allowing ThAIs to acquire knowledge from other networked sources about how to do data analysis.</p>
+<p>Further research is needed on capturing more explicitly additional forms of knowledge that are currently scattered in publications, lab notebooks, emails, presentations, and other documentation. As more structured representations of additional kinds of scientific knowledge become available, ThAIs can access increasingly more information and resources about science.</p>
+<p>I see not only limitations of current representations but also the need for research on knowledge capture systems that help scientists to create them. The research involves understanding how to embed new computational approaches for method representations and abstractions into routine practice while minimizing the scientist’s effort in specifying them. This will require novel intelligent user interfaces that interconnect data, software, people, instruments, and other scientific resources to effectively create meaningful chunks of a scientific knowledge web.</p>
+<p>Given access to the data, models, and methods in this semantically enriched scientific knowledge web, ThAIs could find relevant information for their tasks, reason about new interconnections, discover new relevant data or results across different disciplines, establish new connections and generalizations, suggest and potentially resolve inconsistencies, and generally manage the intricacies of this immensely rich and incredibly powerful scientific knowledge web. Particularly effective will be intelligent systems that could help scientists connect and collaborate across disciplines, something that currently takes significant effort and often times serendipitous connections and yet leads to transformative approaches to tackle old problems.</p>
+</sec>
+<sec id="x1-80006.2">
+<label>6.2.</label>
+<title>Context-driven ThAIs: Task scoping</title>
+<p>Data analysis occurs in a much larger context of discovery: scientists are driven by models and hypotheses, and the analysis results must be converted to evidence and related back to those hypotheses. The meta-reasoning processes involved in deciding how to explore and revise such hypotheses computationally are largely unexplored. Data analytics and machine learning methods focus on finding patterns in the data, but today the overarching processes of hypothesis formulation and revision are fully carried out manually by scientists. ThAIs could largely automate this process, starting with initial hypotheses and automatically finding relevant data, analyzing it, and assessing the results.</p>
+<p>I am very interested in enabling intelligent systems to reason about hypotheses to create goals and define their own problems to pursue. We are developing DISK, a system that uses a meta-reasoning approach that starts from research hypotheses, triggers lines of inquiry to map hypotheses to data queries and computational workflows, and uses meta-workflows to combine workflow results and discern what is interesting to report back to the researcher [<xref ref-type="bibr" rid="ref013">13</xref>,<xref ref-type="bibr" rid="ref014">14</xref>].</p>
+<p>Much work remains to be done to represent scientific hypotheses, to capture meta-reasoning strategies that scientists pursue, and to analyze results. Ongoing work in cognitive science and philosophy of science is articulating such processes [<xref ref-type="bibr" rid="ref005">5</xref>]. We need to incorporate them in artificial intelligence systems.</p>
+</sec>
+<sec id="x1-90006.3">
+<label>6.3.</label>
+<title>Initiative-driven ThAIs: Access to the scientific record</title>
+<p>In order for ThAIs to acquire new knowledge about science, the scientific record should be made more accessible. Current published articles do not contain the information necessary to understand what was done in enough detail that they can be reproduced [<xref ref-type="bibr" rid="ref010">10</xref>].</p>
+<p>Many scientists would like to improve the transparency and reproducibility of their papers, but the best practices remain difficult to understand and follow in practice. Inspired by and partnering with early career researchers, I developed the Scientific Paper of the Future (SPF) Initiative to teach scientists how to write papers that describe and cite explicitly not just data but also software and methods (workflows and provenance) [<xref ref-type="bibr" rid="ref011">11</xref>]. The Initiative includes a special issue of a journal where submissions discuss the scientist’s motivation for structuring and reporting their research products more thoroughly. We have now trained hundreds of scientists, including many center directors and principal investigators, who have changed their practices as a result. Improved publication of computational experiments will provide ThAIs with a more accessible scientific record.</p>
+<p>This line of work complements ongoing efforts to extract information from the scientific literature through text mining [<xref ref-type="bibr" rid="ref029">29</xref>]. Most of the work focuses on extracting facts and claims. Much remains to be done to address the challenges of extracting information about processes and methods.</p>
+</sec>
+<sec id="x1-100006.4">
+<label>6.4.</label>
+<title>Articulate ThAIs: Describing scientific results to different audiences</title>
+<p>Communicating scientific findings will be a strong requirement for ThAIs. New findings have to be placed in perspective of what is already known in the literature. In addition, appropriate explanations and compelling arguments need to be generated.</p>
+<p>I am very interested in using computational workflows to generate automatically explanatory text that could be included in scientific papers We are investigating the use of semantic representations of data analysis workflows to generate alternative narrative accounts in DANA, a system to customize the methods section of an article to different readers depending on their interest and expertise levels [<xref ref-type="bibr" rid="ref012">12</xref>]. In order to be true partners in the scientific research enterprise, ThAIs will have to communicate not just how they analyzed data, but the reasons and context for the analysis as well as the significance of the results. Perhaps by reading ThAIs-generated descriptions, human scientists will adopt more precise language to describe scientific results and improve the reproducibility of the work.</p>
+</sec>
+<sec id="x1-110006.5">
+<label>6.5.</label>
+<title>System design for ThAIs: Compositionality, abstraction, and connectivity</title>
+<p>We need to develop architectures for intelligence systems that can be easily extended with new capabilities and integrated with others. Unless ThAIS have compositionality, abstraction, and connectivity, it will be hard to combine the capabilities above as they grow in breadth and depth.</p>
+</sec>
+<sec id="x1-120006.6">
+<label>6.6.</label>
+<title>Ethical ThAIs: Awareness of limitations</title>
+<p>ThAIs should understand their limitations, and behave accordingly. This involves reasoning about their confidence on the completeness and quality of their knowledge, their ability to accomplish any task requested, and the responsibilities of being an authority in a particular subject domain. Their ethical behavior will hinge on whether they can stop themselves from taking action when they are not qualified or able to do so.</p>
+<p>Research is needed in the area of representations of hypotheses, claims, and evidence. A biomedical repository with an entry about the interaction between a protein and a gene can cite several papers as evidence, but more nuanced representations of that evidence are needed in order to make informed decisions about how to use it: were the experiments done for humans or another organism, were they reliable mass spectrometry experiments or simple fluorescence spectroscopy, were any of the results replicated, and what were the p-value ranges obtained. This kind of meta-knowledge and provenance is crucial to determine the confidence on the cumulated scientific record [<xref ref-type="bibr" rid="ref004">4</xref>]. I have contributed to the development of provenance standards as an important enabler for this line of research [<xref ref-type="bibr" rid="ref017">17</xref>,<xref ref-type="bibr" rid="ref028">28</xref>].</p>
+</sec>
+</sec>
+<sec id="x1-130007">
+<label>7.</label>
+<title>Conclusions</title>
+<p>Thoughtful artificial intelligence goes beyond exhibiting rational behavior, and incorporates expanded context, initiative, networked connection, articulate communication, compositional system design, and ethical considerations. Thoughtful artificial intelligence systems will result in fundamentally new capabilities that will be a game changer for data science and scientific discovery.</p>
+<p>There are significant research challenges ahead, and we must focus not only on developing thoughtful artificial intelligence but also on developing infrastructure and mechanisms to enable them. With thoughtful artificial intelligence systems as partners for data science and scientific discovery, we will be better equipped to tackle discoveries that are now unreachable.</p>
+</sec>
+</body>
+<back>
+<ack>
+<title>Acknowledgements</title>
+<p>We gratefully acknowledge support from the Defense Advanced Research Projects Agency through the SIMPLEX program with award W911NF-15-1-0555, and from the National Institutes of Health under award 1R01GM117097. We would like to thank Daniel Garijo, Hiroaki Kitano, and Parag Mallick for many thoughtful discussions.</p></ack>
+<ref-list>
+<title>References</title>
+<ref id="ref001">
+<label>[1]</label><mixed-citation publication-type="journal"><string-name><given-names>K.</given-names> <surname>Anderson</surname></string-name>, <string-name><given-names>E.</given-names> <surname>Bradley</surname></string-name>, <string-name><given-names>L.</given-names> <surname>Rassbach de Vesine</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Zreda</surname></string-name> and <string-name><given-names>C.</given-names> <surname>Zweck</surname></string-name>, <article-title>Forensic reasoning about paleoclimatology: Creating a system that works</article-title>, <source>Advances in Cognitive Systems</source> <volume>3</volume> (<year>2014</year>), <fpage>221</fpage>–<lpage>240</lpage>. <uri>http://www.cogsys.org/pdf/paper-9-3-39.pdf</uri>.</mixed-citation>
+</ref>
+<ref id="ref002">
+<label>[2]</label><mixed-citation publication-type="journal"><string-name><given-names>A.</given-names> <surname>Barabási</surname></string-name>, <article-title>Network theory – The emergence of creative enterprise</article-title>, <source>Science</source> <volume>308</volume> (<year>2005</year>), <fpage>639</fpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1126/science.1112554" xlink:type="simple">10.1126/science.1112554</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref003">
+<label>[3]</label><mixed-citation publication-type="journal"><string-name><given-names>F.</given-names> <surname>Belleau</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Nolin</surname></string-name>, <string-name><given-names>N.</given-names> <surname>Tourigny</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Rigault</surname></string-name> and <string-name><given-names>J.</given-names> <surname>Morissette</surname></string-name>, <article-title>Bio2RDF: Towards a mashup to build bioinformatics knowledge systems</article-title>, <source>Journal of Biomedical Informatics</source> <volume>41</volume>(<issue>5</issue>) (<year>2008</year>), <fpage>706</fpage>–<lpage>716</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1016/j.jbi.2008.03.004" xlink:type="simple">10.1016/j.jbi.2008.03.004</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref004">
+<label>[4]</label><mixed-citation publication-type="other"><string-name><given-names>A.</given-names> <surname>Callahan</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Dumontier</surname></string-name> and <string-name><given-names>N.H.</given-names> <surname>Shah</surname></string-name>, <article-title>HyQue: Evaluating hypotheses using semantic web technologies</article-title>, <source>Journal of Biomedical Semantics</source> <volume>2</volume>(<issue>Suppl 2</issue>) (<year>2011</year>), <elocation-id>S3</elocation-id>. doi:<ext-link ext-link-type="doi" xlink:href="10.1186/2041-1480-2-S2-S3" xlink:type="simple">10.1186/2041-1480-2-S2-S3</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref005">
+<label>[5]</label><mixed-citation publication-type="journal"><string-name><given-names>S.</given-names> <surname>Chandrasekharan</surname></string-name> and <string-name><given-names>N.J.</given-names> <surname>Nersessian</surname></string-name>, <article-title>Building cognition: The construction of computational representations for scientific discovery</article-title>, <source>Cognitive Science</source> <volume>39</volume>(<issue>8</issue>) (<year>2015</year>), <fpage>1727</fpage>–<lpage>1763</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1111/cogs.12203" xlink:type="simple">10.1111/cogs.12203</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref006">
+<label>[6]</label><mixed-citation publication-type="other"><string-name><given-names>P.</given-names> <surname>Cheeseman</surname></string-name> and <string-name><given-names>J.</given-names> <surname>Stutz</surname></string-name>, <chapter-title>Bayesian classification (AutoClass): Theory and results</chapter-title>, in: <source>Advances in Knowledge Discovery and Data Mining</source>, <string-name><given-names>U.M.</given-names> <surname>Fayyad</surname></string-name>, <string-name><given-names>G.</given-names> <surname>Piatetsky-Shapiro</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Smyth</surname></string-name> and <string-name><given-names>R.</given-names> <surname>Uthurusamy</surname></string-name>, eds, <publisher-name>AAAI Press/MIT Press</publisher-name>, <year>1996</year>. <uri>https://dl.acm.org/citation.cfm?id=257954</uri>.</mixed-citation>
+</ref>
+<ref id="ref007">
+<label>[7]</label><mixed-citation publication-type="other"><string-name><given-names>A.</given-names> <surname>Cho</surname></string-name>, <article-title>Excavation starts for U.S. particle physicists’ next giant experiment</article-title>, <source>Science</source> (<year>2017</year>). doi:<ext-link ext-link-type="doi" xlink:href="10.1126/science.aan7143" xlink:type="simple">10.1126/science.aan7143</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref008">
+<label>[8]</label><mixed-citation publication-type="journal"><string-name><given-names>P.</given-names> <surname>Ciccarese</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Shotton</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Peroni</surname></string-name> and <string-name><given-names>T.</given-names> <surname>Clark</surname></string-name>, <article-title>CiTO + SWAN: The web semantics of bibliographic records, citations, evidence and discourse relationships</article-title>, <source>Semantic Web Journal</source> <volume>5</volume>(<issue>4</issue>) (<year>2012</year>), <fpage>295</fpage>–<lpage>311</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.3233/SW-130098" xlink:type="simple">10.3233/SW-130098</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref009">
+<label>[9]</label><mixed-citation publication-type="journal"><string-name><given-names>D.</given-names> <surname>Garijo</surname></string-name>, <string-name><given-names>Y.</given-names> <surname>Gil</surname></string-name> and <string-name><given-names>O.</given-names> <surname>Corcho</surname></string-name>, <article-title>Abstract, link, publish, exploit: An end to end framework for workflow sharing</article-title>, <source>Future Generation Computer Systems</source> <volume>75</volume> (<year>2017</year>), <fpage>271</fpage>–<lpage>283</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1016/j.future.2017.01.008" xlink:type="simple">10.1016/j.future.2017.01.008</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref010">
+<label>[10]</label><mixed-citation publication-type="other"><string-name><given-names>D.</given-names> <surname>Garijo</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Kinnings</surname></string-name>, <string-name><given-names>L.</given-names> <surname>Xie</surname></string-name>, <string-name><given-names>L.</given-names> <surname>Xie</surname></string-name>, <string-name><given-names>Y.</given-names> <surname>Zhang</surname></string-name>, <string-name><given-names>P.E.</given-names> <surname>Bourne</surname></string-name> and <string-name><given-names>Y.</given-names> <surname>Gil</surname></string-name>, <article-title>Quantifying reproducibility in computational biology: The case of the tuberculosis drugome</article-title>, <source>PLoS ONE</source> <volume>8</volume>(<issue>11</issue>) (<year>2013</year>), <elocation-id>e80278</elocation-id>. doi:<ext-link ext-link-type="doi" xlink:href="10.1371/journal.pone.0080278" xlink:type="simple">10.1371/journal.pone.0080278</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref011">
+<label>[11]</label><mixed-citation publication-type="journal"><string-name><given-names>Y.</given-names> <surname>Gil</surname></string-name>, <string-name><given-names>C.H.</given-names> <surname>David</surname></string-name>, <string-name><given-names>I.</given-names> <surname>Demir</surname></string-name>, <string-name><given-names>B.T.</given-names> <surname>Essawy</surname></string-name>, <string-name><given-names>R.W.</given-names> <surname>Fulweiler</surname></string-name>, <string-name><given-names>J.L.</given-names> <surname>Goodall</surname></string-name>, <string-name><given-names>L.</given-names> <surname>Karlstrom</surname></string-name>, <string-name><given-names>H.</given-names> <surname>Lee</surname></string-name>, <string-name><given-names>H.J.</given-names> <surname>Mills</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Oh</surname></string-name>, <string-name><given-names>S.A.</given-names> <surname>Pierce</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Pope</surname></string-name>, <string-name><given-names>M.W.</given-names> <surname>Tzeng</surname></string-name>, <string-name><given-names>S.R.</given-names> <surname>Villamizar</surname></string-name> and <string-name><given-names>X.</given-names> <surname>Yu</surname></string-name>, <article-title>Towards the geoscience paper of the future: Best practices for documenting and sharing research from data to software to provenance</article-title>, <source>Earth and Space Science</source> <volume>3</volume>(<issue>10</issue>) (<year>2016</year>), <fpage>388</fpage>–<lpage>415</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1002/2016EA000201" xlink:type="simple">10.1002/2016EA000201</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref012">
+<label>[12]</label><mixed-citation publication-type="other"><string-name><given-names>Y.</given-names> <surname>Gil</surname></string-name> and <string-name><given-names>D.</given-names> <surname>Garijo</surname></string-name>, <chapter-title>Towards automating data narratives</chapter-title>, in: <source>Proceedings of the Twenty-Second ACM International Conference on Intelligent User Interfaces (IUI-17)</source>, <conf-loc>Limassol, Cyprus</conf-loc>, <year>2017</year>. <uri>https://doi.org/10.1145/3025171.3025193</uri>.</mixed-citation>
+</ref>
+<ref id="ref013">
+<label>[13]</label><mixed-citation publication-type="other"><string-name><given-names>Y.</given-names> <surname>Gil</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Garijo</surname></string-name>, <string-name><given-names>V.</given-names> <surname>Ratnakar</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Mayani</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Adusumilli</surname></string-name>, <string-name><given-names>H.</given-names> <surname>Boyce</surname></string-name> and <string-name><given-names>P.</given-names> <surname>Mallick</surname></string-name>, <chapter-title>Automated hypothesis testing with large scientific data repositories</chapter-title>, in: <source>Proceedings of the Fourth Annual Conference on Advances in Cognitive Systems (ACS)</source>, <conf-loc>Evanston, IL</conf-loc>, <year>2016</year>. <uri>http://www.cogsys.org/papers/ACS2016/Papers/Gil_et.al-ACS-2016.pdf</uri>.</mixed-citation>
+</ref>
+<ref id="ref014">
+<label>[14]</label><mixed-citation publication-type="other"><string-name><given-names>Y.</given-names> <surname>Gil</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Garijo</surname></string-name>, <string-name><given-names>V.</given-names> <surname>Ratnakar</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Mayani</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Adusumilli</surname></string-name>, <string-name><given-names>H.</given-names> <surname>Boyce</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Srivastava</surname></string-name> and <string-name><given-names>P.</given-names> <surname>Mallick</surname></string-name>, <chapter-title>Towards continuous scientific data analysis and hypothesis evolution</chapter-title>, in: <source>Proceedings of the Thirty-First AAAI Conference on Artificial Intelligence (AAAI-17)</source>, <conf-loc>San Francisco, CA</conf-loc>, <year>2017</year>. <uri>https://aaai.org/ocs/index.php/AAAI/AAAI17/paper/view/14839</uri>.</mixed-citation>
+</ref>
+<ref id="ref015">
+<label>[15]</label><mixed-citation publication-type="journal"><string-name><given-names>Y.</given-names> <surname>Gil</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Gonzalez-Calero</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Kim</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Moody</surname></string-name> and <string-name><given-names>V.</given-names> <surname>Ratnakar</surname></string-name>, <article-title>A semantic framework for automatic generation of computational workflows using distributed data and component catalogs</article-title>, <source>Journal of Experimental and Theoretical Artificial Intelligence</source> <volume>23</volume>(<issue>4</issue>) (<year>2011</year>), <fpage>389</fpage>–<lpage>467</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1080/0952813X.2010.490962" xlink:type="simple">10.1080/0952813X.2010.490962</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref016">
+<label>[16]</label><mixed-citation publication-type="other"><string-name><given-names>Y.</given-names> <surname>Gil</surname></string-name> and <string-name><given-names>H.</given-names> <surname>Hirsh</surname></string-name> (eds), Final report of the NSF Workshop on Discovery Informatics. Report, National Science Foundation, Arlington, VA, 2012. <uri>http://www.isi.edu/~gil/diw2012/NSFDiscoveryInformatics2012-FinalReport.pdf</uri>.</mixed-citation>
+</ref>
+<ref id="ref017">
+<label>[17]</label><mixed-citation publication-type="other"><string-name><given-names>Y.</given-names> <surname>Gil</surname></string-name> and <string-name><given-names>S.</given-names> <surname>Miles</surname></string-name>, <source>A Primer for the PROV Provenance Model. World Wide Web Consortium (W3C)</source>, <year>2013</year>. <uri>http://www.w3.org/TR/prov-primer/</uri>.</mixed-citation>
+</ref>
+<ref id="ref018">
+<label>[18]</label><mixed-citation publication-type="other"><string-name><given-names>Y.</given-names> <surname>Gil</surname></string-name> and <string-name><given-names>S.</given-names> <surname>Pierce</surname></string-name>, Final report of the 2015 NSF Workshop on Intelligent Systems for Geosciences. Report, National Science Foundation, Arlington, VA, 2015. <uri>https://dl.acm.org/citation.cfm?id=2856633</uri>.</mixed-citation>
+</ref>
+<ref id="ref019">
+<label>[19]</label><mixed-citation publication-type="journal"><string-name><given-names>T.</given-names> <surname>Herndon</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Ash</surname></string-name> and <string-name><given-names>R.</given-names> <surname>Pollin</surname></string-name>, <article-title>Does high public debt consistently stifle economic growth? A critique of Reinhart and Rogoff</article-title>, <source>Cambridge Journal of Economics</source> <volume>38</volume>(<issue>2</issue>) (<year>2013</year>), <fpage>257</fpage>–<lpage>279</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1093/cje/bet075" xlink:type="simple">10.1093/cje/bet075</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref020">
+<label>[20]</label><mixed-citation publication-type="other"><string-name><given-names>X.</given-names> <surname>Jia</surname></string-name>, <string-name><given-names>X.C.</given-names> <surname>Chen</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Karpatne</surname></string-name> and <string-name><given-names>V.</given-names> <surname>Kumar</surname></string-name>, <chapter-title>Identifying dynamic changes with noisy labels in spatial-temporal data: A study on large-scale water monitoring application</chapter-title>, in: <source>IEEE International Conference on Big Data</source>, <year>2016</year>. <uri>https://doi.org/10.1109/BigData.2016.7840738</uri>.</mixed-citation>
+</ref>
+<ref id="ref021">
+<label>[21]</label><mixed-citation publication-type="journal"><string-name><given-names>A.</given-names> <surname>Karpatne</surname></string-name>, <string-name><given-names>G.</given-names> <surname>Atluri</surname></string-name>, <string-name><given-names>J.H.</given-names> <surname>Faghmous</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Steinbach</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Banerjee</surname></string-name>, <string-name><given-names>A.R.</given-names> <surname>Ganguly</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Shekhar</surname></string-name>, <string-name><given-names>N.F.</given-names> <surname>Samatova</surname></string-name> and <string-name><given-names>V.</given-names> <surname>Kumar</surname></string-name>, <article-title>Theory-guided data science: A new paradigm for scientific discovery from data</article-title>, <source>IEEE Transactions on Knowledge and Data Engineering</source> <volume>29</volume>(<issue>10</issue>) (<year>2017</year>), <fpage>2318</fpage>–<lpage>2331</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1109/TKDE.2017.2720168" xlink:type="simple">10.1109/TKDE.2017.2720168</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref022">
+<label>[22]</label><mixed-citation publication-type="journal"><string-name><given-names>R.D.</given-names> <surname>King</surname></string-name>, <string-name><given-names>K.E.</given-names> <surname>Whelan</surname></string-name>, <string-name><given-names>F.M.</given-names> <surname>Jones</surname></string-name>, <string-name><given-names>P.G.K.</given-names> <surname>Reiser</surname></string-name>, <string-name><given-names>C.H.</given-names> <surname>Bryant</surname></string-name>, <string-name><given-names>S.H.</given-names> <surname>Muggleton</surname></string-name>, <string-name><given-names>D.B.</given-names> <surname>Kell</surname></string-name> and <string-name><given-names>S.G.</given-names> <surname>Oliver</surname></string-name>, <article-title>Functional genomic hypothesis generation and experimentation by a robot scientist</article-title>, <source>Nature</source> <volume>427</volume>(<issue>6971</issue>) (<year>2004</year>), <fpage>247</fpage>–<lpage>252</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1038/nature02236" xlink:type="simple">10.1038/nature02236</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref023">
+<label>[23]</label><mixed-citation publication-type="journal"><string-name><given-names>H.</given-names> <surname>Kitano</surname></string-name>, <article-title>Artificial intelligence to win the Nobel prize and beyond: Creating the engine for scientific discovery</article-title>, <source>AI Magazine</source> <volume>37</volume>(<issue>1</issue>) (<year>2016</year>), <fpage>39</fpage>–<lpage>49</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1609/aimag.v37i1.2642" xlink:type="simple">10.1609/aimag.v37i1.2642</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref024">
+<label>[24]</label><mixed-citation publication-type="other"><string-name><given-names>P.</given-names> <surname>Langley</surname></string-name>, <string-name><given-names>H.A.</given-names> <surname>Simon</surname></string-name>, <string-name><given-names>G.L.</given-names> <surname>Bradshaw</surname></string-name> and <string-name><given-names>J.M.</given-names> <surname>Zytkow</surname></string-name>, <source>Scientific Discovery: Computational Explorations of the Creative Processes</source>, <publisher-name>MIT Press</publisher-name>, <publisher-loc>Cambridge, MA</publisher-loc>, <year>1987</year>. <uri>https://mitpress.mit.edu/books/scientific-discovery</uri>.</mixed-citation>
+</ref>
+<ref id="ref025">
+<label>[25]</label><mixed-citation publication-type="other"><string-name><given-names>S.M.</given-names> <surname>Leach</surname></string-name>, <string-name><given-names>H.</given-names> <surname>Tipney</surname></string-name>, <string-name><given-names>W.</given-names> <surname>Feng</surname></string-name>, <string-name><given-names>W.A.</given-names> <surname>Baumgartner</surname> <suffix>Jr.</suffix></string-name>, <string-name><given-names>P.</given-names> <surname>Kasliwal</surname></string-name>, <string-name><given-names>R.P.</given-names> <surname>Schuyler</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Williams</surname></string-name>, <string-name><given-names>R.A.</given-names> <surname>Spritz</surname></string-name> and <string-name><given-names>L.</given-names> <surname>Hunter</surname></string-name>, <article-title>Biomedical discovery acceleration, with applications to craniofacial development</article-title>, <source>PLoS Computational Biology</source> <volume>5</volume>(<issue>3</issue>) (<year>2009</year>), <elocation-id>e1000215</elocation-id>. doi:<ext-link ext-link-type="doi" xlink:href="10.1371/journal.pcbi.1000215" xlink:type="simple">10.1371/journal.pcbi.1000215</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref026">
+<label>[26]</label><mixed-citation publication-type="journal"><string-name><given-names>R.K.</given-names> <surname>Lindsay</surname></string-name>, <string-name><given-names>B.G.</given-names> <surname>Buchanan</surname></string-name>, <string-name><given-names>E.A.</given-names> <surname>Feigenbaum</surname></string-name> and <string-name><given-names>J.</given-names> <surname>Lederberg</surname></string-name>, <article-title>DENDRAL: A case study of the first expert system for scientific hypothesis formation</article-title>, <source>Artificial Intelligence</source> <volume>61</volume>(<issue>2</issue>) (<year>1993</year>), <fpage>209</fpage>–<lpage>261</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1016/0004-3702(93)90068-M" xlink:type="simple">10.1016/0004-3702(93)90068-M</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref027">
+<label>[27]</label><mixed-citation publication-type="journal"><string-name><given-names>C.C.</given-names> <surname>Liu</surname></string-name>, <string-name><given-names>Y.T.</given-names> <surname>Tseng</surname></string-name>, <string-name><given-names>W.</given-names> <surname>Li</surname></string-name>, <string-name><given-names>C.Y.</given-names> <surname>Wu</surname></string-name>, <string-name><given-names>I.</given-names> <surname>Mayzus</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Rzhetsky</surname></string-name>, <string-name><given-names>F.</given-names> <surname>Sun</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Waterman</surname></string-name>, <string-name><given-names>J.J.W.</given-names> <surname>Chen</surname></string-name>, <string-name><given-names>P.M.</given-names> <surname>Chaudhary</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Loscalzo</surname></string-name>, <string-name><given-names>E.</given-names> <surname>Crandall</surname></string-name> and <string-name><given-names>X.J.</given-names> <surname>Zhou</surname></string-name>, <article-title>DiseaseConnect: A comprehensive web server for mechanism-based disease–disease connections</article-title>, <source>Nucleic Acids Research</source> <volume>42</volume> (<year>2014</year>), <fpage>W137</fpage>–<lpage>W146</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1093/nar/gku412" xlink:type="simple">10.1093/nar/gku412</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref028">
+<label>[28]</label><mixed-citation publication-type="journal"><string-name><given-names>L.</given-names> <surname>Moreau</surname></string-name>, <string-name><given-names>B.</given-names> <surname>Clifford</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Freire</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Futrelle</surname></string-name>, <string-name><given-names>Y.</given-names> <surname>Gil</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Groth</surname></string-name>, <string-name><given-names>N.</given-names> <surname>Kwasnikowska</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Miles</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Missier</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Myers</surname></string-name>, <string-name><given-names>B.</given-names> <surname>Plale</surname></string-name>, <string-name><given-names>Y.</given-names> <surname>Simmhan</surname></string-name>, <string-name><given-names>E.</given-names> <surname>Stephan</surname></string-name> and <string-name><given-names>J.V.</given-names> <surname>denBussche</surname></string-name>, <article-title>The open provenance model core specification (v1.1)</article-title>, <source>Future Generation Computer Systems</source> <volume>27</volume>(<issue>6</issue>) (<year>2011</year>), <fpage>743</fpage>–<lpage>756</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1016/j.future.2010.11.020" xlink:type="simple">10.1016/j.future.2010.11.020</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref029">
+<label>[29]</label><mixed-citation publication-type="other"><string-name><given-names>S.E.</given-names> <surname>Peters</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Zhang</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Livny</surname></string-name> and <string-name><given-names>C.</given-names> <surname>Ré</surname></string-name>, <article-title>A machine reading system for assembling synthetic paleontological databases</article-title>, <source>PLoS ONE</source> <volume>9</volume>(<issue>12</issue>) (<year>2014</year>), <elocation-id>e113523</elocation-id>. doi:<ext-link ext-link-type="doi" xlink:href="10.1371/journal.pone.0113523" xlink:type="simple">10.1371/journal.pone.0113523</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref030">
+<label>[30]</label><mixed-citation publication-type="journal"><string-name><given-names>R.</given-names> <surname>Scheines</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Spirtes</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Glymour</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Meek</surname></string-name> and <string-name><given-names>T.</given-names> <surname>Richardson</surname></string-name>, <article-title>The TETRAD project: Constraint based aids to causal model specification</article-title>, <source>Multivariate Behavioral Research</source> <volume>33</volume>(<issue>1</issue>) (<year>1998</year>), <fpage>65</fpage>–<lpage>117</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1207/s15327906mbr3301_3" xlink:type="simple">10.1207/s15327906mbr3301_3</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref031">
+<label>[31]</label><mixed-citation publication-type="journal"><string-name><given-names>M.</given-names> <surname>Schmidt</surname></string-name> and <string-name><given-names>H.</given-names> <surname>Lipson</surname></string-name>, <article-title>Distilling free-form natural laws from experimental data</article-title>, <source>Science</source> <volume>324</volume>(<issue>5923</issue>) (<year>2009</year>), <fpage>81</fpage>–<lpage>85</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1126/science.1165893" xlink:type="simple">10.1126/science.1165893</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref032">
+<label>[32]</label><mixed-citation publication-type="other"><collab>Science News Staff</collab>, <article-title>AI is changing how we do science</article-title>, <source>Science</source> (<year>2017</year>). doi:<ext-link ext-link-type="doi" xlink:href="10.1126/science.aan7049" xlink:type="simple">10.1126/science.aan7049</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref033">
+<label>[33]</label><mixed-citation publication-type="journal"><collab>Science Staff</collab>, <article-title>Challenges and opportunities</article-title>, <source>Science</source> <volume>331</volume>(<issue>6018</issue>) (<year>2011</year>), <fpage>692</fpage>–<lpage>693</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1126/science.331.6018.692" xlink:type="simple">10.1126/science.331.6018.692</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref034">
+<label>[34]</label><mixed-citation publication-type="other"><string-name><given-names>H.A.</given-names> <surname>Simon</surname></string-name>, <source>The Sciences of the Artificial</source>, <publisher-name>MIT Press</publisher-name>, <year>1969</year>. <uri>https://mitpress.mit.edu/books/sciences-artificial</uri>.</mixed-citation>
+</ref>
+<ref id="ref035">
+<label>[35]</label><mixed-citation publication-type="other">Special Issue on Artificial Intelligence Transforms Science, <italic>Science</italic> <bold>357</bold>(6346) (2017). <uri>http://science.sciencemag.org/content/357/6346</uri>.</mixed-citation>
+</ref>
+<ref id="ref036">
+<label>[36]</label><mixed-citation publication-type="other"><string-name><given-names>P.</given-names> <surname>Spirtes</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Glymour</surname></string-name> and <string-name><given-names>R.</given-names> <surname>Scheines</surname></string-name>, <source>Causation, Prediction and Search</source>, <publisher-name>MIT Press</publisher-name>, <publisher-loc>Cambridge, MA</publisher-loc>, <year>2001</year>. <uri>https://mitpress.mit.edu/books/causation-prediction-and-search</uri>.</mixed-citation>
+</ref>
+<ref id="ref037">
+<label>[37]</label><mixed-citation publication-type="journal"><collab>The Atlas Collaboration</collab>, <article-title>The Higgs boson</article-title>, <source>Science</source> <volume>338</volume>(<issue>6114</issue>) (<year>2012</year>), <fpage>1558</fpage>–<lpage>1559</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1126/science.338.6114.1558" xlink:type="simple">10.1126/science.338.6114.1558</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref038">
+<label>[38]</label><mixed-citation publication-type="chapter"><string-name><given-names>L.</given-names> <surname>Todorovski</surname></string-name> and <string-name><given-names>S.</given-names> <surname>Džeroski</surname></string-name>, <chapter-title>Integrating domain knowledge in equation discovery</chapter-title>, in: <source>Computational Discovery of Scientific Knowledge: Introductions, Techniques and Applications in Environmental and Life Sciences</source>, <string-name><given-names>S.</given-names> <surname>Džeroski</surname></string-name> and <string-name><given-names>L.</given-names> <surname>Todorovski</surname></string-name>, eds, <series>Lecture Notes in Artificial Intelligence</series>, Vol. <volume>4660</volume>, <publisher-name>Springer</publisher-name>, <year>2007</year>, pp. <fpage>69</fpage>–<lpage>97</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1007/978-3-540-73920-3_4" xlink:type="simple">10.1007/978-3-540-73920-3_4</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref039">
+<label>[39]</label><mixed-citation publication-type="journal"><string-name><given-names>D.</given-names> <surname>Wettergreen</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Bapna</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Maimone</surname></string-name> and <string-name><given-names>G.</given-names> <surname>Thomas</surname></string-name>, <article-title>Developing Nomad for robotic exploration of the Atacama Desert</article-title>, <source>Robotics and Autonomous Systems</source> <volume>26</volume>(<issue>2–3</issue>) (<year>1999</year>), <fpage>127</fpage>–<lpage>148</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1016/S0921-8890(99)80002-5" xlink:type="simple">10.1016/S0921-8890(99)80002-5</ext-link>.</mixed-citation>
+</ref>
+</ref-list>
+</back>
+</article>

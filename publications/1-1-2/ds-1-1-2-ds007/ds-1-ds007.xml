@@ -1,0 +1,754 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.0 20120330//EN" "JATS-journalpublishing1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="position-paper">
+<front>
+<journal-meta>
+<journal-id journal-id-type="publisher-id">DS</journal-id>
+<journal-title-group><journal-title>Data Science</journal-title></journal-title-group>
+<issn pub-type="epub">2451-8492</issn><issn pub-type="ppub">2451-8484</issn><issn-l>2451-8484</issn-l>
+<publisher>
+<publisher-name>IOS Press</publisher-name><publisher-loc>Nieuwe Hemweg 6B, 1013 BG Amsterdam, The Netherlands</publisher-loc>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">DS007</article-id>
+<article-id pub-id-type="doi">10.3233/DS-170007</article-id>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Position Paper</subject></subj-group></article-categories>
+<title-group>
+<article-title>The knowledge graph as the default data model for learning on heterogeneous knowledge</article-title>
+</title-group>
+<contrib-group content-type="Editor">
+<contrib contrib-type="editor">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0003-4727-9435</contrib-id>
+<name><surname>Dumontier</surname><given-names>Michel</given-names></name>
+</contrib>
+</contrib-group>
+<contrib-group>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0003-2415-8438</contrib-id>
+<name><surname>Wilcke</surname><given-names>Xander</given-names></name><xref ref-type="aff" rid="affa">a</xref><xref ref-type="aff" rid="affb">b</xref><xref ref-type="corresp" rid="cor1">*</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-0189-5817</contrib-id>
+<name><surname>Bloem</surname><given-names>Peter</given-names></name><xref ref-type="aff" rid="affc">c</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0001-9079-039X</contrib-id>
+<name><surname>de Boer</surname><given-names>Victor</given-names></name><xref ref-type="aff" rid="affd">d</xref>
+</contrib>
+<aff id="affa"><label>a</label>Faculty of Sciences, <institution>Vrije Universiteit Amsterdam</institution>, Amsterdam, <country>The Netherlands</country>.</aff>
+<aff id="affb"><label>b</label>Faculty of Spatial Economics, <institution>Vrije Universiteit Amsterdam</institution>, Amsterdam, <country>The Netherlands</country></aff>
+<aff id="affc"><label>c</label>Faculty of Sciences, <institution>Vrije Universiteit Amsterdam</institution>, Amsterdam, <country>The Netherlands</country>.</aff>
+<aff id="affd"><label>d</label>Faculty of Sciences, <institution>Vrije Universiteit Amsterdam</institution>, Amsterdam, <country>The Netherlands</country>.</aff>
+</contrib-group>
+<author-notes>
+<corresp id="cor1"><label>*</label>Corresponding author. E-mail: <email>w.x.wilcke@vu.nl</email>.</corresp>
+</author-notes>
+<pub-date date-type="preprint" publication-format="electronic"><day>17</day><month>10</month><year>2017</year></pub-date><pub-date date-type="pub" publication-format="electronic"><day>8</day><month>12</month><year>2017</year></pub-date><pub-date date-type="collection" publication-format="electronic"><year>2017</year></pub-date><volume>1</volume><issue>1-2</issue><fpage>39</fpage><lpage>57</lpage><history><date date-type="received"><day>10</day><month>04</month><year>2017</year></date><date date-type="accepted"><day>20</day><month>06</month><year>2017</year></date></history>
+<permissions><copyright-statement>© 2017 – IOS Press and the authors.</copyright-statement><copyright-year>2017</copyright-year>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/" license-type="open-access" xlink:type="simple">
+<license-p>This is an open access article distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/" xlink:type="simple">Creative Commons Attribution (CC BY 4.0) License</ext-link>, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions>
+<abstract>
+<p>In modern machine learning, <italic>raw data</italic> is the preferred input for our models. Where a decade ago data scientists were still engineering features, manually picking out the details we thought salient, they now prefer the data in their raw form. As long as we can assume that all relevant and irrelevant information is present in the input data, we can design deep models that build up intermediate representations to sift out relevant features. However, these models are often domain specific and tailored to the task at hand, and therefore unsuited for learning on <italic>heterogeneous knowledge</italic>: information of different types and from different domains. If we can develop methods that operate on this form of knowledge, we can dispense with a great deal more ad-hoc feature engineering and train deep models end-to-end in many more domains. To accomplish this, we first need a data model capable of expressing heterogeneous knowledge naturally in various domains, in as usable a form as possible, and satisfying as many use cases as possible. In this position paper, we argue that the <italic>knowledge graph</italic> is a suitable candidate for this data model. We further describe current research and discuss some of the promises and challenges of this approach.</p>
+</abstract>
+<kwd-group>
+<label>Keywords</label>
+<kwd>Knowledge graphs</kwd>
+<kwd>semantic web</kwd>
+<kwd>machine learning</kwd>
+<kwd>end-to-end learning</kwd>
+<kwd>position paper</kwd>
+</kwd-group>
+</article-meta>
+</front>
+<body>
+<sec id="x1-10001">
+<label>1.</label>
+<title>Introduction</title>
+<p>In the last decade, the methodology of Data Science has changed radically. Where machine learning practitioners and statisticians would generally spend most of their time on extracting meaningful features from their data, often creating a derivative of the original data in the process, they now prefer to feed their models the data in their raw form. Specifically, data which still contains all relevant and irrelevant information rather than having been reduced to features selected or engineered by data scientists. This shift can largely be attributed to the emergence of <italic>deep learning</italic>, which showed that we can build layered models of intermediate representations to sift out relevant features, and which allows us to dispense with manual feature engineering.</p>
+<p>For example, in the domain of image analysis, popular feature extractors like SIFT [<xref ref-type="bibr" rid="ref020">20</xref>] have given way to Convolutional Neural Networks [<xref ref-type="bibr" rid="ref004">4</xref>,<xref ref-type="bibr" rid="ref018">18</xref>], which naturally consume raw images. These are used, for instance, in facial recognition models which build up layers of intermediate representations: from low level features built on the raw pixels like local edge detectors, to higher level features like specialized detectors for the eyes, the nose, up to the face of a specific person [<xref ref-type="bibr" rid="ref019">19</xref>]. Similarly, in audio analysis, it is common to use models that consume audio data directly [<xref ref-type="bibr" rid="ref010">10</xref>] and in Natural Language Processing it is possible to achieve state-of-the-art performance without explicit preprocessing steps such as POS-tagging and parsing [<xref ref-type="bibr" rid="ref023">23</xref>].</p>
+<p>This is one of the strongest benefits of deep learning: we can directly feed the model the dataset as a whole, containing all relevant and irrelevant information, and trust the model to unpack it, to sift through it, and to construct whatever low-level and high-level features are relevant for the task at hand. Not only do we not need to choose what features might be relevant to the learning task – making ad-hoc decisions and adding, removing, and reshaping information in the process – we can let the model surprise us: it may find features in our data that we would never have thought of ourselves. With feature engineering now being part of the model itself, it becomes possible to learn directly from the data. This is called end-to-end learning (further explained in the text box below).</p>
+<p>However, most present end-to-end learning methods are domain-specific: they are tailored to images, to sound, or to language. When faced with <italic>heterogeneous knowledge</italic> – information of different types and from different domains – we often find ourselves resorting back to manual feature engineering. To avoid this, we require a machine learning model capable of directly consuming heterogeneous knowledge, and a data model suitable of expressing such knowledge naturally and with minimal loss of information. In this paper, we argue that the knowledge graph is a suitable data model for this purpose and that, in order to achieve end-to-end learning on heterogeneous knowledge, we should a) adopt the knowledge graph as the default data model for this kind of knowledge and b) develop end-to-end models that can directly consume these knowledge graphs.</p>
+<p>Concretely, we will use the term <italic>heterogeneous knowledge</italic> to refer to: entities (things), their relations, and their attributes. For instance, in a company database, we may find entities such as employees, departments, resources and clients. Relations express which employees work together, which department each employee works for and so on. Attributes can be simple strings, such as names and social security numbers, but also richer media like short biographies, photographs, promotional videos or recorded interviews.</p>
+<p>Of course, no data model fits all use cases, and knowledge graphs are no exception. Consider, for instance, a simple image classification task: it would be extremely inefficient to encode the individual pixels of all images as separate entities in a knowledge graph. We can, however, consider encoding the images <italic>themselves</italic> as entities, with the raw image data as their single attribute (e.g., as hex-encoded binary data). In this case, we would pay little overhead, but we would also gain nothing over the original simple list of images. However, as soon as more information becomes available (like geotags, author names, or camera specifications) it can be easily integrated into this knowledge graph.</p>
+<p>This, specifically, is what we mean when we argue for the adoption of the knowledge graph as the <italic>default</italic> data model for heterogeneous knowledge: not a one-size-fits-all solution, but a first line of attack that is designed to capture the majority of use cases. For those cases where it adds little, we can design our models so that it does not hurt either, while still providing a data model and machine learning pipeline that allows us to extend our dataset with other knowledge.</p>
+<p>We will first explain the principles behind the knowledge graph model with the help of several practical examples, followed by a discussion on the potential of knowledge graphs for end-to-end learning and on the challenges of this approach. We will finish with a concise overview of promising current research in this area.</p>
+<p>_______________________________________________________________________________________________________________________________________________________________________________</p><p><bold>End-to-End Learning</bold> Why is end-to-end learning so important to data scientists? Is this just a modern affectation? Paul Mineiro provides a good reason to consider this a more fundamental practice [<xref ref-type="bibr" rid="ref022">22</xref>]. In most areas of software engineering, solving a complex problem begins with breaking the problem up into subproblems: divide and conquer. Each subproblem is then solved in one module, and the modules are chained together to produce the required end result. If, however, these modules use machine learning, we have to take into account that their answers are necessarily <italic>inexact</italic>.</p><disp-quote>
+<p>“Unfortunately, in machine learning we never exactly solve a problem. At best, we approximately solve a problem. This is where the technique needs modification: in software engineering the subproblem solutions are exact, but in machine learning errors compound and the aggregate result can be complete rubbish. In addition apparently paradoxical situations can arise where a component is “improved” in isolation yet aggregate system performance degrades when this “improvement” is deployed (e.g., due to the pattern of errors now being unexpected by downstream components, even if they are less frequent).</p>
+<p>Does this mean we are doomed to think holistically (which doesn’t sound scalable to large problems)? No, but it means you have to be defensive about subproblem decomposition. The best strategy, when feasible, is to train the system end-to-end, i.e., optimize all components (and the composition strategy) together rather than in isolation.”</p>
+<p>- Paul Mineiro, 15-02-2017 [<xref ref-type="bibr" rid="ref022">22</xref>]</p></disp-quote>
+<p>Even if we are forced to pre-train each component in isolation, it is crucial to follow that pre-training up with a complete end-to-end training step when all the modules are composed [<xref ref-type="bibr" rid="ref005">5</xref>]. This puts a very strong constraint on the kind of modules that we can use: an error signal needs to be able to propagate though all layers of the architecture, from the output back to the original data that inspired it. Any pre-processing done on the data, any manual feature extraction, harmonization and/or scaling can be seen as a module in the pipeline that cannot be tweaked, and does not allow a final optimization end-to-end. Any error introduced by such modules can never be retrieved. Since these are often modules at the start of our pipeline, even the smallest mistake or suboptimal choice can be blown up exponentially as we add layers to the model.</p>
+<p>_______________________________________________________________________________________________________________________________________________________________________________</p>
+<sec id="x1-20001.1">
+<label>1.1.</label>
+<title>Use cases</title>
+<p>Throughout the paper, we will use three different use cases as running examples: 
+<def-list><def-item><term><bold>Spam detection</bold></term><def>
+<p>is one of the first classification problems to be solved well enough to be widely implemented in commercial products. Early approaches tackled this task by converting email text to term vectors, and using these term vectors in a naive Bayes classifier.</p></def></def-item><def-item><term><bold>Movie recommendation</bold></term><def>
+<p>is a standard use case for recommender systems. Here, we have a set of users, and a set of movies. Some users have given ratings to some movies. In one early successful model, ratings are written as a matrix, which is then decomposed into factors that are multiplied back again to produce new ratings from which recommendations are derived.</p></def></def-item><def-item><term><bold>Market basket analysis</bold></term><def>
+<p>is one of earliest success stories which helped retailers understand customer purchasing behaviour, and which allowed them to adjust their strategy accordingly. The breakthrough that allowed this came with association rule mining, which converts all transactions into vectors and then computes their inner and outer correlations.</p></def></def-item></def-list></p>
+</sec>
+</sec>
+<sec id="x1-30002">
+<label>2.</label>
+<title>The knowledge graph</title>
+<p>The aforementioned use cases share several common aspects: in each case we have a set of instances, and we have a collection of diverse and heterogeneous facts representing our knowledge about these instances. Some facts link instances together (John is a friend of Mary, John likes Jurassic Park) and some describe attributes of instances (Jurassic Park was released on June 9, 1993).</p>
+<p>The question of how to represent such knowledge is not a new one. It has been studied by AI researchers since the invention of the field, and before [<xref ref-type="bibr" rid="ref008">8</xref>]. The most recent large-scale endeavour in this area is undoubtedly the <italic>Semantic Web</italic>, where knowledge is encoded in knowledge graphs.</p>
+<p>The knowledge graph data model used in the Semantic Web is based on three basic principles:</p>
+<list>
+<list-item id="x1-3001x2">
+<label>1.</label>
+<p>Encode knowledge using statements.</p>
+</list-item>
+<list-item id="x1-3002x2">
+<label>2.</label>
+<p>Express background knowledge in ontologies.</p>
+</list-item>
+<list-item id="x1-3003x2">
+<label>3.</label>
+<p>Reuse knowledge between datasets.</p>
+</list-item>
+</list>
+<p>We will briefly discuss each of these next.</p>
+<sec id="x1-40002.1">
+<label>2.1.</label>
+<title>Encode knowledge using statements</title>
+<p>The most fundamental idea behind the Semantic Web is that knowledge should be expressed using <italic>statements</italic>. Consider the following example: <verse-group>
+<verse-line><monospace>Kate knows Mary.</monospace></verse-line>
+<verse-line><monospace>Mary likes Pete.</monospace></verse-line>
+<verse-line><monospace>Mary age "32".</monospace></verse-line>
+<verse-line><monospace>Pete brother_of Kate.</monospace></verse-line>
+<verse-line><monospace>Pete born_on "27-03-1982".</monospace></verse-line></verse-group></p>
+<p>All of the above are statements that comply with the Resource Description Framework (RDF), a data model which forms the basic building block of the Semantic Web.<xref ref-type="fn" rid="fn1">1</xref><fn id="fn1"><label><sup>1</sup></label>
+<p><uri>https://www.w3.org/RDF/</uri></p></fn> This model specifies that each statement should consist of a single binary <italic>property</italic> (the verb) which relates two <italic>resources</italic> (the subject and object) in a left-to-right order. Together, these three are referred to as an RDF <italic>triple</italic>. We can also represent this example as a directed graph as shown in Fig. <xref rid="x1-40011">1</xref>.</p>
+<p>Resources can be either entities (things) or literals which hold values such as text, numbers, or dates. Triples can either express relations between entities when the resources on both sides are things, or they can express attributes when the resource on the right-hand side is a literal. For instance, the last line of our example set expresses an attribute of Pete (date of birth) with value “<monospace>27-03-1982</monospace>”.</p>
+<p>Apart from the few rules already listed, the RDF data model itself does not impose any further restrictions on how knowledge engineers should model their knowledge: we could have modelled our example differently, for instance by representing dates as resources. In general, such modelling choices depend on the domain and on the intended purposes of the dataset.</p>
+<fig id="x1-40011">
+<label>Fig. 1.</label>
+<caption>
+<p>Graphical representation of the example given in Section <xref rid="x1-30002">2</xref>. Edges represent binary relations. Vertices’ shapes reflect their roles: solid circles represent entities, empty circles represent their attributes.</p>
+</caption>
+<graphic xlink:href="ds-1-ds007-g001.jpg"/>
+</fig>
+</sec>
+<sec id="x1-50002.2">
+<label>2.2.</label>
+<title>Express background knowledge in ontologies</title>
+<p>Where the RDF data model gives free rein over modelling choices, ontologies offer a way to express how knowledge is structured in a given domain and by a given community. For this purpose, ontologies contain classes (entity types) and properties that describe the domain, as well as constraints and inferences on these classes and properties. For instance, an ontology might define <monospace>Person</monospace> as the class containing all individual persons. It might likewise define <monospace>type</monospace> as the property that assigns an entity to a class. As an example, let us use these to extend our example set with the following statements: <verse-group>
+<verse-line><monospace>Kate type Person.</monospace></verse-line>
+<verse-line><monospace>Mary type Person.</monospace></verse-line>
+<verse-line><monospace>Pete type Person.</monospace></verse-line></verse-group></p>
+<p>Kate, Mary, and Pete are now all said to be instances of the class <monospace>Person</monospace>. This class may hold various properties, such as that it is equivalent to the class <monospace>Human</monospace>, disjoint with the class <monospace>Animal</monospace>, and that it is a subclass of class <monospace>Agent</monospace>. This last property is an example of a recursive property, and can be expressed using the RDF Schema (RDFS) ontology<xref ref-type="fn" rid="fn2">2</xref><fn id="fn2"><label><sup>2</sup></label>
+<p><uri>https://www.w3.org/TR/rdf-schema/</uri></p></fn> which extends the bare RDF model with several practical classes and properties. The other two relations are more complex, and require a more expressive ontology to be stated. OWL, the Web Ontology Language, is generally the preferred choice for this purpose.<xref ref-type="fn" rid="fn3">3</xref><fn id="fn3"><label><sup>3</sup></label>
+<p><uri>https://www.w3.org/OWL/</uri></p></fn></p>
+<p>Ontologies can be used to derive <italic>implicit knowledge</italic>. For instance, knowing that Kate is of the type <monospace>Person</monospace>, and that <monospace>Person</monospace> is itself a subclass of <monospace>Agent</monospace>, allows a reasoning engine to derive that Kate is an <monospace>Agent</monospace> as well. We will return to this topic in Section <xref rid="x1-140004.2">4.2</xref>.</p>
+</sec>
+<sec id="x1-60002.3">
+<label>2.3.</label>
+<title>Reuse knowledge between datasets</title>
+<p>Reusing knowledge can be done by referring to resources not by name, but by a unique identifier. On the Semantic Web, these identifiers are called <italic>Internationalized Resource Identifiers</italic>, or IRIs, and generally take the form of a web address. For instance, we can use the IRIs <uri>http://vu.nl/staff/KateBishop</uri> and <uri>http://vu.nl/staff/MaryWatson</uri> to refer to Kate and Mary, respectively. More often, we would write these IRIs as <sans-serif>vu:KateBishop</sans-serif> and <sans-serif>vu:MaryWatson</sans-serif>, with <sans-serif>vu:</sans-serif> as shorthand for the <uri>http://vu.nl/staff/</uri> namespace. We can now rewrite the first statement of our example set as <verse-group>
+<verse-line><sans-serif>vu:KateBishop</sans-serif> <monospace>knows</monospace> <sans-serif>vu:MaryWatson</sans-serif>.</verse-line></verse-group></p>
+<p>This statement implies the same as before, but now we can safely add other people also named Kate or Mary without having to worry about clashes. Of course, we can do the same for our properties. To spice things up, let us assume that we used an already existing ontology, say the widely used <italic>FOAF</italic> (Friend Of A Friend) ontology.<xref ref-type="fn" rid="fn4">4</xref><fn id="fn4"><label><sup>4</sup></label>
+<p><uri>https://xmlns.com/foaf/spec/</uri></p></fn> This lets us write the statement as <verse-group>
+<verse-line><sans-serif>vu:KateBishop foaf:knows vu:MaryWatson</sans-serif>.</verse-line></verse-group></p>
+<p>We now have a triple that is fully compliant with the RDF data model, and which uses knowledge from a shared and common ontology.</p>
+<fig id="x1-60012">
+<label>Fig. 2.</label>
+<caption>
+<p>Extension of the original example (Fig. <xref rid="x1-40011">1</xref>) with a dataset on VU employees. Resources <monospace>Kate</monospace> and <monospace>Pete</monospace> occur in both graphs and can therefore be used to link the datasets together.</p>
+</caption>
+<graphic xlink:href="ds-1-ds007-g002.jpg"/>
+</fig>
+<p>The principle of reusing knowledge is a simple idea with several consequences, most particular with respect to integrating, dereferencing, and disambiguating knowledge:</p>
+<def-list><def-item><term><bold>Integrated knowledge</bold></term><def>
+<p>Integrating datasets is as simple as linking two knowledge graphs at equivalent resources. If such a resource holds the same IRI in both datasets an implicit coupling already exists and no further action is required. In practice, this boils down to simply concatenating one set of statements to another. For instance, we can extend our example set with another dataset on VU employees as long as that dataset contains any of the three resources: Kate, Mary, or Pete (Fig. <xref rid="x1-60012">2</xref>). Of course, integration on the data level does not mean that the knowledge itself is neatly integrated as well: different knowledge graphs can be the result of different modelling decisions. These will persist after integration. We will return to this topic in more detail in Section <xref rid="x1-160004.4">4.4</xref>.</p></def></def-item><def-item><term><bold>Dereferenceable knowledge</bold></term><def>
+<p>An IRI is more than just an identifier: it can also be a web address pointing to the location where a resource or property is described. For these data points, we can retrieve the description using standard HTTP. This is called <italic>dereferencing</italic>, and allows for an intuitive way to access external knowledge. In practice, not all IRIs are dereferenceable, but many are.</p></def></def-item><def-item><term><bold>Disambiguated knowledge</bold></term><def>
+<p>Dereferencing IRIs allows us to directly and unambiguously retrieve relevant information about entities in a knowledge graph, amongst which are classes and properties in embedded ontologies. Commonly included information encompasses type specifications, descriptions, and various constraints. For instance, dereferencing <sans-serif>foaf:knows</sans-serif> tells us it is a property used to specify that a certain person knows another person, and that we can infer that resources that are linked through this property are of type <monospace>Person</monospace>.</p></def></def-item></def-list>
+<p>We have recently seen uptake of these principles on a grand scale, with the Linked Open Data (LOD) cloud as prime example. With more than 38 billion statements from over 1100 datasets (Fig. <xref rid="x1-70013">3</xref>), the LOD cloud constitutes a vast distributed knowledge graph which encompasses almost any domain imaginable.</p>
+<p>With this wealth of data available, we now face the challenge of designing machine learning models capable of learning in a world of knowledge graphs.</p>
+</sec>
+</sec>
+<sec id="x1-70003">
+<label>3.</label>
+<title>Learning in a world of knowledge graphs</title>
+<p>We will revisit the three use cases described in the introduction and discuss how they can benefit from the use of knowledge graphs as data model and how this leads to a suitable climate for end-to-end learning by removing the need for manual feature engineering.</p>
+<fig id="x1-70013">
+<label>Fig. 3.</label>
+<caption>
+<p>A depiction of the LOD cloud, holding over 38 billion facts from more than 1100 linked datasets. Each vertex represents a separate dataset in the form of a knowledge graph. An edge between two datasets indicates that they share at least one IRI. Figure from [<xref ref-type="bibr" rid="ref001">1</xref>].</p>
+</caption>
+<graphic xlink:href="ds-1-ds007-g003.jpg"/>
+</fig>
+<sec id="x1-80003.1">
+<label>3.1.</label>
+<title>Spam detection</title>
+<p>Before, we discussed how early spam detection methods classified e-mails based solely on the content of the message. We often have much more information at hand. We can distinguish between the body text, the subject heading, and the quoted text from previous emails. But we also have other attributes: the sender, the receiver, and everybody listed in the CC. We know the IP address of the SMTP server used to send the email, which can be easily linked to a region. In a corporate setting, many users correspond to employees of our companies, for whom we know dates-of-birth, departments of the company, perhaps even portrait images or a short biography. All these aspects provide a wealth of information that can be used in the learning task.</p>
+<p>In the traditional setting, the data scientist must decide how to translate all this knowledge into feature vectors, so that machine learning models can learn from it. This translation has to be done by hand and the data scientist in question will have to make a judgement in each case whether the added feature is worth the effort. Instead, it would be far more convenient and effective if we can train a suitable end-to-end model directly on the dataset as a whole, and let <italic>it</italic> learn the most important features itself. We can achieve this by expressing this dataset in a knowledge graph.</p>
+<p>An example of how such a knowledge graph might look is depicted in Fig. <xref rid="x1-80014">4</xref>. Here, information about who sent the e-mails, who received them, which e-mails are replies, and which SMTP servers were used are combined in a single graph. The task is now to label the vertices that represent emails as spam or not spam – a straightforward entity classification task.</p>
+<fig id="x1-80014">
+<label>Fig. 4.</label>
+<caption>
+<p>An example dataset on email conversations used in the use case on spam detection of Section <xref rid="x1-80003.1">3.1</xref>.</p>
+</caption>
+<graphic xlink:href="ds-1-ds007-g004.jpg"/>
+</fig>
+</sec>
+<sec id="x1-90003.2">
+<label>3.2.</label>
+<title>Movie recommendation</title>
+<p>In traditional recommender systems, movie recommendations are generated by constructing a matrix of movies, people and received ratings. This approach assumes that people are likely to enjoy the same movies as people with a similar taste, and therefore needs existing ratings for effective recommendation [<xref ref-type="bibr" rid="ref017">17</xref>]. Unfortunately, we do not always have actual ratings yet and are thus unable to start these computations. This is a common issue in the traditional setting, called the <italic>cold-start problem</italic>.</p>
+<p>We can circumvent this problem by relying on additional information to make our initial predictions. For instance, we can include the principal actors, the director, the genre, the country of origin, the year it was made, whether it was adapted from a book, et cetera. Including this knowledge solves the cold start problem because we can link movies and users for which no ratings are yet available to similar entities through this background data.</p>
+<p>An example of a knowledge graph about movies is depicted in Fig. <xref rid="x1-100015">5</xref>. The dataset featured there consists of two integrated knowledge graphs: one about movies in general, and another containing movie ratings provided by users. Both graphs refer to movies by the same IRIs, and can thus be linked together via those resources. We can now recast the recommendation task as <italic>link prediction</italic>, specifically the prediction of the property <monospace>likes</monospace> that binds users to movies. Background knowledge and existing ratings can both be used, as their availability allows. For instance, while the movie <monospace>Indiana_Jones</monospace> has no ratings, we do know that it is of the same genre and from the same director as <monospace>Jurassic_Park</monospace>. Any user who likes <monospace>Jurassic_Park</monospace> might therefore also like <monospace>Indiana_Jones</monospace>.</p>
+</sec>
+<sec id="x1-100003.3">
+<label>3.3.</label>
+<title>Market basket analysis</title>
+<p>Before, we mentioned how retailers originally used transactional information to map customer purchase behaviour. Of course, we can include much more information than only anonymous transactions. For instance, we can take into account the current discount on items, whether they are healthy, and where they are placed in the store. Consumers are already providing retailers with large amounts of personal information as well: age, address, and even indirectly information about their marital and financial status. All these attributes can contribute to a precise profile of our customers.</p>
+<fig id="x1-100015">
+<label>Fig. 5.</label>
+<caption>
+<p>An example dataset on movies and ratings used in the use case on movie recommendations of Section <xref rid="x1-90003.2">3.2</xref>.</p>
+</caption>
+<graphic xlink:href="ds-1-ds007-g005.jpg"/>
+</fig>
+<p>Limiting the data purely to items imposes an upper bar on the complexity of the patterns our methods can discover. However, by integrating additional knowledge on products, ingredients, and ecological reports, our algorithms can discover more complex patterns. They might, for example, find that Certified Humane<xref ref-type="fn" rid="fn5">5</xref><fn id="fn5"><label><sup>5</sup></label>
+<p><uri>http://certifiedhumane.org/</uri></p></fn> products are often bought together, that people who buy these products also buy those which are eco-friendly, or that products with a low nutritional value are more often bought on sunny days.</p>
+<p>An example of how a knowledge graph on transactions might look is shown in Fig. <xref rid="x1-100026">6</xref>. Each transaction is linked to the items that were bought at that moment. For instance, all three transactions involve buying drumsticks. This product consist of chicken, which we know due to the coupling of the knowledge graph on transactions with that of product information. We further extended this by integrating external datasets about suppliers and ecological reports.</p>
+<fig id="x1-100026">
+<label>Fig. 6.</label>
+<caption>
+<p>An example dataset on transactions, their items, and additional information used in the use case on market basket analysis of Section <xref rid="x1-100003.3">3.3</xref>.</p>
+</caption>
+<graphic xlink:href="ds-1-ds007-g006.jpg"/>
+</fig>
+</sec>
+<sec id="x1-110003.4">
+<label>3.4.</label>
+<title>The default data model?</title>
+<p>All three use cases benefited from the use of knowledge graphs to model heterogeneous knowledge, as opposed to the current <italic>de facto</italic> default: the table. There are however, more data models capable of expressing heterogeneous knowledge natively. This raises the question whether the same can also be accomplished by modelling our knowledge in some other data model. Let us consider two popular alternatives: XML and the relational model (for database management).</p>
+<p>The tree structure of XML is a limiting factor compared to knowledge graphs. Any graph structure we want to store in XML loses information which cannot be expressed using only hierarchical relations. If, for instance, we want to store a social network in an XML format, say with a single element for each person, the relations between these people must be encoded by links between these elements that are not native to the data model. A learning model designed to consume XML would exploit the tree structure, but not the ad-hoc graph structure between these elements.</p>
+<p>The differences between the relational model and the knowledge graph are more subtle. Indeed, there are often very seamless translations between the two. Nevertheless, there are some differences, mostly based on the way these models are currently used (rather than their intrinsic properties), that make knowledge graphs a more practical candidate for end-to-end learning on heterogeneous knowledge.</p>
+<p>One important difference is how both data models allow data integration: where it is a simple task to integrate two knowledge graphs at the data level – we only need one IRI shared by both – this is a considerable problem with relational databases and typically requires various complex table operations [<xref ref-type="bibr" rid="ref012">12</xref>,<xref ref-type="bibr" rid="ref013">13</xref>]. While data integration by matching IRIs is certainly no silver bullet (as discussed further in Section <xref rid="x1-160004.4">4.4</xref>), it does allow a seamless data-level integration without human intervention. The end result is again fully compliant with the RDF data model and can thus directly be used as input to any suitable machine learning model. This is important in the context of end-to-end learning, because it makes it possible, in principle, to let the model <italic>learn</italic> the rest of the data integration.<xref ref-type="fn" rid="fn6">6</xref><fn id="fn6"><label><sup>6</sup></label>
+<p>A similar effect <italic>could</italic> be achieved for relational databases if IRIs (or some other universal naming scheme) were adopted to create keys between databases, but we are not aware of any practical efforts to that effect.</p></fn></p>
+<p>Another difference is simply the availability of data. Relational databases are typically designed for a specific purpose and often operate as solitary units in an enclosed environment. Data hosted as such is usually in some proprietary format and difficult to retrieve as a single file, and in a standardized open format. Knowledge graphs, however, are widely published and have a mature stack of open standards available to them.</p>
+<p>Of course, there are domains in which the knowledge graph is a less suitable choice of data model. Specifically, there exists a spectrum of datasets, where at one end, the relevant information is primarily encoded in the literals and, at the other, the relevant data is primarily encoded in the graph structure itself. As mentioned in the introduction, a typical use case is image classification: it would be highly impractical to encode every individual pixel of every individual image as a separate vertex in a knowledge graph. However, it <italic>is</italic> feasible to represent these images themselves as <italic>literals</italic>. This allows us to present the raw image data, together with their metadata, in a unified format.</p>
+<p>Similar encoding strategies are found in other domains, such as linguistics [<xref ref-type="bibr" rid="ref007">7</xref>] and in multimedia [<xref ref-type="bibr" rid="ref002">2</xref>], and also with other forms of data such as temporal [<xref ref-type="bibr" rid="ref028">28</xref>] and streaming data [<xref ref-type="bibr" rid="ref031">31</xref>].</p>
+</sec>
+</sec>
+<sec id="x1-120004">
+<label>4.</label>
+<title>The challenges ahead</title>
+<p>In the previous section, we argued that expressing heterogeneous knowledge in knowledge graphs holds great promise. We assumed in each case that effective end-to-end learning models are available. However, to develop such models some key challenges need to be addressed, specifically on how to deal with incomplete knowledge, implicit knowledge, heterogeneous knowledge, and differently-modelled knowledge. We will briefly discuss each of these problems next.</p>
+<sec id="x1-130004.1">
+<label>4.1.</label>
+<title>Incomplete knowledge</title>
+<p>Knowledge graphs are inherently forgiving towards missing values: rather than to force knowledge engineers to fill in the blanks with artificial replacements – <monospace>NONE</monospace>, <monospace>NULL</monospace>, <monospace>-1</monospace>, <monospace>99999</monospace>, et cetera – missing knowledge is simply omitted altogether. When dealing with real-world knowledge, we are often faced with large amounts of these missing values: for many properties in such a dataset, there may be more entities for which the value is missing, than for which it is known.</p>
+<p>While the occasional missing value can be dealt with accurately enough using current imputation methods, estimating a large number of them from only a small sample of provided values can be problematic. Ideally, models for knowledge graphs will instead simply use the information that is present, and ignore the information that is not, dealing with the uneven distribution of information among entities natively.</p>
+</sec>
+<sec id="x1-140004.2">
+<label>4.2.</label>
+<title>Implicit knowledge</title>
+<p>Knowledge graphs contain a wealth of implicit knowledge, implied through the interplay of assertion knowledge and background knowledge. Consider class inheritance: for any instance of class <inline-formula><mml:math id="math001">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">C</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>1</mml:mn>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula> holds that, if <inline-formula><mml:math id="math002">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">C</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>1</mml:mn>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula> is a subclass of <inline-formula><mml:math id="math003">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">C</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>2</mml:mn>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula>, then it is also an instance of class <inline-formula><mml:math id="math004">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">C</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>2</mml:mn>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula>. Here, additional knowledge is derived by exploiting the property’s transitivity.</p>
+<p>In the case of end-to-end learning, the ability to exploit implicit knowledge should ideally be part of the model itself. Already, studies have shown that machine learning models are capable of approximating deductive reasoning with background knowledge [<xref ref-type="bibr" rid="ref025">25</xref>]. If we can incorporate such methods into end-to-end models, it becomes possible to let these models learn the most appropriate level of inference themselves.</p>
+</sec>
+<sec id="x1-150004.3">
+<label>4.3.</label>
+<title>Heterogeneous knowledge</title>
+<p>Recall that literals allow us to state explicit values – texts, numbers, dates, IDs, et cetera – as direct attributes of resources. This means that literals contain their own values, which contrasts with non-literal resources for which their local neighbourhood – their context – <italic>is</italic> the ‘value’. Simply treating literals the same as non-literal resources will therefore be ineffective. Concretely, this would imply that literals and non-literals can be compared using the same distance metric. However, any comparison between explicit values and contexts is unlikely to yield sensible results. Instead, we must treat literals and non-literals as separate cases. Moreover, we must also deal with each different data type separately and accordingly: texts as strings, numbers and dates as ordinal values, IDs as nominal values, et cetera.</p>
+<p>For instance, in our spam detection example, both the e-mails’ title and body were modelled as string literals. The simplest solution would be to simply ignore these attributes and to focus solely on non-literal resources, but doing so comes at the cost of losing potentially useful knowledge. Instead, we can also design our models with the ability to compare strings using some string similarity metric, or represent them using a learned embedding. That way, rather than perceiving the title <italic>“Just saying hello”</italic> as totally different from <italic>“RE: Just saying hello”</italic>, our models would discover that these two titles are actually very similar.</p>
+</sec>
+<sec id="x1-160004.4">
+<label>4.4.</label>
+<title>Differently-modelled knowledge</title>
+<p>Different knowledge engineers represent their knowledge in different ways. The choices they make are reflected in the topology of the knowledge graphs they produce: some knowledge graphs have a relatively simple structure while others are fairly complex, some require one step to link properties while others use three, some strictly define their constraints while others are lenient, et cetera.</p>
+<p>Recall how easy it is to integrate two knowledge graphs: as long as they share at least one IRI, an implicit integration already exists. Of course, this integration only affects the data layer: the combined knowledge expressed by these data remains unchanged. This means that differences in modelling decisions remain present in the resulting knowledge graph after integration. This can lead to an internally heterogeneous knowledge graph.</p>
+<p>As a concrete example, consider once more the use case of movie recommendations (Fig. <xref rid="x1-100015">5</xref>). To model the ratings given by users, we linked users to movies using a single property: <italic>X likes Y</italic>. We can also model the same relation using an intermediate vertex – a movie rating – and let <italic>it</italic> link both to the movie which was rated and to the literal which holds the actual rating itself: <verse-group>
+<verse-line><monospace>Mary has_rating Mary_Rating_7</monospace>.</verse-line>
+<verse-line><monospace>Mary_Rating_7 rates Jurassic_Park</monospace>.</verse-line>
+<verse-line><monospace>Mary_Rating_7 has_value "1.0"</monospace>.</verse-line>
+<verse-line><monospace>Mary_Rating_7 timestamp "080517T124559"</monospace>.</verse-line></verse-group></p>
+<p>Dealing with knowledge modeled in different ways remains a challenge for effective machine learning. Successful end-to-end models need to take this topological variance into account so they can recognize that similar information is expressed in different ways.<xref ref-type="fn" rid="fn7">7</xref><fn id="fn7"><label><sup>7</sup></label>
+<p>Note that since we are learning end-to-end, we do not we require a full solution to the automatic schema matching problem. We merely require the model to correlate certain graph patterns to the extent that it aids the learning task at hand. Even highly imperfect matching can aid learning.</p></fn> Even then, there may be cases where the respective topologies are simply too different, and no learning algorithm could learn the required mapping without supervision. In this case, however, we can still use <italic>active learning</italic>: letting a user provide minimal feedback to the learning process, without hand-designing a complete mapping between different data-sources.</p>
+</sec>
+</sec>
+<sec id="x1-170005">
+<label>5.</label>
+<title>Current approaches</title>
+<p>Recent years witnessed a growing interest in the knowledge graph by the machine learning community. Initial explorations focused primarily on how entire knowledge graphs can be ‘flattened’ into plain tables – a process known as <italic>propositionalization</italic> – for use with traditional learning methods, whereas more recent studies are looking for more natural ways to process knowledge graphs. This has lead to various methods which can be split into two different approaches: 1) those which extract feature vectors from the graph for use as input to traditional models, and 2) those which create an internal representation of the knowledge graph itself.</p>
+<sec id="x1-180005.1">
+<label>5.1.</label>
+<title>Extracting feature vectors</title>
+<p>Rather than trying to learn directly over knowledge graphs, we could also first translate them into a more-manageable form for which we already have many methods available. Specifically, we can try to find feature vectors for each vertex in the graph that represents an instance – an <italic>instance vertex</italic> – in our training data. We will briefly discuss two prominent examples that use this approach: substructure counting and RDF2Vec. Clearly, these methods fall short of the ideal of end-to-end learning, but they do provide a source of inspiration for how to manage the challenges posed in the previous chapter.</p>
+<sec id="x1-190005.1.1">
+<label>5.1.1.</label>
+<title>Substructure counting</title>
+<p>Substructure counting graph kernels [<xref ref-type="bibr" rid="ref016">16</xref>], are a family of algorithms that generate feature vectors for instance vertices by counting various kinds of substructures that occur in the direct neighbourhood of the instance vertex. While these methods are often referred to as <italic>kernels</italic>, they can be used equally well to generate explicit feature vectors, so we will view them as feature extraction methods here.</p>
+<p>The simplest form of substructure counting method takes the neighbourhood up to depth <italic>d</italic> around an instance vertex, and simply counts each <italic>label</italic>: that is, each edge label and each vertex label. Each label encountered in the neighbourhood of an instance vertex then becomes a feature, with its frequency as the value. For instance, for each e-mail in our example dataset (Fig. <xref rid="x1-80014">4</xref>), the feature space consists of at least one sender (e.g., <monospace>from_Mary: 1</monospace>), one main recipient (e.g., <monospace>to_John: 1</monospace>), and zero or more other recipients (e.g., <monospace>cc_Pete: 0</monospace> and <monospace>bcc_Kate: 0</monospace>).</p>
+<p>More complex kernels define the neighbourhood around the instance vertex differently (as a tree, for instance) and vary the structures that are counted to form the features (for instance, paths or trees). The Weisfeiler-Lehman (WL) graph kernel [<xref ref-type="bibr" rid="ref032">32</xref>] is a specific case, and is the key to efficiently computing feature vectors for many substructure-counting graph methods.</p>
+</sec>
+<sec id="x1-200005.1.2">
+<label>5.1.2.</label>
+<title>RDF2Vec</title>
+<p>The drawback of substructure-counting methods is that the size of the feature vector grows with the size of the data. <italic>RDF2Vec</italic> [<xref ref-type="bibr" rid="ref029">29</xref>] is a method which generates feature vectors of a <italic>given</italic> size, and does so efficiently, even for large graphs. This means that, in principle, even when faced with a machine learning problem on the scale of the web, we can reduce the problem to a set of feature vectors of, say, 500 dimensions, after which we can solve the problem on commodity hardware.</p>
+<p>RDF2Vec is a relational version of the idea behind <italic>DeepWalk</italic> [<xref ref-type="bibr" rid="ref026">26</xref>], an algorithm that finds embeddings for the vertices of unlabeled graphs. The principle is simple: extract short random walks starting at the instance vertices, and feed these as sentences to the Word2Vec [<xref ref-type="bibr" rid="ref021">21</xref>] algorithm. This means that a vertex is modeled by its context and a vertex’s context is defined by the vertices up to <italic>d</italic> steps away. For instance, in our example dataset on customer transactions (Fig. <xref rid="x1-100026">6</xref>), a context of depth 3 allows RDF2Vec to represent each transaction via chains such as</p><graphic xlink:href="ds-1-ds007-g007.jpg"/>
+<p>For large graphs, reasonable classification performance can be achieved with samples of a few as 500 random walks. Other methods for finding embeddings on the vertices of a knowledge graph include <italic>TransE</italic> [<xref ref-type="bibr" rid="ref003">3</xref>] and <italic>ProjE</italic> [<xref ref-type="bibr" rid="ref033">33</xref>].</p>
+</sec>
+</sec>
+<sec id="x1-210005.2">
+<label>5.2.</label>
+<title>Internal graph representation</title>
+<p>Both the WL-kernel and RDF2Vec are very effective ways to perform machine learning on relational knowledge, but they fall short of our goal of true end-to-end learning. While these methods consume heterogeneous knowledge in the form of RDF, they operate in a pipeline of discrete steps. If, for instance, they are used to perform classification, both methods first produce feature vectors for the instance vertices, and then proceed to use these feature vectors with a traditional classifier. Once the feature vectors are extracted, the error signal from the task can no longer be used to fine-tune the feature extraction. Any information lost in transforming the data to feature vectors is lost forever.</p>
+<fig id="x1-210017">
+<label>Fig. 7.</label>
+<caption>
+<p>Representing statements as points in a third-order tensor. Two statements are illustrated: <inline-formula><mml:math id="math005">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">s</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>1</mml:mn>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula> and <inline-formula><mml:math id="math006">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">s</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>2</mml:mn>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula>, with <inline-formula><mml:math id="math007">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">s</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>2</mml:mn>
+</mml:mrow>
+</mml:msub>
+<mml:mo>=</mml:mo></mml:math></inline-formula> <italic>John likes Jurassic_Park</italic>.</p>
+</caption>
+<graphic xlink:href="ds-1-ds007-g008.jpg"/>
+</fig>
+<p>In a true end-to-end model, every step can be fine-tuned based on the learning task. To accomplish this, we need models capable of directly consuming knowledge graphs and which can hold internal representations of them. We next briefly discuss two prominent models that employ this approach: tensors and graph convolutional networks.</p>
+<sec id="x1-220005.2.1">
+<label>5.2.1.</label>
+<title>Tensor representation</title>
+<p>A tensor is the generalization of a matrix into more than two dimensions, called orders. Given that knowledge graph statements consist of three elements, we can use a third-order tensor to map them: two orders for entities, and another order for properties. The intersection of all three orders, a point, will then represent a single statement. This principle is depicted in Fig. <xref rid="x1-210017">7</xref>. As an example, let <inline-formula><mml:math id="math008">
+<mml:mi mathvariant="italic">i</mml:mi>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mi mathvariant="italic">j</mml:mi>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mi mathvariant="italic">k</mml:mi></mml:math></inline-formula> be the indices of a tensor <inline-formula><mml:math id="math009">
+<mml:mtext mathvariant="bold">T</mml:mtext></mml:math></inline-formula> used to represent our dataset on movie recommendations (Fig. <xref rid="x1-100015">5</xref>). If now <inline-formula><mml:math id="math010">
+<mml:mtext mathvariant="bold">T</mml:mtext>
+<mml:mo fence="true" stretchy="false">[</mml:mo>
+<mml:mi mathvariant="italic">i</mml:mi>
+<mml:mo fence="true" stretchy="false">]</mml:mo>
+<mml:mo>=</mml:mo>
+<mml:mi mathvariant="italic">John</mml:mi></mml:math></inline-formula>, <inline-formula><mml:math id="math011">
+<mml:mtext mathvariant="bold">T</mml:mtext>
+<mml:mo fence="true" stretchy="false">[</mml:mo>
+<mml:mi mathvariant="italic">j</mml:mi>
+<mml:mo fence="true" stretchy="false">]</mml:mo>
+<mml:mo>=</mml:mo>
+<mml:mi mathvariant="italic">Jurassic</mml:mi>
+<mml:mtext>_</mml:mtext>
+<mml:mi mathvariant="italic">Park</mml:mi></mml:math></inline-formula>, and <inline-formula><mml:math id="math012">
+<mml:mtext mathvariant="bold">T</mml:mtext>
+<mml:mo fence="true" stretchy="false">[</mml:mo>
+<mml:mi mathvariant="italic">k</mml:mi>
+<mml:mo fence="true" stretchy="false">]</mml:mo>
+<mml:mo>=</mml:mo>
+<mml:mi mathvariant="italic">likes</mml:mi></mml:math></inline-formula>, then intersection <inline-formula><mml:math id="math013">
+<mml:mtext mathvariant="bold">T</mml:mtext>
+<mml:mo fence="true" stretchy="false">[</mml:mo>
+<mml:mi mathvariant="italic">i</mml:mi>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mi mathvariant="italic">j</mml:mi>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mi mathvariant="italic">k</mml:mi>
+<mml:mo fence="true" stretchy="false">]</mml:mo></mml:math></inline-formula> will constitute the statement <italic>John likes Jurassic_Park</italic>.</p>
+<p>A tensor representation allows for all possible combinations of entities and properties, even those which are false. To reflect this, the value at each point holds the truth value of that statement: 1.0 if it holds, and 0.0 otherwise. In that sense, it is the tensor analogue of an adjacency matrix.</p>
+<p>To predict which unknown statements might also be true, we can apply tensor decomposition. Similar to matrix decomposition, this approach decomposes the tensor into multiple second-order tensors by which latent features emerge. These tensors are again multiplied to create an estimate of the original tensor. However, where before some of the points had 0.0 as value, they now have a value somewhere between 0.0 and 1.0.</p>
+<p>This application of tensor decomposition was first introduced as a semantically-aware alternative [<xref ref-type="bibr" rid="ref009">9</xref>] to authority ranking algorithms such as PageRank and HITS, but gained widespread popularity after being reintroduced as a distinct model for collective learning on knowledge graphs [<xref ref-type="bibr" rid="ref024">24</xref>]. Others have later integrated this tensor model as a layer in a regular [<xref ref-type="bibr" rid="ref034">34</xref>] or recursive neural network [<xref ref-type="bibr" rid="ref035">35</xref>].</p>
+</sec>
+<sec id="x1-230005.2.2">
+<label>5.2.2.</label>
+<title>Graph convolutional neural networks</title>
+<p>Graph Convolutional Networks (GCNs) strike a balance between modeling the full structure of the graph dynamically, as the tensor model does, and modeling the local neighbourhood structure through extracted features (as substructure counting methods and RDF2Vec do). The Relational Graph Convolutional Network (RGCN) introduced in [<xref ref-type="bibr" rid="ref030">30</xref>], and the related <italic>column networks</italic> [<xref ref-type="bibr" rid="ref027">27</xref>] are relatively straightforward translation of GCNs [<xref ref-type="bibr" rid="ref006">6</xref>,<xref ref-type="bibr" rid="ref015">15</xref>] to the domain of knowledge graphs. We will briefly explain the basic principle behind GCNs, to give the reader a basic intuition of the principle.</p>
+<p>Assume that we have an undirected graph with <italic>N</italic> vertices, with a small feature vector <italic>x</italic> for each vertex. We can either use the natural features of the vertex in the data, or if the data does not label the vertices in any way, we can assign each vertex <italic>i</italic> a one-hot vector<xref ref-type="fn" rid="fn8">8</xref><fn id="fn8"><label><sup>8</sup></label>
+<p>A vector <italic>u</italic> representing element <italic>i</italic> out of a set of <italic>N</italic> elements: <italic>u</italic> is 0 for all indices except for <inline-formula><mml:math id="math014">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">u</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">i</mml:mi>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula>, which is 1.</p></fn> length <italic>N</italic>. For this example, we will assume that each vertex is assigned a random and unique color, represented by a vector of length 3 (a point in the RGB color space).</p>
+<p>Let <inline-formula><mml:math id="math015">
+<mml:msup>
+<mml:mrow>
+<mml:mi mathvariant="italic">x</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>0</mml:mn>
+</mml:mrow>
+</mml:msup></mml:math></inline-formula> be the color of vertex <italic>i</italic>. We define <inline-formula><mml:math id="math016">
+<mml:msup>
+<mml:mrow>
+<mml:mi mathvariant="italic">x</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">k</mml:mi>
+</mml:mrow>
+</mml:msup></mml:math></inline-formula> as the mixture of the colors of all vertices in the graph, weighted by the probability that a length-<italic>k</italic> random walk from vertex <italic>i</italic> ends up in each vertex. If <inline-formula><mml:math id="math017">
+<mml:msup>
+<mml:mrow>
+<mml:mi mathvariant="bold">X</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>0</mml:mn>
+</mml:mrow>
+</mml:msup></mml:math></inline-formula> is the <italic>N</italic> by 3 matrix containing all original vertex features we can define this principle mathematically as <inline-formula><mml:math id="math018">
+<mml:msup>
+<mml:mrow>
+<mml:mi mathvariant="bold">X</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">k</mml:mi>
+<mml:mo>+</mml:mo>
+<mml:mn>1</mml:mn>
+</mml:mrow>
+</mml:msup>
+<mml:mo>=</mml:mo>
+<mml:msup>
+<mml:mrow>
+<mml:mi mathvariant="bold">AX</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">k</mml:mi>
+</mml:mrow>
+</mml:msup></mml:math></inline-formula>, where <bold>A</bold> is the normalized adjacency matrix of graph <italic>G</italic>. If we start with one-hot vectors instead of colors, <inline-formula><mml:math id="math019">
+<mml:msup>
+<mml:mrow>
+<mml:mi mathvariant="italic">x</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">k</mml:mi>
+</mml:mrow>
+</mml:msup></mml:math></inline-formula> becomes a probability vector with <inline-formula><mml:math id="math020">
+<mml:msubsup>
+<mml:mrow>
+<mml:mi mathvariant="italic">x</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">j</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">k</mml:mi>
+</mml:mrow>
+</mml:msubsup></mml:math></inline-formula> the probability that a random walk of <italic>k</italic> steps from vertex <italic>i</italic> ends up in vertex <italic>j</italic>.</p>
+<p>For most graphs, <inline-formula><mml:math id="math021">
+<mml:msup>
+<mml:mrow>
+<mml:mi mathvariant="italic">x</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">k</mml:mi>
+</mml:mrow>
+</mml:msup></mml:math></inline-formula> converges with <italic>k</italic> to a single vector independent of the starting vertex. This gives us a specific-to-generic sequence of representations for vertex <italic>i</italic>: <inline-formula><mml:math id="math022">
+<mml:msup>
+<mml:mrow>
+<mml:mi mathvariant="italic">x</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>0</mml:mn>
+</mml:mrow>
+</mml:msup></mml:math></inline-formula> is too specific, and <inline-formula><mml:math id="math023">
+<mml:msup>
+<mml:mrow>
+<mml:mi mathvariant="italic">x</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">k</mml:mi>
+</mml:mrow>
+</mml:msup></mml:math></inline-formula> is too generic. Somewhere in-between, we have a good representation, expressing both similarities and differences.</p>
+<fig id="x1-230018">
+<label>Fig. 8.</label>
+<caption>
+<p>The Graph Convolutional Neural Network. Vertices are represented as one-hot vectors, which are translated to a lower-dimensional space from which class probabilities are obtained with a softmax layer.</p>
+</caption>
+<graphic xlink:href="ds-1-ds007-g009.jpg"/>
+</fig>
+<p>The GCN model (Fig. <xref rid="x1-230018">8</xref>) uses these ideas to create a differentiable map from one vector representation into another. We start with a matrix of one-hot vectors <bold>X</bold>. These are multiplied by <bold>A</bold>, and then translated down to a lower dimensional feature space by a matrix <bold>W. W</bold> represents the “weights” of the model; the elements that we will modify to fit the model to the data. The result is then transformed by a nonlinearity <italic>σ</italic> (commonly a linear rectifier) to give us our intermediate representations <bold>H</bold>: 
+<disp-formula>
+<mml:math display="block" id="math024">
+<mml:mtable displaystyle="true">
+<mml:mtr>
+<mml:mtd>
+<mml:mi mathvariant="bold">H</mml:mi>
+<mml:mo>=</mml:mo>
+<mml:msubsup>
+<mml:mrow>
+<mml:mi mathvariant="italic">f</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="bold">W</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">σ</mml:mi>
+</mml:mrow>
+</mml:msubsup>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="bold">X</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo>
+<mml:mo>=</mml:mo>
+<mml:mi mathvariant="italic">σ</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="bold">AXW</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo>
+<mml:mo>.</mml:mo>
+</mml:mtd>
+</mml:mtr>
+</mml:mtable></mml:math>
+</disp-formula> 
+Row <italic>i</italic> of matrix <bold>H</bold> now contains a feature vector of length 16, describing vertex <italic>i</italic>.</p>
+<p>To create a classifier with <italic>M</italic> classes, we normally compose two such “layers”, giving the second a softmax<xref ref-type="fn" rid="fn9">9</xref><fn id="fn9"><label><sup>9</sup></label>
+<p>This ensures that the output values for a given node always sum to one.</p></fn> restriction on the output vectors. This gives us a length-<italic>M</italic> probability vector <italic>y</italic> for each vertex, representing the classification. Thus, the complete model becomes 
+<disp-formula>
+<mml:math display="block" id="math025">
+<mml:mtable displaystyle="true">
+<mml:mtr>
+<mml:mtd>
+<mml:mi mathvariant="bold">Y</mml:mi>
+<mml:mo>=</mml:mo>
+<mml:msubsup>
+<mml:mrow>
+<mml:mi mathvariant="italic">f</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="bold">V</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mtext>softmax</mml:mtext>
+</mml:mrow>
+</mml:msubsup>
+<mml:mo mathvariant="normal" fence="true" maxsize="1.19em" minsize="1.19em">(</mml:mo>
+<mml:mi mathvariant="bold">A</mml:mi>
+<mml:msubsup>
+<mml:mrow>
+<mml:mi mathvariant="italic">f</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="bold">W</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">σ</mml:mi>
+</mml:mrow>
+</mml:msubsup>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="bold">AXW</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo>
+<mml:mi mathvariant="bold">V</mml:mi>
+<mml:mo mathvariant="normal" fence="true" maxsize="1.19em" minsize="1.19em">)</mml:mo>
+<mml:mo mathvariant="normal">,</mml:mo>
+</mml:mtd>
+</mml:mtr>
+</mml:mtable></mml:math>
+</disp-formula> 
+where <bold>X</bold> is the identity matrix (i.e. a stack of one-hot vectors for each vertex), and <bold>Y</bold> is an <inline-formula><mml:math id="math026">
+<mml:mi mathvariant="italic">N</mml:mi>
+<mml:mo>×</mml:mo>
+<mml:mi mathvariant="italic">M</mml:mi></mml:math></inline-formula> matrix with <inline-formula><mml:math id="math027">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="bold">Y</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">i</mml:mi>
+<mml:mi mathvariant="italic">j</mml:mi>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula> the probability that vertex <italic>i</italic> has class <italic>j</italic>. We then learn the weights <bold>V</bold> and <bold>W</bold> by minimizing the cross-entropy between the training examples and the corresponding rows of <inline-formula><mml:math id="math028">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="bold">Y</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">i</mml:mi>
+<mml:mi mathvariant="italic">j</mml:mi>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula> through gradient descent.</p>
+<p>For the RGCN model, we have one adjacency matrix per relation in the graph, one for its inverse of each relation, and one for self-connections. Also, like RDF2Vec, they learn fixed-size intermediate representations of the vertices of the graph. Unlike RDF2Vec however, the transformation to this representation can use the error signal from the next layer to tune its parameters. The price we pay is that these models are currently much less scalable than alternatives like RDF2Vec.</p>
+<p>In [<xref ref-type="bibr" rid="ref036">36</xref>] first steps are made towards recommendation using graph convolutions, with the knowledge graph recommendation use case described above as an explicit motivation. Other promising approaches include GraphSAGE [<xref ref-type="bibr" rid="ref011">11</xref>], which replaces the convolution by a learnable <italic>aggregator function</italic>, and [<xref ref-type="bibr" rid="ref014">14</xref>], which provides learnable transformations from one knowledge graph to another.</p>
+</sec>
+</sec>
+<sec id="x1-240005.3">
+<label>5.3.</label>
+<title>The challenges ahead, revisited</title>
+<p>In Section <xref rid="x1-120004">4</xref>, we discussed four important challenges. How do the approaches described above address these problems?</p>
+<p>All approaches discussed in this section treat knowledge graphs as nothing more than labeled multi-digraphs. The silver lining of this simplified view is that <italic>incomplete knowledge</italic> – information which is missing or inaccessible – is inherently dealt with: edges that are present are used to create meaningful embeddings, and edges that are absent are not required to be imputed for the algorithms to work. The tensor factorization approach provides some insight into what is happening under the hood: the embeddings which are learned for each vertex already contain an implicit imputation of missing links that emerges when the embeddings are re-multiplied into a low-rank tensor.</p>
+<p><italic>Implicit knowledge</italic> – information implied through the interplay of assertion knowledge and ontologies – is not considered by any of these methods. A simple solution would be to make this knowledge explicit beforehand by materializing all implied statements but, as noted in [<xref ref-type="bibr" rid="ref016">16</xref>], this does not seem to strongly affect performance either way.</p>
+<p><italic>Heterogeneous knowledge</italic> – information of different types and from different domains – is ignored in all approaches described here. In neural models like RDF2Vec and (R)GCNs, such knowledge could easily be incorporated by using existing state-of-the-art architectures like CNNs and LSTMs to produce embeddings for the literals, either by pre-training or in an end-to-end fashion.</p>
+<p>Finally, the issue of <italic>differently-modeled knowledge</italic> – different datasets expressing similar information differently – seems entirely unaddressed in the machine learning literature, most likely because current methods are evaluated only on benchmark datasets from a single source.</p>
+</sec>
+</sec>
+<sec id="x1-250006">
+<label>6.</label>
+<title>Conclusion</title>
+<p>When faced with heterogeneous knowledge in a traditional machine learning context, data scientists craft feature vectors which can be used as input for learning algorithms. These transformations are performed by adding, removing, and reshaping data, and can result in the loss of information and accuracy. To solve this problem, we require end-to-end models which can directly consume heterogeneous knowledge, and a data model suited to represent this knowledge naturally.</p>
+<p>In this paper we have argued – using three running examples – for the potential of using knowledge graphs for this purpose: a) they allow for true end-to-end-learning by removing the need for feature engineering, b) they simplify the integration and harmonization of heterogeneous knowledge, and c) they provide a natural way to integrate different forms of background knowledge.</p>
+<p>The idea of end-to-end learning on knowledge graphs suggests many research challenges. These include coping with incomplete knowledge, (how to fill the gaps), implicit knowledge (how to exploit implied information), heterogeneous knowledge, (how to process different data types), and differently-modelled knowledge (how to deal with topological diversity). We have shown how several promising approaches both deal with these challenges, and fail to do so.</p>
+<p>The question may rise whether we are simply moving the goalposts. Where data scientists were previously faced with the task of creating feature vectors from heterogeneous knowledge, we are now asking them to find an equivalent knowledge graph instead or to create such a knowledge graph themselves. Our claim is that the translation from the original knowledge to a knowledge graph may be equally difficult, but that it preserves all information, relevant or otherwise. Hence, we are presenting our learning models with the whole of our knowledge or as close a representation as we can make. Relatedly, knowledge graph are <italic>task-independent</italic>: once created, the same knowledge graph can be used for many different tasks, even those beyond machine learning. Finally, because of this re-usability, a great deal of data is already freely available in knowledge graph form.</p>
+<p>End-to-end learning models that can be applied to knowledge graphs off-the-shelf will provide further incentives to knowledge engineers and data owners to produce even more data that is open, well-modeled, and interlinked. We hope that in this way, the Semantic Web and Data Science communities can complement and strengthen one another in a positive feedback loop.</p>
+<p><italic>Acknowledgements.</italic> This work was supported by the Amsterdam Academic Alliance Data Science (AAA-DS) Program Award to the UvA and VU Universities.</p>
+</sec>
+</body>
+<back>
+<ref-list>
+<title>References</title>
+<ref id="ref001">
+<label>[1]</label><mixed-citation publication-type="other"><string-name><given-names>A.</given-names> <surname>Abele</surname></string-name>, <string-name><given-names>J.P.</given-names> <surname>McCrae</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Buitelaar</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Jentzsch</surname></string-name> and <string-name><given-names>R.</given-names> <surname>Cyganiak</surname></string-name>, Linking open data cloud diagram. <uri>http://lod-cloud.net</uri>, Accessed: 2017-03-01.</mixed-citation>
+</ref>
+<ref id="ref002">
+<label>[2]</label><mixed-citation publication-type="chapter"><string-name><given-names>R.</given-names> <surname>Arndt</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Troncy</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Staab</surname></string-name>, <string-name><given-names>L.</given-names> <surname>Hardman</surname></string-name> and <string-name><given-names>M.</given-names> <surname>Vacura</surname></string-name>, <chapter-title>Comm: Designing a well-founded multimedia ontology for the web</chapter-title>, in: <source>The Semantic Web</source>, <publisher-name>Springer</publisher-name>, <year>2007</year>, pp. <fpage>30</fpage>–<lpage>43</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1007/978-3-540-76298-0_3" xlink:type="simple">10.1007/978-3-540-76298-0_3</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref003">
+<label>[3]</label><mixed-citation publication-type="chapter"><string-name><given-names>A.</given-names> <surname>Bordes</surname></string-name>, <string-name><given-names>N.</given-names> <surname>Usunier</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Garcia-Duran</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Weston</surname></string-name> and <string-name><given-names>O.</given-names> <surname>Yakhnenko</surname></string-name>, <chapter-title>Translating embeddings for modeling multi-relational data</chapter-title>, in: <source>Advances in Neural Information Processing Systems</source>, <year>2013</year>, pp. <fpage>2787</fpage>–<lpage>2795</lpage>, <uri>http://dl.acm.org/citation.cfm?id=2999923</uri>.</mixed-citation>
+</ref>
+<ref id="ref004">
+<label>[4]</label><mixed-citation publication-type="other"><string-name><given-names>B.</given-names> <surname>Boser LeCun</surname></string-name>, <string-name><given-names>J.S.</given-names> <surname>Denker</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Henderson</surname></string-name>, <string-name><given-names>R.E.</given-names> <surname>Howard</surname></string-name>, <string-name><given-names>W.</given-names> <surname>Hubbard</surname></string-name> and <string-name><given-names>L.D.</given-names> <surname>Jackel</surname></string-name>, <chapter-title>Handwritten digit recognition with a back-propagation network</chapter-title>, in: <source>Advances in Neural Information Processing Systems</source>, <publisher-name>Citeseer</publisher-name>, <year>1990</year>, <uri>http://dl.acm.org/citation.cfm?id=2969879</uri>.</mixed-citation>
+</ref>
+<ref id="ref005">
+<label>[5]</label><mixed-citation publication-type="other"><string-name><given-names>L.</given-names> <surname>Bottou</surname></string-name>, Two big challenges in machine learning, <uri>http://icml.cc/2015/invited/LeonBottouICML2015.pdf</uri>, Accessed: 2017-03-01.</mixed-citation>
+</ref>
+<ref id="ref006">
+<label>[6]</label><mixed-citation publication-type="other"><string-name><given-names>J.</given-names> <surname>Bruna</surname></string-name>, <string-name><given-names>W.</given-names> <surname>Zaremba</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Szlam</surname></string-name> and <string-name><given-names>Y.</given-names> <surname>LeCun</surname></string-name>, Spectral networks and locally connected networks on graphs, <italic>CoRR</italic>, arXiv preprint <pub-id pub-id-type="arxiv">arXiv:1312.6203</pub-id>, 2013.</mixed-citation>
+</ref>
+<ref id="ref007">
+<label>[7]</label><mixed-citation publication-type="chapter"><string-name><given-names>C.</given-names> <surname>Chiarcos</surname></string-name>, <string-name><given-names>J.</given-names> <surname>McCrae</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Cimiano</surname></string-name> and <string-name><given-names>C.</given-names> <surname>Fellbaum</surname></string-name>, <chapter-title>Towards open data for linguistics: Linguistic linked data</chapter-title>, in: <source>New Trends of Research in Ontologies and Lexical Resources</source>, <publisher-name>Springer</publisher-name>, <year>2013</year>, pp. <fpage>7</fpage>–<lpage>25</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1007/978-3-642-31782-8_2" xlink:type="simple">10.1007/978-3-642-31782-8_2</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref008">
+<label>[8]</label><mixed-citation publication-type="other"><string-name><given-names>R.</given-names> <surname>Davis</surname></string-name>, <string-name><given-names>H.</given-names> <surname>Shrobe</surname></string-name> and <string-name><given-names>P.</given-names> <surname>Szolovits</surname></string-name>, <article-title>What is a knowledge representation?</article-title>, <source>AI magazine</source> <volume>14</volume>(<issue>1</issue>) (<year>1993</year>), <elocation-id>17</elocation-id>, <uri>http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.216.9376</uri>.</mixed-citation>
+</ref>
+<ref id="ref009">
+<label>[9]</label><mixed-citation publication-type="journal"><string-name><given-names>T.</given-names> <surname>Franz</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Schultz</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Sizov</surname></string-name> and <string-name><given-names>S.</given-names> <surname>Staab</surname></string-name>, <article-title>Triplerank: Ranking semantic web data by tensor decomposition</article-title>, <source>The Semantic Web-ISWC</source> <volume>2009</volume> (<year>2009</year>), <fpage>213</fpage>–<lpage>228</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1007/978-3-642-04930-9_14" xlink:type="simple">10.1007/978-3-642-04930-9_14</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref010">
+<label>[10]</label><mixed-citation publication-type="chapter"><string-name><given-names>A.</given-names> <surname>Graves</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Mohamed</surname></string-name> and <string-name><given-names>G.</given-names> <surname>Hinton</surname></string-name>, <chapter-title>Speech recognition with deep recurrent neural networks</chapter-title>, in: <source>2013 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)</source>, <publisher-name>IEEE</publisher-name>, <year>2013</year>, pp. <fpage>6645</fpage>–<lpage>6649</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1109/ICASSP.2013.6638947" xlink:type="simple">10.1109/ICASSP.2013.6638947</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref011">
+<label>[11]</label><mixed-citation publication-type="other"><string-name><given-names>W.L.</given-names> <surname>Hamilton</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Ying</surname></string-name> and <string-name><given-names>J.</given-names> <surname>Leskovec</surname></string-name>, Inductive representation learning on large graphs, arXiv preprint <pub-id pub-id-type="arxiv">arXiv:1706.02216</pub-id>, 2017.</mixed-citation>
+</ref>
+<ref id="ref012">
+<label>[12]</label><mixed-citation publication-type="chapter"><string-name><given-names>R.</given-names> <surname>Hecht</surname></string-name> and <string-name><given-names>S.</given-names> <surname>Jablonski</surname></string-name>, <chapter-title>Nosql evaluation: A use case oriented survey</chapter-title>, in: <source>2011 International Conference on Cloud and Service Computing (CSC)</source>, <publisher-name>IEEE</publisher-name>, <year>2011</year>, pp. <fpage>336</fpage>–<lpage>341</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1109/CSC.2011.6138544" xlink:type="simple">10.1109/CSC.2011.6138544</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref013">
+<label>[13]</label><mixed-citation publication-type="chapter"><string-name><given-names>M.A.</given-names> <surname>Hernández</surname></string-name> and <string-name><given-names>S.J.</given-names> <surname>Stolfo</surname></string-name>, <chapter-title>The merge/purge problem for large databases</chapter-title>, in: <source>ACM Sigmod Record</source>, Vol. <volume>24</volume>, <publisher-name>ACM</publisher-name>, <year>1995</year>, pp. <fpage>127</fpage>–<lpage>138</lpage>, <uri>http://dl.acm.org/citation.cfm?id=223807</uri>.</mixed-citation>
+</ref>
+<ref id="ref014">
+<label>[14]</label><mixed-citation publication-type="other"><string-name><given-names>D.D.</given-names> <surname>Johnson</surname></string-name>, <chapter-title>Learning graphical state transitions</chapter-title>, in: <source>Proceedings of the International Conference on Learning Representations (ICLR)</source>, <year>2017</year>, <uri>https://openreview.net/forum?id=HJ0NvFzxl</uri>.</mixed-citation>
+</ref>
+<ref id="ref015">
+<label>[15]</label><mixed-citation publication-type="other"><string-name><given-names>T.N.</given-names> <surname>Kipf</surname></string-name> and <string-name><given-names>M.</given-names> <surname>Welling</surname></string-name>, Semi-supervised classification with graph convolutional networks, <italic>CoRR</italic>, arXiv preprint <pub-id pub-id-type="arxiv">arXiv:1609.02907</pub-id>, 2016.</mixed-citation>
+</ref>
+<ref id="ref016">
+<label>[16]</label><mixed-citation publication-type="journal"><string-name><given-names>G.</given-names> <surname>Klaas Dirk de Vries</surname></string-name> and <string-name><given-names>S.</given-names> <surname>de Rooij</surname></string-name>, <article-title>Substructure counting graph kernels for machine learning from rdf data</article-title>, <source>Web Semantics: Science, Services and Agents on the World Wide Web</source> <volume>35</volume> (<year>2015</year>), <fpage>71</fpage>–<lpage>84</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1016/j.websem.2015.08.002" xlink:type="simple">10.1016/j.websem.2015.08.002</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref017">
+<label>[17]</label><mixed-citation publication-type="journal"><string-name><given-names>Y.</given-names> <surname>Koren</surname></string-name>, <string-name><given-names>R.M.</given-names> <surname>Bell</surname></string-name> and <string-name><given-names>C.</given-names> <surname>Volinsky</surname></string-name>, <article-title>Matrix factorization techniques for recommender systems</article-title>, <source>IEEE Computer</source> <volume>42</volume>(<issue>8</issue>) (<year>2009</year>), <fpage>30</fpage>–<lpage>37</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1109/MC.2009.263" xlink:type="simple">10.1109/MC.2009.263</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref018">
+<label>[18]</label><mixed-citation publication-type="chapter"><string-name><given-names>A.</given-names> <surname>Krizhevsky</surname></string-name>, <string-name><given-names>I.</given-names> <surname>Sutskever</surname></string-name> and <string-name><given-names>G.E.</given-names> <surname>Hinton</surname></string-name>, <chapter-title>Imagenet classification with deep convolutional neural networks</chapter-title>, in: <source>Advances in Neural Information Processing Systems</source>, <year>2012</year>, pp. <fpage>1097</fpage>–<lpage>1105</lpage>, <uri>http://dl.acm.org/citation.cfm?id=3065386</uri>.</mixed-citation>
+</ref>
+<ref id="ref019">
+<label>[19]</label><mixed-citation publication-type="chapter"><string-name><given-names>Q.V.</given-names> <surname>Le</surname></string-name>, <chapter-title>Building high-level features using large scale unsupervised learning</chapter-title>, in: <source>2013 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)</source>, <publisher-name>IEEE</publisher-name>, <year>2013</year>, pp. <fpage>8595</fpage>–<lpage>8598</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1109/ICASSP.2013.6639343" xlink:type="simple">10.1109/ICASSP.2013.6639343</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref020">
+<label>[20]</label><mixed-citation publication-type="chapter"><string-name><given-names>D.G.</given-names> <surname>Lowe</surname></string-name>, <chapter-title>Object recognition from local scale-invariant features</chapter-title>, in: <source>Proceedings of the Seventh IEEE International Conference on Computer Vision, 1999</source>, Vol. <volume>2</volume>, <publisher-name>IEEE</publisher-name>, <year>1999</year>, pp. <fpage>1150</fpage>–<lpage>1157</lpage>, <uri>http://dl.acm.org/citation.cfm?id=851523</uri>.</mixed-citation>
+</ref>
+<ref id="ref021">
+<label>[21]</label><mixed-citation publication-type="other"><string-name><given-names>T.</given-names> <surname>Mikolov</surname></string-name>, <string-name><given-names>K.</given-names> <surname>Chen</surname></string-name>, <string-name><given-names>G.</given-names> <surname>Corrado</surname></string-name> and <string-name><given-names>J.</given-names> <surname>Dean</surname></string-name>, Efficient estimation of word representations in vector space, <italic>CoRR</italic>, arXiv preprint <pub-id pub-id-type="arxiv">arXiv:1301.3781</pub-id>, 2013.</mixed-citation>
+</ref>
+<ref id="ref022">
+<label>[22]</label><mixed-citation publication-type="other"><string-name><given-names>P.</given-names> <surname>Mineiro</surname></string-name>, Software engineering vs machine learning concepts, <uri>http://www.machinedlearnings.com/2017/02/software-engineering-vs-machine.html</uri>, Accessed: 2017-03-01.</mixed-citation>
+</ref>
+<ref id="ref023">
+<label>[23]</label><mixed-citation publication-type="chapter"><string-name><given-names>T.H.</given-names> <surname>Nguyen</surname></string-name> and <string-name><given-names>R.</given-names> <surname>Grishman</surname></string-name>, <chapter-title>Relation extraction: Perspective from convolutional neural networks</chapter-title>, in: <source>Proceedings of NAACL-HLT</source>, <year>2015</year>, pp. <fpage>39</fpage>–<lpage>48</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.3115/v1/W15-1506" xlink:type="simple">10.3115/v1/W15-1506</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref024">
+<label>[24]</label><mixed-citation publication-type="chapter"><string-name><given-names>M.</given-names> <surname>Nickel</surname></string-name>, <string-name><given-names>V.</given-names> <surname>Tresp</surname></string-name> and <string-name><given-names>H.-P.</given-names> <surname>Kriegel</surname></string-name>, <chapter-title>A three-way model for collective learning on multi-relational data</chapter-title>, in: <source>Proceedings of the 28th International Conference on Machine Learning (ICML-11)</source>, <year>2011</year>, pp. <fpage>809</fpage>–<lpage>816</lpage>, <uri>http://dl.acm.org/citation.cfm?id=3104584</uri>.</mixed-citation>
+</ref>
+<ref id="ref025">
+<label>[25]</label><mixed-citation publication-type="chapter"><string-name><given-names>H.</given-names> <surname>Paulheim</surname></string-name> and <string-name><given-names>H.</given-names> <surname>Stuckenschmidt</surname></string-name>, <chapter-title>Fast approximate a-box consistency checking using machine learning</chapter-title>, in: <source>International Semantic Web Conference</source>, <publisher-name>Springer</publisher-name>, <year>2016</year>, pp. <fpage>135</fpage>–<lpage>150</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1007/978-3-319-34129-3_9" xlink:type="simple">10.1007/978-3-319-34129-3_9</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref026">
+<label>[26]</label><mixed-citation publication-type="chapter"><string-name><given-names>B.</given-names> <surname>Perozzi</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Al-Rfou</surname></string-name> and <string-name><given-names>S.</given-names> <surname>Skiena</surname></string-name>, <chapter-title>Deepwalk: Online learning of social representations</chapter-title>, in: <source>Proceedings of the 20th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining</source>, <publisher-name>ACM</publisher-name>, <year>2014</year>, pp. <fpage>701</fpage>–<lpage>710</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1145/2623330.2623732" xlink:type="simple">10.1145/2623330.2623732</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref027">
+<label>[27]</label><mixed-citation publication-type="chapter"><string-name><given-names>T.</given-names> <surname>Pham</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Tran</surname></string-name>, <string-name><given-names>D.Q.</given-names> <surname>Phung</surname></string-name> and <string-name><given-names>S.</given-names> <surname>Venkatesh</surname></string-name>, <chapter-title>Column networks for collective classification</chapter-title>, in: <source>Proceedings of the Thirty-First AAAI Conference on Artificial Intelligence</source>, <conf-loc>San Francisco, California, USA</conf-loc>, <conf-date>February 4–9, 2017</conf-date>, <string-name><given-names>S.P.</given-names> <surname>Singh</surname></string-name> and <string-name><given-names>S.</given-names> <surname>Markovitch</surname></string-name>, eds, <publisher-name>AAAI Press</publisher-name>, <year>2017</year>, pp. <fpage>2485</fpage>–<lpage>2491</lpage>, arXiv preprint <pub-id pub-id-type="arxiv">arXiv:1609.04508</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref028">
+<label>[28]</label><mixed-citation publication-type="other"><string-name><given-names>Y.</given-names> <surname>Raimond</surname></string-name> and <string-name><given-names>S.</given-names> <surname>Abdallah</surname></string-name>, <source>The Timeline Ontology</source>. <publisher-name>OWL-DL Ontology</publisher-name>, <year>2006</year>, <uri>http://purl.org/NET/c4dm/timeline.owl</uri>.</mixed-citation>
+</ref>
+<ref id="ref029">
+<label>[29]</label><mixed-citation publication-type="chapter"><string-name><given-names>P.</given-names> <surname>Ristoski</surname></string-name> and <string-name><given-names>H.</given-names> <surname>Paulheim</surname></string-name>, <chapter-title>Rdf2vec: Rdf graph embeddings for data mining</chapter-title>, in: <source>International Semantic Web Conference</source>, <publisher-name>Springer</publisher-name>, <year>2016</year>, pp. <fpage>498</fpage>–<lpage>514</lpage>. doi:<ext-link ext-link-type="doi" xlink:href="10.1007/978-3-319-46523-4_30" xlink:type="simple">10.1007/978-3-319-46523-4_30</ext-link>.</mixed-citation>
+</ref>
+<ref id="ref030">
+<label>[30]</label><mixed-citation publication-type="other"><string-name><given-names>M.</given-names> <surname>Schlichtkrull</surname></string-name>, <string-name><given-names>T.N.</given-names> <surname>Kipf</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Bloem</surname></string-name>, <string-name><given-names>R.</given-names> <surname>van den Berg</surname></string-name>, <string-name><given-names>I.</given-names> <surname>Titov</surname></string-name> and <string-name><given-names>M.</given-names> <surname>Welling</surname></string-name>, Modeling relational data with graph convolutional networks, arXiv preprint <pub-id pub-id-type="arxiv">arXiv:1703.06103</pub-id>, 2017.</mixed-citation>
+</ref>
+<ref id="ref031">
+<label>[31]</label><mixed-citation publication-type="chapter"><string-name><given-names>J.F.</given-names> <surname>Sequeda</surname></string-name> and <string-name><given-names>O.</given-names> <surname>Corcho</surname></string-name>, <chapter-title>Linked stream data: A position paper</chapter-title>, in: <source>Proceedings of the 2nd International Conference on Semantic Sensor Networks</source>, Vol. <volume>522</volume>, <publisher-name>CEUR-WS.org</publisher-name>, <year>2009</year>, pp. <fpage>148</fpage>–<lpage>157</lpage>, <uri>http://dl.acm.org/citation.cfm?id=2889944</uri>.</mixed-citation>
+</ref>
+<ref id="ref032">
+<label>[32]</label><mixed-citation publication-type="journal"><string-name><given-names>N.</given-names> <surname>Shervashidze</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Schweitzer</surname></string-name>, <string-name><given-names>E.</given-names> <surname>Jan van Leeuwen</surname></string-name>, <string-name><given-names>K.</given-names> <surname>Mehlhorn</surname></string-name> and <string-name><given-names>K.M.</given-names> <surname>Borgwardt</surname></string-name>, <article-title>Weisfeiler-lehman graph kernels</article-title> <source>Journal of Machine Learning Research</source> <volume>12</volume> (<year>2011</year>), <fpage>2539</fpage>–<lpage>2561</lpage>, <uri>http://dl.acm.org/citation.cfm?id=2078187</uri>.</mixed-citation>
+</ref>
+<ref id="ref033">
+<label>[33]</label><mixed-citation publication-type="other"><string-name><given-names>B.</given-names> <surname>Shi</surname></string-name> and <string-name><given-names>T.</given-names> <surname>Weninger</surname></string-name>, Proje: Embedding projection for knowledge graph completion, arXiv preprint <pub-id pub-id-type="arxiv">arXiv:1611.05425</pub-id>, 2016.</mixed-citation>
+</ref>
+<ref id="ref034">
+<label>[34]</label><mixed-citation publication-type="chapter"><string-name><given-names>R.</given-names> <surname>Socher</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Chen</surname></string-name>, <string-name><given-names>C.D.</given-names> <surname>Manning</surname></string-name> and <string-name><given-names>A.</given-names> <surname>Ng</surname></string-name>, <chapter-title>Reasoning with neural tensor networks for knowledge base completion</chapter-title>, in: <source>Advances in Neural Information Processing Systems</source>, <year>2013</year>, pp. <fpage>926</fpage>–<lpage>934</lpage>, <uri>http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.708.5787</uri>.</mixed-citation>
+</ref>
+<ref id="ref035">
+<label>[35]</label><mixed-citation publication-type="chapter"><string-name><given-names>R.</given-names> <surname>Socher</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Perelygin</surname></string-name>, <string-name><given-names>J.Y.</given-names> <surname>Wu</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Chuang</surname></string-name>, <string-name><given-names>C.D.</given-names> <surname>Manning</surname></string-name>, <string-name><given-names>A.Y.</given-names> <surname>Ng</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Potts</surname></string-name> <etal>et al.</etal>, <chapter-title>Recursive deep models for semantic compositionality over a sentiment treebank</chapter-title>, in: <source>Proceedings of the Conference on Empirical Methods in Natural Language Processing (EMNLP)</source>, Vol. <volume>1631</volume>, <publisher-name>Citeseer</publisher-name>, <year>2013</year>, p. <fpage>1642</fpage>, <uri>http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.593.7427</uri>.</mixed-citation>
+</ref>
+<ref id="ref036">
+<label>[36]</label><mixed-citation publication-type="other"><string-name><given-names>R.</given-names> <surname>van den Berg</surname></string-name>, <string-name><given-names>T.N.</given-names> <surname>Kipf</surname></string-name> and <string-name><given-names>M.</given-names> <surname>Welling</surname></string-name>, Graph convolutional matrix completion, arXiv preprint <pub-id pub-id-type="arxiv">arXiv:1706.02263</pub-id>, 2017.</mixed-citation>
+</ref>
+</ref-list>
+</back>
+</article>
