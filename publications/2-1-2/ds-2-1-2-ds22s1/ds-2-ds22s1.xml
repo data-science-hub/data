@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.0 20120330//EN" "JATS-journalpublishing1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="other">
+<front>
+<journal-meta>
+<journal-id journal-id-type="publisher-id">DS</journal-id>
+<journal-title-group><journal-title>Data Science</journal-title></journal-title-group>
+<issn pub-type="epub">2451-8492</issn><issn pub-type="ppub">2451-8484</issn><issn-l>2451-8484</issn-l>
+<publisher>
+<publisher-name>IOS Press</publisher-name><publisher-loc>Nieuwe Hemweg 6B, 1013 BG Amsterdam, The Netherlands</publisher-loc>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">DS22S1</article-id>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Section Page</subject></subj-group></article-categories>
+<title-group>
+<article-title>Special Issue: Scholarly Data Analysis (Semantics, Analytics, Visualisation)</article-title>
+</title-group>
+<contrib-group content-type="guest-editors">
+<contrib contrib-type="guest-editor">
+<name><surname>Gonzalez-Beltran</surname><given-names>Alejandra</given-names></name>
+</contrib>
+<contrib contrib-type="guest-editor">
+<name><surname>Osborne</surname><given-names>Francesco</given-names></name>
+</contrib>
+<contrib contrib-type="guest-editor">
+<name><surname>Peroni</surname><given-names>Silvio</given-names></name>
+</contrib>
+<contrib contrib-type="guest-editor">
+<name><surname>Vahdati</surname><given-names>Sahar</given-names></name>
+</contrib>
+</contrib-group>
+<pub-date date-type="pub" publication-format="electronic"><day>25</day><month>11</month><year>2019</year></pub-date><pub-date date-type="collection" publication-format="electronic"><year>2019</year></pub-date><volume>2</volume><issue>1-2</issue><issue-title>Scholarly Data Analysis (Semantics, Analytics, Visualisation)</issue-title><fpage>175</fpage><lpage>175</lpage>
+<permissions><copyright-statement>© 2019 – IOS Press and the authors.</copyright-statement><copyright-year>2019</copyright-year>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/" license-type="open-access" xlink:type="simple">
+<license-p>This is an open access article distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/" xlink:type="simple">Creative Commons Attribution (CC BY 4.0) License</ext-link>, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions>
+</article-meta>
+</front>
+</article>

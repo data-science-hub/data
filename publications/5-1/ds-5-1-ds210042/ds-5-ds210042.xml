@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.0 20120330//EN" "JATS-journalpublishing1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="formalization-paper" dtd-version="1.0">
+<front>
+<journal-meta>
+<journal-id journal-id-type="publisher-id">DS</journal-id>
+<journal-title-group><journal-title>Data Science</journal-title></journal-title-group>
+<issn pub-type="epub">2451-8492</issn><issn pub-type="ppub">2451-8484</issn><issn-l>2451-8484</issn-l>
+<publisher>
+<publisher-name>IOS Press</publisher-name><publisher-loc>Nieuwe Hemweg 6B, 1013 BG Amsterdam, The Netherlands</publisher-loc>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">DS210042</article-id>
+<article-id pub-id-type="doi">10.3233/DS-210042</article-id>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Formalization Paper</subject></subj-group></article-categories>
+<title-group>
+<article-title>A formalization of one of the main claims of “Cost-effectiveness analysis of pharmacogenomics-guided clopidogrel treatment in Spanish patients undergoing percutaneous coronary intervention” by Fragoulakis et al. 2019<xref ref-type="fn" rid="thanks1"><sup>1</sup></xref></article-title>
+</title-group>
+<contrib-group content-type="Editor">
+<contrib contrib-type="editor">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-7114-6459</contrib-id>
+<name><surname>Bucur</surname><given-names>Cristina-Iulia</given-names></name>
+</contrib>
+</contrib-group>
+<contrib-group content-type="Review comments from">
+<contrib contrib-type="reviewer">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-1267-0234</contrib-id>
+<name><surname>Kuhn</surname><given-names>Tobias</given-names></name>
+</contrib>
+<contrib contrib-type="reviewer">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-3357-9130</contrib-id>
+<name><surname>Ceolin</surname><given-names>Davide</given-names></name>
+</contrib>
+<contrib contrib-type="reviewer">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0001-8004-0464</contrib-id>
+<name><surname>Martorana</surname><given-names>Margherita</given-names></name>
+</contrib>
+<contrib contrib-type="reviewer">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-7114-6459</contrib-id>
+<name><surname>Bucur</surname><given-names>Cristina-Iulia</given-names></name>
+</contrib>
+</contrib-group>
+<contrib-group>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-0519-7776</contrib-id>
+<name><surname>Patrinos</surname><given-names>George P.</given-names></name><email>gpatrinos@upatras.gr</email><xref ref-type="aff" rid="affa"/><xref ref-type="corresp" rid="cor2">*</xref>
+</contrib>
+<aff id="affa">School of Health Sciences, Department of Pharmacy, <institution>University of Patras</institution>, Patras, <country>Greece</country></aff>
+</contrib-group>
+<contrib-group content-type="guest-editors">
+<contrib contrib-type="guest-editor">
+<name><surname>Bucur</surname><given-names>Cristina-Iulia</given-names></name>
+</contrib>
+<contrib contrib-type="guest-editor">
+<name><surname>Kuhn</surname><given-names>Tobias</given-names></name>
+</contrib>
+</contrib-group>
+<author-notes>
+<fn id="thanks1"><label>1</label>
+<p>As RDF/nanopublication: <uri>http://purl.org/np/RAn15vsPJEVdJvjNKtBPo_oadtjeP9oc3Si-69FiJ4poQ</uri></p></fn><corresp id="cor2"><label>*</label>Corresponding author. E-mail: <email>gpatrinos@upatras.gr</email>.</corresp>
+</author-notes>
+<pub-date date-type="preprint" publication-format="electronic"><day>21</day><month>1</month><year>2022</year></pub-date><pub-date date-type="pub" publication-format="electronic"><day>22</day><month>3</month><year>2022</year></pub-date><pub-date date-type="collection" publication-format="electronic"><year>2022</year></pub-date><volume>5</volume><issue>1</issue><issue-title>Semantic Publishing with Formalization Papers</issue-title><fpage>29</fpage><lpage>33</lpage><history><date date-type="received"><day>5</day><month>07</month><year>2021</year></date><date date-type="accepted"><day>17</day><month>11</month><year>2021</year></date></history>
+<permissions><copyright-statement>© 2022 – The authors. Published by IOS Press.</copyright-statement><copyright-year>2022</copyright-year>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/" license-type="open-access" xlink:type="simple">
+<license-p>This is an open access article distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/" xlink:type="simple">Creative Commons Attribution (CC BY 4.0) License</ext-link>, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions>
+<abstract>
+<p>Fragoulakis et al. claimed in previous work that pharmacogenomics-guided clopidogrel strategy represents a cost-effective treatment for patients undergoing PCI. We present here a formalization of that claim, stating that all things of class “pharmacogenomics guided clopidogrel therapy” that are in the context of a thing of class “patient undergoing PCI” generally have a relation of type “enables” to a thing of class “cost-effective treatment” in the same context.</p>
+</abstract>
+<kwd-group>
+<label>Keywords</label>
+<kwd>Patient undergoing PCI</kwd>
+<kwd>pharmacogenomics-guided clopidogrel therapy</kwd>
+<kwd>cost-effective treatment</kwd>
+</kwd-group>
+</article-meta>
+</front>
+<body>
+<sec id="x1-1000-1">
+<label>1.</label>
+<title>Introduction</title>
+<p>Fragoulakis et al. [<xref ref-type="bibr" rid="ref002">2</xref>] state that “Our data show that pharmacogenomics-guided clopidogrel treatment strategy may represent a cost-effective choice compared with non-pharmacogenomics-guided strategy for patients undergoing PCI.”. We present here a formalization of the main scientific claim from this quote by using a semantic template called the super-pattern [<xref ref-type="bibr" rid="ref001">1</xref>].</p>
+</sec>
+<sec id="x1-2000-2">
+<label>2.</label>
+<title>Formalization</title>
+<p>Our formalization looks as follows:</p>
+<table-wrap>
+<table>
+<tbody>
+<tr>
+<td valign="top" align="left">CONTEXT-CLASS (“in the context of all…”):</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RA9pwySo43TIfbvPuhK4ZuisvMsDvZ6TeR5N6MNKft8Nw#patient_undergoing_PCI">patient undergoing PCI</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left">SUBJECT-CLASS (“things of type…”):</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAOxICL4ULhzr5mxC9cyzStCBtpoETQGin6Vr-Ns7JNtA#pharmacogenomics_guided_clopidogrel_therapy">pharmacogenomics guided clopidogrel therapy</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left">QUALIFIER:</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/generallyQualifier">generally</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left">RELATION-TYPE (“have a relation of type…”):</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/enables">enables</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left">OBJECT-CLASS (“to things of type…”):</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAlfRfPak2jsyyVy4knjOmxQSYtociP8Cc0O7gemMtqQY#cost-effective_treatment">cost-effective treatment</ext-link></td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+<p>In the context class we use a new minted class “patient undergoing PCI” that is a subclass of “patient” (Q181600) from Wikidata and is related to the class “percutaneous coronary intervention” (Q2008344) from Wikidata. In the subject class, we use a new minted class “pharmacogenomics guided clopidogrel therapy” that is a subclass of “treatment” (Q179661) from Wikidata and is related to the class “pharmacogenomics” (Q1152227) and “clopidogrel” (Q410237) from Wikidata. In the object class we minted a new class “cost-effective treatment” that is a subclass of “treatment” (Q179661) from Wikidata and is related to the class “cost-effectiveness analysis” (Q1754768) from Wikidata.</p>
+</sec>
+<sec id="x1-3000-3">
+<label>3.</label>
+<title>RDF code</title>
+<p>This is our formalization as a nanopublication in TriG format:</p><preformat><monospace>@prefix this: &lt;http://purl.org/np/RAn15vsPJEVdJvjNKtBPo_oadtjeP9oc3Si-69FiJ4poQ&gt; .</monospace>
+<monospace>@prefix sub: &lt;http://purl.org/np/RAn15vsPJEVdJvjNKtBPo_oadtjeP9oc3Si-69FiJ4poQ#&gt; .</monospace>
+<monospace>@prefix np: &lt;http://www.nanopub.org/nschema#&gt; .</monospace>
+<monospace>@prefix dct: &lt;http://purl.org/dc/terms/&gt; .</monospace>
+<monospace>@prefix nt: &lt;https://w3id.org/np/o/ntemplate/&gt; .</monospace>
+<monospace>@prefix npx: &lt;http://purl.org/nanopub/x/&gt; .</monospace>
+<monospace>@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .</monospace>
+<monospace>@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .</monospace>
+<monospace>@prefix orcid: &lt;https://orcid.org/&gt; .</monospace>
+<monospace>@prefix prov: &lt;http://www.w3.org/ns/prov#&gt; .</monospace>
+<monospace>@prefix sp: &lt;https://w3id.org/linkflows/superpattern/terms/&gt; .</monospace>
+
+
+<monospace>sub:Head {</monospace>
+<monospace>  this: np:hasAssertion sub:assertion ;</monospace>
+<monospace>    np:hasProvenance sub:provenance ;</monospace>
+<monospace>    np:hasPublicationInfo sub:pubinfo ;</monospace>
+<monospace>    a np:Nanopublication .</monospace>
+<monospace>}</monospace>
+<monospace>sub:assertion {</monospace>
+<monospace>  sub:spi a sp:SuperPatternInstance ;</monospace>
+<monospace>    rdfs:label "Pharmacogenomics-guided clopidogrel strategy represents a cost-effective treatment for patients</monospace>
+<monospace>undergoing PCI" ;</monospace>
+<monospace>    sp:hasContextClass &lt;http://purl.org/np/RA9pwySo43TIfbvPuhK4ZuisvMsDvZ6TeR5N6MNKft8Nw#patient_undergoing_PCI&gt; ;</monospace>
+<monospace>    sp:hasSubjectClass &lt;http://purl.org/np/RAOxICL4ULhzr5mxC9cyzStCBtpoETQGin6Vr-</monospace>
+<monospace>Ns7JNtA#pharmacogenomics_guided_clopidogrel_therapy&gt; ;</monospace>
+<monospace>    sp:hasQualifier sp:generallyQualifier ;</monospace>
+<monospace>    sp:hasRelation sp:enables ;</monospace>
+<monospace>    sp:hasObjectClass &lt;http://purl.org/np/RAlfRfPak2jsyyVy4knjOmxQSYtociP8Cc0O7gemMtqQY#cost-effective_treatment&gt; .</monospace>
+<monospace>}</monospace>
+<monospace>sub:provenance {</monospace>
+<monospace>  sub:activity a sp:FormalizationActivity ;</monospace>
+<monospace>    prov:used sub:quote , &lt;https://pubmed.ncbi.nlm.nih.gov/30647444/&gt; ;</monospace>
+<monospace>    prov:wasAssociatedWith orcid:0000-0002-0519-7776 .</monospace>
+<monospace>  sub:assertion prov:wasGeneratedBy sub:activity .</monospace>
+<monospace>  sub:quote prov:value "Our data show that pharmacogenomics-guided clopidogrel treatment strategy may represent</monospace>
+<monospace>a cost-effective choice compared with non-pharmacogenomics-guided strategy for patients undergoing PCI." ;</monospace>
+<monospace>    prov:wasQuotedFrom &lt;https://pubmed.ncbi.nlm.nih.gov/30647444/&gt; .</monospace>
+<monospace>}</monospace>
+<monospace>sub:pubinfo {</monospace>
+<monospace>  sub:sig npx:hasAlgorithm "RSA" ;</monospace>
+<monospace>    npx:hasPublicKey</monospace>
+<monospace>"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCJlM78d80R+gFMoQB1IG3f7AbqqGOCIv4HmZd1cx1KgEWMUUpPsojFNvx84fC/TltcJ8F8JafnbhDXW2HM2</monospace>
+<monospace>MhdK4yC04ROEV1vIgSzjDicHfiqXvMqdPuMyQp4mmCEY7mUoeEW10mWZqjk+S9TnmiAQbFGcpExP8aosr2aTR7CSQIDAQAB" ;</monospace>
+<monospace>    npx:hasSignature</monospace>
+<monospace>"cEQZgFxgTd99RYcmWsqM1LCUciLc1lXuy6mfjgKhn0BfsMcesqIKR+51xx6lfHD31tnz/bovIDh1YEPORGBe2PEvFMPvRRFd67B9s1awepEPll5tA7wmhkTOj</monospace>
+<monospace>PrEUXISQaQu93NbpbYMYSGnRx+Shv7jNxE+hPrxQw7fD6EgJr8=" ;</monospace>
+<monospace>    npx:hasSignatureTarget this: .</monospace>
+<monospace>  this: dct:created "2021-11-17T21:22:59.625+02:00"^^xsd:dateTime ;</monospace>
+<monospace>    dct:creator orcid:0000-0002-0519-7776 , orcid:0000-0002-7114-6459 ;</monospace>
+<monospace>    npx:introduces sub:spi ;</monospace>
+<monospace>    npx:supersedes &lt;http://purl.org/np/RAB_yY8X4BUuS9HMBso8SvvPfBX31cb8cCv41SgfyMBew&gt; ;</monospace>
+<monospace>    &lt;https://w3id.org/linkflows/reviews/isUpdateOf&gt; &lt;http://purl.org/np/RAWCmrfeUUoh1tOl_7qFYoWgrYeonmX4FzAFboCSEoL-s&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromProvenanceTemplate &lt;http://purl.org/np/RAE1wniOy0yO39PlK9QkQ-wqbC3q-R2nXraP5huu8W39k&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromPubinfoTemplate &lt;http://purl.org/np/RA2vCBXZf-icEcVRGhulJXugTGxpsV5yVr9yqCI1bQh4A&gt; ,</monospace>
+<monospace>&lt;http://purl.org/np/RAA2MfqdBCzmz9yVWjKLXNbyfBNcwsMmOqcNUxkk1maIM&gt; ,</monospace>
+<monospace>&lt;http://purl.org/np/RAjpBMlw3owYhJUBo3DtsuDlXsNAJ8cnGeWAutDVjuAuI&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromTemplate &lt;http://purl.org/np/RAv68imZrEjfcp2rnEg1hzoBqEVc0cQMtp9_1Za0BxNM4&gt; .</monospace>
+<monospace>}</monospace>
+</preformat>
+<p>The following nanopublications introduce the newly minted classes in TriG format.</p>
+<p>This is the class definition of “patient undergoing PCI”:</p><preformat><monospace>@prefix this: &lt;http://purl.org/np/RA9pwySo43TIfbvPuhK4ZuisvMsDvZ6TeR5N6MNKft8Nw&gt; .</monospace>
+<monospace>@prefix sub: &lt;http://purl.org/np/RA9pwySo43TIfbvPuhK4ZuisvMsDvZ6TeR5N6MNKft8Nw#&gt; .</monospace>
+<monospace>@prefix np: &lt;http://www.nanopub.org/nschema#&gt; .</monospace>
+<monospace>@prefix dct: &lt;http://purl.org/dc/terms/&gt; .</monospace>
+<monospace>@prefix nt: &lt;https://w3id.org/np/o/ntemplate/&gt; .</monospace>
+<monospace>@prefix npx: &lt;http://purl.org/nanopub/x/&gt; .</monospace>
+<monospace>@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .</monospace>
+<monospace>@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .</monospace>
+<monospace>@prefix orcid: &lt;https://orcid.org/&gt; .</monospace>
+<monospace>@prefix prov: &lt;http://www.w3.org/ns/prov#&gt; .</monospace>
+<monospace>@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .</monospace>
+
+
+<monospace>sub:Head {</monospace>
+<monospace>  this: np:hasAssertion sub:assertion ;</monospace>
+<monospace>    np:hasProvenance sub:provenance ;</monospace>
+<monospace>    np:hasPublicationInfo sub:pubinfo ;</monospace>
+<monospace>    a np:Nanopublication .</monospace>
+<monospace>}</monospace>
+<monospace>sub:assertion {</monospace>
+<monospace>  sub:patient_undergoing_PCI a &lt;http://www.w3.org/2002/07/owl#Class&gt; ;</monospace>
+<monospace>    rdfs:label "patient undergoing PCI" ;</monospace>
+<monospace>    rdfs:subClassOf &lt;http://www.wikidata.org/entity/Q181600&gt; ;</monospace>
+<monospace>    skos:definition "patient undergoing percutaneous coronary intervention" ;</monospace>
+<monospace>    skos:relatedMatch &lt;http://www.wikidata.org/entity/Q2008344&gt; .</monospace>
+<monospace>}</monospace>
+<monospace>sub:provenance {</monospace>
+<monospace>  sub:assertion prov:wasAttributedTo orcid:0000-0002-0519-7776 .</monospace>
+<monospace>}</monospace>
+<monospace>sub:pubinfo {</monospace>
+<monospace>  sub:sig npx:hasAlgorithm "RSA" ;</monospace>
+<monospace>    npx:hasPublicKey</monospace>
+<monospace>"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCJlM78d80R+gFMoQB1IG3f7AbqqGOCIv4HmZd1cx1KgEWMUUpPsojFNvx84fC/TltcJ8F8JafnbhDXW</monospace>
+<monospace>2HM2MhdK4yC04ROEV1vIgSzjDicHfiqXvMqdPuMyQp4mmCEY7mUoeEW10mWZqjk+S9TnmiAQbFGcpExP8aosr2aTR7CSQIDAQAB" ;</monospace>
+<monospace>    npx:hasSignature</monospace>
+<monospace>"Iv6wAp5BYaY+1tBEBIcPls8rQjacsBZifWaNxBQkJaoYJs5/ejUrEiMXVwul4D+4baebbEm8rkT6vp336uDcencmlDiZzHZGL1ioFQTG1Bc//XZYWBkO/jcGRB</monospace>
+<monospace>3HNolScLz1Fo/dWaB94+qrW9MSTi6eVmIY9YqjH+3mGY6HJRk=" ;</monospace>
+<monospace>    npx:hasSignatureTarget this: .</monospace>
+<monospace>  this: dct:created "2021-11-04T10:24:46.053+02:00"^^xsd:dateTime ;</monospace>
+<monospace>    dct:creator orcid:0000-0002-0519-7776 , orcid:0000-0002-7114-6459 ;</monospace>
+<monospace>    npx:introduces sub:patient_undergoing_PCI ;</monospace>
+<monospace>    npx:supersedes &lt;http://purl.org/np/RAuLZtfsHn3NGe0Md8lLNvYmBseEtW9v1rVUVfJCpJYUE&gt; ;</monospace>
+<monospace>    &lt;https://w3id.org/linkflows/reviews/isUpdateOf&gt; &lt;http://purl.org/np/RAuLZtfsHn3NGe0Md8lLNvYmBseEtW9v1rVUVfJCpJYUE&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromProvenanceTemplate &lt;http://purl.org/np/RAi6zZAwhaJ23Hzg4lIjlPir6Take3ZQp-lS9skfBEwfQ&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromPubinfoTemplate &lt;http://purl.org/np/RA2vCBXZf-icEcVRGhulJXugTGxpsV5yVr9yqCI1bQh4A&gt; ,</monospace>
+<monospace>&lt;http://purl.org/np/RAA2MfqdBCzmz9yVWjKLXNbyfBNcwsMmOqcNUxkk1maIM&gt; ,</monospace>
+<monospace>&lt;http://purl.org/np/RAOGu9Lh0BD4tbIRB9RG6RGRA_ObDh75NTbIqaWgxxs8M&gt; ,</monospace>
+<monospace>&lt;http://purl.org/np/RAjpBMlw3owYhJUBo3DtsuDlXsNAJ8cnGeWAutDVjuAuI&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromTemplate &lt;http://purl.org/np/RAdpgRpigXtt8iPV9uOPf3wIT3qzOI8Sg2Q72CNV8g-Yo&gt; .</monospace>
+<monospace>}</monospace>
+</preformat>
+<p>This is the class definition of “pharmacogenomics guided clopidogrel therapy”:</p><preformat><monospace>@prefix this: &lt;http://purl.org/np/RAOxICL4ULhzr5mxC9cyzStCBtpoETQGin6Vr-Ns7JNtA&gt; .</monospace>
+<monospace>@prefix sub: &lt;http://purl.org/np/RAOxICL4ULhzr5mxC9cyzStCBtpoETQGin6Vr-Ns7JNtA#&gt; .</monospace>
+<monospace>@prefix np: &lt;http://www.nanopub.org/nschema#&gt; .</monospace>
+<monospace>@prefix dct: &lt;http://purl.org/dc/terms/&gt; .</monospace>
+<monospace>@prefix nt: &lt;https://w3id.org/np/o/ntemplate/&gt; .</monospace>
+<monospace>@prefix npx: &lt;http://purl.org/nanopub/x/&gt; .</monospace>
+<monospace>@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .</monospace>
+<monospace>@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .</monospace>
+<monospace>@prefix orcid: &lt;https://orcid.org/&gt; .</monospace>
+<monospace>@prefix prov: &lt;http://www.w3.org/ns/prov#&gt; .</monospace>
+<monospace>@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .</monospace>
+
+
+<monospace>sub:Head {</monospace>
+<monospace>  this: np:hasAssertion sub:assertion ;</monospace>
+<monospace>    np:hasProvenance sub:provenance ;</monospace>
+<monospace>    np:hasPublicationInfo sub:pubinfo ;</monospace>
+<monospace>    a np:Nanopublication .</monospace>
+<monospace>}</monospace>
+<monospace>sub:assertion {</monospace>
+<monospace>  sub:pharmacogenomics_guided_clopidogrel_therapy a &lt;http://www.w3.org/2002/07/owl#Class&gt; ;</monospace>
+<monospace>    rdfs:label "pharmacogenomics guided clopidogrel therapy" ;</monospace>
+<monospace>    rdfs:subClassOf &lt;http://www.wikidata.org/entity/Q179661&gt; ;</monospace>
+<monospace>    skos:definition "A clopidogrel therapy assisted by pharmacogenomics." ;</monospace>
+<monospace>    skos:relatedMatch &lt;http://www.wikidata.org/entity/Q1152227&gt; , &lt;http://www.wikidata.org/entity/Q410237&gt; .</monospace>
+<monospace>}</monospace>
+<monospace>sub:provenance {</monospace>
+<monospace>  sub:assertion prov:wasAttributedTo orcid:0000-0002-0519-7776 .</monospace>
+<monospace>}</monospace>
+<monospace>sub:pubinfo {</monospace>
+<monospace>  sub:sig npx:hasAlgorithm "RSA" ;</monospace>
+<monospace>    npx:hasPublicKey</monospace>
+<monospace>"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCJlM78d80R+gFMoQB1IG3f7AbqqGOCIv4HmZd1cx1KgEWMUUpPsojFNvx84fC/TltcJ8F8JafnbhDXW2HM2</monospace>
+<monospace>MhdK4yC04ROEV1vIgSzjDicHfiqXvMqdPuMyQp4mmCEY7mUoeEW10mWZqjk+S9TnmiAQbFGcpExP8aosr2aTR7CSQIDAQAB" ;</monospace>
+<monospace>    npx:hasSignature</monospace>
+<monospace>"QNIcAE5wfsq1p8Z7J+KLQOwA1pbm5/VZFeRJe6JKkIB6TvXTdlO2OKOTDYMPZys15bU9yibaKOA/7YRQnaf6oTbgOmaT1mV5+zffRjl5SG+z+4A1R7HLIfr2G2x</monospace>
+<monospace>9Z4kz55rQL+AQbvYgkDXiVMSsbdJdraQ5t/SBCJcEHOh2xuQ=" ;</monospace>
+<monospace>    npx:hasSignatureTarget this: .</monospace>
+<monospace>  this: dct:created "2021-11-04T11:02:34.246+02:00"^^xsd:dateTime ;</monospace>
+<monospace>    dct:creator orcid:0000-0002-0519-7776 , orcid:0000-0002-7114-6459 ;</monospace>
+<monospace>    npx:introduces sub:pharmacogenomics_guided_clopidogrel_therapy ;</monospace>
+<monospace>    npx:supersedes &lt;http://purl.org/np/RA4BJq9pLse6z1BRbZIOgARyf1zOY9Qw33ix3lsHcazOE&gt; ;</monospace>
+<monospace>    &lt;https://w3id.org/linkflows/reviews/isUpdateOf&gt; &lt;http://purl.org/np/RAvOAyEg-J8ynmZNrkCgg5XqGuqRo-dXcGFvgDLxtY6ck&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromProvenanceTemplate &lt;http://purl.org/np/RAi6zZAwhaJ23Hzg4lIjlPir6Take3ZQp-lS9skfBEwfQ&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromPubinfoTemplate &lt;http://purl.org/np/RA2vCBXZf-icEcVRGhulJXugTGxpsV5yVr9yqCI1bQh4A&gt; ,</monospace>
+<monospace>&lt;http://purl.org/np/RAA2MfqdBCzmz9yVWjKLXNbyfBNcwsMmOqcNUxkk1maIM&gt; ,</monospace>
+<monospace>&lt;http://purl.org/np/RAjpBMlw3owYhJUBo3DtsuDlXsNAJ8cnGeWAutDVjuAuI&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromTemplate &lt;http://purl.org/np/RAdpgRpigXtt8iPV9uOPf3wIT3qzOI8Sg2Q72CNV8g-Yo&gt; .</monospace>
+<monospace>}</monospace>
+</preformat>
+<p>This is the class definition of “cost-effective treatment”:</p><preformat><monospace>@prefix this: &lt;http://purl.org/np/RAlfRfPak2jsyyVy4knjOmxQSYtociP8Cc0O7gemMtqQY&gt; .</monospace>
+<monospace>@prefix sub: &lt;http://purl.org/np/RAlfRfPak2jsyyVy4knjOmxQSYtociP8Cc0O7gemMtqQY#&gt; .</monospace>
+<monospace>@prefix np: &lt;http://www.nanopub.org/nschema#&gt; .</monospace>
+<monospace>@prefix dct: &lt;http://purl.org/dc/terms/&gt; .</monospace>
+<monospace>@prefix nt: &lt;https://w3id.org/np/o/ntemplate/&gt; .</monospace>
+<monospace>@prefix npx: &lt;http://purl.org/nanopub/x/&gt; .</monospace>
+<monospace>@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .</monospace>
+<monospace>@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .</monospace>
+<monospace>@prefix orcid: &lt;https://orcid.org/&gt; .</monospace>
+<monospace>@prefix prov: &lt;http://www.w3.org/ns/prov#&gt; .</monospace>
+<monospace>@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .</monospace>
+
+
+<monospace>sub:Head {</monospace>
+<monospace>  this: np:hasAssertion sub:assertion ;</monospace>
+<monospace>    np:hasProvenance sub:provenance ;</monospace>
+<monospace>    np:hasPublicationInfo sub:pubinfo ;</monospace>
+<monospace>    a np:Nanopublication .</monospace>
+<monospace>}</monospace>
+<monospace>sub:assertion {</monospace>
+<monospace>  sub:cost-effective_treatment a &lt;http://www.w3.org/2002/07/owl#Class&gt; ;</monospace>
+<monospace>    rdfs:label "cost-effective treatment" ;</monospace>
+<monospace>    rdfs:subClassOf &lt;http://www.wikidata.org/entity/Q179661&gt; ;</monospace>
+<monospace>    skos:definition "cost-effective treatment" ;</monospace>
+<monospace>    skos:relatedMatch &lt;http://www.wikidata.org/entity/Q1754768&gt; .</monospace>
+<monospace>}</monospace>
+<monospace>sub:provenance {</monospace>
+<monospace>  sub:assertion prov:wasAttributedTo orcid:0000-0002-0519-7776 .</monospace>
+<monospace>}</monospace>
+<monospace>sub:pubinfo {</monospace>
+<monospace>  sub:sig npx:hasAlgorithm "RSA" ;</monospace>
+<monospace>    npx:hasPublicKey</monospace>
+<monospace>"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCJlM78d80R+gFMoQB1IG3f7AbqqGOCIv4HmZd1cx1KgEWMUUpPsojFNvx84fC/TltcJ8F8JafnbhDXW2HM2Mhd</monospace>
+<monospace>K4yC04ROEV1vIgSzjDicHfiqXvMqdPuMyQp4mmCEY7mUoeEW10mWZqjk+S9TnmiAQbFGcpExP8aosr2aTR7CSQIDAQAB" ;</monospace>
+<monospace>    npx:hasSignature</monospace>
+<monospace>"f+XJLoVxSGhXnuQYxbgd+cAl1jMEdNppqO11jalPaJlnUREFKwRB5A9mhsvEuV1TWGzHfzi1wEL8FiguHgg7YUTJlbA1pb8qA98/MFkWtXeYzIjwOgmuFUrSIBQF0</monospace>
+<monospace>cEVX5OV8D3nzwwa+Y2glBes11pIkSRgAH4b3KMy8+PbNBg=" ;</monospace>
+<monospace>    npx:hasSignatureTarget this: .</monospace>
+<monospace>  this: dct:created "2021-11-04T10:28:39.058+02:00"^^xsd:dateTime ;</monospace>
+<monospace>    dct:creator orcid:0000-0002-0519-7776 , orcid:0000-0002-7114-6459 ;</monospace>
+<monospace>    npx:introduces sub:cost-effective_treatment ;</monospace>
+<monospace>    npx:supersedes &lt;http://purl.org/np/RAjD4-Q2kO_cIUE52rde2uWbV3RtuCR90geXW90il2YX4&gt; ;</monospace>
+<monospace>    &lt;https://w3id.org/linkflows/reviews/isUpdateOf&gt; &lt;http://purl.org/np/RAjD4-Q2kO_cIUE52rde2uWbV3RtuCR90geXW90il2YX4&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromProvenanceTemplate &lt;http://purl.org/np/RAi6zZAwhaJ23Hzg4lIjlPir6Take3ZQp-lS9skfBEwfQ&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromPubinfoTemplate &lt;http://purl.org/np/RA2vCBXZf-icEcVRGhulJXugTGxpsV5yVr9yqCI1bQh4A&gt; ,</monospace>
+<monospace>&lt;http://purl.org/np/RAA2MfqdBCzmz9yVWjKLXNbyfBNcwsMmOqcNUxkk1maIM&gt; ,</monospace>
+<monospace>&lt;http://purl.org/np/RAOGu9Lh0BD4tbIRB9RG6RGRA_ObDh75NTbIqaWgxxs8M&gt; ,</monospace>
+<monospace>&lt;http://purl.org/np/RAjpBMlw3owYhJUBo3DtsuDlXsNAJ8cnGeWAutDVjuAuI&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromTemplate &lt;http://purl.org/np/RAdpgRpigXtt8iPV9uOPf3wIT3qzOI8Sg2Q72CNV8g-Yo&gt; .</monospace>
+<monospace>}</monospace>
+</preformat>
+</sec>
+</body>
+<back>
+<ref-list>
+<title>References</title>
+<ref id="ref001">
+<label>[1]</label><mixed-citation publication-type="other"><string-name><given-names>C.I.</given-names> <surname>Bucur</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Kuhn</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Ceolin</surname></string-name> and <string-name><given-names>J.</given-names> <surname>van Ossenbruggen</surname></string-name>, <chapter-title>Expressing high-level scientific claims with formal semantics</chapter-title>, in: <source>Proceedings of the 11th Knowledge Capture Conference</source>, <year>2021</year>. doi:<pub-id pub-id-type="doi">10.1145/3460210.3493561</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref002">
+<label>[2]</label><mixed-citation publication-type="journal"><string-name><given-names>V.</given-names> <surname>Fragoulakis</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Bartsakoulia</surname></string-name>, <string-name><given-names>X.</given-names> <surname>Díaz-Villamarín</surname></string-name>, <string-name><given-names>K.</given-names> <surname>Chalikiopoulou</surname></string-name>, <string-name><given-names>K.</given-names> <surname>Kehagia</surname></string-name>, <string-name><given-names>J.G.S.</given-names> <surname>Ramos</surname></string-name>, <string-name><given-names>L.J.</given-names> <surname>Martínez-González</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Gkotsi</surname></string-name>, <string-name><given-names>E.</given-names> <surname>Katrali</surname></string-name>, <string-name><given-names>E.</given-names> <surname>Skoufas</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Vozikis</surname></string-name>, <string-name><given-names>A.</given-names> <surname>John</surname></string-name>, <string-name><given-names>B.R.</given-names> <surname>Ali</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Wordsworth</surname></string-name>, <string-name><given-names>C.L.</given-names> <surname>Dávila-Fajardo</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Katsila</surname></string-name>, <string-name><given-names>G.P.</given-names> <surname>Patrinos</surname></string-name> and <string-name><given-names>C.</given-names> <surname>Mitropoulou</surname></string-name>, <article-title>Cost-effectiveness analysis of pharmacogenomics-guided clopidogrel treatment in Spanish patients undergoing percutaneous coronary intervention</article-title>, <source>Pharmacogenomics J.</source> <volume>19</volume>(<issue>5</issue>) (<year>2019</year>), <fpage>438</fpage>–<lpage>445</lpage>. doi:<pub-id pub-id-type="doi">10.1038/s41397-019-0069-1</pub-id>.</mixed-citation>
+</ref>
+</ref-list>
+</back>
+</article>

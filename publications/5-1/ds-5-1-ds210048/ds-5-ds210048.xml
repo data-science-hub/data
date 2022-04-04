@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.0 20120330//EN" "JATS-journalpublishing1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="formalization-paper" dtd-version="1.0">
+<front>
+<journal-meta>
+<journal-id journal-id-type="publisher-id">DS</journal-id>
+<journal-title-group><journal-title>Data Science</journal-title></journal-title-group>
+<issn pub-type="epub">2451-8492</issn><issn pub-type="ppub">2451-8484</issn><issn-l>2451-8484</issn-l>
+<publisher>
+<publisher-name>IOS Press</publisher-name><publisher-loc>Nieuwe Hemweg 6B, 1013 BG Amsterdam, The Netherlands</publisher-loc>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">DS210048</article-id>
+<article-id pub-id-type="doi">10.3233/DS-210048</article-id>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Formalization Paper</subject></subj-group></article-categories>
+<title-group>
+<article-title>A formalization of one of the main claims of “Mutations in NGLY1 cause an inherited disorder of the endoplasmic reticulum–associated degradation pathway” by Enns et al. 2014<xref ref-type="fn" rid="thanks1"><sup>1</sup></xref></article-title>
+</title-group>
+<contrib-group content-type="Editor">
+<contrib contrib-type="editor">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-7114-6459</contrib-id>
+<name><surname>Bucur</surname><given-names>Cristina-Iulia</given-names></name>
+</contrib>
+</contrib-group>
+<contrib-group content-type="Review comments from">
+<contrib contrib-type="reviewer">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-1267-0234</contrib-id>
+<name><surname>Kuhn</surname><given-names>Tobias</given-names></name>
+</contrib>
+<contrib contrib-type="reviewer">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-7114-6459</contrib-id>
+<name><surname>Bucur</surname><given-names>Cristina-Iulia</given-names></name>
+</contrib>
+</contrib-group>
+<contrib-group>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0003-0169-8159</contrib-id>
+<name><surname>Queralt-Rosinach</surname><given-names>Núria</given-names></name><email>N.Queralt_Rosinach@lumc.nl</email><xref ref-type="aff" rid="affa"/><xref ref-type="corresp" rid="cor2">*</xref>
+</contrib>
+<aff id="affa"><institution>Leiden University Medical Center</institution>, Leiden, <country>The Netherlands</country></aff>
+</contrib-group>
+<contrib-group content-type="guest-editors">
+<contrib contrib-type="guest-editor">
+<name><surname>Bucur</surname><given-names>Cristina-Iulia</given-names></name>
+</contrib>
+<contrib contrib-type="guest-editor">
+<name><surname>Kuhn</surname><given-names>Tobias</given-names></name>
+</contrib>
+</contrib-group>
+<author-notes>
+<fn id="thanks1"><label>1</label>
+<p>As RDF/nanopublication: <uri>http://purl.org/np/RA12lVwEtmddK9OwDkZQZlgJaOD2-0NXtAtO_jDaG-3VQ</uri></p></fn><corresp id="cor2"><label>*</label>Corresponding author. E-mail: <email>N.Queralt_Rosinach@lumc.nl</email>.</corresp>
+</author-notes>
+<pub-date date-type="preprint" publication-format="electronic"><day>28</day><month>2</month><year>2022</year></pub-date><pub-date date-type="pub" publication-format="electronic"><day>22</day><month>3</month><year>2022</year></pub-date><pub-date date-type="collection" publication-format="electronic"><year>2022</year></pub-date><volume>5</volume><issue>1</issue><issue-title>Semantic Publishing with Formalization Papers</issue-title><fpage>57</fpage><lpage>59</lpage><history><date date-type="received"><day>3</day><month>06</month><year>2021</year></date><date date-type="accepted"><day>17</day><month>12</month><year>2021</year></date></history>
+<permissions><copyright-statement>© 2022 – The authors. Published by IOS Press.</copyright-statement><copyright-year>2022</copyright-year>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/" license-type="open-access" xlink:type="simple">
+<license-p>This is an open access article distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/" xlink:type="simple">Creative Commons Attribution (CC BY 4.0) License</ext-link>, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions>
+<abstract>
+<p>Enns et al. claimed in previous work that NGLY1 deficiency is a novel autosomal recessive disorder of the ERAD pathway. We present here a formalization of that claim, stating that all things of class “NGLY1 deficiency” that are in the context of a thing of class “human” always have a relation of type “is caused by” to a thing of class “dysfunction of ERAD pathway” in the same context.</p>
+</abstract>
+<kwd-group>
+<label>Keywords</label>
+<kwd>Human</kwd>
+<kwd>NGLY1 deficiency</kwd>
+<kwd>dysfunction of ERAD pathway</kwd>
+</kwd-group>
+</article-meta>
+</front>
+<body>
+<sec id="x1-1000-1">
+<label>1.</label>
+<title>Introduction</title>
+<p>Enns et al. [<xref ref-type="bibr" rid="ref002">2</xref>] state that “NGLY1 deficiency is a novel autosomal recessive disorder of the endoplasmic reticulum–associated degradation pathway.”. We present here a formalization of the main scientific claim from this quote by using a semantic template called the super-pattern [<xref ref-type="bibr" rid="ref001">1</xref>].</p>
+</sec>
+<sec id="x1-2000-2">
+<label>2.</label>
+<title>Formalization</title>
+<p>Our formalization looks as follows:</p>
+<table-wrap>
+<table>
+<tbody>
+<tr>
+<td valign="top" align="left">CONTEXT-CLASS (“in the context of all ...”):</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://www.wikidata.org/entity/Q5">human</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left">SUBJECT-CLASS (“things of type ...”):</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.obolibrary.org/obo/MONDO_0014109">NGLY1 deficiency</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left">QUALIFIER:</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/alwaysQualifier">always</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left">RELATION-TYPE (“have a relation of type...”):</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/isCausedBy">is caused by</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left">OBJECT-CLASS (“to things of type...”):</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAZVLqlkbwiX40n0GNxcxJany2Cw3oxMCrNuZtjBClryU#Dysfunction_of_ERAD_pathway">dysfunction of ERAD pathway</ext-link></td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+<p>In the context class we use the class “human” (Q5) from Wikidata. In the subject class, we use the class “NGLY1 deficiency” from Mondo Disease Ontology. In the object class we minted a new class “dysfunction of ERAD pathway” that is related to the class “ERAD pathway” (Q21101062) from Wikidata.</p>
+</sec>
+<sec id="x1-3000-3">
+<label>3.</label>
+<title>RDF code</title>
+<p>This is our formalization as a nanopublication in TriG format:</p><preformat><monospace>@prefix this: &lt;http://purl.org/np/RA12lVwEtmddK9OwDkZQZlgJaOD2-0NXtAtO_jDaG-3VQ&gt; .</monospace>
+<monospace>@prefix sub: &lt;http://purl.org/np/RA12lVwEtmddK9OwDkZQZlgJaOD2-0NXtAtO_jDaG-3VQ#&gt; .</monospace>
+<monospace>@prefix np: &lt;http://www.nanopub.org/nschema#&gt; .</monospace>
+<monospace>@prefix dct: &lt;http://purl.org/dc/terms/&gt; .</monospace>
+<monospace>@prefix nt: &lt;https://w3id.org/np/o/ntemplate/&gt; .</monospace>
+<monospace>@prefix npx: &lt;http://purl.org/nanopub/x/&gt; .</monospace>
+<monospace>@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .</monospace>
+<monospace>@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .</monospace>
+<monospace>@prefix orcid: &lt;https://orcid.org/&gt; .</monospace>
+<monospace>@prefix prov: &lt;http://www.w3.org/ns/prov#&gt; .</monospace>
+<monospace>@prefix sp: &lt;&lt;https://w3id.org/linkflows/superpattern/terms/&gt; .</monospace>
+
+<monospace>sub:Head {</monospace>
+<monospace>  this: np:hasAssertion sub:assertion ;</monospace>
+<monospace>    np:hasProvenance sub:provenance ;</monospace>
+<monospace>    np:hasPublicationInfo sub:pubinfo ;</monospace>
+<monospace>    a np:Nanopublication .</monospace>
+<monospace>}</monospace>
+<monospace>sub:assertion {</monospace>
+<monospace>  sub:spi a sp:SuperPatternInstance ;</monospace>
+<monospace>    rdfs:label "NGLY1 deficiency is a novel autosomal recessive disorder of the ERAD pathway." ;</monospace>
+<monospace>    sp:hasContextClass &lt;http://www.wikidata.org/entity/Q5&gt; ;</monospace>
+<monospace>    sp:hasSubjectClass &lt;http://purl.obolibrary.org/obo/MONDO_0014109&gt; ;</monospace>
+<monospace>    sp:hasQualifier &lt;https://w3id.org/linkflows/superpattern/terms/alwaysQualifier&gt; ;</monospace>
+<monospace>    sp:hasRelation &lt;https://w3id.org/linkflows/superpattern/terms/isCausedBy&gt; ;</monospace>
+<monospace>    sp:hasObjectClass &lt;http://purl.org/np/RAZVLqlkbwiX40n0GNxcxJany2Cw3oxMCrNuZtjBClryU#Dysfunction_of_ERAD_pathway&gt; .</monospace>
+<monospace>}</monospace>
+<monospace>sub:provenance {</monospace>
+<monospace>  sub:activity a sp:FormalizationActivity ;</monospace>
+<monospace>    prov:used sub:quote , &lt;https://dx.doi.org/10.1038%2Fgim.2014.22&gt; ;</monospace>
+<monospace>    prov:wasAssociatedWith orcid:0000-0003-0169-8159 .</monospace>
+<monospace>  sub:assertion prov:wasGeneratedBy sub:activity .</monospace>
+<monospace>  sub:quote prov:value "NGLY1 deficiency is a novel autosomal recessive disorder of the endoplasmic reticulum--associated</monospace>
+<monospace>degradation pathway" ;</monospace>
+<monospace>    prov:wasQuotedFrom &lt;https://dx.doi.org/10.1038%2Fgim.2014.22&gt; .</monospace>
+<monospace>}</monospace>
+<monospace>sub:pubinfo {</monospace>
+<monospace>  sub:sig npx:hasAlgorithm "RSA" ;</monospace>
+<monospace>    npx:hasPublicKey</monospace>
+<monospace>"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDOWrvo3T4o7/c9+al6pWVu3tb32/oqIpuNK/bZlFUgR6bnQRBl+7ub5H++34CVFU1pWEQb4RXsx39Q0fM1UPvJbZbX</monospace>
+<monospace>DYAsCEPzn0mzN+YAYdSZKAEyjM2cf4cqjQLwKBabOluVKfKetxTaKB/Jr/9U770dEc2LR3lOMFcbALPSXwIDAQAB" ;</monospace>
+<monospace>    npx:hasSignature</monospace>
+<monospace>"hyYI2msaoxuiMomUFjxJ0K37Cko2r6FQsFper7fJQGC9Y5HMIR//VzDqrzXwz1BGdno3PG8WLv3dvy2vDj+ULXqXxFfp4IuSVekvT902OJXbQuCv40jTVPSgc0LsT0HA</monospace>
+<monospace>ll64tIu+nR8o2d8f9lr7mZSCitDc0FsEAcw2U9RUIF4=" ;</monospace>
+<monospace>    npx:hasSignatureTarget this: .</monospace>
+<monospace>  this: dct:created "2021-12-17T10:26:28.040+01:00"^^xsd:dateTime ;</monospace>
+<monospace>    dct:creator orcid:0000-0003-0169-8159 ;</monospace>
+<monospace>    npx:introduces sub:spi ;</monospace>
+<monospace>    npx:supersedes &lt;http://purl.org/np/RASPvPrnUq6SOsOkrgOsUvRbsfmC7dHd73FgUA6oRmlGg&gt; ;</monospace>
+<monospace>    &lt;https://w3id.org/linkflows/reviews/isUpdateOf&gt; &lt;http://purl.org/np/RAGgV-nRMWhmgtxx5n3yE29NaopuuDVDKAuZC8IzCATag&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromProvenanceTemplate &lt;http://purl.org/np/RAE1wniOy0yO39PlK9QkQ-wqbC3q-R2nXraP5huu8W39k&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromPubinfoTemplate &lt;http://purl.org/np/RA2vCBXZf-icEcVRGhulJXugTGxpsV5yVr9yqCI1bQh4A&gt; ,</monospace>
+<monospace>&lt;http://purl.org/np/RAA2MfqdBCzmz9yVWjKLXNbyfBNcwsMmOqcNUxkk1maIM&gt; ,</monospace>
+<monospace>&lt;http://purl.org/np/RAjpBMlw3owYhJUBo3DtsuDlXsNAJ8cnGeWAutDVjuAuI&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromTemplate &lt;http://purl.org/np/RAv68imZrEjfcp2rnEg1hzoBqEVc0cQMtp9_1Za0BxNM4&gt; .</monospace>
+<monospace>}</monospace>
+</preformat>
+<p>The following nanopublications introduce the newly minted classes in TriG format.</p>
+<p>This is the class definition of “dysfunction of ERAD pathway”:</p><preformat><monospace>@prefix this: &lt;http://purl.org/np/RAZVLqlkbwiX40n0GNxcxJany2Cw3oxMCrNuZtjBClryU&gt; .</monospace>
+<monospace>@prefix sub: &lt;http://purl.org/np/RAZVLqlkbwiX40n0GNxcxJany2Cw3oxMCrNuZtjBClryU#&gt; .</monospace>
+<monospace>@prefix np: &lt;http://www.nanopub.org/nschema#&gt; .</monospace>
+<monospace>@prefix dct: &lt;http://purl.org/dc/terms/&gt; .</monospace>
+<monospace>@prefix nt: &lt;https://w3id.org/np/o/ntemplate/&gt; .</monospace>
+<monospace>@prefix npx: &lt;http://purl.org/nanopub/x/&gt; .</monospace>
+<monospace>@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .</monospace>
+<monospace>@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .</monospace>
+<monospace>@prefix orcid: &lt;https://orcid.org/&gt; .</monospace>
+<monospace>@prefix prov: &lt;http://www.w3.org/ns/prov#&gt; .</monospace>
+<monospace>@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .</monospace>
+
+<monospace>sub:Head {</monospace>
+<monospace>  this: np:hasAssertion sub:assertion ;</monospace>
+<monospace>    np:hasProvenance sub:provenance ;</monospace>
+<monospace>    np:hasPublicationInfo sub:pubinfo ;</monospace>
+<monospace>    a np:Nanopublication .</monospace>
+<monospace>}</monospace>
+<monospace>sub:assertion {</monospace>
+<monospace>  sub:Dysfunction_of_ERAD_pathway a &lt;http://www.w3.org/2002/07/owl#Class&gt; ;</monospace>
+<monospace>    rdfs:label "Dysfunction of ERAD pathway" ;</monospace>
+<monospace>    skos:definition "Dysfunction of ERAD pathway" ;</monospace>
+<monospace>    skos:relatedMatch &lt;http://www.wikidata.org/entity/Q21101062&gt; .</monospace>
+<monospace>}</monospace>
+<monospace>sub:provenance {</monospace>
+<monospace>  sub:assertion prov:wasAttributedTo orcid:0000-0003-0169-8159 .</monospace>
+<monospace>}</monospace>
+<monospace>sub:pubinfo {</monospace>
+<monospace>  sub:sig npx:hasAlgorithm "RSA" ;</monospace>
+<monospace>    npx:hasPublicKey</monospace>
+<monospace>"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDOWrvo3T4o7/c9+al6pWVu3tb32/oqIpuNK/bZlFUgR6bnQRBl+7ub5H++34CVFU1pWEQb4RXsx39Q0fM1UPvJbZbX</monospace>
+<monospace>DYAsCEPzn0mzN+YAYdSZKAEyjM2cf4cqjQLwKBabOluVKfKetxTaKB/Jr/9U770dEc2LR3lOMFcbALPSXwIDAQAB" ;</monospace>
+<monospace>    npx:hasSignature</monospace>
+<monospace>"lHpXoxwEiDwRt0Snb8FuYf1erV7wZgddH0orZakfvel/t2mfo2YjppvSes+/zHlMjU2FxYbUIV7KaitPVbbx1skOGyhbn0mLAB6xNKwy+iA7TjX2NazJVWpHq4EPVXJY</monospace>
+<monospace>sjU3x80TjAWJce6sPbU9gtgHsRGC6fFFGp0rDq70ZP4=" ;</monospace>
+<monospace>    npx:hasSignatureTarget this: .</monospace>
+<monospace>  this: dct:created "2021-12-17T10:19:45.788+01:00"^^xsd:dateTime ;</monospace>
+<monospace>    dct:creator orcid:0000-0003-0169-8159 ;</monospace>
+<monospace>    npx:introduces sub:Dysfunction_of_ERAD_pathway ;</monospace>
+<monospace>    npx:supersedes &lt;http://purl.org/np/RAYXLV7qwfx03AGH7k5ZP6zeMj_vx2kj88z5UQ5OX3C90&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromProvenanceTemplate &lt;http://purl.org/np/RANwQa4ICWS5SOjw7gp99nBpXBasapwtZF1fIM3H2gYTM&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromPubinfoTemplate &lt;http://purl.org/np/RAA2MfqdBCzmz9yVWjKLXNbyfBNcwsMmOqcNUxkk1maIM&gt; ,</monospace>
+<monospace>&lt;http://purl.org/np/RAjpBMlw3owYhJUBo3DtsuDlXsNAJ8cnGeWAutDVjuAuI&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromTemplate &lt;http://purl.org/np/RAdpgRpigXtt8iPV9uOPf3wIT3qzOI8Sg2Q72CNV8g-Yo&gt; .</monospace>
+<monospace>}</monospace>
+</preformat>
+</sec>
+</body>
+<back>
+<ref-list>
+<title>References</title>
+<ref id="ref001">
+<label>[1]</label><mixed-citation publication-type="other"><string-name><given-names>C.I.</given-names> <surname>Bucur</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Kuhn</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Ceolin</surname></string-name> and <string-name><given-names>J.</given-names> <surname>van Ossenbruggen</surname></string-name>, <chapter-title>Expressing high-level scientific claims with formal semantics</chapter-title>, in: <source>Proceedings of the 11th Knowledge Capture Conference</source>, <year>2021</year>. doi:<pub-id pub-id-type="doi">10.1145/3460210.3493561</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref002">
+<label>[2]</label><mixed-citation publication-type="journal"><string-name><given-names>G.</given-names> <surname>Enns</surname></string-name>, <string-name><given-names>V.</given-names> <surname>Shashi</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Bainbridge</surname></string-name> <etal>et al.</etal>, <article-title>Mutations in NGLY1 cause an inherited disorder of the endoplasmic reticulum–associated degradation pathway</article-title>, <source>Genet Med</source> <volume>16</volume> (<year>2014</year>), <fpage>751</fpage>–<lpage>758</lpage>. doi:<pub-id pub-id-type="doi">10.1038/gim.2014.22</pub-id>.</mixed-citation>
+</ref>
+</ref-list>
+</back>
+</article>

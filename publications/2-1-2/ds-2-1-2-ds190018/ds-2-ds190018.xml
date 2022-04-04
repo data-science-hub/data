@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.0 20120330//EN" "JATS-journalpublishing1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article">
+<front>
+<journal-meta>
+<journal-id journal-id-type="publisher-id">DS</journal-id>
+<journal-title-group><journal-title>Data Science</journal-title></journal-title-group>
+<issn pub-type="epub">2451-8492</issn><issn pub-type="ppub">2451-8484</issn><issn-l>2451-8484</issn-l>
+<publisher>
+<publisher-name>IOS Press</publisher-name><publisher-loc>Nieuwe Hemweg 6B, 1013 BG Amsterdam, The Netherlands</publisher-loc>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">DS190018</article-id>
+<article-id pub-id-type="doi">10.3233/DS-190018</article-id>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Research Article</subject></subj-group></article-categories>
+<title-group>
+<article-title>Scholarly publishing on the blockchain – from smart papers to smart informetrics</article-title>
+</title-group>
+<contrib-group content-type="Editor">
+<contrib contrib-type="editor">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-8596-222X</contrib-id>
+<name><surname>Verborgh</surname><given-names>Ruben</given-names></name>
+</contrib>
+</contrib-group>
+<contrib-group>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0001-9361-2468</contrib-id>
+<name><surname>Hoffman</surname><given-names>Michał Robert</given-names></name><xref ref-type="aff" rid="affa">a</xref><xref ref-type="corresp" rid="cor2">*</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0001-6993-0001</contrib-id>
+<name><surname>Ibáñez</surname><given-names>Luis-Daniel</given-names></name><xref ref-type="aff" rid="affb">b</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0003-1722-947X</contrib-id>
+<name><surname>Simperl</surname><given-names>Elena</given-names></name><xref ref-type="aff" rid="affc">c</xref>
+</contrib>
+<aff id="affa"><label>a</label>Web and Internet Science Lab, School of Electronics and Computer Science, <institution>University of Southampton</institution>, Southampton, S017 1BJ, <country>United Kingdom</country>. E-mail: <email>M.R.Hoffman@soton.ac.uk</email></aff>
+<aff id="affb"><label>b</label>Web and Internet Science Lab, School of Electronics and Computer Science, <institution>University of Southampton</institution>, Southampton, S017 1BJ, <country>United Kingdom</country>.</aff>
+<aff id="affc"><label>c</label>Web and Internet Science Lab, School of Electronics and Computer Science, <institution>University of Southampton</institution>, Southampton, S017 1BJ, <country>United Kingdom</country>.</aff>
+</contrib-group>
+<author-notes>
+<corresp id="cor2"><label>*</label>Corresponding author. E-mail: <email>M.R.Hoffman@soton.ac.uk</email>.</corresp>
+</author-notes>
+<pub-date date-type="preprint" publication-format="electronic"><day>2</day><month>7</month><year>2019</year></pub-date><pub-date date-type="pub" publication-format="electronic"><day>25</day><month>11</month><year>2019</year></pub-date><pub-date date-type="collection" publication-format="electronic"><year>2019</year></pub-date><volume>2</volume><issue>1-2</issue><fpage>291</fpage><lpage>310</lpage><history><date date-type="received"><day>31</day><month>03</month><year>2019</year></date><date date-type="accepted"><day>6</day><month>05</month><year>2019</year></date></history>
+<permissions><copyright-statement>© 2019 – IOS Press and the authors.</copyright-statement><copyright-year>2019</copyright-year>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/" license-type="open-access" xlink:type="simple">
+<license-p>This is an open access article distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/" xlink:type="simple">Creative Commons Attribution (CC BY 4.0) License</ext-link>, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions>
+<abstract>
+<p>Blockchains provide decentralised, tamper-free registries of transactions among partners that may not trust each other. For the scientific community, blockchain smart contracts have been proposed to decentralise and make more transparent multiple aspects of scholarly communications. We show how an Ethereum-based suite of smart contracts running on top of a Web-enabled governance framework can facilitate decentralised computation of citations that is trustworthy. We implement and evaluate Smart Papers, and extend it with a model for decentralised citation counts. We show how our approach complements current models for decentralised publishing and informetrics calculation, and analyse cost and performance implications.</p>
+</abstract>
+<kwd-group>
+<label>Keywords</label>
+<kwd>Scholarly communications</kwd>
+<kwd>smart contract governance</kwd>
+<kwd>citation analysis</kwd>
+<kwd>decentralised computation</kwd>
+</kwd-group>
+</article-meta>
+</front>
+<body>
+<sec id="x1-1000-1">
+<label>1.</label>
+<title>Introduction</title>
+<p>This is an extended version of our original “Smart Papers” article [<xref ref-type="bibr" rid="ref022">22</xref>] in which we argued that more focus needs to be placed on avoiding the excessive concentration of power in the hands of big academic publishers. With the advent of digitisation and Web technologies, dissemination of scientific research objects has become faster and less expensive. However, several authors (e.g. [<xref ref-type="bibr" rid="ref011">11</xref>,<xref ref-type="bibr" rid="ref021">21</xref>]) pointed out that Web-based scholarly authoring tools appear to be “stuck in the past” to the extent that they are currently mimicking the print-based format dating back to the 15<sup>th</sup> century. In this work, we first remind the reader of the original motivation for Smart Papers – free, governable, transparent and tamper-proof records of research – only to extend our approach with a new governance framework and a new calculation of citations on a blockchain.</p>
+<p>With a view to transforming research objects from static to <italic>evolutionary</italic> entities, conceptual models like Liquid Publications [<xref ref-type="bibr" rid="ref011">11</xref>] and Dynamic Publication Formats [<xref ref-type="bibr" rid="ref021">21</xref>] have been proposed. In such models, authors collaborate on a <italic>living</italic> version of the research object that, upon the authors’ agreement, has periodical snapshots or <italic>releases</italic> published on the Web. Releases can be open for comments and reviews from the members of the public, or submitted to Calls for Contributions of conferences or journals. Authoring tools like Dokie.li [<xref ref-type="bibr" rid="ref010">10</xref>] go one step further and provide <italic>decentralised</italic> implementations of living research objects that allow authors to retain the ownership of, and sovereignty over, their data. This supplies an alternative to the current state of play, where scholarly publication processes are centralised in publishing houses and large technology providers. However, an under-explored aspect in these models is how to manage the interactions between authors and contributors to a research object in a trusted way, which is of utmost importance for computing bibliometrics transparently. Examples of these interactions are (i) Agreement between authors on which snapshot of a working version should be released, (ii) Agreement between authors on the attribution due to each of them for each release of a living research object, (iii) Public comments and reviews of public releases, both as a mean to complement bibliometrics, an often-overlooked yet crucial labour in academia.</p>
+<p>From the point of view of a single scholar that co-authors several papers with different teams, receives reviews and comments from peers, and reviews and comments on research made by others, data produced by these interactions, used to measure their performance, is not only controlled by her, or a single third party, but also by many other scholars (or their trustees). Any accidental or malicious change in a data store that is out of her control might have catastrophic impact on her performance measures.</p>
+<p>Our work advances several cross-disciplinary research areas, including trust management for the Semantic Web, transparent informetrics, governance approaches for the blockchain and decentralised scholarly communications. By proposing a system that uses distributed ledgers and smart contracts to manage trust in a scenario which has been long understood as a critical showcase of semantic technologies, we provide a timely contribution to an ongoing discourse on the role and future of the Web as a re-decentralised platform for progress and social good.</p>
+<p>We aim to answer two research questions in the context of open decentralised publishing systems: RQ1. <italic>How can releases and their attribution agreements be managed in a trusted way?</italic>; and RQ2. <italic>How can we avoid malicious/accidental modifications in remote data stores affecting the computation of informetrics?</italic></p>
+<p>Recently, distributed ledger technologies, commonly known as <italic>blockchains</italic> [<xref ref-type="bibr" rid="ref034">34</xref>], have emerged as a novel tool that provides a decentralised solution to the problem of managing transactions of digital assets among parties that do not necessarily trust each other, while guaranteeing the immutability and verifiability of records. The record-keeping capabilities of blockchains have been augmented with user-defined distributed software that can be used to specify rules governing transactions, a concept known as <italic>smart contracts</italic>. Smart contracts offer guarantees of <italic>security</italic>, <italic>tamper-resistance</italic> and <italic>absence of central control</italic>.</p>
+<p>In our original paper [<xref ref-type="bibr" rid="ref022">22</xref>], we introduced a system called <italic>Smart Papers</italic> to manage the attributions and annotations of scholar publications, filling the gap of existing open decentralised publishing models. Some very interesting things happened in the landscape of scholarly communications since we published our original manuscript. At the time of writing the present work, there is a shake-up happening at the Elsevier-owned Journal of Informetrics [<xref ref-type="bibr" rid="ref012">12</xref>]. The original editorial board has left the big publisher, justifying their move by the need to make bibliographic references freely available for analysis, and by an aspiration towards being truly Open Access and community-owned. The journal’s board members wanted Elsevier to lower its article-publishing charges and to take part in the Initiative for Open Citations, so as to free up citation data for research. When Elsevier declined to meet the requests, they launched a free-to-read journal called Quantitative Science Studies (QSS) published by MIT Press.<xref ref-type="fn" rid="fn-1">1</xref><fn id="fn-1"><label><sup>1</sup></label>
+<p><uri>https://www.mitpressjournals.org/loi/qss</uri></p></fn></p>
+<sec id="x1-2000-1.1">
+<label>1.1.</label>
+<title>Contributions of the extended version</title>
+<p>With such seismic changes taking place in the sphere of informetrics, we decided to give this area the attention that it is due. First of all, the struggle for open metrics fundamentally requires a transparent approach to how references are stored and citations calculated – something that did not exist before. We have, therefore, extended our implementation and analysis with a tamper-proof approach to referencing and counting citations by linking Smart Papers together and updating the relevant counts using smart contract events (that we explain later). However, as the scope of the original project grew, so did the need for flexible yet reliable governance. Towards this end, we re-work our original implementation atop the Aragon governance framework that runs on the Ethereum blockchain, which we explain in Section <xref rid="x1-16000-4">4</xref>.</p>
+<p>In our extended approach, an Aragon App, comprising of several smart contracts closely tied to secure Web (JavaScript) code, is deployed on top of the Ethereum platform, and reusability is achieved by an unbounded number of research objects calling those contracts, and storing publication metadata in a distributed ledger. The smart contracts take the place of a trusted third party in keeping records, with the critical difference being that of data and execution not being controlled by a single entity, but rather inheriting all the guarantees of the host blockchain platform. The Aragon platform allows the collaborating parties to maintain a high level of governability over their projects.</p>
+<p>In our Motivating Examples (Section <xref rid="x1-3000-2">2</xref>), we highlight some of the most critical problems with current models – issues that directly affect the quality and trustworthiness of the existing approaches. In Section <xref rid="x1-12000-3">3</xref>, we survey the existing models and implementations concerned with scientific authoring. We subsequently propose the Smart Papers model and its implementation in Ethereum on top of Aragon, paying particular attention to the issues of trust, identity, and platform technological considerations. Our discussion then progresses to cost analysis, after which our conclusions and future work recommendations are presented, in the final section of this paper.</p>
+</sec>
+</sec>
+<sec id="x1-3000-2">
+<label>2.</label>
+<title>Motivating examples</title>
+<p>We use examples of Alice and Bob – we imagine that they both represent “typical” scholars from two separate institutions, who agree to work together on a new publication. The purpose of our motivating examples is to give the reader an idea of what sort of problems those scholars might currently encounter within the constraints of traditional ways of organising research and disseminating findings.</p>
+<p>Bob and Alice begin working by employing their collaborative authoring tool of choice to start a draft version of their paper. After a few weeks of writing, they decide to release a public version in order to start receiving open comments and reviews. Charlie is a scholar from a third institution that finds Bob and Alice’s release through an aggregator website or a search engine. He reads the article and leaves some comments on it that are stored in his personal data store and linked to the release, for instance, using the Web Annotation ontology.<xref ref-type="fn" rid="fn-2">2</xref><fn id="fn-2"><label><sup>2</sup></label>
+<p><uri>https://www.w3.org/TR/annotation-vocab/</uri></p></fn></p>
+<p>Alice and Bob then integrate Charlie’s comments in their working version. They continue their work and eventually publish a second release. This time, they submit it to the Call for Contributions of a conference that uses open reviewing. Diane is one of the assigned reviewers. Her review is linked to the release which she read, as stored in the conference’s data store.</p>
+<p>When it is finally time for Bob, Diane and Charlie’s appraisal meeting, their employers ask them for the dynamic publications that they have been involved in. Bob shows the full sequence of releases of the publication, while Charlie shows the comment he made on Bob and Alice’s paper, and Diane shows the review she made for the conference. Employers apply their preferred credit models to assign weights to each type of attribution described in the attribution metadata, and quantify their values.</p>
+<p>However, when reputation, credit, and ultimately, jobs are involved, social interactions can lead to problematic outcomes, with people trying to game the system in their favour, or to disfavour others. Below, we outline some examples of when things can go awry:</p>
+<sec id="x1-4000-2.1">
+<label>2.1.</label>
+<title>Example 1</title>
+<p>Alice trusts Bob for creating the releases and their attribution metadata, as Bob controls the data store. However, Bob can publish a release with the metadata giving more attribution to himself. In a decentralised authoring tool like Dokie.li, each author would hold a copy of the working version, and they could independently generate the release, but if the attribution metadata differs between them, who solves this disagreement? How does an external agent know which copy to trust?</p>
+</sec>
+<sec id="x1-5000-2.2">
+<label>2.2.</label>
+<title>Example 2</title>
+<p>Bob and Alice could collude to show different versions of the attribution metadata. For example, consider that employers use two different services to query dynamic publications linked to their faculty members. It is not hard to imagine a semantic store that returns a different version of the attribution metadata, depending on which agent is asking.</p>
+</sec>
+<sec id="x1-6000-2.3">
+<label>2.3.</label>
+<title>Example 3</title>
+<p>Bob and Alice could collude to ignore Charlie’s comment, in an attempt to not share part of the credit with him. In a decentralised model, a link to the comment and Charlie’s identity should be stored in Bob and Alice’s data store; however, if Bob and Alice control the data store, nothing prevents them from deleting the link. Charlie would have the copy of the comment and the link to the release, but he might have a hard time convincing a third party (his employer for example), that the comment was not forged.</p>
+</sec>
+<sec id="x1-7000-2.4">
+<label>2.4.</label>
+<title>Example 4</title>
+<p>If Diane’s review is considered unfair, the persons in control of the data store might be tempted to make it disappear. A third party agent querying the conference’s data store would see nothing. An agent following links from Bob and Alice’s data store would get a de-referencing failure (404). Even if Bob and Alice decide not to delete the unfavourable review from their data store, how can they prove that they are not forging fake reviews to damage Diane’s reputation?</p>
+</sec>
+<sec id="x1-8000-2.5">
+<label>2.5.</label>
+<title>Example 5</title>
+<p>Bob and Alice’s paper becomes so successful that hundreds of scholars start citing it in their work. However, different informetrics providers like Scopus and Google Scholar seem not to be able to agree on the number of citations for Bob and Alice’s paper. One provider is missing a few high-impact conference proceedings papers quoting Bob and Alice’s paper, whereas the other provider seems to have included lots of grey literature, resulting in two very different citation counts. How can third parties (most importantly, Bob and Alice’s employers and funders) be sure of the true citation count of Bob and Alice’s original work?</p>
+</sec>
+<sec id="x1-9000-2.6">
+<label>2.6.</label>
+<title>Example 6</title>
+<p>Alice and Bob subsequently work on a paper with 4 more co-authors from other institutions (Edna, Fred, Gina and Hal) who also happen to be based in different time zones. The six scholars now need to add a complex figure to their paper. There are a few alternatives for plotting the figure, and each approach has its own unique pros and cons. How can we carry out a vote to enable the whole team to reach a single decision?</p>
+</sec>
+<sec id="x1-10000-2.7">
+<label>2.7.</label>
+<title>Example 7</title>
+<p>Alice, Bob, Edna, Fred, Gina and Hal now have to decide whether to publish the current version of the paper. Edna believes it is not camera-ready and submits corrections, whereas Hal pushes for immediate submission without corrections. How can the resolution of this conflict be facilitated in a transparent manner?</p>
+</sec>
+<sec id="x1-11000-2.8">
+<label>2.8.</label>
+<title>Towards a proposed solution</title>
+<p>The common problem of these scenarios is that for all actors (Alice, Bob, Charlie, Diane and their employers, funders and contributors), the data that is crucial to show or measure their performance is not entirely under their control, making it vulnerable to manipulation.</p>
+<p>Our approach addresses this problem by empowering all collaborators with the following: 
+<list list-type="bullet">
+<list-item>
+<p>The notarisation of releases providing evidence that all the authors agreed to the release of a particular version of their paper.</p>
+</list-item>
+<list-item>
+<p>The notarisation of the attribution metadata linked to a release, ensuring that all authors have agreed on it, and guaranteeing to third parties that none of them can tamper with it.</p>
+</list-item>
+<list-item>
+<p>A mechanism that ensures that annotations made on releases by agents other than authors cannot be repudiated by annotators or their recipients, guaranteeing to both authors and third parties querying this data, that it was not tampered with.</p>
+</list-item>
+<list-item>
+<p>An index of links and data concerning a particular dynamic publication. This potentially facilitates the task of Web agents that compute bibliometrics, as there is no need to either trust the data store of the authors, or to crawl the Web in search of the comments and reviews to the publication.</p>
+</list-item>
+<list-item>
+<p>A mechanism for linking papers that reference each other.</p>
+</list-item>
+<list-item>
+<p>Transparent and trustworthy citation counts produced in a decentralised environment.</p>
+</list-item>
+<list-item>
+<p>A voting mechanism for facilitating the resolution of governance conflicts using pre-configurable quora.</p>
+</list-item>
+<list-item>
+<p>The notarisation of voting outcomes on the blockchain.</p>
+</list-item>
+</list> 
+It is worth noting that through implementing the above requirements, our platform partially automates the fulfilment the Vancouver (ICMJE) guidelines on Authorship.<xref ref-type="fn" rid="fn-3">3</xref><fn id="fn-3"><label><sup>3</sup></label>
+<p><uri>http://www.icmje.org/icmje-recommendations.pdf</uri></p></fn> We will review the related work before explaining how we modelled and implemented an approach that fulfils the above requirements.</p>
+</sec>
+</sec>
+<sec id="x1-12000-3">
+<label>3.</label>
+<title>Related work</title>
+<sec id="x1-13000-3.1">
+<label>3.1.</label>
+<title>Dynamic publication models</title>
+<p>Several models have been proposed to take advantage of digital and Web tools to improve the ways in which academic publications are produced and managed. Liquid Publications [<xref ref-type="bibr" rid="ref011">11</xref>] proposes evolutionary, collaborative, and composable scientific contributions, based on a parallel between scientific knowledge artefacts and software artefacts, and leveraging lessons learned in collaborative software development. Their model is based on the interaction between Social Knowledge Objects, <italic>i.e.</italic>, digital counterparts of the traditional paper unit; people and roles, <italic>i.e.</italic>, agents involved in the scientific knowledge processes, playing various cooperating and competing roles (from traditional ones, like author, reviewer or publisher, to new ones derived from the model itself, like classifiers, quality certifiers, credit certifiers); and processes to manage its lifecycle, namely: authoring collaboration, access control, IPR and legal aspects, quality control and credit attribution and computation.</p>
+<p>The Living Document model [<xref ref-type="bibr" rid="ref018">18</xref>] aims at creating documents that “live” on the Web by allowing them to interact with other papers and resources. It lets authors build social networks, with their interactions defined through the papers they write.</p>
+<p>Heller et al. [<xref ref-type="bibr" rid="ref021">21</xref>] propose Dynamic Format Publications, where working versions are collaboratively edited by a small group of authors, that decide when a version or revision become widely available, following a formalised gate-keeping mechanism (e.g., consent among authors and/or peer-review). Only the Living Document approach provided a prototype (inactive at this time), and none of them discusses the security and trust implications of their models. Our work provides a foundation that can be used to track and manage credit attribution (and by extension, IPR and legal aspects) that can be easily plugged into a broader authoring model.</p>
+</sec>
+<sec id="x1-14000-3.2">
+<label>3.2.</label>
+<title>Decentralisation</title>
+<p>Concerning the decentralisation of scholarly communications, Dokie.li [<xref ref-type="bibr" rid="ref010">10</xref>] is a fully decentralised, browser-based authoring and annotation platform with built-in support for social interactions, through which people retain the ownership of and sovereignty over their data. Dokie.li implements most of the functionalities described in the previously described conceptual models in a decoupled way. In a nutshell, a Dokie.li document is an HTML5 document enriched with RDFa, which is stored in the author’s personal data store. The Linked Data Platform (LDP) protocol implementation enables the creation, update and deletion of documents. Interactions with documents are registered using the Web Annotation Vocabulary.<xref ref-type="fn" rid="fn-4">4</xref><fn id="fn-4"><label><sup>4</sup></label>
+<p><uri>https://www.w3.org/TR/annotation-vocab/</uri></p></fn></p>
+<p>Documents are connected statically through links and dynamically through Linked Data Notifications [<xref ref-type="bibr" rid="ref009">9</xref>], proving the viability of a decentralised authoring and annotation environment built according to Web standards. Authors consider that in a fully decentralised setting, each source is filterless and responsible for its own quality and reputation, whilst everyone is free to selectively distrust certain sources using any mechanism they desire. We argue that, although this assumption holds for trust in the <italic>content</italic> of the research object, stronger measures are needed for social interaction data on research objects that could be used to compute bibliometrics. Our approach also aims at solving some security issues that arise in decentralised environments, notably, the possibility of malicious deleting or updating of records to impact bibliometrics [<xref ref-type="bibr" rid="ref027">27</xref>].</p>
+<p>With respect to the application of blockchains for scholar processes, the Blockchain for Science association maintains a living document [<xref ref-type="bibr" rid="ref006">6</xref>] that collects and proposes applications, use cases, visions and ventures that use blockchains for science and knowledge creation, providing an index of the potential impact of Distributed Ledger Technologies in all stages of the research workflow. For the particular case of publishing and archiving, timestamping and credit attribution of Dynamic Publications is mentioned as a promising use case. To the best of our knowledge, the open-source system that comes closest to ours is Manubot,<xref ref-type="fn" rid="fn-5">5</xref><fn id="fn-5"><label><sup>5</sup></label>
+<p><uri>https://github.com/greenelab/manubot-rootstock</uri></p></fn> a tool for writing scholarly manuscripts via GitHub. Manubot automates citations and references, versions manuscripts using git, and enables collaborative writing via GitHub. Data from Git related to commitment and authorship can be used to establish attribution. An innovation introduced by Manubot’s authors <xref ref-type="fn" rid="fn-6">6</xref><fn id="fn-6"><label><sup>6</sup></label>
+<p><uri>https://github.com/greenelab/deep-review/pull/274</uri></p></fn> is the timestamping of manuscript versions on the Bitcoin blockchain, to prove the existence of the manuscript at a given point of time in a decentralised way. Our approach generalises Manubot’s idea to further social interactions around publications.</p>
+<p>Concerning the permanence and immutability of Web artefacts, Trusty URIs [<xref ref-type="bibr" rid="ref025">25</xref>] propose to append to URIs the cryptographic hash of the Web artefact they represent, enabling the verification to contain the content the URI is supposed to represent. Trusty URIs are immutable in the sense that any change in an artefact would change its URI as well, and permanent, under the assumption that Web archives and search engines that crawl them are permanent.</p>
+<p>Our approach implements functionality analogous to Trusty URIs, but also solves the further problem of conflicting metadata: if each author could publish metadata on the attribution about the research object, each one with its own Trusty URI, and both can be verified to not have been tampered with, then which one should an external agent use? To answer this question, we describe how our Smart Papers model provides a single version of the truth.</p>
+</sec>
+<sec id="x1-15000-3.3">
+<label>3.3.</label>
+<title>Informetrics and citation analysis</title>
+<p>Citation analysis belongs to the field of scientometrics (the study of the quantitative aspects of the process of science as a communication system [<xref ref-type="bibr" rid="ref029">29</xref>]), which itself is part of informetrics (a wider study of how information moves through social systems, not just science-oriented ones [<xref ref-type="bibr" rid="ref005">5</xref>]). Davenport and Cronin [<xref ref-type="bibr" rid="ref013">13</xref>] view citations as “links” between papers that form tokens representing <italic>trust</italic> in that when Alice cites Bob, Alice assumes that Bob’s claims are <italic>trustworthy</italic> enough to support her claims. In this general case, citation statistics may be used in recommender systems to prioritise highly cited items. However, many authors take issue with this simplistic “positive” view of citations, instead pointing out the relevance of various “meanings”, “contexts” and “sentiments” of citations [<xref ref-type="bibr" rid="ref002">2</xref>]. Hence, under a more nuanced model, we would have to pay attention to the polarity of the citation, either positive, representing trust, or negative, representing mistrust in someone else’s findings. Even more complex NLP-driven scientometric citation analysis methods have been proposed recently [<xref ref-type="bibr" rid="ref024">24</xref>] but they remain out of scope of this paper. Also out of scope is the discussion of the modern standards by which academics are judged and evaluated in their careers, and the widespread criticism of basing complex grant and hiring decisions on rather simplistic metrics like citation counts [<xref ref-type="bibr" rid="ref026">26</xref>]. For the curious reader, a good overview of the limitations of scientometrics is provided in [<xref ref-type="bibr" rid="ref001">1</xref>].</p>
+<p>Coming from a different angle, citations can be explained as symbolic payments of intellectual debt [<xref ref-type="bibr" rid="ref031">31</xref>], making citation analysis a useful tool for sociological analysis into how credit (or discredit) flows first to the publication, and then to the associated authors, institutions, countries, and journals that are its attributes. Despite the perceived great significance of citation counts as a scientometric resource, alarmingly, currently available citation counts are not free from miscalculation [<xref ref-type="bibr" rid="ref003">3</xref>]. For example, one of the biggest platforms nowadays to provide citation counts for scientific articles, Google Scholar, contains errors that are reported in literature [<xref ref-type="bibr" rid="ref020">20</xref>]. The authors of this paper are even able to confirm that the Google Scholar count for their own original paper is incorrectly reported (one source has been counted twice). Similar significant informetrics errors like phantom citation counts, missing citations and duplicate references have also been reported for other scholarly data providers such as Scopus [<xref ref-type="bibr" rid="ref016">16</xref>].</p>
+<p>Our approach enables the author who is referencing someone else’s work to register this reference on the blockchain, as a link between two Smart Papers. Citation counts are updated automatically due to the properties of the underlying blockchain and the smart contract code that encapsulates the counters. A Smart Paper can be easily extended to store and register other informetrics that can be represented as monotonic counters, e.g., a citation sentiment, or polarity (negative or positive). We describe the Smart Papers model in the next section.</p>
+</sec>
+</sec>
+<sec id="x1-16000-4">
+<label>4.</label>
+<title>The smart papers model</title>
+<p>The Motivating Example (Section <xref rid="x1-3000-2">2</xref>) illustrated the importance of trust management throughout the collaborative process. When reviewing related work (Section <xref rid="x1-12000-3">3</xref>), we highlighted a strong need for making agreements and setting their outcomes in stone so that they cannot be later repudiated. Furthermore, all the essential artefacts associated with those agreements must be timestamped and securely stored in a truly permanent way. Currently available collaborative tools solve some trust issues, for example Dokie.li removes centralisation so that the authoring parties do not have to rely on an intermediary to publish and annotate their documents. This is a very welcome step towards removing the overhead associated with middleman activities (publishing house), albeit it merely shifts the trust towards the authoring parties (author, reviewer). It is easy to imagine a situation in which the authors destroy their data, the reviewers could do the same, and any track of their writing will be lost forever. We also made a case for decentralised informetrics computation to achieve a single version of the truth in citation counts.</p>
+<p>The purpose of our model is to provide trust where it has not existed before. Smart Papers provide a collaborative platform that preserves a single version of the truth throughout the collaborative process. This is somehow similar to employing a trusted third party (e.g. a notary public) to keep track of contracts signed by multiple parties, alongside with all the certified photocopies of all the evidence attached to the contracts as relevant appendices. An example of such notarised contract would be Alice and Bob signing an agreement specifying the ordering of their names on a paper (e.g. “Bob, Alice”) and then attaching a certified photocopy of their paper in its current version as an appendix. We use smart contracts for maintaining all such signed agreements in order to implement Smart Papers. Table <xref rid="x1-16001-1">1</xref> summarises how smart contracts can provide the functionality analogous to that of a traditional trusted third party.</p>
+<table-wrap id="x1-16001-1">
+<label>Table 1</label>
+<caption>
+<p>Blockchain smart contracts as compared to a traditional trusted third party</p>
+</caption>
+<table frame="hsides" rules="groups">
+<thead>
+<tr>
+<td valign="top" align="left">Notary public function</td>
+<td valign="top" align="left">Blockchain function</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top" align="left">Authenticate parties using their legal identification</td>
+<td valign="top" align="left">Identify parties cryptographically</td>
+</tr>
+<tr>
+<td valign="top" align="left">Take statutory declarations, store them and certify photocopies</td>
+<td valign="top" align="left">Store data permanently and securely and provide real time access</td>
+</tr>
+<tr>
+<td valign="top" align="left">Prepare and certify contractual instruments</td>
+<td valign="top" align="left">Store and execute smart contracts</td>
+</tr>
+<tr>
+<td valign="top" align="left">Provide a trusted record for the above</td>
+<td valign="top" align="left">Provide a trusted record for the above</td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+<sec id="x1-17000-4.1">
+<label>4.1.</label>
+<title>Design</title>
+<p>To design the Smart Papers model, we shall assume that all authors successfully identify through their ORCID (Open Researcher and Contributor ID [<xref ref-type="bibr" rid="ref019">19</xref>]) which is a non-proprietary alphanumeric code to uniquely identify scientific and other academic authors and contributors. ORCIDs are mapped to authors’ signing and encryption keys using a smart contract. The main functionality for our model is then designed using the separation of concerns (SoC) design principle [<xref ref-type="bibr" rid="ref023">23</xref>], such that each contract file addresses a different concern, i.e. a different set of information that jointly affects the global state for the Smart Papers use case. We use UML to model the main classes corresponding to our smart contracts. It is important to note that smart contracts and OOP classes (as modelled by the UML) are not quite the same. The semantics are very similar in many cases, but some fundamental differences arise from the fact that smart contracts can store and send value and have a public address once deployed [<xref ref-type="bibr" rid="ref035">35</xref>]. The UML diagram in Fig. <xref rid="x1-17001-1">1</xref> shows how we group these concerns into the following four categories: Paper, Version, Annotation and Contributor.</p>
+<fig id="x1-17001-1">
+<label>Fig. 1.</label>
+<caption>
+<p>The smart papers distributed application design.</p>
+</caption>
+<graphic xlink:href="ds-2-ds190018-g001.jpg"/>
+</fig>
+<p>To begin with, an article and its metadata (e.g., attribution encoded in the ScoRO ontology<xref ref-type="fn" rid="fn-7">7</xref><fn id="fn-7"><label><sup>7</sup></label>
+<p><uri>http://www.sparontologies.net/ontologies/scoro</uri></p></fn>) is submitted by a writer (we shall refer to her as Alice, from our motivating example earlier), and stored in a distributed file store, all of which is recorded on the blockchain. Alice will have been set up in the system through the Aragon framework that we will explain in the next subsection. In our implementation, the <italic>Contributor</italic> contract requires Alice to have a valid ORCID. The default type for Alice is “author”. Bob is also set up as an “author”, but Diane uses a different argument for the <italic>Contributor</italic> contract, and so she becomes registered as a “reviewer”.</p>
+<p>Smart contracts often act as state machines, meaning that they have certain stages making them act differently, and in which different functions can be invoked. A function invocation often transitions the contract into the next stage which can be used to model workflows. We use this feature of smart contracts to model the Smart Paper workflow, as seen in Fig. <xref rid="x1-17002-2">2</xref>, which allows the participants to release new versions of their paper and to publish versions when enough authors agree to do so.</p>
+<fig id="x1-17002-2">
+<label>Fig. 2.</label>
+<caption>
+<p>The workflow of a smart paper involves multiple working versions with dynamic collaborators. Versions can become published and made available for annotating.</p>
+</caption>
+<graphic xlink:href="ds-2-ds190018-g002.jpg"/>
+</fig>
+<p>Papers can also be retracted. As illustrated in Fig. <xref rid="x1-17002-2">2</xref>, once instantiated, a Smart Paper becomes a dynamic list of versions, each of which can exist in a working state or become published. The number of contributors and their formal ordering is allowed to change on a per-version basis. Annotations can be left by reviewers on published versions.</p>
+<p>To create a new Smart Paper, either Alice or Bob call <italic>createNewPaper</italic> in the <italic>Paper</italic> Contract which will return a valid <italic>PaperId</italic> that uniquely identifies their new publication. This also instantiates the workflow with an initial, blank, working version of this paper manufactured by the <italic>Version</italic> contract. Bob and Alice work on their preferred authoring tool to produce a first draft (e.g., to show to a trusted colleague), to register it in the Smart Paper, Bob calls <italic>addNewVersion</italic> in the Version contract, including the artefact, its metadata and his signature. Before committing the transaction, the Smart Paper will wait for Alice (marked as a contributor to the paper) to also perform a call to <italic>addNewVersion</italic> using the same artefact, metadata and her signature.</p>
+<p>The procedure is repeated each time Bob and Alice want to register a new version. For marking a version as public, Bob calls <italic>publishVersion</italic> in the <italic>Paper</italic> contract, providing the <italic>versionID</italic> and his signature. Similar to <italic>addNewVersion</italic>, Alice needs to issue her signature through a function call to <italic>publishVersion</italic> before the Smart Paper commits the transaction. The <italic>getCurrentPublishedVersion</italic> and <italic>getCurrentWorkingVersion</italic> return a versionID that can then become the input to the <italic>getIPFSLink</italic>. Up to this point, we have provided a solution for the issues between authors described in Example 1, the Smart Paper only commits a version (including metadata) if all authors sign their agreement to it. An external agent that gets a version from a Smart Paper instance has the assurance that it was approved by all authors, and that the Smart Contract consistently returns the correct version and metadata, solving the issue described in Example 2.</p>
+<p>Interactions with external actors like reviewers or annotators, are abstracted as <italic>Annotations</italic>. When Charlie or Diane want to leave their comment or review, they call <italic>addAnnotation</italic> using the <italic>versionID</italic> of the version they want to comment on, and their signatures. Contrary to the <italic>Version</italic> functions, no approval from authors is needed. The annotation is registered in the main Ethereum blockchain and can be retrieved by calling <italic>getAnnotation</italic>. Looking back at Example 3, Charlie can now point to the Smart Paper to show that he made that comment. For the case of Example 4, the Smart Paper holds a register of the reviews. Alice and Bob can now prove that the annotation held by the Smart Paper was signed by Diane.</p>
+</sec>
+<sec id="x1-18000-4.2">
+<label>4.2.</label>
+<title>Bibliometrics</title>
+<p>To solve our Motivating Example 5 (in which citation inconsistencies were present across different centralised providers), we can entice scholars to store references as links between Smart Papers using our Smart Papers web interface. To store a reference, a living Smart Paper (A) can, at any time, register a citation of another Smart Paper (B) through calling the registerCitation(B-paperId) function on A’s Paper contract. Whilst the Smart Paper A is in its working version, and unpublished, this only updates the references internally. Nevertheless, publishing the Paper A will trigger an event PaperPublished which, in turn, triggers the CitationUpdate functionality. PaperB’s incrementCitationCount will be called at that point. This chain of events will result in Paper B’s citation count being updated with the new reference. However, if at any point A is retracted, the PaperRetracted event deals with calling previously cited papers to decrement their counts.</p>
+</sec>
+<sec id="x1-19000-4.3">
+<label>4.3.</label>
+<title>Votes</title>
+<p>For those Smart Papers use cases that require a quorum to reach a decision, we replaced the low-level multi-signature approach of our original implementation, with a new Vote-based approach in the extended version. Most importantly, once more than 1 author has been added to a Smart Paper instance, a Vote now needs to be carried out before the paper can be published.</p>
+<p>Votes are also carried out for other common authoring scenarios that require a decision-making protocol, such as:</p>
+<list>
+<list-item>
+<label>-</label>
+<p>adding a new contributing author to an existing Smart Paper instance,</p>
+</list-item>
+<list-item>
+<label>-</label>
+<p>approving a new significant revision to the existing Smart Paper,</p>
+</list-item>
+<list-item>
+<label>-</label>
+<p>choosing the name of a paper – an example of how Votes can be used for brainstorming as well as signing approval,</p>
+</list-item>
+<list-item>
+<label>-</label>
+<p>voting on the listing order of authors’ names.</p>
+</list-item>
+</list>
+<p>The quorum for most of our use cases is simple democracy (more than 50% voters agree with a particular outcome). However, the quorum requirement should be set to 100% for publishing a final version of the paper. Submitting papers without the knowledge and permission of co-authors appears to be a worrying trend that is contrary to professional standards.<xref ref-type="fn" rid="fn-8">8</xref><fn id="fn-8"><label><sup>8</sup></label>
+<p><uri>https://www.elsevier.com/connect/co-authors-gone-bad-how-to-avoid-publishing-conflicts</uri></p></fn> Taking governance to a meta-level, the beauty of using a framework like Aragon for managing governance is that we can even schedule a Vote to decide about what the thresholds (quora) should be for all future Votes.</p>
+</sec>
+<sec id="x1-20000-4.4">
+<label>4.4.</label>
+<title>Implementation</title>
+<p>Although in theory, the Smart Papers model could be implemented on any smart contract-enabled platform, the choice of the implementation framework dramatically impacts development time and costs. Whilst there are multiple distributed ledger technologies, such as Corda<xref ref-type="fn" rid="fn-9">9</xref><fn id="fn-9"><label><sup>9</sup></label>
+<p><uri>https://github.com/corda/corda</uri></p></fn> or HyperLedger,<xref ref-type="fn" rid="fn-10">10</xref><fn id="fn-10"><label><sup>10</sup></label>
+<p><uri>https://www.hyperledger.org/</uri></p></fn> that could be utilised to develop trusted smart contract code that runs on top of the blockchain, for this paper, we elect to develop on top of the Ethereum platform [<xref ref-type="bibr" rid="ref035">35</xref>] which is the most commonly used technology of its kind [<xref ref-type="bibr" rid="ref004">4</xref>]. We defer the feasibility and cost of development in other platforms for future analysis.</p>
+<fig id="x1-20001-3">
+<label>Fig. 3.</label>
+<caption>
+<p>The architecture of the smart papers implementation involves frameworks and features that work on-chain, as well as those that run locally in the browser. The secure web worker mediates communications.</p>
+</caption>
+<graphic xlink:href="ds-2-ds190018-g003.jpg"/>
+</fig>
+<sec id="x1-21000-4.4.1">
+<label>4.4.1.</label>
+<title>Background: Ethereum and IPFS</title>
+<p>Ethereum is an open-source, public, blockchain-based distributed computing platform featuring smart contract functionality [<xref ref-type="bibr" rid="ref035">35</xref>]. It plays the role of the trusted third party for all Smart Papers agreements in our model. Ethereum blockchain was designed to be deterministic. This means, that everyone should always end up with the same, correct state, if they try to replay the history of Ethereum transactions. In Ethereum, the code execution layer is provided by the Ethereum Virtual Machine (EVM), a Turing complete 256bit VM that allows anyone to execute code that references and stores blockchain data in a trust-less environment. Ethereum smart contracts are written using a language called Solidity. Every contract on the Ethereum blockchain has its own storage which only it can write to; this is known as the contracts state and it can be seen as a flexible database albeit at a high cost. When deployed, Ethereum contracts get an <italic>address</italic>, that can be considered similar to a URI in Ethereum’s namespace. Using this address, a client can call functions defined in a smart contract, in a similar fashion to a web service.</p>
+<p>When implementing our model, we chose to store all the artefacts using IPFS [<xref ref-type="bibr" rid="ref007">7</xref>]. The InterPlanetary File System is used for efficiently distributing and referencing hash-linked data in a way that is not centralised and does not necessarily involve blockchain transactions, thus avoiding the economic penalties associated with on-chain storage [<xref ref-type="bibr" rid="ref014">14</xref>]. In many ways, IPFS is similar to the World Wide Web, but it could be also seen as a single BitTorrent swarm for exchanging objects. Furthermore, the IPFS specification contains a special <italic>commit</italic> object which represents a particular snapshot in the version history of a file. This allows us to reference resources in an immutable way, akin to Trusty URI functionality. Using IPFS we can, therefore, limit the role of Ethereum, so that it only deals with the application logic; the data layer is provided by the InterPlanetary (IPFS) stack, and the two layers are integrated via hash references.</p>
+<p>We also use SafeMath, which is a Solidity math library specially designed to support safe mathematical operations, to decrement and increment citation counts on existing papers being referenced – changes that are triggered by publishing new papers referencing them.</p>
+</sec>
+<sec id="x1-22000-4.4.2">
+<label>4.4.2.</label>
+<title>Smart papers as a web app</title>
+<p>One of the core requirements of the SmartPaper model is the ability to provide a tool for all collaborators to agree with the result of a certain interaction. Decision making can be implemented in different ways. In our implementation, the number of collaborators can be unbounded, but to make a decision, an agreement needs to be reached by a quorum of authors that is configurable on a per-paper basis. This means that you could have a Smart Paper, in which only one person’s vote is enough to make a decision, but you could also have a Smart Paper where everyone is required to agree on a particular course of action. The default quorum for Smart Papers is 50%, which we call ‘simple democracy’. As a Smart Paper evolves, its collaborators can change the quorum at a later time through a vote. Interacting with Smart Papers is done through a Web browser, which is why we call it a Web app.</p>
+</sec>
+<sec id="x1-23000-4.4.3">
+<label>4.4.3.</label>
+<title>Aragon</title>
+<p>Aragon<xref ref-type="fn" rid="fn-11">11</xref><fn id="fn-11"><label><sup>11</sup></label>
+<p><uri>http://aragon.org</uri></p></fn> is a Web project that helps Internet users collaborate remotely and freely organise without intermediaries, to transfer data and value, and to make joint decisions. When starting a new project on Aragon, a DAO (decentralised autonomous organisation, [<xref ref-type="bibr" rid="ref028">28</xref>]) is created. Technically speaking, a DAO is a set of smart contracts that define a governance structure and rules via a web interface. Yet in an abstract sense, a DAO represents a group of people working together towards a shared goal. An Aragon DAO has an Ethereum account and a Web address associated with it (in our case, soton.aragonid.eth<xref ref-type="fn" rid="fn-12">12</xref><fn id="fn-12"><label><sup>12</sup></label>
+<p><uri>https://rinkeby.aragon.org/#/soton.aragonid.eth/</uri></p></fn>).</p>
+</sec>
+<sec id="x1-24000-4.4.4">
+<label>4.4.4.</label>
+<title>Governance</title>
+<p>Each DAO also has a creator account who initially has all the voting power. This voting power is expressed through 100% DAO token ownership. This is because DAOs have their own tokens, in our case it is the University of Southampton (SOT) token. New members joining the DAO are provided tokens enabling their participation in the DAO through a process that requires existing members to vote on approving the newcomer.</p>
+<p>Aragon DAOs support apps<xref ref-type="fn" rid="fn-13">13</xref><fn id="fn-13"><label><sup>13</sup></label>
+<p><uri>http://hack.aragon.org</uri></p></fn> that are custom bundles of smart contracts closely integrated to the Aragon platform via their bespoke secure Web interfaces. The Voting app is an example of an app that acts as an entity that will execute a set of actions on other entities (e.g. other apps, smart contracts, user’s balances) if the token holders of a particular governance token (i.e., members of the DAO, like SOT holders for the Soton DAO) decide to do so. The Smart Papers app<xref ref-type="fn" rid="fn-14">14</xref><fn id="fn-14"><label><sup>14</sup></label>
+<p><uri>https://github.com/mikehoff/SmartPapersApp</uri></p></fn> is our suite of smart contracts that has been integrated into Aragon to support its front- and backend. Essentially, any Smart Papers transaction can now be signed by the user in their Web browser with a Metamask<xref ref-type="fn" rid="fn-15">15</xref><fn id="fn-15"><label><sup>15</sup></label>
+<p><uri>http://metamask.io</uri></p></fn> extension, and all the interactions requiring multiple signatures can be signed individually by different users as part of a single Aragon vote. We show the overall architecture of this set-up in Fig. <xref rid="x1-20001-3">3</xref>, where we also summarise how a new DAO can be deployed from a DAO template, which will install our custom Smart Papers app interacting with both the ACL and Voting components of Aragon.</p>
+<p>Aragon DAOs are always deployed with ACLs (Access Control Lists). This is a computer security mechanism [<xref ref-type="bibr" rid="ref030">30</xref>] whereby permissions are attached to users or processes, or in the context of blockchain, to user accounts. Within the realm of Aragon, a permission is defined as the ability for users to perform actions (that are grouped by roles) in a certain app, for example, the Voting app<xref ref-type="fn" rid="fn-16">16</xref><fn id="fn-16"><label><sup>16</sup></label>
+<p><uri>https://wiki.aragon.org/dev/apps/voting/</uri></p></fn> or our custom Smart Papers app<sup><xref rid="fn-14">14</xref></sup>. ACLs are grouped for a particular DAO. New members can be granted permissions in an ACL from the creator and then grant permissions to others (if permitted). The Access Control List remembers who can perform what actions where. Sometimes users are not allowed to perform actions directly, but only through a decision-making process, such as a vote. The ACL handles this use case through a concept called forwarders. A forwarder is an app that can execute actions on someone’s behalf if the ACL permits it. An example of a forwarder is the Voting app, and we can specify an ACL entry allowing a user to carry out a certain operation if a Vote is carried out. The Voting app will only execute the user’s desired function call if the vote passes.</p>
+<p>One final advantage of using Aragon to manage our smart contracts is that it manages the upgrading of major, minor and patch versions of contracts in a way that is seamless (using a proxy pattern) and was unachievable in our original implementation – upgrading old-style Smart Papers would have required a completely new contract address – which now can be avoided with Aragon.</p>
+</sec>
+</sec>
+</sec>
+<sec id="x1-25000-5">
+<label>5.</label>
+<title>Evaluation</title>
+<p>Two important factors affecting the performance of a distributed application like Smart Papers are firstly, how much it costs to run this app’s operations like creating new papers and registering references, and secondly, how long these operations take to complete in the decentralised environment. We set out to evaluate both the costs and the speeds for four main use cases for Smart Papers: 
+<list>
+<list-item id="x1-25001x-5">
+<label>(1)</label>
+<p>creating a new Smart Paper on the Ethereum blockchain from the Smart Papers app,</p>
+</list-item>
+<list-item id="x1-25002x-5">
+<label>(2)</label>
+<p>adding a citation (a link between two Smart Papers) through the Smart Papers app,</p>
+</list-item>
+<list-item id="x1-25003x-5">
+<label>(3)</label>
+<p>creating a new open vote using the Voting app, and</p>
+</list-item>
+<list-item id="x1-25004x-5">
+<label>(4)</label>
+<p>casting a ballot / participating in an open vote in the Voting app.</p>
+</list-item>
+</list>
+</p>
+<sec id="x1-26000-5.1">
+<label>5.1.</label>
+<title>Test set-up</title>
+<p>To create a test environment, the reader will need a POSIX-compliant platform with NodeJS (at least version 8.0.0) and NPM packager installed. The NPM package “@aragon/cli” installs Aragon CLI, a tool for creating, testing and publishing Aragon applications. A test DAO identity called “soton” is already registered on the Rinkeby Ethereum testnet (<uri>https://rinkeby.aragon.org/#/soton.aragonid.eth/</uri>). A “soton” project can be initialised locally by typing in “aragon init soton” which will prepare the ground for local testing. The code for the Smart Papers app can be checked out from GitHub .<xref ref-type="fn" rid="fn-17">17</xref><fn id="fn-17"><label><sup>17</sup></label>
+<p><uri>https://github.com/mikehoff/SmartPapersApp</uri></p></fn> The app can then be compiled and launched with “npm run start:app”, whereas a local Aragon environment can be launched through “npm run start:aragon:http” and subsequently navigated through the web browser on localhost port 3000. This will start a development chain you can interact with (ganache-core<xref ref-type="fn" rid="fn-18">18</xref><fn id="fn-18"><label><sup>18</sup></label>
+<p><uri>https://github.com/trufflesuite/ganache-core</uri></p></fn> is used, so it is a full testrpc<xref ref-type="fn" rid="fn-19">19</xref><fn id="fn-19"><label><sup>19</sup></label>
+<p><uri>https://github.com/trufflesuite/ganache-cli</uri></p></fn> instance – testrpc was used to evaluate the original Smart Papers implementation).</p>
+</sec>
+<sec id="x1-27000-5.2">
+<label>5.2.</label>
+<title>Notes on cost</title>
+<p>Execution of a smart contract begins with a transaction that is sent to the blockchain. This transaction specifies the address for the contract, the arguments, and an amount of Ethereum’s currency to pay for the execution. It is commonly observed in small-to-medium size contracts that most of the cost is taken up by a fixed “base fee”. This base fee of 21,000 is expressed in “gas” which is an abstract unit. While gas is fixed per each transaction, it is additionally fixed for every operation called from within the smart contract. Each low-level operation available in the EVM is called an OPCODE. These include operations such as <italic>ADD</italic> – adding two integers together, <italic>BALANCE</italic> – getting the balance of an account, and <italic>CREATE</italic> – creating a new contract with supplied code. Each of these OPCODEs has a fixed amount of gas that it costs to execute. The fixed amount of gas has been chosen by the designers of Ethereum for each OPCODE in a way that reflects the relative complexity of that OPCODE.</p>
+<p>Whereas gas is fixed and predictable, the amount a user pays per gas, the <italic>gas price</italic>, is dynamic and dictated by market conditions. The price is usually given in subunits of <italic>ether</italic>, such as <italic>gwei</italic> (1 Gwei = 0.000000001 Ether). Miners receive ether fees based on the amount of gas multiplied by the gas price, which incentivises them to prioritise those transactions that attract higher fees. It also follows that the higher gas price you are willing to pay, the faster your transaction will be processed, and the sooner your contract will be allowed to execute. While offering a high gas price can speed things up, there is a limit to the acceleration.</p>
+<fig id="x1-27001-4">
+<label>Fig. 4.</label>
+<caption>
+<p>The influence of gas price on execution times.</p>
+</caption>
+<graphic xlink:href="ds-2-ds190018-g004.jpg"/>
+</fig>
+</sec>
+<sec id="x1-28000-5.3">
+<label>5.3.</label>
+<title>Data collection and replication</title>
+<p>We estimate the gas prices with ETH Gas Station [<xref ref-type="bibr" rid="ref015">15</xref>], the de-facto reference for understanding the current gas market conditions and miners’ current policies. The <italic>Recommended User Gas Prices</italic> section of ETH Gas Station shows the range of gas prices one might pay for an expected transaction commitment time. We compile and graph the gas price predictions from the time of writing this article in Fig. <xref rid="x1-27001-4">4</xref>. This data has been collected using the ETH Gas Station Aplication Programming Interface.<xref ref-type="fn" rid="fn-20">20</xref><fn id="fn-20"><label><sup>20</sup></label>
+<p><uri>https://docs.ethgasstation.info/</uri></p></fn> Data collection can also be performed manually using Metamask extension and the relevant steps are documented online.<xref ref-type="fn" rid="fn-21">21</xref><fn id="fn-21"><label><sup>21</sup></label>
+<p><uri>https://github.com/MetaMask/metamask-extension/issues/3037</uri></p></fn></p>
+<fig id="x1-28001-5">
+<label>Fig. 5.</label>
+<caption>
+<p>The results for our main use cases.</p>
+</caption>
+<graphic xlink:href="ds-2-ds190018-g005.jpg"/>
+</fig>
+</sec>
+<sec id="x1-29000-5.4">
+<label>5.4.</label>
+<title>Results and discussion</title>
+<p>Our results for the evaluation of Smart Papers are presented in Fig. <xref rid="x1-28001-5">5</xref> and sorted by average transaction cost, with adding citations being the cheapest (costing as low as $0.04) and creating a new open vote being the most expensive (costing up to $0.32). The more expensive operations are those that use Aragon’s Voting app, due to the complexity of setting up and executing Votes. It is worth noting that the absolute costs are as much as 57-fold smaller than in our original implementation. This can be attributed to Ether (the Ethereum currency) now being much cheaper than at the time of printing the previous version. There have also been bytecode optimisations to the Solidity compiler yielding faster and cheaper code.</p>
+<p>Based on Web of Science data, Marx and Bornmann estimated that, in 2010, the average number of references in a scholarly paper was 32.21, with a low average of 27 for Engineering papers, and a high average of 42 for Social Sciences papers [<xref ref-type="bibr" rid="ref008">8</xref>]. Assuming Small’s view that references represent intellectual debt [<xref ref-type="bibr" rid="ref031">31</xref>], this debt can be symbolically paid off by the co-authors of a new Smart Paper through covering the fees associated with registering the citations resulting from their newly published work. Therefore, for the most costly case of a new Smart Paper created in the Social Sciences domain, paying for all the citation counts that were changed by references from that Smart Paper, would cost 42 (average reference count) times $0.04 (transaction cost for registering a citation), which would cost an average of $1.68 per paper.</p>
+<p>In terms of our Motivating Examples, we have seen that the notarisation of scholarly papers and their associated metadata on a blockchain, using Smart Papers, can solve the problems presented in Examples 1–4. We have also shown how the governance benefits of Aragon open votes help us solve the problems described in Examples 6–7. Finally the citation-counting functionality of Smart Papers resolves the dilemmas presented in Example 5.</p>
+<p>Regarding cost, our result suggest that a new Smart Paper can be created for as little as $0.08. A vote with three participants can be carried out for as little as $0.31 ($0.13 to create a vote and <inline-formula><mml:math id="math001">
+<mml:mn>3</mml:mn>
+<mml:mo>∗</mml:mo>
+<mml:mi mathvariant="normal">$</mml:mi>
+<mml:mn>0.06</mml:mn></mml:math></inline-formula> for each ballot cast). We already estimated the cost of storing references as $1.68 (the costly case). Adding all these costs together yields a paper that, throughout its total life cycle, costs around two dollars in total to govern, update and disseminate. These costs are in stark contrast to publishing houses’ costs that have been previously estimated to be in the range of $3,500–$4,000 per article [<xref ref-type="bibr" rid="ref032">32</xref>]. When comparing these dollar figures, the reader has to be mindful of what exactly is being compared. For example, services like typesetting and printing would not be provided by Smart Papers, even though they may be still included by traditional publishing house in their cost estimates. The discussion of whether traditional print services are needed to successfully disseminate a paper in today’s digital era is beyond the scope of this article, and we assume a paper to be successfully published after it’s made its way to the blockchain. However, the additional costs of IPFS file storage are a completely valid concern. IPFS has no concept of transaction or storage costs, but also lacks an incentive layer. So currently, a researcher may elect to run a local IPFS node, the cost of which could vary wildly depending on the machine specifications and the local networking fees. The real costs may be inferred from those quoted by cloud IPFS providers (around $0.15/GB/mo.<xref ref-type="fn" rid="fn-22">22</xref><fn id="fn-22"><label><sup>22</sup></label>
+<p>pinata.cloud, eternum.io</p></fn>). All in all, in the era of decentralised Web, Smart Papers offers a cost-effective alternative to the services being offered by big publishers.</p>
+<p>It is worth noting that for most purposes, the Low Cost options should be used for all use cases, as the slowest observed transaction time in that instance is 5 minutes 30 seconds which we believe is still acceptable for most scholarly communications use cases, especially considering that it would normally take weeks, if not months, to get a scholarly paper successfully disseminated through a publishing house.</p>
+<p>In the Smart Papers approach, a valid question arises about who should pay for the transaction fees that we estimated. Should it be the scholars, their universities, funders, etc? Should the payment mechanism be different for the different use cases – for example, should adding references be funded in a different way than creating votes? Currently, we allow for as much flexibility as possible. Aragon offers a multi-token Finance<xref ref-type="fn" rid="fn-23">23</xref><fn id="fn-23"><label><sup>23</sup></label>
+<p><uri>https://wiki.aragon.org/dev/apps/finance/</uri></p></fn> App that can be used to manage budgets, to track income and expenses in an organisation, as well as to perform payments transparently according to customisable rules that can be different for each DAO.</p>
+</sec>
+</sec>
+<sec id="x1-30000-6">
+<label>6.</label>
+<title>Conclusions and future work</title>
+<p>There is an incentive to use blockchain technology for collaborative processes because it is inherently trustworthy. In Smart Papers, we used Ethereum to provide the framework for collaborative authoring, IPFS for the storage of the papers, and Aragon to manage governance through a Web interface.</p>
+<p>We analysed four use cases demonstrating how the nature of scientific publishing would benefit from storing agreements and artefacts in a verifiable distributed database that does not reside within the confines of a single point of failure, and also does not rely on a centralised party to provide proofs. We found that blockchains, by their design, are appropriate for these use cases.</p>
+<p>We have conducted testing to run simulations using a suite of Ethereum smart contracts that we have developed based on our Smart Paper model and workflow. Future development should be focused on implementing a robust workflow allowing scholars to integrate their Smart Papers into a wider conference/journal ecosystem. One strongly suggested avenue is to create a peer-review platform on the blockchain, in which the reviewed papers can be represented by Smart Papers, and the reviews themselves are notarised on the blockchain. Aragon can be easily reused for managing the governance aspect of such a transparent, decentralised and tamper-proof set-up for peer review.</p>
+<p>Within the context of informetrics, crucial work remains to take our requirements further so that they encompass calculations of more substantial metrics such as citation counts per author, h-Index values, and to provide trustworthy decentralised computations of many useful author-, journal- and article- based bibliometrics. With the growth of distributed data analytics on the horizon, solutions are slowly appearing that enable big data analytics on blockchains [<xref ref-type="bibr" rid="ref033">33</xref>], which shows real promise for developing our informetrics use case.</p>
+<p>Further research work is needed to explore how the market conditions for transaction execution may impact our design, and how market volatility could impact user behaviour through the variable nature of gas pricing and transaction completion times. The stability and security of the Ethereum network is currently seeing novel research which needs to be constantly monitored. We would like to further explore the storage options for artefacts, metadata and reviews, to optimise for cost and flexibility (in particular, the exploration of STORJ,<xref ref-type="fn" rid="fn-24">24</xref><fn id="fn-24"><label><sup>24</sup></label>
+<p><uri>https://storj.io/</uri></p></fn> FileCoin<xref ref-type="fn" rid="fn-25">25</xref><fn id="fn-25"><label><sup>25</sup></label>
+<p><uri>https://filecoin.io/</uri></p></fn> and the Swarm proof-of-concept<xref ref-type="fn" rid="fn-26">26</xref><fn id="fn-26"><label><sup>26</sup></label>
+<p><uri>https://swarm.ethereum.org</uri></p></fn>). Additionally, novel work is required to establish approaches for the management of transparent, fair and efficient budgets for funding Smart Papers transactions.</p>
+<p>We believe that blockchains succeed at providing an essential level of decentralised trust in collaborative processes such as scholarly authoring. In our case, these guarantees can be provided at a level as low as <italic>$0.04</italic> per Smart Paper transaction. Future work needs to address the cost of more frequent yet even smaller operations like comments on articles. We would also like to explore the mapping of the Smart Papers workflow to a relevant ontology (for example PWO [<xref ref-type="bibr" rid="ref017">17</xref>]) to allow each paper to be traced in a semantically standardised way. Current work of the authors is focused around implementing a Peer Review layer as a blockchain DAO template that allows relevant reviews to be easily linked to newly published Smart Papers.</p>
+</sec>
+</body>
+<back>
+<ack>
+<title>Acknowledgements</title>
+<p>Thanks to the following reviewers and editors, who provided thoughtful feedback on the previous draft of this article: Ruben Taelman, Allan Third, Reza Samavi, Andrew Sutton, Ruben Verborgh and Tobias Kuhn.</p></ack>
+<ref-list>
+<title>References</title>
+<ref id="ref001">
+<label>[1]</label><mixed-citation publication-type="journal"><string-name><given-names>G.</given-names> <surname>Abramo</surname></string-name>, <article-title>Revisiting the scientometric conceptualization of impact and its measurement</article-title>, <source>Journal of Informetrics</source> <volume>12</volume>(<issue>3</issue>) (<year>2018</year>), <fpage>590</fpage>–<lpage>597</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.joi.2018.05.001</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref002">
+<label>[2]</label><mixed-citation publication-type="chapter"><string-name><given-names>A.</given-names> <surname>Abu-Jbara</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Ezra</surname></string-name> and <string-name><given-names>D.</given-names> <surname>Radev</surname></string-name>, <chapter-title>Purpose and polarity of citation: Towards nlp-based bibliometrics</chapter-title>, in: <source>Proceedings of the 2013 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies</source>, <year>2013</year>, pp. <fpage>596</fpage>–<lpage>606</lpage>.</mixed-citation>
+</ref>
+<ref id="ref003">
+<label>[3]</label><mixed-citation publication-type="other"><string-name><given-names>D.</given-names> <surname>Adam</surname></string-name>, Citation analysis: The counting house, Nature Publishing Group, 2002.</mixed-citation>
+</ref>
+<ref id="ref004">
+<label>[4]</label><mixed-citation publication-type="other"><string-name><given-names>M.</given-names> <surname>Alharby</surname></string-name> and <string-name><given-names>A.</given-names> <surname>van Moorsel</surname></string-name>, Blockchain-based smart contracts: A systematic mapping study, <italic>CoRR</italic> abs/1710.06372 (2017). <uri>http://arxiv.org/abs/1710.06372</uri>.</mixed-citation>
+</ref>
+<ref id="ref005">
+<label>[5]</label><mixed-citation publication-type="journal"><string-name><given-names>J.</given-names> <surname>Bar-Ilan</surname></string-name>, <article-title>Informetrics at the beginning of the 21st century – a review</article-title>, <source>Journal of informetrics</source> <volume>2</volume>(<issue>1</issue>) (<year>2008</year>), <fpage>1</fpage>–<lpage>52</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.joi.2007.11.001</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref006">
+<label>[6]</label><mixed-citation publication-type="other"><string-name><given-names>S.</given-names> <surname>Bartling</surname></string-name>, Blockchain for open science and knowledge creation, Technical Report, Blockchain for Science. <uri>http://www.blockchainforscience.com/2017/02/23/blockchain-for-open-science-the-living-document/</uri>.</mixed-citation>
+</ref>
+<ref id="ref007">
+<label>[7]</label><mixed-citation publication-type="other"><string-name><given-names>J.</given-names> <surname>Benet</surname></string-name>, Ipfs-content addressed, versioned, p2p file system, arXiv preprint <pub-id pub-id-type="arxiv">arXiv:1407.3561</pub-id> (2014).</mixed-citation>
+</ref>
+<ref id="ref008">
+<label>[8]</label><mixed-citation publication-type="journal"><string-name><given-names>L.</given-names> <surname>Bornmann</surname></string-name> and <string-name><given-names>W.</given-names> <surname>Marx</surname></string-name>, <article-title>Methods for the generation of normalized citation impact scores in bibliometrics: Which method best reflects the judgements of experts?</article-title>, <source>Journal of Informetrics</source> <volume>9</volume>(<issue>2</issue>) (<year>2015</year>), <fpage>408</fpage>–<lpage>418</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.joi.2015.01.006</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref009">
+<label>[9]</label><mixed-citation publication-type="chapter"><string-name><given-names>S.</given-names> <surname>Capadisli</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Guy</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Lange</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Auer</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Sambra</surname></string-name> and <string-name><given-names>T.</given-names> <surname>Berners-Lee</surname></string-name>, <chapter-title>Linked data notifications: A resource-centric communication protocol</chapter-title>, in: <source>The Semantic Web</source>, Vol. <volume>10249</volume>, <string-name><given-names>E.</given-names> <surname>Blomqvist</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Maynard</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Gangemi</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Hoekstra</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Hitzler</surname></string-name> and <string-name><given-names>O.</given-names> <surname>Hartig</surname></string-name>, eds, <publisher-name>Springer International Publishing</publisher-name>, <publisher-loc>Cham</publisher-loc>, <year>2017</year>, pp. <fpage>537</fpage>–<lpage>553</lpage>. ISBN <isbn>978-3-319-58067-8 978-3-319-58068-5</isbn>. doi:<pub-id pub-id-type="doi">10.1007/978-3-319-58068-5_33</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref010">
+<label>[10]</label><mixed-citation publication-type="chapter"><string-name><given-names>S.</given-names> <surname>Capadisli</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Guy</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Verborgh</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Lange</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Auer</surname></string-name> and <string-name><given-names>T.</given-names> <surname>Berners-Lee</surname></string-name>, <chapter-title>Decentralised authoring, annotations and notifications for a read-write web with dokieli</chapter-title>, in: <source>Web Engineering</source>, <series>Lecture Notes in Computer Science</series>, <publisher-name>Springer</publisher-name>, <publisher-loc>Cham</publisher-loc>, <year>2017</year>, pp. <fpage>469</fpage>–<lpage>481</lpage>. ISBN <isbn>978-3-319-60130-4 978-3-319-60131-1</isbn>. doi:<pub-id pub-id-type="doi">10.1007/978-3-319-60131-1_33</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref011">
+<label>[11]</label><mixed-citation publication-type="other"><string-name><given-names>F.</given-names> <surname>Casati</surname></string-name>, <string-name><given-names>F.</given-names> <surname>Giunchiglia</surname></string-name> and <string-name><given-names>M.</given-names> <surname>Marchese</surname></string-name>, Liquid publications: Scientific publications meet the web, Technical Report, 1313, University of Trento, 2007.</mixed-citation>
+</ref>
+<ref id="ref012">
+<label>[12]</label><mixed-citation publication-type="other"><string-name><given-names>D.S.</given-names> <surname>Chawla</surname></string-name>, Open-access row prompts editorial board of Elsevier journal to resign, 2019. doi:<pub-id pub-id-type="doi">10.1038/d41586-019-00135-8</pub-id>. <uri>https://www.nature.com/articles/d41586-019-00135-8</uri>.</mixed-citation>
+</ref>
+<ref id="ref013">
+<label>[13]</label><mixed-citation publication-type="journal"><string-name><given-names>E.</given-names> <surname>Davenport</surname></string-name> and <string-name><given-names>B.</given-names> <surname>Cronin</surname></string-name>, <article-title>Knowledge management: Semantic drift or conceptual shift?</article-title>, <source>Journal of Education for library and information Science</source> (<year>2000</year>), <fpage>294</fpage>–<lpage>306</lpage>.</mixed-citation>
+</ref>
+<ref id="ref014">
+<label>[14]</label><mixed-citation publication-type="chapter"><string-name><given-names>J.</given-names> <surname>Eberhardt</surname></string-name> and <string-name><given-names>S.</given-names> <surname>Tai</surname></string-name>, <chapter-title>On or off the blockchain? Insights on off-chaining computation and data</chapter-title>, in: <source>European Conference on Service-Oriented and Cloud Computing</source>, <publisher-name>Springer</publisher-name>, <year>2017</year>, pp. <fpage>3</fpage>–<lpage>15</lpage>. doi:<pub-id pub-id-type="doi">10.1007/978-3-319-67262-5_1</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref015">
+<label>[15]</label><mixed-citation publication-type="other"><italic>ETH Gas Station</italic>, accessed January 2018. <uri>https://ethgasstation.info/FAQpage.php</uri>.</mixed-citation>
+</ref>
+<ref id="ref016">
+<label>[16]</label><mixed-citation publication-type="journal"><string-name><given-names>F.</given-names> <surname>Franceschini</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Maisano</surname></string-name> and <string-name><given-names>L.</given-names> <surname>Mastrogiacomo</surname></string-name>, <article-title>The museum of errors/horrors in scopus</article-title>, <source>Journal of Informetrics</source> <volume>10</volume>(<issue>1</issue>) (<year>2016</year>), <fpage>174</fpage>–<lpage>182</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.joi.2015.11.006</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref017">
+<label>[17]</label><mixed-citation publication-type="journal"><string-name><given-names>A.</given-names> <surname>Gangemi</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Peroni</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Shotton</surname></string-name> and <string-name><given-names>F.</given-names> <surname>Vitali</surname></string-name>, <article-title>The publishing workflow ontology (PWO)</article-title>, <source>Semantic Web</source> <volume>8</volume>(<issue>5</issue>) (<year>2017</year>), <fpage>703</fpage>–<lpage>718</lpage>. doi:<pub-id pub-id-type="doi">10.3233/SW-160230</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref018">
+<label>[18]</label><mixed-citation publication-type="journal"><string-name><given-names>A.</given-names> <surname>Garcia-Castro</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Labarga</surname></string-name>, <string-name><given-names>L.</given-names> <surname>Garcia</surname></string-name>, <string-name><given-names>O.</given-names> <surname>Giraldo</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Montana</surname></string-name> and <string-name><given-names>J.A.</given-names> <surname>Bateman</surname></string-name>, <article-title>Semantic web and social web heading towards living documents in the life sciences</article-title>, <source>Web Semantics: Science, Services and Agents on the World Wide Web</source> <volume>8</volume>(<issue>2–3</issue>) (<year>2010</year>), <fpage>155</fpage>–<lpage>162</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.websem.2010.03.006</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref019">
+<label>[19]</label><mixed-citation publication-type="journal"><string-name><given-names>L.L.</given-names> <surname>Haak</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Fenner</surname></string-name>, <string-name><given-names>L.</given-names> <surname>Paglione</surname></string-name>, <string-name><given-names>E.</given-names> <surname>Pentz</surname></string-name> and <string-name><given-names>H.</given-names> <surname>Ratner</surname></string-name>, <article-title>ORCID: A system to uniquely identify researchers</article-title>, <source>Learned Publishing</source> <volume>25</volume>(<issue>4</issue>) (<year>2012</year>), <fpage>259</fpage>–<lpage>264</lpage>. doi:<pub-id pub-id-type="doi">10.1087/20120404</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref020">
+<label>[20]</label><mixed-citation publication-type="journal"><string-name><given-names>A.-W.K.</given-names> <surname>Harzing</surname></string-name> and <string-name><given-names>R.</given-names> <surname>Van der Wal</surname></string-name>, <article-title>Google scholar as a new source for citation analysis</article-title>, <source>Ethics in science and environmental politics</source> <volume>8</volume>(<issue>1</issue>) (<year>2008</year>), <fpage>61</fpage>–<lpage>73</lpage>. doi:<pub-id pub-id-type="doi">10.3354/esep00076</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref021">
+<label>[21]</label><mixed-citation publication-type="chapter"><string-name><given-names>L.</given-names> <surname>Heller</surname></string-name>, <string-name><given-names>R.</given-names> <surname>The</surname></string-name> and <string-name><given-names>S.</given-names> <surname>Bartling</surname></string-name>, <chapter-title>Dynamic publication formats and collaborative authoring</chapter-title>, in: <source>Opening Science</source>, <string-name><given-names>S.</given-names> <surname>Bartling</surname></string-name> and <string-name><given-names>S.</given-names> <surname>Friesike</surname></string-name>, eds, <publisher-name>Springer International Publishing</publisher-name>, <publisher-loc>Cham</publisher-loc>, <year>2014</year>, pp. <fpage>191</fpage>–<lpage>211</lpage>. doi:<pub-id pub-id-type="doi">10.1007/978-3-319-00026-8_13</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref022">
+<label>[22]</label><mixed-citation publication-type="chapter"><string-name><given-names>M.R.</given-names> <surname>Hoffman</surname></string-name>, <string-name><given-names>L.-D.</given-names> <surname>Ibáñez</surname></string-name>, <string-name><given-names>H.</given-names> <surname>Fryer</surname></string-name> and <string-name><given-names>E.</given-names> <surname>Simperl</surname></string-name>, <chapter-title>Smart papers: Dynamic publications on the blockchain</chapter-title>, in: <source>The Semantic Web</source>, <string-name><given-names>A.</given-names> <surname>Gangemi</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Navigli</surname></string-name>, <string-name><given-names>M.-E.</given-names> <surname>Vidal</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Hitzler</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Troncy</surname></string-name>, <string-name><given-names>L.</given-names> <surname>Hollink</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Tordai</surname></string-name> and <string-name><given-names>M.</given-names> <surname>Alam</surname></string-name>, eds, <publisher-name>Springer International Publishing</publisher-name>, <publisher-loc>Cham</publisher-loc>, <year>2018</year>, pp. <fpage>304</fpage>–<lpage>318</lpage>. ISBN <isbn>978-3-319-93417-4</isbn>. doi:<pub-id pub-id-type="doi">10.1007/978-3-319-93417-4_20</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref023">
+<label>[23]</label><mixed-citation publication-type="other"><string-name><given-names>W.L.</given-names> <surname>Hursch</surname></string-name> and <string-name><given-names>C.V.</given-names> <surname>Lopes</surname></string-name>, Separation of concerns, Technical Report, NorthEastern University, 1995.</mixed-citation>
+</ref>
+<ref id="ref024">
+<label>[24]</label><mixed-citation publication-type="journal"><string-name><given-names>R.</given-names> <surname>Jha</surname></string-name>, <string-name><given-names>A.-A.</given-names> <surname>Jbara</surname></string-name>, <string-name><given-names>V.</given-names> <surname>Qazvinian</surname></string-name> and <string-name><given-names>D.R.</given-names> <surname>Radev</surname></string-name>, <article-title>NLP-driven citation analysis for scientometrics</article-title>, <source>Natural Language Engineering</source> <volume>23</volume>(<issue>1</issue>) (<year>2017</year>), <fpage>93</fpage>–<lpage>130</lpage>. doi:<pub-id pub-id-type="doi">10.1017/S1351324915000443</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref025">
+<label>[25]</label><mixed-citation publication-type="journal"><string-name><given-names>T.</given-names> <surname>Kuhn</surname></string-name> and <string-name><given-names>M.</given-names> <surname>Dumontier</surname></string-name>, <article-title>Making digital artifacts on the web verifiable and reliable</article-title>, <source>IEEE Transactions on Knowledge and Data Engineering</source> <volume>27</volume>(<issue>9</issue>) (<year>2015</year>), <fpage>2390</fpage>–<lpage>2400</lpage>. doi:<pub-id pub-id-type="doi">10.1109/TKDE.2015.2419657</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref026">
+<label>[26]</label><mixed-citation publication-type="journal"><string-name><given-names>P.A.</given-names> <surname>Lawrence</surname></string-name>, <article-title>The mismeasurement of science</article-title>, <source>Current Biology</source> <volume>17</volume>(<issue>15</issue>) (<year>2007</year>), <fpage>R583</fpage>–<lpage>R585</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.cub.2007.06.014</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref027">
+<label>[27]</label><mixed-citation publication-type="other"><string-name><given-names>E.D.</given-names> <surname>López-Cózar</surname></string-name>, <string-name><given-names>N.</given-names> <surname>Robinson-Garcia</surname></string-name> and <string-name><given-names>D.</given-names> <surname>Torres-Salinas</surname></string-name>, Manipulating Google scholar citations and Google scholar metrics: Simple, easy and tempting, arXiv preprint <pub-id pub-id-type="arxiv">arXiv:1212.0638</pub-id> (2012).</mixed-citation>
+</ref>
+<ref id="ref028">
+<label>[28]</label><mixed-citation publication-type="journal"><string-name><given-names>I.</given-names> <surname>McGregor-Lowndes</surname></string-name> <etal>et al.</etal>, <article-title>The rise of the DAO disrupting 400 years of corporate structure</article-title>, <source>Proctor, The</source> <volume>39</volume>(<issue>1</issue>) (<year>2019</year>), <fpage>32</fpage>.</mixed-citation>
+</ref>
+<ref id="ref029">
+<label>[29]</label><mixed-citation publication-type="journal"><string-name><given-names>J.</given-names> <surname>Mingers</surname></string-name> and <string-name><given-names>L.</given-names> <surname>Leydesdorff</surname></string-name>, <article-title>A review of theory and practice in scientometrics</article-title>, <source>European journal of operational research</source> <volume>246</volume>(<issue>1</issue>) (<year>2015</year>), <fpage>1</fpage>–<lpage>19</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.ejor.2015.04.002</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref030">
+<label>[30]</label><mixed-citation publication-type="journal"><string-name><given-names>R.S.</given-names> <surname>Sandhu</surname></string-name> and <string-name><given-names>P.</given-names> <surname>Samarati</surname></string-name>, <article-title>Access control: Principle and practice</article-title>, <source>IEEE communications magazine</source> <volume>32</volume>(<issue>9</issue>) (<year>1994</year>), <fpage>40</fpage>–<lpage>48</lpage>. doi:<pub-id pub-id-type="doi">10.1109/35.312842</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref031">
+<label>[31]</label><mixed-citation publication-type="journal"><string-name><given-names>H.</given-names> <surname>Small</surname></string-name>, <article-title>On the shoulders of Robert Merton: Towards a normative theory of citation</article-title>, <source>Scientometrics</source> <volume>60</volume>(<issue>1</issue>) (<year>2004</year>), <fpage>71</fpage>–<lpage>79</lpage>. doi:<pub-id pub-id-type="doi">10.1023/B:SCIE.0000027310.68393.bc</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref032">
+<label>[32]</label><mixed-citation publication-type="journal"><string-name><given-names>R.</given-names> <surname>Van Noorden</surname></string-name>, <article-title>Open access: The true cost of science publishing</article-title>, <source>Nature News</source> <volume>495</volume>(<issue>7442</issue>) (<year>2013</year>), <fpage>426</fpage>. doi:<pub-id pub-id-type="doi">10.1038/495426a</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref033">
+<label>[33]</label><mixed-citation publication-type="chapter"><string-name><given-names>H.T.</given-names> <surname>Vo</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Mohania</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Verma</surname></string-name> and <string-name><given-names>L.</given-names> <surname>Mehedy</surname></string-name>, <chapter-title>Blockchain-powered big data analytics platform</chapter-title>, in: <source>Big Data Analytics</source>, <string-name><given-names>A.</given-names> <surname>Mondal</surname></string-name>, <string-name><given-names>H.</given-names> <surname>Gupta</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Srivastava</surname></string-name>, <string-name><given-names>P.K.</given-names> <surname>Reddy</surname></string-name> and <string-name><given-names>D.V.L.N.</given-names> <surname>Somayajulu</surname></string-name>, eds, <publisher-name>Springer International Publishing</publisher-name>, <publisher-loc>Cham</publisher-loc>, <year>2018</year>, pp. <fpage>15</fpage>–<lpage>32</lpage>. ISBN <isbn>978-3-030-04780-1</isbn>. doi:<pub-id pub-id-type="doi">10.1007/978-3-030-04780-1_2</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref034">
+<label>[34]</label><mixed-citation publication-type="other"><string-name><given-names>R.</given-names> <surname>Wattenhofer</surname></string-name>, <source>The Science of the Blockchain</source>, <edition>1</edition>st edn, <publisher-name>Inverted Forest Publishing</publisher-name>, <publisher-loc>Erscheinungsort nicht ermittelbar</publisher-loc>, <year>2016</year>, <comment>OCLC: 952079386</comment>. ISBN <isbn>978-1-5227-5183-0</isbn>.</mixed-citation>
+</ref>
+<ref id="ref035">
+<label>[35]</label><mixed-citation publication-type="other"><string-name><given-names>G.</given-names> <surname>Wood</surname></string-name>, Ethereum: A secure decentralised generalised transaction ledger, <italic>Ethereum Project Yellow Paper</italic> <bold>151</bold> (2014). <uri>https://github.com/ethereum/yellowpaper</uri>.</mixed-citation>
+</ref>
+</ref-list>
+</back>
+</article>

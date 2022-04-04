@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.0 20120330//EN" "JATS-journalpublishing1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="editorial" dtd-version="1.0">
+<front>
+<journal-meta>
+<journal-id journal-id-type="publisher-id">DS</journal-id>
+<journal-title-group><journal-title>Data Science</journal-title></journal-title-group>
+<issn pub-type="epub">2451-8492</issn><issn pub-type="ppub">2451-8484</issn><issn-l>2451-8484</issn-l>
+<publisher>
+<publisher-name>IOS Press</publisher-name><publisher-loc>Nieuwe Hemweg 6B, 1013 BG Amsterdam, The Netherlands</publisher-loc>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">DS220055</article-id>
+<article-id pub-id-type="doi">10.3233/DS-220055</article-id>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Editorial</subject></subj-group></article-categories>
+<title-group>
+<article-title>Special Issue on Semantic Publishing with Formalization Papers<xref ref-type="fn" rid="thanks1"><sup>1</sup></xref></article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-7114-6459</contrib-id>
+<name><surname>Bucur</surname><given-names>Cristina-Iulia</given-names></name><email>c.i.bucur@vu.nl</email><xref ref-type="aff" rid="affa">a</xref><xref ref-type="corresp" rid="cor2">*</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-1267-0234</contrib-id>
+<name><surname>Kuhn</surname><given-names>Tobias</given-names></name><email>t.kuhn@vu.nl</email><xref ref-type="aff" rid="affb">b</xref><xref ref-type="corresp" rid="cor2">*</xref>
+</contrib>
+<aff id="affa"><label>a</label><institution>Vrije Universiteit Amsterdam</institution>, <country>The Netherlands</country></aff>
+<aff id="affb"><label>b</label><institution>Vrije Universiteit Amsterdam</institution>, <country>The Netherlands</country></aff>
+</contrib-group>
+<contrib-group content-type="guest-editors">
+<contrib contrib-type="guest-editor">
+<name><surname>Bucur</surname><given-names>Cristina-Iulia</given-names></name>
+</contrib>
+<contrib contrib-type="guest-editor">
+<name><surname>Kuhn</surname><given-names>Tobias</given-names></name>
+</contrib>
+</contrib-group>
+<author-notes>
+<fn id="thanks1"><label>1</label>
+<p>This editorial is a slightly modified excerpt from a research article (Bucur et al. (<xref ref-type="bibr" rid="ref005">2022</xref>)) currently under review.</p></fn><corresp id="cor2"><label>*</label>Corresponding authors. E-mails: <email>c.i.bucur@vu.nl</email>, <email>t.kuhn@vu.nl</email>.</corresp>
+</author-notes>
+<pub-date date-type="preprint" publication-format="electronic"><day>15</day><month>3</month><year>2022</year></pub-date><pub-date date-type="pub" publication-format="electronic"><day>22</day><month>3</month><year>2022</year></pub-date><pub-date date-type="collection" publication-format="electronic"><year>2022</year></pub-date><volume>5</volume><issue>1</issue><issue-title>Semantic Publishing with Formalization Papers</issue-title><fpage>1</fpage><lpage>9</lpage>
+<permissions><copyright-statement>© 2022 – The authors. Published by IOS Press.</copyright-statement><copyright-year>2022</copyright-year>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/" license-type="open-access" xlink:type="simple">
+<license-p>This is an open access article distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/" xlink:type="simple">Creative Commons Attribution (CC BY 4.0) License</ext-link>, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions>
+</article-meta>
+</front>
+<body>
+<sec id="x1-1000-1">
+<label>1.</label>
+<title>Introduction</title>
+<p>Considering the abundance of scientific articles that are published every day, keeping up with the latest research is becoming a significant challenge for researchers in many fields. This is at least partially due to the fact that we are still holding on to an archaic paradigm of scientific publishing: the canonical way to publish scientific results is by writing them up in long English texts called articles, which are in the best case easy to read by human experts but remain mostly inaccessible to automated approaches (except on a very superficial level with text mining techniques). These articles then undergo peer reviewing, which is typically done in a way that is secretive and not standardized, with the effect that the reviewing process may lack transparency and the valuable comments from the reviewers cannot be reused or build upon.</p>
+<p>A range of approaches have been proposed to address some of these problems by making scientific texts machine-readable, allowing for automatic summarising, finding and retrieving information easier and even the ability to (partially) reason on the scientific texts themselves. Text mining approaches work reasonably well when it comes to simple entity extraction with techniques like named-entity recognition to extract the main concepts from a text (e.g. [<xref ref-type="bibr" rid="ref001">1</xref>,<xref ref-type="bibr" rid="ref014">14</xref>]), but accuracy dramatically drops with more complicated tasks like relation extraction or identifying links between entities [<xref ref-type="bibr" rid="ref006">6</xref>,<xref ref-type="bibr" rid="ref013">13</xref>,<xref ref-type="bibr" rid="ref015">15</xref>].</p>
+<p>The vast majority of existing approaches of making scientific texts machine-readable have one thing in common: they take the current paradigm of scientific articles for granted and therefore take them as their starting point to extract information. While it is important to try to process the vast amount of existing scientific literature that has the form of long English texts (and sometimes long texts in other languages), we should also think about how we can improve the way how we publish scientific insights in the first place. An important aspect of this is the vision of semantic publishing, which we mean here in the sense of <italic>genuine semantic publishing</italic> [<xref ref-type="bibr" rid="ref009">9</xref>], where the machine-interpretable formal semantics cover the main scientific claims the work is making. Nanopublications [<xref ref-type="bibr" rid="ref008">8</xref>], which are small RDF-based semantic packages, have emerged as a powerful concept and technology for enabling such genuine semantic publishing.</p>
+<p>In the past, nanopublications were used to implement a semantic and fine-grained model for reviewing [<xref ref-type="bibr" rid="ref002">2</xref>], and this was extended to semantically represent the full structure of (classical) scientific articles with their reviews and review responses as a single network of nanopublications [<xref ref-type="bibr" rid="ref003">3</xref>]. In order to get closer to the vision of genuine semantic publishing, however, not just the structure but also the main content of these articles needs to be represented, most importantly their main scientific claims. To that aim, a semantic template called the <italic>super-pattern</italic> was proposed to represent the meaning of scientific claims in formal logic [<xref ref-type="bibr" rid="ref004">4</xref>].</p>
+<p>Taking an example from our previous study as illustration of the super-pattern, it has been stated in the scientific literature [<xref ref-type="bibr" rid="ref007">7</xref>] that in particular kinds of cells in the rat brain (specifically, endothelial cells) some sort of stress called transient oxidative stress affects the expression of a protein called Pgp. The super-pattern consists of five slots that would in this example be filled in as follows:</p>
+<list list-type="bullet">
+<list-item>
+<p>Context class: rat brain endothelial cell</p>
+</list-item>
+<list-item>
+<p>Subject class: transient oxidative stress</p>
+</list-item>
+<list-item>
+<p>Qualifier: generally</p>
+</list-item>
+<list-item>
+<p>Relation: affects</p>
+</list-item>
+<list-item>
+<p>Object class: Pgp expression</p>
+</list-item>
+</list>
+<p>Informally, we can read this in the following way: whenever there is an instance of transient oxidative stress in the context of an instance of a rat brain endothelial cell, then generally (meaning in at least 90% of the cases), that instance of stress has the relation of affecting an instance of Pgp expression. Formally, it directly maps to this logic formula: 
+<disp-formula>
+<mml:math display="block" id="math001">
+<mml:mtable displaystyle="true" columnalign="left" columnspacing="0pt">
+<mml:mtr>
+<mml:mtd columnalign="right" class="align-odd"/>
+<mml:mtd class="align-even">
+<mml:mi mathvariant="italic">P</mml:mi>
+<mml:mo mathvariant="normal" fence="true" maxsize="1.19em" minsize="1.19em">(</mml:mo>
+<mml:mo>∃</mml:mo>
+<mml:mi mathvariant="italic">z</mml:mi>
+<mml:mo mathvariant="normal" fence="true" maxsize="1.19em" minsize="1.19em">(</mml:mo>
+<mml:mtext mathvariant="sans-serif">pgp-expression</mml:mtext>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">z</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo>
+<mml:mo>∧</mml:mo>
+<mml:mtext mathvariant="sans-serif"> in-context</mml:mtext>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">z</mml:mi>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mi mathvariant="italic">x</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo>
+<mml:mo>∧</mml:mo>
+<mml:mtext mathvariant="sans-serif">affects</mml:mtext>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">y</mml:mi>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mi mathvariant="italic">z</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo>
+<mml:mo mathvariant="normal" fence="true" maxsize="1.19em" minsize="1.19em">)</mml:mo>
+<mml:mo stretchy="false">|</mml:mo>
+</mml:mtd>
+</mml:mtr>
+<mml:mtr>
+<mml:mtd columnalign="right" class="align-odd"/>
+<mml:mtd class="align-even">
+<mml:mspace width="1em"/>
+<mml:mtext mathvariant="sans-serif">transient-oxidative-stress</mml:mtext>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">y</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo>
+<mml:mo>∧</mml:mo>
+<mml:mtext mathvariant="sans-serif"> rat-brain-endothelial-cell</mml:mtext>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">x</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo>
+<mml:mo>∧</mml:mo>
+<mml:mtext mathvariant="sans-serif">in-context</mml:mtext>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">y</mml:mi>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mi mathvariant="italic">x</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo>
+<mml:mo mathvariant="normal" fence="true" maxsize="1.19em" minsize="1.19em">)</mml:mo>
+<mml:mo>⩾</mml:mo>
+<mml:mn>0.9</mml:mn>
+</mml:mtd>
+</mml:mtr>
+</mml:mtable></mml:math>
+</disp-formula> 
+This is stating in logic terms (in slightly non-standard notation using conditional probability as a shorthand) that given a thing <italic>y</italic> of type <italic>transient-oxidative-stress</italic> in the context of a thing <italic>x</italic> of type <italic>rat-brain-endothelial-cell</italic>, the probability of there being a <italic>z</italic> of type <italic>pgp-expression</italic> that is in the same context <italic>x</italic> is at least 90%. It has been shown that this pattern can be applied to formalize most high-level claims found in scientific literature across disciplines [<xref ref-type="bibr" rid="ref004">4</xref>].</p>
+<p>In this special issue, we combine all these elements of previous research – namely semantic representation of reviews, scientific works as a networks of nanopublications, and representing the main claims with the super-pattern – in order to implement genuine semantic publishing and put it to the test. For practical reasons, we did not require the scientific claims to be novel ones, but they were selected from existing publications. This special issue consists of what we call <italic>formalization papers</italic>, which are nanopublication-based semantic publications whose novelty lies in the formalization of a previously published scientific claim.</p>
+</sec>
+<sec id="x1-2000-2">
+<label>2.</label>
+<title>Approach</title>
+<p>For our approach, we committed to a number of features. First, we wanted the final contributions to be “real” papers in an established journal, which we achieved with the publication of this special issue. They should be fully semantically represented (in RDF) but also have classical views that makes them look like other articles. Like that, they should also seamlessly integrate with the existing bibliometric system and it should be straightforward to cite them in the classical way.</p>
+<p>Second, we decided to fully focus on arguably the most interesting element of scientific articles, which happens to also be one of the most challenging to formally represent: the main scientific claims the article is making. Scientific articles have a large number of other interesting pieces of information, e.g. information about the used methods among many other things, but for the purpose of the study to be presented, we focus only on the main claims.</p>
+<p>Third, in order to retain the flexibility and power of nanopublications, we decided to refrain from providing a custom-built and optimized user interface that hides the complexity and limits the flexibility. By using generic template-based nanopublication tools and by customizing them solely by providing the templates, we hoped to get a better understanding of how the nanopublication technology works for such kinds of content and workflows in general, and not just for our specific case. On the other hand, this also means that we were looking for a bit more technically minded authors who can handle interfaces that do not come with all the comfort of polished specific applications.</p>
+<p>Fourth, we wanted to test a system that <italic>could</italic> be used to publish novel claims, but decided for practical reasons to focus on formalizing claims from previously published articles. Our approach is therefore based on what we call <italic>formalization papers</italic> that contribute novel formalizations of existing claims.</p>
+<p>Finally, we wanted to cover not just these main claims, but the whole publishing workflow that involves the initial submission of contributions, their reviewing, the responses to the reviews, the updated versions, and the final decision, and represent these as independent but interlinked nanopublications.</p>
+</sec>
+<sec id="x1-3000-3">
+<label>3.</label>
+<title>Formalization papers</title>
+<p>This special issue focuses on a new concept called “formalization papers”. A formalization paper contributes a semantic formalization of one of the main claims of an already published scientific article. Its novelty therefore lies solely in the formalization of a claim, not the claim itself. The authors of such formalization papers consequently take credit for the way how the formalization is done, but not for the original claim (unless that claim happens to come from the same authors).</p>
+<fig id="x1-3001-1">
+<label>Fig. 1.</label>
+<caption>
+<p>Formalization paper template from Nanobench as used by the authors of the special issue.</p>
+</caption>
+<graphic xlink:href="ds-5-ds220055-g001.jpg"/>
+</fig>
+<p>The content of a formalization paper is fully expressed in RDF in the form of nanopublications. Such a formalization paper can be shown in other formats to users, e.g. in HTML or PDF, but these are just views of the same underlying RDF content. The formalization papers consist of nanopublications in which the assertion contains the formalization of the scientific claim using the super-pattern [<xref ref-type="bibr" rid="ref004">4</xref>], the provenance points to the original paper of the claim, and the publication information attributes the author of the formalization. Figure <xref rid="x1-3001-1">1</xref> shows an example of such a nanopublication in the interface the authors of the special issue used.</p>
+<p>The instantiated super-pattern in the assertion part refers to a context class, a subject class, a qualifier, a relation type, and an object class according to the super-pattern ontology.<xref ref-type="fn" rid="fn-2">2</xref><fn id="fn-2"><label><sup>2</sup></label>
+<p><uri>https://larahack.github.io/linkflows_superpattern/doc/sp/index-en.html</uri></p></fn> In the process of coming up with such a formalization, one often realizes that for some of the class slots of the super-pattern (i.e. context, subject, and object class) the class that should be filled in to arrive at a correct formalization is not directly defined in any existing vocabulary or ontology and as such, this class might need to be minted as well. The provenance part of the nanopublication describes the “formalization activity” that was conducted in order arrive at this formalization from what is written in the source publication. The precise phrase from that source publication that was used can be quoted too.</p>
+</sec>
+<sec id="x1-4000-4">
+<label>4.</label>
+<title>Tools</title>
+<p>In order to publish formalization papers, class definitions, and all the other kinds of nanopublications (submissions, reviews, responses to reviews, and decisions), Nanobench [<xref ref-type="bibr" rid="ref010">10</xref>]<xref ref-type="fn" rid="fn-3">3</xref><fn id="fn-3"><label><sup>3</sup></label>
+<p><uri>https://github.com/peta-pico/nanobench</uri></p></fn> was used. Figure <xref rid="x1-3001-1">1</xref> introduced above shows a screenshot of the publishing page of Nanobench. Publishing in Nanobench is based on templates, which are themselves expressed in nanopublications. The form shown in the screenshot is automatically generated based on the information found in several template nanopublications that we created and published for that purpose. All the application-specific behavior is therefore semantically represented in the templates, and Nanobench can flexibly be used for any other kind of data and workflow.</p>
+<fig id="x1-4001-2">
+<label>Fig. 2.</label>
+<caption>
+<p>The Tapas interface listing submitted formalizations as the results of SPARQL queries over the nanopublication service network.</p>
+</caption>
+<graphic xlink:href="ds-5-ds220055-g002.jpg"/>
+</fig>
+<p>The second tool that was used, Tapas [<xref ref-type="bibr" rid="ref011">11</xref>],<xref ref-type="fn" rid="fn-4">4</xref><fn id="fn-4"><label><sup>4</sup></label>
+<p><uri>https://github.com/peta-pico/tapas</uri></p></fn> is equally generic. It is a simple user interface component built on top of grlc [<xref ref-type="bibr" rid="ref012">12</xref>] that allows to run template-based SPARQL queries on RDF triple stores. In our case, it was run on SPARQL endpoints provided by the nanopublication service network [<xref ref-type="bibr" rid="ref010">10</xref>]. Tapas was used to show aggregations and overviews of submissions and reviews. Figure <xref rid="x1-4001-2">2</xref> shows a screenshot of the main submission overview. Tapas by itself is read-only, but it was connected to the Nanobench tool with links that lead to partially filled-in forms (e.g. “click here to add review” in the screenshot).</p>
+</sec>
+<sec id="x1-5000-5">
+<label>5.</label>
+<title>Design and planning of this special issue</title>
+<p>Interested authors could submit formalization papers, which upon acceptance were published in this special issue. The goal of this was to demonstrate for the first time that scientific articles can be formalized and therefore machine-interpretable including the main scientific claims. Additionally, we also wanted to see whether we can also represent the scientific publishing workflow that lead to the publication of such claims in a machine-friendly way using nanopublications.</p>
+<p>Because the user interfaces we had at our disposal were still quite rough and technical, we restricted the set of possible authors and sent the call for papers on a by-invitation basis to selected groups of researchers who have previously worked or had experience with technologies like RDF and semantics. We expect to be able to build more accessible user interfaces in the future that can show the inherent complexity in a way that does not require technical skills, but how this can be achieved was out of scope for this work.</p>
+<p>The authors of formalization papers formalized their own previously published claim, or a claim from a paper published by others. In the latter case, the formalization paper authors take credit for the formalization of the claim but not for the claim itself. All submissions to this special issue were peer-reviewed (also as nanopublications) using a previously proposed reviewing ontology [<xref ref-type="bibr" rid="ref002">2</xref>]. Upon acceptance, these formalization papers were published in this special issue, thereby giving them the same bibliometric status as other scientific articles, which leads to regular indexing in scientific article databases, counting of citations, and so on.</p>
+<fig id="x1-5001-3">
+<label>Fig. 3.</label>
+<caption>
+<p>Timeline publication for the special issue with formalization papers at the data science journal.</p>
+</caption>
+<graphic xlink:href="ds-5-ds220055-g003.jpg"/>
+</fig>
+<p>The whole timeline of the special issue can be seen in Figure <xref rid="x1-5001-3">3</xref>. The authors received close guidance on how to represent a claim of their choosing in RDF using the super-pattern and nanopublications, and on the various stages of the publication process. Authors took part in several information sessions and discussion meetings and were provided at each step with helper materials, videos, and even direct assistance if needed. In total, 24 such individual sessions were organized from May to December 2021.</p>
+<fig id="x1-5002-4">
+<label>Fig. 4.</label>
+<caption>
+<p>The “classical view” of a formalization paper.</p>
+</caption>
+<graphic xlink:href="ds-5-ds220055-g004.jpg"/>
+</fig>
+<p>In order to create the appearance of the accepted papers in the special issue as classical papers, “classical views” were created semi-automatically in the form of HTML and PDF versions from the corresponding nanopublications. Also, this view allowed the formalization papers to be integrated in the publisher’s content management system, and to make them connect to the existing bibliometric system, as can be seen in Figure <xref rid="x1-5002-4">4</xref>.</p>
+<table-wrap id="x1-5003-1">
+<label>Table 1</label>
+<caption>
+<p>Instantiated super-patterns accepted for publication in the special issue. Submissions marked with ◇ are formalizations in which authors extracted a scientific claim from their own previously published article; classes minted using Nanobench are marked with *, while newly minted Wikidata classes are marked with **</p>
+</caption>
+<table frame="hsides" rules="groups">
+<thead>
+<tr>
+<td valign="top" align="left"/>
+<td valign="top" align="left">Author</td>
+<td valign="top" align="center">CONTEXT (“in the context of all ...”)</td>
+<td valign="top" align="center">SUBJECT (“things of type ...”)</td>
+<td valign="top" align="left">QUAL.</td>
+<td valign="top" align="left">REL.</td>
+<td valign="top" align="center">OBJECT (“to things of type...”)</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAxBBJ2WkonyQNlXfdCAOaCi64J_xqgVGeaLjVQow9M88">1</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://orcid.org/0000-0003-2432-4125">Amelia Joslin</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAtsHwzNs36rGrLnoSbGrPD351Qw033Acoe4zmdXhsYlM#early-human-adipogenesis">early human adipogenesis</ext-link>*</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAxLYvJ1JrRf2JAowYGbGJleQPmqtpXnXsIvse7GmLeT8#regulatory-element-within-the-first-intron-of-FTO">regulatory element within the first intron of FTO</ext-link>*</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/generallyQualifier">generally</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/generallyQualifierhttps://w3id.org/linkflows/superpattern/terms/affects">affects</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAwkXiTv7qCtqOYzlR6ozZRGLRtG6mlogrYdRQ1E4dRDg#expression-of-genes-IRX3-and-IRX5">expression of genes IRX3 and IRX5</ext-link>*</td>
+</tr>
+<tr>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAmG2bXxwkIzARk4Mda-lqZU0RVnkpX7hUHBIPcdLHQUU">2</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://orcid.org/0000-0003-1099-3328">B.Nolan Nichols</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://www.wikidata.org/entity/Q101404862">human motor neuron</ext-link> (Q101404862)</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://www.wikidata.org/entity/Q21133247">TAR DNA binding protein</ext-link> (Q21133247)</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/canGenerallyQualifier">can generally</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/contributesTo">contributes to</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAiUYY1dbEDbcsscapEmbMMHsgJmjEJ1yUoNsxZIH1r90#transcription-of-stmn2">transcription of stmn2</ext-link>*</td>
+</tr>
+<tr>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAXVRaFjWDlX5cZcVRXETaEIAx6QAyLK5JCrzDP-yDp9U">3</ext-link> ◇</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://orcid.org/0000-0001-9488-1870">Daniel Mietchen</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://www.wikidata.org/wiki/Q107644116">dejellied fertilizable stage VI Xenopus laevis oocyte</ext-link>**</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://www.wikidata.org/wiki/Q107644241">strong static magnetic field</ext-link>**</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/generallyQualifier">generally</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/affects">affects</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://www.wikidata.org/wiki/Q5058180">cell cortex (Q5058180)</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAyg4UgIVovBGia-hk4qEuRzOq14fcOlYAclC6YGQaVYU">4</ext-link> ◇</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://orcid.org/0000-0002-7770-620X">Friederike Ehrhart</ext-link>, <ext-link ext-link-type="uri" xlink:href="https://orcid.org/0000-0002-5301-3142">Chris Evelo</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/UniversalContext">(no context class)</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://www.wikidata.org/wiki/Q109406970">genes associated with CAKUT</ext-link>**</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/sometimesQualifier">sometimes</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/isSameAs">is same as</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://www.wikidata.org/wiki/Q109406949">targets of vitamin A</ext-link>**</td>
+</tr>
+<tr>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAn15vsPJEVdJvjNKtBPo_oadtjeP9oc3Si-69FiJ4poQ">5</ext-link> ◇</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://orcid.org/0000-0002-0519-7776">George Patrinos</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RA9pwySo43TIfbvPuhK4ZuisvMsDvZ6TeR5N6MNKft8Nw#patient_undergoing_PCI">patient undergoing PCI</ext-link>*</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAOxICL4ULhzr5mxC9cyzStCBtpoETQGin6Vr-Ns7JNtA#pharmacogenomics_guided_clopidogrel_therapy">pharmacogenomics guided clopidogrel therapy</ext-link>*</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/generallyQualifier">generally</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/enables">enables</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAlfRfPak2jsyyVy4knjOmxQSYtociP8Cc0O7gemMtqQY#cost-effective_treatment">cost-effective treatment</ext-link>*</td>
+</tr>
+<tr>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RA1FoHM9lwJ1XAV1eB871XcMAKfod73G_i4YtgoLpJVH0">6</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://orcid.org/0000-0001-8004-0464">Margherita Martorana</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://www.wikidata.org/entity/Q5">human (Q5)</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.obolibrary.org/obo/GO_0007224">smoothened signaling pathway</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/mostlyQualifier">mostly</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/affects">affects</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.obolibrary.org/obo/GO_0014002">astrocyte development</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RABzhulhaPhOzo9MxWxl230N72-azdlpMNwu_HtDqsuUc">7</ext-link> ◇</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://orcid.org/0000-0001-9488-1870">Daniel Mietchen</ext-link>, <ext-link ext-link-type="uri" xlink:href="https://orcid.org/0000-0002-2186-5033">Lyubomir Penev</ext-link>, <ext-link ext-link-type="uri" xlink:href="https://orcid.org/0000-0002-8083-6048">Mariya Dimitrova</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://www.wikidata.org/wiki/Q28946370">biodiversity data (Q28946370)</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RA5Txa3acYP9_MUWEw7s7wenDTB1QXNMB7UehJW-2E-_8#license-with-non-commercial-clause">license with non-commercial clause</ext-link>*</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/generallyQualifier">generally</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/inhibits">inhibits</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://www.wikidata.org/wiki/Q58023280">data reuse (Q58023280)</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAMgThXW6xx8QiPmW9VhVuxWCN2ZWe-pmxDcFfdx_A7z0">8</ext-link> ◇</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://orcid.org/0000-0002-8083-6048">Mariya Dimitrova</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAlm6vh2zpFLg189qrDYPtppkL790Pqaw-q2KUhyfJtRY#release-of-openbiodiv-knowledge-graph">release of OpenBiodiv knowledge graph</ext-link>*</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAaEkIiJLmBJP5kK3JdYjseCRqwutYbdnI8Q3VbzrK9VA#triple-in-openbiodiv-knowledge-graph">triple in OpenBiodiv knowledge graph</ext-link>*</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/generallyQualifier">generally</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/isSameAs">is same as</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAEpHUXRKtaLE3Z24sgIUdaxwTBsK2bjshyq9yF00145Y#semantic-triples-extracted-from-biodiversity-literature">semantic triple extracted from biodiversity literature</ext-link>*</td>
+</tr>
+<tr>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAXkuXJ4IK10Ai9F39_tOFDy6ewi7znau6OQhUEXP4nPc">9</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://orcid.org/0000-0003-2310-3013">Matthew Brauer</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://www.wikidata.org/entity/Q18036664">UNC13A (Q18036664)</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://www.wikidata.org/entity/Q21133247">TAR DNA binding protein (Q21133247)</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/generallyQualifier">generally</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/inhibits">inhibits</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.obolibrary.org/obo/VariO_0504">inclusion of cryptic exon</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RA22JAQihYeiJkNIjvwnxLPmjuG74yPcRXpPyVX8DV6fA">10</ext-link> ◇</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://orcid.org/0000-0003-4727-9435">Michel Dumontier</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://www.wikidata.org/wiki/Q1172284">data set (Q1172284)</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAodU4AmRjfzyjwtJK3luO0iyRJJPUBjkijKWdlMHvack#adherenceToTheFAIRGuidingPrinciples">adherence to the FAIR guiding principles</ext-link>*</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/canGenerallyQualifier">can generally</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/enables">enables</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAFQovt9yQD7nZ2tdZ9_Uhpb7CsfT3k64pK7dh63xd-50#automatedDiscovery">automated discovery</ext-link>*</td>
+</tr>
+<tr>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RA12lVwEtmddK9OwDkZQZlgJaOD2-0NXtAtO_jDaG-3VQ">11</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://orcid.org/0000-0003-0169-8159">Núria Queralt Rosinach</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://www.wikidata.org/entity/Q5">human (Q5)</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.obolibrary.org/obo/MONDO_0014109">NGLY1 deficiency</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/alwaysQualifier">always</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/isCausedBy">is caused by</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAZVLqlkbwiX40n0GNxcxJany2Cw3oxMCrNuZtjBClryU#Dysfunction_of_ERAD_pathway">dysfunction of ERAD pathway</ext-link>*</td>
+</tr>
+<tr>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAbWbJCYlLhlYBDn9PVxdJP_WUbbi058aRcK-3sOJsRwY">12</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://orcid.org/0000-0002-0191-7211">Ricardo Usbeck</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://www.wikidata.org/wiki/Q874405">social group (Q874405)</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAhnnsMWVM8M29NixCJfVDLWzRzwwCPnUD7LI2kxT-FME#relative-neocortex-size">relative neocortex size</ext-link>*</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/generallyQualifierhttps://w3id.org/linkflows/superpattern/terms/neverQualifier">never</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/affects">affects</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAlKYv_sE8qwiSqsRdcr7KrkU1bsqlqiFmhDPtPBwpLrM#social-group-size">social group size</ext-link>*</td>
+</tr>
+<tr>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAoo8EvTgfkxJw5SgZXbJvRl5nQG7ygeGaHp8Zud1U4Zw">13</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://orcid.org/0000-0002-0830-7029">Russell Bainer</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAaOAF90U6YxAvnchfj0dRtT5HRz320Pz202aGap-VfuI#ecm-bound-cancer-cell">ecm bound cancer cell</ext-link>*</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RA-jkb7qPNTSOe_EXltW_rlQWQ9x3_Y1KOzW6J_bbPz4U#glycocalyx-bulk">glycocayx bulk</ext-link>*</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/generallyQualifier">generally</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/increases">increases</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAFH8AVn-wnTcSGxvPZ1Uiy_AtOhINlynnAxxiCdcTVWU#integrin-clustering">integrin clustering</ext-link>*</td>
+</tr>
+<tr>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAeRSya2qIYymsBxiqOZP_oaQpHXUVXiydKvPCFM-7DDQ">14</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://orcid.org/0000-0001-6501-0806">Valentin Grouès</ext-link>, <ext-link ext-link-type="uri" xlink:href="https://orcid.org/0000-0002-7979-9921">Carlos Vega Moreno</ext-link>, <ext-link ext-link-type="uri" xlink:href="https://orcid.org/0000-0002-6532-5880">Venkata Satagopam</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://www.wikidata.org/wiki/Q5">human (Q5)</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAPVWYH0x-xyDa9PfBcGUFly3m1FNEO43KG9s0uH-y6yo#STX1B-mutation">STX1B mutation</ext-link>*</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/frequentlyQualifier">frequently</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/coOccursWith">co-occurs with</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://www.wikidata.org/wiki/Q41571">epilepsy (Q41571)</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAgoIxfXPqNDY8vnK2EmBQDAFwuFIDJtfaMplTvPMq3pg">15</ext-link> ◇</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://orcid.org/0000-0001-9079-039X">Victor de Boer</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAkCjYmMU3obIrC4IpwUw84JW1ymd312yz0N0g-R9yes0#digital-humanities-research">digital humanities research</ext-link>*</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAcPa1aO8kAt8QYwjQoJq-PIzYvo0jCzYrAiOX_XOyk1w#usage-of-linked-data-scopes">usage of Linked Data Scopes</ext-link>*</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/canGenerallyQualifier">can generally</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/contributesTo">contributes to</ext-link></td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://www.wikidata.org/wiki/Q535347">transparency (Q535347)</ext-link></td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+</sec>
+<sec id="x1-6000-6">
+<label>6.</label>
+<title>Overview of the papers in this special issue</title>
+<p>In total, we had an initial number of 20 people that replied to our call for papers from 12 different institutions from the United States of America, Germany, Luxembourg, Bulgaria, and The Netherlands from fields like biomedicine, bioinformatics, health sciences, ecology, data science, and computer science. After an initial information session, out of the 20 authors that responded to the call for papers, 18 decided to continue their participation. All these 18 authors that responded to the call for formalization papers managed in the end to publish (upon acceptance) their articles in this special issue.</p>
+<p>We had a total of 15 formalization paper submissions, 13 with individual authors and 2 with joint authorship. Out of the total of 18 authors, two of these have both an individual submission and a joint-authorship one. The super-pattern instantiations of the final accepted formalization paper submissions can be seen in Table <xref rid="x1-5003-1">1</xref>. Here, the classes used to instantiate the super-patterns that comprise the formalizations are given for each submission: the context, subject and object classes for each submission are listed, together with the qualifier and relations selected from the <ext-link ext-link-type="uri" xlink:href="https://larahack.github.io/linkflows_superpattern/doc/sp/index-en.html">SuperPattern ontology</ext-link> [<xref ref-type="bibr" rid="ref004">4</xref>].</p>
+<p>Looking at Table <xref rid="x1-5003-1">1</xref>, we see that the super-pattern instances exhibit quite a broad variety of scientific fields (bioinformatics, biomedicine, pharmacology, data science, computer science) mostly linked to the life sciences. 7 out of the 15 submissions contain a formalization in which authors extracted a scientific claim from their own previously published article (submission number marked with ◇). Additionally, out of the total 44 classes used in the formalizations, 22 new classes were minted using Nanobench (marked with *), while 4 were newly minted Wikidata classes (marked with **). 13 already-existing classes were reused from Wikidata (their Wikidata identifier is specified next to the class name) and 4 classes were referenced from other ontologies.</p>
+</sec>
+<sec id="x1-7000-7">
+<label>7.</label>
+<title>Conclusion</title>
+<p>The publication of the special issue with formalization papers at the Data Science journal shows not only that nanopublications and the super-pattern can be used to implement the basic steps and entities of a journal workflow, but also that authors of such formalization papers can be taught to use these in order to publish in a novel journal publication workflow as the publication of the special issue demonstrates. We found that the super-pattern can be well understood conceptually, and that its application in a practical setting is feasible. With the publication of this special issue we demonstrate for the first time that the content of a scientific journal can be made fully machine-interpretable.</p>
+<p>In the future, we can take the next logical step by publishing novel claims in this way from the start, and not depend on claims from already-published papers. These contributions will then also have to be accompanied by statements about the methods, equipment, and all other relevant scientific concepts, and can include not just the high-level claim but more lower-level ones, possibly all the way down to the raw data. This representation would then ideally cover the entire scientific workflow, starting from a motivation, leading to the design and execution of a study, and ending in new scientific insights. Such fully formalized scientific contributions can be seen as a major step – even a breakthrough – for the Semantic Web and Open Science movements and will bring us closer to a world where machines can interpret scientific knowledge and help us organize and understand it in a reliable and transparent manner.</p>
+</sec>
+</body>
+<back>
+<ref-list>
+<title>References</title>
+<ref id="ref001">
+<label>[1]</label><mixed-citation publication-type="journal"><string-name><given-names>T.</given-names> <surname>Al-Moslmi</surname></string-name>, <string-name><given-names>M.G.</given-names> <surname>Ocaña</surname></string-name>, <string-name><given-names>A.L.</given-names> <surname>Opdahl</surname></string-name> and <string-name><given-names>C.</given-names> <surname>Veres</surname></string-name>, <article-title>Named entity extraction for knowledge graphs: A literature overview</article-title>, <source>IEEE Access</source> <volume>8</volume> (<year>2020</year>), <fpage>32862</fpage>–<lpage>32881</lpage>. doi:<pub-id pub-id-type="doi">10.1109/ACCESS.2020.2973928</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref002">
+<label>[2]</label><mixed-citation publication-type="chapter"><string-name><given-names>C.-I.</given-names> <surname>Bucur</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Kuhn</surname></string-name> and <string-name><given-names>D.</given-names> <surname>Ceolin</surname></string-name>, <chapter-title>Peer reviewing revisited: Assessing research with interlinked semantic comments</chapter-title>, in: <source>K-CAP 2019: Proceedings of the 10th International Conference on Knowledge Capture</source>, <year>2019</year>, pp. <fpage>179</fpage>–<lpage>187</lpage>. doi:<pub-id pub-id-type="doi">10.1145/3360901.3364434</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref003">
+<label>[3]</label><mixed-citation publication-type="other"><string-name><given-names>C.-I.</given-names> <surname>Bucur</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Kuhn</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Ceolin</surname></string-name> and <string-name><given-names>J.</given-names> <surname>van Ossenbruggen</surname></string-name>, <chapter-title>A unified nanopublication model for effective and user-friendly access to the elements of scientific publishing</chapter-title>, in: <source>EKAW2020</source>, <year>2020</year>. doi:<pub-id pub-id-type="doi">10.1007/978-3-030-61244-3_7</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref004">
+<label>[4]</label><mixed-citation publication-type="chapter"><string-name><given-names>C.-I.</given-names> <surname>Bucur</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Kuhn</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Ceolin</surname></string-name> and <string-name><given-names>J.</given-names> <surname>van Ossenbruggen</surname></string-name>, <chapter-title>Expressing high-level scientific claims with formal semantics</chapter-title>, in: <source>Proceedings of the 11th on Knowledge Capture Conference, K-CAP’21</source>, <publisher-name>Association for Computing Machinery</publisher-name>, <publisher-loc>New York, NY, USA</publisher-loc>, <year>2021</year>, pp. <fpage>233</fpage>–<lpage>240</lpage>. ISBN <isbn>9781450384575</isbn>. doi:<pub-id pub-id-type="doi">10.1145/3460210.3493561</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref005">
+<label>[5]</label><mixed-citation publication-type="other"><string-name><given-names>C.-I.</given-names> <surname>Bucur</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Kuhn</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Ceolin</surname></string-name> and <string-name><given-names>J.</given-names> <surname>van Ossenbruggen</surname></string-name>, Nanopublication-Based Semantic Publishing and Reviewing: A Field Study with Formalization Papers, 2022, available at <uri>https://arxiv.org/abs/2203.01608</uri>.</mixed-citation>
+</ref>
+<ref id="ref006">
+<label>[6]</label><mixed-citation publication-type="journal"><string-name><given-names>O.</given-names> <surname>Etzioni</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Cafarella</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Downey</surname></string-name>, <string-name><given-names>A.-M.</given-names> <surname>Popescu</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Shaked</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Soderland</surname></string-name>, <string-name><given-names>D.S.</given-names> <surname>Weld</surname></string-name> and <string-name><given-names>A.</given-names> <surname>Yates</surname></string-name>, <article-title>Unsupervised named-entity extraction from the web: An experimental study</article-title>, <source>Artificial Intelligence</source> <volume>165</volume>(<issue>1</issue>) (<year>2005</year>), <fpage>91</fpage>–<lpage>134</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.artint.2005.03.001</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref007">
+<label>[7]</label><mixed-citation publication-type="journal"><string-name><given-names>R.A.</given-names> <surname>Felix</surname></string-name> and <string-name><given-names>M.A.</given-names> <surname>Barrand</surname></string-name>, <article-title>P-glycoprotein expression in rat brain endothelial cells: Evidence for regulation by transient oxidative stress</article-title>, <source>Journal of Neurochemistry</source> <volume>80</volume> (<year>2002</year>), <fpage>64</fpage>–<lpage>72</lpage>. doi:<pub-id pub-id-type="doi">10.1046/j.0022-3042.2001.00660.x</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref008">
+<label>[8]</label><mixed-citation publication-type="journal"><string-name><given-names>P.</given-names> <surname>Groth</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Gibson</surname></string-name> and <string-name><given-names>J.</given-names> <surname>Velterop</surname></string-name>, <article-title>The anatomy of a nanopublication</article-title>, <source>Inf. Serv. Use</source> <volume>30</volume> (<year>2010</year>), <fpage>51</fpage>–<lpage>56</lpage>. doi:<pub-id pub-id-type="doi">10.3233/ISU-2010-0613</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref009">
+<label>[9]</label><mixed-citation publication-type="journal"><string-name><given-names>T.</given-names> <surname>Kuhn</surname></string-name> and <string-name><given-names>M.</given-names> <surname>Dumontier</surname></string-name>, <article-title>Genuine semantic publishing</article-title>, <source>Data Sci.</source> <volume>1</volume> (<year>2017</year>), <fpage>139</fpage>–<lpage>154</lpage>. doi:<pub-id pub-id-type="doi">10.3233/DS-170010</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref010">
+<label>[10]</label><mixed-citation publication-type="other"><string-name><given-names>T.</given-names> <surname>Kuhn</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Taelman</surname></string-name>, <string-name><given-names>V.</given-names> <surname>Emonet</surname></string-name>, <string-name><given-names>H.</given-names> <surname>Antonatos</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Soiland-Reyes</surname></string-name> and <string-name><given-names>M.</given-names> <surname>Dumontier</surname></string-name>, <article-title>Semantic micro-contributions with decentralized nanopublication services</article-title>, <source>PeerJ Computer Science</source> <volume>7</volume> (<year>2021</year>), <elocation-id>e387</elocation-id>. doi:<pub-id pub-id-type="doi">10.7717/peerj-cs.387</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref011">
+<label>[11]</label><mixed-citation publication-type="other"><string-name><given-names>P.</given-names> <surname>Lisena</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Meroño-Peñuela</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Kuhn</surname></string-name> and <string-name><given-names>R.</given-names> <surname>Troncy</surname></string-name>, <chapter-title>Easy web API development with SPARQL transformer</chapter-title>, in: <source>The Semantic Web – ISWC 2019</source>, <string-name><given-names>C.</given-names> <surname>Ghidini</surname></string-name> <etal>et al.</etal>, eds, <series>Lecture Notes in Computer Science</series>, Vol. <volume>11779</volume>, <publisher-name>Springer</publisher-name>, <publisher-loc>Cham</publisher-loc>, <year>2019</year>. doi:<pub-id pub-id-type="doi">10.1007/978-3-030-30796-7_28</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref012">
+<label>[12]</label><mixed-citation publication-type="chapter"><string-name><given-names>A.</given-names> <surname>Meroño-Pe nuela</surname></string-name> and <string-name><given-names>R.</given-names> <surname>Hoekstra</surname></string-name>, <chapter-title>grlc makes GitHub taste like linked data APIs</chapter-title>, in: <source>European Semantic Web Conference</source>, <publisher-name>Springer</publisher-name>, <year>2016</year>, pp. <fpage>342</fpage>–<lpage>353</lpage>. doi:<pub-id pub-id-type="doi">10.1007/978-3-319-47602-5_48</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref013">
+<label>[13]</label><mixed-citation publication-type="chapter"><string-name><given-names>Y.</given-names> <surname>Xu</surname></string-name>, <string-name><given-names>L.</given-names> <surname>Mou</surname></string-name>, <string-name><given-names>G.</given-names> <surname>Li</surname></string-name>, <string-name><given-names>Y.</given-names> <surname>Chen</surname></string-name>, <string-name><given-names>H.</given-names> <surname>Peng</surname></string-name> and <string-name><given-names>Z.</given-names> <surname>Jin</surname></string-name>, <chapter-title>Classifying relations via long short term memory networks along shortest dependency paths</chapter-title>, in: <source>Proceedings of the 2015 Conference on Empirical Methods in Natural Language Processing, Association for Computational Linguistics</source>, <conf-loc>Lisbon, Portugal</conf-loc>, <year>2015</year>, pp. <fpage>1785</fpage>–<lpage>1794</lpage>. doi:<pub-id pub-id-type="doi">10.18653/v1/D15-1206</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref014">
+<label>[14]</label><mixed-citation publication-type="other"><string-name><given-names>V.</given-names> <surname>Yadav</surname></string-name> and <string-name><given-names>S.</given-names> <surname>Bethard</surname></string-name>, <chapter-title>A survey on recent advances in named entity recognition from deep learning models</chapter-title>, in: <source>COLING</source>, <year>2018</year>, <comment>available at</comment> <uri>https://aclanthology.org/C18-1182.pdf</uri>.</mixed-citation>
+</ref>
+<ref id="ref015">
+<label>[15]</label><mixed-citation publication-type="other"><string-name><given-names>D.</given-names> <surname>Zeng</surname></string-name>, <string-name><given-names>K.</given-names> <surname>Liu</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Lai</surname></string-name>, <string-name><given-names>G.</given-names> <surname>Zhou</surname></string-name> and <string-name><given-names>J.</given-names> <surname>Zhao</surname></string-name>, <chapter-title>Relation classification via convolutional deep neural network</chapter-title>, in: <source>COLING</source>, <year>2014</year>, <comment>available at</comment> <uri>https://aclanthology.org/C14-1220.pdf</uri>.</mixed-citation>
+</ref>
+</ref-list>
+</back>
+</article>

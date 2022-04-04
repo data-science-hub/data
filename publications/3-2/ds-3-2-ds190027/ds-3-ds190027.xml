@@ -1,0 +1,836 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.0 20120330//EN" "JATS-journalpublishing1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article">
+<front>
+<journal-meta>
+<journal-id journal-id-type="publisher-id">DS</journal-id>
+<journal-title-group><journal-title>Data Science</journal-title></journal-title-group>
+<issn pub-type="epub">2451-8492</issn><issn pub-type="ppub">2451-8484</issn><issn-l>2451-8484</issn-l>
+<publisher>
+<publisher-name>IOS Press</publisher-name><publisher-loc>Nieuwe Hemweg 6B, 1013 BG Amsterdam, The Netherlands</publisher-loc>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">DS190027</article-id>
+<article-id pub-id-type="doi">10.3233/DS-190027</article-id>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Research Article</subject></subj-group></article-categories>
+<title-group>
+<article-title>Modelling and predicting User Engagement in mobile applications</article-title>
+</title-group>
+<contrib-group content-type="Editor">
+<contrib contrib-type="editor">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-5098-5667</contrib-id>
+<name><surname>Schneider</surname><given-names>Jodi</given-names></name>
+</contrib>
+</contrib-group>
+<contrib-group>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0001-7878-2514</contrib-id>
+<name><surname>Barbaro</surname><given-names>Eduardo</given-names></name><xref ref-type="aff" rid="affa">a</xref><xref ref-type="aff" rid="affb">b</xref><xref ref-type="corresp" rid="cor2">*</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-5471-4338</contrib-id>
+<name><surname>Grua</surname><given-names>Eoin Martino</given-names></name><xref ref-type="aff" rid="affc">c</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0001-5773-8346</contrib-id>
+<name><surname>Malavolta</surname><given-names>Ivano</given-names></name><xref ref-type="aff" rid="affd">d</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-9847-2959</contrib-id>
+<name><surname>Stercevic</surname><given-names>Mirjana</given-names></name><xref ref-type="aff" rid="affe">e</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-1940-0800</contrib-id>
+<name><surname>Weusthof</surname><given-names>Esther</given-names></name><xref ref-type="aff" rid="afff">f</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-4529-137X</contrib-id>
+<name><surname>van den Hoven</surname><given-names>Jeroen</given-names></name><xref ref-type="aff" rid="affg">g</xref>
+</contrib>
+<aff id="affa"><label>a</label><institution>IBM, Cognitive and Analytics Benelux – Global Business Services</institution>, <country>The Netherlands</country></aff>
+<aff id="affb"><label>b</label><institution>Mobiquity Inc., Global Analytics Group</institution>, <country>The Netherlands</country>. E-mail: <email>eduardo.barbaro@ibm.com</email></aff>
+<aff id="affc"><label>c</label>Department of Computer Science, <institution>Vrije Universiteit Amsterdam</institution>, <country>The Netherlands</country>. E-mail: <email>e.m.grua@vu.nl</email></aff>
+<aff id="affd"><label>d</label>Department of Computer Science, <institution>Vrije Universiteit Amsterdam</institution>, <country>The Netherlands</country>. E-mail: <email>i.malavolta@vu.nl</email></aff>
+<aff id="affe"><label>e</label><institution>Mobiquity Inc., Global Analytics Group</institution>, <country>The Netherlands</country>.</aff>
+<aff id="afff"><label>f</label><institution>Mobiquity Inc., Global Analytics Group</institution>, <country>The Netherlands</country>.</aff>
+<aff id="affg"><label>g</label><institution>Mobiquity Inc., Global Analytics Group</institution>, <country>The Netherlands</country>.</aff>
+</contrib-group>
+<author-notes>
+<corresp id="cor2"><label>*</label>Corresponding author. E-mail: <email>eduardo.barbaro@ibm.com</email>.</corresp>
+</author-notes>
+<pub-date date-type="preprint" publication-format="electronic"><day>13</day><month>11</month><year>2019</year></pub-date><pub-date date-type="pub" publication-format="electronic"><day>11</day><month>11</month><year>2020</year></pub-date><pub-date date-type="collection" publication-format="electronic"><year>2020</year></pub-date><volume>3</volume><issue>2</issue><fpage>61</fpage><lpage>77</lpage><history><date date-type="received"><day>8</day><month>06</month><year>2019</year></date><date date-type="accepted"><day>20</day><month>09</month><year>2019</year></date></history>
+<permissions><copyright-statement>© 2020 – IOS Press and the authors.</copyright-statement><copyright-year>2020</copyright-year>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/" license-type="open-access" xlink:type="simple">
+<license-p>This is an open access article distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/" xlink:type="simple">Creative Commons Attribution (CC BY 4.0) License</ext-link>, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions>
+<abstract>
+<p>The mobile ecosystem is dramatically growing towards an unprecedented scale, with an extremely crowded market and fierce competition among app developers. Today, keeping users engaged with a mobile app is key for its success since users can remain active consumers of services and/or producers of new contents. However, users may abandon a mobile app at any time due to various reasons, e.g., the success of competing apps, decrease of interest in the provided services, etc. In this context, predicting when a user may get disengaged from an app is an invaluable resource for developers, creating the opportunity to apply intervention strategies aiming at recovering from disengagement (e.g., sending push notifications with new contents).In this study, we aim at providing evidence that predicting <italic>when</italic> mobile app users get disengaged is possible with a good level of accuracy. Specifically, we propose, apply, and evaluate a framework to model and predict User Engagement (UE) in mobile applications via different numerical models. The proposed framework is composed of an optimized agglomerative hierarchical clustering model coupled to (i) a Cox proportional hazards, (ii) a negative binomial, (iii) a random forest, and (iv) a boosted-tree model. The proposed framework is empirically validated by means of a year-long observational dataset collected from a real deployment of a waste recycling app. Our results show that <italic>in this context</italic> the optimized clustering model classifies users adequately and improves UE predictability for all numerical models. Also, the highest levels of prediction accuracy and robustness are obtained by applying either the random forest classifier or the boosted-tree algorithm.</p>
+</abstract>
+<kwd-group>
+<label>Keywords</label>
+<kwd>User Engagement</kwd>
+<kwd>mobile apps</kwd>
+<kwd>numerical modelling</kwd>
+<kwd>clustering</kwd>
+</kwd-group>
+</article-meta>
+</front>
+<body>
+<sec id="x1-1000-1">
+<label>1.</label>
+<title>Introduction</title>
+<p>Mobile applications (hereinafter “apps”) dominate the digital world today, reaching incredible numbers and showing no signs of slowing down its market growth anytime soon [<xref ref-type="bibr" rid="ref028">28</xref>]. For example, as of March 2018, there are more than 3.3 million Android applications available [<xref ref-type="bibr" rid="ref044">44</xref>], with more than one thousand apps being published <italic>everyday</italic> [<xref ref-type="bibr" rid="ref028">28</xref>]. Mobile apps are not only being published in large numbers, but are also being consumed by users in large numbers, with more than 1.5 billion downloads from Google Play Store every month [<xref ref-type="bibr" rid="ref002">2</xref>]. A medium of such a large scale leads to a crowded market with strong competition. Under this perspective, <italic>mobile app developers must keep their users active over a sufficiently long period of time to be considered successful</italic>. Recognizing and understanding user motivations are key to leading to a greater app usage [<xref ref-type="bibr" rid="ref025">25</xref>]. To date, despite significant efforts, over 95% of smartphone owners stop using an app by the end of the third month of download [<xref ref-type="bibr" rid="ref038">38</xref>]. In other words, the majority of mobile solutions fail to achieve long-term usage. This can be explained by a variety of reasons, such as lack of personalization, user context, and finally failure to seamlessly integrate with other apps or technologies [<xref ref-type="bibr" rid="ref045">45</xref>,<xref ref-type="bibr" rid="ref048">48</xref>].</p>
+<p>A high disengagement rate is obviously non desirable to app developers, whose success depends on the usage of their app. Furthermore, it is also a problem for researchers and other professionals who use apps to provide services aimed at improving the user’s quality of life. For example, waste recycling has been shown to be a positive practice for improving sustainability and diminishing carbon emissions [<xref ref-type="bibr" rid="ref026">26</xref>,<xref ref-type="bibr" rid="ref032">32</xref>]. Waste recycling apps can be used as an effective tool to help users engage in recycling [<xref ref-type="bibr" rid="ref006">6</xref>]. They can achieve this with game-like features that remind and reward the user for consistently recycling. However, for the app to succeed, it must be regularly utilised by the user. Hence, as a crucial quality, it must be engaging. Crafting personal “smart interactions” is an effective way to ensure that users remain active, on-line, and motivated [<xref ref-type="bibr" rid="ref011">11</xref>]. Furthermore, tailored interactions aim to maintain, encourage and ultimately increase app usage over time. Take people tracking as an example: mobile location tracking has to be used on a opt-in basis, due to privacy issues [<xref ref-type="bibr" rid="ref043">43</xref>]. However, once a device is being tracked, apps may send out alerts when the tracking is turned off aiming to prevent the user to go off-line. The nature of these interactions may vary wildly, since it is likely that users react very differently to such interventions [<xref ref-type="bibr" rid="ref004">4</xref>].</p>
+<p>In the context of this study, UE can be intuitively defined as the assessment of the response of the user to some type of activity or service provided by the mobile app. For example, in social networking apps (e.g., Facebook or Twitter) UE is about user’s posts, comments, and interaction with other users; differently, in shopping apps (e.g., Amazon or Wish) UE is about the products being purchased, being listed, saved for later purchases, and so on.</p>
+<p>Despite there being a good understanding of what is UE in different domains and which factors contribute to it, there seems to be a lack of literature on whether it is possible to predict UE in mobile apps and how different methods perform.</p>
+<p>In this study, we provide evidence that <italic>it is possible to predict the engagement of mobile app users with good levels of accuracy</italic>. We achieve this result by characterizing and evaluating a framework for predicting user engagement of mobile apps. The framework is based on the application of different types of numerical models, i.e., survival, counts, and classification. The numerical models take as input a minimal set of information about the user, which are relatively straightforward to collect at run-time, e.g., the current point balance of the user (assuming the app is employing a potentially implicit gamification mechanism), the time of the last interaction with the app, geographic position, etc. In this study, we explore four different types of numerical models, namely: (i) survival analysis, (ii) negative binomial regression, (iii) random forest, and (iv) gradient-boosted trees. In order to complete our approach, one of the most important steps to achieve better predictions is to group users based on their past behaviour [<xref ref-type="bibr" rid="ref031">31</xref>]. In that way, it is possible to separate – or “cluster” – users based on how (often) they interact with the mobile app. Therefore, we also incorporate a clustering algorithm to our proposed framework, aiming at targeting user interactions more accurately by means of drawing similarities between users [<xref ref-type="bibr" rid="ref031">31</xref>].</p>
+<p>We empirically evaluate the performance of our proposed numerical framework in predicting UE on an industrial dataset, which has been built in the context of a <italic>real mobile app</italic> in the area of waste recycling. The dataset is composed of approximately 27,000 entries distributed over 1500 unique users.</p>
+<p>Summarizing, the main contributions of this study are:</p>
+<list list-type="bullet">
+<list-item>
+<p>a reusable framework for modeling and predicting UE in mobile apps;</p>
+</list-item>
+<list-item>
+<p>a characterization of UE by means of 4 different types of numerical models;</p>
+</list-item>
+<list-item>
+<p>the empirical evaluation of the prediction accuracy of the 4 different types of numerical models in the context of a waste recycling mobile app.</p>
+</list-item>
+</list>
+<p>The contributions above benefit both mobile apps developers and researchers. Developers can re-use the proposed framework for accurately predicting the engagement of their users at run-time and counteract it in a timely fashion (e.g., by sending a push notification for triggering new conversions) – see [<xref ref-type="bibr" rid="ref042">42</xref>], and (ii) learn from the evaluated numerical models which one is better suited for their own mobile app. We support researchers since we (i) provide evidence about how various numerical models can accurately estimate UE in mobile apps and (ii) provide a framework for modeling and predicting UE, which can be further extended or used in other scientific studies.</p>
+<p>It is important to note that the aim of this study is not to provide a general solution for predicting UE for all mobile apps, instead we aim at providing (i) evidence that it is possible to predict UE with good levels of accuracy and (ii) a flexible framework for modeling and predicting UE in mobile apps which can be re-used by both researchers and practitioners in other projects, provided that it will be customized according to the app under consideration, its usage scenarios, and the available data.</p>
+<p>The remainder of this paper is organized as follows. Section <xref rid="x1-2000-2">2</xref> presents the fundamental background needed throughout this research. Section <xref rid="x1-5000-3">3</xref> presents the modeling framework, whereas the results of the evaluation of the prediction accuracy of the modeling framework are reported in Section <xref rid="x1-11000-4">4</xref>. Finally, Section <xref rid="x1-17000-5">5</xref> discusses and puts into context the obtained results and Section <xref rid="x1-18000-6">6</xref> closes the paper.</p>
+</sec>
+<sec id="x1-2000-2">
+<label>2.</label>
+<title>Background</title>
+<p>In this section we provide background information about the definition of user engagement in the context of mobile apps (Section <xref rid="x1-3000-2.1">2.1</xref>) and present the waste recycling app dataset (Section <xref rid="x1-4000-2.2">2.2</xref>).</p>
+<sec id="x1-3000-2.1">
+<label>2.1.</label>
+<title>Defining User Engagement</title>
+<p>User engagement is not a trivial concept to define, especially in the mobile segment. As a first attempt, UE can be described as a proxy for quantifying an outcome or, more generically, interpreting an action. In [<xref ref-type="bibr" rid="ref037">37</xref>] the authors summarized and combined several prior definitions of engagement. They argue that UE consists of users’ activities and mental models, manifested as attention, curiosity and motivation. As shown in Fig. <xref rid="x1-3001-1">1</xref>, UE can be seen as a process composed of four main steps, namely: users (i) start engaging with a mobile application, (ii) remain engaged, (iii) disengage, and finally (iv) potentially re-engage. Building on that argument, in a later study, the same authors argued that engagement is not only a product of experience, but also a cycle-process that depends on the interaction with technology [<xref ref-type="bibr" rid="ref036">36</xref>]. Closely related to [<xref ref-type="bibr" rid="ref036">36</xref>] and [<xref ref-type="bibr" rid="ref027">27</xref>,<xref ref-type="bibr" rid="ref034">34</xref>] defined UE as the quality of the experiences that emphasize the positive aspects of the user interactions.</p>
+<fig id="x1-3001-1">
+<label>Fig. 1.</label>
+<caption>
+<p>Overview of UE life cycle. The arrows indicate the possible places of interaction with technology. Figure inspired in the four-step engagement process proposed by [<xref ref-type="bibr" rid="ref037">37</xref>] and [<xref ref-type="bibr" rid="ref036">36</xref>].</p>
+</caption>
+<graphic xlink:href="ds-3-ds190027-g001.jpg"/>
+</fig>
+<p>More recently, on-line behaviour was analysed to better understand the temporal evolution of UE in massive open on-line courses [<xref ref-type="bibr" rid="ref039">39</xref>]. Their findings suggest the use of diverse features – such as last lecture watched, last quiz taken, and current/total number of posts – as good quantitative indicators for modelling UE at different points in time. In their study, they used these parameters to accurately predict student survival rates already at the beginning of the course [<xref ref-type="bibr" rid="ref039">39</xref>].</p>
+<p>In the remaining of this section we introduce the fundamental concepts associated with the numerical tools used to model UE in mobile apps. Naturally, the first point to address here is to properly <italic>classify</italic> if a customer is engaged or not at the present time. Different definitions can be used – or combined – to address that. Here, we discuss:</p>
+<list list-type="bullet">
+<list-item>
+<p>the application is still installed on their phone after a certain number of days;</p>
+</list-item>
+<list-item>
+<p>the number of user activities is bigger than a given threshold;</p>
+</list-item>
+<list-item>
+<p>the frequency of user activities is higher than a given threshold.</p>
+</list-item>
+</list>
+<p>One of the simplest definitions available is called <italic>User Engagement Index</italic> (<inline-formula><mml:math id="math001">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="normal">UE</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">I</mml:mi>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula>). The <inline-formula><mml:math id="math002">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="normal">UE</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">I</mml:mi>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula> compares the time of inactivity with the time the customer has been engaged. Mathematically it reads: 
+<disp-formula>
+<mml:math display="block" id="math003">
+<mml:mtable displaystyle="true"><mml:mlabeledtr>
+<mml:mtd id="x1-3002-1">
+<mml:mtext>(1)</mml:mtext>
+</mml:mtd>
+<mml:mtd>
+<mml:msub>
+<mml:mrow>
+<mml:mtext>UE</mml:mtext>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">I</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo>=</mml:mo><mml:mstyle displaystyle="true">
+<mml:mfrac>
+<mml:mrow>
+<mml:mi mathvariant="italic">LastEvent</mml:mi>
+<mml:mo>−</mml:mo>
+<mml:mi mathvariant="italic">FirstEvent</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">Today</mml:mi>
+<mml:mo>−</mml:mo>
+<mml:mi mathvariant="italic">FirstEvent</mml:mi>
+</mml:mrow>
+</mml:mfrac>
+</mml:mstyle>
+<mml:mo mathvariant="normal">,</mml:mo>
+</mml:mtd>
+</mml:mlabeledtr></mml:mtable></mml:math>
+</disp-formula> 
+where all the terms on the right-hand side are dates. We see in Equation (<xref rid="x1-3002-1">1</xref>) the ratio of the time difference between both last event and present time to the time of the first interaction. If <inline-formula><mml:math id="math004">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="normal">UE</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">I</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal">&gt;</mml:mo>
+<mml:mn>0.5</mml:mn></mml:math></inline-formula> (where 0.5 is a threshold defined a priori) the user is considered engaged <italic>today</italic>.</p>
+<p>Another possible way to determine UE is by defining a threshold on the <italic>recency</italic> (<italic>R</italic>). This threshold has to be calculated to determine if the time between actions is (long)short enough for the user to be considered (dis)engaged. Recency is trivially defined in Equation (<xref rid="x1-3003-2">2</xref>): 
+<disp-formula>
+<mml:math display="block" id="math005">
+<mml:mtable displaystyle="true"><mml:mlabeledtr>
+<mml:mtd id="x1-3003-2">
+<mml:mtext>(2)</mml:mtext>
+</mml:mtd>
+<mml:mtd>
+<mml:mi mathvariant="italic">R</mml:mi>
+<mml:mo>=</mml:mo>
+<mml:mi mathvariant="normal">Δ</mml:mi>
+<mml:mi mathvariant="italic">t</mml:mi>
+<mml:mo mathvariant="normal">,</mml:mo>
+</mml:mtd>
+</mml:mlabeledtr></mml:mtable></mml:math>
+</disp-formula> 
+where <inline-formula><mml:math id="math006">
+<mml:mi mathvariant="normal">Δ</mml:mi>
+<mml:mi mathvariant="italic">t</mml:mi></mml:math></inline-formula> is the time past between one action and its <italic>subsequent</italic> action. In doing so, user engagement based on recency (<inline-formula><mml:math id="math007">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="normal">UE</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">R</mml:mi>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula>) can be calculated for every interaction, and not only for the last one as in <inline-formula><mml:math id="math008">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="normal">UE</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">I</mml:mi>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula>.</p>
+<p>We base the choice of threshold to determine <inline-formula><mml:math id="math009">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="normal">UE</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">R</mml:mi>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula> on the statistical distribution of <italic>R</italic>. The threshold is set as being at the edge of one standard deviation from the average recency. By doing so, we ensure that to be considered disengaged the user’s recency has to be less than around 32% of our entire sample recency. That is a compromise between allowing for later re-engagement (by not tackling only users at the very end of the distribution, i.e. almost totally disengaged) and not sending too re-engagement messages to still engaged users (users close to the center of the distribution). Similarly to <inline-formula><mml:math id="math010">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="normal">UE</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">R</mml:mi>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula>, we explore the fact that user engagement can also be defined by setting a threshold on the <italic>total number of actions</italic> (<inline-formula><mml:math id="math011">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">A</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">T</mml:mi>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula>) a user performed within a given time frame. Mathematically, it reads: 
+<disp-formula>
+<mml:math display="block" id="math012">
+<mml:mtable displaystyle="true"><mml:mlabeledtr>
+<mml:mtd id="x1-3004-3">
+<mml:mtext>(3)</mml:mtext>
+</mml:mtd>
+<mml:mtd>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">A</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">T</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo>=</mml:mo>
+<mml:munderover accentunder="false" accent="false">
+<mml:mrow>
+<mml:mstyle displaystyle="true">
+<mml:mo largeop="true" movablelimits="false">∑</mml:mo></mml:mstyle>
+</mml:mrow>
+<mml:mrow>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">t</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>0</mml:mn>
+</mml:mrow>
+</mml:msub>
+</mml:mrow>
+<mml:mrow>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">t</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">N</mml:mi>
+</mml:mrow>
+</mml:msub>
+</mml:mrow>
+</mml:munderover>
+<mml:mi mathvariant="italic">A</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">t</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo>
+<mml:mo mathvariant="normal">,</mml:mo>
+</mml:mtd>
+</mml:mlabeledtr></mml:mtable></mml:math>
+</disp-formula> 
+where <inline-formula><mml:math id="math013">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">t</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>0</mml:mn>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula> and <inline-formula><mml:math id="math014">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">t</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">N</mml:mi>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula> are respectively the initial and final times of the counting. Every user surpassing a given threshold can be considered engaged.</p>
+</sec>
+<sec id="x1-4000-2.2">
+<label>2.2.</label>
+<title>The waste recycling app dataset</title>
+<p>In this study, we use a dataset from a mobile app that promotes waste recycling. The app grants points every time an event is performed by the user, e.g., disposing trash in their selected bins, reading educational material, or inviting friends to join the app. These points can then be redeemed for rewards at selected partners, such as savings on local shops or discounts on sustainable goods. Extending the framework described in [<xref ref-type="bibr" rid="ref033">33</xref>] for tablets, we argue that the app needs to be designed and optimized having in mind that the user is most likely on their mobile phone either redeeming points at a shop or collecting points at the recycle bin. That is fundamental to create an intuitive interface that facilitates these activities and promotes engagement.</p>
+<p>The dataset contains approximately 27,000 entries distributed over 1500 unique users and 122 variables. The data was collected between April 2015 and January 2016. Each entry of the dataset contains the following 6 features:</p>
+<list>
+<list-item id="x1-4002x-1">
+<label>(1)</label>
+<p>the current point balance of the user,</p>
+</list-item>
+<list-item id="x1-4004x-2">
+<label>(2)</label>
+<p>the time of the user’s last event within the app,</p>
+</list-item>
+<list-item id="x1-4006x-3">
+<label>(3)</label>
+<p>the number of days since the last event,</p>
+</list-item>
+<list-item id="x1-4008x-4">
+<label>(4)</label>
+<p>the current weekday,</p>
+</list-item>
+<list-item id="x1-4010x-5">
+<label>(5)</label>
+<p>the current ZIP code,</p>
+</list-item>
+<list-item id="x1-4012x-6">
+<label>(6)</label>
+<p>the current geographical position of the user in terms of latitude and longitude.</p>
+</list-item>
+</list>
+<p>We expand each of the 27,000 entries of the dataset to contain 122 unique variables in total. We achieve that by first generating combinations of these variables, e.g. <italic>number of days since the first event during weekdays</italic> or <italic>time of the user’s last event within the app during a weekday/weekend</italic>. We then proceed to calculate the following statistics (<italic>max/min/mean/med/sum/sd</italic>) for all of the variables. That allows for more feature creation, e.g. <italic>standard deviation of the number of days since the first event during weekdays</italic>. We calculate the most simple statistics such as <italic>mean of the current point balance</italic> or <italic>minimum number of days since last event</italic>, but also combinations of variables with statistics – such as <italic>median of the minutes since last event per user in a certain zip code</italic>, or the <italic>standard deviation of the number of days since the first event during weekdays</italic>. Note that geographical position provides more detailed information than just zip-code, given that there may be more than one recycle bin in a given area.</p>
+<p>Figure <xref rid="x1-4013-2">2</xref> shows the strategy that we follow for splitting the dataset into four main subsets, namely: training, test, cross-validation, and validation sets [<xref ref-type="bibr" rid="ref019">19</xref>].</p>
+<fig id="x1-4013-2">
+<label>Fig. 2.</label>
+<caption>
+<p>Sketch of users lifespan over time. The red lines indicate customers engaged after the end of the training period.</p>
+</caption>
+<graphic xlink:href="ds-3-ds190027-g002.jpg"/>
+</fig>
+<p>Specifically, a fraction of the dataset (60%) is used to train our models and the remaining data to test (20%) and cross-validate (20%) their performance. The last three parts (observation 1, 2, 3) are the validation sets. They also start at the beginning of the dataset (April 24) and continue after the end of the training period – as shown in Fig. <xref rid="x1-4013-2">2</xref>.<xref ref-type="fn" rid="fn-1">1</xref><fn id="fn-1"><label><sup>1</sup></label>
+<p>For simplicity, we extrapolate the use of the term training period to indicate the period between April 24 and Dec. 1, 2015.</p></fn> It is important to mention that the validation sets only contain users that remained active, or started new interactions after the training period. Those are depicted in red in Fig. <xref rid="x1-4013-2">2</xref>. We highlight that this setup is general/flexible enough to be used by all our numerical models.</p>
+<p>Concerning the definitions of UE, in this study, we rely on the definitions based on <italic>recency</italic> (see Equation (<xref rid="x1-3003-2">2</xref>)) and <italic>total actions</italic> (see Equation (<xref rid="x1-3004-3">3</xref>)). The user engagement index (see Equation (<xref rid="x1-3002-1">1</xref>)) does not fit the purpose of this study since it is a too coarse-grained definition and it does not provide any information concerning the daily evolution of UE. In our case, the threshold for recency is set constant and equal to 9 days. For the counting model, we choose a threshold of 5 interactions per 2 weeks. These thresholds have been defined based on (i) a number of informal interviews we had with professionals working in the company developing the waste recycling app and (ii) the need to simulate the quick reaction of the app as soon as the users start to be disengaged. We <italic>extensively experimented with a series of other levels of the recency and interaction thresholds around the ones used in this study, and the results of the re-applied models did not significantly vary in all the cases</italic> (&lt;5%). For the sake of brevity, we do not report the whole set of the performed replications in this study. Finally, it is important to note that the values of the thresholds used in this study strongly depend on the application domain (i.e., waste recycling, in our case); we suggest researchers and developers willing to re-use our framework in other domains/organizations to fine tune the selected thresholds according to the specific characteristics of the app under consideration and its typical usage scenarios (e.g., social media users may be considered disengaged much earlier than after 9 days of total inactivity). In addition to that, note the modelling results – especially the quantitative component – discussed here remain specific for this dataset. Hence, it should not be directly transferred to other application domains. Instead, the main contribution of this paper lies on the fact that we show, by means of different types of algorithms, that it is possible to accurately predict user engagement as well as a reusable framework that can be used to better understand UE in mobile apps.</p>
+</sec>
+</sec>
+<sec id="x1-5000-3">
+<label>3.</label>
+<title>Modelling User Engagement of mobile apps</title>
+<p>In this Section, we detail our modelling strategy and explain the multiple steps and assumptions we make to predict UE or counts (actions) until disengagement. Here, despite the numerical model we choose, the first step is to describe the process of assigning our users to different groups, the so-called <italic>clustering process</italic>. In doing so, we are firstly grouping similar users together in order to reduce uncertainties and improve the predictability of our numerical models [<xref ref-type="bibr" rid="ref031">31</xref>].</p>
+<sec id="x1-6000-3.1">
+<label>3.1.</label>
+<title>The clustering model</title>
+<p>In this study, we use a modified Agglomerative Hierarchical Clustering (AHC) model [<xref ref-type="bibr" rid="ref017">17</xref>]. That means, we assign each data point to one exclusive cluster, and then combine the two clusters that are closest to each other. This process is repeated until there is only one cluster left – containing all the observations. We utilize average linkage to perform the clustering, i.e., the average distance between each point in one cluster to every point in the other cluster. We use the so-called Pearson-<italic>γ</italic> correlation as our criterion to select an appropriate number of clusters [<xref ref-type="bibr" rid="ref001">1</xref>,<xref ref-type="bibr" rid="ref024">24</xref>]. This metric looks at the correlation of all the distances between data points and a binary matrix, that is equal to zero for every pair of observations in the same cluster and equal to 1 in case points are in different clusters.</p>
+<p>Hierarchical clustering methods require a distance metric to define similarity between two observations. Here, we implement the so-called Gower’s metric [<xref ref-type="bibr" rid="ref022">22</xref>] with optimal weights, as proposed in [<xref ref-type="bibr" rid="ref047">47</xref>]. This metric allows for the calculation of the dissimilarity between rows of our dataset for nominal, binary, and ordinal variables. The optimization is done with the intent to maximize the cophenetic correlation coefficient (CPCC), see [<xref ref-type="bibr" rid="ref040">40</xref>]. The CPCC is the correlation between the distance matrix used for the clustering and the cophenetic distance matrix of the resulting hierarchical clustering. This cophenetic distance matrix is calculated as the distance at which two observations are combined into one cluster.</p>
+<p>The optimization of the CPCC is done through the use of the L-BFGS-B method (Limited-memory Broyden–Fletcher–Goldfarb–Shanno algorithm with Bounds), a Quasi-Newton algorithm which uses the first order derivative of a given function and an approximation of its second-order derivative to obtain the extrema of the given function (non-linear optimization) – see [<xref ref-type="bibr" rid="ref035">35</xref>]. We apply this method to iteratively search for an optimal set of weights to Gower’s metric to optimize the CPCC of the resulting agglomerative hierarchical clustering. The bounds of the L-BGFS-B method are set to <inline-formula><mml:math id="math015">
+<mml:mo fence="true" stretchy="false">[</mml:mo>
+<mml:mn>0</mml:mn>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mn>1</mml:mn>
+<mml:mo fence="true" stretchy="false">]</mml:mo></mml:math></inline-formula> to ensure no weight is negative. Next to that, we also use an approximation of the analytical derivative of the CPCC with respect to the weights to ensure we do not have to use finite differences for the L-BFGS-B method, hence significantly reducing computation time [<xref ref-type="bibr" rid="ref047">47</xref>].</p>
+<p>As the last part for the configuration of our clustering, we choose which variables we consider to be used for clustering. The variables we pick determine what our clusters represent. As an initial set of variables for our clustering algorithm, we choose all 122 variables mentioned above. In this context, our clusters represent different characteristics of the users and their behaviour, ranging from regional data to frequency of use and point collection. Users in the same cluster are thus expected to be more similar when it comes to app behaviour and geographical location compared to those in other clusters. Hence, these clusters capture useful information for our different user engagement models to use in their predictions.</p>
+<p>With our users set to a particular cluster, we use these results as a predictor of UE improving modelling results [<xref ref-type="bibr" rid="ref047">47</xref>]. In the next subsections, we explain the numerical models we use to predict UE for every user. We detail the three different model types – <italic>survival, counts, and classification</italic> – to evaluate the potential of each approach and the validity of their assumptions.</p>
+</sec>
+<sec id="x1-7000-3.2">
+<label>3.2.</label>
+<title>The Cox proportional hazards model</title>
+<p>In this subsection, we explore the Cox Proportional Hazards model [<xref ref-type="bibr" rid="ref015">15</xref>]. The Cox Proportional Hazards (CPH) model is a very popular regression model that calculates survival times based on the effect of selected predictors. It becomes especially useful here since our predictors are (highly) non-linearly related and we may not know their distributions beforehand. Another advantage of the CPH model is the fact that it is able to handle missing observations, i.e. sparse user interactions. The CPH model only requires as independent parameters (i) the time of the analysis and (ii) the engagement status. In our case, the status indicates if disengagement happened or not at any particular time. With these two parameters, we estimate two functions called conditional survival and baseline hazard. The former provides the probability of not experiencing disengagement while the latter gives the probability that disengagement will occur up to a given time – see [<xref ref-type="bibr" rid="ref016">16</xref>]. In our context, the term <italic>proportional hazard</italic> indicates that the hazard ratio comparing two observations is constant in between events. Furthermore, the impact of the different factors on the hazard remains constant over time [<xref ref-type="bibr" rid="ref005">5</xref>]. We use a threshold equal to 0.5 to determine engagement/disengagement and follow [<xref ref-type="bibr" rid="ref023">23</xref>] to ensure monotonic Receiver Operating Characteristic (ROC) curves by means of the nearest neighbor method.</p>
+</sec>
+<sec id="x1-8000-3.3">
+<label>3.3.</label>
+<title>The negative binomial model</title>
+<p>Here, we describe a regression model with count data (negative binomial model). This approach is interesting because, in contrast to the CPH model, it allows us to model re-engagement. Here, rather than the time of disengagement, we aim to predict the total number of actions before disengagement. The idea is to target smart interactions aiming to keep the user engaged if the actual counts fall too close from the prediction of disengagement. Briefly, the negative binomial (NB) distribution is the distribution of the number of trials (actions) needed to get a fixed number of failures (in our case disengagement) – see [<xref ref-type="bibr" rid="ref030">30</xref>]. This distribution describes the probabilities of the occurrence of integers greater than or equal to 0. By analyzing the distribution function, we can set a threshold on the probability of disengagement and extract the number of counts before disengagement. NB is specially suitable to model over-dispersed count variables. This specific regression method is implemented by fitting a generalized linear model using a boosting algorithm based on component-wise univariate linear models – see [<xref ref-type="bibr" rid="ref008">8</xref>,<xref ref-type="bibr" rid="ref010">10</xref>], and [<xref ref-type="bibr" rid="ref009">9</xref>]. In each boosting iteration, a simple linear model is fitted (without intercept) to the negative gradient vector and in the update step only the best-fitting linear model is used. This machine learning method optimizes prediction accuracy and carries out variable selection. In our case, we perform 500 non-centered boosting iterations with a step length equal to 0.05.</p>
+</sec>
+<sec id="x1-9000-3.4">
+<label>3.4.</label>
+<title>The random forest model</title>
+<p>The RF model [<xref ref-type="bibr" rid="ref007">7</xref>] basically creates many random independent subsets of the dataset containing features and a training class. In our case, the features are the information about the user, e.g. number of interactions and type of interaction, and the class is simply a flag indicating engaged or disengaged at that particular moment. These subsets are used to create a ranking of classifiers. It is important to state that RF models are typically accurate and computationally efficient. The randomness component ensures the RF model to generalize well, and to be less likely to overfit [<xref ref-type="bibr" rid="ref029">29</xref>].</p>
+<p>In contrast to the other approaches, the RF model is not predicting days (CPH) or counting actions to disengagement (NB). Here, based on past behaviour, we use the RF algorithm as a classifier (engaged/disengaged) <italic>at the moment</italic>. That means, we obtain as outcome a probability value ranging between 0 and 1. With that in hand, we define a cutoff threshold to determine if the user is engaged or disengaged. For our dataset, the cutoff threshold is chosen as equal to 0.42 as it maximizes the F1 score [<xref ref-type="bibr" rid="ref021">21</xref>].</p>
+<p>Interestingly, the RF classification has a predictive component. This is because the RF model simulates <inline-formula><mml:math id="math016">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="normal">UE</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">R</mml:mi>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula>. As shown in Section <xref rid="x1-4000-2.2">2.2</xref>, this metric is defined as the difference in days between an action now and in the next 9 days. Due to that, we assume that our results are “valid” not only <italic>at the moment</italic> but within the recency threshold as well. Note that this links the validity of the RF model to the recency threshold. This further motivates the choice of a short recency time, just enough to allow the app developer to send re-engagement notifications and monitor their effectiveness.</p>
+<p>To build this random forest model, we use 1000 non-stratified trees with replacement (to decrease variance without increasing bias). The number of variables randomly sampled as candidates at each split equal to 10. We use a 10-fold cross validation with 5 repeats to augment model accuracy without increasing bias. The cross validation involves splitting our dataset into 10 subsets. Each subset is then put apart and the model is trained on the leftover subsets. The overall accuracy of our model is then determined after averaging the results obtained with the 5 individual repeats.</p>
+</sec>
+<sec id="x1-10000-3.5">
+<label>3.5.</label>
+<title>The XGBoost model</title>
+<p>The last approach used to predict UE takes advantage of boosted-trees algorithms. XGBoost is a very popular and scalable end-to-end tree-boosting system [<xref ref-type="bibr" rid="ref013">13</xref>] currently applied to several different fields of knowledge, such as Physics, stock market prediction, biology and language networks, among others [<xref ref-type="bibr" rid="ref012">12</xref>,<xref ref-type="bibr" rid="ref014">14</xref>,<xref ref-type="bibr" rid="ref018">18</xref>,<xref ref-type="bibr" rid="ref046">46</xref>]. In a nutshell, this classifier constructs trees to make the predictions, but unlike RF, where every tree provides a definite answer and the final result is obtained by a voting process (i.e., bagging), every tree in XGBoost contains a continuous score, which are combined to provide an answer (i.e., boosting). Despite differences with the RF algorithm, the implementation and the use of XGBoost, however, is done very similarly. We utilize the same features to train the model and the output is also a probability percentage indicating whether the user is disengaged <italic>at the moment</italic>. We use a small learning rate equal to 0.001 to ensure convergence and error minimization. The maximum depth of each tree is capped at 15 and the maximum number of trees is fixed at 1000 (similar to RF).</p>
+</sec>
+</sec>
+<sec id="x1-11000-4">
+<label>4.</label>
+<title>Evaluation of predicting User Engagement of mobile apps</title>
+<p>In this section we report on the empirical evaluation of the proposed modeling framework <italic>in the context of a waste recycling mobile app</italic>. Specifically, we aim at answering the following research questions:</p>
+<list list-type="bullet">
+<list-item>
+<p><inline-formula><mml:math id="math017">
+<mml:msub>
+<mml:mrow>
+<mml:mtext>RQ</mml:mtext>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>1</mml:mn>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula> – To what extent using a clustering algorithm impacts the accuracy of UE prediction?</p>
+</list-item>
+<list-item>
+<p><inline-formula><mml:math id="math018">
+<mml:msub>
+<mml:mrow>
+<mml:mtext>RQ</mml:mtext>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>2</mml:mn>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula> – Which types of numerical models provide the most accurate UE prediction?</p>
+<list>
+<list-item>
+<label>∗</label>
+<p><inline-formula><mml:math id="math019">
+<mml:msub>
+<mml:mrow>
+<mml:mtext>RQ</mml:mtext>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>2.1</mml:mn>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula> – What is the prediction accuracy of the Cox proportional hazards model?</p>
+</list-item>
+<list-item>
+<label>∗</label>
+<p><inline-formula><mml:math id="math020">
+<mml:msub>
+<mml:mrow>
+<mml:mtext>RQ</mml:mtext>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>2.2</mml:mn>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula> – What is the prediction accuracy of the negative binomial model?</p>
+</list-item>
+<list-item>
+<label>∗</label>
+<p><inline-formula><mml:math id="math021">
+<mml:msub>
+<mml:mrow>
+<mml:mtext>RQ</mml:mtext>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>2.3</mml:mn>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula> – What is the prediction accuracy of the random forest model?</p>
+</list-item>
+<list-item>
+<label>∗</label>
+<p><inline-formula><mml:math id="math022">
+<mml:msub>
+<mml:mrow>
+<mml:mtext>RQ</mml:mtext>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>2.4</mml:mn>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula> – What is the prediction accuracy of the XGBoost model?</p>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>We begin by showing the performance of our AHC algorithm followed by the predictions of UE for our other numerical models. We highlight that a direct comparison between numerical models is not always possible due to their different natures – classification and regression. Thus, we aim to characterize and evaluate them mostly individually. When possible, we try to place our results in a broader perspective. To keep to the brief character of this manuscript we summarize our model results in terms of ROC curves [<xref ref-type="bibr" rid="ref020">20</xref>]. These are plots that illustrate the performance of a binary classifier, outlining their overall performance. The true positives are defined as the engaged users who were correctly classified as engaged by our model. False negatives represent the engaged users incorrectly classified as disengaged. The area under the ROC curve (AUC) represents the model accuracy, where unity means a perfect model and 0.5 indicates a random result. We use the ROC curve as our performance indicator – similarly to [<xref ref-type="bibr" rid="ref034">34</xref>] – because it evaluates the performance of the models across all possible thresholds. In addition, AUC delivers a result comparable across all our model approaches and is threshold independent. This is important in our case since the impact of a false positive vs false negative is comparable.</p>
+<sec id="x1-12000-4.1">
+<label>4.1.</label>
+<title>Impact of the clustering model (<inline-formula><mml:math id="math023">
+<mml:msub>
+<mml:mrow>
+<mml:mtext>RQ</mml:mtext>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>1</mml:mn>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula>)</title>
+<p>Implementing the weight-optimized Gower’s metric – as described by [<xref ref-type="bibr" rid="ref047">47</xref>] – augments the CPCC by around 15% (from 0.84 to 0.97) if compared with the case where all weights are set to unity. We calculate the Pearson-<italic>γ</italic> correlation for our dataset to further investigate the benefits of our optimized clustering methodology. The results are shown in Fig. <xref rid="x1-12001-3">3</xref>.</p>
+<fig id="x1-12001-3">
+<label>Fig. 3.</label>
+<caption>
+<p>Pearson-<italic>γ</italic> correlation for the AHC – optimized (blue) and standard (red) – against the number of clusters.</p>
+</caption>
+<graphic xlink:href="ds-3-ds190027-g003.jpg"/>
+</fig>
+<p>Implementing the optimized weights for Gower’s metric increases the Pearson-<italic>γ</italic> correlation by around 11%. That, together with the 15% improvement in the CPCC, indicates that our methodology to optimize weight works significantly better than the standard procedure. We note a slight decrease in the Pearson-<italic>γ</italic> correlation for the AHC optimized results at 4 clusters followed by a sharp decrease at 13 clusters. From the 13 clusters with a high Pearson-<italic>γ</italic> correlation, 4 main clusters contain around 98% of the total amount of unique users. Nevertheless, we include all 13 clusters in our analysis to ensure that these outliers do not influence these main 4 clusters.</p>
+</sec>
+<sec id="x1-13000-4.2">
+<label>4.2.</label>
+<title>Prediction accuracy of the Cox proportional hazards model (<inline-formula><mml:math id="math024">
+<mml:msub>
+<mml:mrow>
+<mml:mtext>RQ</mml:mtext>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>2.1</mml:mn>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula>)</title>
+<p>In Fig. <xref rid="x1-13001-4">4</xref> we show our results for the CPH model. We do so, by means of a ROC plot for four different time spans within the testing set.</p>
+<fig id="x1-13001-4">
+<label>Fig. 4.</label>
+<caption>
+<p>ROC curves for the CPH model based on the testing set. TP and FP indicate true positive and false positive, respectively. The legend indicates the different time spans.</p>
+</caption>
+<graphic xlink:href="ds-3-ds190027-g004.jpg"/>
+</fig>
+<p>We observe in Fig. <xref rid="x1-13001-4">4</xref> the predictions for increasing time spans. As expected, the ROC curves approach the diagonal line (random prediction) as we move forward in time. Note that these predictions are based on the testing set, and not yet on the validation sets. That is because, at this stage, we are interested in the generalization capabilities of this model. We explain: these ROC curves are derived from the survival chance as a function of time. This means 100% survival chance for day 0, decaying eventually to 0% as time progresses (Kaplan–Meier curve). Based on the these probabilities, the ROC curves are generated within the testing set as an universal discrete prediction for the CPH model from 9 to 39 days. We see that both short- and long term predictions are accurate. The AUC ranges from 0.8 to 0.91 for 39 and 9 days, respectively.</p>
+</sec>
+<sec id="x1-14000-4.3">
+<label>4.3.</label>
+<title>Prediction accuracy of the negative binomial model (<inline-formula><mml:math id="math025">
+<mml:msub>
+<mml:mrow>
+<mml:mtext>RQ</mml:mtext>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>2.2</mml:mn>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula>)</title>
+<p>Figure <xref rid="x1-14001-5">5</xref> presents the ROC curves for the NB model. Contrarily to the CPH model, the NB model predicts actions until disengagement. That means it would be fairly impossible to create a binary classifier able to estimate the exact number of actions before disengagement. Instead, we use 5 counts per 14 days as a threshold to determine if a user is engaged or not. In this case, a user is considered engaged if exceeding the threshold. Nevertheless, we note that the outcome is inferior compared to the results obtained by the CPH model. Due to the unexpected results for the testing set, we also analyze the performance of the NB model for the validation sets. The results, shown in Fig. <xref rid="x1-14001-5">5</xref>, remain reasonably similar to the ones obtained for the testing set. The AUC is fairly constant and equal to 0.67 for all the sets.</p>
+<fig id="x1-14001-5">
+<label>Fig. 5.</label>
+<caption>
+<p>ROC curves for the NB model. The legend indicates the datasets. The timespan is fixed to 14 days.</p>
+</caption>
+<graphic xlink:href="ds-3-ds190027-g005.jpg"/>
+</fig>
+<p>Figure <xref rid="x1-14002-6">6</xref> presents the number of events observed and predicted by the model to further understand the performance of the NB model.</p>
+<fig id="x1-14002-6">
+<label>Fig. 6.</label>
+<caption>
+<p>Comparison between the number of events predicted (black) and observed (red) for the different sets, as indicated in the headers. The time span is fixed to 14 days.</p>
+</caption>
+<graphic xlink:href="ds-3-ds190027-g006.jpg"/>
+</fig>
+<p>Besides the fact that some of the predictions coincide with the observations, a very significant part of the observed values is crudely underestimated by the model. That means the model is able to reasonably predict the so-called “true positive” values but fails to predict the “true negative” ones. These results suggest that this model is, to a certain extend, accurately predicting the right counts to disengagement, albeit with many inaccurate predictions included as well.</p>
+</sec>
+<sec id="x1-15000-4.4">
+<label>4.4.</label>
+<title>Prediction accuracy of the random forest model (<inline-formula><mml:math id="math026">
+<mml:msub>
+<mml:mrow>
+<mml:mtext>RQ</mml:mtext>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>2.3</mml:mn>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula>)</title>
+<p>In Fig. <xref rid="x1-15001-7">7</xref>, we visualize the ROC curves for the RF model applied to the different sets. We find that the AUC ranges from 0.93 to 0.83 for the <italic>testing</italic> and <italic>validation 3</italic> sets, respectively. The high AUC values mean that the RF model is generic enough to classify our user as engaged or disengaged for all our dataset.</p>
+<fig id="x1-15001-7">
+<label>Fig. 7.</label>
+<caption>
+<p>ROC curves for the RF model. The test set curve is shown in red, followed by the validation 1, 2, and 3 sets in green, blue, and cyan, respectively.</p>
+</caption>
+<graphic xlink:href="ds-3-ds190027-g007.jpg"/>
+</fig>
+<p>To further understand which processes/features determine the behaviour of this model, in Table <xref rid="x1-15002-1">1</xref> we show the mean decrease in accuracy (MDA) for some of the predictors. The MDA is calculated by permuting the values of each predictor and then measuring by how much the predictive accuracy decreases.</p>
+<table-wrap id="x1-15002-1">
+<label>Table 1</label>
+<caption>
+<p>Selection of predictors and their respective mean decrease in accuracy (MDA)</p>
+</caption>
+<table frame="hsides" rules="groups">
+<thead>
+<tr>
+<td valign="top" align="left">Predictor</td>
+<td valign="top" align="center">MDA (%)</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top" align="left">Groups</td>
+<td valign="top" align="center">36.5</td>
+</tr>
+<tr>
+<td valign="top" align="left">Number of actions</td>
+<td valign="top" align="center">35.5</td>
+</tr>
+<tr>
+<td valign="top" align="left">Longitude</td>
+<td valign="top" align="center">34.0</td>
+</tr>
+<tr>
+<td valign="top" align="left">Weekday</td>
+<td valign="top" align="center">33.5</td>
+</tr>
+<tr>
+<td valign="top" align="left">Latitude</td>
+<td valign="top" align="center">27.0</td>
+</tr>
+<tr>
+<td valign="top" align="left">Observation time</td>
+<td valign="top" align="center">21.0</td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+<p>In our case, removing <italic>groups</italic>, <italic>number of actions</italic>, <italic>longitude</italic>, or <italic>weekday</italic>, from the predictors list would decrease the accuracy of this model by over 30%. We point out to the reader that the MDA is computed after the RF is trained. Therefore, training the model without these predictors will not drop the performance by the amounts shown in Table <xref rid="x1-15002-1">1</xref>. Instead, the new model may find new correlated features unknown to the current model. We also notice in Table <xref rid="x1-15002-1">1</xref> the importance of adequately clustering users since <italic>groups</italic>, calculated with the optimized AHC algorithm, is responsible for the highest MDA value.</p>
+</sec>
+<sec id="x1-16000-4.5">
+<label>4.5.</label>
+<title>Prediction accuracy of the XGBoost model (<inline-formula><mml:math id="math027">
+<mml:msub>
+<mml:mrow>
+<mml:mtext>RQ</mml:mtext>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>2.4</mml:mn>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula>)</title>
+<p>Figure <xref rid="x1-16001-8">8</xref> presents the XGBoost curves for the different sets. The AUC range is virtually the same as the one for the RF, with the values from 0.93 to 0.82 for the <italic>testing</italic> and <italic>validation 3</italic> sets, respectively.</p>
+<fig id="x1-16001-8">
+<label>Fig. 8.</label>
+<caption>
+<p>ROC curves for the XGBoost model. The test set curve is shown in red, followed by the validation 1, 2, and 3 sets in green, blue, and cyan, respectively.</p>
+</caption>
+<graphic xlink:href="ds-3-ds190027-g008.jpg"/>
+</fig>
+<p>To keep our comparison similar to that of the RF we have selected the same predictors and seen if there was any difference in their relative importance distribution. To calculate their importance we examined the “Gain” value. Interestingly, we see that the order of the importance remains the same as per the RF with “groups” being the predictor with the highest Gain value (0.06) and “obs time” with the lowest (0.0001). That reinforces the importance of having well-defined and accurate groups as output from the clustering algorithm.</p>
+</sec>
+</sec>
+<sec id="x1-17000-5">
+<label>5.</label>
+<title>Discussion</title>
+<p>Concerning <inline-formula><mml:math id="math028">
+<mml:msub>
+<mml:mrow>
+<mml:mtext>RQ</mml:mtext>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>1</mml:mn>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula>, the modified clustering algorithm containing optimized weights for Gower’s metric performed adequately. The results showed an improvement of ≈11% on the Pearson-<italic>γ</italic> correlation, and ≈15% on the cophenetic correlation, if compared to a standard clustering methodology. The clustering outcome proved to be the most important predictor for both RF and XGBoost algorithms. That provides further motivation to optimize the clustering process aiming at sharpening the groups definition and as a consequence improve the machine learning results.</p>
+<p>Concerning <inline-formula><mml:math id="math029">
+<mml:msub>
+<mml:mrow>
+<mml:mtext>RQ</mml:mtext>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>2</mml:mn>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula>, we applied the four models on the dataset and analysed the results obtained, mainly via the use of ROC curves. All models performed well, in their own right, with Cox proportional hazards, random forest and the boosted-tree models resulting in similar performance when predicting UE. The performance of the negative binomial model was not comparable to the other three algorithms. Most importantly, we concluded that under this framework we were able to better understand our observations.</p>
+<p>As shown in Section <xref rid="x1-11000-4">4</xref>, CPH, RF and XGBoost models result in similar values of accuracy. Their AUC values are similar, ranging roughly from 0.8 to 0.9. Our fourth model, the NB model, resulted in an AUC of 0.67. It is important to re-iterate that this AUC values should be taken as individual measures of performance and not used to compare models, as the manner of predicting and even the element of prediction is different according to the algorithm used.</p>
+<p>Even with a high AUC score, there are still, however, a number of caveats concerning the generalization of the CPH model. More specifically, the results obtained with this model vary significantly for different sets of predictors. Interestingly, the good results found by the RF and XGBoost models can be partially explained by their generality. We will take advantage of this feature and use these models to “classify” UE in the future as well.</p>
+<p>We are also interested to model re-engagement. Given the fact that the CPH model is unable to do so (since it predicts survival times), a Markov-like stochastic model becomes then a plausible replacement. The reason is that these models are able to provide the transition paths between engaged-disengaged and to obtain the rate parameter of these transitions. We emphasize that the RF and XGBoost models are also able to model re-engagement. In the near future, we aim to compare in detail the results obtained by the RF and XGBoost, with the transition model.</p>
+<p>Finally, it is important to note that the accuracy we obtained in our evaluation is specific to the dataset related to the waste recycling app and cannot be directly transferred to other mobile apps or application domains. Indeed, the aim of this study is not to provide a general solution for all mobile apps in all domains, but rather, we focus on (i) providing evidence that it is possible to predict when app users are getting disengaged with good levels of accuracy and (ii) providing a reusable modeling framework for UE in mobile apps. Researchers and practitioners in application domains other than waste recycling can re-use our proposed framework and its underlying techniques, provided that they will be customized according to (i) the characteristics of their specific app domain (e.g., a user of a social media app may be considered as disengaged after 1 day of inactivity, instead of 9 days) and (ii) the performance of the trained models (e.g., in a different domain the negative binomial model may perform better than RF or XGBoost).</p>
+</sec>
+<sec id="x1-18000-6">
+<label>6.</label>
+<title>Summary and future work</title>
+<p>In this study, we provided evidence that predicting when users of mobile apps get disengaged is possible with a good level of accuracy. We achieve this result by proposing and evaluating a framework to model and predict user engagement in mobile applications. The framework consists of a modified clustering model that serves as baseline for other four numerical models: (i) a Cox proportional hazards, (ii) a negative binomial, (iii) a random forest, and (iv) a boosted-tree algorithm. These models were trained and validated against an observational dataset obtained from a real waste recycling mobile application. Our results show that <italic>in our case</italic> both machine learning approaches (RF and XGBoost) are adequate to model user engagement for the considered app. In this study, we tested our framework on data obtained from a waste recycling app. Hence, our findings would likely remain valid only for applications with usage dynamics and features similar to those within the waste recycling domain. Specifically, geographical information plays a crucial role to determine different user behaviours (as seen in our study) and hence a successful application of this methodology to a different domain would most likely be dependent of a strong tie to location. As an example, domains such as fitness or language learning [<xref ref-type="bibr" rid="ref003">3</xref>,<xref ref-type="bibr" rid="ref041">41</xref>], tend to have daily activities presented to the user in a game-like manner and have a strong tie to the user’s location. Given these were key features used to train our models, it is plausible that this framework could be applied to these and other similar domains.</p>
+<p>Analyzing user behaviour to predict and prevent disengagement certainly poses a significant challenge, both from the methodological and analytical points of view. Due to the complexity of this task, we limited this study to characterizing and evaluating our methodology to <italic>predict</italic> UE. In a follow-up study, we will investigate how to ultimately influence user behaviour by increasing re-engagement rates and decreasing disengagement. Moreover, further research will touch upon studying the re-engagement <italic>process</italic>. We then intend to use push notification information – extending on the work of [<xref ref-type="bibr" rid="ref042">42</xref>] – to ultimately determine the most appropriate interaction for each user at any given time, aiming to augment usage (maintain engagement) and prevent disengagement. Understanding the role gamification plays in mobile apps is also crucial. It can be done by further investigating how people redeem their points earned (e.g. immediately after achieving a minimum threshold or after some accumulation). That information helps in determining the type of notification that can be sent to each user.</p>
+</sec>
+</body>
+<back>
+<ack>
+<title>Acknowledgements</title>
+<p>All the authors thank the Amsterdam Network Institute for partially funding this research and Coen Jonker for his remarks on the initial version of the manuscript. Eduardo Barbaro thanks Mobiquity Inc. for the support and the hours available throughout the research.</p></ack>
+<ref-list>
+<title>References</title>
+<ref id="ref001">
+<label>[1]</label><mixed-citation publication-type="other"><string-name><given-names>L.</given-names> <surname>Anderlucci</surname></string-name>, Comparing different approaches for clustering categorical data, PhD thesis, University of Bologna, 2012. <uri>http://amsdottorato.unibo.it/id/eprint/4302</uri>.</mixed-citation>
+</ref>
+<ref id="ref002">
+<label>[2]</label><mixed-citation publication-type="other">Android, Android developer portal, 2017. <uri>http://developer.android.com/about/index.html</uri>.</mixed-citation>
+</ref>
+<ref id="ref003">
+<label>[3]</label><mixed-citation publication-type="other"><string-name><given-names>S.</given-names> <surname>Asimakopoulos</surname></string-name>, <string-name><given-names>G.</given-names> <surname>Asimakopoulos</surname></string-name> and <string-name><given-names>F.</given-names> <surname>Spillers</surname></string-name>, <article-title>Motivation and user engagement in fitness tracking: Heuristics for mobile healthcare wearables</article-title>, <source>Informatics</source>, <volume>4</volume>(<issue>1</issue>) (<year>2017</year>), <elocation-id>5</elocation-id>. doi:<pub-id pub-id-type="doi">10.3390/informatics4010005</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref004">
+<label>[4]</label><mixed-citation publication-type="other"><string-name><given-names>S.</given-names> <surname>Attfield</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Lalmas</surname></string-name> and <string-name><given-names>B.</given-names> <surname>Piwowarski</surname></string-name>, <chapter-title>Towards a science of user engagement (Position Paper)</chapter-title>, in: <source>WSDM Workshop on User Modelling for Web Applications</source>, <year>2011</year>. <uri>https://eprints.mdx.ac.uk/id/eprint/8642</uri>.</mixed-citation>
+</ref>
+<ref id="ref005">
+<label>[5]</label><mixed-citation publication-type="other"><string-name><given-names>C.A.</given-names> <surname>Bellera</surname></string-name>, <string-name><given-names>G.</given-names> <surname>MacGrogan</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Debled</surname></string-name>, <string-name><given-names>C.T.</given-names> <surname>de Lara</surname></string-name>, <string-name><given-names>V.</given-names> <surname>Brouste</surname></string-name> and <string-name><given-names>S.</given-names> <surname>Mathoulin-Pélissier</surname></string-name>, <article-title>Variables with time-varying effects and the Cox model: Some statistical concepts illustrated with a prognostic factor study in breast cancer</article-title>, <source>BMC Medical Research Methodology</source> <volume>10</volume>(<issue>1</issue>) (<year>2010</year>), <elocation-id>20</elocation-id>. doi:<pub-id pub-id-type="doi">10.1186/1471-2288-10-20</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref006">
+<label>[6]</label><mixed-citation publication-type="chapter"><string-name><given-names>D.</given-names> <surname>Bonino</surname></string-name>, <string-name><given-names>M.T.D.</given-names> <surname>Alizo</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Pastrone</surname></string-name> and <string-name><given-names>M.</given-names> <surname>Spirito</surname></string-name>, <chapter-title>WasteApp: Smarter waste recycling for smart citizens</chapter-title>, in: <source>2016 International Multidisciplinary Conference on Computer and Energy Science (SpliTech)</source>, <publisher-name>IEEE</publisher-name>, <year>2016</year>, pp. <fpage>1</fpage>–<lpage>6</lpage>. doi:<pub-id pub-id-type="doi">10.1109/SpliTech.2016.7555951</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref007">
+<label>[7]</label><mixed-citation publication-type="journal"><string-name><given-names>L.</given-names> <surname>Breiman</surname></string-name>, <article-title>Random forests</article-title>, <source>Machine Learning</source> <volume>45</volume>(<issue>1</issue>) (<year>2001</year>), <fpage>5</fpage>–<lpage>32</lpage>. doi:<pub-id pub-id-type="doi">10.1023/A:1010933404324</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref008">
+<label>[8]</label><mixed-citation publication-type="journal"><string-name><given-names>P.</given-names> <surname>Buehlmann</surname></string-name>, <article-title>Boosting for high-dimensional linear models</article-title>, <source>The Annals of Statistics</source> <volume>2</volume>(<issue>34</issue>) (<year>2006</year>), <fpage>559</fpage>–<lpage>583</lpage>. doi:<pub-id pub-id-type="doi">10.1214/009053606000000092</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref009">
+<label>[9]</label><mixed-citation publication-type="journal"><string-name><given-names>P.</given-names> <surname>Buehlmann</surname></string-name> and <string-name><given-names>T.</given-names> <surname>Hothorn</surname></string-name>, <article-title>Boosting algorithms: Regularization, prediction and model fitting</article-title>, <source>Statistical Science</source> <volume>4</volume>(<issue>22</issue>) (<year>2007</year>), <fpage>477</fpage>–<lpage>505</lpage>. doi:<pub-id pub-id-type="doi">10.1214/07-STS242</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref010">
+<label>[10]</label><mixed-citation publication-type="journal"><string-name><given-names>P.</given-names> <surname>Buehlmann</surname></string-name> and <string-name><given-names>B.</given-names> <surname>Yu</surname></string-name>, <article-title>Boosting with the L2 loss: Regression and classification</article-title>, <source>Journal of the American Statistical Association</source> <volume>1</volume>(<issue>98</issue>) (<year>2003</year>), <fpage>324</fpage>–<lpage>339</lpage>. doi:<pub-id pub-id-type="doi">10.1198/016214503000125</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref011">
+<label>[11]</label><mixed-citation publication-type="other"><string-name><given-names>J.A.</given-names> <surname>Cafazzo</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Casselman</surname></string-name>, <string-name><given-names>N.</given-names> <surname>Hamming</surname></string-name>, <string-name><given-names>D.K.</given-names> <surname>Katzman</surname></string-name> and <string-name><given-names>M.R.</given-names> <surname>Palmert</surname></string-name>, <article-title>Design of an mHealth app for the self-management of adolescent type 1 diabetes: A pilot study</article-title>, <source>J. Med. Internet. Res.</source> <volume>14</volume>(<issue>3</issue>) (<year>2012</year>), <elocation-id>e70</elocation-id>. doi:<pub-id pub-id-type="doi">10.2196/jmir.2058</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref012">
+<label>[12]</label><mixed-citation publication-type="journal"><string-name><given-names>S.P.</given-names> <surname>Chatzis</surname></string-name>, <string-name><given-names>V.</given-names> <surname>Siakoulis</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Petropoulos</surname></string-name>, <string-name><given-names>E.</given-names> <surname>Stavroulakis</surname></string-name> and <string-name><given-names>N.</given-names> <surname>Vlachogiannakis</surname></string-name>, <article-title>Forecasting stock market crisis events using deep and statistical machine learning techniques</article-title>, <source>Expert Systems with Applications</source> <volume>112</volume> (<year>2018</year>), <fpage>353</fpage>–<lpage>371</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.eswa.2018.06.032</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref013">
+<label>[13]</label><mixed-citation publication-type="chapter"><string-name><given-names>T.</given-names> <surname>Chen</surname></string-name> and <string-name><given-names>C.</given-names> <surname>Guestrin</surname></string-name>, <chapter-title>Xgboost: A scalable tree boosting system</chapter-title>, in: <source>Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining</source>, <publisher-name>ACM</publisher-name>, <year>2016</year>, pp. <fpage>785</fpage>–<lpage>794</lpage>. doi:<pub-id pub-id-type="doi">10.1145/2939672.2939785</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref014">
+<label>[14]</label><mixed-citation publication-type="chapter"><string-name><given-names>T.</given-names> <surname>Chen</surname></string-name> and <string-name><given-names>T.</given-names> <surname>He</surname></string-name>, <chapter-title>Higgs boson discovery with boosted trees</chapter-title>, in: <source>NIPS 2014 Workshop on High-Energy Physics and Machine Learning</source>, <year>2015</year>, pp. <fpage>69</fpage>–<lpage>80</lpage>. <uri>http://proceedings.mlr.press/v42/chen14.html</uri>.</mixed-citation>
+</ref>
+<ref id="ref015">
+<label>[15]</label><mixed-citation publication-type="journal"><string-name><given-names>D.R.</given-names> <surname>Cox</surname></string-name>, <article-title>Regression models and life-tables</article-title>, <source>Journal of the Royal Statistical Society. Series B (Methodological)</source> <volume>34</volume>(<issue>2</issue>) (<year>1972</year>), <fpage>187</fpage>–<lpage>220</lpage>. doi:<pub-id pub-id-type="doi">10.1111/j.2517-6161.1972.tb00899.x</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref016">
+<label>[16]</label><mixed-citation publication-type="other"><string-name><given-names>D.R.</given-names> <surname>Cox</surname></string-name> and <string-name><given-names>D.</given-names> <surname>Oakes</surname></string-name>, <source>Analysis of Survival Data</source>, <edition>1</edition>st edn, <publisher-name>Chapman &amp; Hall</publisher-name>, <year>1984</year>. doi:<pub-id pub-id-type="doi">10.1201/9781315137438</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref017">
+<label>[17]</label><mixed-citation publication-type="journal"><string-name><given-names>W.H.E.</given-names> <surname>Day</surname></string-name> and <string-name><given-names>H.</given-names> <surname>Edelsbrunner</surname></string-name>, <article-title>Efficient algorithms for agglomerative hierarchical clustering methods</article-title>, <source>Journal of Classification</source> <volume>1</volume>(<issue>1</issue>) (<year>1984</year>), <fpage>7</fpage>–<lpage>24</lpage>. doi:<pub-id pub-id-type="doi">10.1007/BF01890115</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref018">
+<label>[18]</label><mixed-citation publication-type="other"><string-name><given-names>S.</given-names> <surname>Dey</surname></string-name>, <string-name><given-names>Y.</given-names> <surname>Kumar</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Saha</surname></string-name> and <string-name><given-names>S.</given-names> <surname>Basak</surname></string-name>, Forecasting to classification: Predicting the direction of stock market price using Xtreme Gradient Boosting, 2016. doi:<pub-id pub-id-type="doi">10.13140/RG.2.2.15294.48968</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref019">
+<label>[19]</label><mixed-citation publication-type="journal"><string-name><given-names>P.</given-names> <surname>Domingos</surname></string-name>, <article-title>A few useful things to know about machine learning</article-title>, <source>Communications of the ACM</source> <volume>55</volume>(<issue>10</issue>) (<year>2012</year>), <fpage>78</fpage>–<lpage>87</lpage>. doi:<pub-id pub-id-type="doi">10.1145/2347736.2347755</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref020">
+<label>[20]</label><mixed-citation publication-type="journal"><string-name><given-names>T.</given-names> <surname>Fawcett</surname></string-name>, <article-title>An introduction to ROC analysis</article-title>, <source>Pattern Recognition Letters</source> <volume>27</volume>(<issue>8</issue>) (<year>2006</year>), <fpage>861</fpage>–<lpage>874</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.patrec.2005.10.010</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref021">
+<label>[21]</label><mixed-citation publication-type="chapter"><string-name><given-names>C.</given-names> <surname>Goutte</surname></string-name> and <string-name><given-names>E.</given-names> <surname>Gaussier</surname></string-name>, <chapter-title>A probabilistic interpretation of precision, recall and F-score, with implication for evaluation</chapter-title>, in: <source>Advances in Information Retrieval</source>, <string-name><given-names>D.E.</given-names> <surname>Losada</surname></string-name> and <string-name><given-names>J.M.</given-names> <surname>Fernández-Luna</surname></string-name>, eds, <publisher-name>Springer</publisher-name>, <publisher-loc>Berlin</publisher-loc>, <year>2005</year>, pp. <fpage>345</fpage>–<lpage>359</lpage>. doi:<pub-id pub-id-type="doi">10.1007/978-3-540-31865-1_25</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref022">
+<label>[22]</label><mixed-citation publication-type="journal"><string-name><given-names>J.C.</given-names> <surname>Gower</surname></string-name>, <article-title>A general coefficient of similarity and some of its properties</article-title>, <source>Biometrics</source> <volume>27</volume>(<issue>4</issue>) (<year>1971</year>), <fpage>857</fpage>–<lpage>871</lpage>. doi:<pub-id pub-id-type="doi">10.2307/2528823</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref023">
+<label>[23]</label><mixed-citation publication-type="journal"><string-name><given-names>P.J.</given-names> <surname>Heagerty</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Lumley</surname></string-name> and <string-name><given-names>M.S.</given-names> <surname>Pepe</surname></string-name>, <article-title>Time-dependent ROC curves for censored survival data and a diagnostic marker</article-title>, <source>Biometrics</source> <volume>56</volume>(<issue>2</issue>) (<year>2000</year>), <fpage>337</fpage>–<lpage>344</lpage>. doi:<pub-id pub-id-type="doi">10.1111/j.0006-341X.2000.00337.x</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref024">
+<label>[24]</label><mixed-citation publication-type="journal"><string-name><given-names>C.</given-names> <surname>Henning</surname></string-name> and <string-name><given-names>T.F.</given-names> <surname>Liao</surname></string-name>, <article-title>How to find an appropriate clustering for mixed-type variables with application to socio-economic stratification</article-title>, <source>Journal of the Royal Statistical Society</source> <volume>62</volume>(<issue>3</issue>) (<year>2013</year>), <fpage>309</fpage>–<lpage>369</lpage>. doi:<pub-id pub-id-type="doi">10.1111/j.1467-9876.2012.01066.x</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref025">
+<label>[25]</label><mixed-citation publication-type="journal"><string-name><given-names>Y.H.</given-names> <surname>Kim</surname></string-name>, <string-name><given-names>D.J.</given-names> <surname>Kim</surname></string-name> and <string-name><given-names>K.</given-names> <surname>Wachter</surname></string-name>, <article-title>A study of mobile user engagement (MoEN): Engagement motivations, perceived value, satisfaction, and continued engagement intention</article-title>, <source>Decision Support Systems</source> <volume>56</volume> (<year>2013</year>), <fpage>361</fpage>–<lpage>370</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.dss.2013.07.002</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref026">
+<label>[26]</label><mixed-citation publication-type="journal"><string-name><given-names>T.</given-names> <surname>Kuhn</surname></string-name>, <string-name><given-names>K.</given-names> <surname>Pittel</surname></string-name> and <string-name><given-names>T.</given-names> <surname>Schulz</surname></string-name>, <article-title>Recycling for sustainability – A long run perspective?</article-title>, <source>International Journal of Global Environmental Issues</source> <volume>3</volume>(<issue>3</issue>) (<year>2003</year>), <fpage>339</fpage>–<lpage>355</lpage>. doi:<pub-id pub-id-type="doi">10.1504/IJGENVI.2003.003935</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref027">
+<label>[27]</label><mixed-citation publication-type="chapter"><string-name><given-names>J.</given-names> <surname>Lehmann</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Lalmas</surname></string-name>, <string-name><given-names>E.</given-names> <surname>Yom-Tov</surname></string-name> and <string-name><given-names>G.</given-names> <surname>Dupret</surname></string-name>, <chapter-title>Models of user engagement</chapter-title>, in: <source>Proceedings of the Conference on User Modeling, Adaptation, and Personalization, UMAP</source>, <publisher-name>Springer</publisher-name>, <year>2012</year>, pp. <fpage>164</fpage>–<lpage>175</lpage>. doi:<pub-id pub-id-type="doi">10.1007/978-3-642-31454-4_14</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref028">
+<label>[28]</label><mixed-citation publication-type="other"><string-name><given-names>A.</given-names> <surname>Lella</surname></string-name> and <string-name><given-names>A.</given-names> <surname>Lipsman</surname></string-name>, The 2016 U.S. mobile app report, comsCore white paper, 2016. <uri>https://www.comscore.com/Insights/Presentations-and-Whitepapers/2016/The-2016-US-Mobile-App-Report</uri>.</mixed-citation>
+</ref>
+<ref id="ref029">
+<label>[29]</label><mixed-citation publication-type="journal"><string-name><given-names>A.</given-names> <surname>Liaw</surname></string-name> and <string-name><given-names>M.</given-names> <surname>Wiener</surname></string-name>, <article-title>Classification and regression by randomForest</article-title>, <source>R News</source> <volume>2</volume>(<issue>3</issue>) (<year>2002</year>), <fpage>18</fpage>–<lpage>22</lpage>. <comment><uri>http://CRAN.R-project.org/doc/Rnews/</uri></comment>.</mixed-citation>
+</ref>
+<ref id="ref030">
+<label>[30]</label><mixed-citation publication-type="journal"><string-name><given-names>A.</given-names> <surname>Linden</surname></string-name> and <string-name><given-names>S.</given-names> <surname>Mantyniemi</surname></string-name>, <article-title>Using the negative binomial distribution to model overdispersion in ecological count data</article-title>, <source>Ecology</source> <volume>92</volume>(<issue>7</issue>) (<year>2011</year>), <fpage>1414</fpage>–<lpage>1421</lpage>. doi:<pub-id pub-id-type="doi">10.1890/10-1831.1</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref031">
+<label>[31]</label><mixed-citation publication-type="journal"><string-name><given-names>Y.</given-names> <surname>Liu</surname></string-name> and <string-name><given-names>Y.</given-names> <surname>Zhuang</surname></string-name>, <article-title>Research model of churn prediction based on customer segmentation and misclassification cost in the context of big data</article-title>, <source>JCC</source> <volume>3</volume>(<issue>6</issue>) (<year>2015</year>), <fpage>87</fpage>–<lpage>93</lpage>. doi:<pub-id pub-id-type="doi">10.4236/jcc.2015.36009</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref032">
+<label>[32]</label><mixed-citation publication-type="journal"><string-name><given-names>S.N.M.</given-names> <surname>Menikpura</surname></string-name>, <string-name><given-names>S.H.</given-names> <surname>Gheewala</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Bonnet</surname></string-name> and <string-name><given-names>C.</given-names> <surname>Chiemchaisri</surname></string-name>, <article-title>Evaluation of the effect of recycling on sustainability of municipal solid waste management in Thailand</article-title>, <source>Waste and Biomass Valorization</source> <volume>4</volume>(<issue>2</issue>) (<year>2013</year>), <fpage>237</fpage>–<lpage>257</lpage>. doi:<pub-id pub-id-type="doi">10.1007/s12649-012-9119-5</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref033">
+<label>[33]</label><mixed-citation publication-type="other"><string-name><given-names>H.</given-names> <surname>Müller</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Gove</surname></string-name> and <string-name><given-names>J.</given-names> <surname>Webb</surname></string-name>, <chapter-title>Understanding tablet use</chapter-title>, in: <source>Proceedings of the 14th International Conference on Human–Computer Interaction with Mobile Devices and Services – MobileHCI</source>, <publisher-name>ACM Press</publisher-name>, <year>2012</year>. doi:<pub-id pub-id-type="doi">10.1145/2371574.2371576</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref034">
+<label>[34]</label><mixed-citation publication-type="journal"><string-name><given-names>K.</given-names> <surname>Nelissen</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Snoeck</surname></string-name>, <string-name><given-names>S.V.</given-names> <surname>Broucke</surname></string-name> and <string-name><given-names>B.</given-names> <surname>Baesens</surname></string-name>, <article-title>Swipe and tell: Using implicit feedback to predict user engagement on tablets</article-title>, <source>ACM Trans. Inf. Syst.</source> <volume>36</volume>(<issue>4</issue>) (<year>2018</year>), <fpage>35:1</fpage>–<lpage>35:36</lpage>. doi:<pub-id pub-id-type="doi">10.1145/3185153</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref035">
+<label>[35]</label><mixed-citation publication-type="other"><string-name><given-names>J.</given-names> <surname>Nocedal</surname></string-name> and <string-name><given-names>S.J.</given-names> <surname>Wright</surname></string-name>, <source>Numerical Optimization</source>, <edition>2</edition>nd edn, <publisher-name>Springer</publisher-name>, <year>1999</year>. doi:<pub-id pub-id-type="doi">10.1007/b98874</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref036">
+<label>[36]</label><mixed-citation publication-type="other"><string-name><given-names>H.L.</given-names> <surname>O’Brien</surname></string-name> and <string-name><given-names>R.</given-names> <surname>Bassett</surname></string-name>, <chapter-title>Exploring engagement in the qualitative research process</chapter-title>, in: <source>American Society for Information Science and Technology Annual Meeting</source>, <conf-loc>Vancouver, BC</conf-loc>, <conf-date>October 2009</conf-date>, <year>2009</year>. <uri>https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.719.2140&amp;rep=rep1&amp;type=pdf</uri>.</mixed-citation>
+</ref>
+<ref id="ref037">
+<label>[37]</label><mixed-citation publication-type="journal"><string-name><given-names>H.L.</given-names> <surname>O’Brien</surname></string-name> and <string-name><given-names>E.G.</given-names> <surname>Toms</surname></string-name>, <article-title>What is user engagement? A conceptual framework for defining user engagement with technology</article-title>, <source>J. Am. Soc. Inf. Sci.</source> <volume>59</volume>(<issue>6</issue>) (<year>2008</year>), <fpage>938</fpage>–<lpage>955</lpage>. doi:<pub-id pub-id-type="doi">10.1002/asi.20801</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref038">
+<label>[38]</label><mixed-citation publication-type="other"><string-name><given-names>P.</given-names> <surname>Racherla</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Furner</surname></string-name> and <string-name><given-names>J.</given-names> <surname>Babb</surname></string-name>, Conceptualizing the implications of mobile app usage and stickiness: A research agenda, 2012. <uri>http://ssrn.com/abstract=2187056</uri>.</mixed-citation>
+</ref>
+<ref id="ref039">
+<label>[39]</label><mixed-citation publication-type="other"><string-name><given-names>A.</given-names> <surname>Ramesh</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Goldwasser</surname></string-name>, <string-name><given-names>B.</given-names> <surname>Huang</surname></string-name>, <string-name><given-names>H.</given-names> <surname>Daumé III</surname></string-name> and <string-name><given-names>L.</given-names> <surname>Getoor</surname></string-name>, <chapter-title>Learning latent engagement patterns of students in online courses</chapter-title>, in: <source>AAAI Conference on Artificial Intelligence</source>, <year>2014</year>. <uri>https://dl.acm.org/citation.cfm?id=2894071</uri>.</mixed-citation>
+</ref>
+<ref id="ref040">
+<label>[40]</label><mixed-citation publication-type="other"><string-name><given-names>S.</given-names> <surname>Saraçli</surname></string-name>, <string-name><given-names>N.</given-names> <surname>Doğan</surname></string-name> and <string-name><given-names>İ.</given-names> <surname>Doğan</surname></string-name>, <article-title>Comparison of hierarchical cluster analysis methods by cophenetic correlation</article-title>, <source>J. Inequal. Appl.</source> <volume>2013</volume>(<issue>1</issue>) (<year>2013</year>), <elocation-id>203</elocation-id>. doi:<pub-id pub-id-type="doi">10.1186/1029-242x-2013-203</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref041">
+<label>[41]</label><mixed-citation publication-type="journal"><string-name><given-names>I.N.</given-names> <surname>Sener</surname></string-name>, <string-name><given-names>R.B.</given-names> <surname>Copperman</surname></string-name>, <string-name><given-names>R.M.</given-names> <surname>Pendyala</surname></string-name> and <string-name><given-names>C.R.</given-names> <surname>Bhat</surname></string-name>, <article-title>An analysis of children’s leisure activity engagement: Examining the day of week, location, physical activity level, and fixity dimensions</article-title>, <source>Transportation</source> <volume>35</volume>(<issue>5</issue>) (<year>2008</year>), <fpage>673</fpage>–<lpage>696</lpage>. doi:<pub-id pub-id-type="doi">10.1007/s11116-008-9173-9</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref042">
+<label>[42]</label><mixed-citation publication-type="other"><string-name><given-names>A.S.</given-names> <surname>Shirazi</surname></string-name>, <string-name><given-names>N.</given-names> <surname>Henze</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Dingler</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Pielot</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Weber</surname></string-name> and <string-name><given-names>A.</given-names> <surname>Schmidt</surname></string-name>, <chapter-title>Large-scale assessment of mobile notifications</chapter-title>, in: <source>Proceedings of the 32nd Annual ACM Conference on Human Factors in Computing Systems</source>, <publisher-name>ACM Press</publisher-name>, <year>2014</year>. doi:<pub-id pub-id-type="doi">10.1145/2556288.2557189</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref043">
+<label>[43]</label><mixed-citation publication-type="other"><string-name><given-names>S.</given-names> <surname>Snyder</surname></string-name>, <source>The New World of Wireless: How to Compete in the 4G Revolution</source>, <publisher-name>FT Press</publisher-name>, <year>2009</year>. ISBN: <isbn>978-0132618175</isbn>.</mixed-citation>
+</ref>
+<ref id="ref044">
+<label>[44]</label><mixed-citation publication-type="other">Statista, Number of available applications in the Google Play Store from December 2009 to June 2018, 2018. <uri>https://www.statista.com/statistics/266210/number-of-available-applications-in-the-google-play-store/</uri>.</mixed-citation>
+</ref>
+<ref id="ref045">
+<label>[45]</label><mixed-citation publication-type="journal"><string-name><given-names>J.</given-names> <surname>Tang</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Abraham</surname></string-name>, <string-name><given-names>E.</given-names> <surname>Stamp</surname></string-name> and <string-name><given-names>C.</given-names> <surname>Greaves</surname></string-name>, <article-title>How can weight-loss app designers best engage and support users? A qualitative investigation</article-title>, <source>British Journal of Health Psychology</source> <volume>20</volume>(<issue>1</issue>) (<year>2015</year>), <fpage>151</fpage>–<lpage>171</lpage>. doi:<pub-id pub-id-type="doi">10.1111/bjhp.12114</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref046">
+<label>[46]</label><mixed-citation publication-type="journal"><string-name><given-names>L.</given-names> <surname>Torlay</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Perrone-Bertolotti</surname></string-name>, <string-name><given-names>E.</given-names> <surname>Thomas</surname></string-name> and <string-name><given-names>M.</given-names> <surname>Baciu</surname></string-name>, <article-title>Machine learning – XGBoost analysis of language networks to classify patients with epilepsy</article-title>, <source>Brain Informatics</source> <volume>4</volume>(<issue>3</issue>) (<year>2017</year>), <fpage>159</fpage>–<lpage>169</lpage>. doi:<pub-id pub-id-type="doi">10.1007/s40708-017-0065-7</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref047">
+<label>[47]</label><mixed-citation publication-type="other"><string-name><given-names>J.</given-names> <surname>van den Hoven</surname></string-name>, Clustering with optimised weights for Gower’s metric, Master’s thesis, Vrij University, Amsterdam, The Netherlands, 2016. <uri>https://science.vu.nl/en/Images/stageverslag-hoven_tcm296-777817.pdf</uri>.</mixed-citation>
+</ref>
+<ref id="ref048">
+<label>[48]</label><mixed-citation publication-type="journal"><string-name><given-names>K.</given-names> <surname>Wachter</surname></string-name>, <string-name><given-names>Y.H.</given-names> <surname>Kim</surname></string-name> and <string-name><given-names>M.</given-names> <surname>Kim</surname></string-name>, <article-title>Mobile users: Choosing to engage</article-title>, <source>International Journal of Sales, Retailing and Marketing</source> <volume>1</volume>(<issue>1</issue>) (<year>2012</year>), <fpage>3</fpage>–<lpage>13</lpage>. doi:<pub-id pub-id-type="doi">10.5848/APBJ.2012.00002</pub-id>.</mixed-citation>
+</ref>
+</ref-list>
+</back>
+</article>

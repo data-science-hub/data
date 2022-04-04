@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.0 20120330//EN" "JATS-journalpublishing1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="formalization-paper" dtd-version="1.0">
+<front>
+<journal-meta>
+<journal-id journal-id-type="publisher-id">DS</journal-id>
+<journal-title-group><journal-title>Data Science</journal-title></journal-title-group>
+<issn pub-type="epub">2451-8492</issn><issn pub-type="ppub">2451-8484</issn><issn-l>2451-8484</issn-l>
+<publisher>
+<publisher-name>IOS Press</publisher-name><publisher-loc>Nieuwe Hemweg 6B, 1013 BG Amsterdam, The Netherlands</publisher-loc>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">DS210044</article-id>
+<article-id pub-id-type="doi">10.3233/DS-210044</article-id>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Formalization Paper</subject></subj-group></article-categories>
+<title-group>
+<article-title>A formalization of one of the main claims of “Creative Commons licenses and the non-commercial condition: Implications for the re-use of biodiversity information” by Hagedorn et al. 2011<xref ref-type="fn" rid="thanks1"><sup>1</sup></xref></article-title>
+</title-group>
+<contrib-group content-type="Editor">
+<contrib contrib-type="editor">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-7114-6459</contrib-id>
+<name><surname>Bucur</surname><given-names>Cristina-Iulia</given-names></name>
+</contrib>
+</contrib-group>
+<contrib-group content-type="Review comments from">
+<contrib contrib-type="reviewer">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-1267-0234</contrib-id>
+<name><surname>Kuhn</surname><given-names>Tobias</given-names></name>
+</contrib>
+<contrib contrib-type="reviewer">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-0191-7211</contrib-id>
+<name><surname>Usbeck</surname><given-names>Ricardo</given-names></name>
+</contrib>
+<contrib contrib-type="reviewer">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-7114-6459</contrib-id>
+<name><surname>Bucur</surname><given-names>Cristina-Iulia</given-names></name>
+</contrib>
+</contrib-group>
+<contrib-group>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0001-9488-1870</contrib-id>
+<name><surname>Mietchen</surname><given-names>Daniel</given-names></name><email>daniel.mietchen@ronininstitute.org</email><xref ref-type="aff" rid="affa">a</xref><xref ref-type="aff" rid="affb">b</xref><xref ref-type="aff" rid="affc">c</xref><xref ref-type="corresp" rid="cor2">*</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-2186-5033</contrib-id>
+<name><surname>Penev</surname><given-names>Lyubomir</given-names></name><email>l.penev@pensoft.net</email><xref ref-type="aff" rid="affd">d</xref><xref ref-type="aff" rid="afff">f</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-8083-6048</contrib-id>
+<name><surname>Dimitrova</surname><given-names>Mariya</given-names></name><email>m.dimitrova@pensoft.net</email><xref ref-type="aff" rid="affe">e</xref><xref ref-type="aff" rid="afff">f</xref>
+</contrib>
+<aff id="affa"><label>a</label><institution>Ronin Institute, Montclair, New Jersey</institution>, <country>United States</country></aff>
+<aff id="affb"><label>b</label><institution>Leibniz Institute of Freshwater Ecology and Inland Fisheries, Berlin</institution>, <country>Germany</country></aff>
+<aff id="affc"><label>c</label><institution>Freie Universität Berlin, Institute of Biology, Ecological Novelty Group, Berlin</institution>, <country>Germany</country></aff>
+<aff id="affd"><label>d</label><institution>Bulgarian Academy of Sciences</institution>, <country>Bulgaria</country></aff>
+<aff id="affe"><label>e</label><institution>Bulgarian Academy of Sciences</institution>, <country>Bulgaria</country></aff>
+<aff id="afff"><label>f</label><institution>Pensoft Publishers</institution>, <country>Bulgaria</country></aff>
+</contrib-group>
+<contrib-group content-type="guest-editors">
+<contrib contrib-type="guest-editor">
+<name><surname>Bucur</surname><given-names>Cristina-Iulia</given-names></name>
+</contrib>
+<contrib contrib-type="guest-editor">
+<name><surname>Kuhn</surname><given-names>Tobias</given-names></name>
+</contrib>
+</contrib-group>
+<author-notes>
+<fn id="thanks1"><label>1</label>
+<p>As RDF/nanopublication: <uri>http://purl.org/np/RABzhulhaPhOzo9MxWxl230N72-azdlpMNwu_HtDqsuUc</uri></p></fn><corresp id="cor2"><label>*</label>Corresponding author. E-mail: <email>daniel.mietchen@ronininstitute.org</email>.</corresp>
+</author-notes>
+<pub-date date-type="preprint" publication-format="electronic"><day>28</day><month>2</month><year>2022</year></pub-date><pub-date date-type="pub" publication-format="electronic"><day>22</day><month>3</month><year>2022</year></pub-date><pub-date date-type="collection" publication-format="electronic"><year>2022</year></pub-date><volume>5</volume><issue>1</issue><issue-title>Semantic Publishing with Formalization Papers</issue-title><fpage>39</fpage><lpage>42</lpage><history><date date-type="received"><day>7</day><month>07</month><year>2021</year></date><date date-type="accepted"><day>3</day><month>12</month><year>2021</year></date></history>
+<permissions><copyright-statement>© 2022 – The authors. Published by IOS Press.</copyright-statement><copyright-year>2022</copyright-year>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/" license-type="open-access" xlink:type="simple">
+<license-p>This is an open access article distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/" xlink:type="simple">Creative Commons Attribution (CC BY 4.0) License</ext-link>, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions>
+<abstract>
+<p>Hagedorn et al. claimed in previous work that when talking about biodiversity data, licenses with a non-commercial clause generally inhibit data reuse. We present here a formalization of that claim, stating that all things of class “license with non-commercial clause” that are in the context of a thing of class “biodiversity data” generally have a relation of type “inhibits” to a thing of class “data reuse” in the same context.</p>
+</abstract>
+<kwd-group>
+<label>Keywords</label>
+<kwd>Biodiversity data</kwd>
+<kwd>license with non-commercial clause</kwd>
+<kwd>data reuse</kwd>
+</kwd-group>
+</article-meta>
+</front>
+<body>
+<sec id="x1-1000-1">
+<label>1.</label>
+<title>Introduction</title>
+<p>Hagedorn et al. [<xref ref-type="bibr" rid="ref002">2</xref>] state that “Unfortunately, in science and education, knowledge and data are often intermingled with copyrighted expressions of the same. Many publishers establish barriers to knowledge sharing by asserting copyright on non-copyrightable plain or formal expressions of that knowledge. In the area of biodiversity, often dealing with textually expressed data or data expressed in images, this is a major obstacle.” We present here a formalization of the main scientific claim from this quote by using a semantic template called the super-pattern [<xref ref-type="bibr" rid="ref001">1</xref>].</p>
+</sec>
+<sec id="x1-2000-2">
+<label>2.</label>
+<title>Formalization</title>
+<p>Our formalization looks as follows:</p>
+<table-wrap>
+<table>
+<tbody>
+<tr>
+<td valign="top" align="left">CONTEXT-CLASS (“in the context of all…”):</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://www.wikidata.org/wiki/Q28946370">biodiversity data</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left">SUBJECT-CLASS (“things of type…”):</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RA5Txa3acYP9_MUWEw7s7wenDTB1QXNMB7UehJW-2E-_8#license-with-non-commercial-clause">license with non-commercial clause</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left">QUALIFIER:</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/generallyQualifier">generally</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left">RELATION-TYPE (“have a relation of type…”):</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/inhibits">inhibits</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left">OBJECT-CLASS (“to things of type…”):</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://www.wikidata.org/wiki/Q58023280">data reuse</ext-link></td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+<p>In the context class we use the class “biodiversity data” (Q28946370) from Wikidata. In the subject class, we use a new minted class “license with non-commercial clause” that is a subclass of “license” (Q79719) from Wikidata and is related to the class “Creative Commons NonCommercial” (Q65071627) from Wikidata. In the object class we use the class “data reuse” (Q58023280) from Wikidata.</p>
+</sec>
+<sec id="x1-3000-3">
+<label>3.</label>
+<title>RDF code</title>
+<p>This is our formalization as a nanopublication in TriG format:</p><preformat><monospace>@prefix this: &lt;http://purl.org/np/RABzhulhaPhOzo9MxWxl230N72-azdlpMNwu_HtDqsuUc&gt; .</monospace>
+<monospace>@prefix sub: &lt;http://purl.org/np/RABzhulhaPhOzo9MxWxl230N72-azdlpMNwu_HtDqsuUc#&gt; .</monospace>
+<monospace>@prefix np: &lt;http://www.nanopub.org/nschema#&gt; .</monospace>
+<monospace>@prefix dct: &lt;http://purl.org/dc/terms/&gt; .</monospace>
+<monospace>@prefix nt: &lt;https://w3id.org/np/o/ntemplate/&gt; .</monospace>
+<monospace>@prefix npx: &lt;http://purl.org/nanopub/x/&gt; .</monospace>
+<monospace>@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .</monospace>
+<monospace>@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .</monospace>
+<monospace>@prefix orcid: &lt;https://orcid.org/&gt; .</monospace>
+<monospace>@prefix prov: &lt;http://www.w3.org/ns/prov#&gt; .</monospace>
+<monospace>@prefix sp: &lt;https://w3id.org/linkflows/superpattern/terms/&gt; .</monospace>
+
+<monospace>sub:Head {</monospace>
+<monospace>  this: np:hasAssertion sub:assertion ;</monospace>
+<monospace>    np:hasProvenance sub:provenance ;</monospace>
+<monospace>    np:hasPublicationInfo sub:pubinfo ;</monospace>
+<monospace>    a np:Nanopublication .</monospace>
+<monospace>}</monospace>
+<monospace>sub:assertion {</monospace>
+<monospace>  sub:spi a sp:SuperPatternInstance ;</monospace>
+<monospace>    rdfs:label "When talking about biodiversity data, licenses with a non-commercial clause generally inhibit data reuse." ;</monospace>
+<monospace>    sp:hasContextClass &lt;http://www.wikidata.org/entity/Q28946370&gt; ;</monospace>
+<monospace>    sp:hasSubjectClass &lt;http://purl.org/np/RA5Txa3acYP9_MUWEw7s7wenDTB1QXNMB7UehJW-2E-_8#license-with-non-commercial-clause&gt; ;</monospace>
+<monospace>    sp:hasQualifier&gt; sp:generallyQualifier ;</monospace>
+<monospace>    sp:hasRelation sp:inhibits ;</monospace>
+<monospace>    sp:hasObjectClass &lt;http://www.wikidata.org/entity/Q58023280&gt; .</monospace>
+<monospace>}</monospace>
+<monospace>sub:provenance {</monospace>
+<monospace>  sub:activity a sp:FormalizationActivity ;</monospace>
+<monospace>    prov:used sub:quote , &lt;https://doi.org/10.3897/zookeys.150.2189&gt; ;</monospace>
+<monospace>    prov:wasAssociatedWith orcid:0000-0001-9488-1870 , orcid:0000-0002-2186-5033 , orcid:0000-0002-8083-6048 .</monospace>
+<monospace>  sub:assertion prov:wasGeneratedBy sub:activity .</monospace>
+<monospace>  sub:quote prov:value "Unfortunately, in science and education, knowledge and data are often intermingled with copyrighted</monospace>
+<monospace>expressions of the same. Many publishers establish barriers to knowledge sharing by asserting copyright on non-copyrightable</monospace>
+<monospace>plain or formal expressions of that knowledge. In the area of biodiversity, often dealing with textually expressed data or</monospace>
+<monospace>data expressed in images, this is a major obstacle." ;</monospace>
+<monospace>    prov:wasQuotedFrom &lt;https://doi.org/10.3897/zookeys.150.2189&gt; .</monospace>
+<monospace>}</monospace>
+<monospace>sub:pubinfo {</monospace>
+<monospace>  sub:sig npx:hasAlgorithm "RSA" ;</monospace>
+<monospace>    npx:hasPublicKey</monospace>
+<monospace>"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCwi1YMnpV5z/0oMXyFYDKS5cirQQWTMZ/jbglmVY1gl3YAgrkqsQUmgaxA/ho+VV8jsfREIL8PT2czbmCjGjMJo</monospace>
+<monospace>NaKVqJq1GoIUV9+Kj9yXxNySyDAOTDsIM0zdj1BEu5uNbtfzwQPGuhVpgLR05Uk/meCyYLPs3BxC5zRbtulmwIDAQAB" ;</monospace>
+<monospace>    npx:hasSignature</monospace>
+<monospace>"pqWZhyfzNdZhmUc6gaCbmq2GWJb4R/pWwk4rMvlOn35Nx9y44fsz9zGWDyEEVg0frXq6EOsd5Umyq5YY1BIHFJBjiOKUaVmtxU+MuyCuTCbLp3s1k+hYl7ocAl40F</monospace>
+<monospace>5SOMfcY+Dqxte1rNQM5rmVQJa9wJ+mmKejz7Cs+Bm9xsD8=" ;</monospace>
+<monospace>    npx:hasSignatureTarget this: .</monospace>
+<monospace>  this: dct:created "2021-11-30T21:54:51.835+02:00"^^xsd:dateTime ;</monospace>
+<monospace>    dct:creator orcid:0000-0002-8083-6048 ;</monospace>
+<monospace>    npx:introduces sub:spi ;</monospace>
+<monospace>    npx:supersedes &lt;http://purl.org/np/RA2hde9hXKfi0juhaF7yWd1aKsyZknPYj2Od-rLlAKmSM&gt; ;</monospace>
+<monospace>    &lt;https://w3id.org/linkflows/reviews/isUpdateOf&gt; &lt;http://purl.org/np/RAjk3YoNydLhbuD4BV9FD21ecELazvZibHHM7IXtJd-4A&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromProvenanceTemplate &lt;http://purl.org/np/RAE1wniOy0yO39PlK9QkQ-wqbC3q-R2nXraP5huu8W39k&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromPubinfoTemplate &lt;http://purl.org/np/RA2vCBXZf-icEcVRGhulJXugTGxpsV5yVr9yqCI1bQh4A&gt; ,</monospace>
+<monospace>&lt;http://purl.org/np/RAA2MfqdBCzmz9yVWjKLXNbyfBNcwsMmOqcNUxkk1maIM&gt; ,</monospace>
+<monospace>&lt;http://purl.org/np/RAjpBMlw3owYhJUBo3DtsuDlXsNAJ8cnGeWAutDVjuAuI&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromTemplate &lt;http://purl.org/np/RAv68imZrEjfcp2rnEg1hzoBqEVc0cQMtp9_1Za0BxNM4&gt; .</monospace>
+<monospace>}</monospace>
+</preformat>
+<p>The following nanopublications introduce the newly minted classes in TriG format.</p>
+<p>This is the class definition of “license with non-commercial clause”:</p><preformat><monospace>@prefix this: &lt;http://purl.org/np/RA5Txa3acYP9_MUWEw7s7wenDTB1QXNMB7UehJW-2E-_8&gt; .</monospace>
+<monospace>@prefix sub: &lt;http://purl.org/np/RA5Txa3acYP9_MUWEw7s7wenDTB1QXNMB7UehJW-2E-_8#&gt; .</monospace>
+<monospace>@prefix np: &lt;http://www.nanopub.org/nschema#&gt; .</monospace>
+<monospace>@prefix dct: &lt;http://purl.org/dc/terms/&gt; .</monospace>
+<monospace>@prefix nt: &lt;https://w3id.org/np/o/ntemplate/&gt; .</monospace>
+<monospace>@prefix npx: &lt;http://purl.org/nanopub/x/&gt; .</monospace>
+<monospace>@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .</monospace>
+<monospace>@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .</monospace>
+<monospace>@prefix orcid: &lt;https://orcid.org/&gt; .</monospace>
+<monospace>@prefix prov: &lt;http://www.w3.org/ns/prov#&gt; .</monospace>
+<monospace>@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .</monospace>
+
+<monospace>sub:Head {</monospace>
+<monospace>  this: np:hasAssertion sub:assertion ;</monospace>
+<monospace>    np:hasProvenance sub:provenance ;</monospace>
+<monospace>    np:hasPublicationInfo sub:pubinfo ;</monospace>
+<monospace>    a np:Nanopublication .</monospace>
+<monospace>}</monospace>
+<monospace>sub:assertion {</monospace>
+<monospace>  sub:license-with-non-commercial-clause a &lt;http://www.w3.org/2002/07/owl#Class&gt; ;</monospace>
+<monospace>    rdfs:label "license with a non-commercial clause" ;</monospace>
+<monospace>    rdfs:subClassOf &lt;http://www.wikidata.org/entity/Q79719&gt; ;</monospace>
+<monospace>    skos:definition "a type of license which contain a clause which prohibits use for commercial purposes" ;</monospace>
+<monospace>    skos:relatedMatch &lt;http://www.wikidata.org/entity/Q65071627&gt; .</monospace>
+<monospace>}</monospace>
+<monospace>sub:provenance {</monospace>
+<monospace>  sub:assertion prov:wasAttributedTo orcid:0000-0002-8083-6048 .</monospace>
+<monospace>}</monospace>
+<monospace>sub:pubinfo {</monospace>
+<monospace>  sub:sig npx:hasAlgorithm "RSA" ;</monospace>
+<monospace>    npx:hasPublicKey</monospace>
+<monospace>"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCwi1YMnpV5z/0oMXyFYDKS5cirQQWTMZ/jbglmVY1gl3YAgrkqsQUmgaxA/ho+VV8jsfREIL8PT2czbmCjGjMJo</monospace>
+<monospace>NaKVqJq1GoIUV9+Kj9yXxNySyDAOTDsIM0zdj1BEu5uNbtfzwQPGuhVpgLR05Uk/meCyYLPs3BxC5zRbtulmwIDAQAB" ;</monospace>
+<monospace>    npx:hasSignature</monospace>
+<monospace>"lv9gGKSM989WhbvU+7dDcM+xIFW6jJnN0Lc91RN3tagMFc4utpd3/DBLQg8eDWPL+H9zfUa7SQ0grqCKggz86CyRJYctYHP/baTyhgemrPO3gyDTob5CqKpNm6hJ3</monospace>
+<monospace>xhC8ud3KH1LyzM+9UZW29OKeIe+zBx0rSs4PgS4z+cURsg=" ;</monospace>
+<monospace>    npx:hasSignatureTarget this: .</monospace>
+<monospace>  this: dct:created "2021-10-28T10:20:26.973+03:00"^^xsd:dateTime ;</monospace>
+<monospace>    dct:creator orcid:0000-0002-8083-6048 ;</monospace>
+<monospace>    npx:introduces sub:license-with-non-commercial-clause ;</monospace>
+<monospace>    npx:supersedes &lt;http://purl.org/np/RAlLxbLmjwDt_cTFqr44HHD0xfGJJbhuYLJn0GeGGa3lI&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromProvenanceTemplate &lt;http://purl.org/np/RANwQa4ICWS5SOjw7gp99nBpXBasapwtZF1fIM3H2gYTM&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromPubinfoTemplate &lt;http://purl.org/np/RAA2MfqdBCzmz9yVWjKLXNbyfBNcwsMmOqcNUxkk1maIM&gt; ,</monospace>
+<monospace>&lt;http://purl.org/np/RAjpBMlw3owYhJUBo3DtsuDlXsNAJ8cnGeWAutDVjuAuI&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromTemplate &lt;http://purl.org/np/RAdpgRpigXtt8iPV9uOPf3wIT3qzOI8Sg2Q72CNV8g-Yo&gt; .</monospace>
+<monospace>}</monospace>
+</preformat>
+</sec>
+</body>
+<back>
+<ref-list>
+<title>References</title>
+<ref id="ref001">
+<label>[1]</label><mixed-citation publication-type="other"><string-name><given-names>C.I.</given-names> <surname>Bucur</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Kuhn</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Ceolin</surname></string-name> and <string-name><given-names>J.</given-names> <surname>van Ossenbruggen</surname></string-name>, <chapter-title>Expressing high-level scientific claims with formal semantics</chapter-title>, in: <source>Proceedings of the 11th Knowledge Capture Conference</source>, <year>2021</year>. doi:<pub-id pub-id-type="doi">10.1145/3460210.3493561</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref002">
+<label>[2]</label><mixed-citation publication-type="journal"><string-name><given-names>G.</given-names> <surname>Hagedorn</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Mietchen</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Agosti</surname></string-name>, <string-name><given-names>L.</given-names> <surname>Penev</surname></string-name>, <string-name><given-names>W.</given-names> <surname>Berendsohn</surname></string-name> and <string-name><given-names>D.</given-names> <surname>Hobern</surname></string-name>, <article-title>Creative Commons licenses and the non-commercial condition: Implications for the re-use of biodiversity information</article-title>, <source>ZooKeys</source> <volume>150</volume> (<year>2011</year>), <fpage>127</fpage>–<lpage>149</lpage>. doi:<pub-id pub-id-type="doi">10.3897/zookeys.150.2189</pub-id>.</mixed-citation>
+</ref>
+</ref-list>
+</back>
+</article>

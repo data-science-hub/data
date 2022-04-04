@@ -1,0 +1,902 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.0 20120330//EN" "JATS-journalpublishing1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="resource-paper">
+<front>
+<journal-meta>
+<journal-id journal-id-type="publisher-id">DS</journal-id>
+<journal-title-group><journal-title>Data Science</journal-title></journal-title-group>
+<issn pub-type="epub">2451-8492</issn><issn pub-type="ppub">2451-8484</issn><issn-l>2451-8484</issn-l>
+<publisher>
+<publisher-name>IOS Press</publisher-name><publisher-loc>Nieuwe Hemweg 6B, 1013 BG Amsterdam, The Netherlands</publisher-loc>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">DS190021</article-id>
+<article-id pub-id-type="doi">10.3233/DS-190021</article-id>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Resource Paper</subject></subj-group></article-categories>
+<title-group>
+<article-title>HOBBIT: A platform for benchmarking Big Linked Data</article-title>
+</title-group>
+<contrib-group content-type="Editor">
+<contrib contrib-type="editor">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0003-0183-6910</contrib-id>
+<name><surname>Groth</surname><given-names>Paul</given-names></name>
+</contrib>
+</contrib-group>
+<contrib-group>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-8609-8277</contrib-id>
+<name><surname>Röder</surname><given-names>Michael</given-names></name><xref ref-type="aff" rid="affa">a</xref><xref ref-type="aff" rid="affb">b</xref><xref ref-type="corresp" rid="cor2">*</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-9637-6197</contrib-id>
+<name><surname>Kuchelev</surname><given-names>Denis</given-names></name><xref ref-type="aff" rid="affc">c</xref><xref ref-type="aff" rid="affb">b</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0001-7112-3516</contrib-id>
+<name><surname>Ngonga Ngomo</surname><given-names>Axel-Cyrille</given-names></name><xref ref-type="aff" rid="affd">d</xref><xref ref-type="aff" rid="affb">b</xref>
+</contrib>
+<aff id="affa"><label>a</label>Data Science Department, <institution>University of Paderborn</institution>,<country>Germany</country>. E-mail: <email>michael.roeder@upb.de</email></aff>
+<aff id="affb"><label>b</label><institution>Institute for Applied Informatics</institution>, <country>Germany</country></aff>
+<aff id="affc"><label>c</label>Data Science Department, <institution>University of Paderborn</institution>,<country>Germany</country>.</aff>
+<aff id="affd"><label>d</label>Data Science Department, <institution>University of Paderborn</institution>,<country>Germany</country>. E-mail: <email>axel.ngonga@upb.de</email></aff>
+</contrib-group>
+<contrib-group content-type="guest-editors">
+<contrib contrib-type="guest-editor">
+<name><surname>Groth</surname><given-names>Paul</given-names></name>
+</contrib>
+<contrib contrib-type="guest-editor">
+<name><surname>Dumontier</surname><given-names>Michel</given-names></name>
+</contrib>
+</contrib-group>
+<author-notes>
+<corresp id="cor2"><label>*</label>Corresponding author. E-mail: <email>michael.roeder@upb.de</email>.</corresp>
+</author-notes>
+<pub-date date-type="preprint" publication-format="electronic"><day>13</day><month>9</month><year>2019</year></pub-date><pub-date date-type="pub" publication-format="electronic"><day>12</day><month>6</month><year>2020</year></pub-date><pub-date date-type="collection" publication-format="electronic"><year>2020</year></pub-date><volume>3</volume><issue>1</issue><issue-title>FAIR Data, Systems and Analysis</issue-title><fpage>15</fpage><lpage>35</lpage><history><date date-type="received"><day>7</day><month>06</month><year>2019</year></date><date date-type="accepted"><day>4</day><month>08</month><year>2019</year></date></history>
+<permissions><copyright-statement>© 2020 – IOS Press and the authors.</copyright-statement><copyright-year>2020</copyright-year>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/" license-type="open-access" xlink:type="simple">
+<license-p>This is an open access article distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/" xlink:type="simple">Creative Commons Attribution (CC BY 4.0) License</ext-link>, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions>
+<abstract>
+<p>An increasing number of solutions aim to support the steady increase of the number of requirements and requests for Linked Data at scale. This plethora of solutions leads to a growing need for objective means that facilitate the selection of adequate solutions for particular use cases. We hence present <sc>Hobbit</sc>, a distributed benchmarking platform designed for the unified execution of benchmarks for Linked Data solutions. The <sc>Hobbit</sc> benchmarking platform is based on the FAIR principles and is the first benchmarking platform able to scale up to benchmarking real-world scenarios for Big Linked Data solutions. Our online instance of the platform has more than 300 registered users and offers more than 40 benchmarks. It has been used in eleven benchmarking challenges and for more than 13000 experiments. We give an overview of the results achieved during 2 of these challenges and point to some of the novel insights that were gained from the results of the platform. <sc>Hobbit</sc> is open-source and available at <uri>http://github.com/hobbit-project</uri>.</p>
+</abstract>
+<kwd-group>
+<label>Keywords</label>
+<kwd>Benchmarking</kwd>
+<kwd>Big Linked Data</kwd>
+</kwd-group>
+</article-meta>
+</front>
+<body>
+<sec id="x1-1000-1">
+<label>1.</label>
+<title>Introduction</title>
+<p>While the adoption of Linked Data (LD) is increasing steadily, the selection of the right frameworks for a given application driven by this paradigm remains elusive. This is partly due to the lack of (1) large-scale benchmarks for most steps of the LD life cycle [<xref ref-type="bibr" rid="ref002">2</xref>] and (2) scalable benchmarking platforms able to generate uniform comparable evaluation results for the technologies which deal with this type of data [<xref ref-type="bibr" rid="ref035">35</xref>]. The usefulness of benchmarks for characterising the performance of families of solutions has been clearly demonstrated by the varied benchmarks made available over recent decades [<xref ref-type="bibr" rid="ref020">20</xref>,<xref ref-type="bibr" rid="ref035">35</xref>,<xref ref-type="bibr" rid="ref043">43</xref>,<xref ref-type="bibr" rid="ref044">44</xref>]. For example, the TPC family of benchmarks is widely regarded as having provided the foundation for the development of efficient relational databases [<xref ref-type="bibr" rid="ref020">20</xref>]. Modern examples of benchmarks that have achieved similar effects include the QALD [<xref ref-type="bibr" rid="ref044">44</xref>] and BioASQ [<xref ref-type="bibr" rid="ref043">43</xref>] benchmarks, which have successfully contributed to enhancing the performance of question answering systems over LD and in the bio-medical domain respectively. Modern benchmarking platforms have also contributed to the comparability of measurements used to evaluate the performance of systems. For example, benchmarking platforms such as BAT [<xref ref-type="bibr" rid="ref011">11</xref>], GERBIL [<xref ref-type="bibr" rid="ref035">35</xref>] and IGUANA [<xref ref-type="bibr" rid="ref010">10</xref>] provide implementations and corresponding theoretical frameworks to benchmark different aspects of the LD life cycle in a consistent manner. Still, none of these benchmarking platforms can scale up to the requirements of modern applications.</p>
+<p>The main contribution of this paper is the <sc>Hobbit</sc> (Holistic Benchmarking of Big Linked Data) platform. <sc>Hobbit</sc> was designed to accommodate the benchmarking of Big LD applications, i.e., applications driven by LD that exhibit Big Data requirements as to the volume, velocity and variety of data they process [<xref ref-type="bibr" rid="ref008">8</xref>]. The platform was designed with extensibility in mind. Thus, its architecture is modular and allows the benchmarking of any step of the LD life cycle.<xref ref-type="fn" rid="fn-1">1</xref><fn id="fn-1"><label><sup>1</sup></label>
+<p>Code and dataset generators available at <uri>http://github.com/hobbit-project</uri>. Project homepage at <uri>https://project-hobbit.eu/</uri>.</p></fn> The comparability of results was the second main design pillar. Consequently, <sc>Hobbit</sc> abides by the FAIR principles [<xref ref-type="bibr" rid="ref047">47</xref>]. The practical usability of the platform was ensured by its use in 11 challenges between 2016 and 2019 (e.g., [<xref ref-type="bibr" rid="ref001">1</xref>,<xref ref-type="bibr" rid="ref017">17</xref>,<xref ref-type="bibr" rid="ref018">18</xref>,<xref ref-type="bibr" rid="ref021">21</xref>,<xref ref-type="bibr" rid="ref022">22</xref>,<xref ref-type="bibr" rid="ref024">24</xref>,<xref ref-type="bibr" rid="ref031">31</xref>,<xref ref-type="bibr" rid="ref034">34</xref>,<xref ref-type="bibr" rid="ref040">40</xref>,<xref ref-type="bibr" rid="ref041">41</xref>]). <sc>Hobbit</sc> is open-source and can be deployed locally, on a local cluster and on computing services such as Amazon Web Services (AWS). Additionally, we offer an online instance of the platform deployed on a cluster and available for experimentation.<xref ref-type="fn" rid="fn-2">2</xref><fn id="fn-2"><label><sup>2</sup></label>
+<p><uri>http://master.project-hobbit.eu</uri></p></fn> In this paper, we focus on the architecture of the platform and summarise the results of the evaluation campaigns carried out with the platform.</p>
+<p>The rest of this paper is structured as follows: We begin by giving an overview of the state of the art in benchmarking LD in Section <xref rid="x1-2000-2">2</xref>. In Section <xref rid="x1-3000-3">3</xref>, we present requirements for the benchmarking platform that were gathered from experts. We used these requirements to derive the architecture for the platform presented in Section <xref rid="x1-7000-4">4</xref>. We demonstrate the use of the platform in Section <xref rid="x1-31000-5">5</xref> by showing how it can be applied to benchmark a knowledge extraction framework along the axes of accuracy and scalability – a dimension that was not considered in previous benchmarking efforts. We present the different applications of the benchmarking platform in Section <xref rid="x1-34000-6">6</xref>. Finally, we discuss limitations and derive future work in Section <xref rid="x1-35000-7">7</xref> before concluding the paper with Section <xref rid="x1-36000-8">8</xref>.</p>
+</sec>
+<sec id="x1-2000-2">
+<label>2.</label>
+<title>Related work</title>
+<p>The work presented herein is mostly related to benchmarking platforms for Linked Data/RDF-based systems. Several benchmarks have been developed in the area of linking RDF datasets [<xref ref-type="bibr" rid="ref032">32</xref>]. A recent detailed comparison of instance matching benchmarks can be found in [<xref ref-type="bibr" rid="ref013">13</xref>]. The authors show that there are several benchmarks using either real or synthetically generated datasets. SEALS <xref ref-type="fn" rid="fn-3">3</xref><fn id="fn-3"><label><sup>3</sup></label>
+<p><uri>http://www.seals-project.eu/</uri></p></fn> is the best-known platform for benchmarking link discovery frameworks. It offers the flexible addition of datasets and measures for benchmarking link discovery. However, the platform was not designed to scale and can thus not deal with datasets which demand distributed processing.</p>
+<p>For a large proportion of existing benchmarks and benchmark generators (e.g., LUBM [<xref ref-type="bibr" rid="ref023">23</xref>], BSBM [<xref ref-type="bibr" rid="ref004">4</xref>], DBSBM [<xref ref-type="bibr" rid="ref028">28</xref>] and FEASIBLE [<xref ref-type="bibr" rid="ref037">37</xref>]), the focus has commonly been on creating frameworks able to generate data and query loads [<xref ref-type="bibr" rid="ref004">4</xref>,<xref ref-type="bibr" rid="ref023">23</xref>,<xref ref-type="bibr" rid="ref028">28</xref>,<xref ref-type="bibr" rid="ref037">37</xref>] able to stress triple stores. IGUANA [<xref ref-type="bibr" rid="ref010">10</xref>] is the first benchmarking framework for the unified execution of these data and query loads. However, like the platforms aforementioned, IGUANA does not scale up to distributed processing and can thus not be used to benchmark distributed solutions at scale.</p>
+<p>Knowledge Extraction – especially Named Entity Recognition and Linking – has also seen the rise of a large number of benchmarks [<xref ref-type="bibr" rid="ref035">35</xref>]. Several conferences and workshops aiming at the comparison of information extraction systems (including the Message Understanding Conference [<xref ref-type="bibr" rid="ref042">42</xref>] and the Conference on Computational Natural Language Learning [<xref ref-type="bibr" rid="ref038">38</xref>]) have created benchmarks for this task. In 2014, Carmel et al. [<xref ref-type="bibr" rid="ref006">6</xref>] introduced one of the first Web-based evaluation systems for Named Entity Recognition and Linking. The BAT benchmarking framework [<xref ref-type="bibr" rid="ref011">11</xref>] was also designed to facilitate benchmarking based on these datasets by combining seven Wikipedia-based systems and five datasets. The GERBIL framework [<xref ref-type="bibr" rid="ref035">35</xref>] extended this idea by being knowledge-base-agnostic and addressing the NIL error problem in the formal model behind the BAT framework.While these systems all allow for benchmarking knowledge extraction solutions, they do not scale up to the requirements of distributed systems.</p>
+<p>In the area of Question Answering using LD, challenges such as BioASQ [<xref ref-type="bibr" rid="ref043">43</xref>], and the Question Answering over Linked Data (QALD) [<xref ref-type="bibr" rid="ref045">45</xref>] have aimed to provide benchmarks for retrieving answers to human-generated questions. The GERBIL-QA platform [<xref ref-type="bibr" rid="ref046">46</xref>] is the first open benchmarking platform for question answering which abides by the FAIR principles. However, like its knowledge extraction companion, it is not designed to scale up to large data and task loads.</p>
+<p>Frameworks aiming at benchmarking in a generic fashion are very rare. The Peel framework<xref ref-type="fn" rid="fn-4">4</xref><fn id="fn-4"><label><sup>4</sup></label>
+<p><uri>http://peel-framework.org</uri></p></fn> supports the automation of experiments on Big Data infrastructure. However, the framework only supports systems that can be executed on one of the supported Big Data solutions like Flink or Spark which excludes a lot of existing LD benchmarks and systems.<xref ref-type="fn" rid="fn-5">5</xref><fn id="fn-5"><label><sup>5</sup></label>
+<p>The complete list can be found at <uri>https://github.com/peelframework/peel#supported-systems</uri>.</p></fn> Moreover, it does not support a large portion of the specific requirements for benchmarking Big LD described in Section <xref rid="x1-3000-3">3</xref>. A major drawback is that the results generated by the platform are not transparent as the execution of systems and benchmarks is hidden from the users. This makes a comparison of the resources used by benchmarked systems impossible.</p>
+<p>Also relevant according to the literature are novel Big Data benchmarks for benchmarking relational databases (e.g., BigBench [<xref ref-type="bibr" rid="ref019">19</xref>] and OLTP [<xref ref-type="bibr" rid="ref014">14</xref>]). However, although they come with scalable data and task generators, these benchmarks are solely focused on the benchmarking of relational databases and are not benchmarking frameworks.</p>
+<p>A similar data generation-based approach is used by Plug and Play Bench [<xref ref-type="bibr" rid="ref009">9</xref>]. However, in contrast to the other benchmarks, Plug and Play Bench aims at benchmarking different hardware settings on which the benchmark is executed instead of comparing different software solutions.</p>
+<table-wrap id="x1-2001-1">
+<label>Table 1</label>
+<caption>
+<p>Comparison of LD benchmarking frameworks, their applicability for all eight steps of the LD life cycle and their support of features necessary for benchmarking Big LD solutions</p>
+</caption>
+<table frame="hsides" rules="groups">
+<thead>
+<tr>
+<td valign="top" align="left"/>
+<td valign="top" align="center">Year</td>
+<td valign="top" align="center">Extraction</td>
+<td valign="top" align="center">Storage</td>
+<td valign="top" align="center">Manual Revision</td>
+<td valign="top" align="center">Linking</td>
+<td valign="top" align="center">Enrichment</td>
+<td valign="top" align="center">Quality Analysis</td>
+<td valign="top" align="center">Evolution</td>
+<td valign="top" align="center">Exploration</td>
+<td valign="top" align="center">Scalable Data</td>
+<td valign="top" align="center">Scalable Tasks</td>
+<td valign="top" align="center">FAIR Benchmarking  </td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top" align="left">BAT</td>
+<td valign="top" align="center">2013</td>
+<td valign="top" align="center">✓</td>
+<td valign="top" align="center"/>
+<td valign="top" align="center">–</td>
+<td valign="top" align="center"/>
+<td valign="top" align="center"/>
+<td valign="top" align="center"/>
+<td valign="top" align="center"/>
+<td valign="top" align="center"/>
+<td valign="top" align="center"/>
+<td valign="top" align="center"/>
+<td valign="top" align="center"/>
+</tr>
+<tr>
+<td valign="top" align="left">GERBIL</td>
+<td valign="top" align="center">2014</td>
+<td valign="top" align="center">✓</td>
+<td valign="top" align="center"/>
+<td valign="top" align="center">–</td>
+<td valign="top" align="center"/>
+<td valign="top" align="center"/>
+<td valign="top" align="center"/>
+<td valign="top" align="center"/>
+<td valign="top" align="center"/>
+<td valign="top" align="center"/>
+<td valign="top" align="center"/>
+<td valign="top" align="center">✓</td>
+</tr>
+<tr>
+<td valign="top" align="left">GERBIL-QA</td>
+<td valign="top" align="center">2018</td>
+<td valign="top" align="center"/>
+<td valign="top" align="center"/>
+<td valign="top" align="center">–</td>
+<td valign="top" align="center"/>
+<td valign="top" align="center"/>
+<td valign="top" align="center"/>
+<td valign="top" align="center"/>
+<td valign="top" align="center">✓</td>
+<td valign="top" align="center"/>
+<td valign="top" align="center"/>
+<td valign="top" align="center">✓</td>
+</tr>
+<tr>
+<td valign="top" align="left">IGUANA</td>
+<td valign="top" align="center">2017</td>
+<td valign="top" align="center"/>
+<td valign="top" align="center">✓</td>
+<td valign="top" align="center">–</td>
+<td valign="top" align="center"/>
+<td valign="top" align="center"/>
+<td valign="top" align="center"/>
+<td valign="top" align="center"/>
+<td valign="top" align="center"/>
+<td valign="top" align="center"/>
+<td valign="top" align="center">✓</td>
+<td valign="top" align="center"/>
+</tr>
+<tr>
+<td valign="top" align="left">HOBBIT</td>
+<td valign="top" align="center">2017</td>
+<td valign="top" align="center">✓</td>
+<td valign="top" align="center">✓</td>
+<td valign="top" align="center">–</td>
+<td valign="top" align="center">✓</td>
+<td valign="top" align="center">✓</td>
+<td valign="top" align="center">(✓)</td>
+<td valign="top" align="center">✓</td>
+<td valign="top" align="center">✓</td>
+<td valign="top" align="center">✓</td>
+<td valign="top" align="center">✓</td>
+<td valign="top" align="center">✓</td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+<p>Table <xref rid="x1-2001-1">1</xref> compares the existing benchmarking frameworks used to benchmark LD systems regarding their applicability for all eight steps of the LD life cycle as well as their support of features necessary for benchmarking Big LD solutions. The step “Manual Revision” is mentioned only for the completeness of the life cycle steps.</p>
+<p>It can be seen that the <sc>Hobbit</sc> platform is the first benchmarking framework which supports all steps of the LD life cycle that can be benchmarked automatically.<xref ref-type="fn" rid="fn-6">6</xref><fn id="fn-6"><label><sup>6</sup></label>
+<p>We are not aware of the existence of an automatic benchmark for the quality analysis step. However, the platform itself would support such a benchmark.</p></fn> In addition, it is the first benchmarking platform for LD which scales up to the requirements of Big Data platforms through horizontal scaling. The comparability of <sc>Hobbit</sc>’s benchmarking results are ensured by the cluster underlying the open instantiation of the platform.<xref ref-type="fn" rid="fn-7">7</xref><fn id="fn-7"><label><sup>7</sup></label>
+<p>See <uri>http://master.project-hobbit.eu</uri>.</p></fn></p>
+</sec>
+<sec id="x1-3000-3">
+<label>3.</label>
+<title>Requirements</title>
+<p>We adopted a user-driven approach to develop our platform. Additionally to the goals of the HOBBIT project, the requirements were mainly derived from an online survey as well as a workshop – both described in [<xref ref-type="bibr" rid="ref016">16</xref>].<xref ref-type="fn" rid="fn-8">8</xref><fn id="fn-8"><label><sup>8</sup></label>
+<p>Please note that [<xref ref-type="bibr" rid="ref016">16</xref>] is also available via the Community Research and Development Information Service (CORDIS) of the European Commission using the grand agreement ID of the HOBBIT project: 688227. See <uri>https://cordis.europa.eu/project/rcn/199489/results/en</uri>.</p></fn></p>
+<p>The survey had 61 expert participants representing their organisations. These experts were contacted via mail using several mailing lists of the Semantic Web community. During the survey, the participants were asked to add themselves to one ore more of three stake holder groups. 48 participants classified themselves as solution providers, i.e., they represent an organisation which implements a LD system. 46 participants added themselves to the group of technology users, i.e., people which are using LD systems developed by a 3rd party. The third group – the scientific community which aims at identifying problems in existing solutions and developing new algorithms – comprised 47 participants. Asked for the target of the LD systems they are developing or using, 50 participants stated to work in the area of storage and querying, 39 in the area of Interlinking, 39 in Classification and Enrichment, 35 in Link Discovery, 31 in Extraction and 22 in Reasoning. The survey further asked which benchmarks the participants use. This was further detailed with the size and type of datasets (synthetic, real-world or a combination of both) they use as well as the KPIs they are interested in.</p>
+<p>In 2016, a workshop was arranged within the programme of the Extended Semantic Web Conference. 21 conference participants took part in the workshop and discussed the goals of the HOBBIT project as well as requirements. The participants were separated into 4 groups – Generation &amp; Acquisition, Analysis &amp; Processing, Storage &amp; Curation as well as Visualisation &amp; Services – covering the complete LD life cycle. Each group discussed requirements which the benchmarks of this area as well as the benchmarking platform used to execute these benchmarks should fulfil.</p>
+<p>To distinguish them from the FAIR principles, we will abbreviate these user requirements with <bold>U</bold>.</p>
+<sec id="x1-4000-3.1">
+<label>3.1.</label>
+<title>Functional requirements</title>
+<list>
+<list-item id="x1-4001x-3.1">
+<label>U1</label>
+<p>The main functionality of the platform is the execution of benchmarks.</p>
+</list-item>
+<list-item id="x1-4002x-3.1">
+<label>U2</label>
+<p>Benchmark results should be presented in human- and machine-readable form.</p>
+</list-item>
+<list-item id="x1-4003x-3.1">
+<label>U3</label>
+<p>It should be possible to add new benchmarks and new systems.</p>
+</list-item>
+<list-item id="x1-4004x-3.1">
+<label>U4</label>
+<p>The platform should offer repeatable experiments and analysis of results.</p>
+</list-item>
+<list-item id="x1-4005x-3.1">
+<label>U5</label>
+<p>The key performance indicators (KPIs) should include the effectiveness, e.g., the accuracy, and the efficiency, e.g., runtime of systems.</p>
+</list-item>
+<list-item id="x1-4006x-3.1">
+<label>U6</label>
+<p>The platform should be able to measure the scalability of solutions. This leads to the need of a scalable generation of both – data the evaluation is based on as well as tasks a system has to execute.</p>
+</list-item>
+<list-item id="x1-4007x-3.1">
+<label>U7</label>
+<p>The platform should support the benchmarking of distributed systems.</p>
+</list-item>
+<list-item id="x1-4008x-3.1">
+<label>U8</label>
+<p>It should support the execution of benchmarking challenges. This includes (1) the creation of challenges within the platform, (2) the registration of users with their system for the challenge, (3) the execution of the challenge experiments at a predefined point in time and (4) the summary of the experiment results for this challenge.</p>
+</list-item>
+</list>
+<p>These functional requirements predefined the corner stones for the platforms architecture. In Section <xref rid="x1-7000-4">4</xref>, it will be shown how the platform fulfils each of them.</p>
+</sec>
+<sec id="x1-5000-3.2">
+<label>3.2.</label>
+<title>Qualitative requirements</title>
+<list>
+<list-item id="x1-5001x-3.2">
+<label>U9</label>
+<p>The benchmarks should be easy to use and interfaces provided should be as simple as possible.</p>
+</list-item>
+<list-item id="x1-5002x-3.2">
+<label>U10</label>
+<p>The platform should support different programming languages.</p>
+</list-item>
+<list-item id="x1-5003x-3.2">
+<label>U11</label>
+<p>The results should be archived safely for later reference.</p>
+</list-item>
+<list-item id="x1-5004x-3.2">
+<label>U12</label>
+<p>The platform needs to be robust regarding faulty benchmarks or systems.</p>
+</list-item>
+</list>
+<p>Several requirements – especially <bold>U1</bold>–<bold>U4</bold> as well as <bold>U8</bold> – addressed fundamental functions of a benchmarking platform which supports the execution of benchmarking challenges and were directly derived from this goal. However, the results of the survey as well as the workshop show that the participants agreed to the goals of the project and that especially the repeatability of experiments (<bold>U4</bold>) is of importance to the community. The range of mentioned KPIs in the survey as well as in the results of the workshop let to <bold>U5</bold>. The need to measure the efficiency of systems is one reason for <bold>U6</bold>. The large range of dataset sizes used by the survey participants was another reason.<xref ref-type="fn" rid="fn-9">9</xref><fn id="fn-9"><label><sup>9</sup></label>
+<p>3.6% of the survey participants used datasets with less than 10k triples while 35.7% used datasets with more than 100M triples.</p></fn> <bold>U7</bold> was an important requirement to ensure the ability to benchmark systems which achieve their scalability by horizontal scaling. <bold>U9</bold> was a result of the workshop. <bold>U10</bold> and <bold>U11</bold> were derived very early. Although not explicitly mentioned during the workshop, the usage of different programming languages within the community became evident. Additionally, <bold>U11</bold> was derived from the usage of existing platforms which have already been accepted by the community, e.g., the citable URIs of GERBIL [<xref ref-type="bibr" rid="ref035">35</xref>]. The error tolerance of a software is a general requirement for most developments. However, with <bold>U12</bold> it gained additional attention because the platform allows the upload of third party software which might not be reliable.</p>
+<p>We derived the degree of modularity and the error handling of the platform from these requirements (<bold>U1</bold>, <bold>U3</bold>–<bold>U12</bold>). The result analysis component and interfaces were designed to accommodate <bold>U2</bold> and <bold>U9</bold>–<bold>U12</bold>. Details are provided in Section <xref rid="x1-7000-4">4</xref>.</p>
+</sec>
+<sec id="x1-6000-3.3">
+<label>3.3.</label>
+<title>FAIR principles</title>
+<p>From the beginning on, the platform was built to support the FAIR principles [<xref ref-type="bibr" rid="ref047">47</xref>].<xref ref-type="fn" rid="fn-10">10</xref><fn id="fn-10"><label><sup>10</sup></label>
+<p><uri>https://www.go-fair.org/fair-principles/</uri></p></fn></p>
+<list>
+<list-item id="x1-6001x-3.3">
+<label>F1</label>
+<p>(Meta)data are assigned a globally unique and persistent identifier.</p>
+</list-item>
+<list-item id="x1-6002x-3.3">
+<label>F2</label>
+<p>Data are described with rich metadata (defined by R1 below).</p>
+</list-item>
+<list-item id="x1-6003x-3.3">
+<label>F3</label>
+<p>Metadata clearly and explicitly include the identifier of the data they describe.</p>
+</list-item>
+<list-item id="x1-6004x-3.3">
+<label>F4</label>
+<p>(Meta)data are registered or indexed in a searchable resource.</p>
+</list-item>
+<list-item id="x1-6005x-3.3">
+<label>A1</label>
+<p>(Meta)data are retrievable by their identifier using a standardised communications protocol.</p>
+<list>
+<list-item id="x1-6006x-3.3">
+<label>A1.1</label>
+<p>The protocol is open, free, and universally implementable.</p>
+</list-item>
+<list-item id="x1-6007x-3.3">
+<label>A1.2</label>
+<p>The protocol allows for an authentication and authorisation procedure, where necessary.</p>
+</list-item>
+</list>
+</list-item>
+<list-item id="x1-6008x-3.3">
+<label>A2</label>
+<p>Metadata are accessible, even when the data are no longer available.</p>
+</list-item>
+<list-item id="x1-6009x-3.3">
+<label>I1</label>
+<p>(Meta)data use a formal, accessible, shared, and broadly applicable language for knowledge representation.</p>
+</list-item>
+<list-item id="x1-6010x-3.3">
+<label>I2</label>
+<p>(Meta)data use vocabularies that follow FAIR principles.</p>
+</list-item>
+<list-item id="x1-6011x-3.3">
+<label>I3</label>
+<p>(Meta)data include qualified references to other (meta)data.</p>
+</list-item>
+<list-item id="x1-6012x-3.3">
+<label>R1</label>
+<p>Meta(data) are richly described with a plurality of accurate and relevant attributes.</p>
+<list>
+<list-item id="x1-6013x-3.3">
+<label>R1.1</label>
+<p>(Meta)data are released with a clear and accessible data usage license.</p>
+</list-item>
+<list-item id="x1-6014x-3.3">
+<label>R1.2</label>
+<p>(Meta)data are associated with detailed provenance.</p>
+</list-item>
+<list-item id="x1-6015x-3.3">
+<label>R1.3</label>
+<p>(Meta)data meet domain-relevant community standards.</p>
+</list-item>
+</list>
+</list-item>
+</list>
+<p>The following section shows the design of the <sc>Hobbit</sc> platform and how it supports the FAIR principles.</p>
+</sec>
+</sec>
+<sec id="x1-7000-4">
+<label>4.</label>
+<title>Platform architecture</title>
+<sec id="x1-8000-4.1">
+<label>4.1.</label>
+<title>Overview</title>
+<p>Figure <xref rid="x1-8001-1">1</xref> gives an overview of the architecture of the <sc>Hobbit</sc> platform. The platform is based on a container architecture, i.e., the components are implemented as independent containers. This eases the adding of new benchmarks and systems (<bold>U3</bold>) which can be implemented using different languages (<bold>U10</bold>). Additionally, it eases the development and maintenance of the platform itself and adds a separation between the platform, benchmark and system containers, thus limiting the influence of faulty program code to its container instead of decreasing the stability of the whole platform (<bold>U11</bold>, <bold>U12</bold>). Using containers for benchmark and system components also gives the possibility of scaling both by offering the deployment of additional containers across multiple machines (<bold>U6</bold>, <bold>U7</bold>). The communication between these components is ensured by means of a message bus. Choosing this established communication method eases the implementation of benchmarks and systems based on different programming languages (<bold>U9</bold>, <bold>U10</bold>).</p>
+<fig id="x1-8001-1">
+<label>Fig. 1.</label>
+<caption>
+<p>Architecture of the <sc>Hobbit</sc> platform.</p>
+</caption>
+<graphic xlink:href="ds-3-ds190021-g001.jpg"/>
+</fig>
+</sec>
+<sec id="x1-9000-4.2">
+<label>4.2.</label>
+<title>Platform components</title>
+<p>The platform has several components (see blue elements in Fig. <xref rid="x1-8001-1">1</xref>). They offer the main functionality of the platform.</p>
+<sec id="x1-10000-4.2.1">
+<label>4.2.1.</label>
+<title>Platform controller</title>
+<p>The platform controller is the central component of the <sc>Hobbit</sc> platform. Its main role is to coordinate the interaction of other components as needed. This mainly includes handling requests that come from the user interface component, starting and stopping of experiments, observing the health of the cluster and triggering the analysis component. In addition, the controller manages a priority queue that contains user-configured experiments that are to be executed in the future. The execution order of experiment configurations is determined using (1) the time at which they have been configured by the user (following the first-in-first-out principle) and (2) the priority of experiments, which is derived from whether the said experiment is part of a scheduled challenge (higher priority) or not (<bold>U8</bold>). The internal status of the platform controller is stored in a database. This enables restarting the controller without losing its current status, e.g., the content of the experiment queue.</p>
+<p>The platform controller uses features of Docker Swarm to observe the status of the cluster that is used to execute the experiments.E.g., if one of the nodes drops out of the cluster, the comparability between single experiments might not be given (<bold>U4</bold>). Thus, the platform controller needs to be aware of the number of working nodes that are available for the experiment. If there is no running experiment and the queue is not empty, the platform controller initiates the execution of an experiment and observes its state. If the experiment takes more time than a configured maximum, the platform controller terminates the benchmark components and the system that belongs to the experiment. By these means, it also ensures that faulty benchmarks or systems cannot block the platform (<bold>U12</bold>).</p>
+</sec>
+<sec id="x1-11000-4.2.2">
+<label>4.2.2.</label>
+<title>Storage</title>
+<p>The storage component contains the experiment results and configured challenges. It comprises two containers – a triple store that uses the <sc>Hobbit</sc> ontology to describe results and a handler for the communication between the message bus and the triple store. The storage component offers a public SPARQL endpoint with read-only access which can be queried via HTTP/HTTPS (<bold>U2</bold>, <bold>F4</bold>, <bold>A1</bold>).<xref ref-type="fn" rid="fn-11">11</xref><fn id="fn-11"><label><sup>11</sup></label>
+<p>Our endpoint can be found at <uri>https://db.project-hobbit.eu/sparql</uri>.</p></fn> The write access is limited to the platform controller, the user interface and the analysis component. The controller stores experiment results and manages running challenges. The user interface presents the available data to the user and enables the configuration of new challenges as well as the registration of systems for taking part in a challenge (<bold>U8</bold>). The analysis component requests experiment results from the storage and stores results of the analysis.</p>
+</sec>
+<sec id="x1-12000-4.2.3">
+<label>4.2.3.</label>
+<title>Ontology</title>
+<p>The experiment results, the metadata of experiments and challenges as well as the results of the analysis component are stored as RDF triples [<xref ref-type="bibr" rid="ref026">26</xref>] (<bold>I1</bold>). Where possible, we used established RDF vocabularies (<bold>I2</bold>, <bold>R1.3</bold>).<xref ref-type="fn" rid="fn-12">12</xref><fn id="fn-12"><label><sup>12</sup></label>
+<p>Namely, RDF [<xref ref-type="bibr" rid="ref005">5</xref>], PROV-O [<xref ref-type="bibr" rid="ref025">25</xref>], Data Cube [<xref ref-type="bibr" rid="ref012">12</xref>] and XSD [<xref ref-type="bibr" rid="ref007">7</xref>].</p></fn> However, for describing the experiments and challenges in detail we created the <sc>Hobbit</sc> ontology.<xref ref-type="fn" rid="fn-13">13</xref><fn id="fn-13"><label><sup>13</sup></label>
+<p>The formal specification of the ontology can be found at <uri>https://github.com/hobbit-project/ontology</uri>.</p></fn></p>
+<p>The ontology offers classes and properties to define the metadata for the single benchmarks and benchmarked systems. For each benchmark or system a user would like to use within the platform, a metadata file has to be provided containing some general information. This includes the definition of a URI for each benchmark and system (<bold>F1</bold>), a name, a description and a URI of the API offered by the benchmark and implemented by the system. Based on the API URI the platform can map the available systems to the benchmarks to make sure that the system is applicable for a given benchmark.</p>
+<p>Additionally, a benchmark’s metadata include parameters and KPIs. The parameter can be defined to be configurable through the user interface when starting an experiment and whether the parameter should be used as feature in the analysis component.</p>
+<p>A system’s metadata offers the definition of several system instances with different parameterisations. The analysis method can make use of the different parameter values of the instances to measure the impact of the parameters on the KPIs.</p>
+<p>Experiments are described with triples regarding (1) provenance, (2) the experiment results, (3) the benchmark configuration and (4) benchmark as well as (5) system metadata (<bold>F2</bold>, <bold>F3</bold>, <bold>I3</bold>, <bold>R1</bold>, <bold>R1.2</bold>). The provenance information covers – additionally to the metadata of the benchmark and system – the start and end time of the experiment as well as details about the hardware on which the experiment has been executed. The experiment results are generated by the implementation of the benchmark and typically contain results for the single KPIs which are defined in the benchmark’s metadata. Together with the metadata of the benchmark and system, the description of the KPIs and their description are used by the analysis component (<bold>U4</bold>). The platform controller assigns a URI to the experiment (<bold>F1</bold>) and copies the configuration of the benchmark as well as the metadata of the benchmark and system into the experiment’s metadata. Note that this makes sure that even if a user removes a benchmark or system from the platform after executing an experiment their metadata is still available (<bold>A2</bold>).</p>
+<p>Challenges which are carried out on the platform are modelled by separating them into single tasks. Each task has a benchmark with a certain parameterisation and users can register their systems for the single tasks to take part in the challenge. A challenge and its tasks have a generated URI (<bold>F1</bold>) and come with a label as well as a description. Additionally, the creator of the challenge can define the execution date and the publication date of the challenge as well as a link to a web page giving further information about the challenge. The first date defines the point in time at which the execution of the single experiments of the challenge should start while the latter defines the day at which the results should be made public. The experiments that are part of a challenge, point to the challenge task for which they have been executed (<bold>I3</bold>).</p>
+<p>Essentially, the ontology offers classes and properties to store the configuration and the results of an experiment. URIs are assigned to benchmarks, benchmarked software systems, and KPIs. Moreover, benchmark configurations as well as benchmark and system features, e.g., a certain parameterization, can be described. In addition to experiments, the ontology allows for the description of challenges, tasks in challenges and benchmarks associated with these tasks.</p>
+</sec>
+<sec id="x1-13000-4.2.4">
+<label>4.2.4.</label>
+<title>Analysis</title>
+<p>This component is triggered after an experiment has been carried out successfully. Its task is to enhance the benchmark results by combining them with the features of the benchmarked system(s) and the data or task generators. This combination can lead to additional insights, e.g., strengths and weaknesses of a certain system (<bold>U4</bold>). While the component uses the results of benchmarks, it is modelled independently from any benchmark implementation.</p>
+</sec>
+<sec id="x1-14000-4.2.5">
+<label>4.2.5.</label>
+<title>Graphical user interface</title>
+<p>The graphical user interface component handles the interaction with the user via HTTP/HTTPS (<bold>A1</bold>). It retrieves information from the user management that allows different roles enabling the user interface to offer functionality for authenticated users as well as a guest role for unauthenticated users. For example, a guest is only allowed to read the results of experiments and analysis (<bold>U2</bold>). Since the number of experiments is steadily increasing, the user interface offers a filter and sorting mechanism to increase the findability (<bold>F4</bold>). Experiments are currently visualized as table containing their metadata, the parameter values and the KPI values. This table view can also be used to compare several experiments with each other. Additionally, plots as shown in Fig. <xref rid="x1-14001-2">2</xref> are generated where applicable.<xref ref-type="fn" rid="fn-14">14</xref><fn id="fn-14"><label><sup>14</sup></label>
+<p>The example is part of the experiment <uri>https://w3id.org/hobbit/experiments#1540829047982</uri>.</p></fn></p>
+<fig id="x1-14001-2">
+<label>Fig. 2.</label>
+<caption>
+<p>An example of a plot generated for a KPI. It shows the F1-measure the Jena Fuseki triple store achieved for 71 consecutive select queries during a run of the Odin benchmark [<xref ref-type="bibr" rid="ref017">17</xref>].</p>
+</caption>
+<graphic xlink:href="ds-3-ds190021-g002.jpg"/>
+</fig>
+<fig id="x1-14002-3">
+<label>Fig. 3.</label>
+<caption>
+<p>An example of a diagram showing the Pearson correlations between the different parameters of the Odin benchmark [<xref ref-type="bibr" rid="ref017">17</xref>] and the micro F1-measure achieved by the two triple stores Virtuoso and Jena Fuseki.</p>
+</caption>
+<graphic xlink:href="ds-3-ds190021-g003.jpg"/>
+</fig>
+<p>Authenticated users have additional rights ranging from starting experiments to organising challenges, i.e., define experiments with a certain date at which they will be executed (<bold>U1</bold>, <bold>U8</bold>).</p>
+<p>Additionally, experiments and challenges have dereferencable URIs assigned, i.e., a user can copy the URI of an experiment or a challenge into the browser’s URL bar and the server shows the details of this resource (<bold>F1</bold>, <bold>A1</bold>). For our online instance, we offer w3id URIs to enable static URLs that can be redirected.<xref ref-type="fn" rid="fn-15">15</xref><fn id="fn-15"><label><sup>15</sup></label>
+<p>See <uri>https://w3id.org/</uri>.</p></fn></p>
+<p>For each benchmark, a report can be generated. This comprises (1) a brief overview over the results of the last experiments carried out with the benchmark, (2) scatter plots that compare values of features and KPIs as well as (3) plots showing the correlation between benchmark features and the performance achieved by the single systems. Such a plot is shown in Fig. <xref rid="x1-14002-3">3</xref>.</p>
+<p>If the license of the data has been configured in the triple store, the information is shown in the user interface (<bold>R1.1</bold>). The data of our online instance is licensed under the Creative Commons Attribution 4.0 International Public License.<xref ref-type="fn" rid="fn-16">16</xref><fn id="fn-16"><label><sup>16</sup></label>
+<p>License: <uri>https://creativecommons.org/licenses/by/4.0/legalcode</uri>. The license statement of our online instance can be found at <uri>https://master.project-hobbit.eu/home</uri>.</p></fn></p>
+</sec>
+<sec id="x1-15000-4.2.6">
+<label>4.2.6.</label>
+<title>Message bus</title>
+<p>This component contains the message bus system. Three different communication patterns are used. Firstly, labelled data queues simply forward data, e.g., the data generated by the mimicking algorithm is transferred from several data generators to several task generators. The second pattern works like remote procedure calls. The queue has one single receiving consumer that executes a command, e.g., a SPARQL query, and sends a response containing the result. Thirdly, a central broadcasting queue is used (<monospace>hobbit.command</monospace>). Every component connected to this queue receives all messages sent by one of the other connected components. This queue is used to connect the loosely coupled components and orchestrate their activities.</p>
+</sec>
+<sec id="x1-16000-4.2.7">
+<label>4.2.7.</label>
+<title>User management</title>
+<p>The user management relies on Keycloak.<xref ref-type="fn" rid="fn-17">17</xref><fn id="fn-17"><label><sup>17</sup></label>
+<p><uri>https://www.keycloak.org/</uri></p></fn> It allows the upload of private systems which cannot be seen by other users. Additionally, the platform makes use of different user roles to enable single users to create challenges. Note that the user management offers a guest role that enables unregistered users to see the publicly available experiment results.</p>
+</sec>
+<sec id="x1-17000-4.2.8">
+<label>4.2.8.</label>
+<title>Repository</title>
+<p>The repository contains all available benchmarks and systems. For our online instance, the repository is a Gitlab<xref ref-type="fn" rid="fn-18">18</xref><fn id="fn-18"><label><sup>18</sup></label>
+<p><uri>https://about.gitlab.com/</uri></p></fn> instance which can be used by registered users to upload Docker images and define the metadata of their benchmarks and systems (<bold>U3</bold>, <bold>R1.3</bold>). Note that the user can define the visibility of his system, i.e., the platform supports publicly accessible systems and benchmarks that can be used by every other registered user as well as private systems. However, the experiment results (including the system’s metadata) will always be made public.</p>
+</sec>
+<sec id="x1-18000-4.2.9">
+<label>4.2.9.</label>
+<title>Resource monitoring</title>
+<p>The resource monitoring component uses Prometheus<xref ref-type="fn" rid="fn-19">19</xref><fn id="fn-19"><label><sup>19</sup></label>
+<p><uri>https://prometheus.io/</uri></p></fn> to collect information about the hardware resources used by the benchmarked system. The benchmark can request this information to include it into its evaluation. At the moment, the CPU time, the disk space and the amount of RAM used by the system can be monitored. Based on the architecture of Prometheus, this list of metrics can be further extended.</p>
+</sec>
+<sec id="x1-19000-4.2.10">
+<label>4.2.10.</label>
+<title>Logging</title>
+<p>The logging comprises three components – Logstash,<xref ref-type="fn" rid="fn-20">20</xref><fn id="fn-20"><label><sup>20</sup></label>
+<p><uri>https://www.elastic.co/de/products/logstash</uri></p></fn> Elasticsearch<xref ref-type="fn" rid="fn-21">21</xref><fn id="fn-21"><label><sup>21</sup></label>
+<p><uri>https://www.elastic.co/de/products/elasticsearch</uri></p></fn> and Kibana.<xref ref-type="fn" rid="fn-22">22</xref><fn id="fn-22"><label><sup>22</sup></label>
+<p><uri>https://www.elastic.co/de/products/kibana</uri></p></fn> While Logstash collects the log messages from the single components, Elasticsearch is used to store them inside a fulltext index. Kibana offers the user interface for accessing this index. The logs are kept private. However, owners of systems or benchmarks can download the logs of their components from the user interface.</p>
+</sec>
+</sec>
+<sec id="x1-20000-4.3">
+<label>4.3.</label>
+<title>Benchmark components</title>
+<p>These components are part of given benchmarks and have been colored orange in Fig. <xref rid="x1-8001-1">1</xref>. Hence, they are instantiated for a particular experiment and are destroyed when the experiment ends. A benchmark execution has three phases – an initialisation phase, a benchmarking phase and an evaluation phase. The phases are described in more detail in Section <xref rid="x1-27000-4.5">4.5</xref>. It should be noted that the components described in this section represent our suggestion for the structure of a benchmark. However, the <sc>Hobbit</sc> platform supports a wide range of possible benchmark structures as long as a benchmark implements the necessary API to communicate with the platform controller.</p>
+<sec id="x1-21000-4.3.1">
+<label>4.3.1.</label>
+<title>Benchmark controller</title>
+<p>The benchmark controller is the central component of a benchmark. It communicates with the platform controller and it creates and controls the data generators, task generators, evaluation-storage and evaluation-module.</p>
+</sec>
+<sec id="x1-22000-4.3.2">
+<label>4.3.2.</label>
+<title>Data generator</title>
+<p>Data generators are responsible for supplying the other components with the data necessary for the experiment. Depending on the benchmark implementation, there are two ways types of generators. Either, a given dataset, e.g., a real-world dataset, is loaded from a file or the component encapsulates an algorithm able to generate the necessary data. Importantly, data generators can be run in a distributed fashion to ensure that the platform can create the necessary data volumes or data velocity. Typically, data generators are created by the benchmark controller and configured using benchmark-specific parameters. They generate data based on the given parameters and send said data to the task generators as well as to the system adapter and terminate when the required data has been created.</p>
+</sec>
+<sec id="x1-23000-4.3.3">
+<label>4.3.3.</label>
+<title>Task generator</title>
+<p>Task generators get data from data generators, generate tasks that can be identified with an ID and send these IDs to the system adapter. Each task represents a single problem that has to be solved by the benchmarked system (e.g., a SPARQL query). The expected response for the generated task is sent to the evaluation storage. Like data generators, task generators can be scaled to run in a distributed fashion.</p>
+</sec>
+<sec id="x1-24000-4.3.4">
+<label>4.3.4.</label>
+<title>Evaluation storage</title>
+<p>This component stores the gold standard results as well as the responses of the benchmarked system during the benchmarking phase. During the evaluation phase it sends this data to the evaluation module. Internally, the output of a benchmark is stored as a set of key-value pairs. Task IDs are used as key. Each value comprises (1) the expected result, (2) the result calculated by the benchmarked system as well as (3) the timestamp at which the task was sent to the system by a task generator and (4) the timestamp at which the response was received by the evaluation storage.</p>
+</sec>
+<sec id="x1-25000-4.3.5">
+<label>4.3.5.</label>
+<title>Evaluation module</title>
+<p>The evaluation module is created by the benchmark controller at the beginning of the evaluation phase and requests results from the evaluation storage. It evaluates them by computing the KPIs associated with the benchmark. It should be noted that the decision which KPIs will be used is mainly up to the benchmark developer. Both, the effectiveness as well as the efficiency of systems can be measured (<bold>U5</bold>). After computing the KPIs the component summarises the evaluation results and sends them to the benchmark controller before it terminates.</p>
+</sec>
+</sec>
+<sec id="x1-26000-4.4">
+<label>4.4.</label>
+<title>Benchmarked system components</title>
+<p>Each system to be benchmarked using the <sc>Hobbit</sc> platform has to implement the API of the benchmark to be used and the API of the platform. Since systems are typically not developed for the mere sake of being benchmarked with our platform, each system is usually connected to the platform by means of a system adapter container. The system adapter serves as a proxy translating messages from the <sc>Hobbit</sc> platform to the system to be benchmarked and vice versa. The system adapter of each of the systems to benchmark is instantiated by the platform controller when an experiment is started. Adapters can create additional containers that might contain components of the benchmarked system. Thereafter, they send a ready signal to the platform controller to indicate that they are ready to be benchmarked. They receive incoming data and tasks, forward them to the system and send its responses to the evaluation storage. Adapters stop the benchmark system and terminate after they receive a command indicating that all tasks have been completed.</p>
+<fig id="x1-26001-4">
+<label>Fig. 4.</label>
+<caption>
+<p>Simplified overview of the general benchmarking workflow. The system as well as the user interface are left out and the benchmark controller creates other containers directly, without sending requests to the platform controller.</p>
+</caption>
+<graphic xlink:href="ds-3-ds190021-g004.jpg"/>
+</fig>
+</sec>
+<sec id="x1-27000-4.5">
+<label>4.5.</label>
+<title>Benchmark workflow</title>
+<p>Since the platform was designed for executing benchmarks (<bold>U1</bold>), we defined a typical workflow of benchmarking a Big LD system. The workflow is abstracted to make sure that it can be used for benchmarking all steps of the LD life cycle steps. Figure <xref rid="x1-26001-4">4</xref> shows a sequence diagram containing the steps as well as the type of communication that is used. Note that the orchestration of the single benchmark components is part of the benchmark and can be different across different benchmark implementations.</p>
+<sec id="x1-28000-4.5.1">
+<label>4.5.1.</label>
+<title>Initialisation phase</title>
+<p>At the beginning of the benchmarking process, the platform controller makes sure that a benchmark can be started. This includes a check to make sure that all hardware nodes of the cluster are available. The platform controller then instantiates the system adapter. The said adapter first initializes, then starts the system to be benchmarked and makes sure that it is working properly. Finally, the adapter sends a message to the platform controller to indicate that it is ready. Once the system adapter has been started, the platform controller generates the benchmark controller. The task of the benchmark controller is to ensure that the data and tasks for a given benchmark are generated and dispatched according to a given specification. To achieve this goal, the controller instantiates the data and task generators as well as the evaluation storage. It then sends a message to the platform controller to indicate that it is ready.</p>
+</sec>
+<sec id="x1-29000-4.5.2">
+<label>4.5.2.</label>
+<title>Benchmarking phase</title>
+<p>The platform controller waits until both the system adapter and the benchmark controller are ready before starting the benchmarking phase by sending a start signal to the benchmark controller which starts the data generators. The data generators start the data generation algorithms to create the data that will underlie the benchmark. The data is sent to the system adapter and to the task generators. The task generators generate the tasks and send them to the system adapter, which triggers the required processing of the data in the system. The system response is forwarded to the evaluation storage by the system adapter. The task generators store the corresponding expected result in the evaluation storage. After the data and task generators finish their work, the benchmarking phase ends and both the generators and the system adapter terminate.</p>
+</sec>
+<sec id="x1-30000-4.5.3">
+<label>4.5.3.</label>
+<title>Evaluation phase</title>
+<p>During the evaluation phase, the benchmark controller creates the evaluation module. The evaluation module loads the results from the evaluation storage. This is done by requesting the results pairs, i.e., the expected result and the result received from the system for a single task, from the storage. The evaluation module uses these pairs to evaluate the system’s performance and to calculate the KPIs. The results of this evaluation are returned to the benchmark controller before the evaluation module and storage terminate. The benchmark controller adds information for repeating the experiment, e.g., its parameters, to the evaluation results, sends them to the platform controller and terminates. Note that this makes sure that all the data is still available, although the benchmark or the benchmarked system are deleted from the servers (<bold>A2</bold>). After the benchmark controller has finished its work, the platform controller can add additional information to the result, e.g., the configuration of the hardware, and store the result. Following this, a new evaluation can be started. The platform controller sends the URI of the new experiment result to the analysis component. The analysis component reads the evaluation results from the storage, processes them and stores additional information in the storage.</p>
+<p>Importantly, the platform allows for other orchestration schemes. For example, it is possible to generate all the data in a first step before the task generators start to generate their tasks based on the complete data. In another variation, the task generators can also be enabled to generate a task, wait for the response of the system and then send the subsequent task.</p>
+</sec>
+</sec>
+</sec>
+<sec id="x1-31000-5">
+<label>5.</label>
+<title>Evaluation</title>
+<p>The <sc>Hobbit</sc> platform has already been used successfully in a large number of challenges (see Section <xref rid="x1-34000-6">6</xref>). Still, we evaluated our architecture in two different respects. First, we simulated benchmarking triple stores using <sc>Hobbit</sc>. These experiments had two goals. First, we wanted to prove that the <sc>Hobbit</sc> platform can be used on single, lightweight hardware (e.g., for development purposes or for benchmarks where the scalability and runtime are not of importance) as well as in a distributed environment. Second, we wanted to evaluate the throughput of storage benchmarks. In addition, we benchmarked several knowledge extraction tools and studied the runtime performance of these systems for the first time.</p>
+<table-wrap id="x1-31001-2">
+<label>Table 2</label>
+<caption>
+<p>Platform benchmark results on a single machine (1–3) and a cluster (4, 5)</p>
+</caption>
+<table frame="hsides">
+<tbody>
+<tr>
+<td valign="top" align="left">Experiments</td>
+<td valign="top" align="center">Exp. 1</td>
+<td valign="top" align="center">Exp. 2</td>
+<td valign="top" align="center">Exp. 3</td>
+<td valign="top" align="center">Exp. 4</td>
+<td valign="top" align="center">Exp. 5</td>
+</tr>
+<tr>
+<td valign="top" align="left">Data generators</td>
+<td valign="top" align="right">2</td>
+<td valign="top" align="right">2</td>
+<td valign="top" align="right">2</td>
+<td valign="top" align="right">1</td>
+<td valign="top" align="right">3</td>
+</tr>
+<tr>
+<td valign="top" align="left">Task generators</td>
+<td valign="top" align="right">1</td>
+<td valign="top" align="right">1</td>
+<td valign="top" align="right">1</td>
+<td valign="top" align="right">1</td>
+<td valign="top" align="right">1</td>
+</tr>
+<tr>
+<td valign="top" align="left">Queries</td>
+<td valign="top" align="right">1,000</td>
+<td valign="top" align="right">2,000</td>
+<td valign="top" align="right">5,000</td>
+<td valign="top" align="right">100,000</td>
+<td valign="top" align="right">300,000</td>
+</tr>
+<tr>
+<td valign="top" align="left">Avg. query runtime (in ms)</td>
+<td valign="top" align="right">7,058</td>
+<td valign="top" align="right">17,309</td>
+<td valign="top" align="right">33,561</td>
+<td valign="top" align="right">38,810</td>
+<td valign="top" align="right">59,828</td>
+</tr>
+<tr>
+<td valign="top" align="left">Query runtime std. dev.</td>
+<td valign="top" align="right">686</td>
+<td valign="top" align="right">4,493</td>
+<td valign="top" align="right">3,636</td>
+<td valign="top" align="right">22,517</td>
+<td valign="top" align="right">24,540</td>
+</tr>
+<tr>
+<td valign="top" align="left">Overall runtime (in s)</td>
+<td valign="top" align="right">11.2</td>
+<td valign="top" align="right">32.4</td>
+<td valign="top" align="right">51.5</td>
+<td valign="top" align="right">2,086</td>
+<td valign="top" align="right">2,536</td>
+</tr>
+<tr>
+<td valign="top" align="left">Queries per second (avg.)</td>
+<td valign="top" align="right">44.9</td>
+<td valign="top" align="right">31.0</td>
+<td valign="top" align="right">48.6</td>
+<td valign="top" align="right">865.1</td>
+<td valign="top" align="right">774.2</td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+<sec id="x1-32000-5.1">
+<label>5.1.</label>
+<title>Triple store benchmark</title>
+<p>To configure our simulation, we derived message characteristics from real data using the Linked SPARQL Queries Dataset [<xref ref-type="bibr" rid="ref036">36</xref>]–a collection of SPARQL query logs. This collection of real query logs suggests that (1) the average length of a SPARQL query is 545.45 characters and (2) the average result set comprises 122.45 bindings. We assumed that the average size of a single result is 100 characters leading to a result set size of approximately 12,200 characters which is created for every request by our triple store simulation.</p>
+<p>The platform was deployed on a small machine<xref ref-type="fn" rid="fn-23">23</xref><fn id="fn-23"><label><sup>23</sup></label>
+<p>Dual Intel Core i5, 2.5 GHz, 2 GB RAM.</p></fn> and on a server cluster.<xref ref-type="fn" rid="fn-24">24</xref><fn id="fn-24"><label><sup>24</sup></label>
+<p>1 master server (1xE5-2630v4 10-cores, 2.2 GHz, 128 GB RAM) hosting platform components (including RabbitMQ message broker), 1 data server (1xE5-2630v3 8-cores, 2.4 GHz, 64 GB RAM) hosting storages, 6 nodes (2xE5-2630v3 8-cores, 2.4 GHz, 256 GB RAM) divided into two groups hosting either components of the benchmark or the benchmarked system.</p></fn> The single benchmark runs are shown in Table <xref rid="x1-31001-2">2</xref>. We executed the benchmark with three different numbers of queries on the smaller machine and two larger numbers of queries on the cluster. Our results show that the platform can run even on the minimalistic single machine chosen for our evaluation. Hence, the <sc>Hobbit</sc> platform can be used locally for smoke tests and development tests. In addition, our results also clearly indicate the need for a platform such as <sc>Hobbit</sc> by pointing to the necessity to deploy benchmarking platforms in a large-scale environment to test some of the Big LD systems. Experiments with 5000 queries run on the small machine clearly show an increase in the average runtime per query and the standard deviation of the query runtimes due to a traffic jam in the message bus queues. In contrast, our results on the cluster show that we are able to scale up easily and run 20 times more queries per second than on the single machine.</p>
+</sec>
+<sec id="x1-33000-5.2">
+<label>5.2.</label>
+<title>Knowledge Extraction benchmark use case</title>
+<p>For our second evaluation, we used Task 1B of the Open Knowledge Extraction challenge 2017 [<xref ref-type="bibr" rid="ref041">41</xref>] as use case. This task comprises the problem of spotting named entities from a given text and linking them to a given knowledge base. All experiments were run on our cluster. We benchmarked the following named entity recognition tools: (1) FOX [<xref ref-type="bibr" rid="ref039">39</xref>], (2) the Ottawa Baseline Information Extraction (Balie) [<xref ref-type="bibr" rid="ref030">30</xref>], (3) the Illinois Named Entity Tagger (Illinois) [<xref ref-type="bibr" rid="ref033">33</xref>], (4) the Apache OpenNLP Name Finder (OpenNLP) [<xref ref-type="bibr" rid="ref003">3</xref>], (5) the Stanford Named Entity Recognizer (Stanford) [<xref ref-type="bibr" rid="ref015">15</xref>], and (6) DBpedia Spotlight (Spotlight) [<xref ref-type="bibr" rid="ref027">27</xref>]. The entities that were found in the text by any of the tools are linked to a given knowledge base using AGDISTIS [<xref ref-type="bibr" rid="ref029">29</xref>]. In our experiment, we used DBpedia 2015<xref ref-type="fn" rid="fn-25">25</xref><fn id="fn-25"><label><sup>25</sup></label>
+<p><uri>http://dbpedia.org</uri></p></fn> as the reference knowledge base.</p>
+<p>The aim of the benchmark was to measure the scalability and the accuracy of these systems under increasing load, an experiment which was not possible with existing benchmarking solutions. We used a gold standard made up of 10,000 documents generated using the BENGAL generator<xref ref-type="fn" rid="fn-26">26</xref><fn id="fn-26"><label><sup>26</sup></label>
+<p><uri>http://github.com/dice-group/bengal</uri></p></fn> included in the <sc>Hobbit</sc> platform. The evaluation module was based on the evaluation used in [<xref ref-type="bibr" rid="ref041">41</xref>] and measured the runtime for single documents as well as the result quality in terms of micro-precision, recall and F1-measure. We used 1 data and 1 task generator for our benchmark. The data generator was configured to run through 5 velocity phases (2000 documents/phase) with differing delays between single documents in each phase. The delays between the documents were set to <inline-formula><mml:math id="math001">
+<mml:mo fence="true" stretchy="false">{</mml:mo>
+<mml:mn>1</mml:mn>
+<mml:mtext> s</mml:mtext>
+<mml:mo mathvariant="normal">,</mml:mo><mml:mstyle displaystyle="false">
+<mml:mfrac>
+<mml:mrow>
+<mml:mn>1</mml:mn>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>2</mml:mn>
+</mml:mrow>
+</mml:mfrac>
+</mml:mstyle>
+<mml:mtext> s</mml:mtext>
+<mml:mo mathvariant="normal">,</mml:mo><mml:mstyle displaystyle="false">
+<mml:mfrac>
+<mml:mrow>
+<mml:mn>1</mml:mn>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>4</mml:mn>
+</mml:mrow>
+</mml:mfrac>
+</mml:mstyle>
+<mml:mtext> s</mml:mtext>
+<mml:mo mathvariant="normal">,</mml:mo><mml:mstyle displaystyle="false">
+<mml:mfrac>
+<mml:mrow>
+<mml:mn>1</mml:mn>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>8</mml:mn>
+</mml:mrow>
+</mml:mfrac>
+</mml:mstyle>
+<mml:mtext> s</mml:mtext>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mn>0</mml:mn>
+<mml:mtext> s</mml:mtext>
+<mml:mo fence="true" stretchy="false">}</mml:mo></mml:math></inline-formula> leading to an increasing workload of <inline-formula><mml:math id="math002">
+<mml:mo fence="true" stretchy="false">{</mml:mo>
+<mml:mn>1</mml:mn>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mn>2</mml:mn>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mn>4</mml:mn>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mn>8</mml:mn>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mo stretchy="false">≈</mml:mo>
+<mml:mn>800</mml:mn>
+<mml:mo fence="true" stretchy="false">}</mml:mo></mml:math></inline-formula> documents per second.</p>
+<fig id="x1-33001-5">
+<label>Fig. 5.</label>
+<caption>
+<p>Average runtime per document achieved by systems during the different phases.</p>
+</caption>
+<graphic xlink:href="ds-3-ds190021-g005.jpg"/>
+</fig>
+<p>The results presented in Figure <xref rid="x1-33001-5">5</xref> show that all approaches scale well when provided with enough hardware. As expected, FOX is the slowest solution as it relies on calling 5 underlying fully-fledged entity recognition tools and merging their results. Our results also indicate that a better load balancing could lead to even better runtimes. In particular, the runtime per document starts to increase as soon as the tool cannot handle the incoming amount of documents in time and the documents start to be queued (see Phase 2 to 4). Additionally, the results show that Balie is slower than the other fully-fledged entity recognition tools. Given that Balie also has the lowest F1-score (see Table <xref rid="x1-33002-3">3</xref>) it can be argued that removing Balie from FOX could be an option to increase its efficiency.</p>
+<table-wrap id="x1-33002-3">
+<label>Table 3</label>
+<caption>
+<p>The effectiveness of the systems (micro measures)</p>
+</caption>
+<table frame="hsides" rules="groups">
+<thead>
+<tr>
+<td valign="top" align="left">System</td>
+<td valign="top" align="center">Precision</td>
+<td valign="top" align="center">Recall</td>
+<td valign="top" align="center">F1-measure</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top" align="left">Balie</td>
+<td valign="top" align="center">0.321</td>
+<td valign="top" align="center">0.293</td>
+<td valign="top" align="center">0.306</td>
+</tr>
+<tr>
+<td valign="top" align="left">FOX</td>
+<td valign="top" align="center">0.505</td>
+<td valign="top" align="center">0.543</td>
+<td valign="top" align="center">0.523</td>
+</tr>
+<tr>
+<td valign="top" align="left">Illinois</td>
+<td valign="top" align="center">0.524</td>
+<td valign="top" align="center">0.614</td>
+<td valign="top" align="center">0.565</td>
+</tr>
+<tr>
+<td valign="top" align="left">OpenNLP</td>
+<td valign="top" align="center">0.351</td>
+<td valign="top" align="center">0.233</td>
+<td valign="top" align="center">0.280</td>
+</tr>
+<tr>
+<td valign="top" align="left">Spotlight</td>
+<td valign="top" align="center">0.513</td>
+<td valign="top" align="center">0.411</td>
+<td valign="top" align="center">0.456</td>
+</tr>
+<tr>
+<td valign="top" align="left">Stanford</td>
+<td valign="top" align="center">0.548</td>
+<td valign="top" align="center">0.662</td>
+<td valign="top" align="center">0.600</td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+</sec>
+</sec>
+<sec id="x1-34000-6">
+<label>6.</label>
+<title>Application</title>
+<p>The <sc>Hobbit</sc> platform is now being used by more than 300 registered users that already have executed more than 13000 experiments with more than 40 benchmarks.<xref ref-type="fn" rid="fn-27">27</xref><fn id="fn-27"><label><sup>27</sup></label>
+<p>See <uri>http://master.project-hobbit.eu/experiments</uri>.</p></fn> The <sc>Hobbit</sc> platform was also used to carry out eleven benchmarking challenges for Big Data applications. It was used for the Grand Challenge of the 11th and 12th ACM International Conference on Distributed and Event-Based Systems (DEBS 2017 and 2018) [<xref ref-type="bibr" rid="ref021">21</xref>,<xref ref-type="bibr" rid="ref022">22</xref>]. The 2017 challenge was aimed at event-based systems for real-time analytics. Overall, more than 20 participating systems had to identify anomalies from a stream of sensor data.</p>
+<p>The Open Knowledge Extraction Challenges 2017 and 2018 used the platform for benchmarking Named Entity Recognition, Entity Linking and Relation Extraction approaches [<xref ref-type="bibr" rid="ref040">40</xref>,<xref ref-type="bibr" rid="ref041">41</xref>]. For one of the challenge tasks a setup similar to our evaluation in Section <xref rid="x1-33000-5.2">5.2</xref> was used. This evaluation revealed that the scalability of some systems decreases drastically under realistic loads. While some of the benchmarked solutions were able to answer single requests efficiently, they became slower than competing systems when challenged with a large amount of requests [<xref ref-type="bibr" rid="ref041">41</xref>].</p>
+<p>The Mighty Storage Challenges 2017 and 2018 focused on benchmarking triple stores [<xref ref-type="bibr" rid="ref017">17</xref>,<xref ref-type="bibr" rid="ref018">18</xref>]. Their RDF data ingestion tasks showed that most triple stores are unable to consume and retrieve triples (e.g., sensor or event data) efficiently. This insight suggests that current triple stores need to significantly improve in their scalability before they can be used for Big Data applications out of the box. The derivation of this insight was made possible by <sc>Hobbit</sc>’s support of distributed systems and its distributed implementation that allows the generation of enough data and queries to overload the triple stores.</p>
+</sec>
+<sec id="x1-35000-7">
+<label>7.</label>
+<title>Limitations and future work</title>
+<p>The <sc>Hobbit</sc> benchmarking platform showed its applicability during several challenges and experiments described above. However, the platform comes with some limitations and space for future enhancements which will be discussed in this section.</p>
+<p>The FAIR principles are focusing on data management. Thus, not all of them can be solely realised by the implementation of the platform. There are principles which are at least partly in the responsibility of the organisation hosting the platform. The license for the experiment results has to be defined by the hosting organisation (<bold>R1.1</bold>). Similarly, the combination of globally unique, persistent identifiers (<bold>F1</bold>) and making them retrievable (<bold>A1</bold>) is supported by the platform implementation and our online instance is deployed to enable this feature. However, the hosting party of a new instance will have to define another persistent URI namespace for experiments and organise the redirection of requests from this namespace to the newly deployed instance.</p>
+<p>Another limitation can be seen in the fulfilment of <bold>F2</bold>, <bold>R1.2</bold> and <bold>I2</bold>. The platform is programmed to enhance the metadata of an experiment by adding all metadata that the platform has about itself as well as the metadata of the benchmark and system with which the experiment has been executed. However, since the benchmark and system metadata are user defined their richness as well as the used vocabularies are mainly depending on the user.</p>
+<p>The design of the platform comes with two bottlenecks which we addressed by using horizontal scaling. Firstly, the message bus which is used for the communication might not be able to handle all the data in a reasonable amount of time. We handled this issue by using RabbitMQ as message broker.<xref ref-type="fn" rid="fn-28">28</xref><fn id="fn-28"><label><sup>28</sup></label>
+<p><uri>https://www.rabbitmq.com</uri></p></fn> It supports the deployment of a cluster of message brokers increasing the possible throughput. Secondly, the evaluation storage may reduce the benchmarked system’s performance by consuming the results at a much lower pace than the system is sending them. To avoid this situation, we chose RIAK – a key-value store which can be deployed as cluster.<xref ref-type="fn" rid="fn-29">29</xref><fn id="fn-29"><label><sup>29</sup></label>
+<p><uri>https://riak.com/products/riak-kv/</uri></p></fn> This enables the consumption of several system results in parallel.</p>
+<p>An important limitation of the platform is the necessary knowledge about several technologies and the platform APIs which is demanded. While viewing and searching for experiment results is straight forward, the deployment of a new benchmark or a new system can cause some effort for users which have not worked with the platform before. Especially for complex benchmarks the workflow described in Section <xref rid="x1-27000-4.5">4.5</xref> may have to be adapted. We created base implementations for different benchmark and system components, developed example benchmarks and systems as open source projects, created video tutorials and enhanced the documentation of the platform over time incorporating user questions and feedback we received. However, the further lowering of this entry barrier remains an important future task.</p>
+<p>Additionally, we received feature requests from the community. These requests are mainly targeting the user interface. However, one feature request focuses on the sharing of data. At the moment, it is not possible for containers executed inside the platform to share a common directory. Instead, data which has to be shared needs to be sent using the message queues. In the future, we want to make use of a feature of Docker containers which allows them to share a common data container without exposing the local hard drives of the servers to the 3rd party programs that are executed inside the containers of the benchmarks and the systems.</p>
+</sec>
+<sec id="x1-36000-8">
+<label>8.</label>
+<title>Conclusion</title>
+<p>This paper presents the architecture of the <sc>Hobbit</sc> benchmarking platform, which is based on real requirements collected from experts from across the world. The platform is designed to be modular and easy to scale up. <sc>Hobbit</sc> is hence the first benchmarking platform that can be used for benchmarking Big LD systems. The platform has already been used in several challenges and was shown to address the requirements of large-scale benchmarking for storage, predictive maintenance, knowledge acquisition and question answering. These challenges showed clearly that <sc>Hobbit</sc> can be used to measure both the scalability and accuracy of Big Data platforms. As the platform is not limited to a particular step of the LD life cycle and can be configured to use virtually any data generator and task generator, it is well suited for benchmarking any step of the Big LD life cycle. A fully fledged implementation of the platform is available as an open-source solution and has started to attract the developer community. While writing this paper, the platform is planned to be used for the Semantic Web Challenge 2019 as well as the OAEI Challenge 2019.<xref ref-type="fn" rid="fn-30">30</xref><fn id="fn-30"><label><sup>30</sup></label>
+<p>See <uri>https://dice-group.github.io/semantic-web-challenge.github.io/</uri> and <uri>http://oaei.ontologymatching.org/2019/</uri>.</p></fn> It will also serves as one of the key stones of the Innovative Training Network (ITN) KnowGraphs during the next years. We hence aim to extend it so as to build the reference point for benchmarking Big LD applications.</p>
+</sec>
+</body>
+<back>
+<ack>
+<title>Acknowledgements</title>
+<p>This work was supported by the European Union’s H2020 research and innovation action HOBBIT (GA no. 688227), by the H2020 Marie Skłodowska-Curie project KnowGraphs (GA no. 860801) and by the German Federal Ministry for Economic Affairs and Energy (BMWi) within the project RAKI (no. 01MD19012D) of the program ‘Smarte Datenwirtschaft’.</p></ack>
+<ref-list>
+<title>References</title>
+<ref id="ref001">
+<label>[1]</label><mixed-citation publication-type="chapter"><string-name><given-names>A.</given-names> <surname>Algergawy</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Cheatham</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Faria</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Ferrara</surname></string-name>, <string-name><given-names>I.</given-names> <surname>Fundulaki</surname></string-name>, <string-name><given-names>I.</given-names> <surname>Harrow</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Hertling</surname></string-name>, <string-name><given-names>E.</given-names> <surname>Jiménez-Ruiz</surname></string-name>, <string-name><given-names>N.</given-names> <surname>Karam</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Khiat</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Lambrix</surname></string-name>, <string-name><given-names>H.</given-names> <surname>Li</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Montanelli</surname></string-name>, <string-name><given-names>H.</given-names> <surname>Paulheim</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Pesquita</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Saveta</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Schmidt</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Shvaiko</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Splendiani</surname></string-name>, <string-name><given-names>E.</given-names> <surname>Thiéblin</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Trojahn</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Vataščinová</surname></string-name>, <string-name><given-names>O.</given-names> <surname>Zamazal</surname></string-name> and <string-name><given-names>L.</given-names> <surname>Zhou</surname></string-name>, <chapter-title>Results of the ontology alignment evaluation initiative 2018</chapter-title>, in: <source>Proceedings of the 13th International Workshop on Ontology Matching (OM 2018)</source>, <conf-loc>Monterey, CA, USA, October 8, 2018</conf-loc>, <string-name><given-names>P.</given-names> <surname>Shvaiko</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Euzenat</surname></string-name>, <string-name><given-names>E.</given-names> <surname>Jiménez-Ruiz</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Cheatham</surname></string-name> and <string-name><given-names>O.</given-names> <surname>Hassanzadeh</surname></string-name>, eds, <publisher-name>CEUR-WS</publisher-name>, <year>2018</year>, pp. <fpage>76</fpage>–<lpage>116</lpage>, <comment><uri>http://ceur-ws.org/Vol-2288/oaei18_paper0.pdf</uri></comment>.</mixed-citation>
+</ref>
+<ref id="ref002">
+<label>[2]</label><mixed-citation publication-type="chapter"><string-name><given-names>S.</given-names> <surname>Auer</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Lehmann</surname></string-name>, <string-name><given-names>A.-C.</given-names> <surname>Ngonga Ngomo</surname></string-name> and <string-name><given-names>A.</given-names> <surname>Zaveri</surname></string-name>, <chapter-title>Introduction to linked data and its lifecycle on the web</chapter-title>, in: <source>Reasoning Web. Semantic Technologies for Intelligent Data Access</source>, <publisher-name>Springer</publisher-name>, <year>2013</year>, pp. <fpage>1</fpage>–<lpage>90</lpage>. doi:<pub-id pub-id-type="doi">10.1007/978-3-642-23032-5_1</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref003">
+<label>[3]</label><mixed-citation publication-type="other"><string-name><given-names>J.</given-names> <surname>Baldridge</surname></string-name>, The opennlp project, 2005, <uri>http://opennlp.apache.org/index.html</uri>.</mixed-citation>
+</ref>
+<ref id="ref004">
+<label>[4]</label><mixed-citation publication-type="journal"><string-name><given-names>C.</given-names> <surname>Bizer</surname></string-name> and <string-name><given-names>A.</given-names> <surname>Schultz</surname></string-name>, <article-title>The Berlin SPARQL benchmark</article-title>, <source>Int. J. Semantic Web Inf. Syst.</source> <volume>5</volume>(<issue>2</issue>) (<year>2009</year>), <fpage>1</fpage>–<lpage>24</lpage>. doi:<pub-id pub-id-type="doi">10.4018/jswis.2009040101</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref005">
+<label>[5]</label><mixed-citation publication-type="other"><string-name><given-names>D.</given-names> <surname>Brickley</surname></string-name>, <string-name><given-names>R.V.</given-names> <surname>Guha</surname></string-name> and <string-name><given-names>B.</given-names> <surname>McBride</surname></string-name>, RDF schema 1.1, <italic>W3C Working Group Note</italic>, 2014, <uri>http://www.w3.org/TR/2014/REC-rdf-schema-20140225/</uri>.</mixed-citation>
+</ref>
+<ref id="ref006">
+<label>[6]</label><mixed-citation publication-type="other"><string-name><given-names>D.</given-names> <surname>Carmel</surname></string-name>, <string-name><given-names>M.-W.</given-names> <surname>Chang</surname></string-name>, <string-name><given-names>E.</given-names> <surname>Gabrilovich</surname></string-name>, <string-name><given-names>B.-J.P.</given-names> <surname>Hsu</surname></string-name> and <string-name><given-names>K.</given-names> <surname>Wang</surname></string-name>, <article-title>ERD 2014: Entity recognition and disambiguation challenge</article-title>, <source>SIGIR Forum</source> (<year>2014</year>). doi:<pub-id pub-id-type="doi">10.1145/2701583.2701591</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref007">
+<label>[7]</label><mixed-citation publication-type="other"><string-name><given-names>J.J.</given-names> <surname>Carroll</surname></string-name> and <string-name><given-names>J.Z.</given-names> <surname>Pan</surname></string-name>, XML schema datatypes in RDF and OWL, <italic>W3C Working Group Note</italic>, 2006, <uri>http://www.w3.org/TR/2006/NOTE-swbp-xsch-datatypes-20060314/</uri>.</mixed-citation>
+</ref>
+<ref id="ref008">
+<label>[8]</label><mixed-citation publication-type="other"><string-name><given-names>J.M.</given-names> <surname>Cavanillas</surname></string-name>, <string-name><given-names>E.</given-names> <surname>Curry</surname></string-name> and <string-name><given-names>W.</given-names> <surname>Wahlster</surname></string-name>, <source>New Horizons for a Data-Driven Economy: A Roadmap for Usage and Exploitation of Big Data in Europe</source>, <publisher-name>Springer</publisher-name>, <year>2016</year>. doi:<pub-id pub-id-type="doi">10.1007/978-3-319-21569-3</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref009">
+<label>[9]</label><mixed-citation publication-type="other"><string-name><given-names>S.</given-names> <surname>Ceesay</surname></string-name>, <string-name><given-names>A.D.</given-names> <surname>Barker</surname></string-name> and <string-name><given-names>B.</given-names> <surname>Varghese</surname></string-name>, <chapter-title>Plug and play bench: Simplifying big data benchmarking using containers</chapter-title>, in: <source>2017 IEEE International Conference on Big Data</source>, <year>2017</year>. doi:<pub-id pub-id-type="doi">10.1109/BigData.2017.8258249</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref010">
+<label>[10]</label><mixed-citation publication-type="chapter"><string-name><given-names>F.</given-names> <surname>Conrads</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Lehmann</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Saleem</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Morsey</surname></string-name> and <string-name><given-names>A.-C.</given-names> <surname>Ngonga Ngomo</surname></string-name>, <chapter-title>IGUANA: A generic framework for benchmarking the read–write performance of triple stores</chapter-title>, in: <source>The Semantic Web – ISWC 2014</source>, <series>Lecture Notes in Computer Science</series>, Vol. <volume>8796</volume>, <publisher-name>Springer International Publishing</publisher-name>, <year>2017</year>, pp. <fpage>519</fpage>–<lpage>534</lpage>. doi:<pub-id pub-id-type="doi">10.1007/978-3-319-68204-4_5</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref011">
+<label>[11]</label><mixed-citation publication-type="other"><string-name><given-names>M.</given-names> <surname>Cornolti</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Ferragina</surname></string-name> and <string-name><given-names>M.</given-names> <surname>Ciaramita</surname></string-name>, <chapter-title>A framework for benchmarking entity-annotation systems</chapter-title>, in: <source>22nd World Wide Web Conference</source>, <year>2013</year>. doi:<pub-id pub-id-type="doi">10.13140/2.1.4942.9766</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref012">
+<label>[12]</label><mixed-citation publication-type="other"><string-name><given-names>R.</given-names> <surname>Cyganiak</surname></string-name> and <string-name><given-names>D.</given-names> <surname>Reynolds</surname></string-name>, The RDF data cube vocabulary, <italic>W3C Recommendation</italic>, 2014, <uri>http://www.w3.org/TR/2014/REC-vocab-data-cube-20140116/</uri>.</mixed-citation>
+</ref>
+<ref id="ref013">
+<label>[13]</label><mixed-citation publication-type="other"><string-name><given-names>E.</given-names> <surname>Daskalaki</surname></string-name>, <string-name><given-names>G.</given-names> <surname>Flouris</surname></string-name>, <string-name><given-names>I.</given-names> <surname>Fundulaki</surname></string-name> and <string-name><given-names>T.</given-names> <surname>Saveta</surname></string-name>, <chapter-title>Instance matching benchmarks in the era of Linked Data</chapter-title>, in: <source>Web Semantics: Science, Services and Agents on the World Wide Web</source>, <year>2016</year>. doi:<pub-id pub-id-type="doi">10.1016/j.websem.2016.06.002</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref014">
+<label>[14]</label><mixed-citation publication-type="journal"><string-name><given-names>D.E.</given-names> <surname>Difallah</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Pavlo</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Curino</surname></string-name> and <string-name><given-names>P.</given-names> <surname>Cudre-Mauroux</surname></string-name>, <article-title>OLTP-bench: An extensible testbed for benchmarking relational databases</article-title>, <source>Proc. VLDB Endow.</source> <volume>7</volume>(<issue>4</issue>) (<year>2013</year>), <fpage>277</fpage>–<lpage>288</lpage>. doi:<pub-id pub-id-type="doi">10.14778/2732240.2732246</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref015">
+<label>[15]</label><mixed-citation publication-type="chapter"><string-name><given-names>J.R.</given-names> <surname>Finkel</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Grenager</surname></string-name> and <string-name><given-names>C.</given-names> <surname>Manning</surname></string-name>, <chapter-title>Incorporating non-local information into information extraction systems by Gibbs sampling</chapter-title>, in: <source>ACL</source>, <year>2005</year>, pp. <fpage>363</fpage>–<lpage>370</lpage>. doi:<pub-id pub-id-type="doi">10.3115/1219840.1219885</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref016">
+<label>[16]</label><mixed-citation publication-type="other"><string-name><given-names>I.</given-names> <surname>Fundulaki</surname></string-name>, Deliverable 1.2.1: Requirements specification from the community, 2016, <uri>http://project-hobbit.eu/about/deliverables/</uri>.</mixed-citation>
+</ref>
+<ref id="ref017">
+<label>[17]</label><mixed-citation publication-type="chapter"><string-name><given-names>K.</given-names> <surname>Georgala</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Spasić</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Jovanovik</surname></string-name>, <string-name><given-names>V.</given-names> <surname>Papakonstantinou</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Stadler</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Röder</surname></string-name> and <string-name><given-names>A.-C.N.</given-names> <surname>Ngomo</surname></string-name>, <chapter-title>MOCHA2018: The mighty storage challenge at ESWC 2018</chapter-title>, in: <source>Semantic Web Challenges</source>, <string-name><given-names>D.</given-names> <surname>Buscaldi</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Gangemi</surname></string-name> and <string-name><given-names>D.</given-names> <surname>Reforgiato Recupero</surname></string-name>, eds, <publisher-name>Springer International Publishing</publisher-name>, <publisher-loc>Cham</publisher-loc>, <year>2018</year>, pp. <fpage>3</fpage>–<lpage>16</lpage>. ISBN <isbn>978-3-030-00072-1</isbn>. doi:<pub-id pub-id-type="doi">10.1007/978-3-030-00072-1_1</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref018">
+<label>[18]</label><mixed-citation publication-type="other"><string-name><given-names>K.</given-names> <surname>Georgala</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Spasić</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Jovanovik</surname></string-name>, <string-name><given-names>H.</given-names> <surname>Petzka</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Röder</surname></string-name> and <string-name><given-names>A.-C.</given-names> <surname>Ngonga Ngomo</surname></string-name>, <chapter-title>MOCHA2017: The mighty storage challenge at ESWC 2017</chapter-title>, in: <source>Semantic Web Challenges: Fourth SemWebEval Challenge at ESWC 2017</source>, <year>2017</year>. doi:<pub-id pub-id-type="doi">10.1007/978-3-319-69146-6_1</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref019">
+<label>[19]</label><mixed-citation publication-type="chapter"><string-name><given-names>A.</given-names> <surname>Ghazal</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Rabl</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Hu</surname></string-name>, <string-name><given-names>F.</given-names> <surname>Raab</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Poess</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Crolotte</surname></string-name> and <string-name><given-names>H.-A.</given-names> <surname>Jacobsen</surname></string-name>, <chapter-title>BigBench: Towards an industry standard benchmark for big data analytics</chapter-title>, in: <source>Proceedings of the 2013 ACM SIGMOD International Conference on Management of Data, SIGMOD’13</source>, <publisher-name>ACM</publisher-name>, <publisher-loc>New York, NY, USA</publisher-loc>, <year>2013</year>, pp. <fpage>1197</fpage>–<lpage>1208</lpage>. doi:<pub-id pub-id-type="doi">10.1145/2463676.2463712</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref020">
+<label>[20]</label><mixed-citation publication-type="other"><string-name><given-names>J.</given-names> <surname>Gray</surname></string-name> and <string-name><given-names>C.</given-names> <surname>Levine</surname></string-name>, Thousands of debitcredit transactions-per-second: Easy and inexpensive, arXiv preprint cs/0701161, 2007, <uri>https://arxiv.org/abs/cs/0701161</uri>.</mixed-citation>
+</ref>
+<ref id="ref021">
+<label>[21]</label><mixed-citation publication-type="chapter"><string-name><given-names>V.</given-names> <surname>Gulisano</surname></string-name>, <string-name><given-names>Z.</given-names> <surname>Jerzak</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Katerinenko</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Strohbach</surname></string-name> and <string-name><given-names>H.</given-names> <surname>Ziekow</surname></string-name>, <chapter-title>The DEBS 2017 grand challenge</chapter-title>, in: <source>Proceedings of the 11th ACM International Conference on Distributed and Event-Based Systems, DEBS’17</source>, <publisher-name>ACM</publisher-name>, <year>2017</year>, pp. <fpage>271</fpage>–<lpage>273</lpage>. doi:<pub-id pub-id-type="doi">10.1145/3093742.3096342</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref022">
+<label>[22]</label><mixed-citation publication-type="chapter"><string-name><given-names>V.</given-names> <surname>Gulisano</surname></string-name>, <string-name><given-names>Z.</given-names> <surname>Jerzak</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Smirnov</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Strohbach</surname></string-name>, <string-name><given-names>H.</given-names> <surname>Ziekow</surname></string-name> and <string-name><given-names>D.</given-names> <surname>Zissis</surname></string-name>, <chapter-title>The DEBS 2018 grand challenge</chapter-title>, in: <source>Proceedings of the 12th ACM International Conference on Distributed and Event-Based Systems, DEBS’18</source>, <publisher-name>ACM</publisher-name>, <year>2018</year>, pp. <fpage>191</fpage>–<lpage>194</lpage>. ISBN <isbn>978-1-4503-5782-1</isbn>. doi:<pub-id pub-id-type="doi">10.1145/3210284.3220510</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref023">
+<label>[23]</label><mixed-citation publication-type="journal"><string-name><given-names>Y.</given-names> <surname>Guo</surname></string-name>, <string-name><given-names>Z.</given-names> <surname>Pan</surname></string-name> and <string-name><given-names>J.</given-names> <surname>Heflin</surname></string-name>, <article-title>LUBM: A benchmark for OWL knowledge base systems</article-title>, <source>J. Web Sem.</source> <volume>3</volume>(<issue>2–3</issue>) (<year>2005</year>), <fpage>158</fpage>–<lpage>182</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.websem.2005.06.005</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref024">
+<label>[24]</label><mixed-citation publication-type="chapter"><string-name><given-names>E.</given-names> <surname>Jiménez-Ruiz</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Saveta</surname></string-name>, <string-name><given-names>O.</given-names> <surname>Zamazal</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Hertling</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Roder</surname></string-name>, <string-name><given-names>I.</given-names> <surname>Fundulaki</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Ngonga Ngomo</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Sherif</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Annane</surname></string-name>, <string-name><given-names>Z.</given-names> <surname>Bellahsene</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Ben Yahia</surname></string-name>, <string-name><given-names>G.</given-names> <surname>Diallo</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Faria</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Kachroudi</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Khiat</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Lambrix</surname></string-name>, <string-name><given-names>H.</given-names> <surname>Li</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Mackeprang</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Mohammadi</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Rybinski</surname></string-name>, <string-name><given-names>B.S.</given-names> <surname>Balasubramani</surname></string-name> and <string-name><given-names>C.</given-names> <surname>Trojahn</surname></string-name>, <chapter-title>Introducing the HOBBIT platform into the ontology alignment evaluation campaign</chapter-title>, in: <source>Proceedings of the 13th International Workshop on Ontology Matching (OM 2018)</source>, <conf-loc>Monterey, CA, USA, October 8, 2018</conf-loc>, <string-name><given-names>P.</given-names> <surname>Shvaiko</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Euzenat</surname></string-name>, <string-name><given-names>E.</given-names> <surname>Jiménez-Ruiz</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Cheatham</surname></string-name> and <string-name><given-names>O.</given-names> <surname>Hassanzadeh</surname></string-name>, eds, <publisher-name>CEUR-WS</publisher-name>, <year>2018</year>, pp. <fpage>49</fpage>–<lpage>60</lpage>, <comment><uri>http://ceur-ws.org/Vol-2288/om2018_LTpaper5.pdf</uri></comment>.</mixed-citation>
+</ref>
+<ref id="ref025">
+<label>[25]</label><mixed-citation publication-type="other"><string-name><given-names>T.</given-names> <surname>Lebo</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Sahoo</surname></string-name> and <string-name><given-names>D.</given-names> <surname>McGuinness</surname></string-name>, PROV-O: The PROV ontology, <italic>W3C Recommendation</italic>, 2013, <uri>http://www.w3.org/TR/2013/REC-prov-o-20130430/</uri>.</mixed-citation>
+</ref>
+<ref id="ref026">
+<label>[26]</label><mixed-citation publication-type="other"><string-name><given-names>F.</given-names> <surname>Manola</surname></string-name>, <string-name><given-names>E.</given-names> <surname>Miller</surname></string-name> and <string-name><given-names>B.</given-names> <surname>McBride</surname></string-name>, RDF 1.1 primer, <italic>W3C Working Group Note</italic>, 2014, <uri>https://www.w3.org/TR/2014/NOTE-rdf11-primer-20140624/</uri>.</mixed-citation>
+</ref>
+<ref id="ref027">
+<label>[27]</label><mixed-citation publication-type="other"><string-name><given-names>P.N.</given-names> <surname>Mendes</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Jakob</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Garcia-Silva</surname></string-name> and <string-name><given-names>C.</given-names> <surname>Bizer</surname></string-name>, <chapter-title>DBpedia spotlight: Shedding light on the web of documents</chapter-title>, in: <source>7th International Conference on Semantic Systems (I-Semantics)</source>, <year>2011</year>. doi:<pub-id pub-id-type="doi">10.1145/2063518.2063519</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref028">
+<label>[28]</label><mixed-citation publication-type="chapter"><string-name><given-names>M.</given-names> <surname>Morsey</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Lehmann</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Auer</surname></string-name> and <string-name><given-names>A.N.</given-names> <surname>Ngomo</surname></string-name>, <chapter-title>DBpedia SPARQL benchmark – performance assessment with real queries on real data</chapter-title>, in: <source>The Semantic Web – ISWC 2011 – 10th International Semantic Web Conference, Proceedings, Part I</source>, <conf-loc>Bonn, Germany, October 23–27, 2011</conf-loc>, <year>2011</year>, pp. <fpage>454</fpage>–<lpage>469</lpage>. doi:<pub-id pub-id-type="doi">10.1007/978-3-642-25073-6_29</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref029">
+<label>[29]</label><mixed-citation publication-type="other"><string-name><given-names>D.</given-names> <surname>Moussallem</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Usbeck</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Röder</surname></string-name> and <string-name><given-names>A.-C.</given-names> <surname>Ngonga Ngomo</surname></string-name>, <chapter-title>MAG: A multilingual, knowledge-base agnostic and deterministic entity linking approach</chapter-title>, in: <source>K-CAP 2017: Knowledge Capture Conference</source>, <publisher-name>ACM</publisher-name>, <year>2017</year>. doi:<pub-id pub-id-type="doi">10.1145/3148011.3148024</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref030">
+<label>[30]</label><mixed-citation publication-type="other"><string-name><given-names>D.</given-names> <surname>Nadeau</surname></string-name>, Balie—baseline information extraction: Multilingual information extraction from text with machine learning and natural language techniques, Technical report, University of Ottawa, 2005, <uri>http://balie.sourceforge.net/dnadeau05balie.pdf</uri>.</mixed-citation>
+</ref>
+<ref id="ref031">
+<label>[31]</label><mixed-citation publication-type="chapter"><string-name><given-names>G.</given-names> <surname>Napolitano</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Usbeck</surname></string-name> and <string-name><given-names>A.-C.N.</given-names> <surname>Ngomo</surname></string-name>, <chapter-title>The scalable question answering over linked data (SQA) challenge 2018</chapter-title>, in: <source>Semantic Web Challenges</source>, <string-name><given-names>D.</given-names> <surname>Buscaldi</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Gangemi</surname></string-name> and <string-name><given-names>D.</given-names> <surname>Reforgiato Recupero</surname></string-name>, eds, <publisher-name>Springer International Publishing</publisher-name>, <publisher-loc>Cham</publisher-loc>, <year>2018</year>, pp. <fpage>69</fpage>–<lpage>75</lpage>. ISBN <isbn>978-3-030-00072-1</isbn>. doi:<pub-id pub-id-type="doi">10.1007/978-3-030-00072-1_6</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref032">
+<label>[32]</label><mixed-citation publication-type="journal"><string-name><given-names>M.</given-names> <surname>Nentwig</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Hartung</surname></string-name>, <string-name><given-names>A.-C.</given-names> <surname>Ngonga Ngomo</surname></string-name> and <string-name><given-names>E.</given-names> <surname>Rahm</surname></string-name>, <article-title>A survey of current link discovery frameworks</article-title>, <source>Semantic Web</source> (<year>2015</year>), <fpage>1</fpage>–<lpage>18</lpage>. doi:<pub-id pub-id-type="doi">10.3233/SW-150210</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref033">
+<label>[33]</label><mixed-citation publication-type="chapter"><string-name><given-names>L.</given-names> <surname>Ratinov</surname></string-name> and <string-name><given-names>D.</given-names> <surname>Roth</surname></string-name>, <chapter-title>Design challenges and misconceptions in named entity recognition</chapter-title>, in: <source>Proceedings of the Thirteenth Conference on Computational Natural Language Learning, CoNLL’09</source>, <publisher-name>Association for Computational Linguistics</publisher-name>, <year>2009</year>, pp. <fpage>147</fpage>–<lpage>155</lpage>. doi:<pub-id pub-id-type="doi">10.3115/1596374.1596399</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref034">
+<label>[34]</label><mixed-citation publication-type="chapter"><string-name><given-names>M.</given-names> <surname>Röder</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Saveta</surname></string-name>, <string-name><given-names>I.</given-names> <surname>Fundulaki</surname></string-name> and <string-name><given-names>A.-C.N.</given-names> <surname>Ngomo</surname></string-name>, <chapter-title>HOBBIT link discovery benchmarks at ontology matching 2017</chapter-title>, in: <source>Proceedings of the 12th International Workshop on Ontology Matching (OM-2017)</source>, <conf-loc>Vienna, Austria, October 21, 2017</conf-loc>, <string-name><given-names>P.</given-names> <surname>Shvaiko</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Euzenat</surname></string-name>, <string-name><given-names>E.</given-names> <surname>Jiménez-Ruiz</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Cheatham</surname></string-name> and <string-name><given-names>O.</given-names> <surname>Hassanzadeh</surname></string-name>, eds, <publisher-name>CEUR-WS</publisher-name>, <year>2017</year>, pp. <fpage>209</fpage>–<lpage>210</lpage>, <comment><uri>http://ceur-ws.org/Vol-2032/om2017_poster2.pdf</uri></comment>.</mixed-citation>
+</ref>
+<ref id="ref035">
+<label>[35]</label><mixed-citation publication-type="journal"><string-name><given-names>M.</given-names> <surname>Röder</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Usbeck</surname></string-name> and <string-name><given-names>A.-C.</given-names> <surname>Ngonga Ngomo</surname></string-name>, <article-title>GERBIL – benchmarking named entity recognition and linking consistently</article-title>, <source>Semantic Web Journal</source> (<year>2017</year>), <fpage>1</fpage>–<lpage>19</lpage>. doi:<pub-id pub-id-type="doi">10.3233/SW-170286</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref036">
+<label>[36]</label><mixed-citation publication-type="other"><string-name><given-names>M.</given-names> <surname>Saleem</surname></string-name>, <string-name><given-names>I.</given-names> <surname>Ali</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Hogan</surname></string-name>, <string-name><given-names>Q.</given-names> <surname>Mehmood</surname></string-name> and <string-name><given-names>A.-C.</given-names> <surname>Ngonga Ngomo</surname></string-name>, <chapter-title>LSQ: The linked SPARQL queries dataset</chapter-title>, in: <source>International Semantic Web Conference (ISWC)</source>, <year>2015</year>. doi:<pub-id pub-id-type="doi">10.1007/978-3-319-25010-6_15</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref037">
+<label>[37]</label><mixed-citation publication-type="chapter"><string-name><given-names>M.</given-names> <surname>Saleem</surname></string-name>, <string-name><given-names>Q.</given-names> <surname>Mehmood</surname></string-name> and <string-name><given-names>A.N.</given-names> <surname>Ngomo</surname></string-name>, <chapter-title>FEASIBLE: A feature-based SPARQL benchmark generation framework</chapter-title>, in: <source>The Semantic Web – ISWC 2015 – 14th International Semantic Web Conference, Proceedings, Part i</source>, <conf-loc>Bethlehem, PA, USA, October 11–15, 2015</conf-loc>, <year>2015</year>, pp. <fpage>52</fpage>–<lpage>69</lpage>. doi:<pub-id pub-id-type="doi">10.1007/978-3-319-25007-6_4</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref038">
+<label>[38]</label><mixed-citation publication-type="other"><string-name><given-names>E.F.T.K.</given-names> <surname>Sang</surname></string-name> and <string-name><given-names>F.</given-names> <surname>De Meulder</surname></string-name>, <chapter-title>Introduction to the CoNLL-2003 shared task: Language-independent named entity recognition</chapter-title>, in: <source>Proceedings of CoNLL-2003</source>, <year>2003</year>. doi:<pub-id pub-id-type="doi">10.3115/1119176.1119195</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref039">
+<label>[39]</label><mixed-citation publication-type="chapter"><string-name><given-names>R.</given-names> <surname>Speck</surname></string-name> and <string-name><given-names>A.-C.</given-names> <surname>Ngonga Ngomo</surname></string-name>, <chapter-title>Ensemble learning for named entity recognition</chapter-title>, in: <source>The Semantic Web – ISWC 2014</source>, <series>Lecture Notes in Computer Science</series>, Vol. <volume>8796</volume>, <publisher-name>Springer International Publishing</publisher-name>, <year>2014</year>, pp. <fpage>519</fpage>–<lpage>534</lpage>. doi:<pub-id pub-id-type="doi">10.1007/978-3-319-11964-9_33</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref040">
+<label>[40]</label><mixed-citation publication-type="chapter"><string-name><given-names>R.</given-names> <surname>Speck</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Röder</surname></string-name>, <string-name><given-names>F.</given-names> <surname>Conrads</surname></string-name>, <string-name><given-names>H.</given-names> <surname>Rebba</surname></string-name>, <string-name><given-names>C.C.</given-names> <surname>Romiyo</surname></string-name>, <string-name><given-names>G.</given-names> <surname>Salakki</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Suryawanshi</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Ahmed</surname></string-name>, <string-name><given-names>N.</given-names> <surname>Srivastava</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Mahajan</surname></string-name> and <string-name><given-names>A.-C.N.</given-names> <surname>Ngomo</surname></string-name>, <chapter-title>Open knowledge extraction challenge 2018</chapter-title>, in: <source>Semantic Web Challenges</source>, <string-name><given-names>D.</given-names> <surname>Buscaldi</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Gangemi</surname></string-name> and <string-name><given-names>D.</given-names> <surname>Reforgiato Recupero</surname></string-name>, eds, <publisher-name>Springer International Publishing</publisher-name>, <publisher-loc>Cham</publisher-loc>, <year>2018</year>, pp. <fpage>39</fpage>–<lpage>51</lpage>. ISBN <isbn>978-3-030-00072-1</isbn>. doi:<pub-id pub-id-type="doi">10.1007/978-3-030-00072-1_4</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref041">
+<label>[41]</label><mixed-citation publication-type="other"><string-name><given-names>R.</given-names> <surname>Speck</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Röder</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Oramas</surname></string-name>, <string-name><given-names>L.</given-names> <surname>Espinosa-Anke</surname></string-name> and <string-name><given-names>A.-C.</given-names> <surname>Ngonga Ngomo</surname></string-name>, <chapter-title>Open knowledge extraction challenge 2017</chapter-title>, in: <source>Semantic Web Challenges: Fourth SemWebEval Challenge at ESWC 2017, Communications in Computer and Information Science</source>, <publisher-name>Springer International Publishing</publisher-name>, <year>2017</year>. doi:<pub-id pub-id-type="doi">10.1007/978-3-319-69146-6_4</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref042">
+<label>[42]</label><mixed-citation publication-type="other"><string-name><given-names>B.M.</given-names> <surname>Sundheim</surname></string-name>, <chapter-title>Tipster/MUC-5: Information extraction system evaluation</chapter-title>, in: <source>Proceedings of the 5th Conference on Message Understanding</source>, <year>1993</year>. doi:<pub-id pub-id-type="doi">10.3115/1072017.1072023</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref043">
+<label>[43]</label><mixed-citation publication-type="other"><string-name><given-names>G.</given-names> <surname>Tsatsaronis</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Schroeder</surname></string-name>, <string-name><given-names>G.</given-names> <surname>Paliouras</surname></string-name>, <string-name><given-names>Y.</given-names> <surname>Almirantis</surname></string-name>, <string-name><given-names>I.</given-names> <surname>Androutsopoulos</surname></string-name>, <string-name><given-names>E.</given-names> <surname>Gaussier</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Gallinari</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Artieres</surname></string-name>, <string-name><given-names>M.R.</given-names> <surname>Alvers</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Zschunke</surname></string-name> <etal>et al.</etal>, <chapter-title>BioASQ: A challenge on large-scale biomedical semantic indexing and question answering</chapter-title>, in: <source>AAAI Fall Symposium: Information Retrieval and Knowledge Discovery in Biomedical Text</source>, <year>2012</year>, <comment><uri>https://www.aaai.org/ocs/index.php/FSS/FSS12/paper/viewPaper/5600</uri></comment>.</mixed-citation>
+</ref>
+<ref id="ref044">
+<label>[44]</label><mixed-citation publication-type="other"><string-name><given-names>C.</given-names> <surname>Unger</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Forascu</surname></string-name>, <string-name><given-names>V.</given-names> <surname>Lopez</surname></string-name>, <string-name><given-names>A.-C.N.</given-names> <surname>Ngomo</surname></string-name>, <string-name><given-names>E.</given-names> <surname>Cabrio</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Cimiano</surname></string-name> and <string-name><given-names>S.</given-names> <surname>Walter</surname></string-name>, <chapter-title>Question answering over linked data (QALD-4)</chapter-title>, in: <source>Working Notes for CLEF 2014 Conference</source>, <year>2014</year>, <comment><uri>http://www.ceur-ws.org/Vol-1180/CLEF2014wn-QA-UngerEt2014.pdf</uri></comment>.</mixed-citation>
+</ref>
+<ref id="ref045">
+<label>[45]</label><mixed-citation publication-type="other"><string-name><given-names>C.</given-names> <surname>Unger</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Forascu</surname></string-name>, <string-name><given-names>V.</given-names> <surname>Lopez</surname></string-name>, <string-name><given-names>A.N.</given-names> <surname>Ngomo</surname></string-name>, <string-name><given-names>E.</given-names> <surname>Cabrio</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Cimiano</surname></string-name> and <string-name><given-names>S.</given-names> <surname>Walter</surname></string-name>, <chapter-title>Question answering over linked data (QALD-5)</chapter-title>, in: <source>CLEF</source>, <year>2015</year>, <comment><uri>http://ceur-ws.org/Vol-1391/173-CR.pdf</uri></comment>.</mixed-citation>
+</ref>
+<ref id="ref046">
+<label>[46]</label><mixed-citation publication-type="other"><string-name><given-names>R.</given-names> <surname>Usbeck</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Röder</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Hoffmann</surname></string-name>, <string-name><given-names>F.</given-names> <surname>Conrad</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Huthmann</surname></string-name>, <string-name><given-names>A.-C.</given-names> <surname>Ngonga-Ngomo</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Demmler</surname></string-name> and <string-name><given-names>C.</given-names> <surname>Unger</surname></string-name>, <article-title>Benchmarking question answering systems</article-title>, <source>Semantic Web Journal</source> (<year>2018</year>). doi:<pub-id pub-id-type="doi">10.3233/SW-180312</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref047">
+<label>[47]</label><mixed-citation publication-type="other"><string-name><given-names>M.D.</given-names> <surname>Wilkinson</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Dumontier</surname></string-name>, <string-name><given-names>J.I.</given-names> <surname>Aalbersberg</surname></string-name>, <string-name><given-names>G.</given-names> <surname>Appleton</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Axton</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Baak</surname></string-name>, <string-name><given-names>N.</given-names> <surname>Blomberg</surname></string-name>, <string-name><given-names>J.-W.</given-names> <surname>Boiten</surname></string-name>, <string-name><given-names>L.B.</given-names> <surname>da Silva Santos</surname></string-name>, <string-name><given-names>P.E.</given-names> <surname>Bourne</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Bouwman</surname></string-name>, <string-name><given-names>A.J.</given-names> <surname>Brookes</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Clark</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Crosas</surname></string-name>, <string-name><given-names>I.</given-names> <surname>Dillo</surname></string-name>, <string-name><given-names>O.</given-names> <surname>Dumon</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Edmunds</surname></string-name>, <string-name><given-names>C.T.</given-names> <surname>Evelo</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Finkers</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Gonzalez-Beltran</surname></string-name>, <string-name><given-names>A.J.G.</given-names> <surname>Gray</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Groth</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Goble</surname></string-name>, <string-name><given-names>J.S.</given-names> <surname>Grethe</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Heringa</surname></string-name>, <string-name><given-names>P.A.C.</given-names> <surname>Hoen</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Hooft</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Kuhn</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Kok</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Kok</surname></string-name>, <string-name><given-names>S.J.</given-names> <surname>Lusher</surname></string-name>, <string-name><given-names>M.E.</given-names> <surname>Martone</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Mons</surname></string-name>, <string-name><given-names>A.L.</given-names> <surname>Packer</surname></string-name>, <string-name><given-names>B.</given-names> <surname>Persson</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Rocca-Serra</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Roos</surname></string-name>, <string-name><given-names>R.</given-names> <surname>van Schaik</surname></string-name>, <string-name><given-names>S.-A.</given-names> <surname>Sansone</surname></string-name>, <string-name><given-names>E.</given-names> <surname>Schultes</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Sengstag</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Slater</surname></string-name>, <string-name><given-names>G.</given-names> <surname>Strawn</surname></string-name>, <string-name><given-names>M.A.</given-names> <surname>Swertz</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Thompson</surname></string-name>, <string-name><given-names>J.</given-names> <surname>van der Lei</surname></string-name>, <string-name><given-names>E.</given-names> <surname>van Mulligen</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Velterop</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Waagmeester</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Wittenburg</surname></string-name>, <string-name><given-names>K.</given-names> <surname>Wolstencroft</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Zhao</surname></string-name> and <string-name><given-names>B.</given-names> <surname>Mons</surname></string-name>, <article-title>The FAIR guiding principles for scientific data management and stewardship</article-title>, <source>Scientific data</source> <volume>3</volume> (<year>2016</year>), <elocation-id>160018</elocation-id>. doi:<pub-id pub-id-type="doi">10.1038/sdata.2016.18</pub-id>.</mixed-citation>
+</ref>
+</ref-list>
+</back>
+</article>

@@ -1,0 +1,1072 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.0 20120330//EN" "JATS-journalpublishing1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article">
+<front>
+<journal-meta>
+<journal-id journal-id-type="publisher-id">DS</journal-id>
+<journal-title-group><journal-title>Data Science</journal-title></journal-title-group>
+<issn pub-type="epub">2451-8492</issn><issn pub-type="ppub">2451-8484</issn><issn-l>2451-8484</issn-l>
+<publisher>
+<publisher-name>IOS Press</publisher-name><publisher-loc>Nieuwe Hemweg 6B, 1013 BG Amsterdam, The Netherlands</publisher-loc>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">DS190019</article-id>
+<article-id pub-id-type="doi">10.3233/DS-190019</article-id>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Research Article</subject></subj-group></article-categories>
+<title-group>
+<article-title>Reducing the effort for systematic reviews in software engineering</article-title>
+</title-group>
+<contrib-group content-type="Editor">
+<contrib contrib-type="editor">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0003-1085-6059</contrib-id>
+<name><surname>McCusker</surname><given-names>James</given-names></name>
+</contrib>
+</contrib-group>
+<contrib-group>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0001-6557-3131</contrib-id>
+<name><surname>Osborne</surname><given-names>Francesco</given-names></name><xref ref-type="aff" rid="affa">a</xref><xref ref-type="corresp" rid="cor2">*</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0001-6365-6515</contrib-id>
+<name><surname>Muccini</surname><given-names>Henry</given-names></name><xref ref-type="aff" rid="affb">b</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-2234-0845</contrib-id>
+<name><surname>Lago</surname><given-names>Patricia</given-names></name><xref ref-type="aff" rid="affc">c</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0003-0015-1952</contrib-id>
+<name><surname>Motta</surname><given-names>Enrico</given-names></name><xref ref-type="aff" rid="affd">d</xref>
+</contrib>
+<aff id="affa"><label>a</label>Knowledge Media Institute, <institution>The Open University</institution>, <country>UK</country>. E-mail: <email>francesco.osborne@open.ac.uk</email></aff>
+<aff id="affb"><label>b</label>DISIM Department, <institution>University of L’Aquila</institution>, <country>Italy</country>. E-mail: <email>henry.muccini@univaq.it</email></aff>
+<aff id="affc"><label>c</label>Department of Computer Science, <institution>Vrije Universiteit Amsterdam</institution>, <country>The Netherlands</country>. E-mail: <email>p.lago@vu.nl</email></aff>
+<aff id="affd"><label>d</label>Knowledge Media Institute, <institution>The Open University</institution>, <country>UK</country>. E-mail: <email>enrico.motta@open.ac.uk</email></aff>
+</contrib-group>
+<author-notes>
+<corresp id="cor2"><label>*</label>Corresponding author. E-mail: <email>francesco.osborne@open.ac.uk</email>.</corresp>
+</author-notes>
+<pub-date date-type="preprint" publication-format="electronic"><day>19</day><month>8</month><year>2019</year></pub-date><pub-date date-type="pub" publication-format="electronic"><day>25</day><month>11</month><year>2019</year></pub-date><pub-date date-type="collection" publication-format="electronic"><year>2019</year></pub-date><volume>2</volume><issue>1-2</issue><fpage>311</fpage><lpage>340</lpage><history><date date-type="received"><day>7</day><month>01</month><year>2019</year></date><date date-type="accepted"><day>7</day><month>06</month><year>2019</year></date></history>
+<permissions><copyright-statement>© 2019 – IOS Press and the authors.</copyright-statement><copyright-year>2019</copyright-year>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/" license-type="open-access" xlink:type="simple">
+<license-p>This is an open access article distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/" xlink:type="simple">Creative Commons Attribution (CC BY 4.0) License</ext-link>, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions>
+<abstract>
+<sec specific-use="heading-level-1">
+<title>Context:</title>
+<p>Systematic Reviews (SRs) are means for collecting and synthesizing evidence from the identification and analysis of relevant studies from multiple sources. To this aim, they use a well-defined methodology meant to mitigate the risks of biases and ensure repeatability for later updates. SRs, however, involve significant effort.</p>
+</sec>
+<sec specific-use="heading-level-1">
+<title>Goal:</title>
+<p>The goal of this paper is to introduce a novel methodology that reduces the amount of manual tedious tasks involved in SRs while taking advantage of the value provided by human expertise.</p>
+</sec>
+<sec specific-use="heading-level-1">
+<title>Method:</title>
+<p>Starting from current methodologies for SRs, we replaced the steps of keywording and data extraction with an automatic methodology for generating a domain ontology and classifying the primary studies. This methodology has been applied in the Software Engineering sub-area of Software Architecture and evaluated by human annotators.</p>
+</sec>
+<sec specific-use="heading-level-1">
+<title>Results:</title>
+<p>The result is a novel Expert-Driven Automatic Methodology, EDAM, for assisting researchers in performing SRs. EDAM combines ontology-learning techniques and semantic technologies with the human-in-the-loop. The first (thanks to automation) fosters scalability, objectivity, reproducibility and granularity of the studies; the second allows tailoring to the specific focus of the study at hand and knowledge reuse from domain experts. We evaluated EDAM on the field of Software Architecture against six senior researchers. As a result, we found that the performance of the senior researchers in classifying papers was not statistically significantly different from EDAM.</p>
+</sec>
+<sec specific-use="heading-level-1">
+<title>Conclusions:</title>
+<p>Thanks to automation of the less-creative steps in SRs, our methodology allows researchers to skip the tedious tasks of keywording and manually classifying primary studies, thus freeing effort for the analysis and the discussion.</p>
+</sec>
+</abstract>
+<kwd-group>
+<label>Keywords</label>
+<kwd>Systematic reviews</kwd>
+<kwd>software engineering</kwd>
+<kwd>ontology learning</kwd>
+<kwd>semantic web</kwd>
+<kwd>software architecture</kwd>
+<kwd>digital libraries</kwd>
+</kwd-group>
+</article-meta>
+</front>
+<body>
+<sec id="x1-1000-1">
+<label>1.</label>
+<title>Introduction</title>
+<p>Understanding the state-of-the-art in research provides the foundation for building novelty. In particular, in Software Engineering topic areas, the acquisition of knowledge for this understanding follows a clear path: started with informal reviews and surveys, it is moving towards systematic searches of the literature. Kitchenham [<xref ref-type="bibr" rid="ref021">21</xref>] clearly explains the reasons, the importance, and the advantages and disadvantages of using systematic reviews instead of informal ones. Various studies (e.g., [<xref ref-type="bibr" rid="ref012">12</xref>,<xref ref-type="bibr" rid="ref068">68</xref>]) reveal the growing interest in systematic literature reviews and systematic mapping studies [<xref ref-type="bibr" rid="ref065">65</xref>]. A number of articles and books have been written on how to perform such systematic studies [<xref ref-type="bibr" rid="ref023">23</xref>,<xref ref-type="bibr" rid="ref061">61</xref>,<xref ref-type="bibr" rid="ref064">64</xref>].</p>
+<p>A Systematic Review (SR) is <italic>“a means of evaluating and interpreting all available research relevant to a particular research or topic area or phenomenon of interest”</italic> [<xref ref-type="bibr" rid="ref021">21</xref>]. Given a set of research questions, and by following a systematically defined and reproducible process, a SR helps selecting primary studies that contribute to provide an answer to them. Used in combination with keywording [<xref ref-type="bibr" rid="ref041">41</xref>], a SR supports the systematic elicitation of an ontological classification framework [<xref ref-type="bibr" rid="ref042">42</xref>]. In this paper we focus specifically on the field of Software Engineering, but systematic literature reviews and mapping studies are used in several research fields, such as Biomedics [<xref ref-type="bibr" rid="ref010">10</xref>], Robotics [<xref ref-type="bibr" rid="ref005">5</xref>], Artificial Intelligence [<xref ref-type="bibr" rid="ref045">45</xref>], Human-Computer Interaction [<xref ref-type="bibr" rid="ref030">30</xref>], Psychology [<xref ref-type="bibr" rid="ref046">46</xref>], an many others.</p>
+<p>A SR can help researchers and practitioners in creating a complete, comprehensive and valid picture of the state-of-the-art about a given theme when the search-space is bounded (e.g., when the search query returns few thousands of articles to scrutinize). However, it falls short when used to investigate the state-of-the-art on an entire research area (e.g., Software Architecture) where the returned entries are hundreds of thousands – hence clearly unmanageable. As reported by Vale et al. [<xref ref-type="bibr" rid="ref060">60</xref>] while investigating the state-of-the-art of the Component-based Software Engineering area through an SR, a <italic>“…manual search</italic> [restricted only to the most relevant journals and conferences related to the CBSE area] <italic>was considered as the primary source, given the infeasibility of analyzing all studies collected from automatic search”</italic>. Still, they had to select, read, and thoroughly analyze 1,231 primary studies.</p>
+<p>In contrast to manually run SRs, several state of the art automated methods allow classifying a document in a certain category or topic [<xref ref-type="bibr" rid="ref002">2</xref>,<xref ref-type="bibr" rid="ref008">8</xref>,<xref ref-type="bibr" rid="ref032">32</xref>,<xref ref-type="bibr" rid="ref057">57</xref>]. Unfortunately, most current techniques suffer from limitations that make them unsuitable for systematic reviews. The approaches which exploit keywords as proxy for research areas are unsatisfactory, as they fail to distinguish research topics from other terms that can be used to annotate papers (e.g., “user case”, “scalability”) and to take advantage of the relationships that hold between research areas (e.g., the fact that “Software Architecture” is a sub-area of “Software Engineering”). Probabilistic topic models (e.g., Latent Dirichlet Allocation [<xref ref-type="bibr" rid="ref008">8</xref>]) are also unsuitable for this task since they produce cluster of terms that are not easy to map to research areas [<xref ref-type="bibr" rid="ref038">38</xref>]. Crucially, it is often unfeasible to integrate these topic detection techniques with the needs and the knowledge of human experts. Another alternative is to apply entity linking techniques [<xref ref-type="bibr" rid="ref032">32</xref>] to map papers to relevant entities in knowledge base. Unfortunately, we currently lack good granular and machine readable representation of research areas in many domains which could be used to this end.</p>
+<p>Current techniques have complementary limitations when investigating the state-of-the-art of an entire research area: on the one hand side, SRs are <italic>“human-intensive”</italic>, as they require domain experts to invest a large amount of time to carry out manual tasks; on the other side, automated techniques keep the <italic>humans “out of the loop”</italic>, while human expertise is critical for the more conceptual analysis tasks.</p>
+<p>This paper proposes an <italic>expert-driven automatic methodology</italic> (EDAM) for assisting systematic reviews that, while recognizing the essential value of human expertise, limits the amount of tedious tasks the expert has to carry out. Our methodology contributes with (1) automatically extracting an ontology of relevant topics, related to a given research area; (2) using experts to refine this knowledge base; (3) exploiting this knowledge base for classifying relevant papers that may be then further validated/analyzed by experts, and for computing research analytics. We demonstrate EDAM in the field of Software Architecture, but it can be easily applied to other research areas as well.</p>
+<p>Naturally, the ability of domain experts to analyse the research dynamics emerging from primary studies and to distill the most important lessons and trends is still crucial. Therefore, our aim is not to fully automatize the process, but to assist domain experts by automatically generating data-driven analytics in order to free time and resources for the analysis phase.</p>
+<p>In summary, our contributions are:</p>
+<list list-type="bullet">
+<list-item>
+<p>a novel methodology for supporting ontology-driven systematic reviews, which involves both automatic techniques and human experts;</p>
+</list-item>
+<list-item>
+<p>an implementation of this methodology which exploits the Klink-2 algorithm for generating the domain ontology in the field of Software Architecture;</p>
+</list-item>
+<list-item>
+<p>an illustrative analysis of the Software Architecture trends;</p>
+</list-item>
+<list-item>
+<p>an evaluation involving six human annotators, which shows that the classification of primary studies yielded by the proposed methodology is comparable to the one produced by domain experts (<inline-formula><mml:math id="math001">
+<mml:mi mathvariant="italic">p</mml:mi>
+<mml:mo>=</mml:mo>
+<mml:mn>0.77</mml:mn></mml:math></inline-formula>).</p>
+</list-item>
+<list-item>
+<p>an automatically generated ontology of Software Engineering, which could support further systematic reviews in the field.<xref ref-type="fn" rid="fn-1">1</xref><fn id="fn-1"><label><sup>1</sup></label>
+<p><uri>http://rexplore.kmi.open.ac.uk/data/edam/SE-ontology.owl</uri></p></fn></p>
+</list-item>
+</list>
+<p>The rest of the paper is structured as follows. Section <xref rid="x1-2000-2">2</xref> introduces related works on systematic studies. Section <xref rid="x1-3000-3">3</xref> provides an overview of some preliminary evidence of the benefits brought by using EDAM to assist a mapping study. Section <xref rid="x1-4000-4">4</xref> then presents the EDAM methodology and its application to the research area of Software Architecture. This experiment is discussed and evaluated in Section <xref rid="x1-7000-5">5</xref>, which also present a comparison of several approaches for classifying research papers. Finally, in Section <xref rid="x1-13000-6">6</xref> we discuss the main implications of our study and outline future directions of research.</p>
+</sec>
+<sec id="x1-2000-2">
+<label>2.</label>
+<title>Related work</title>
+<p>There are many guidelines for, and reports on, carrying out systematic studies in Software Engineering. Among them, we could identify a few aimed at supporting or improving the underlying process. In our perspective, they all enable researchers to focus more on the most creative steps of a systematic study by removing what is referred to as <italic>manual work</italic>.</p>
+<p>With a motivation similar to ours, i.e. to improve the search step in systematic studies in Software Engineering research, Octaviano et al. [<xref ref-type="bibr" rid="ref035">35</xref>] propose a strategy that automates part of the primary study selection activity. Mourão et al. [<xref ref-type="bibr" rid="ref034">34</xref>] present a preliminary assessment of a hybrid search strategy for systematic literature reviews that combines database search and snowballing to reduce the effort due to searches in multiple digital libraries. Kuhrmann et al. [<xref ref-type="bibr" rid="ref026">26</xref>] provide recommendations specifically for the general study design, data collection, and study selection procedures. Zhang et al. [<xref ref-type="bibr" rid="ref069">69</xref>], in turn, systematically select and analyze a large number of SRs. Their results have been then used to define a quasi-gold standard for future studies. In their validation, they were able to improve the rigor of the search process and provide guidelines complementing the ones already in use.</p>
+<p>Ros et al. [<xref ref-type="bibr" rid="ref048">48</xref>] propose a machine learning approach that classifies papers for SRs by leveraging human experts, who iteratively validate set of publications produced by a classifier. Conversely, EDAM does not require experts to manually examine research papers, but only to review a taxonomy of research areas.</p>
+<p>The need for guidelines in conducting empirical research has been addressed in other types of empirical studies, too. De Mello and Travassos [<xref ref-type="bibr" rid="ref014">14</xref>] focus on opinion surveys and provide guidelines (in the form of a reference framework) aimed at improving the representativeness of samples. Also on opinion surveys, Molleri et al. [<xref ref-type="bibr" rid="ref033">33</xref>] provide recommendations based on an annotated bibliography instead.</p>
+<p>Another interesting work by Felizardo et al. [<xref ref-type="bibr" rid="ref016">16</xref>] investigates how the use of forward snowballing can considerably reduce the effort in updating SRs in Software Engineering. Based on this result, complementing our method with automated forward snowballing suggests a very promising direction for future works as it could further reduce the effort for identifying relevant primary studies.</p>
+<p>Marshall et al. [<xref ref-type="bibr" rid="ref031">31</xref>] carried out an interview survey with experts in other domains (i.e. healthcare and social sciences) with the aim to identify tools that are generally used, or desirable, to ease which steps in systematic studies, and transfer the best practices to the Software Engineering domain. Among the results, data extraction and automated analysis emerge as top requirements for reducing the workload. In a similar vein, Hassler et al. [<xref ref-type="bibr" rid="ref020">20</xref>] followed by Al-Zubidy et al. [<xref ref-type="bibr" rid="ref001">1</xref>] consulted Software Engineering researchers conducting SRs to identify and prioritize the necessary SR tool features. The results identified <italic>search &amp; study selection</italic> as the most desirable feature. Our work addresses the needs identified by both Marshall et al. [<xref ref-type="bibr" rid="ref031">31</xref>] and Hassler et al. [<xref ref-type="bibr" rid="ref020">20</xref>].</p>
+<p>The idea of using ontologies for supporting SRs was discussed by few papers, but did not receive much attention. de Almeida Biolchini et al. [<xref ref-type="bibr" rid="ref013">13</xref>] introduced the Scientific Research Ontology, a resource to organize the knowledge generated from SR. This ontology offers a conceptual framework with the aim of fostering the consistency between different studies, but does not directly assist the tasks involved in SR, such as the extraction of primary studies. Sun et al. [<xref ref-type="bibr" rid="ref059">59</xref>] discussed the use of ontologies for supporting key activities in SRs and presented an experiment in which they automatically classified primary studies by means of COSONT, an ontology of methods for cost estimation. Unfortunately, their approach still required to manually check hundreds of papers and the COSONT ontology was quite simplistic, being an handcrafted list of methods with no hierarchical structure. This is a common issue with manually generated ontology of research concepts, which are usually costly to produce, coarse-grained, and slow to evolve [<xref ref-type="bibr" rid="ref037">37</xref>]. Conversely, EDAM takes advantage of recent ontology learning techniques to automatically generate complex multi-level ontologies (e.g., the SE ontology presented in this paper includes 956 topics and 5,461 relationships), exploits the resulting taxonomic structure to classify the primary studies, and does not require experts to manually review a large number of papers.</p>
+</sec>
+<sec id="x1-3000-3">
+<label>3.</label>
+<title>An overview of the benefits of automatic SRs</title>
+<p>Before entering the details of the EDAM methodology, this section provides an overview of the benefits such an automatic SR methodology can bring with respect to more traditional, manual SRs carried out according to predefined protocols.</p>
+<p>We all agree that manual SRs based on well-defined systematic protocols help reducing (but not fully removing) subjective biases in the selection of the studies. They however are by and large unfeasible in reviewing a too large dataset (i.e. when the number of scientific publications is too large to be manually processed by the researcher).</p>
+<p>In a similar vein, automatic SRs help reducing subjective biases (in this case by <italic>implementing</italic> the selection of the studies according to the predefined systematic protocol). Differently, they pose no limitation in terms of the size of the dataset of publications.</p>
+<p>In our earlier work [<xref ref-type="bibr" rid="ref067">67</xref>] we challenged these limitations and benefits by applying the automatic study selection to a manual SR carried out beforehand by other researchers [<xref ref-type="bibr" rid="ref017">17</xref>]. In this way, we could compare and contrast the results of the manual SR with the results of our automatic SR. In this earlier work, we have studied the field of software sustainability within the Software Engineering domain. While at the time the EDAM methodology was not yet fully developed, we did use the same ontology-learning algorithms and a preliminary version of the ontology for the Software Engineering domain.</p>
+<fig id="x1-3001-1">
+<label>Fig. 1.</label>
+<caption>
+<p>Some evidence on the benefits of automated SRs.</p>
+</caption>
+<graphic xlink:href="ds-2-ds190019-g001.jpg"/>
+</fig>
+<p>The observations gathered during this experiment are illustrated in Fig. <xref rid="x1-3001-1">1</xref>, where we represented the primary studies selected manually (see the left-hand circles) and those selected automatically (see the right-hand ovals). The experiment underwent three phases:</p>
+<def-list><def-item><term><bold>Starting point:</bold></term><def>
+<p>The already-completed manual SR had selected 116 primary studies. Before training the algorithm and tuning the domain ontology, from the Scopus dump of scientific publications we automatically selected 950 studies. While our automatic methodology is able to handle seamlessly any size of the base of publications, the selected studies did initially include a very large number of false positives. However, it did also uncover that 12 studies selected in the manual SR where wrongly included. <bold>Observation #1:</bold> <italic>in spite of systematic selection criteria and the involvement of multiple researchers, human errors in the manual study selection is still possible.</italic></p></def></def-item><def-item><term><bold>Training:</bold></term><def>
+<p>By treating the 104 primary studies (from the manual SR) as pilot studies, we trained our domain ontology and learning algorithm to automatically select the primary studies. <bold>Observation #2:</bold> <italic>Automatic SR is able to automatize the selection criteria of systematic reviews while handling any size of the initial dataset of scientific publications.</italic> As discussed in Section <xref rid="x1-8000-5.1">5.1</xref>, the domain ontology is able to classify the primary studies as correctly as the human experts do, without needing further training. As such, the domain ontology can be reused for any study in the domain of Software Engineering.</p></def></def-item><def-item><term><bold>Final result:</bold></term><def>
+<p>The final result of the automatic selection converged to 234 studies which included the 104 pilot studies and <italic>correctly</italic> identified additional 130 studies that were missing in the original manual SR. <bold>Observation #3:</bold> <italic>By handling a much larger base of publications, automatic SRs are able to uncover primary studies that are missed by manual SRs where such scale is unfeasible.</italic></p></def></def-item></def-list>
+</sec>
+<sec id="x1-4000-4">
+<label>4.</label>
+<title>An expert-driven automatic methodology</title>
+<p>We propose a novel expert-driven automatic methodology (EDAM) for assisting systematic reviews like systematic literature reviews and mapping studies. EDAM allows to automatize the steps that are the most time and effort consuming while requiring the least creativity, such as <italic>selection of relevant papers</italic>, <italic>keywording</italic>, and <italic>creation of a classification schema</italic> [<xref ref-type="bibr" rid="ref042">42</xref>], by exploiting ontology learning techniques and semantic technologies to foster scalability, objectivity, reproducibility, and granularity of the study (further discussed in Section <xref rid="x1-11000-5.4">5.4</xref>). It also supports the generation of research trends, which are typical of data synthesis in mapping studies. In this paper, we illustrate how EDAM can support mapping studies, even though it can be evidently exploited in systematic literature reviews, too.</p>
+<fig id="x1-4001-2">
+<label>Fig. 2.</label>
+<caption>
+<p>Steps of a systematic mappings adopting the EDAM methodology. The gray-shaded elements refer to the alternative step of reusing the previously generated ontology.</p>
+</caption>
+<graphic xlink:href="ds-2-ds190019-g002.jpg"/>
+</fig>
+<fig id="x1-4002-3">
+<label>Fig. 3.</label>
+<caption>
+<p>Classic steps of systematic mappings (inspired by [<xref ref-type="bibr" rid="ref042">42</xref>]).</p>
+</caption>
+<graphic xlink:href="ds-2-ds190019-g003.jpg"/>
+</fig>
+<p>Figure <xref rid="x1-4001-2">2</xref> shows the steps of a mapping study using EDAM in contrast with the steps of a classic (manual) methodology – shown in Fig. <xref rid="x1-4002-3">3</xref>. The main difference is that in the classic methodology the researchers first select and analyze each primary study (steps 2–3) and then produce a taxonomy to classify them (step 4). When assisted by EDAM, instead, the researchers first use ontology learning methods over large scholarly datasets to generate an ontology of the field (steps 2–3), then refine the ontology with the help of domain experts (step 4), and finally exploit this knowledge base to automatically select and classify the primary studies (steps 5–6).</p>
+<p>An alternative solution for steps 2–4 (Generation of domain ontology) is the reuse of an ontology crafted by a previous study with the same scope. Indeed, in the study discussed in Section <xref rid="x1-6000-4.2">4.2</xref> we have generated an ontology of Software Engineering (SE) research topics, with the hope that it will be re-used by the research community.</p>
+<p>In Section <xref rid="x1-5000-4.1">4.1</xref>, we describe EDAM and discuss its advantages over a classic methodology. In Section <xref rid="x1-6000-4.2">4.2</xref>, we exemplify the application of EDAM specifically aimed at identifying publication trends of the Software Architecture research area in the specific SE domain.</p>
+<sec id="x1-5000-4.1">
+<label>4.1.</label>
+<title>EDAM description</title>
+<p>A SR assisted by EDAM is organized along the following steps (ref. Fig. <xref rid="x1-4001-2">2</xref>).</p>
+<p><bold>1. Research question definition.</bold> The researchers performing the study state the research questions (RQs). These will affect the aim of the study and thus its steps. It should be noted that EDAM is applicable only to research questions that could be answered by classifying publications, authors, venues, and other entities according to the ontology for producing relevant analytics. Other research questions should be addressed according to the standard methodology [<xref ref-type="bibr" rid="ref042">42</xref>].</p>
+<p><bold>2. Dataset selection.</bold> The researchers select a dataset on which to apply the chosen ontology learning technique (further elaborated in step 3) for generating the domain ontology that will be used to select and classify the primary studies. The most important characteristic of this dataset is that it must be unbiased with respect to the focus of the study. For example, if the study wants to uncover the trends in research areas (e.g., Software Architecture), the dataset should not be biased with respect to any area in the domain (e.g., Software Engineering in our case). A good strategy to select unbiased datasets is considering either a full scholarly dataset of a very high-level field (e.g., all the Computer Science papers in Microsoft Academic Search<xref ref-type="fn" rid="fn-2">2</xref><fn id="fn-2"><label><sup>2</sup></label>
+<p><uri>http://academic.research.microsoft.com</uri></p></fn> or in Scopus<xref ref-type="fn" rid="fn-3">3</xref><fn id="fn-3"><label><sup>3</sup></label>
+<p><uri>https://www.scopus.com/</uri></p></fn>) or a dataset including all the papers published in the main conferences and journals of the domain under analysis. In recent years, universities, organizations, and publishing companies have released an increasing number of open datasets that could assist in this task, such as CrossRef,<xref ref-type="fn" rid="fn-4">4</xref><fn id="fn-4"><label><sup>4</sup></label>
+<p><uri>https://www.crossref.org/</uri></p></fn> SciGraph,<xref ref-type="fn" rid="fn-5">5</xref><fn id="fn-5"><label><sup>5</sup></label>
+<p><uri>https://scigraph.springernature.com/explorer/downloads/</uri></p></fn> OpenCitations,<xref ref-type="fn" rid="fn-6">6</xref><fn id="fn-6"><label><sup>6</sup></label>
+<p><uri>http://opencitations.net</uri></p></fn> DBLP,<xref ref-type="fn" rid="fn-7">7</xref><fn id="fn-7"><label><sup>7</sup></label>
+<p><uri>http://dblp.uni-trier.de</uri></p></fn> Semantic Scholar,<xref ref-type="fn" rid="fn-8">8</xref><fn id="fn-8"><label><sup>8</sup></label>
+<p><uri>https://www.semanticscholar.org/</uri></p></fn> and others.</p>
+<p><bold>3. Ontology learning.</bold> The dataset is processed by an ontology learning technique that automatically infers an ontology of the relevant concepts.</p>
+<p>We strongly advocate the use of an ontology learning technique that generates a full domain ontology and represents it with Semantic Web standards, such as the Web Ontology Language (OWL)<xref ref-type="fn" rid="fn-9">9</xref><fn id="fn-9"><label><sup>9</sup></label>
+<p><uri>https://www.w3.org/OWL/</uri></p></fn>). The main advantage of adopting an ontology in this context is that it allows for a more comprehensive representation of the domain since it includes, in addition to hierarchical relationships, also other kinds of relationships (e.g., <italic>sameAs</italic>, <italic>partOf</italic>), which may be critical for classifying the primary studies. For example, an ontology allows to explicitly associate to each category a list of alternative labels or related terms that will be used in the classification phase. In addition, ontology learning techniques can infer very structured multi-level ontologies [<xref ref-type="bibr" rid="ref037">37</xref>], and thus describe the domain at different levels of granularity.</p>
+<p>The task of ontology and taxonomy learning was comprehensively explored over the last 20 years. Therefore, the researcher can choose among a variety of different approaches for this step, including:</p>
+<list list-type="bullet">
+<list-item>
+<p>statistical methods for deriving taxonomies from keywords [<xref ref-type="bibr" rid="ref029">29</xref>,<xref ref-type="bibr" rid="ref056">56</xref>];</p>
+</list-item>
+<list-item>
+<p>natural language processing approaches, e.g., FRED [<xref ref-type="bibr" rid="ref018">18</xref>], LODifier [<xref ref-type="bibr" rid="ref004">4</xref>], Text2Onto [<xref ref-type="bibr" rid="ref011">11</xref>];</p>
+</list-item>
+<list-item>
+<p>approaches based on deep learning, e.g., recurrent neural networks [<xref ref-type="bibr" rid="ref043">43</xref>];</p>
+</list-item>
+<list-item>
+<p>hybrid ontology learning frameworks [<xref ref-type="bibr" rid="ref063">63</xref>];</p>
+</list-item>
+<list-item>
+<p>specific approaches for generating research topic ontologies, e.g., Klink-2 [<xref ref-type="bibr" rid="ref037">37</xref>].</p>
+</list-item>
+</list>
+<p>However, as discussed in the following step, researchers may also choose to skip this step and re-use a compatible ontology from a previous study.</p>
+<p>It is useful to clarify why we suggest the adoption of an ontology learning approach, rather than the adoption of one of the currently available research taxonomies, such as the ACM computing classification system,<xref ref-type="fn" rid="fn-10">10</xref><fn id="fn-10"><label><sup>10</sup></label>
+<p><uri>http://www.acm.org/publications/class-2012</uri></p></fn> the Springer Nature classification,<xref ref-type="fn" rid="fn-11">11</xref><fn id="fn-11"><label><sup>11</sup></label>
+<p><uri>http://www.nature.com/subjects</uri></p></fn> Scopus subject areas,<xref ref-type="fn" rid="fn-12">12</xref><fn id="fn-12"><label><sup>12</sup></label>
+<p><uri>https://www.elsevier.com/solutions/scopus/content</uri></p></fn> and the Microsoft Academic Search classification. Unfortunately, these taxonomies suffer from some common issues, which make them unfeasible to support most kinds of SRs. First, they are very coarse-grained and represent wide categories of approaches, rather than the fine-grained topics addressed by researchers [<xref ref-type="bibr" rid="ref036">36</xref>]. Secondly, they are usually obsolete since they are seldom updated. For example, the 2012 version of the ACM classification was finalized fourteen years after the previous version. This is a critical point, since some interesting trends could be associated with recently emerged topics. In third instance, most ontology learning algorithms are not limited to learning research areas, but can be tailored to yield the outputs which are more apt to support a specific analysis.</p>
+<p><bold>4. Ontology refining.</bold> The ontology resulting from the previous step is corrected and refined by domain experts. During this phase, the experts are allowed to (1) delete an existent category, (2) add a new category, (3) delete an existent relationship, (4) add a new relationship. We suggest using at least three domain experts for addressing possible disagreements.</p>
+<p>This step is critical for two reasons. First, it may correct some errors in the automatically-generated taxonomy. Secondly, it verifies that the data-driven representation aligns with the domain experts mental model and thus the outcomes will be understandable and reusable by their research community.</p>
+<p>Refining a very large ontology is not a trivial task, therefore if the domain comprehends a large number of topics we suggest splitting it in manageable sub branches to be addressed by different experts. Our experience suggests that a taxonomy of about 50 research areas can be reviewed in about 15–30 minutes by an expert of the field. For example, in [<xref ref-type="bibr" rid="ref037">37</xref>] three experts reviewed a Semantic Web ontology of 58 topics in about 20 minutes. In the test study for this paper, three experts took about 20 minutes to examine and produce feedback on a taxonomy of 46 topics (and 71 terms considering synonymous such as “product line”, “product-lines”, “product-line”, which were clustered automatically by the ontology learning algorithm). In both cases, we represented the ontology as tree diagram in a excel sheet<xref ref-type="fn" rid="fn-13">13</xref><fn id="fn-13"><label><sup>13</sup></label>
+<p>See an example at <uri>http://tinyurl.com/yal6h3wu</uri>.</p></fn> and included also a list of the most popular terms in the dataset, for supporting experts in remembering all the relevant research topics.</p>
+<p>An alternative solution is to provide experts with ontology editors that could be used to directly modify the ontology, such as Protege,<xref ref-type="fn" rid="fn-14">14</xref><fn id="fn-14"><label><sup>14</sup></label>
+<p><uri>http://protege.stanford.edu</uri></p></fn> NeOn Toolkit,<xref ref-type="fn" rid="fn-15">15</xref><fn id="fn-15"><label><sup>15</sup></label>
+<p><uri>http://neon-toolkit.org/</uri></p></fn> TopBraid Composer,<xref ref-type="fn" rid="fn-16">16</xref><fn id="fn-16"><label><sup>16</sup></label>
+<p><uri>http://www.topquadrant.com/products/TB_Composer.html</uri></p></fn> Semantic Turkey,<xref ref-type="fn" rid="fn-17">17</xref><fn id="fn-17"><label><sup>17</sup></label>
+<p><uri>http://semanticturkey.uniroma2.it/</uri></p></fn> or Fluent Editor.<xref ref-type="fn" rid="fn-18">18</xref><fn id="fn-18"><label><sup>18</sup></label>
+<p><uri>http://www.cognitum.eu/Semantics/FluentEditor/</uri></p></fn> However, these tools are not always easy to learn and the adoption of a simple spreadsheet may be advisable in most cases. Indeed, the annotators who participated in the mapping study of Software Architecture described in the next section, reported that they were able to easily correct and suggest changes in the ontology using this simple solution. In particular, this task was natural to them since the same kind of spreadsheet is typically used in the analysis phase of systematic reviews (e.g., for the keywording step). We refer the reader to Sabou et al. [<xref ref-type="bibr" rid="ref049">49</xref>] for a comprehensive analysis of the verification of domain knowledge by human experts in the field of Software Engineering.</p>
+<p>As highlighted by Fig. <xref rid="x1-4001-2">2</xref>, the aim of steps 2–4 is to generate an ontology apt to select and classify relevant papers and ultimately answer the RQs. It follows that these steps could be replaced by the adoption of an ontology previously generated and validated by a previous study with a consistent scope. For example, the ontology about Software Engineering generated for this paper’s example study (see Section <xref rid="x1-6000-4.2">4.2</xref>) can be re-used to perform many kinds of mapping studies involving other research areas in SE. Naturally, the ontology may have to be further updated to include the most recent concepts and terms. This solution allows users with no access to vast scholarly databases or no expertise in ontology learning techniques to easily implement an EDAM study.</p>
+<p><bold>5. Selection of primary studies.</bold> The authors select a dataset of papers and define the inclusion criteria of the primary studies according to the domain ontology and other metadata of the papers (e.g., year, venue, language). The inclusion criteria are typically expressed as a search string, which uses simple logic constructs, such as AND, OR, and NOT [<xref ref-type="bibr" rid="ref003">3</xref>]. The search string is then used to produce the query that will be run over the dataset for selecting the primary studies. Some examples of queries include (1) “all the papers in the dataset published in a list of relevant conferences” or “all the papers in the dataset that contain a list of relevant terms from the ontology”.</p>
+<p>In most cases this dataset will be the same or a subset of the one used for learning the domain ontology. However, the authors may want to zoom on a particular set of articles, such as the ones published in the main venues of a field, in a geographical area, or by a certain demography. It is also possible to select a different dataset altogether, since the ontology would use generic topic labels and thus be agnostic with respect to the dataset. A possible reason to do so is the availability of the full text of the studies. Many ontology learning algorithms can be run on massive metadata dataset (e.g., Scopus, Microsoft Academic Search), but some research questions may require the full text. In this case, the author may want to perform the ontology learning step on the metadata dataset, which is usually larger in size and scope, and then either select a subset composed by publications which are available online or adopt for this phase a second dataset that includes the full text of the articles, such as Core [<xref ref-type="bibr" rid="ref024">24</xref>]. The growth of the Open Access movement [<xref ref-type="bibr" rid="ref062">62</xref>], which aims at providing free access to academic work, may alleviate this limitation in the following years.</p>
+<p><bold>6. Classification of primary studies.</bold> The authors define a function for mapping categories to papers based on the refined ontology. This step is important to foster reproducibility since the inclusion criteria (defined in the step 5), the mapping function, and the domain ontology should contain all the information needed for replicating the classification process. The function can also be associated to an algorithmic method (e.g., a machine learning classifier), provided the method is made available and is reproducible.</p>
+<p>The simplest way for mapping categories to papers is to associate to each category each paper that contains the label of the category or of any of its sub-categories. This simple technique for semantically characterizing documents has the advantage of being unsupervised and was applied with good results in a variety of fields, such as topic forecasting [<xref ref-type="bibr" rid="ref052">52</xref>], automatic classification of proceeding books [<xref ref-type="bibr" rid="ref039">39</xref>], sentiment analysis [<xref ref-type="bibr" rid="ref050">50</xref>], recommender systems [<xref ref-type="bibr" rid="ref015">15</xref>], and many others. Alternative unsupervised methods, which we evaluate in Section <xref rid="x1-9000-5.2">5.2</xref>, include approaches based on TF-IDF [<xref ref-type="bibr" rid="ref044">44</xref>], LDA [<xref ref-type="bibr" rid="ref008">8</xref>], and word embeddings [<xref ref-type="bibr" rid="ref053">53</xref>].</p>
+<p>In addition, the authors can choose to create a more complex mapping function which exploits other semantic relationships in the ontology (e.g., <italic>relatedTerm</italic>, <italic>partOf</italic>).</p>
+<p><bold>7. Data synthesis.</bold> According to the RQs, this step may be automatic, semi-automatic or manual. Some straightforward analytics (e.g., the number of publications or citations over time) can be computed completely automatically by counting the previously classified papers or summing their number of citations. Other more complex analyses may require the use of machine learning techniques or the (manual) intervention of human experts. Starting from the groundwork formed by our research, a full analysis of the possible kinds of data synthesis and the way to automatize them will constitute interesting future works beneficial for the whole research community.</p>
+<p>Overall, motivated by the need to reduce the amount of manual tedious tasks involved in SRs, <bold>EDAM offers four main advantages over a classic methodology. First,</bold> human experts are not required to manually analyze and classify primary studies, but they simply have to refine the ontology, choose the inclusion criteria, and define a mapping function for associating papers to categories in the ontology. This allows researchers to carry out large scale studies that involve thousands of research papers with relative ease. <bold>Secondly,</bold> since the domain ontology is created with a data-driven method, it should reflect the real trends of the primary studies, rather than arbitrary human decisions about which keywords to annotate and aggregate, even if the refinement step may still introduce a degree of arbitrariness. <bold>Third,</bold> the use of a formal machine-readable ontology language for representing the domain taxonomy should foster the reproducibility of the study and allow authors with no expertise in data science to perform studies using previously generated ontologies. <bold>Fourth,</bold> this methodology allows researchers to produce and exploit complex multi-level ontologies, rather than the simple two-level classifications used by many studies [<xref ref-type="bibr" rid="ref060">60</xref>].</p>
+<p>Naturally, EDAM is suitable for research questions that can be automatized by the ontology-driven classification process previously described, or that aim at giving an overview of the state-of-the-art or state-of-practice on a topic [<xref ref-type="bibr" rid="ref066">66</xref>] by analysing all of the relevant research contributions in a specific research area. We will discuss further this and other limitations in Section <xref rid="x1-10000-5.3">5.3</xref>.</p>
+</sec>
+<sec id="x1-6000-4.2">
+<label>4.2.</label>
+<title>EDAM application</title>
+<p>With the aim of presenting a reproducible pipeline and showing how EDAM can be applied, we present here an example as part of a possible systematic mapping study assisted by EDAM in the Software Architecture research area. We chose to study the research trends in this area, since trend analysis is typical of mapping studies [<xref ref-type="bibr" rid="ref066">66</xref>] and it is one of the tasks that can be automatized by EDAM.</p>
+<p>In the following, we describe how we instantiated the study example assisted by EDAM and discuss the specific technologies used to implement it. The data necessary for reproducing this study and using this same pipeline on other fields are available at <uri>https://doi.org/10.5281/zenodo.2653924</uri>.</p>
+<p><bold>1. Research question definition.</bold> We wanted to focus on a task that is often addressed by mapping studies and could be completely automatized. Therefore our RQ is: “What are the trends of the main research topics of Software Architecture?”.</p>
+<p><bold>2. Dataset selection.</bold> We selected all papers in a dump of the Scopus dataset about Computer Science in the period 2005–2013. The Scopus dataset we were given access by Elsevier BV includes papers in 1900–2013 interval, but the number of relevant articles before 2005 was too low to allow a proper trend analysis. Each paper in this dataset is described by title, abstract, keywords, venue, and author list.</p>
+<p><bold>3. Ontology learning.</bold> We applied the Klink-2 algorithm [<xref ref-type="bibr" rid="ref037">37</xref>] on the Scopus dump for learning an ontology representing the main ‘Software Architecture’ research area in SE.</p>
+<p>Klink-2 is an algorithm that generates an ontology of research topics by processing scholarly metadata (titles, abstracts, keywords, authors, venues) and external sources (e.g., DBpedia, calls for papers, web pages). In particular, Klink-2 periodically produces the Computer Science Ontology (CSO)<xref ref-type="fn" rid="fn-19">19</xref><fn id="fn-19"><label><sup>19</sup></label>
+<p><uri>http://cso.kmi.open.ac.uk/</uri></p></fn> [<xref ref-type="bibr" rid="ref054">54</xref>] that is currently used by Springer Nature for classifying proceedings in the field of Computer Science [<xref ref-type="bibr" rid="ref039">39</xref>], such as the well-known Lecture Notes in Computer Science series.<xref ref-type="fn" rid="fn-20">20</xref><fn id="fn-20"><label><sup>20</sup></label>
+<p><uri>http://www.springer.com/gp/computer-science/lncs</uri></p></fn> The ontologies produced by Klink-2 use the Klink data model,<xref ref-type="fn" rid="fn-21">21</xref><fn id="fn-21"><label><sup>21</sup></label>
+<p><uri>http://technologies.kmi.open.ac.uk/rexplore/ontologies/BiboExtension.owl</uri></p></fn> which is an extension of the BIBO ontology<xref ref-type="fn" rid="fn-22">22</xref><fn id="fn-22"><label><sup>22</sup></label>
+<p><uri>http://purl.org/ontology/bibo/</uri></p></fn> that in turn builds upon SKOS.<xref ref-type="fn" rid="fn-23">23</xref><fn id="fn-23"><label><sup>23</sup></label>
+<p><uri>https://www.w3.org/2004/02/skos/</uri></p></fn> This model includes three semantic relations: <italic>relatedEquivalent</italic>, which indicates that two topics can be treated as equivalent for the purpose of exploring research data; <italic>skos:broaderGeneric</italic>, which indicates that a topic is a subarea of another one; and <italic>contributesTo</italic>, which indicates that the research outputs of one topic significantly contribute to the research into another. In the following, we make use of the first two relationships for classifying studies according to their research topics.</p>
+<fig id="x1-6002r-1">
+<label>Algorithm 1:</label>
+<caption>
+<p>The Klink-2 algorithm</p>
+</caption>
+<graphic xlink:href="ds-2-ds190019-g004.jpg"/>
+</fig>
+<p>In Algorithm <xref rid="x1-6002r-1">1</xref>, we report the pseudocode of Klink-2. The algorithm takes as input a set of keywords and investigates their relationships with the set of their most co-occurring keywords. Klink-2 infers a sub-topic relationship between keyword <italic>x</italic> and <italic>y</italic> by means of two metrics: (i) <inline-formula><mml:math id="math002">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">H</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">R</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">x</mml:mi>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mi mathvariant="italic">y</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo></mml:math></inline-formula>, which uses a semantic variation of the subsumption method; (ii) <inline-formula><mml:math id="math003">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">T</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">R</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">x</mml:mi>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mi mathvariant="italic">y</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo></mml:math></inline-formula>, which uses temporal information to do the same. <inline-formula><mml:math id="math004">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">H</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">R</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">x</mml:mi>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mi mathvariant="italic">y</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo></mml:math></inline-formula> is computed according to the following formula: 
+<disp-formula>
+<mml:math display="block" id="math005">
+<mml:mtable displaystyle="true">
+<mml:mtr>
+<mml:mtd>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">H</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">R</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">x</mml:mi>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mi mathvariant="italic">y</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo>
+<mml:mo>=</mml:mo>
+<mml:mo mathvariant="normal" fence="true" maxsize="2.03em" minsize="2.03em">(</mml:mo><mml:mstyle displaystyle="true">
+<mml:mfrac>
+<mml:mrow>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">I</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">R</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">x</mml:mi>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mi mathvariant="italic">y</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo>
+</mml:mrow>
+<mml:mrow>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">I</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">R</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">x</mml:mi>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mi mathvariant="italic">x</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo>
+</mml:mrow>
+</mml:mfrac>
+</mml:mstyle>
+<mml:mo>−</mml:mo><mml:mstyle displaystyle="true">
+<mml:mfrac>
+<mml:mrow>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">I</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">R</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">y</mml:mi>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mi mathvariant="italic">x</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo>
+</mml:mrow>
+<mml:mrow>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">I</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">R</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">y</mml:mi>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mi mathvariant="italic">y</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo>
+</mml:mrow>
+</mml:mfrac>
+</mml:mstyle>
+<mml:mo mathvariant="normal" fence="true" maxsize="2.03em" minsize="2.03em">)</mml:mo>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">c</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">R</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">x</mml:mi>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mi mathvariant="italic">y</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo>
+<mml:mi mathvariant="italic">n</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">x</mml:mi>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mi mathvariant="italic">y</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo>
+</mml:mtd>
+</mml:mtr>
+</mml:mtable></mml:math>
+</disp-formula> 
+where <inline-formula><mml:math id="math006">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">I</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">R</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">x</mml:mi>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mi mathvariant="italic">y</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo></mml:math></inline-formula> is the number of elements associated with both x and y according to relation <italic>R</italic> (e.g., number of co-occurrences in research papers), <inline-formula><mml:math id="math007"><mml:mstyle displaystyle="false">
+<mml:mfrac>
+<mml:mrow>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">I</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">R</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">x</mml:mi>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mi mathvariant="italic">y</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo>
+</mml:mrow>
+<mml:mrow>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">I</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">R</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">x</mml:mi>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mi mathvariant="italic">x</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo>
+</mml:mrow>
+</mml:mfrac>
+</mml:mstyle></mml:math></inline-formula> is the conditional probability that an element associated with keyword <italic>x</italic> will be associated also with keyword <italic>y</italic>, <inline-formula><mml:math id="math008">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">n</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">R</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">x</mml:mi>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mi mathvariant="italic">y</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo></mml:math></inline-formula> is the Levenshtein distance between the two keywords normalized by the length of the longest one, and <inline-formula><mml:math id="math009">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">c</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">R</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">x</mml:mi>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mi mathvariant="italic">y</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo></mml:math></inline-formula> is the cosine similarity between the two vectors in which each index represents a keyword <italic>k</italic> and the value is the number of time <italic>x</italic> or <italic>y</italic> co-occurred with <italic>k</italic> in a certain context.</p>
+<p><inline-formula><mml:math id="math010">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">T</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">R</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">x</mml:mi>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mi mathvariant="italic">y</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo></mml:math></inline-formula> is a temporal version of <inline-formula><mml:math id="math011">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">H</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">R</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">x</mml:mi>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mi mathvariant="italic">y</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo></mml:math></inline-formula>, which weighs more the information associated with the first years of <italic>x</italic>. It is useful to detect the cases in which the relationship between two terms fade because their association has become implicit (e.g., Artificial Intelligence and Machine Learning). <inline-formula><mml:math id="math012">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">T</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">R</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">x</mml:mi>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mi mathvariant="italic">y</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo></mml:math></inline-formula> is calculated using a variation of formula (1) in which <inline-formula><mml:math id="math013">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">I</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">R</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">x</mml:mi>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mi mathvariant="italic">y</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo></mml:math></inline-formula> is computed by weighting the intensity of the relationships in each year according to the distance from the debut of x. The weight is computed as <inline-formula><mml:math id="math014">
+<mml:mi mathvariant="italic">w</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">year</mml:mi>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mi mathvariant="italic">x</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo>
+<mml:mo>=</mml:mo>
+<mml:msup>
+<mml:mrow>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">year</mml:mi>
+<mml:mo>−</mml:mo>
+<mml:mi mathvariant="italic">debut</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">x</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo>
+<mml:mo>+</mml:mo>
+<mml:mn>1</mml:mn>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo>
+</mml:mrow>
+<mml:mrow>
+<mml:mo>−</mml:mo>
+<mml:mo>−</mml:mo>
+<mml:mi mathvariant="italic">γ</mml:mi>
+</mml:mrow>
+</mml:msup></mml:math></inline-formula>, with <inline-formula><mml:math id="math015">
+<mml:mi mathvariant="italic">γ</mml:mi>
+<mml:mo mathvariant="normal">&gt;</mml:mo>
+<mml:mn>0</mml:mn></mml:math></inline-formula> (<inline-formula><mml:math id="math016">
+<mml:mi mathvariant="italic">γ</mml:mi>
+<mml:mo>=</mml:mo>
+<mml:mn>2</mml:mn></mml:math></inline-formula> in the implementation used for this paper). A hierarchical relationship is inferred whenever <inline-formula><mml:math id="math017">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">H</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">R</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">x</mml:mi>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mi mathvariant="italic">y</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo></mml:math></inline-formula> or <inline-formula><mml:math id="math018">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">T</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">R</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">x</mml:mi>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mi mathvariant="italic">y</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo></mml:math></inline-formula> are higher then a certain threshold (0.25 in the implementation used for this study).</p>
+<p>After inferring the hierarchical relationships, Klink-2 removes loops in the topic network (instruction <inline-formula><mml:math id="math019">
+<mml:mi mathvariant="normal">#</mml:mi>
+<mml:mn>9</mml:mn></mml:math></inline-formula>), merges similar keywords and splits ambiguous keywords associated to multiple meanings (e.g., ‘Java’). The keywords produced in this step are added to the initial set of keywords to be further analysed in the next iteration and the while-loop is re-executed until there are no more keywords to be processed. Finally, Klink-2 filters the keywords considered ‘too generic’ or ‘not academic’ according to a set of heuristics (instruction <inline-formula><mml:math id="math020">
+<mml:mi mathvariant="normal">#</mml:mi>
+<mml:mn>13</mml:mn></mml:math></inline-formula>) and generates the triples describing the ontology.</p>
+<p>Klink-2 was evaluated on a gold standard ontology including 88 research topics in the field of Semantic Web, which was manually generated by three senior researchers. It significantly outperformed the alternative algorithms (<inline-formula><mml:math id="math021">
+<mml:mi mathvariant="italic">p</mml:mi>
+<mml:mo>=</mml:mo>
+<mml:mn>0.0005</mml:mn></mml:math></inline-formula>), yielding a precision of 86% and a recall of 85.5%. More details about Klink-2 and its evaluation can be found in Osborne and Motta [<xref ref-type="bibr" rid="ref037">37</xref>].</p>
+<p>We selected Klink-2 among the other previously discussed solutions for a number of reasons. First, it is the only approach to our knowledge that was specifically designed to generate taxonomy of research areas. Secondly, it was already integrated and evaluated on a dump of the Scopus dataset, which we adopted in this study, yielding excellent performance on the fields of artificial intelligence and semantic web [<xref ref-type="bibr" rid="ref037">37</xref>]. In third instance, it permits to define a number of pre-determinate relationships as basis for a new taxonomy. In particular, a human user can define a subsumption relation (i.e., <italic>skos:broaderGeneric</italic>), a <italic>relatedEquivalent</italic> one, or specify that two concepts should not be in any relationships. This functionality allows us to easily incorporate expert feedback in the ontology learning process. Therefore, the next iterations of the ontology will benefit from the knowledge of previous reviewers. We ran Klink-2 on the selected dataset, giving as initial seed the keyword “Software Engineering” and generated an OWL ontology of the field including 956 concepts and 5,461 relationships. We then selected the sub-branch of Software Architecture comprising 46 research areas and 71 terms (some research areas have multiple labels, such as “component based software” and “component-based software”).</p>
+<p><bold>4. Ontology refining.</bold> We generated a spreadsheet, containing the Software Architecture (SA) ontology as a tree diagram.<xref ref-type="fn" rid="fn-24">24</xref><fn id="fn-24"><label><sup>24</sup></label>
+<p><uri>http://tinyurl.com/yal6h3wu</uri></p></fn> In this representation each concept of the ontology was illustrated by its level in the taxonomy, its labels, and the number of papers annotated with the concepts. We also included a list of the 500 more popular terms in the papers that contained the keywords “Software Architecture” and “Software Engineering”, to assist the experts in remembering other concepts or terms that the algorithm may have missed.</p>
+<p>We sent it to three senior researchers and asked them to correct the ontology as discussed in Section <xref rid="x1-5000-4.1">4.1</xref>. The task took about 20 minutes and produced three revised spreadsheets. The feedback from the experts was integrated in the final ontology.<xref ref-type="fn" rid="fn-25">25</xref><fn id="fn-25"><label><sup>25</sup></label>
+<p><uri>http://rexplore.kmi.open.ac.uk/data/edam/SE-ontology.owl</uri></p></fn> In case of disagreement we went with the majority vote.</p>
+<p>The most frequent feedback regarded: (1) the deletion sub-areas that were incorrectly classified under SA (e.g., “software evolution”), (2) the introduction of sub-areas that were neglected by Klink-2 (e.g, “architecture concerns”), and (3) the inclusion of alternative labels for some category (e.g., alternative ways to spell “component-based architecture”).</p>
+<p><bold>5. Selection of primary studies.</bold> We then selected from the initial Scopus dump two datasets of primary studies to investigate the SA area: (1) <bold>DSA</bold> (Dataset SA, 3,467 publications), including all papers in the Scopus dataset that contain the terms “Software Architectures” or “Software Architecture” and include at least one of the subtopics of Software Architecture in the domain ontology, and (2) <bold>DSA-MV</bold> (Dataset SA – Main Venues, 1,586 publications), containing all the papers published in a list of well-known conferences and journals in the SE fields and in a particular in the SA area (see Table <xref rid="x1-6003-1">1</xref>) and including at least one of the sub-topics of SA in the OWL ontology. We considered these two datasets since it may be interesting to analyze the discrepancy between generic SA papers and papers published in the main venues.</p>
+<table-wrap id="x1-6003-1">
+<label>Table 1</label>
+<caption>
+<p>List of venues used for the DSA-MV dataset</p>
+</caption>
+<graphic xlink:href="ds-2-ds190019-g005.jpg"/>
+</table-wrap>
+<p><bold>6. Classification of primary studies.</bold> We defined the mapping function as follows. A paper was classified under a certain category (e.g., service-oriented architectures) if it contained in the title, abstract or keywords: (1) the label of the category (e.g., “service-oriented architectures”), (2) a <italic>relevantEquivalent</italic> of the category (e.g., “service oriented architecture”), (3) a <italic>skos:broaderGeneric</italic> of the category (e.g., “microservices”), or (4) a <italic>relevantEquivalent</italic> of any <italic>skos:broaderGeneric</italic> of the category (e.g., “microservice”). The advantage of this solution is that it allows us to map each category to a list of terms that can be automatically searched in the metadata of the papers. Therefore, the classification step can be handled automatically. In addition, it allows us to associate multiple categories to the same paper.</p>
+<p>We chose this straightforward approach instead of other more complex methods based on word embeddings and string similarity [<xref ref-type="bibr" rid="ref053">53</xref>], since it is simple to reproduce and yields the best precision, as discussed in Section <xref rid="x1-9000-5.2">5.2</xref>. There we discuss also some recent approaches [<xref ref-type="bibr" rid="ref053">53</xref>,<xref ref-type="bibr" rid="ref055">55</xref>] yielding a more comprehensive set of topics and therefore a better recall, and illustrate how the choice of the method ultimately depends on the requested tradeoff between precision and recall.</p>
+<p>In practice, we indexed titles, abstracts and keywords in an ElasticSearch<xref ref-type="fn" rid="fn-26">26</xref><fn id="fn-26"><label><sup>26</sup></label>
+<p><uri>https://www.elastic.co/</uri></p></fn> instance and we ran a PHP script that imported the ontology, performed the relevant queries on the metadata, and saved the result in a MariaSQL database.<xref ref-type="fn" rid="fn-27">27</xref><fn id="fn-27"><label><sup>27</sup></label>
+<p><uri>https://mariadb.org/</uri></p></fn></p>
+<p><bold>7. Data synthesis.</bold> Fig. <xref rid="x1-6004-4">4</xref> shows the number of primary studies in the DSA and DSA-MV datasets. The DSA dataset follows the trend of the “Software Architecture” keyword in the Scopus dataset and decreases after 2010. Conversely, the size of DSA-MV grows steadily with the number of relevant conferences and journals.</p>
+<p>We identified the main trends by running a script to count the number of studies about each sub-topic in each year. Since the focus of the paper is the EDAM methodology, rather than a comprehensive analysis on these research sub-areas, we will briefly discuss only the main trends associated with the more popular subtopics (in terms of number of papers). The full results of this example study, however, are available at <ext-link ext-link-type="uri" xlink:href="http://rexplore.kmi.open.ac.uk/data/edam">rexplore.kmi.open.ac.uk/data/edam</ext-link> and on Zenodo<xref ref-type="fn" rid="fn-28">28</xref><fn id="fn-28"><label><sup>28</sup></label>
+<p><uri>https://doi.org/10.5281/zenodo.2653924</uri></p></fn> and can be reused for supporting a more in-depth analysis of the field.</p>
+<fig id="x1-6004-4">
+<label>Fig. 4.</label>
+<caption>
+<p>Number of publications in DSA and DSA-MV over the years.</p>
+</caption>
+<graphic xlink:href="ds-2-ds190019-g006.jpg"/>
+</fig>
+<p>Figure <xref rid="x1-6005-5">5</xref> displays the number of publications and citations associated with the most popular sub-areas of SA. The papers in DSA yield on average <inline-formula><mml:math id="math022">
+<mml:mn>4.8</mml:mn>
+<mml:mo>±</mml:mo>
+<mml:mn>2.1</mml:mn></mml:math></inline-formula> in citations versus the <inline-formula><mml:math id="math023">
+<mml:mn>13.6</mml:mn>
+<mml:mo>±</mml:mo>
+<mml:mn>7.0</mml:mn></mml:math></inline-formula> citations of those in DSA-MV. Reasonably, this tendency suggests that the papers published in the main SA venues tend to be more recognized by the research community.</p>
+<fig id="x1-6005-5">
+<label>Fig. 5.</label>
+<caption>
+<p>Number of publications and citations of the main topics in DSA and DSA-MV.</p>
+</caption>
+<graphic xlink:href="ds-2-ds190019-g007.jpg"/>
+</fig>
+<p>Figure <xref rid="x1-6006-6">6</xref> shows the percentage of papers published over time in the main topics within SA. We focus on the 2005–2013 period, since in this interval the number of publications is high enough to highlight the topic trends.</p>
+<p>Software-oriented Architectures appears to have been the most prominent topic before 2009, while from 2010, Model-driven Architectures appears to be the most popular topic in this dataset. We can also appreciate the rising of Design Decisions, that seems the most significant positive trend of the last period together with Architecture Description Languages.</p>
+<fig id="x1-6006-6">
+<label>Fig. 6.</label>
+<caption>
+<p>Number of publications of the top ten main topics in DSA over time.</p>
+</caption>
+<graphic xlink:href="ds-2-ds190019-g008.jpg"/>
+</fig>
+<p>Interestingly, the dataset regarding the main venues (DSA-MV) exhibits some different dynamics. Figure <xref rid="x1-6007-7">7</xref> highlights the difference between DSA and DSA-MV by showing for each topic the ratio between its number of publications and the total publications in the ten main topics. The research areas of Design Decisions and Views appear much more prominent in the main venues, while Model-Driven Architectures and Architecture Analysis are more popular in DSA. We can further analyze these differences by considering the main trends of the DSA-MV dataset, displayed by Fig. <xref rid="x1-6008-8">8</xref>. The trend of Design Decisions in DSA-MV mirrors the one exhibited in DSA, both growing steadily from 2010. Conversely, Service-oriented Architectures, which has a negative trend in DSA, remains stable in DSA-MV.</p>
+<fig id="x1-6007-7">
+<label>Fig. 7.</label>
+<caption>
+<p>Comparison DSA and DSA-MV in terms of topic distribution. The percentage value refers to the ratio between the number of publications in a topic and the total publications in the ten main topics.</p>
+</caption>
+<graphic xlink:href="ds-2-ds190019-g009.jpg"/>
+</fig>
+<fig id="x1-6008-8">
+<label>Fig. 8.</label>
+<caption>
+<p>Number of publications of the top ten main topics in DSA-MV over time.</p>
+</caption>
+<graphic xlink:href="ds-2-ds190019-g010.jpg"/>
+</fig>
+</sec>
+</sec>
+<sec id="x1-7000-5">
+<label>5.</label>
+<title>Evaluation and discussion</title>
+<p>In the following, we reflect on this preliminary application of EDAM. This section includes (1) a evaluation of our method versus six human annotators, (2) a comparison of several approaches for classifying primary studies, (3) an analysis of EDAM limitations, (4) a discussion about the implications for systematic mappings in Software Engineering, and (5) a discussion on how to reuse EDAM for other SRs.</p>
+<sec id="x1-8000-5.1">
+<label>5.1.</label>
+<title>Evaluation of the primary study classification</title>
+<p>The most critical step of EDAM is the classification of primary studies. When these are correctly associated to the relevant topics, the subsequent analysis presents a realistic assessment of the landscape of the studied research field. Thus, even if working on a large number of papers can alleviate the weight of some minor misclassification mistakes, we need to be able to trust that the automatic classification process will obtain an accuracy similar to that yielded by human annotators.</p>
+<p>We evaluated the ability of EDAM to correctly discriminate between different topics in the field of Software Architecture by (1) randomly selecting a set of 25 papers in the DSA dataset, (2) classifying them both with EDAM and with six human experts (researchers in the field of SA), and (3) comparing the results. For simplifying the task and allowing to compare the annotation algorithmically, we first selected five unambiguous categories from the main topics of SA: Design Decisions, Service-oriented Architectures, Model-driven Architectures, Architecture Description Languages, and Views. For each category, we randomly selected from the DSA dataset five primary studies that were classified by EDAM exclusively under that topic, for a total of 25 papers. These papers were described in a spreadsheet by means of their title, author list, abstract, and keywords. The human experts were given this spreadsheet and asked to classify each paper either with one of the five categories or with a “none of the above” tag. We then compared the seven annotation sets produced by the six human experts and by EDAM, considered as an additional annotator.<xref ref-type="fn" rid="fn-29">29</xref><fn id="fn-29"><label><sup>29</sup></label>
+<p>The material and the results of the evaluation are available at <uri>https://doi.org/10.5281/zenodo.2653924</uri>.</p></fn></p>
+<p>Table <xref rid="x1-8001-2">2</xref> shows the agreement between the annotators. It was computed by calculating the ratio of papers which were tagged with the same category by both annotators. EDAM has the highest average agreement and it also yields the highest agreement with three out of six users. User5 does even better in this regards and has the highest agreement with four annotators.</p>
+<p>The chi-square test run on the human users shows that their behaviours are significantly different (<inline-formula><mml:math id="math024">
+<mml:mi mathvariant="italic">p</mml:mi>
+<mml:mo>=</mml:mo>
+<mml:mn>0.017</mml:mn></mml:math></inline-formula>). However, if we group together users <inline-formula><mml:math id="math025">
+<mml:mo fence="true" stretchy="false">{</mml:mo>
+<mml:mn>2</mml:mn>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mn>3</mml:mn>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mn>5</mml:mn>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mn>6</mml:mn>
+<mml:mo fence="true" stretchy="false">}</mml:mo></mml:math></inline-formula> and users <inline-formula><mml:math id="math026">
+<mml:mo fence="true" stretchy="false">{</mml:mo>
+<mml:mn>1</mml:mn>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mn>4</mml:mn>
+<mml:mo fence="true" stretchy="false">}</mml:mo></mml:math></inline-formula>, we find no significant differences in the behaviour within each group (<inline-formula><mml:math id="math027">
+<mml:mi mathvariant="italic">p</mml:mi>
+<mml:mo>=</mml:mo>
+<mml:mn>0.81</mml:mn></mml:math></inline-formula>, <inline-formula><mml:math id="math028">
+<mml:mi mathvariant="italic">p</mml:mi>
+<mml:mo>=</mml:mo>
+<mml:mn>0.38</mml:mn></mml:math></inline-formula>, good intra-group agreement), while there are between the two groups (<inline-formula><mml:math id="math029">
+<mml:mi mathvariant="italic">p</mml:mi>
+<mml:mo>=</mml:mo>
+<mml:mn>0.0007</mml:mn></mml:math></inline-formula>).</p>
+<p>Interestingly, users <inline-formula><mml:math id="math030">
+<mml:mo fence="true" stretchy="false">{</mml:mo>
+<mml:mn>1</mml:mn>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mn>4</mml:mn>
+<mml:mo fence="true" stretchy="false">}</mml:mo></mml:math></inline-formula> were two students at the beginning of their PhD, hence still relatively new to the domain. This could suggests the importance of considerable domain experience for this task. EDAM exhibits a behaviour consistent with the most senior group, from which it is not significantly different (<inline-formula><mml:math id="math031">
+<mml:mi mathvariant="italic">p</mml:mi>
+<mml:mo>=</mml:mo>
+<mml:mn>0.77</mml:mn></mml:math></inline-formula>).</p>
+<table-wrap id="x1-8001-2">
+<label>Table 2</label>
+<caption>
+<p>Agreement between annotators (including EDAM) and average agreement of each annotator. In bold the best agreements for each annotator</p>
+</caption>
+<graphic xlink:href="ds-2-ds190019-g011.jpg"/>
+</table-wrap>
+<fig id="x1-8002-9">
+<label>Fig. 9.</label>
+<caption>
+<p>Percentage of annotations that agree with other <italic>n</italic> annotators.</p>
+</caption>
+<graphic xlink:href="ds-2-ds190019-g012.jpg"/>
+</fig>
+<p>As anticipated, a good way to measure the performance of annotators is their agreement with the majority of other expert users. Figure <xref rid="x1-8002-9">9</xref> shows the percentage of annotations of each annotator that agree with other <italic>n</italic> annotators. EDAM agrees with four out of six human annotators for 68% of the studies, it agrees with at least three of them for 80% of the studies, and it agrees with at least one of them for all the studies but one. Indeed, the categories generated by EDAM coincide with the ones suggested by the relative majority of users in 84% of the cases. Therefore, EDAM’s performance is comparable to the performance of the two annotators (User5 and User3) with the highest agreement with the user majority.</p>
+<p>We further confirmed these findings by computing the Cohen’s kappa between each couple of annotators and between each of the annotators and EDAM. The inter-annotator agreement was 0.57, typically indicating a moderate agreement [<xref ref-type="bibr" rid="ref027">27</xref>]. The average agreement of EDAM with the annotators was 0.58, confirming that this method performs in line with the annotators. In addition, we note that EDAM always agrees with the majority for the studies in which no more than one annotator disagrees. It thus seems to perform well in handling simple not-ambiguous papers, that nonetheless human experts may sometimes get wrong.</p>
+<p>In conclusion, this study suggests that the EDAM classification step generates annotations that agree with the majority of human experts and are not statistically different from the ones produced by the senior group.</p>
+<p>Naturally, EDAM performance may change according to the quality of the ontology and the domain knowledge of the human users that refined it. EDAM is not an alternative to human experts, rather a methodology that allows humans to annotate on a larger scale, by defining a sound domain knowledge and a mapping function. However, this preliminary example application already shows very promising results.</p>
+</sec>
+<sec id="x1-9000-5.2">
+<label>5.2.</label>
+<title>Comparison of classifiers for primary studies</title>
+<p>EDAM can adopt many different approaches for automaticaly classifying primary study. The choice of the method ultimately depends on its affectiveness of the avaliable approaches on the domain under analysis and on the preferred precision-recall tradeoff. For instance, in a prevalently automatic mapping study on a large set of papers, precision is of paramount importance, and the missed topics may be compensated by the numerosity of the sample. Conversely, when the results are validated in some way by human experts (e.g., [<xref ref-type="bibr" rid="ref039">39</xref>]) or when the goal is to detect emerging trends that may appear in few publications, a better strategy may be to sacrifice some precision for producing a more comprehensive set of topics.</p>
+<p>In this section we compare several approaches that can be used with EDAM to automatically classify studies according to a taxonomy of research topics, and discuss their tradeoff. We focus on unsupervised approaches, since typically the authors of a systematic review do not have the resources to prepare a large gold standard to train a supervised classifier on a potentially new taxonomy.</p>
+<p>We evaluated seven alternative approaches on a gold standard of 70 papers [<xref ref-type="bibr" rid="ref053">53</xref>] within the fields of Semantic Web (23 papers), Natural Language Processing (23), and Data Mining (24). These papers were selected by retrieving the most cited papers from Microsoft Academic Graph containing in the title or the abstract those relevant fields. Each paper was annotated by three domain experts (for a total of 21 different annotators) and was associated with <inline-formula><mml:math id="math032">
+<mml:mn>14.4</mml:mn>
+<mml:mo>±</mml:mo>
+<mml:mn>7.0</mml:mn></mml:math></inline-formula> topics using majority vote in case of disagreement. The inter-annotator agreement was <inline-formula><mml:math id="math033">
+<mml:mn>0.45</mml:mn>
+<mml:mo>±</mml:mo>
+<mml:mn>0.18</mml:mn></mml:math></inline-formula> according to Fleiss’ Kappa, which indicates a moderate inter-rater agreement [<xref ref-type="bibr" rid="ref027">27</xref>]. The data produced in the evaluation and the Python implementation of the approaches are available at <uri>https://cso.kmi.open.ac.uk/cso-classifier/</uri>. A more comprehensive version of this analysis, with additional baselines that are out of scope for this paper (e.g., not producing a set of pre-defined categories), is available in Salatino et al. [<xref ref-type="bibr" rid="ref053">53</xref>].</p>
+<p>All the tested classifiers analysed the title and abstract of the 70 papers and assigned them with a set of topics drawn from the Computer Science Ontology (CSO), a recently released taxonomy of research areas [<xref ref-type="bibr" rid="ref054">54</xref>]. This knowledge base covers well the three mentioned fields, including a total of 35 sub-topics for the Semantic Web, 173 for Natural Language Processing, and 396 for Data Mining. LDA100, LDA500, and LDA1000 are based on a Latent Dirichlet Allocation (LDA) model [<xref ref-type="bibr" rid="ref008">8</xref>] trained over 4.6M papers in Computer Science from Microsoft Academic Search. Specifically, LDA100 used a model trained with 100 topics, LDA500 on 500 topics, and LDA100 on 1,000 topics. Similarly to [<xref ref-type="bibr" rid="ref007">7</xref>], these classifiers generate a set of CSO topics from the LDA topics by first producing a set of topics with a probability of at least <italic>j</italic> and all their terms with a probability of at least <italic>k</italic>. Then they map these terms to CSO by returning all CSO topics having Levenshtein similarity higher than 0.8 with them. We performed a grid search for finding the best values of <italic>j</italic> and <italic>k</italic> on the gold standard and report here the best results of each classifier in term of F-measure.</p>
+<p>TF-IDF produces a ranked list of terms using TF-IDF [<xref ref-type="bibr" rid="ref044">44</xref>] (the IDF was computed on the same set adopted for LDA) and all the CSO topics having Levenshtein similarity higher than 0.8 with the first 30 terms.</p>
+<p>Direct Mapping (DM) is the approach used for the implementation of EDAM described in step 6 of Section <xref rid="x1-6000-4.2">4.2</xref>. This same method was also used by the first version of the Smart Topic Miner (STM) [<xref ref-type="bibr" rid="ref039">39</xref>], the system adopted by Springer Nature to classifying proceedings in the field of Computer Science. It returns all topics that explicitly appear in the papers or that are entailed by the ones appearing in the paper according to the ontology.</p>
+<p>The CSO Classifier v.1 (CSO-C1) is an unsupervised approach presented in Salatino et al. [<xref ref-type="bibr" rid="ref055">55</xref>] that extracts a combination of n-grams (unigrams, bigrams, and trigrams) from the text and returns all the topics that have a Levenstein similarity higher than <italic>t</italic> (<inline-formula><mml:math id="math034">
+<mml:mi mathvariant="italic">t</mml:mi>
+<mml:mo>=</mml:mo>
+<mml:mn>0.94</mml:mn></mml:math></inline-formula> as in the implementation reported in Salatino et al. [<xref ref-type="bibr" rid="ref055">55</xref>]). Finally, the CSO Classifier v.2 (CSO-C2) [<xref ref-type="bibr" rid="ref053">53</xref>] is a recent evolution of the previous classifier, which uses part-of-speech tagging to identify promising terms and then exploits word embeddings to infer semantically related topics that may not explicitly appear in the paper. This solution has also been adopted by the current version of the Smart Topic Miner [<xref ref-type="bibr" rid="ref051">51</xref>].</p>
+<table-wrap id="x1-9001-3">
+<label>Table 3</label>
+<caption>
+<p>Values of precision, recall, and F-measure for the seven classifiers. In bold the best results</p>
+</caption>
+<graphic xlink:href="ds-2-ds190019-g013.jpg"/>
+</table-wrap>
+<p>Table <xref rid="x1-9001-3">3</xref> reports on the resulting values of precision, recall and F-measure. The approaches based on LDA performed quite poorly. An analysis of the results revealed that the topics returned by the models are both noisy and coarse-grained, often clustering together distinct topics from CSO. Indeed, while LDA works quite well at identifying the main topics of a large collection of documents, it does not traditionally perform equally well when characterizing specific research topics, which may be associated with a relatively low number of publications (50–200), as discussed in [<xref ref-type="bibr" rid="ref036">36</xref>]. The approaches based on TF-IDF worked slightly better, yielding an F-measure of 30.1%. DM, used in our exemplary EDAM implementation, yielded the best precision of all the approaches (80.8%). Indeed, this method focuses on topics that are explicitly mentioned in the text, which tends to be very relevant. However, this solution naturally obtains a relatively low recall of 58.2%. CSO-C1, which expands the set of terms by considering string similarity, obtained a better recall (63.8%) but a lower precision (78.3%). Finally, CSO-C2 yielded the best performance in term of both recall (75.3%) and F-measure (74.1%).</p>
+<p>DM performed significantly better (<inline-formula><mml:math id="math035">
+<mml:mi mathvariant="italic">p</mml:mi>
+<mml:mo mathvariant="normal">&lt;</mml:mo>
+<mml:msup>
+<mml:mrow>
+<mml:mn>10</mml:mn>
+</mml:mrow>
+<mml:mrow>
+<mml:mo>−</mml:mo>
+<mml:mn>7</mml:mn>
+</mml:mrow>
+</mml:msup></mml:math></inline-formula> with the McNemar’s test) than the first four approaches. In turn, CSO-C2 performed significantly better (<inline-formula><mml:math id="math036">
+<mml:mi mathvariant="italic">p</mml:mi>
+<mml:mo mathvariant="normal">&lt;</mml:mo>
+<mml:msup>
+<mml:mrow>
+<mml:mn>10</mml:mn>
+</mml:mrow>
+<mml:mrow>
+<mml:mo>−</mml:mo>
+<mml:mn>7</mml:mn>
+</mml:mrow>
+</mml:msup></mml:math></inline-formula>) than DM and CSO-C1.</p>
+</sec>
+<sec id="x1-10000-5.3">
+<label>5.3.</label>
+<title>Limitations</title>
+<p>In this section we discuss EDAM limitations based on the categorization given in Wohlin et al. [<xref ref-type="bibr" rid="ref066">66</xref>].</p>
+<p>For <italic>internal validity</italic> we have identified two main threats that regard the generation of a reliable ontology, which is key to select relevant studies that directly fulfill the selection criteria (and hence correspond to the primary studies for the study at hand). In particular:</p>
+<def-list><def-item><term><bold>Ontology learning (step 3): hierarchy is important.</bold></term><def>
+<p>The domain ontology, automatically inferred by the ontology learning technique, is structured hierarchically. Therefore, an area marked as <italic>subarea</italic> (e.g., architecture description languages) is subsumed by the previous area at the upper level of the taxonomy (e.g., Software Architecture). <italic>Deeper hierarchies bring finer-grained topics, and therefore a higher precision in the classification process</italic>.</p>
+<p>During the application of ontology learning techniques to various research areas (not reported in this paper for the sake of brevity) we found that current ontology learning methods usually identify only mature (in terms of number of publications) research areas. Emerging topics may be excluded, thus reducing the granularity of recent fields’ ontologies.</p>
+<p>To alleviate this problem, human experts may be asked to manually identify the most recent areas and to possibly adopt ontology forecasting techniques [<xref ref-type="bibr" rid="ref009">9</xref>]. Therefore, the role of experts in improving the quality and deepness of the hierarchy is indeed critical. For the sake of this study, aimed at showing the advantages of automation, the relatively small number of experts was acceptable. However, a larger and more diversified pool of experts should be involved when the research area under investigation is broader.</p></def></def-item><def-item><term><bold>Ontology refinement (step 4): experience matters.</bold></term><def>
+<p>As illustrated in Fig. <xref rid="x1-4001-2">2</xref>, EDAM requires human expertise to refine the automatically generated ontology (step 4). This task is not always straightforward, since humans can have different views on the foundational conceptual elements characterizing a certain discipline. Those differences may be related to many factors, such as the researcher’s exposure to the research area under investigation, seniority, broad vs. specialized knowledge on specific sub-disciplines. Our preliminary experiments allow us to conclude that senior domain experts, with a mature yet wide view on the research area under investigation, should be selected to minimize this threat.</p></def></def-item></def-list>
+<p>The main threats for <italic>external validity</italic> regard the practical exploitation of EDAM. In particular: 
+<def-list><def-item><term><bold>Scholarly dataset: different research areas require different datasets.</bold></term><def>
+<p>This paper reports on our experience with EDAM’s application to the Software Architecture research area. Since the domain of Software Engineering is well represented in the Scopus dataset, we are not facing generalizability issues. However, moving to a totally different domain would require taking into account (assuming to have access to) different scholarly datasets.</p>
+<p>Unfortunately, finding up-to-date datasets of scholarly data covering the field under analysis is not always easy and this could be a threat to our approach. Nonetheless, the movement toward open access is helping in mitigating this issue by making available a variety of datasets containing machine-readable data about scientific publications, e.g., Microsoft Academic Graph<xref ref-type="fn" rid="fn-30">30</xref><fn id="fn-30"><label><sup>30</sup></label>
+<p><uri>https://academic.microsoft.com/</uri></p></fn> [<xref ref-type="bibr" rid="ref058">58</xref>], CORE<xref ref-type="fn" rid="fn-31">31</xref><fn id="fn-31"><label><sup>31</sup></label>
+<p><uri>https://core.ac.uk</uri></p></fn> [<xref ref-type="bibr" rid="ref024">24</xref>], OpenCitations<xref ref-type="fn" rid="fn-32">32</xref><fn id="fn-32"><label><sup>32</sup></label>
+<p><uri>http://opencitations.net/</uri></p></fn> [<xref ref-type="bibr" rid="ref040">40</xref>], DBLP<xref ref-type="fn" rid="fn-33">33</xref><fn id="fn-33"><label><sup>33</sup></label>
+<p><uri>http://dblp.uni-trier.de/</uri></p></fn> [<xref ref-type="bibr" rid="ref028">28</xref>], Bio2RDF<xref ref-type="fn" rid="fn-34">34</xref><fn id="fn-34"><label><sup>34</sup></label>
+<p><ext-link ext-link-type="uri" xlink:href="http://bio2rdf.org/">bio2rdf.org/</ext-link></p></fn> [<xref ref-type="bibr" rid="ref006">6</xref>], ScholarlyData.org<xref ref-type="fn" rid="fn-35">35</xref><fn id="fn-35"><label><sup>35</sup></label>
+<p><uri>http://www.scholarlydata.org/</uri></p></fn> [<xref ref-type="bibr" rid="ref019">19</xref>], Nanopub.org<xref ref-type="fn" rid="fn-36">36</xref><fn id="fn-36"><label><sup>36</sup></label>
+<p><uri>http://nanopub.org/</uri></p></fn> [<xref ref-type="bibr" rid="ref025">25</xref>], Semantic Scholar,<xref ref-type="fn" rid="fn-37">37</xref><fn id="fn-37"><label><sup>37</sup></label>
+<p><uri>https://www.semanticscholar.org/</uri></p></fn> and others.</p></def></def-item><def-item><term><bold>Tool support: closed-source tools.</bold></term><def>
+<p>EDAM is making use of some closed-source, proprietary tools for running some of the tasks. This may reduce the application of our approach from other research groups. In order to mitigate this threat, we are planning to release a web service accessible by other colleagues interested to carry out an EDAM study.</p></def></def-item><def-item><term><bold>Research Questions: some may not be automatized.</bold></term><def>
+<p>Many research questions that are typical of mapping studies can be answered by producing relevant analytics [<xref ref-type="bibr" rid="ref066">66</xref>], e.g., by counting the number of publications, authors, and venues associated with certain topics in subsequent years. However, some more complex research questions may still require domain experts to manually analyse the relevant studies, e.g., for classifying them in categories that a state of the art classifier would be unable to detect with good accuracy. This is an inherent limitation of the methodology. Nonetheless in many of these cases a preliminary classification by an automatic system may still alleviate the expert work load, e.g., by reducing the set of publications that need to be manually analysed. In addition, the performance of entity extraction and linking tools is steadily improving [<xref ref-type="bibr" rid="ref004">4</xref>,<xref ref-type="bibr" rid="ref018">18</xref>,<xref ref-type="bibr" rid="ref047">47</xref>], allowing to extract increasingly better representations of research knowledge from scientific articles. Therefore, the number of research questions that can be addressed algorithmically may increase over the following years.</p></def></def-item></def-list></p>
+</sec>
+<sec id="x1-11000-5.4">
+<label>5.4.</label>
+<title>Implications for systematic mappings</title>
+<p>There are a few implications that can potentially change the way we perform systematic mapping studies in Software Engineering. As mentioned in Section <xref rid="x1-4000-4">4</xref>, these implications regard: 
+<def-list><def-item><term><bold>Scalability: size does not matter anymore.</bold></term><def>
+<p>EDAM can process a potentially endless set of publications. This allows e.g., mapping studies to be based on <italic>all</italic> relevant primary studies, previously scoped down due to the fact that humans could not manually process hundreds or thousands of papers.</p></def></def-item><def-item><term><bold>Objectivity: the automatic classification is less biased.</bold></term><def>
+<p>The automatic classification of primary studies does not suffer from the biases of specific human annotators. Nonetheless, the quality of the classification appears on par with the one produced by the human annotators.</p></def></def-item><def-item><term><bold>Reproducibility: study duplication and extension is easy.</bold></term><def>
+<p>Thanks to EDAM, replicating or extending studies, either by the same researcher or by someone else, requires simple tuning, e.g., to extend the publication period, or to select different views illustrating the publication trends of interest.</p></def></def-item><def-item><term><bold>Granularity of the study: zooming-in and -out is simpler.</bold></term><def>
+<p>Thanks to the fact that the selection and classification of primary studies is based on an domain ontology, and of course to automation, EDAM allows to tune the depth of the classification the researcher desires in a given research area. Such tuning just requires setting the level of categories and sub-categories to be included in the classification, and then re-run the methodology.</p></def></def-item></def-list></p>
+</sec>
+<sec id="x1-12000-5.5">
+<label>5.5.</label>
+<title>Reusing EDAM for other systematic reviews</title>
+<p>EDAM can be applied to any domain of interest and for different types of studies. The scenarios that we envisage are discussed below and illustrated in Fig. <xref rid="x1-12001-10">10</xref>. They are: S1) Application of EDAM to a <italic>new</italic> application domain, S2) Mapping study <italic>replication</italic>, S3) Mapping study <italic>refinement</italic>, and S4) <italic>Systematic literature review</italic>.</p>
+<fig id="x1-12001-10">
+<label>Fig. 10.</label>
+<caption>
+<p>Possible EDAM applications.</p>
+</caption>
+<graphic xlink:href="ds-2-ds190019-g014.jpg"/>
+</fig>
+<def-list><def-item><term><bold>Application of EDAM to a new application domain (S1).</bold></term><def>
+<p>In the basic scenario (<bold>S1</bold>), the ontology for the new application domain is not yet available. In this case, the complete process illustrated in Fig. <xref rid="x1-4001-2">2</xref> (and emphasized in Fig. <xref rid="x1-12001-10">10</xref>(S1)) shall be applied. This is the scenario followed in the work presented in this article. It is applicable while investigating a new domain notwithstanding its specific characteristics.</p></def></def-item></def-list>
+<p>If instead a researcher wants to perform a SR in a domain for which the ontology already exists (scenario S2), such generated domain ontology can be <italic>reused</italic> in the following two ways, depending on the specific study goal:</p>
+<def-list><def-item><term><bold>Mapping Study Replication (same classification, S2a).</bold></term><def>
+<p>Suppose we want to replicate a pre-existing EDAM mapping study conducted at time t<sub>0</sub>, in order to update the list of primary studies and related analysis at time t<sub>1</sub> (e.g., update in year 2020 the study on Software Architecture presented in this paper). In this case, we can directly reuse the previously generated ontology (cf. Fig. <xref rid="x1-12001-10">10</xref>(S2a)). The list of (updated) primary studies can be automatically re-calculated (in step 5) and used (in step 6) for classification and analysis purposes. Notice, however, that this scenario does not address the potential need to <italic>update</italic> the list of topics. Such a scenario is covered below.</p></def></def-item><def-item><term><bold>Mapping Study Replication (updated classification, S2b).</bold></term><def>
+<p>Differently from scenario S2a, we may be interested to replicate a pre-existing study <italic>and</italic> also include any new topics that may have emerged in the period between time t<sub>0</sub> and time t<sub>1</sub> (e.g., updating this study in year 2020 while including new topics appeared after this study). This need requires an update of the domain ontology; therefore, the process in Fig. <xref rid="x1-12001-10">10</xref>(S2b) must be run from step 4 onward.</p></def></def-item></def-list>
+<p>Another scenario (S3) accommodates the case in which we want to <italic>refine</italic> the classification and analysis conducted as a mapping study. In the current approach, as shown in the Software Architecture domain scenario, step 5 in Fig. <xref rid="x1-4001-2">2</xref> returns a set of primary studies that can be further classified into sub-domains (e.g., Architectural Styles, being one element of our ontology, can be further refined to discover all the papers that cover selected styles). We identify two sub-scenarios in order to provide a refinement of sub-domains contents:</p>
+<def-list><def-item><term><bold>Mapping Study Refinement with classic selection criteria (S3a).</bold></term><def>
+<p>In this scenario, one may classify the articles into sub-domains of interest by applying the inclusion and exclusion criteria [<xref ref-type="bibr" rid="ref023">23</xref>] to the primary studies selected in step 5 of EDAM. For example, knowing that Publish-Subscribe, Client-Server, and Event-driven are sub-domains of Architectural Styles, we introduce selection criteria to position Architectural Styles articles into those categories. This approach allows us to zoom into a specific sub-domain of interest and extract the articles fitting in the specific target sub-domain.</p></def></def-item><def-item><term><bold>Mapping Study Refinement with re-generated domain ontology (S3b).</bold></term><def>
+<p>The selected sub-domain of interest may contain hundreds of papers (for example, the Design Decisions sub-domain in our study includes 428 papers). Consequently, applying the selection criteria reported in scenario S3a may be cumbersome, requiring the manual analysis of most of those papers. Alternatively, the researcher may execute an additional round of steps 2–4 to refine the domain ontology for the specific sub-domain (cf. Fig. <xref rid="x1-12001-10">10</xref>(S3b)). This scenario is similar to S1, but applied to a specific sub-domain of interest.</p></def></def-item></def-list>
+<p>A fourth scenario sees the researcher is interested to run a systematic literature review (SLR) on specific research questions:</p>
+<def-list><def-item><term><bold>Systematic Literature Reviews (S4).</bold></term><def>
+<p>In step 5 (cf. Fig. <xref rid="x1-12001-10">10</xref>(S4)), given the list of primary studies generated based on the existing ontology, we may run the <italic>classic</italic> SLR approach [<xref ref-type="bibr" rid="ref022">22</xref>] to select those papers that fit with the research questions of interest. Differently from scenario S3a, S4 adds the semantics beyond the definition of the domain, and encapsulated into the research questions and the corresponding selection criteria. E.g., given the list of all studies on Software Architecture styles, one may want to perform an SLR to analyze those approaches that are adopted in industrial settings.</p></def></def-item></def-list>
+</sec>
+</sec>
+<sec id="x1-13000-6">
+<label>6.</label>
+<title>Conclusions and future work</title>
+<p>In this paper we have presented EDAM, an expert-driven automated methodology to assist systematic reviews. Its application to the Software Architecture research area shows preliminary and very promising results.</p>
+<p>Motivated by the large amount of time and effort needed by classic methodologies to select and classify the primary studies, EDAM offers benefits that can help SE researchers to dedicate most of their time to the most cognitive-intensive tasks like e.g., interpretation of the trends and extraction of lessons and research gaps.</p>
+<p>Additional benefits have been emphasized in Section <xref rid="x1-5000-4.1">4.1</xref> (after presenting EDAM) and Section <xref rid="x1-11000-5.4">5.4</xref> (discussing implications for systematic mappings). Among the benefits we mention the great potential for re-using EDAM and in particular domain ontologies and functions to build a shared framework helping the research community at large. Much can be done in this direction.</p>
+<p>Our next step is to complement EDAM with automated forward snowballing to further reduce the effort for identifying relevant primary studies. With the same goal, we are planning to investigate other possible data synthesis techniques through machine learning techniques or the (manual) intervention of human experts. Last, but most important for us, we plan to reconstruct the 25 years of the Software Architecture body of knowledge by fully exploiting EDAM automation and human expertise.</p>
+</sec>
+</body>
+<back>
+<ack>
+<title>Acknowledgements</title>
+<p>The authors would like to thank the colleagues which donated their time and expertise by contributing to this study as domain experts and/or annotators: Paris Avgeriou, Barbora Buhnova, Rafael Capilla, Jan Carlson, Ivica Crnkovic, John Grundy, Rich Hilliard, Heiko Koziolek, Anton Jansen, Ivano Malavolta, Leonardo Mariani, Marina Mongiello, Matthias Naab, Patrizio Pelliccione, Mohammad Sharaf, Damian Andrew Tamburri, Antony Tang, Jan Martijn van der Werf, Smrithi Rekha Venkatasubramanian, Rainer Weinreich, Danny Weyns, Eoin Woods, and Uwe Zdun.</p>
+<p>We also thank Davide Falessi for reviewing an earlier version of this manuscript, and Elsevier BV for providing us with access to its large repository of scholarly data.</p></ack>
+<ref-list>
+<title>References</title>
+<ref id="ref001">
+<label>[1]</label><mixed-citation publication-type="journal"><string-name><given-names>A.</given-names> <surname>Al-Zubidy</surname></string-name>, <string-name><given-names>J.C.</given-names> <surname>Carver</surname></string-name>, <string-name><given-names>D.P.</given-names> <surname>Hale</surname></string-name> and <string-name><given-names>E.E.</given-names> <surname>Hassler</surname></string-name>, <article-title>Vision for SLR tooling infrastructure: Prioritizing value-added requirements</article-title>, <source>Information and Software Technology</source> <volume>91</volume> (<year>2017</year>), <fpage>72</fpage>–<lpage>81</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.infsof.2017.06.007</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref002">
+<label>[2]</label><mixed-citation publication-type="journal"><string-name><given-names>R.</given-names> <surname>Alghamdi</surname></string-name> and <string-name><given-names>K.</given-names> <surname>Alfalqi</surname></string-name>, <article-title>A survey of topic modeling in text mining. I</article-title>, <source>J. ACSA</source> <volume>6</volume>(<issue>1</issue>) (<year>2015</year>), <fpage>147</fpage>–<lpage>153</lpage>. doi:<pub-id pub-id-type="doi">10.14569/IJACSA.2015.060121</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref003">
+<label>[3]</label><mixed-citation publication-type="journal"><string-name><given-names>E.</given-names> <surname>Aromataris</surname></string-name> and <string-name><given-names>D.</given-names> <surname>Riitano</surname></string-name>, <article-title>Constructing a search strategy and searching for evidence</article-title>, <source>American Journal of Nursing</source> <volume>114</volume>(<issue>5</issue>) (<year>2014</year>), <fpage>49</fpage>–<lpage>56</lpage>. doi:<pub-id pub-id-type="doi">10.1097/01.NAJ.0000446779.99522.f6</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref004">
+<label>[4]</label><mixed-citation publication-type="chapter"><string-name><given-names>I.</given-names> <surname>Augenstein</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Padó</surname></string-name> and <string-name><given-names>S.R.</given-names> <surname>Rudolph</surname></string-name>, <chapter-title>Lodifier: Generating linked data from unstructured text</chapter-title>, in: <source>Extended Semantic Web Conference</source>, <publisher-name>Springer</publisher-name>, <year>2012</year>, pp. <fpage>210</fpage>–<lpage>224</lpage>. doi:<pub-id pub-id-type="doi">10.1007/978-3-642-30284-8_21</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref005">
+<label>[5]</label><mixed-citation publication-type="journal"><string-name><given-names>F.B.V.</given-names> <surname>Benitti</surname></string-name>, <article-title>Exploring the educational potential of robotics in schools: A systematic review</article-title>, <source>Computers &amp; Education</source> <volume>58</volume>(<issue>3</issue>) (<year>2012</year>), <fpage>978</fpage>–<lpage>988</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.compedu.2011.10.006</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref006">
+<label>[6]</label><mixed-citation publication-type="journal"><string-name><given-names>F.</given-names> <surname>Belleau</surname></string-name>, <string-name><given-names>M.-A.</given-names> <surname>Nolin</surname></string-name>, <string-name><given-names>N.</given-names> <surname>Tourigny</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Rigault</surname></string-name> and <string-name><given-names>J.</given-names> <surname>Morissette</surname></string-name>, <article-title>Bio2rdf: Towards a mashup to build bioinformatics knowledge systems</article-title>, <source>Journal of biomedical informatics</source> <volume>41</volume>(<issue>5</issue>) (<year>2008</year>), <fpage>706</fpage>–<lpage>716</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.jbi.2008.03.004</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref007">
+<label>[7]</label><mixed-citation publication-type="other"><string-name><given-names>S.</given-names> <surname>Bhatia</surname></string-name>, <string-name><given-names>J.H.</given-names> <surname>Lau</surname></string-name> and <string-name><given-names>T.</given-names> <surname>Baldwin</surname></string-name>, Automatic labelling of topics with neural embeddings, 2016, arXiv preprint <pub-id pub-id-type="arxiv">arXiv:1612.05340</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref008">
+<label>[8]</label><mixed-citation publication-type="journal"><string-name><given-names>D.M.</given-names> <surname>Blei</surname></string-name>, <string-name><given-names>A.Y.</given-names> <surname>Ng</surname></string-name> and <string-name><given-names>M.I.</given-names> <surname>Jordan</surname></string-name>, <article-title>Latent Dirichlet allocation</article-title>, <source>Journal of machine Learning research</source> <volume>3</volume> (<year>2003</year>), <fpage>993</fpage>–<lpage>1022</lpage>. <uri>https://dl.acm.org/citation.cfm?id=944937</uri>.</mixed-citation>
+</ref>
+<ref id="ref009">
+<label>[9]</label><mixed-citation publication-type="chapter"><string-name><given-names>A.E.</given-names> <surname>Cano-Basave</surname></string-name>, <string-name><given-names>F.</given-names> <surname>Osborne</surname></string-name> and <string-name><given-names>A.A.</given-names> <surname>Salatino</surname></string-name>, <chapter-title>Ontology forecasting in scientific literature: Semantic concepts prediction based on innovation-adoption priors</chapter-title>, in: <source>Knowledge Engineering and Knowledge Management: 20th International Conference, EKAW 2016, Proceedings 20</source>, <conf-loc>Bologna, Italy</conf-loc>, <conf-date>November 19–23, 2016</conf-date>. <publisher-name>Springer</publisher-name>, <year>2016</year>, pp. <fpage>51</fpage>–<lpage>67</lpage>. doi:<pub-id pub-id-type="doi">10.1007/978-3-319-49004-5_4</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref010">
+<label>[10]</label><mixed-citation publication-type="journal"><string-name><given-names>M.J.M.</given-names> <surname>Chinapaw</surname></string-name>, <string-name><given-names>K.I.</given-names> <surname>Proper</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Brug</surname></string-name>, <string-name><given-names>W.</given-names> <surname>Van Mechelen</surname></string-name> and <string-name><given-names>A.S.</given-names> <surname>Singh</surname></string-name>, <article-title>Relationship between young peoples’ sedentary behaviour and biomedical health indicators: A systematic review of prospective studies</article-title>, <source>Obesity reviews</source> <volume>12</volume>(<issue>7</issue>) (<year>2011</year>), <fpage>e621</fpage>–<lpage>e632</lpage>. doi:<pub-id pub-id-type="doi">10.1111/j.1467-789X.2011.00865.x</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref011">
+<label>[11]</label><mixed-citation publication-type="book"><string-name><given-names>P.</given-names> <surname>Cimiano</surname></string-name> and <string-name><given-names>J.</given-names> <surname>Völker</surname></string-name>, <source>Text2onto</source>, <publisher-name>Springer</publisher-name>, <year>2005</year>, pp. <fpage>227</fpage>–<lpage>238</lpage>. doi:<pub-id pub-id-type="doi">10.1007/11428817_21</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref012">
+<label>[12]</label><mixed-citation publication-type="journal"><string-name><given-names>F.Q.B.</given-names> <surname>da Silva</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Suassuna</surname></string-name>, <string-name><given-names>A.</given-names> <surname>César</surname></string-name>, <string-name><given-names>C.</given-names> <surname>França</surname></string-name>, <string-name><given-names>A.M.</given-names> <surname>Grubb</surname></string-name>, <string-name><given-names>T.B.</given-names> <surname>Gouveia</surname></string-name>, <string-name><given-names>C.V.F.</given-names> <surname>Monteiro</surname></string-name> and <string-name><given-names>I.E.</given-names> <surname>dos Santos</surname></string-name>, <article-title>Replication of empirical studies in software engineering research: A systematic mapping study</article-title>, <source>Empirical Software Engineer</source> <volume>19</volume>(<issue>3</issue>) (<year>2014</year>), <fpage>501</fpage>–<lpage>557</lpage>. doi:<pub-id pub-id-type="doi">10.1007/s10664-012-9227-7</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref013">
+<label>[13]</label><mixed-citation publication-type="journal"><string-name><given-names>J.C.</given-names> <surname>de Almeida Biolchini</surname></string-name>, <string-name><given-names>P.G.</given-names> <surname>Mian</surname></string-name>, <string-name><given-names>A.C.</given-names> <surname>Cruz Natali</surname></string-name>, <string-name><given-names>T.U.</given-names> <surname>Conte</surname></string-name> and <string-name><given-names>G.H.</given-names> <surname>Travassos</surname></string-name>, <article-title>Scientific research ontology to support systematic review in software engineering</article-title>, <source>Advanced Engineering Informatics</source> <volume>21</volume>(<issue>2</issue>) (<year>2007</year>), <fpage>133</fpage>–<lpage>151</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.aei.2006.11.006</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref014">
+<label>[14]</label><mixed-citation publication-type="chapter"><string-name><given-names>R.M.</given-names> <surname>De Mello</surname></string-name> and <string-name><given-names>G.H.</given-names> <surname>Travassos</surname></string-name>, <chapter-title>Surveys in software engineering: Identifying representative samples</chapter-title>, in: <source>Proceedings of the 10th ACM/IEEE International Symposium on Empirical Software Engineering and Measurement, ESEM ’16</source>, <publisher-name>ACM</publisher-name>, <publisher-loc>New York, NY, USA</publisher-loc>, <year>2016</year>, pp. <fpage>55:1</fpage>–<lpage>55:6</lpage>. doi:<pub-id pub-id-type="doi">10.1145/2961111.2962632</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref015">
+<label>[15]</label><mixed-citation publication-type="chapter"><string-name><given-names>T.</given-names> <surname>Di Noia</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Mirizzi</surname></string-name>, <string-name><given-names>V.C.</given-names> <surname>Ostuni</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Romito</surname></string-name> and <string-name><given-names>M.</given-names> <surname>Zanker</surname></string-name>, <chapter-title>Linked open data to support content-based recommender systems</chapter-title>, in: <source>Proceedings of the 8th International Conference on Semantic Systems</source>, <publisher-name>ACM</publisher-name>, <year>2012</year>, pp. <fpage>1</fpage>–<lpage>8</lpage>. doi:<pub-id pub-id-type="doi">10.1145/2362499.2362501</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref016">
+<label>[16]</label><mixed-citation publication-type="chapter"><string-name><given-names>K.R.</given-names> <surname>Felizardo</surname></string-name>, <string-name><given-names>E.</given-names> <surname>Mendes</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Kalinowski</surname></string-name>, <string-name><given-names>É.F.</given-names> <surname>Souza</surname></string-name> and <string-name><given-names>N.L.</given-names> <surname>Vijaykumar</surname></string-name>, <chapter-title>Using forward snowballing to update systematic reviews in software engineering</chapter-title>, in: <source>Proceedings of the 10th ACM/IEEE International Symposium on Empirical Software Engineering and Measurement</source>, <publisher-name>ACM</publisher-name>, <year>2016</year>, p. <fpage>53</fpage>. doi:<pub-id pub-id-type="doi">10.1145/2961111.2962630</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref017">
+<label>[17]</label><mixed-citation publication-type="other"><string-name><given-names>B.</given-names> <surname>Filipovic</surname></string-name>, <string-name><given-names>B.</given-names> <surname>Van Lindschoten</surname></string-name>, <string-name><given-names>G.</given-names> <surname>Procaccianti</surname></string-name> and <string-name><given-names>P.</given-names> <surname>Lago</surname></string-name>, Systematic Literature Study on Sustainable Software, VU Technical Report, 2, 2017. <uri>https://research.vu.nl/ws/portalfiles/portal/58444907/Technical_Report_SLR.pdf</uri>.</mixed-citation>
+</ref>
+<ref id="ref018">
+<label>[18]</label><mixed-citation publication-type="journal"><string-name><given-names>A.</given-names> <surname>Gangemi</surname></string-name>, <string-name><given-names>V.</given-names> <surname>Presutti</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Reforgiato Recupero</surname></string-name>, <string-name><given-names>A.G.</given-names> <surname>Nuzzolese</surname></string-name>, <string-name><given-names>F.</given-names> <surname>Draicchio</surname></string-name> and <string-name><given-names>M.</given-names> <surname>Mongiovì</surname></string-name>, <article-title>Semantic web machine reading with fred</article-title>, <source>Semantic Web</source> <volume>8</volume>(<issue>6</issue>) (<year>2017</year>), <fpage>873</fpage>–<lpage>893</lpage>. doi:<pub-id pub-id-type="doi">10.3233/SW-160240</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref019">
+<label>[19]</label><mixed-citation publication-type="chapter"><string-name><given-names>A.G.</given-names> <surname>Nuzzolese</surname></string-name>, <string-name><given-names>A.L.</given-names> <surname>Gentile</surname></string-name>, <string-name><given-names>V.</given-names> <surname>Presutti</surname></string-name> and <string-name><given-names>A.</given-names> <surname>Gangemi</surname></string-name>, <chapter-title>Conference linked data: The scholarlydata project</chapter-title>, in: <source>International Semantic Web Conference</source>, <publisher-name>Springer</publisher-name>, <year>2016</year>, pp. <fpage>150</fpage>–<lpage>158</lpage>. doi:<pub-id pub-id-type="doi">10.1007/978-3-319-46547-0_16</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref020">
+<label>[20]</label><mixed-citation publication-type="journal"><string-name><given-names>E.</given-names> <surname>Hassler</surname></string-name>, <string-name><given-names>J.C.</given-names> <surname>Carver</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Hale</surname></string-name> and <string-name><given-names>A.</given-names> <surname>Al-Zubidy</surname></string-name>, <article-title>Identification of SLR tool needs – results of a community workshop</article-title>, <source>Information and Software Technology</source> <volume>70</volume> (<year>2016</year>), <fpage>122</fpage>–<lpage>129</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.infsof.2015.10.011</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref021">
+<label>[21]</label><mixed-citation publication-type="journal"><string-name><given-names>B.</given-names> <surname>Kitchenham</surname></string-name>, <article-title>Procedures for performing systematic reviews</article-title>, <source>Keele, UK, Keele University</source> <volume>33</volume>(<issue>2004</issue>) (<year>2004</year>), <fpage>1</fpage>–<lpage>26</lpage>. <uri>http://www.inf.ufsc.br/~aldo.vw/kitchenham.pdf</uri>.</mixed-citation>
+</ref>
+<ref id="ref022">
+<label>[22]</label><mixed-citation publication-type="journal"><string-name><given-names>B.</given-names> <surname>Kitchenham</surname></string-name> and <string-name><given-names>P.</given-names> <surname>Brereton</surname></string-name>, <article-title>A systematic review of systematic review process research in software engineering</article-title>, <source>Information and software technology</source> <volume>55</volume>(<issue>12</issue>) (<year>2013</year>), <fpage>2049</fpage>–<lpage>2075</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.infsof.2013.07.010</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref023">
+<label>[23]</label><mixed-citation publication-type="other"><string-name><given-names>B.A.</given-names> <surname>Kitchenham</surname></string-name> and <string-name><given-names>S.</given-names> <surname>Charters</surname></string-name>, Guidelines for performing systematic literature reviews in software engineering, 2007. <uri>https://edisciplinas.usp.br/pluginfile.php/4108896/mod_resource/content/2/slrPCS5012_highlighted.pdf</uri>.</mixed-citation>
+</ref>
+<ref id="ref024">
+<label>[24]</label><mixed-citation publication-type="other"><string-name><given-names>P.</given-names> <surname>Knoth</surname></string-name> and <string-name><given-names>Z.</given-names> <surname>Zdrahal</surname></string-name>, Core: Three access levels to underpin open access, <italic>D-Lib Magazine</italic> <bold>18</bold>(11/12) (2012). doi:<pub-id pub-id-type="doi">10.1045/november2012-knoth</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref025">
+<label>[25]</label><mixed-citation publication-type="chapter"><string-name><given-names>T.</given-names> <surname>Kuhn</surname></string-name>, <string-name><given-names>P.E.</given-names> <surname>Barbano</surname></string-name>, <string-name><given-names>M.L.</given-names> <surname>Nagy</surname></string-name> and <string-name><given-names>M.</given-names> <surname>Krauthammer</surname></string-name>, <chapter-title>Broadening the scope of nanopublications</chapter-title>, in: <source>Extended Semantic Web Conference</source>, <publisher-name>Springer</publisher-name>, <year>2013</year>, pp. <fpage>487</fpage>–<lpage>501</lpage>. doi:<pub-id pub-id-type="doi">10.1007/978-3-642-38288-8_33</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref026">
+<label>[26]</label><mixed-citation publication-type="journal"><string-name><given-names>M.</given-names> <surname>Kuhrmann</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Méndez Fernández</surname></string-name> and <string-name><given-names>M.</given-names> <surname>Daneva</surname></string-name>, <article-title>On the pragmatic design of literature studies in software engineering: An experience-based guideline</article-title>, <source>Empirical Software Engineer</source> <volume>22</volume> (<year>2017</year>), <fpage>1</fpage>–<lpage>40</lpage>. doi:<pub-id pub-id-type="doi">10.1007/s10664-016-9495-8</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref027">
+<label>[27]</label><mixed-citation publication-type="journal"><string-name><given-names>J.R.</given-names> <surname>Landis</surname></string-name> and <string-name><given-names>G.G.</given-names> <surname>Koch</surname></string-name>, <article-title>The measurement of observer agreement for categorical data</article-title>, <source>Biometrics</source> <volume>33</volume>(<issue>1</issue>) (<year>1977</year>), <fpage>159</fpage>–<lpage>174</lpage>. doi:<pub-id pub-id-type="doi">10.2307/2529310</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref028">
+<label>[28]</label><mixed-citation publication-type="journal"><string-name><given-names>M.</given-names> <surname>Ley</surname></string-name>, <article-title>Dblp: Some lessons learned</article-title>, <source>Proceedings of the VLDB Endowment</source> <volume>2</volume>(<issue>2</issue>) (<year>2009</year>), <fpage>1493</fpage>–<lpage>1500</lpage>. doi:<pub-id pub-id-type="doi">10.14778/1687553.1687577</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref029">
+<label>[29]</label><mixed-citation publication-type="chapter"><string-name><given-names>X.</given-names> <surname>Liu</surname></string-name>, <string-name><given-names>Y.</given-names> <surname>Song</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Liu</surname></string-name> and <string-name><given-names>H.</given-names> <surname>Wang</surname></string-name>, <chapter-title>Automatic taxonomy construction from keywords</chapter-title>, in: <source>Proceedings of the 18th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining</source>, <publisher-name>ACM</publisher-name>, <year>2012</year>, pp. <fpage>1433</fpage>–<lpage>1441</lpage>. doi:<pub-id pub-id-type="doi">10.1145/2339530.2339754</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref030">
+<label>[30]</label><mixed-citation publication-type="other"><string-name><given-names>A.</given-names> <surname>Mannocci</surname></string-name>, <string-name><given-names>F.</given-names> <surname>Osborne</surname></string-name> and <string-name><given-names>E.</given-names> <surname>Motta</surname></string-name>, The evolution of IJHCS and CHI: A quantitative analysis, <italic>International Journal of Human-Computer Studies</italic> (2019). <pub-id pub-id-type="arxiv">arXiv:1908.04088</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref031">
+<label>[31]</label><mixed-citation publication-type="chapter"><string-name><given-names>C.</given-names> <surname>Marshall</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Brereton</surname></string-name> and <string-name><given-names>B.</given-names> <surname>Kitchenham</surname></string-name>, <chapter-title>Tools to support systematic reviews in software engineering: A cross-domain survey using semi-structured interviews</chapter-title>, in: <source>Proceedings of the 19th International Conference on Evaluation and Assessment in Software Engineering</source>, <publisher-name>ACM</publisher-name>, <year>2015</year>, p. <fpage>26</fpage>. doi:<pub-id pub-id-type="doi">10.1145/2745802.2745827</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref032">
+<label>[32]</label><mixed-citation publication-type="chapter"><string-name><given-names>P.N.</given-names> <surname>Mendes</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Jakob</surname></string-name>, <string-name><given-names>A.</given-names> <surname>García-Silva</surname></string-name> and <string-name><given-names>C.</given-names> <surname>Bizer</surname></string-name>, <chapter-title>Dbpedia spotlight: Shedding light on the web of documents</chapter-title>, in: <source>Proceedings of the 7th International Conference on Semantic Systems</source>, <publisher-name>ACM</publisher-name>, <year>2011</year>, pp. <fpage>1</fpage>–<lpage>8</lpage>. doi:<pub-id pub-id-type="doi">10.1145/2063518.2063519</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref033">
+<label>[33]</label><mixed-citation publication-type="chapter"><string-name><given-names>J.S.</given-names> <surname>Molleri</surname></string-name>, <string-name><given-names>K.</given-names> <surname>Petersen</surname></string-name> and <string-name><given-names>E.</given-names> <surname>Mendes</surname></string-name>, <chapter-title>Survey guidelines in software engineering: An annotated review</chapter-title>, in: <source>Proceedings of the 10th ACM/IEEE International Symposium on Empirical Software Engineering and Measurement – ESEM ’16</source>, <publisher-name>ACM Press</publisher-name>, <year>2016</year>, pp. <fpage>1</fpage>–<lpage>6</lpage>. doi:<pub-id pub-id-type="doi">10.1145/2961111.2962619</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref034">
+<label>[34]</label><mixed-citation publication-type="chapter"><string-name><given-names>E.</given-names> <surname>Mourão</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Kalinowski</surname></string-name>, <string-name><given-names>L.</given-names> <surname>Murta</surname></string-name>, <string-name><given-names>E.</given-names> <surname>Mendes</surname></string-name> and <string-name><given-names>C.</given-names> <surname>Wohlin</surname></string-name>, <chapter-title>Investigating the use of a hybrid search strategy for systematic reviews</chapter-title>, in: <source>Proceedings of the 11th ACM/IEEE International Symposium on Empirical Software Engineering and Measurement, ESEM ’17</source>, <publisher-name>IEEE Press</publisher-name>, <year>2017</year>, pp. <fpage>193</fpage>–<lpage>198</lpage>. doi:<pub-id pub-id-type="doi">10.1109/ESEM.2017.30</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref035">
+<label>[35]</label><mixed-citation publication-type="journal"><string-name><given-names>R.F.</given-names> <surname>Octaviano</surname></string-name>, <string-name><given-names>K.R.</given-names> <surname>Felizardo</surname></string-name>, <string-name><given-names>J.C.</given-names> <surname>Maldonado</surname></string-name> and <string-name><given-names>C.P.</given-names> <surname>Sandra</surname></string-name>, <article-title>Semi-automatic selection of primary studies in systematic literature reviews: Is it reasonable?</article-title>, <source>Empirical Software Engineer</source> <volume>20</volume>(<issue>6</issue>) (<year>2015</year>), <fpage>1898</fpage>–<lpage>1917</lpage>. doi:<pub-id pub-id-type="doi">10.1007/s10664-014-9342-8</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref036">
+<label>[36]</label><mixed-citation publication-type="chapter"><string-name><given-names>F.</given-names> <surname>Osborne</surname></string-name> and <string-name><given-names>E.</given-names> <surname>Motta</surname></string-name>, <chapter-title>Mining semantic relations between research areas</chapter-title>, in: <source>International Semantic Web Conference 2012</source>, <publisher-name>Springer</publisher-name>, <year>2012</year>, pp. <fpage>410</fpage>–<lpage>426</lpage>. doi:<pub-id pub-id-type="doi">10.1007/978-3-642-35176-1_26</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref037">
+<label>[37]</label><mixed-citation publication-type="chapter"><string-name><given-names>F.</given-names> <surname>Osborne</surname></string-name> and <string-name><given-names>E.</given-names> <surname>Motta</surname></string-name>, <chapter-title>Klink-2: Integrating multiple web sources to generate semantic topic networks</chapter-title>, in: <source>International Semantic Web Conference 2015</source>, <publisher-name>Springer</publisher-name>, <year>2015</year>, pp. <fpage>408</fpage>–<lpage>424</lpage>. doi:<pub-id pub-id-type="doi">10.1007/978-3-319-25007-6_24</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref038">
+<label>[38]</label><mixed-citation publication-type="chapter"><string-name><given-names>F.</given-names> <surname>Osborne</surname></string-name>, <string-name><given-names>E.</given-names> <surname>Motta</surname></string-name> and <string-name><given-names>P.</given-names> <surname>Mulholland</surname></string-name>, <chapter-title>Exploring scholarly data with rexplore</chapter-title>, in: <source>International Semantic Web Conference 2013</source>, <publisher-name>Springer</publisher-name>, <year>2013</year>, pp. <fpage>460</fpage>–<lpage>477</lpage>. doi:<pub-id pub-id-type="doi">10.1007/978-3-642-41335-3_29</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref039">
+<label>[39]</label><mixed-citation publication-type="chapter"><string-name><given-names>F.</given-names> <surname>Osborne</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Salatino</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Birukou</surname></string-name> and <string-name><given-names>E.</given-names> <surname>Motta</surname></string-name>, <chapter-title>Automatic classification of springer nature proceedings with smart topic miner</chapter-title>, in: <source>International Semantic Web Conference 2016</source>, <publisher-name>Springer</publisher-name>, <year>2016</year>, pp. <fpage>383</fpage>–<lpage>399</lpage>. doi:<pub-id pub-id-type="doi">10.1007/978-3-319-46547-0_33</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref040">
+<label>[40]</label><mixed-citation publication-type="journal"><string-name><given-names>S.</given-names> <surname>Peroni</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Dutton</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Gray</surname></string-name> and <string-name><given-names>D.</given-names> <surname>Shotton</surname></string-name>, <article-title>Setting our bibliographic references free: Towards open citation data</article-title>, <source>Journal of Documentation</source> <volume>71</volume>(<issue>2</issue>) (<year>2015</year>), <fpage>253</fpage>–<lpage>277</lpage>. doi:<pub-id pub-id-type="doi">10.1108/JD-12-2013-0166</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref041">
+<label>[41]</label><mixed-citation publication-type="chapter"><string-name><given-names>K.</given-names> <surname>Petersen</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Feldt</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Mujtaba</surname></string-name> and <string-name><given-names>M.</given-names> <surname>Mattsson</surname></string-name>, <chapter-title>Systematic mapping studies in software engineering</chapter-title>, in: <source>Proceedings of the 12th International Conference on Evaluation and Assessment in Software Engineering, EASE</source>, <publisher-name>British Computer Society</publisher-name>, <publisher-loc>Swinton, UK, UK</publisher-loc>, <year>2008</year>, pp. <fpage>68</fpage>–<lpage>77</lpage>. <uri>https://dl.acm.org/citation.cfm?id=2227115.2227123</uri>.</mixed-citation>
+</ref>
+<ref id="ref042">
+<label>[42]</label><mixed-citation publication-type="journal"><string-name><given-names>K.</given-names> <surname>Petersen</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Vakkalanka</surname></string-name> and <string-name><given-names>L.</given-names> <surname>Kuzniarz</surname></string-name>, <article-title>Guidelines for conducting systematic mapping studies in software engineering: An update</article-title>, <source>Information and Software Technology</source> <volume>64</volume> (<year>2015</year>), <fpage>1</fpage>–<lpage>18</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.infsof.2015.03.007</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref043">
+<label>[43]</label><mixed-citation publication-type="chapter"><string-name><given-names>G.</given-names> <surname>Petrucci</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Ghidini</surname></string-name> and <string-name><given-names>M.</given-names> <surname>Rospocher</surname></string-name>, <chapter-title>Ontology learning in the deep</chapter-title>, in: <source>Knowledge Engineering and Knowledge Management: 20th International Conference, EKAW 2016, Proceedings 20</source>, <conf-loc>Bologna, Italy</conf-loc>, <conf-date>November 19–23, 2016</conf-date>, <publisher-name>Springer</publisher-name>, <year>2016</year>, pp. <fpage>480</fpage>–<lpage>495</lpage>. doi:<pub-id pub-id-type="doi">10.1007/978-3-319-49004-5_31</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref044">
+<label>[44]</label><mixed-citation publication-type="chapter"><string-name><given-names>J.</given-names> <surname>Ramos</surname></string-name> <etal>et al.</etal>, <chapter-title>Using tf-idf to determine word relevance in document queries</chapter-title>, in: <source>Proceedings of the First Instructional Conference on Machine Learning</source>, Vol. <volume>242</volume>, <conf-loc>Piscataway, NJ</conf-loc>, <year>2003</year>, pp. <fpage>133</fpage>–<lpage>142</lpage>. <uri>https://dl.acm.org/citation.cfm?id=2227115.2227123</uri>.</mixed-citation>
+</ref>
+<ref id="ref045">
+<label>[45]</label><mixed-citation publication-type="journal"><string-name><given-names>M.Q.</given-names> <surname>Raza</surname></string-name> and <string-name><given-names>A.</given-names> <surname>Khosravi</surname></string-name>, <article-title>A review on artificial intelligence based load demand forecasting techniques for smart grid and buildings</article-title>, <source>Renewable and Sustainable Energy Reviews</source> <volume>50</volume> (<year>2015</year>), <fpage>1352</fpage>–<lpage>1372</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.rser.2015.04.065</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref046">
+<label>[46]</label><mixed-citation publication-type="journal"><string-name><given-names>D.</given-names> <surname>Richards</surname></string-name> and <string-name><given-names>T.</given-names> <surname>Richardson</surname></string-name>, <article-title>Computer-based psychological treatments for depression: A systematic review and meta-analysis</article-title>, <source>Clinical psychology review</source> <volume>32</volume>(<issue>4</issue>) (<year>2012</year>), <fpage>329</fpage>–<lpage>342</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.cpr.2012.02.004</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref047">
+<label>[47]</label><mixed-citation publication-type="chapter"><string-name><given-names>G.</given-names> <surname>Rizzo</surname></string-name> and <string-name><given-names>R.</given-names> <surname>Troncy</surname></string-name>, <chapter-title>Nerd: A framework for unifying named entity recognition and disambiguation extraction tools</chapter-title>, in: <source>Proceedings of the Demonstrations at the 13th Conference of the European Chapter of the Association for Computational Linguistics</source>, <publisher-name>Association for Computational Linguistics</publisher-name>, <year>2012</year>, pp. <fpage>73</fpage>–<lpage>76</lpage>. <uri>https://dl.acm.org/citation.cfm?id=2380936</uri>.</mixed-citation>
+</ref>
+<ref id="ref048">
+<label>[48]</label><mixed-citation publication-type="chapter"><string-name><given-names>R.</given-names> <surname>Ros</surname></string-name>, <string-name><given-names>E.</given-names> <surname>Bjarnason</surname></string-name> and <string-name><given-names>P.</given-names> <surname>Runeson</surname></string-name>, <chapter-title>A machine learning approach for semi-automated search and selection in literature studies</chapter-title>, in: <source>Proceedings of the 21st International Conference on Evaluation and Assessment in Software Engineering, EASE’17</source>, <publisher-name>ACM</publisher-name>, <year>2017</year>, pp. <fpage>118</fpage>–<lpage>127</lpage>. ISBN <isbn>978-1-4503-4804-1</isbn>. <uri>https://dl.acm.org/citation.cfm?id=3084243</uri>.</mixed-citation>
+</ref>
+<ref id="ref049">
+<label>[49]</label><mixed-citation publication-type="other"><string-name><given-names>M.</given-names> <surname>Sabou</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Winkler</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Penzerstadler</surname></string-name> and <string-name><given-names>S.</given-names> <surname>Biffl</surname></string-name>, <chapter-title>Verifying conceptual domain models with human computation: A case study in software engineering</chapter-title>, in: <source>Sixth AAAI Conference on Human Computation and Crowdsourcing</source>, <year>2018</year>. <uri>https://www.aaai.org/ocs/index.php/HCOMP/HCOMP18/paper/view/17917/16921</uri>.</mixed-citation>
+</ref>
+<ref id="ref050">
+<label>[50]</label><mixed-citation publication-type="journal"><string-name><given-names>H.</given-names> <surname>Saif</surname></string-name>, <string-name><given-names>Y.</given-names> <surname>He</surname></string-name> and <string-name><given-names>H.</given-names> <surname>Alani</surname></string-name>, <article-title>Semantic sentiment analysis of Twitter</article-title>, <source>The Semantic Web–ISWC</source> <volume>2012</volume> (<year>2012</year>), <fpage>508</fpage>–<lpage>524</lpage>. doi:<pub-id pub-id-type="doi">10.1007/978-3-642-35176-1_32</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref051">
+<label>[51]</label><mixed-citation publication-type="other"><string-name><given-names>A.A.</given-names> <surname>Salatino</surname></string-name>, <string-name><given-names>F.</given-names> <surname>Osborne</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Birukou</surname></string-name> and <string-name><given-names>E.</given-names> <surname>Motta</surname></string-name>, Improving editorial workflow and metadata quality at springer nature, International Semantic Web Conference 2019, p. 2019. <uri>http://oro.open.ac.uk/62265/</uri>.</mixed-citation>
+</ref>
+<ref id="ref052">
+<label>[52]</label><mixed-citation publication-type="other"><string-name><given-names>A.A.</given-names> <surname>Salatino</surname></string-name>, <string-name><given-names>F.</given-names> <surname>Osborne</surname></string-name> and <string-name><given-names>E.</given-names> <surname>Motta</surname></string-name>, <article-title>How are topics born? Understanding the research dynamics preceding the emergence of new areas</article-title>, <source>PeerJ Computer Science</source> <volume>3</volume> (<year>2017</year>), <elocation-id>e119</elocation-id>. doi:<pub-id pub-id-type="doi">10.7717/peerj-cs.119</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref053">
+<label>[53]</label><mixed-citation publication-type="other"><string-name><given-names>A.A.</given-names> <surname>Salatino</surname></string-name>, <string-name><given-names>F.</given-names> <surname>Osborne</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Thanapalasingam</surname></string-name> and <string-name><given-names>E.</given-names> <surname>Motta</surname></string-name>, <chapter-title>The CSO classifier: Ontology-driven detection of research topics in scholarly articles</chapter-title>, in: <source>TPDL 2019: 23rd International Conference on Theory and Practice of Digital Libraries</source>, <year>2019</year>. doi:<pub-id pub-id-type="doi">10.1007/978-3-030-30760-8_26</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref054">
+<label>[54]</label><mixed-citation publication-type="chapter"><string-name><given-names>A.A.</given-names> <surname>Salatino</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Thanapalasingam</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Mannocci</surname></string-name>, <string-name><given-names>F.</given-names> <surname>Osborne</surname></string-name> and <string-name><given-names>E.</given-names> <surname>Motta</surname></string-name>, <chapter-title>The computer science ontology: A large-scale taxonomy of research areas</chapter-title>, in: <source>International Semantic Web Conference</source>, <publisher-name>Springer</publisher-name>, <year>2018</year>, pp. <fpage>187</fpage>–<lpage>205</lpage>. doi:<pub-id pub-id-type="doi">10.1007/978-3-030-00668-6_12</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref055">
+<label>[55]</label><mixed-citation publication-type="other"><string-name><given-names>A.A.</given-names> <surname>Salatino</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Thanapalasingam</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Mannocci</surname></string-name>, <string-name><given-names>F.</given-names> <surname>Osborne</surname></string-name> and <string-name><given-names>E.</given-names> <surname>Motta</surname></string-name>, <chapter-title>Classifying research papers with the computer science ontology</chapter-title>, in: <source>International Semantic Web Conference (P&amp;D/Industry/BlueSky). CEUR Workshop Proceedings</source>, Vol. <volume>2180</volume>, <year>2018</year>. doi:<pub-id pub-id-type="doi">10.21954/ou.rd.7204814.v1</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref056">
+<label>[56]</label><mixed-citation publication-type="chapter"><string-name><given-names>M.</given-names> <surname>Sanderson</surname></string-name> and <string-name><given-names>B.</given-names> <surname>Croft</surname></string-name>, <chapter-title>Deriving concept hierarchies from text</chapter-title>, in: <source>Proceedings of the 22nd Annual International ACM SIGIR Conference on Research and Development in Information Retrieval</source>, <publisher-name>ACM</publisher-name>, <year>1999</year>, pp. <fpage>206</fpage>–<lpage>213</lpage>. doi:<pub-id pub-id-type="doi">10.1145/312624.312679</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref057">
+<label>[57]</label><mixed-citation publication-type="chapter"><string-name><given-names>J.M.</given-names> <surname>Schultz</surname></string-name> and <string-name><given-names>M.</given-names> <surname>Liberman</surname></string-name>, <chapter-title>Topic detection and tracking using idf-weighted cosine coefficient</chapter-title>, in: <source>Proceedings of the DARPA Broadcast News Workshop</source>, <publisher-name>Morgan Kaufmann</publisher-name>, <publisher-loc>San Francisco</publisher-loc>, <year>1999</year>, pp. <fpage>189</fpage>–<lpage>192</lpage>. <uri>http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.591.7692&amp;rep=rep1&amp;type=pdf</uri>.</mixed-citation>
+</ref>
+<ref id="ref058">
+<label>[58]</label><mixed-citation publication-type="chapter"><string-name><given-names>A.</given-names> <surname>Sinha</surname></string-name>, <string-name><given-names>Z.</given-names> <surname>Shen</surname></string-name>, <string-name><given-names>Y.</given-names> <surname>Song</surname></string-name>, <string-name><given-names>H.</given-names> <surname>Ma</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Eide</surname></string-name>, <string-name><given-names>B.P.</given-names> <surname>Hsu</surname></string-name> and <string-name><given-names>K.</given-names> <surname>Wang</surname></string-name>, <chapter-title>An overview of Microsoft academic service (MAS) and applications</chapter-title>, in: <source>Proceedings of the 24th International Conference on World Wide Web</source>, <publisher-name>ACM</publisher-name>, <year>2015</year>, pp. <fpage>243</fpage>–<lpage>246</lpage>. doi:<pub-id pub-id-type="doi">10.1145/2740908.2742839</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref059">
+<label>[59]</label><mixed-citation publication-type="other"><string-name><given-names>Y.</given-names> <surname>Sun</surname></string-name>, <string-name><given-names>Y.</given-names> <surname>Yang</surname></string-name>, <string-name><given-names>H.</given-names> <surname>Zhang</surname></string-name>, <string-name><given-names>W.</given-names> <surname>Zhang</surname></string-name> and <string-name><given-names>Q.</given-names> <surname>Wang</surname></string-name>, <chapter-title>Towards evidence-based ontology for supporting systematic literature review</chapter-title>, in: <source>International Conference on Evaluation and Assessment in Software Engineering (EASE)</source>, <publisher-name>IET</publisher-name>, <year>2012</year>. doi:<pub-id pub-id-type="doi">10.1049/ic.2012.0022</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref060">
+<label>[60]</label><mixed-citation publication-type="journal"><string-name><given-names>T.</given-names> <surname>Vale</surname></string-name>, <string-name><given-names>I.</given-names> <surname>Crnkovic</surname></string-name>, <string-name><given-names>E.</given-names> <surname>Santana de Almeida</surname></string-name>, <string-name><given-names>P.A.</given-names> <surname>da Mota Silveira Neto</surname></string-name>, <string-name><given-names>Y.</given-names> <surname>Cerqueira Cavalcanti</surname></string-name> and <string-name><given-names>S.R.</given-names> <surname>de Lemos Meira</surname></string-name>, <article-title>Twenty-eight years of component-based software engineering</article-title>, <source>Journal of Systems and Software</source> <volume>111</volume>(<issue>1</issue>) (<year>2016</year>), <fpage>128</fpage>–<lpage>148</lpage>, <comment>ISSN 0164-1212</comment>. doi:<pub-id pub-id-type="doi">10.1016/j.jss.2015.09.019</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref061">
+<label>[61]</label><mixed-citation publication-type="other"><string-name><given-names>R.J.</given-names> <surname>Wieringa</surname></string-name>, <source>Design Science Methodology for Information Systems and Software Engineering</source>, <publisher-name>Springer</publisher-name>, <publisher-loc>Berlin Heidelberg</publisher-loc>, <year>2014</year>. doi:<pub-id pub-id-type="doi">10.1007/978-3-662-43839-8</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref062">
+<label>[62]</label><mixed-citation publication-type="other"><string-name><given-names>M.D.</given-names> <surname>Wilkinson</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Dumontier</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Aalbersberg</surname></string-name>, <string-name><given-names>G.</given-names> <surname>Appleton</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Axton</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Baak</surname></string-name>, <string-name><given-names>N.</given-names> <surname>Blomberg</surname></string-name>, <string-name><given-names>J.-W.</given-names> <surname>Boiten</surname></string-name>, <string-name><given-names>L.B.</given-names> <surname>da Silva Santos</surname></string-name>, <string-name><given-names>P.E.</given-names> <surname>Bourne</surname></string-name> <etal>et al.</etal>, <article-title>The fair guiding principles for scientific data management and stewardship</article-title>, <source>Scientific data</source> <volume>3</volume> (<year>2016</year>), <elocation-id>160018</elocation-id>. doi:<pub-id pub-id-type="doi">10.1038/sdata.2016.18</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref063">
+<label>[63]</label><mixed-citation publication-type="journal"><string-name><given-names>G.</given-names> <surname>Wohlgenannt</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Weichselbraun</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Scharl</surname></string-name> and <string-name><given-names>M.</given-names> <surname>Sabou</surname></string-name>, <article-title>Dynamic integration of multiple evidence sources for ontology learning</article-title>, <source>Journal of Information and Data Management</source> <volume>3</volume>(<issue>3</issue>) (<year>2012</year>), <fpage>243</fpage>–<lpage>254</lpage>. <uri>http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.301.6283&amp;rep=rep1&amp;type=pdf</uri>.</mixed-citation>
+</ref>
+<ref id="ref064">
+<label>[64]</label><mixed-citation publication-type="journal"><string-name><given-names>C.</given-names> <surname>Wohlin</surname></string-name> and <string-name><given-names>R.</given-names> <surname>Prikladnicki</surname></string-name>, <article-title>Systematic literature reviews in software engineering</article-title>, <source>Information and Software Technology</source> <volume>55</volume>(<issue>6</issue>) (<year>2013</year>), <fpage>919</fpage>–<lpage>920</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.infsof.2013.02.002</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref065">
+<label>[65]</label><mixed-citation publication-type="journal"><string-name><given-names>C.</given-names> <surname>Wohlin</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Runeson</surname></string-name>, <string-name><given-names>P.A.</given-names> <surname>da Mota Silveira Neto</surname></string-name>, <string-name><given-names>E.</given-names> <surname>Engström</surname></string-name>, <string-name><given-names>I.</given-names> <surname>do Carmo Machado</surname></string-name> and <string-name><given-names>E.</given-names> <surname>Santana de Almeida</surname></string-name>, <article-title>On the reliability of mapping studies in software engineering</article-title>, <source>The Journal of systems and software</source> <volume>86</volume>(<issue>10</issue>) (<year>2013</year>), <fpage>2594</fpage>–<lpage>2610</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.jss.2013.04.076</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref066">
+<label>[66]</label><mixed-citation publication-type="other"><string-name><given-names>C.</given-names> <surname>Wohlin</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Runeson</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Höst</surname></string-name>, <string-name><given-names>M.C.</given-names> <surname>Ohlsson</surname></string-name>, <string-name><given-names>B.</given-names> <surname>Regnell</surname></string-name> and <string-name><given-names>A.</given-names> <surname>Wesslén</surname></string-name>, <source>Experimentation in Software Engineering.</source>, <publisher-name>Springer</publisher-name>, <year>2012</year>. doi:<pub-id pub-id-type="doi">10.1007/978-3-642-29044-2</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref067">
+<label>[67]</label><mixed-citation publication-type="other"><string-name><given-names>N.J.E.</given-names> <surname>Wolfram</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Lago</surname></string-name> and <string-name><given-names>F.</given-names> <surname>Osborne</surname></string-name>, <chapter-title>Sustainability in software engineering</chapter-title>, in: <source>IFIP Conference on Sustainable Internet and ICT for Sustainability (SustainIT)</source>, <year>2017</year>. doi:<pub-id pub-id-type="doi">10.23919/sustainit.2017.8379798</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref068">
+<label>[68]</label><mixed-citation publication-type="journal"><string-name><given-names>H.</given-names> <surname>Zhang</surname></string-name> and <string-name><given-names>M.A.</given-names> <surname>Babar</surname></string-name>, <article-title>Systematic reviews in software engineering: An empirical investigation</article-title>, <source>Information and Software Technology</source> <volume>55</volume>(<issue>7</issue>) (<year>2013</year>), <fpage>1341</fpage>–<lpage>1354</lpage>, <comment>ISSN 0164-1212</comment>. doi:<pub-id pub-id-type="doi">10.1016/j.infsof.2012.09.008</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref069">
+<label>[69]</label><mixed-citation publication-type="journal"><string-name><given-names>H.</given-names> <surname>Zhang</surname></string-name>, <string-name><given-names>M.A.</given-names> <surname>Babar</surname></string-name> and <string-name><given-names>P.</given-names> <surname>Tell</surname></string-name>, <article-title>Identifying relevant studies in software engineering</article-title>, <source>Information and Software Technology</source> <volume>53</volume>(<issue>6</issue>) (<year>2011</year>), <fpage>625</fpage>–<lpage>637</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.infsof.2010.12.010</pub-id>.</mixed-citation>
+</ref>
+</ref-list>
+</back>
+</article>

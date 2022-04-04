@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.0 20120330//EN" "JATS-journalpublishing1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="formalization-paper" dtd-version="1.0">
+<front>
+<journal-meta>
+<journal-id journal-id-type="publisher-id">DS</journal-id>
+<journal-title-group><journal-title>Data Science</journal-title></journal-title-group>
+<issn pub-type="epub">2451-8492</issn><issn pub-type="ppub">2451-8484</issn><issn-l>2451-8484</issn-l>
+<publisher>
+<publisher-name>IOS Press</publisher-name><publisher-loc>Nieuwe Hemweg 6B, 1013 BG Amsterdam, The Netherlands</publisher-loc>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">DS210041</article-id>
+<article-id pub-id-type="doi">10.3233/DS-210041</article-id>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Formalization Paper</subject></subj-group></article-categories>
+<title-group>
+<article-title>A formalization of one of the main claims of “Overlap of vitamin A and vitamin D target genes with CAKUT-related processes” by Ozisik et al. 2021<xref ref-type="fn" rid="thanks1"><sup>1</sup></xref></article-title>
+</title-group>
+<contrib-group content-type="Editor">
+<contrib contrib-type="editor">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-7114-6459</contrib-id>
+<name><surname>Bucur</surname><given-names>Cristina-Iulia</given-names></name>
+</contrib>
+</contrib-group>
+<contrib-group content-type="Review comments from">
+<contrib contrib-type="reviewer">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-1267-0234</contrib-id>
+<name><surname>Kuhn</surname><given-names>Tobias</given-names></name>
+</contrib>
+<contrib contrib-type="reviewer">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-7114-6459</contrib-id>
+<name><surname>Bucur</surname><given-names>Cristina-Iulia</given-names></name>
+</contrib>
+</contrib-group>
+<contrib-group>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-7770-620X</contrib-id>
+<name><surname>Ehrhart</surname><given-names>Friederike</given-names></name><email>friederike.ehrhart@maastrichtuniversity.nl</email><xref ref-type="aff" rid="affa">a</xref><xref ref-type="corresp" rid="cor2">*</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-5301-3142</contrib-id>
+<name><surname>Evelo</surname><given-names>Chris T.</given-names></name><email>chris.evelo@maastrichtuniversity.nl</email><xref ref-type="aff" rid="affb">b</xref><xref ref-type="aff" rid="affc">c</xref>
+</contrib>
+<aff id="affa"><label>a</label>Department of Bioinformatics, NUTRIM/MHeNs, <institution>Maastricht University</institution>, <country>The Netherlands</country></aff>
+<aff id="affb"><label>b</label>Department of Bioinformatics, NUTRIM, <institution>Maastricht University</institution>, <country>The Netherlands</country></aff>
+<aff id="affc"><label>c</label>Maastricht Center for Systems Biology (MaCSBio), <institution>Maastricht University</institution>, <country>The Netherlands</country></aff>
+</contrib-group>
+<contrib-group content-type="guest-editors">
+<contrib contrib-type="guest-editor">
+<name><surname>Bucur</surname><given-names>Cristina-Iulia</given-names></name>
+</contrib>
+<contrib contrib-type="guest-editor">
+<name><surname>Kuhn</surname><given-names>Tobias</given-names></name>
+</contrib>
+</contrib-group>
+<author-notes>
+<fn id="thanks1"><label>1</label>
+<p>As RDF/nanopublication: <uri>http://purl.org/np/RAyg4UgIVovBGia-hk4qEuRzOq14fcOlYAclC6YGQaVYU</uri></p></fn><corresp id="cor2"><label>*</label>Corresponding author. E-mail: <email>friederike.ehrhart@maastrichtuniversity.nl</email>.</corresp>
+</author-notes>
+<pub-date date-type="preprint" publication-format="electronic"><day>28</day><month>2</month><year>2022</year></pub-date><pub-date date-type="pub" publication-format="electronic"><day>22</day><month>3</month><year>2022</year></pub-date><pub-date date-type="collection" publication-format="electronic"><year>2022</year></pub-date><volume>5</volume><issue>1</issue><issue-title>Semantic Publishing with Formalization Papers</issue-title><fpage>25</fpage><lpage>27</lpage><history><date date-type="received"><day>24</day><month>09</month><year>2021</year></date><date date-type="accepted"><day>15</day><month>11</month><year>2021</year></date></history>
+<permissions><copyright-statement>© 2022 – The authors. Published by IOS Press.</copyright-statement><copyright-year>2022</copyright-year>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/" license-type="open-access" xlink:type="simple">
+<license-p>This is an open access article distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/" xlink:type="simple">Creative Commons Attribution (CC BY 4.0) License</ext-link>, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions>
+<abstract>
+<p>In a previous paper that we co-authored (Ozisik et al. 2021) we showed that in some cases Vitamin A and Vitamin D receptor binding sites are present in genes associated with Congenital Anomalies of the Kidney and Urinary Tract (CAKUT). From that finding we derived the statement that sometimes Vitamin A targets are the same as genes associated with CAKUT. We present here a formalization of that claim, stating that all things of class “genes associated with CAKUT” sometimes have a relation of type “is same as” to a thing of class “targets of vitamin A”.</p>
+</abstract>
+<kwd-group>
+<label>Keywords</label>
+<kwd>Genes associated with CAKUT</kwd>
+<kwd>targets of vitamin A</kwd>
+</kwd-group>
+</article-meta>
+</front>
+<body>
+<sec id="x1-1000-1">
+<label>1.</label>
+<title>Introduction</title>
+<p>We present here a formalization of the main scientific claim from Ozisik et al. [<xref ref-type="bibr" rid="ref002">2</xref>] by using a semantic template called the super-pattern [<xref ref-type="bibr" rid="ref001">1</xref>].</p>
+</sec>
+<sec id="x1-2000-2">
+<label>2.</label>
+<title>Formalization</title>
+<p>Our formalization looks as follows:</p>
+<table-wrap>
+<table>
+<tbody>
+<tr>
+<td valign="top" align="left">CONTEXT-CLASS (“in the context of all…”):</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/UniversalContext">(universal context)</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left">SUBJECT-CLASS (“things of type…”):</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://www.wikidata.org/wiki/Q109406970">genes associated with CAKUT</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left">QUALIFIER:</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/sometimesQualifier">sometimes</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left">RELATION-TYPE (“have a relation of type…”):</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/isSameAs">is same as</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left">OBJECT-CLASS (“to things of type…”):</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://www.wikidata.org/wiki/Q109406949">targets of vitamin A</ext-link></td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+<p>In the context class we use the class “universal context” from SuperPattern ontology. In the subject class, we use the class “genes associated with CAKUT” (Q109406970) from Wikidata. In the object class we use the class “targets of vitamin A” (Q109406949) from Wikidata.</p>
+</sec>
+<sec id="x1-3000-3">
+<label>3.</label>
+<title>RDF code</title>
+<p>This is our formalization as a nanopublication in TriG format:</p><preformat><monospace>@prefix this: &lt;http://purl.org/np/RAyg4UgIVovBGia-hk4qEuRzOq14fcOlYAclC6YGQaVYU&gt; .</monospace>
+<monospace>@prefix sub: &lt;http://purl.org/np/RAyg4UgIVovBGia-hk4qEuRzOq14fcOlYAclC6YGQaVYU#&gt; .</monospace>
+<monospace>@prefix np: &lt;http://www.nanopub.org/nschema#&gt; .</monospace>
+<monospace>@prefix dct: &lt;http://purl.org/dc/terms/&gt; .</monospace>
+<monospace>@prefix nt: &lt;https://w3id.org/np/o/ntemplate/&gt; .</monospace>
+<monospace>@prefix npx: &lt;http://purl.org/nanopub/x/&gt; .</monospace>
+<monospace>@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .</monospace>
+<monospace>@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .</monospace>
+<monospace>@prefix orcid: &lt;https://orcid.org/&gt; .</monospace>
+<monospace>@prefix prov: &lt;http://www.w3.org/ns/prov#&gt; .</monospace>
+<monospace>@prefix sp: &lt;&lt;https://w3id.org/linkflows/superpattern/terms/&gt; .</monospace>
+
+<monospace>sub:Head {</monospace>
+<monospace>  this: np:hasAssertion sub:assertion ;</monospace>
+<monospace>    np:hasProvenance sub:provenance ;</monospace>
+<monospace>    np:hasPublicationInfo sub:pubinfo ;</monospace>
+<monospace>    a np:Nanopublication .</monospace>
+<monospace>}</monospace>
+<monospace>sub:assertion {</monospace>
+<monospace>  sub:spi a &lt;https://w3id.org/linkflows/superpattern/terms/SuperPatternInstance&gt; ;</monospace>
+<monospace>    rdfs:label "Sometimes Vitamin A targets are the same as genes associated with CAKUT" ;</monospace>
+<monospace>    sp:hasContextClass sp:UniversalContext ;</monospace>
+<monospace>    sp:hasSubjectClass &lt;https://www.wikidata.org/wiki/Q109406970&gt; ;</monospace>
+<monospace>    sp:hasQualifier sp:sometimesQualifier ;</monospace>
+<monospace>    sp:hasRelation sp:isSameAs ;</monospace>
+<monospace>    sp:hasObjectClass &lt;https://www.wikidata.org/wiki/Q109406949&gt; .</monospace>
+<monospace>}</monospace>
+<monospace>sub:provenance {</monospace>
+<monospace>  sub:activity a sp:FormalizationActivity ;</monospace>
+<monospace>    prov:used &lt;https://doi.org/10.12688/f1000research.51018.1&gt; ;</monospace>
+<monospace>    prov:wasAssociatedWith orcid:0000-0002-5301-3142 , orcid:0000-0002-7770-620X .</monospace>
+<monospace>  sub:assertion prov:wasGeneratedBy sub:activity .</monospace>
+<monospace>}</monospace>
+<monospace>sub:pubinfo {</monospace>
+<monospace>  sub:sig npx:hasAlgorithm "RSA" ;</monospace>
+<monospace>    npx:hasPublicKey</monospace>
+<monospace>"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCCYtnHL3Zu9ExrWA28zHnRA9JKmj8V9awChjn+7oBn9p6wdLx61J5mD/lWK9H8NdxSk/fdoaEJAin2WLiWs6qBJ</monospace>
+<monospace>dSZOLbfq7HSF/GVYoTkuvvjnf2rozS08mI+xwEXMsa7XVa+4bz8jauPyp/eEFbcIHEWtstiuQvjvoXKizK5HQIDAQAB" ;</monospace>
+<monospace>    npx:hasSignature</monospace>
+<monospace>"I3KzDEFUZEyP4oMCYA1MchEGcmMpEmFjZLwDF/TtxkXD1yoRj40BopL4n78X+5ldUVsO4ufY1J8JXe+TFgPXX/Z9mBLE+EbzhuX7pGRG9woM16C5fLTwrJoJL7rcU</monospace>
+<monospace>K6ii7moFZ/LsChOKdtC0DrZuie+BecFjvt6xKi693gPih4=" ;</monospace>
+<monospace>    npx:hasSignatureTarget this: .</monospace>
+<monospace>  this: dct:created "2021-11-15T09:46:19.034+01:00"^^xsd:dateTime ;</monospace>
+<monospace>    dct:creator orcid:0000-0002-7770-620X ;</monospace>
+<monospace>    npx:introduces sub:spi ;</monospace>
+<monospace>    npx:supersedes &lt;http://purl.org/np/RAokVMmiZSbRh01diNeJLum4p13kUd-NZjGFuVtxVz4Bs&gt; ;</monospace>
+<monospace>    &lt;https://w3id.org/linkflows/reviews/isUpdateOf&gt; &lt;http://purl.org/np/RAsdV8EQ1qn_lXOrgoG7mPaF1JXdFLzt2iYy4eMhMMuM4&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromProvenanceTemplate &lt;http://purl.org/np/RAE1wniOy0yO39PlK9QkQ-wqbC3q-R2nXraP5huu8W39k&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromPubinfoTemplate &lt;http://purl.org/np/RA2vCBXZf-icEcVRGhulJXugTGxpsV5yVr9yqCI1bQh4A&gt; ,</monospace>
+<monospace>&lt;http://purl.org/np/RAA2MfqdBCzmz9yVWjKLXNbyfBNcwsMmOqcNUxkk1maIM&gt; ,</monospace>
+<monospace>&lt;http://purl.org/np/RAjpBMlw3owYhJUBo3DtsuDlXsNAJ8cnGeWAutDVjuAuI&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromTemplate &lt;http://purl.org/np/RAv68imZrEjfcp2rnEg1hzoBqEVc0cQMtp9_1Za0BxNM4&gt; .</monospace>
+<monospace>}</monospace>
+</preformat>
+</sec>
+<sec id="x1-4000-x">
+<title>Funding</title>
+<p>FE and CEs work is supported by the funding from the European Union’s Horizon 2020 research and innovation programme under the EJP RD COFUND-EJP N° 825575.</p>
+</sec>
+</body>
+<back>
+<ref-list>
+<title>References</title>
+<ref id="ref001">
+<label>[1]</label><mixed-citation publication-type="other"><string-name><given-names>C.I.</given-names> <surname>Bucur</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Kuhn</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Ceolin</surname></string-name> and <string-name><given-names>J.</given-names> <surname>van Ossenbruggen</surname></string-name>, <chapter-title>Expressing high-level scientific claims with formal semantics</chapter-title>, in: <source>Proceedings of the 11th Knowledge Capture Conference</source>, <year>2021</year>. doi:<pub-id pub-id-type="doi">10.1145/3460210.3493561</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref002">
+<label>[2]</label><mixed-citation publication-type="other"><string-name><given-names>O.</given-names> <surname>Ozisik</surname></string-name>, <string-name><given-names>F.</given-names> <surname>Ehrhart</surname></string-name>, <string-name><given-names>C.T.</given-names> <surname>Evelo</surname></string-name> <etal>et al.</etal>, <article-title>Overlap of vitamin A and vitamin D target genes with CAKUT-related processes [version 1, peer review: 2 approved with reservations]</article-title>. <source>F1000Research</source> <volume>10</volume> (<year>2021</year>), <elocation-id>395</elocation-id>. doi:<pub-id pub-id-type="doi">10.12688/f1000research.51018.1</pub-id>.</mixed-citation>
+</ref>
+</ref-list>
+</back>
+</article>

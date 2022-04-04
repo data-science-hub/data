@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.0 20120330//EN" "JATS-journalpublishing1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="formalization-paper" dtd-version="1.0">
+<front>
+<journal-meta>
+<journal-id journal-id-type="publisher-id">DS</journal-id>
+<journal-title-group><journal-title>Data Science</journal-title></journal-title-group>
+<issn pub-type="epub">2451-8492</issn><issn pub-type="ppub">2451-8484</issn><issn-l>2451-8484</issn-l>
+<publisher>
+<publisher-name>IOS Press</publisher-name><publisher-loc>Nieuwe Hemweg 6B, 1013 BG Amsterdam, The Netherlands</publisher-loc>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">DS210039</article-id>
+<article-id pub-id-type="doi">10.3233/DS-210039</article-id>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Formalization Paper</subject></subj-group></article-categories>
+<title-group>
+<article-title>A formalization of one of the main claims of “ALS-implicated protein TDP-43 sustains levels of STMN2, a mediator of motor neuron growth and repair” by Klim et al. 2019<xref ref-type="fn" rid="thanks1"><sup>1</sup></xref></article-title>
+</title-group>
+<contrib-group content-type="Editor">
+<contrib contrib-type="editor">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-7114-6459</contrib-id>
+<name><surname>Bucur</surname><given-names>Cristina-Iulia</given-names></name>
+</contrib>
+</contrib-group>
+<contrib-group content-type="Review comments from">
+<contrib contrib-type="reviewer">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-1267-0234</contrib-id>
+<name><surname>Kuhn</surname><given-names>Tobias</given-names></name>
+</contrib>
+<contrib contrib-type="reviewer">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-3357-9130</contrib-id>
+<name><surname>Ceolin</surname><given-names>Davide</given-names></name>
+</contrib>
+<contrib contrib-type="reviewer">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-7114-6459</contrib-id>
+<name><surname>Bucur</surname><given-names>Cristina-Iulia</given-names></name>
+</contrib>
+</contrib-group>
+<contrib-group>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0003-1099-3328</contrib-id>
+<name><surname>Nichols</surname><given-names>B. Nolan</given-names></name><email>nnichols@mazetx.com</email><email>nolan.nichols@gmail.com</email><xref ref-type="aff" rid="affa"/><xref ref-type="corresp" rid="cor2">*</xref>
+</contrib>
+<aff id="affa"><institution>Maze Therapeutics</institution>, <country>USA</country></aff>
+</contrib-group>
+<contrib-group content-type="guest-editors">
+<contrib contrib-type="guest-editor">
+<name><surname>Bucur</surname><given-names>Cristina-Iulia</given-names></name>
+</contrib>
+<contrib contrib-type="guest-editor">
+<name><surname>Kuhn</surname><given-names>Tobias</given-names></name>
+</contrib>
+</contrib-group>
+<author-notes>
+<fn id="thanks1"><label>1</label>
+<p>As RDF/nanopublication: <uri>http://purl.org/np/RAmG2bXxwkIzARk4Mda-lqZU0RVnkpX7hUHBIPcdLHQUU</uri></p></fn><corresp id="cor2"><label>*</label>Corresponding author. E-mail: <email>nnichols@mazetx.com</email>.</corresp>
+</author-notes>
+<pub-date date-type="preprint" publication-format="electronic"><day>21</day><month>1</month><year>2022</year></pub-date><pub-date date-type="pub" publication-format="electronic"><day>22</day><month>3</month><year>2022</year></pub-date><pub-date date-type="collection" publication-format="electronic"><year>2022</year></pub-date><volume>5</volume><issue>1</issue><issue-title>Semantic Publishing with Formalization Papers</issue-title><fpage>17</fpage><lpage>19</lpage><history><date date-type="received"><day>15</day><month>10</month><year>2021</year></date><date date-type="accepted"><day>12</day><month>11</month><year>2021</year></date></history>
+<permissions><copyright-statement>© 2022 – The authors. Published by IOS Press.</copyright-statement><copyright-year>2022</copyright-year>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/" license-type="open-access" xlink:type="simple">
+<license-p>This is an open access article distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/" xlink:type="simple">Creative Commons Attribution (CC BY 4.0) License</ext-link>, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions>
+<abstract>
+<p>Klim et al. claimed in previous work that the protein TDP-43 generally contributes to the transcription of STMN2 in human motor neurons. We present here a formalization of that claim, stating that all things of class “TAR DNA binding protein” that are in the context of a thing of class “human motor neuron” can generally have a relation of type “contributes to” to a thing of class “transcription of stmn2” in the same context.</p>
+</abstract>
+<kwd-group>
+<label>Keywords</label>
+<kwd>Human motor neuron</kwd>
+<kwd>TAR DNA binding protein</kwd>
+<kwd>transcription of stmn2</kwd>
+</kwd-group>
+</article-meta>
+</front>
+<body>
+<sec id="x1-1000-1">
+<label>1.</label>
+<title>Introduction</title>
+<p>Klim et al. [<xref ref-type="bibr" rid="ref002">2</xref>] state that “expression of STMN2, which encodes a microtubule regulator, declined after TDP-43 knockdown and TDP-43 mislocalization as well as in patient-specific motor neurons”. We present here a formalization of the main scientific claim from this quote by using a semantic template called the super-pattern [<xref ref-type="bibr" rid="ref001">1</xref>].</p>
+</sec>
+<sec id="x1-2000-2">
+<label>2.</label>
+<title>Formalization</title>
+<p>Our formalization looks as follows:</p>
+<table-wrap>
+<table>
+<tbody>
+<tr>
+<td valign="top" align="left">CONTEXT-CLASS (“in the context of all ...”):</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://www.wikidata.org/entity/Q101404862">human motor neuron</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left">SUBJECT-CLASS (“things of type ...”):</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://www.wikidata.org/entity/Q21133247">TAR DNA binding protein</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left">QUALIFIER:</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/canGenerallyQualifier">can generally</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left">RELATION-TYPE (“have a relation of type...”):</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/contributesTo">contributes to</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left">OBJECT-CLASS (“to things of type...”):</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAiUYY1dbEDbcsscapEmbMMHsgJmjEJ1yUoNsxZIH1r90#transcription-of-stmn2">transcription of stmn2</ext-link></td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+<p>In the context class we use the class “human motor neuron” (Q101404862) from Wikidata. In the subject class, we use the class “TAR DNA binding protein” (Q21133247) from Wikidata. In the object class we minted a new class “transcription of stmn2” that is a subclass of “transcription” (Q177900) from Wikidata and is related to the class “STMN2” (Q18036104) from Wikidata.</p>
+</sec>
+<sec id="x1-3000-3">
+<label>3.</label>
+<title>RDF code</title>
+<p>This is our formalization as a nanopublication in TriG format:</p><preformat><monospace>@prefix this: &lt;http://purl.org/np/RAmG2bXxwkIzARk4Mda-lqZU0RVnkpX7hUHBIPcdLHQUU&gt; .</monospace>
+<monospace>@prefix sub: &lt;http://purl.org/np/RAmG2bXxwkIzARk4Mda-lqZU0RVnkpX7hUHBIPcdLHQUU#&gt; .</monospace>
+<monospace>@prefix np: &lt;http://www.nanopub.org/nschema#&gt; .</monospace>
+<monospace>@prefix dct: &lt;http://purl.org/dc/terms/&gt; .</monospace>
+<monospace>@prefix nt: &lt;https://w3id.org/np/o/ntemplate/&gt; .</monospace>
+<monospace>@prefix npx: &lt;http://purl.org/nanopub/x/&gt; .</monospace>
+<monospace>@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .</monospace>
+<monospace>@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .</monospace>
+<monospace>@prefix orcid: &lt;https://orcid.org/&gt; .</monospace>
+<monospace>@prefix prov: &lt;http://www.w3.org/ns/prov#&gt; .</monospace>
+<monospace>@prefix sp: &lt;https://w3id.org/linkflows/superpattern/terms/&gt;.</monospace>
+
+<monospace>sub:Head {</monospace>
+<monospace>  this: np:hasAssertion sub:assertion ;</monospace>
+<monospace>    np:hasProvenance sub:provenance ;</monospace>
+<monospace>    np:hasPublicationInfo sub:pubinfo ;</monospace>
+<monospace>    a np:Nanopublication .</monospace>
+<monospace>}</monospace>
+<monospace>sub:assertion {</monospace>
+<monospace>  sub:spi a &lt;https://w3id.org/linkflows/superpattern/terms/SuperPatternInstance&gt; ;</monospace>
+<monospace>    rdfs:label "the protein TDP-43 generally contributes to the transcription of STMN2 in human motor neurons" ;</monospace>
+<monospace>    sp:hasContextClass &lt;http://www.wikidata.org/entity/Q101404862&gt; ;</monospace>
+<monospace>    sp:hasSubjectClass &lt;http://www.wikidata.org/entity/Q21133247&gt; ;</monospace>
+<monospace>    sp:hasQualifier sp:canGenerallyQualifier ;</monospace>
+<monospace>    sp:hasRelation sp:contributesTo ;</monospace>
+<monospace>    sp:hasObjectClass &lt;http://purl.org/np/RAiUYY1dbEDbcsscapEmbMMHsgJmjEJ1yUoNsxZIH1r90#transcription-of-stmn2&gt; .</monospace>
+<monospace>}</monospace>
+<monospace>sub:provenance {</monospace>
+<monospace>  sub:activity a sp:FormalizationActivity ;</monospace>
+<monospace>    prov:used sub:quote , &lt;https://doi.org/10.1038/s41593-018-0300-4&gt; ;</monospace>
+<monospace>    prov:wasAssociatedWith orcid:0000-0003-1099-3328 .</monospace>
+<monospace>  sub:assertion prov:wasGeneratedBy sub:activity .</monospace>
+<monospace>  sub:quote prov:value "expression of STMN2, which encodes a microtubule regulator, declined after TDP-43 knockdown and TDP-43</monospace>
+<monospace>mislocalization as well as in patient-specific motor neurons" ;</monospace>
+<monospace>    prov:wasQuotedFrom &lt;https://doi.org/10.1038/s41593-018-0300-4&gt; .</monospace>
+<monospace>}</monospace>
+<monospace>sub:pubinfo {</monospace>
+<monospace>  sub:sig npx:hasAlgorithm "RSA" ;</monospace>
+<monospace>    npx:hasPublicKey "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCWyqaozls49LpqjUqCP7APpHaYeBQB0+Erh4usb4W7fWZRVVybfNg+HynNs2p//</monospace>
+<monospace>7PbfQraV2BEMxNMXF85hDpCjFMt9fQdvnS+zYqCh/p352aCoss3zHjzMp6BE9GhmGvevpGh7eJxSkO9WZ54ld38kq7VrcZQ4Rmy0IlLfk/BdQIDAQAB" ;</monospace>
+<monospace>    npx:hasSignature</monospace>
+<monospace>"L8uNtEZZ3sXEtasw18HmJZSvMaHvtlmGz5ZMHz/Qw4Q3TCv+1eqG/1XalFeFNwrTy715BS9P8ygD0uKRjIcDzONv91pM5I0RwyRT4keBIFHRhN6jzu2LujsdByfQ</monospace>
+<monospace>d0VFOfndgH2jaBVg9nZhvDanuZGC0hw5OAXT/E6HygtDoVs=" ;</monospace>
+<monospace>    npx:hasSignatureTarget this: .</monospace>
+<monospace>  this: dct:created "2021-10-20T17:26:34.506Z"^^xsd:dateTime ;</monospace>
+<monospace>    dct:creator orcid:0000-0003-1099-3328 ;</monospace>
+<monospace>    npx:introduces sub:spi ;</monospace>
+<monospace>    &lt;https://w3id.org/linkflows/reviews/isUpdateOf&gt; &lt;http://purl.org/np/RA5rRFy9eDTZSTyVeuTrAO7aCg_JPcq1cVmWWjc-kjFOM&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromProvenanceTemplate &lt;http://purl.org/np/RAE1wniOy0yO39PlK9QkQ-wqbC3q-R2nXraP5huu8W39k&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromPubinfoTemplate &lt;http://purl.org/np/RAA2MfqdBCzmz9yVWjKLXNbyfBNcwsMmOqcNUxkk1maIM&gt; ,</monospace>
+<monospace>&lt;http://purl.org/np/RAOGu9Lh0BD4tbIRB9RG6RGRA_ObDh75NTbIqaWgxxs8M&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromTemplate &lt;http://purl.org/np/RAv68imZrEjfcp2rnEg1hzoBqEVc0cQMtp9_1Za0BxNM4&gt; .</monospace>
+<monospace>}</monospace>
+</preformat>
+<p>The following nanopublications introduce the newly minted classes in TriG format.</p>
+<p>This is the class definition of “transcription of stmn2”:</p><preformat><monospace>@prefix this: &lt;http://purl.org/np/RAiUYY1dbEDbcsscapEmbMMHsgJmjEJ1yUoNsxZIH1r90&gt; .</monospace>
+<monospace>@prefix sub: &lt;http://purl.org/np/RAiUYY1dbEDbcsscapEmbMMHsgJmjEJ1yUoNsxZIH1r90#&gt; .</monospace>
+<monospace>@prefix np: &lt;http://www.nanopub.org/nschema#&gt; .</monospace>
+<monospace>@prefix dct: &lt;http://purl.org/dc/terms/&gt; .</monospace>
+<monospace>@prefix nt: &lt;https://w3id.org/np/o/ntemplate/&gt; .</monospace>
+<monospace>@prefix npx: &lt;http://purl.org/nanopub/x/&gt; .</monospace>
+<monospace>@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .</monospace>
+<monospace>@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .</monospace>
+<monospace>@prefix orcid: &lt;https://orcid.org/&gt; .</monospace>
+<monospace>@prefix prov: &lt;http://www.w3.org/ns/prov#&gt; .</monospace>
+<monospace>@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .</monospace>
+
+<monospace>sub:Head {</monospace>
+<monospace>  this: np:hasAssertion sub:assertion ;</monospace>
+<monospace>    np:hasProvenance sub:provenance ;</monospace>
+<monospace>    np:hasPublicationInfo sub:pubinfo ;</monospace>
+<monospace>    a np:Nanopublication .</monospace>
+<monospace>}</monospace>
+<monospace>sub:assertion {</monospace>
+<monospace>  sub:transcription-of-stmn2 a &lt;http://www.w3.org/2002/07/owl#Class&gt; ;</monospace>
+<monospace>    rdfs:label "transcription of stmn2" ;</monospace>
+<monospace>    rdfs:subClassOf &lt;http://www.wikidata.org/entity/Q177900&gt; ;</monospace>
+<monospace>    skos:definition "biosynthesis of RNA carried out on a template of STMN2 DNA" ;</monospace>
+<monospace>    skos:relatedMatch &lt;http://www.wikidata.org/entity/Q18036104&gt; .</monospace>
+<monospace>}</monospace>
+<monospace>sub:provenance {</monospace>
+<monospace>  sub:assertion prov:wasAttributedTo orcid:0000-0003-1099-3328 .</monospace>
+<monospace>}</monospace>
+<monospace>sub:pubinfo {</monospace>
+<monospace>  sub:sig npx:hasAlgorithm "RSA" ;</monospace>
+<monospace>    npx:hasPublicKey "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCWyqaozls49LpqjUqCP7APpHaYeBQB0+Erh4usb4W7fWZRVVybfNg+HynNs2p//</monospace>
+<monospace>7PbfQraV2BEMxNMXF85hDpCjFMt9fQdvnS+zYqCh/p352aCoss3zHjzMp6BE9GhmGvevpGh7eJxSkO9WZ54ld38kq7VrcZQ4Rmy0IlLfk/BdQIDAQAB" ;</monospace>
+<monospace>    npx:hasSignature</monospace>
+<monospace>"DSOLsANesn6/E2TJCxQg3/87KS5SUgXVz2En+wxgK4DwASPkk3pnY3/5Qj144utDYvZZwFBO6Jkk1zUxE28DlZl1XqltyVi6JikVxrDemh0UfesyIaIs0Luq7KXha</monospace>
+<monospace>2mbapYW6VGR/REklYjy+K5cUgGN2PyS3vkNO7j1YsjVMVY=" ;</monospace>
+<monospace>    npx:hasSignatureTarget this: .</monospace>
+<monospace>  this: dct:created "2021-10-15T22:30:19.955Z"^^xsd:dateTime ;</monospace>
+<monospace>    dct:creator orcid:0000-0003-1099-3328 ;</monospace>
+<monospace>    npx:introduces sub:transcription-of-stmn2 ;</monospace>
+<monospace>    nt:wasCreatedFromProvenanceTemplate &lt;http://purl.org/np/RANwQa4ICWS5SOjw7gp99nBpXBasapwtZF1fIM3H2gYTM&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromPubinfoTemplate &lt;http://purl.org/np/RAA2MfqdBCzmz9yVWjKLXNbyfBNcwsMmOqcNUxkk1maIM&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromTemplate &lt;http://purl.org/np/RAdpgRpigXtt8iPV9uOPf3wIT3qzOI8Sg2Q72CNV8g-Yo&gt; .</monospace>
+<monospace>}</monospace>
+</preformat>
+</sec>
+</body>
+<back>
+<ref-list>
+<title>References</title>
+<ref id="ref001">
+<label>[1]</label><mixed-citation publication-type="other"><string-name><given-names>C.I.</given-names> <surname>Bucur</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Kuhn</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Ceolin</surname></string-name> and <string-name><given-names>J.</given-names> <surname>van Ossenbruggen</surname></string-name>, <chapter-title>Expressing high-level scientific claims with formal semantics</chapter-title>, in: <source>Proceedings of the 11th Knowledge Capture Conference 2021</source>. doi:<pub-id pub-id-type="doi">10.1145/3460210.3493561</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref002">
+<label>[2]</label><mixed-citation publication-type="journal"><string-name><given-names>J.R.</given-names> <surname>Klim</surname></string-name>, <string-name><given-names>L.A.</given-names> <surname>Williams</surname></string-name>, <string-name><given-names>F.</given-names> <surname>Limone</surname></string-name> <etal>et al.</etal>, <article-title>ALS-implicated protein TDP-43 sustains levels of STMN2, a mediator of motor neuron growth and repair</article-title>, <source>Nat Neurosci</source> <volume>22</volume> (<year>2019</year>), <fpage>167</fpage>–<lpage>179</lpage>. doi:<pub-id pub-id-type="doi">10.1038/s41593-018-0300-4</pub-id>.</mixed-citation>
+</ref>
+</ref-list>
+</back>
+</article>

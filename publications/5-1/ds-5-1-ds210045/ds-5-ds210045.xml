@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.0 20120330//EN" "JATS-journalpublishing1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="formalization-paper" dtd-version="1.0">
+<front>
+<journal-meta>
+<journal-id journal-id-type="publisher-id">DS</journal-id>
+<journal-title-group><journal-title>Data Science</journal-title></journal-title-group>
+<issn pub-type="epub">2451-8492</issn><issn pub-type="ppub">2451-8484</issn><issn-l>2451-8484</issn-l>
+<publisher>
+<publisher-name>IOS Press</publisher-name><publisher-loc>Nieuwe Hemweg 6B, 1013 BG Amsterdam, The Netherlands</publisher-loc>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">DS210045</article-id>
+<article-id pub-id-type="doi">10.3233/DS-210045</article-id>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Formalization Paper</subject></subj-group></article-categories>
+<title-group>
+<article-title>A formalization of one of the main claims of “OpenBiodiv: A knowledge graph for literature-extracted linked open data in biodiversity science” by Penev et al. 2019<xref ref-type="fn" rid="thanks1"><sup>1</sup></xref></article-title>
+</title-group>
+<contrib-group content-type="Editor">
+<contrib contrib-type="editor">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-7114-6459</contrib-id>
+<name><surname>Bucur</surname><given-names>Cristina-Iulia</given-names></name>
+</contrib>
+</contrib-group>
+<contrib-group content-type="Review comments from">
+<contrib contrib-type="reviewer">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-1267-0234</contrib-id>
+<name><surname>Kuhn</surname><given-names>Tobias</given-names></name>
+</contrib>
+<contrib contrib-type="reviewer">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-0191-7211</contrib-id>
+<name><surname>Usbeck</surname><given-names>Ricardo</given-names></name>
+</contrib>
+<contrib contrib-type="reviewer">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-7114-6459</contrib-id>
+<name><surname>Bucur</surname><given-names>Cristina-Iulia</given-names></name>
+</contrib>
+</contrib-group>
+<contrib-group>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-8083-6048</contrib-id>
+<name><surname>Dimitrova</surname><given-names>Mariya</given-names></name><email>m.dimitrova@pensoft.net</email><xref ref-type="aff" rid="affa"/><xref ref-type="corresp" rid="cor2">*</xref>
+</contrib>
+<aff id="affa">Bulgarian Academy of Sciences, <institution>Bulgaria and Pensoft Publishers</institution>, <country>Bulgaria</country></aff>
+</contrib-group>
+<contrib-group content-type="guest-editors">
+<contrib contrib-type="guest-editor">
+<name><surname>Bucur</surname><given-names>Cristina-Iulia</given-names></name>
+</contrib>
+<contrib contrib-type="guest-editor">
+<name><surname>Kuhn</surname><given-names>Tobias</given-names></name>
+</contrib>
+</contrib-group>
+<author-notes>
+<fn id="thanks1"><label>1</label>
+<p>As RDF/nanopublication: <uri>http://purl.org/np/RAMgThXW6xx8QiPmW9VhVuxWCN2ZWe-pmxDcFfdx_A7z0</uri></p></fn><corresp id="cor2"><label>*</label>Corresponding author. E-mail: <email>m.dimitrova@pensoft.net</email>.</corresp>
+</author-notes>
+<pub-date date-type="preprint" publication-format="electronic"><day>25</day><month>1</month><year>2022</year></pub-date><pub-date date-type="pub" publication-format="electronic"><day>22</day><month>3</month><year>2022</year></pub-date><pub-date date-type="collection" publication-format="electronic"><year>2022</year></pub-date><volume>5</volume><issue>1</issue><issue-title>Semantic Publishing with Formalization Papers</issue-title><fpage>43</fpage><lpage>47</lpage><history><date date-type="received"><day>7</day><month>07</month><year>2021</year></date><date date-type="accepted"><day>3</day><month>12</month><year>2021</year></date></history>
+<permissions><copyright-statement>© 2022 – The authors. Published by IOS Press.</copyright-statement><copyright-year>2022</copyright-year>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/" license-type="open-access" xlink:type="simple">
+<license-p>This is an open access article distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/" xlink:type="simple">Creative Commons Attribution (CC BY 4.0) License</ext-link>, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions>
+<abstract>
+<p>Penev et al. claimed in previous work that triples in the OpenBiodiv knowledge graph releases are generally semantic triples extracted from biodiversity literature. We present here a formalization of that claim, stating that all things of class “triple in OpenBiodiv knowledge graph” that are in the context of a thing of class “release of OpenBiodiv knowledge graph” generally have a relation of type “is same as” to a thing of class “semantic triple extracted from biodiversity literature” in the same context.</p>
+</abstract>
+<kwd-group>
+<label>Keywords</label>
+<kwd>release of OpenBiodiv knowledge graph</kwd>
+<kwd>triple in OpenBiodiv knowledge graph</kwd>
+<kwd>semantic triple extracted from biodiversity literature</kwd>
+</kwd-group>
+</article-meta>
+</front>
+<body>
+<sec id="x1-1000-1">
+<label>1.</label>
+<title>Introduction</title>
+<p>Penev et al. [<xref ref-type="bibr" rid="ref002">2</xref>] state that “OpenBiodiv encompasses data extracted from more than 5000 scholarly articles published by Pensoft and many more taxonomic treatments extracted by Plazi from journals of other publishers. The data from both sources are converted to Resource Description Framework (RDF) and integrated in a graph database using the OpenBiodiv-O ontology and an RDF version of the Global Biodiversity Information Facility (GBIF) taxonomic backbone.”. We present here a formalization of the main scientific claim from this quote by using a semantic template called the super-pattern [<xref ref-type="bibr" rid="ref001">1</xref>].</p>
+</sec>
+<sec id="x1-2000-2">
+<label>2.</label>
+<title>Formalization</title>
+<p>Our formalization looks as follows:</p>
+<table-wrap>
+<table>
+<tbody>
+<tr>
+<td valign="top" align="left">CONTEXT-CLASS (“in the context of all…”):</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAlm6vh2zpFLg189qrDYPtppkL790Pqaw-q2KUhyfJtRY#release-of-openbiodiv-knowledge-graph">release of OpenBiodiv knowledge graph</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left">SUBJECT-CLASS (“things of type…”):</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAaEkIiJLmBJP5kK3JdYjseCRqwutYbdnI8Q3VbzrK9VA#triple-in-openbiodiv-knowledge-graph">triple in OpenBiodiv knowledge graph</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left">QUALIFIER:</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/generallyQualifier">generally</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left">RELATION-TYPE (“have a relation of type…”):</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/isSameAs">is same as</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left">OBJECT-CLASS (“to things of type…”):</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAEpHUXRKtaLE3Z24sgIUdaxwTBsK2bjshyq9yF00145Y#semantic-triples-extracted-from-biodiversity-literature">semantic triple extracted from biodiversity literature</ext-link></td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+<p>In the context class we use a new minted class “release of OpenBiodiv knowledge graph” that is a subclass of “software release” (Q20631656) from Wikidata and has a related class a new minted class “<ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAY2Gg01ffDVLprAakuMqpizAjksasRtTal_UsCf94LL8#openbiodiv-knowledge-graph">OpenBiodiv knowledge graph</ext-link>” that is a subclass of the “knowledge graph” (Q33002955) class from Wikidata. In the subject class, we use a new minted class “triple in OpenBiodiv knowledge graph” that is related to a new minted class “<ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAY2Gg01ffDVLprAakuMqpizAjksasRtTal_UsCf94LL8#openbiodiv-knowledge-graph">OpenBiodiv knowledge graph</ext-link>” that is a subclass of the “knowledge graph” (Q33002955) class from Wikidata. In the object class we minted a new class “semantic triple extracted from biodiversity literature” that is related to a new minted class “<ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAY2Gg01ffDVLprAakuMqpizAjksasRtTal_UsCf94LL8#openbiodiv-knowledge-graph">OpenBiodiv knowledge graph</ext-link>” that is a subclass of the “knowledge graph” (Q33002955) class from Wikidata.</p>
+</sec>
+<sec id="x1-3000-3">
+<label>3.</label>
+<title>RDF code</title>
+<p>This is our formalization as a nanopublication in TriG format:</p><preformat><monospace>@prefix this: &lt;http://purl.org/np/RAMgThXW6xx8QiPmW9VhVuxWCN2ZWe-pmxDcFfdx_A7z0&gt; .</monospace>
+<monospace>@prefix sub: &lt;http://purl.org/np/RAMgThXW6xx8QiPmW9VhVuxWCN2ZWe-pmxDcFfdx_A7z0#&gt; .</monospace>
+<monospace>@prefix np: &lt;http://www.nanopub.org/nschema#&gt; .</monospace>
+<monospace>@prefix dct: &lt;http://purl.org/dc/terms/&gt; .</monospace>
+<monospace>@prefix nt: &lt;https://w3id.org/np/o/ntemplate/&gt; .</monospace>
+<monospace>@prefix npx: &lt;http://purl.org/nanopub/x/&gt; .</monospace>
+<monospace>@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .</monospace>
+<monospace>@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .</monospace>
+<monospace>@prefix orcid: &lt;https://orcid.org/&gt; .</monospace>
+<monospace>@prefix prov: &lt;http://www.w3.org/ns/prov#&gt; .</monospace>
+<monospace>@prefix sp: &lt;https://w3id.org/linkflows/superpattern/terms/&gt; .</monospace>
+
+<monospace>sub:Head {</monospace>
+<monospace>  this: np:hasAssertion sub:assertion ;</monospace>
+<monospace>    np:hasProvenance sub:provenance ;</monospace>
+<monospace>    np:hasPublicationInfo sub:pubinfo ;</monospace>
+<monospace>    a np:Nanopublication .</monospace>
+<monospace>}</monospace>
+<monospace>sub:assertion {</monospace>
+<monospace>  sub:spi a sp:SuperPatternInstance ;</monospace>
+<monospace>    rdfs:label "Triples in the OpenBiodiv knowledge graph releases are generally semantic triples extracted from biodiversity</monospace>
+<monospace>literature." ;</monospace>
+<monospace>    sp:hasContextClass &lt;http://purl.org/np/RAlm6vh2zpFLg189qrDYPtppkL790Pqaw-q2KUhyfJtRY#release-of-openbiodiv-knowledge-</monospace>
+<monospace>graph&gt; ;</monospace>
+<monospace>    sp:hasSubjectClass &lt;http://purl.org/np/RAaEkIiJLmBJP5kK3JdYjseCRqwutYbdnI8Q3VbzrK9VA#triple-in-openbiodiv-knowledge-</monospace>
+<monospace>graph&gt; ;</monospace>
+<monospace>    sp:hasQualifier sp:generallyQualifier ;</monospace>
+<monospace>    sp:hasRelation sp:isSameAs ;</monospace>
+<monospace>    sp:hasObjectClass &lt;http://purl.org/np/RAEpHUXRKtaLE3Z24sgIUdaxwTBsK2bjshyq9yF00145Y#semantic-triples-extracted-from-</monospace>
+<monospace>biodiversity-literature&gt; .</monospace>
+<monospace>}</monospace>
+<monospace>sub:provenance {</monospace>
+<monospace>  sub:activity a sp:FormalizationActivity ;</monospace>
+<monospace>    prov:used sub:quote , &lt;https://doi.org/10.3390/publications7020038&gt; ;</monospace>
+<monospace>    prov:wasAssociatedWith orcid:0000-0002-8083-6048 .</monospace>
+<monospace>  sub:assertion prov:wasGeneratedBy sub:activity .</monospace>
+<monospace>  sub:quote prov:value "OpenBiodiv encompasses data extracted from more than 5000 scholarly articles published by Pensoft and</monospace>
+<monospace>many more taxonomic treatments extracted by Plazi from journals of other publishers. The data from both sources are converted</monospace>
+<monospace>to Resource Description Framework (RDF) and integrated in a graph database using the OpenBiodiv-O ontology and an RDF version</monospace>
+<monospace>of the Global Biodiversity Information Facility (GBIF) taxonomic backbone." ;</monospace>
+<monospace>    prov:wasQuotedFrom &lt;https://doi.org/10.3390/publications7020038&gt; .</monospace>
+<monospace>}</monospace>
+<monospace>sub:pubinfo {</monospace>
+<monospace>  sub:sig npx:hasAlgorithm "RSA" ;</monospace>
+<monospace>    npx:hasPublicKey</monospace>
+<monospace>"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCwi1YMnpV5z/0oMXyFYDKS5cirQQWTMZ/jbglmVY1gl3YAgrkqsQUmgaxA/ho+VV8jsfREIL8PT2czbmCjGjMJ</monospace>
+<monospace>oNaKVqJq1GoIUV9+Kj9yXxNySyDAOTDsIM0zdj1BEu5uNbtfzwQPGuhVpgLR05Uk/meCyYLPs3BxC5zRbtulmwIDAQAB" ;</monospace>
+<monospace>    npx:hasSignature</monospace>
+<monospace>"ZbscFpNaJ3Wi/kWcKUWM3P5FbINnIPh3Z/BHMuCI95sAZjbD6XQD4AVUf7XUfFcMZtK8QKRE6S88zdLayXPklZC2x2GWcrh0j7Rk5UisHVcyZrukL0jH0D7oxXw2</monospace>
+<monospace>xi+W1FhX+6X8cgilEcums1MTLZ9bx3BdA1Goii6pR32gOLQ=" ;</monospace>
+<monospace>    npx:hasSignatureTarget this: .</monospace>
+<monospace>  this: dct:created "2021-11-30T22:13:32.063+02:00"^^xsd:dateTime ;</monospace>
+<monospace>    dct:creator orcid:0000-0002-8083-6048 ;</monospace>
+<monospace>    npx:introduces sub:spi ;</monospace>
+<monospace>    npx:supersedes &lt;http://purl.org/np/RAN_chNfWR9hbEkfjwOfMpq1piwOgAj6q2sJ-qbDzaLOk&gt; ;</monospace>
+<monospace>    &lt;https://w3id.org/linkflows/reviews/isUpdateOf&gt; &lt;http://purl.org/np/RAWcrMY8mnsI26BfokKid75MO1c2uVenyW9tmxj0VhbnY&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromProvenanceTemplate &lt;http://purl.org/np/RAE1wniOy0yO39PlK9QkQ-wqbC3q-R2nXraP5huu8W39k&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromPubinfoTemplate &lt;http://purl.org/np/RA2vCBXZf-icEcVRGhulJXugTGxpsV5yVr9yqCI1bQh4A&gt; ,</monospace>
+<monospace>&lt;http://purl.org/np/RAA2MfqdBCzmz9yVWjKLXNbyfBNcwsMmOqcNUxkk1maIM&gt; ,</monospace>
+<monospace>&lt;http://purl.org/np/RAjpBMlw3owYhJUBo3DtsuDlXsNAJ8cnGeWAutDVjuAuI&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromTemplate &lt;http://purl.org/np/RAv68imZrEjfcp2rnEg1hzoBqEVc0cQMtp9_1Za0BxNM4&gt; .</monospace>
+<monospace>}</monospace>
+</preformat>
+<p>The following nanopublications introduce the newly minted classes in TriG format.</p>
+<p>This is the class definition of “release of OpenBiodiv knowledge graph”:</p><preformat><monospace>@prefix this: &lt;http://purl.org/np/RAlm6vh2zpFLg189qrDYPtppkL790Pqaw-q2KUhyfJtRY&gt; .</monospace>
+<monospace>@prefix sub: &lt;http://purl.org/np/RAlm6vh2zpFLg189qrDYPtppkL790Pqaw-q2KUhyfJtRY#&gt; .</monospace>
+<monospace>@prefix np: &lt;http://www.nanopub.org/nschema#&gt; .</monospace>
+<monospace>@prefix dct: &lt;http://purl.org/dc/terms/&gt; .</monospace>
+<monospace>@prefix nt: &lt;https://w3id.org/np/o/ntemplate/&gt; .</monospace>
+<monospace>@prefix npx: &lt;http://purl.org/nanopub/x/&gt; .</monospace>
+<monospace>@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .</monospace>
+<monospace>@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .</monospace>
+<monospace>@prefix orcid: &lt;https://orcid.org/&gt; .</monospace>
+<monospace>@prefix prov: &lt;http://www.w3.org/ns/prov#&gt; .</monospace>
+<monospace>@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .</monospace>
+
+<monospace>sub:Head {</monospace>
+<monospace>  this: np:hasAssertion sub:assertion ;</monospace>
+<monospace>    np:hasProvenance sub:provenance ;</monospace>
+<monospace>    np:hasPublicationInfo sub:pubinfo ;</monospace>
+<monospace>    a np:Nanopublication .</monospace>
+<monospace>}</monospace>
+<monospace>sub:assertion {</monospace>
+<monospace>  sub:release-of-openbiodiv-knowledge-graph a &lt;http://www.w3.org/2002/07/owl#Class&gt; ;</monospace>
+<monospace>    rdfs:label "A release of the OpenBiodiv knowledge graph" ;</monospace>
+<monospace>    rdfs:subClassOf &lt;http://www.wikidata.org/entity/Q20631656&gt; ;</monospace>
+<monospace>    skos:definition "A release of the OpenBiodiv knowledge graph stored in a GraphDB repository at http://graph.openbiodiv.</monospace>
+<monospace>net/" ;</monospace>
+<monospace>    skos:relatedMatch &lt;http://purl.org/np/RAY2Gg01ffDVLprAakuMqpizAjksasRtTal_UsCf94LL8#openbiodiv-knowledge-graph&gt; .</monospace>
+<monospace>}</monospace>
+<monospace>sub:provenance {</monospace>
+<monospace>  sub:assertion prov:wasAttributedTo orcid:0000-0002-8083-6048 .</monospace>
+<monospace>}</monospace>
+<monospace>sub:pubinfo {</monospace>
+<monospace>  sub:sig npx:hasAlgorithm "RSA" ;</monospace>
+<monospace>    npx:hasPublicKey</monospace>
+<monospace>"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCwi1YMnpV5z/0oMXyFYDKS5cirQQWTMZ/jbglmVY1gl3YAgrkqsQUmgaxA/ho+VV8jsfREIL8PT2czbmCjGjMJ</monospace>
+<monospace>oNaKVqJq1GoIUV9+Kj9yXxNySyDAOTDsIM0zdj1BEu5uNbtfzwQPGuhVpgLR05Uk/meCyYLPs3BxC5zRbtulmwIDAQAB" ;</monospace>
+<monospace>    npx:hasSignature</monospace>
+<monospace>"FXDBQ2xJ6NWoC7ai62Yd02KL1I45X1XQxAN1skRMXtENVvO0ZdzjKOjU8TBOyw23h1prP/Ei/k+BT2JgOVHS+LyJXoW0ncHMg9a9AFrhB/BX+S6SMLVCEh0h8uzD</monospace>
+<monospace>7GbnBv6Vet2ajQ7nWCSb4ZkTJa0iByrFU/bpQMBZ4JKvkRs=" ;</monospace>
+<monospace>    npx:hasSignatureTarget this: .</monospace>
+<monospace>  this: dct:created "2021-11-30T22:05:24.772+02:00"^^xsd:dateTime ;</monospace>
+<monospace>    dct:creator orcid:0000-0002-8083-6048 ;</monospace>
+<monospace>    npx:introduces sub:release-of-openbiodiv-knowledge-graph ;</monospace>
+<monospace>    npx:supersedes &lt;http://purl.org/np/RAySzPQKOPqboKwpMIeTtYhCwmLZTdlmKhiMM9W_fmZKw&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromProvenanceTemplate &lt;http://purl.org/np/RANwQa4ICWS5SOjw7gp99nBpXBasapwtZF1fIM3H2gYTM&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromPubinfoTemplate &lt;http://purl.org/np/RAA2MfqdBCzmz9yVWjKLXNbyfBNcwsMmOqcNUxkk1maIM&gt; ,</monospace>
+<monospace>&lt;http://purl.org/np/RAjpBMlw3owYhJUBo3DtsuDlXsNAJ8cnGeWAutDVjuAuI&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromTemplate &lt;http://purl.org/np/RAdpgRpigXtt8iPV9uOPf3wIT3qzOI8Sg2Q72CNV8g-Yo&gt; .</monospace>
+<monospace>}</monospace>
+</preformat>
+<p>This is the class definition of “triple in OpenBiodiv knowledge graph”:</p><preformat><monospace>@prefix this: &lt;http://purl.org/np/RAaEkIiJLmBJP5kK3JdYjseCRqwutYbdnI8Q3VbzrK9VA&gt; .</monospace>
+<monospace>@prefix sub: &lt;http://purl.org/np/RAaEkIiJLmBJP5kK3JdYjseCRqwutYbdnI8Q3VbzrK9VA#&gt; .</monospace>
+<monospace>@prefix np: &lt;http://www.nanopub.org/nschema#&gt; .</monospace>
+<monospace>@prefix dct: &lt;http://purl.org/dc/terms/&gt; .</monospace>
+<monospace>@prefix nt: &lt;https://w3id.org/np/o/ntemplate/&gt; .</monospace>
+<monospace>@prefix npx: &lt;http://purl.org/nanopub/x/&gt; .</monospace>
+<monospace>@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .</monospace>
+<monospace>@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .</monospace>
+<monospace>@prefix orcid: &lt;https://orcid.org/&gt; .</monospace>
+<monospace>@prefix prov: &lt;http://www.w3.org/ns/prov#&gt; .</monospace>
+<monospace>@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .</monospace>
+
+<monospace>sub:Head {</monospace>
+<monospace>  this: np:hasAssertion sub:assertion ;</monospace>
+<monospace>    np:hasProvenance sub:provenance ;</monospace>
+<monospace>    np:hasPublicationInfo sub:pubinfo ;</monospace>
+<monospace>    a np:Nanopublication .</monospace>
+<monospace>}</monospace>
+<monospace>sub:assertion {</monospace>
+<monospace>  sub:triple-in-openbiodiv-knowledge-graph a &lt;http://www.w3.org/2002/07/owl#Class&gt; ;</monospace>
+<monospace>    rdfs:label "Triple in OpenBiodiv knowledge graph" ;</monospace>
+<monospace>    skos:definition "A semantic triple in the OpenBiodiv knowledge graph" ;</monospace>
+<monospace>    skos:relatedMatch &lt;http://purl.org/np/RAY2Gg01ffDVLprAakuMqpizAjksasRtTal_UsCf94LL8#openbiodiv-knowledge-graph&gt; .</monospace>
+<monospace>}</monospace>
+<monospace>sub:provenance {</monospace>
+<monospace>  sub:assertion prov:wasAttributedTo orcid:0000-0002-8083-6048 .</monospace>
+<monospace>}</monospace>
+<monospace>sub:pubinfo {</monospace>
+<monospace>  sub:sig npx:hasAlgorithm "RSA" ;</monospace>
+<monospace>    npx:hasPublicKey</monospace>
+<monospace>"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCwi1YMnpV5z/0oMXyFYDKS5cirQQWTMZ/jbglmVY1gl3YAgrkqsQUmgaxA/ho+VV8jsfREIL8PT2czbmCjGjMJ</monospace>
+<monospace>oNaKVqJq1GoIUV9+Kj9yXxNySyDAOTDsIM0zdj1BEu5uNbtfzwQPGuhVpgLR05Uk/meCyYLPs3BxC5zRbtulmwIDAQAB" ;</monospace>
+<monospace>    npx:hasSignature</monospace>
+<monospace>"dPpPA1yEeyfIBRllzfX4pmiOoCUzGAxPLEf8+1/1CWBAecvBCtqsS+rUAWUnHEqHytgrvWlxZhEmw7oC3ilPPIl3Pkb8NwiJ1BcRgLOPbe2R5+1ws75TDzmaZKjU</monospace>
+<monospace>oHoMbB4oBIfT78o4YcULeUOiZww19rVWvddCv/JlXc2nSk8=" ;</monospace>
+<monospace>    npx:hasSignatureTarget this: .</monospace>
+<monospace>  this: dct:created "2021-11-30T22:09:26.986+02:00"^^xsd:dateTime ;</monospace>
+<monospace>    dct:creator orcid:0000-0002-8083-6048 ;</monospace>
+<monospace>    npx:introduces sub:triple-in-openbiodiv-knowledge-graph ;</monospace>
+<monospace>    nt:wasCreatedFromProvenanceTemplate &lt;http://purl.org/np/RANwQa4ICWS5SOjw7gp99nBpXBasapwtZF1fIM3H2gYTM&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromPubinfoTemplate &lt;http://purl.org/np/RAA2MfqdBCzmz9yVWjKLXNbyfBNcwsMmOqcNUxkk1maIM&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromTemplate &lt;http://purl.org/np/RAdpgRpigXtt8iPV9uOPf3wIT3qzOI8Sg2Q72CNV8g-Yo&gt; .</monospace>
+<monospace>}</monospace>
+</preformat>
+<p>This is the class definition of “semantic triple extracted from biodiversity literature”:</p><preformat><monospace>@prefix this: &lt;http://purl.org/np/RAEpHUXRKtaLE3Z24sgIUdaxwTBsK2bjshyq9yF00145Y&gt; .</monospace>
+<monospace>@prefix sub: &lt;http://purl.org/np/RAEpHUXRKtaLE3Z24sgIUdaxwTBsK2bjshyq9yF00145Y#&gt; .</monospace>
+<monospace>@prefix np: &lt;http://www.nanopub.org/nschema#&gt; .</monospace>
+<monospace>@prefix dct: &lt;http://purl.org/dc/terms/&gt; .</monospace>
+<monospace>@prefix nt: &lt;https://w3id.org/np/o/ntemplate/&gt; .</monospace>
+<monospace>@prefix npx: &lt;http://purl.org/nanopub/x/&gt; .</monospace>
+<monospace>@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .</monospace>
+<monospace>@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .</monospace>
+<monospace>@prefix orcid: &lt;https://orcid.org/&gt; .</monospace>
+<monospace>@prefix prov: &lt;http://www.w3.org/ns/prov#&gt; .</monospace>
+<monospace>@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .</monospace>
+
+<monospace>sub:Head {</monospace>
+<monospace>  this: np:hasAssertion sub:assertion ;</monospace>
+<monospace>    np:hasProvenance sub:provenance ;</monospace>
+<monospace>    np:hasPublicationInfo sub:pubinfo ;</monospace>
+<monospace>    a np:Nanopublication .</monospace>
+<monospace>}</monospace>
+<monospace>sub:assertion {</monospace>
+<monospace>  sub:semantic-triples-extracted-from-biodiversity-literature a &lt;http://www.w3.org/2002/07/owl#Class&gt; ;</monospace>
+<monospace>    rdfs:label "semantic triple extracted from biodiversity literature" ;</monospace>
+<monospace>    rdfs:subClassOf &lt;http://www.wikidata.org/entity/Q3539534&gt; ;</monospace>
+<monospace>    skos:definition "semantic triple generated after information was extracted from biodiversity literature" ;</monospace>
+<monospace>    skos:relatedMatch &lt;http://purl.org/np/RAMZHs5RfS70gZEtxxJjQtvsXZ03BBINhDPowhiqQ5WnU#semantic-triples-generated-from-XML-</monospace>
+<monospace>files&gt; .</monospace>
+<monospace>}</monospace>
+<monospace>sub:provenance {</monospace>
+<monospace>  sub:assertion prov:wasAttributedTo orcid:0000-0002-8083-6048 .</monospace>
+<monospace>}</monospace>
+<monospace>sub:pubinfo {</monospace>
+<monospace>  sub:sig npx:hasAlgorithm "RSA" ;</monospace>
+<monospace>    npx:hasPublicKey</monospace>
+<monospace>"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCwi1YMnpV5z/0oMXyFYDKS5cirQQWTMZ/jbglmVY1gl3YAgrkqsQUmgaxA/ho+VV8jsfREIL8PT2czbmCjGjMJ</monospace>
+<monospace>oNaKVqJq1GoIUV9+Kj9yXxNySyDAOTDsIM0zdj1BEu5uNbtfzwQPGuhVpgLR05Uk/meCyYLPs3BxC5zRbtulmwIDAQAB" ;</monospace>
+<monospace>    npx:hasSignature</monospace>
+<monospace>"MAKvDuDjhzerLDcmY46TxIDqqtyyUtkGAfkKhR107rtMwn7BwyIRLijiyIGjrjzQDeOkMQhPw0N8TlDXuMfp1N6C0QuSY6nbWnvMDM6tFVgxD3n7AHjPutj5N9Ru</monospace>
+<monospace>mjNlPzYffkzGyIA9BryrgzjAc6dEBn3VTJI1phJi7toCGjk=" ;</monospace>
+<monospace>    npx:hasSignatureTarget this: .</monospace>
+<monospace>  this: dct:created "2021-07-07T10:58:43.199+03:00"^^xsd:dateTime ;</monospace>
+<monospace>    dct:creator orcid:0000-0002-8083-6048 ;</monospace>
+<monospace>    npx:introduces sub:semantic-triples-extracted-from-biodiversity-literature ;</monospace>
+<monospace>    nt:wasCreatedFromProvenanceTemplate &lt;http://purl.org/np/RANwQa4ICWS5SOjw7gp99nBpXBasapwtZF1fIM3H2gYTM&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromPubinfoTemplate &lt;http://purl.org/np/RAA2MfqdBCzmz9yVWjKLXNbyfBNcwsMmOqcNUxkk1maIM&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromTemplate &lt;http://purl.org/np/RAdpgRpigXtt8iPV9uOPf3wIT3qzOI8Sg2Q72CNV8g-Yo&gt; .</monospace>
+<monospace>}</monospace>
+</preformat>
+<p>This is the class definition of “OpenBiodiv knowledge graph”:</p><preformat><monospace>@prefix this: &lt;http://purl.org/np/RAY2Gg01ffDVLprAakuMqpizAjksasRtTal_UsCf94LL8&gt; .</monospace>
+<monospace>@prefix sub: &lt;http://purl.org/np/RAY2Gg01ffDVLprAakuMqpizAjksasRtTal_UsCf94LL8#&gt; .</monospace>
+<monospace>@prefix np: &lt;http://www.nanopub.org/nschema#&gt; .</monospace>
+<monospace>@prefix dct: &lt;http://purl.org/dc/terms/&gt; .</monospace>
+<monospace>@prefix nt: &lt;https://w3id.org/np/o/ntemplate/&gt; .</monospace>
+<monospace>@prefix npx: &lt;http://purl.org/nanopub/x/&gt; .</monospace>
+<monospace>@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .</monospace>
+<monospace>@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .</monospace>
+<monospace>@prefix orcid: &lt;https://orcid.org/&gt; .</monospace>
+<monospace>@prefix prov: &lt;http://www.w3.org/ns/prov#&gt; .</monospace>
+<monospace>@prefx skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .</monospace>
+
+<monospace>sub:Head {</monospace>
+<monospace>  this: np:hasAssertion sub:assertion ;</monospace>
+<monospace>    np:hasProvenance sub:provenance ;</monospace>
+<monospace>    np:hasPublicationInfo sub:pubinfo ;</monospace>
+<monospace>    a np:Nanopublication .</monospace>
+<monospace>}</monospace>
+<monospace>sub:assertion {</monospace>
+<monospace>  sub:openbiodiv-knowledge-graph a &lt;http://www.w3.org/2002/07/owl#Class&gt; ;</monospace>
+<monospace>    rdfs:label "OpenBiodiv knowledge graph" ;</monospace>
+<monospace>    rdfs:subClassOf &lt;http://www.wikidata.org/entity/Q33002955&gt; ;</monospace>
+<monospace>    skos:definition "a knowledge graph containing statements extracted from biodiversity literature" .</monospace>
+<monospace>}</monospace>
+<monospace>sub:provenance {</monospace>
+<monospace>  sub:assertion prov:wasAttributedTo orcid:0000-0002-8083-6048 .</monospace>
+<monospace>}</monospace>
+<monospace>sub:pubinfo {</monospace>
+<monospace>  sub:sig npx:hasAlgorithm "RSA" ;</monospace>
+<monospace>    npx:hasPublicKey</monospace>
+<monospace>"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCwi1YMnpV5z/0oMXyFYDKS5cirQQWTMZ/jbglmVY1gl3YAgrkqsQUmgaxA/ho+VV8jsfREIL8PT2czbmCjGjMJ</monospace>
+<monospace>oNaKVqJq1GoIUV9+Kj9yXxNySyDAOTDsIM0zdj1BEu5uNbtfzwQPGuhVpgLR05Uk/meCyYLPs3BxC5zRbtulmwIDAQAB" ;</monospace>
+<monospace>    npx:hasSignature</monospace>
+<monospace>"WDSCKwvQnBIPTel8btfovXycebML+Pg+GVVREG15t1f5BTDrldaJGO8FN3K7rsCHp3Sel25pJyV3aySvg/lcEUFMHi46Xtxtyu1isZF7FQ0BVHM7zx+nacgxm4UW</monospace>
+<monospace>8lQMG0e9l9OUypkyQtVHphyXzgcE8L6qK+PonrSFp5twfy0=" ;</monospace>
+<monospace>    npx:hasSignatureTarget this: .</monospace>
+<monospace>  this: dct:created "2021-07-07T09:30:53.628+03:00"^^xsd:dateTime ;</monospace>
+<monospace>    dct:creator orcid:0000-0002-8083-6048 ;</monospace>
+<monospace>    npx:introduces sub:openbiodiv-knowledge-graph ;</monospace>
+<monospace>    nt:wasCreatedFromProvenanceTemplate &lt;http://purl.org/np/RANwQa4ICWS5SOjw7gp99nBpXBasapwtZF1fIM3H2gYTM&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromPubinfoTemplate &lt;http://purl.org/np/RAA2MfqdBCzmz9yVWjKLXNbyfBNcwsMmOqcNUxkk1maIM&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromTemplate &lt;http://purl.org/np/RAdpgRpigXtt8iPV9uOPf3wIT3qzOI8Sg2Q72CNV8g-Yo&gt; .</monospace>
+<monospace>}</monospace>
+</preformat>
+</sec>
+<sec id="x1-4000-x">
+<title>Funding</title>
+<p>This research received funding from the European Union’s Horizon 2020 research and innovation programme under the Marie Sklodowska-Curie grant agreement IGNITE (No. 764840).</p>
+</sec>
+</body>
+<back>
+<ref-list>
+<title>References</title>
+<ref id="ref001">
+<label>[1]</label><mixed-citation publication-type="other"><string-name><given-names>C.I.</given-names> <surname>Bucur</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Kuhn</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Ceolin</surname></string-name> and <string-name><given-names>J.</given-names> <surname>van Ossenbruggen</surname></string-name>, Expressing high-level scientific claims with formal semantics, Proceedings of the 11th Knowledge Capture Conference 2021. doi:<pub-id pub-id-type="doi">10.1145/3460210.3493561</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref002">
+<label>[2]</label><mixed-citation publication-type="book"><string-name><given-names>L.</given-names> <surname>Penev</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Dimitrova</surname></string-name>, <string-name><given-names>V.</given-names> <surname>Senderov</surname></string-name>, <string-name><given-names>G.</given-names> <surname>Zhelezov</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Georgiev</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Stoev</surname></string-name>, <string-name><surname>Simov</surname></string-name> and <string-name><given-names>K.</given-names> <surname>OpenBiodiv</surname></string-name>, <source>A Knowledge Graph for Literature-Extracted Linked Open Data in Biodiversity Science</source>, Vol. <volume>7</volume>, <publisher-name>Publications</publisher-name>, <year>2019</year>, p. <fpage>38</fpage>. doi:<pub-id pub-id-type="doi">10.3390/publications7020038</pub-id>.</mixed-citation>
+</ref>
+</ref-list>
+</back>
+</article>

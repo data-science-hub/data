@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.0 20120330//EN" "JATS-journalpublishing1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="resource-paper">
+<front>
+<journal-meta>
+<journal-id journal-id-type="publisher-id">DS</journal-id>
+<journal-title-group><journal-title>Data Science</journal-title></journal-title-group>
+<issn pub-type="epub">2451-8492</issn><issn pub-type="ppub">2451-8484</issn><issn-l>2451-8484</issn-l>
+<publisher>
+<publisher-name>IOS Press</publisher-name><publisher-loc>Nieuwe Hemweg 6B, 1013 BG Amsterdam, The Netherlands</publisher-loc>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">DS190022</article-id>
+<article-id pub-id-type="doi">10.3233/DS-190022</article-id>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Resource Paper</subject></subj-group></article-categories>
+<title-group>
+<article-title>String of PURLs – frugal migration and maintenance of persistent identifiers</article-title>
+</title-group>
+<contrib-group content-type="Editor">
+<contrib contrib-type="editor">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0003-4727-9435</contrib-id>
+<name><surname>Dumontier</surname><given-names>Michel</given-names></name>
+</contrib>
+</contrib-group>
+<contrib-group>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0001-5139-5557</contrib-id>
+<name><surname>Overton</surname><given-names>James A.</given-names></name><xref ref-type="aff" rid="affa">a</xref><xref ref-type="corresp" rid="cor1">*</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0003-4477-5601</contrib-id>
+<name><surname>Cuffaro</surname><given-names>Michael</given-names></name><xref ref-type="aff" rid="affb">b</xref>
+</contrib>
+<contrib contrib-type="author">
+<collab>The OBO Foundry Operations Committee Technical Working Group<xref ref-type="aff" rid="affc">c</xref></collab>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-6601-2165</contrib-id>
+<name><surname>Mungall</surname><given-names>Christopher J.</given-names></name><xref ref-type="aff" rid="affd">d</xref>
+</contrib>
+<aff id="affa"><label>a</label><institution>Knocean Inc.</institution>, <country>Canada</country>. E-mail: <email>james@overton.ca</email></aff>
+<aff id="affb"><label>b</label><institution>Knocean Inc.</institution>, <country>Canada</country>.</aff>
+<aff id="affc"><label>c</label>E-mail: <email>obo-foundry-technical-working-group@googlegroups.com</email></aff>
+<aff id="affd"><label>d</label><institution>Lawrence Berkeley National Laboratory</institution>, <country>USA</country>. E-mail: <email>cjmungall@lbl.gov</email></aff>
+</contrib-group>
+<contrib-group content-type="guest-editors">
+<contrib contrib-type="guest-editor">
+<name><surname>Groth</surname><given-names>Paul</given-names></name>
+</contrib>
+<contrib contrib-type="guest-editor">
+<name><surname>Dumontier</surname><given-names>Michel</given-names></name>
+</contrib>
+</contrib-group>
+<author-notes>
+<corresp id="cor1"><label>*</label>Corresponding author. E-mail: <email>james@overton.ca</email>.</corresp>
+</author-notes>
+<pub-date date-type="preprint" publication-format="electronic"><day>11</day><month>10</month><year>2019</year></pub-date><pub-date date-type="pub" publication-format="electronic"><day>12</day><month>6</month><year>2020</year></pub-date><pub-date date-type="collection" publication-format="electronic"><year>2020</year></pub-date><volume>3</volume><issue>1</issue><issue-title>FAIR Data, Systems and Analysis</issue-title><fpage>3</fpage><lpage>13</lpage><history><date date-type="received"><day>1</day><month>06</month><year>2019</year></date><date date-type="accepted"><day>27</day><month>08</month><year>2019</year></date></history>
+<permissions><copyright-statement>© 2020 – IOS Press and the authors.</copyright-statement><copyright-year>2020</copyright-year>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/" license-type="open-access" xlink:type="simple">
+<license-p>This is an open access article distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/" xlink:type="simple">Creative Commons Attribution (CC BY 4.0) License</ext-link>, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions>
+<abstract>
+<p>FAIR data requires unique and persistent identifiers. Persistent Uniform Resource Locators (PURLs) are one common solution, introducing a mapping layer from the permanent identifier to a target URL that can change over time. Maintaining a PURL system requires long-term commitment and resources, and this can present a challenge for open projects that rely heavily on volunteers and donated resources. When the PURL system used by the Open Biological and Biomedical Ontologies (OBO) community suffered major technical problems in 2015, OBO developers had to migrate quickly to a new system. We describe that migration, the new OBO PURL system that we built, and the key factors behind our design. The OBO PURL system is low-cost and low-maintenance, built on well-established open source software, customized to the needs of the OBO community, and shows how key FAIR principles can be supported on a tight budget.</p>
+</abstract>
+<kwd-group>
+<label>Keywords</label>
+<kwd>FAIR principles</kwd>
+<kwd>identifiers</kwd>
+<kwd>ontology</kwd>
+</kwd-group>
+</article-meta>
+</front>
+<body>
+<sec id="x1-1000-1">
+<label>1.</label>
+<title>Background</title>
+<p>The first of the FAIR Principles is “F1: (Meta) data are assigned globally unique and persistent identifiers” [<xref ref-type="bibr" rid="ref026">26</xref>]. Most of the other FAIR Principles are impossible to support without such identifiers. Maintaining F1 requires long-term planning and commitment, which can be difficult to achieve for large, open community projects. Here we describe a low-cost, reliable solution developed by one such community.</p>
+<sec id="x1-2000-1.1">
+<label>1.1.</label>
+<title>Open biological and biomedical ontologies</title>
+<p>The Open Biological and Biomedical Ontologies (OBO) Foundry [<xref ref-type="bibr" rid="ref019">19</xref>] is a community of open source ontology projects that have come together under a set of shared principles and best practises to create a suite of high-quality scientific ontologies that cover the biological and biomedical domains. Started in 2006 with eight candidate member projects and eight more projects under review, today the OBO library includes 160 active ontology projects, and supports five inactive and 46 obsolete projects. While a few of the largest OBO projects receive direct funding, the great majority of OBO projects are not directly funded, and are instead supported by volunteer efforts.</p>
+<p>The OBO Foundry Principles predate but often overlap with the FAIR Principles. OBO Foundry Principle 3 [<xref ref-type="bibr" rid="ref015">15</xref>] states that each ontology and every class and relation that it contains must have a unique Uniform Resource Identifier (URI), also known as a Persistent Uniform Resource Locator (PURL). The OBO Identifier Policy [<xref ref-type="bibr" rid="ref014">14</xref>] lays out the details. Each OBO project has its own IDSPACE, such as “OBI” for the Ontology for Biomedical Investigations [<xref ref-type="bibr" rid="ref005">5</xref>]. Every term in OBI has an identifier of the form <uri>http://purl.obolibrary.org/obo/OBI_0000070</uri>, the primary Web Ontology Language [<xref ref-type="bibr" rid="ref011">11</xref>] artifact for OBI is then <uri>http://purl.obolibrary.org/obo/obi.owl</uri>, and OBI developers are allowed to mint PURLs beginning with <uri>http://purl.obolibrary.org/obo/obi/</uri> to point to any resource they wish. The <monospace>obolibrary.org</monospace> domain name is owned by the OBO community.</p>
+</sec>
+<sec id="x1-3000-1.2">
+<label>1.2.</label>
+<title><ext-link ext-link-type="uri" xlink:href="http://purl.org">purl.org</ext-link></title>
+<p>The OBO community originally relied on a free PURL service offered by the Online Computer Library Center (OCLC) [<xref ref-type="bibr" rid="ref016">16</xref>]. The <monospace>purl.obolibrary.org</monospace> subdomain redirected to <monospace>purl.org</monospace>, a website that would redirect HTTP requests based on a database of PURL entries maintained by our ontology developers. OBO was just one of many projects and communities using this system. As a community we controlled the upper <monospace>obo</monospace> namespace. Each OBO project had its IDSPACE below, with a list of project developers who could access a web form to search, modify, and add PURL entries. This system was effective and appreciated by the OBO community for many years.</p>
+<p>In late 2015, the OCLC PURL system began to experience corruption of their database. To prevent further damage, OCLC chose to prevent further editing of PURLs. Existing PURLs continued to work, but OBO developers were not able to modify or add PURLs to the system. This was an untenable situation for a critical piece of infrastructure. We mobilized to find a solution.</p>
+</sec>
+<sec id="x1-4000-1.3">
+<label>1.3.</label>
+<title><ext-link ext-link-type="uri" xlink:href="http://w3id.org">w3id.org</ext-link></title>
+<p>Our direct inspiration was the <ext-link ext-link-type="uri" xlink:href="http://w3id.org">w3id.org</ext-link> system [<xref ref-type="bibr" rid="ref025">25</xref>] . It consists of a set of <monospace>.htaccess</monospace> configuration files for the Apache HTTP Server [<xref ref-type="bibr" rid="ref002">2</xref>], one for each of a large number of projects, stored and managed in a GitHub repository [<xref ref-type="bibr" rid="ref008">8</xref>]. The key advantages of this system are simplicity and robust foundations. The key information about each project’s PURLs is stored in a single text file. The whole system runs on the venerable Apache HTTP Server, one of the pillars of open source software and foundations for the World Wide Web. With decades of history and established community support, the future of the Apache HTTP Server seems to be as certain as any other technology supporting the Web.</p>
+<p>With the <ext-link ext-link-type="uri" xlink:href="http://w3id.org">w3id.org</ext-link> system as a basis, the OBO community had several additional requirements, mainly driven by a need to keep costs low. The foremost of these was the need for each ontology project to maintain its own PURL configuration as much as possible, which meant “self-serve” updates by ontology developers. We could not expect our community of ontology developers to be familiar with <monospace>.htaccess</monospace> files, which allow a wide range of configuration options, far beyond the small set of functionality required to configure PURLs. Our key innovation was an alternative configuration file format, using YAML, designed for our specific needs. Scripts would translate these YAML configuration files to <monospace>.htaccess</monospace> files.</p>
+<p>In November 2015, the OBO PURL system was deployed by redirecting the <monospace>purl.obolibrary.</monospace><monospace>org</monospace> subdomain from <monospace>purl.org</monospace> to our new server.</p>
+</sec>
+</sec>
+<sec id="x1-5000-2">
+<label>2.</label>
+<title>Implementation</title>
+<p>The OBO PURL system, like the OCLC PURL system that it replaced and the <ext-link ext-link-type="uri" xlink:href="http://w3id.org">w3id.org</ext-link> system that inspired it, is fundamentally a web server that responds to HTTP requests with HTTP redirect responses. Although our community has a focus on ontology files, the target of the redirect can be any resource that a URI can address. Most responses are HTTP 302 “Found” (originally called “Moved Temporarily” in the HTTP 1.0 specification), for which the body of the response is just the target URI. The PURL server does not itself host content, it simply redirects requests to another server that hosts the content. The key advantage is a layer of indirection: as resources are migrated to different hosts, with different URIs, the PURL system is updated to point to the new host, but the PURL stays the same.</p>
+<p>The target of the redirect is determined by pattern matching against the PURL. The functionality required by the OBO community can be divided into three cases. First and simplest are exact matches, where a single PURL redirects to a single URI. Second are “prefix” matches, where the first part of the PURL is matched, and then the remaining “suffix” is appended to the target URI. Third and most complex are general regular expression matches. These can encode complex rules, but can also violate the division of the PURL “space” into distinct projects, discussed below. The use of this third type of matching rule is discouraged, but required to support a small number of cases.</p>
+<p>Our primary goal was therefore to support HTTP redirects for these three cases. We had several additional requirements driven by a need to keep costs low. A key advantage of the OCLC system for OBO was that it was freely provided. Most OBO projects do not have funding, and rely on free or donated infrastructure. There was no direct funding available for an OBO PURL system, and no prospect of long-term funding. The new system would have to be built and maintained with a very limited budget of volunteer hours and donated resources. Constrained resources also drove a need to build a system that could be expected to last for many years with minimal modifications. In addition to cost considerations, the OBO commitment to open source was a strong reason to choose open source software. We were willing to spend more time on initial design and implementation of features when we were convinced that this would lower long-term maintenance costs.</p>
+<sec id="x1-6000-2.1">
+<label>2.1.</label>
+<title>Similarities to <ext-link ext-link-type="uri" xlink:href="http://w3id.org">w3id.org</ext-link></title>
+<p>The first implementation decision we made was to follow <ext-link ext-link-type="uri" xlink:href="http://w3id.org">w3id.org</ext-link> in their choice of the Apache HTTP Server. Initially released in 1995, the Apache HTTP Server is nearly as old as the Web itself, and it has had a central role in the Web ever since, with recent estimates that it serves more than a third of all traffic on the Web today [<xref ref-type="bibr" rid="ref004">4</xref>]. We use the 2.0 series of Apache HTTP Server, often called <monospace>apache2</monospace>.</p>
+<p>We also followed <ext-link ext-link-type="uri" xlink:href="http://w3id.org">w3id.org</ext-link> in using <monospace>.htaccess</monospace> files to configure the server, and dividing these files by project. The Apache HTTP Server can be configured from a single, “global” configuration file, but it also supports modifications of the global configuration by <monospace>.htaccess</monospace> files inside the <monospace>DocumentRoot</monospace> directory of files to serve. When an HTTP request is received, the server will try to map the request path to a path on the file system. It will then search that directory on the file system, and all the directories above it, for <monospace>.htaccess</monospace> files. The configuration in the <monospace>.htaccess</monospace> files is merged with the global configuration, and the server handles the response. Because the file system is hierarchical, the use of <monospace>.htaccess</monospace> files allows for a similarly hierarchical configuration of the server.</p>
+<p>For our purposes, the key advantage of configuration with <monospace>.htaccess</monospace> files is that each OBO project has a directory that corresponds to the project’s IDSPACE and contains the project’s <monospace>.htaccess</monospace> file. The configuration in the project’s <monospace>.htaccess</monospace> file has no effect on other OBO projects in other directories. This isolation prevents mistakes or errors in one project’s configuration from affecting other projects. For example, the Ontology for Biomedical Investigations has IDSPACE “OBI”, and the OBI project is granted control of all PURLs starting with <uri>http://purl.obolibrary.org/obo/obi/</uri>. The OBO PURL system has a <monospace>www/obo/obi/.htaccess</monospace> file that configures the majority of PURLs for the OBI project (with exceptions discussed below). When a request for <uri>http://purl.obolirbary.org/obo/obi/obi_core.owl</uri> is received, the Apache HTTP Server will look on the file system, find that <monospace>www/obo/obi/.htaccess</monospace> file, and use that configuration to handle the request. Critically, the Gene Ontology’s (GO) [<xref ref-type="bibr" rid="ref003">3</xref>] <monospace>www/obo/go/.htaccess</monospace> file is not used to handle this request, so the PURL configuration for GO is isolated from the configuration for OBI.</p>
+</sec>
+<sec id="x1-7000-2.2">
+<label>2.2.</label>
+<title>Custom configuration</title>
+<p>At this point, our use cases for a PURL system began to differ from <ext-link ext-link-type="uri" xlink:href="http://w3id.org">w3id.org</ext-link>. While the separation of projects in <ext-link ext-link-type="uri" xlink:href="http://w3id.org">w3id.org</ext-link> is strict, and so separate <monospace>.htaccess</monospace> files meet the majority of needs, the OBO Identifier Policy puts many PURLs in the shared space directly under <uri>http://purl.obolibrary.org/obo/</uri>. These include ontology term identifiers such as <uri>http://purl.obolibrary.org/obo/OBI_0000070</uri> and OWL files such as <uri>http://purl.obolibrary.org/obo/obi.owl</uri>. Using the <monospace>.htaccess</monospace> configuration mechanism, all ontology projects would have to be able to modify the <monospace>www/obo/.htaccess</monospace> file. Since this configuration is read when accessing OBI, GO, and all other project-specific <monospace>.htaccess</monospace> files, mistakes and errors could affect any and all OBO projects. We would need another way to enforce isolation.</p>
+<p>To reduce the maintenance burden on our core team of developers, we wanted the developers for each OBO project to be able to maintain the PURL configuration for their own project. We could not expect these developers to be familiar with regular expressions, and wanted additional safeguards to enforce isolation. The <monospace>.htaccess</monospace> files allow a wide range of server configuration, far beyond what is required for PURL redirects.</p>
+<p>Our solution was to define a custom configuration format using YAML [<xref ref-type="bibr" rid="ref020">20</xref>], a language for structured data, that was suited to our specific needs and the OBO Identifier Policy. YAML is widely supported, with parsing libraries available in most modern programming languages. While XML and JSON are other widely-used formats for configuration files, YAML is particularly light-weight and well-suited for people to read and write. Each project is assigned a YAML file to maintain. Python scripts are used to validate the YAML against a schema, then translate it into <monospace>.htaccess</monospace> files.</p>
+<fig id="x1-7001-1">
+<label>Listing 1.1.</label>
+<caption>
+<p>Exerpt from the YAML configuration file for OBI, showing all required PURL configuration information</p>
+</caption>
+<graphic xlink:href="ds-3-ds190022-g001.jpg"/>
+</fig>
+<p>Listing <xref rid="x1-7001-1">1.1</xref> shows an excerpt from the <monospace>obi.yml</monospace> configuration file. This YAML file consists of various key/value pairs, and some ordered lists. First, the <monospace>idspace</monospace> key has the value <monospace>OBI</monospace>. The <monospace>base_url</monospace> is the prefix for all PURLs in the project’s unrestricted space. For OBI, this means all PURLs that start with <uri>http://purl.obolibrary.org/obo/obi/</uri>.</p>
+<p>The <monospace>products</monospace> key has a list of the “top-level” artifacts for OBI in the shared part of the space of OBO PURLs. These two list items correspond to the PURLs <uri>http://purl.obolibrary.org/obo/obi.owl</uri> and <uri>http://purl.obolibrary.org/obo/obi.obo</uri> respectively.</p>
+<p>The <monospace>term_browser</monospace> indicates where individual OBI terms such as <uri>http://purl.obolibrary.org/obo/OBI_0000070</uri> should be handled. Ontobee is a term browser used by many OBO projects [<xref ref-type="bibr" rid="ref017">17</xref>]. We are in the process of adding the Ontology Lookup Service as an alternative [<xref ref-type="bibr" rid="ref013">13</xref>], and eight projects use their own term browser. The <monospace>example_terms</monospace> key has a list of term IDs for testing purposes.</p>
+<p>The <monospace>entries</monospace> list is the largest part of the YAML configuration files for the OBO PURL system. There are three types of entries, corresponding to the three cases discussed above: <monospace>exact</monospace>, <monospace>prefix</monospace>, and <monospace>regex</monospace>. An <monospace>exact</monospace> entry specifies the last part of the PURL and the <monospace>replacement</monospace> URI. The PURL is formed by concatenating: the domain “<uri>http://purl.obolibrary.org</uri>”, the <monospace>base_url</monospace>, and the value of <monospace>exact</monospace>. Automated tests can check that the server responds to that PURL with an HTTP 302 response containing exactly the value of <monospace>replacement</monospace>.</p>
+<p>The second type of entry is <monospace>prefix</monospace>. The PURL is formed as before and matched against the request. If the first part of the request matches, the remaining “suffix” is appended to the value of <monospace>replacement</monospace> to form the response URI. The optional <monospace>tests</monospace> key contains a list of test cases for checking that the prefix entry is properly formed. Listing <xref rid="x1-7023-2">1.2</xref> shows a <monospace>regex</monospace> entry, which is structurally similar to a prefix entry, but allows an arbitrary regular expression for matching.</p>
+<fig id="x1-7023-2">
+<label>Listing 1.2.</label>
+<caption>
+<p>Exerpt from the YAML configuration file for GO, showing a regex entry matching two parts of a PURL and providing test cases</p>
+</caption>
+<graphic xlink:href="ds-3-ds190022-g002.jpg"/>
+</fig>
+<p>The order of entries is significant. The first matching entry will be used for the response.</p>
+<p>The list of entries is translated into the project-specific <monospace>.htaccess</monospace> file, and therefore configures all the PURLs in the project’s own unrestricted space. The other keys are translated into the shared <monospace>.htaccess</monospace> file for the shared OBO PURL space. These are tightly controlled, providing another layer of isolation between projects.</p>
+<p>It is also worth considering the features that we did not support with our YAML configuration files. In particular, there are no variables or macro expansions, just literal data. This can mean that strings are repeated, violating the “Don’t Repeat Yourself” mantra of many programmers, but it has the advantage of simplicity: simpler code, a simpler mental model for users reading and writing the files, and simpler debugging. We have also focused completely on PURL configuration – there is no other data or metadata about the ontology project in these configuration files. OBO maintains a registry of ontologies with data and metadata about each project, also using YAML for structured information. We considered merging the registry with the PURL system, and using a single YAML file for project (meta)data and PURLs. In the end, we decided on a separation of concerns between the registry and PURL system.</p>
+<p>The YAML files are read, validated, and translated into <monospace>.htaccess</monospace> files by scripts. We chose Python 3 as the programming language to implement these scripts, since it is well-known, well-supported, well-established, and open source. We expect Python 3 to be supported for many years to come.</p>
+</sec>
+<sec id="x1-8000-2.3">
+<label>2.3.</label>
+<title>Testing and deployment</title>
+<p>Our PURL system is critical infrastructure, and we have implemented a thorough testing process to check and maintain it. Our Python scripts are tested against a set of known-good example files. Each YAML file is checked with a JSON Schema [<xref ref-type="bibr" rid="ref012">12</xref>], first converting YAML to JSON, then using Python’s <monospace>jsonschema</monospace> library [<xref ref-type="bibr" rid="ref018">18</xref>]. Another Python script reads the YAML configuration files again for test specifications, and makes a series of HTTP requests against the Apache HTTP Server to verify that responses are as configured.</p>
+<p>We use Ansible [<xref ref-type="bibr" rid="ref001">1</xref>], a software provisioning system, to automate the deployment of the OBO PURL system. The target of the deployment can be: a local Vagrant [<xref ref-type="bibr" rid="ref024">24</xref>] virtual machine, for development; a Travis CI [<xref ref-type="bibr" rid="ref021">21</xref>] container, for continuous integration testing; or the production server. By using the same Ansible configuration to provision all three of these environments, we try to ensure that our development and testing systems are as similar as possible to the production system.</p>
+<p>For our operating system we chose Ubuntu Linux [<xref ref-type="bibr" rid="ref023">23</xref>], although many other Linux distributions would have worked as well. Ubuntu is open source, freely available, and supports the software and libraries we require. The most relevant factor in this choice was that Travis CI supports Ubuntu by default, and so using Ubuntu for all three environments was straightforward.</p>
+<p>The PURL configuration, scripts, and deployment tools are all managed in a git repository for version control [<xref ref-type="bibr" rid="ref007">7</xref>]. Since the <monospace>.htaccess</monospace> files are generated directly and deterministically from the YAML configuration files and Python scripts, they are excluded from version control. The git repository is hosted on GitHub at <uri>https://github.com/OBOFoundry/purl.obolibrary.org</uri> (which is the target of the PURL <uri>http://purl.obolibrary.org</uri>). GitHub provides a number of convenient features, but if GitHub were to shut down, it would be straightforward to migrate the git repository to another host, or host the repository on our own server.</p>
+<p>The convenient features offered by GitHub go beyond browsing the files and their histories in the repository. It is straightforward for any GitHub user to use the GitHub web interface to edit any of the YAML configuration files and make a Pull Request (PR). The PR is then automatically tested using Travis CI and the automated tests described above, resulting in a simple “pass/fail” message and a log. Our core developers then manually review the PR, check that the user is allowed to edit these PURLs, ask for changes or help fix problems, and merge the changes into the <monospace>master</monospace> branch. Like GitHub, the use of Travis CI is convenient, but we could switch to another CI service or host our own automated testing if required.</p>
+<p>The production PURL server checks GitHub for changes to <monospace>master</monospace> every ten minutes, using <monospace>cron</monospace> for scheduling and GNU Make [<xref ref-type="bibr" rid="ref009">9</xref>] to execute tasks. If there has been a recent change that has passed the Travis CI tests, then the changes are “pulled” from the <monospace>master</monospace> branch of the GitHub repository and tested again on the server. If all tests pass, the new configuration replaces the old configuration, and the server is up-to-date with the GitHub repository. Figure <xref rid="x1-8001-1">1</xref> shows the system architecture. Figure <xref rid="x1-8002-2">2</xref> shows the sequence of events for a normal PURL configuration change.</p>
+<fig id="x1-8001-1">
+<label>Fig. 1.</label>
+<caption>
+<p>OBO PURL architecture: both PURL config and Ansible configs managed on GitHub (other files not shown: Vagrantfile, .htaccess files, etc). Anyone can make Pull Requests (PRs) to update these using any git client, or more typically the GitHub web interface. PRs validated by Travis CI, and merged or closed by OBO admins. The decoupled EC2 server polls GitHub for changed configs, rebuilds Apache configuration on change. End users and web agents interact with web server, which issues redirection (302) responses. (All images from Wikipedia. GitHub and EC2 images public domain. Apache image under Apache license. Travis-CI image labeled fair use.)</p>
+</caption>
+<graphic xlink:href="ds-3-ds190022-g003.jpg"/>
+</fig>
+<fig id="x1-8002-2">
+<label>Fig. 2.</label>
+<caption>
+<p>The normal sequence of events for a PURL configuration update involves: “Fred” the maintainer of a specific project make a change and initiates a Pull Request (PR) to the GitHub repository; the PR is automated tested with Travis CI; an OBO admin approves and merges the PR; the “EC2” production server polls for changes, tests again, and updates the Apache HTTP server configuration; an end-user “Browser” uses the updated PURL.</p>
+</caption>
+<graphic xlink:href="ds-3-ds190022-g004.jpg"/>
+</fig>
+</sec>
+<sec id="x1-9000-2.4">
+<label>2.4.</label>
+<title>Migration from <ext-link ext-link-type="uri" xlink:href="http://purl.org">purl.org</ext-link></title>
+<p>The initial development of the OBO PURL system required migration of thousands of PURL entries from the OCLC PURL system. Fortunately, even though the editing features of the OCLC PURL editing interface were locked due to technical problems during that period, it was still possible to search for PURL entries and download that information in XML files. We wrote a Python script that fetched an XML file for each project and converted the XML to our YAML format. Then we performed extensive manual and automated testing to ensure that our new OBO PURL system was returning the same responses as the OCLC PURL system that it was replacing. The OCLC system continued to run as a failover. After the initial migration, all configuration has been maintained in the YAML files for the new system.</p>
+</sec>
+</sec>
+<sec id="x1-10000-3">
+<label>3.</label>
+<title>Results</title>
+<p>On November 23, 2015 we updated the DNS for <monospace>purl.obolibrary.org</monospace> to point to our new OBO PURL server. We gave the OBO community advanced notice and asked to be notified of any problems. No problems were reported. The system has been running ever since, including one migration to a new server. As of this writing, the git repository has had 55 contributors making more than one thousand commits. We estimate that at least a quarter of our contributors would not be able to reliably edit an ‘.htaccess‘ file directly, and thus our YAML configuration layer expands the number of contributors by at least that much. The OBO community has been uniformly positive about our PURL system.</p>
+<p>At the time of writing, the OBO PURL system is handling between 17,000 and 56,000 hits per day, from between 800 and 2000 unique visitors per day. An average of 20 hits per day are handled as HTTP errors (a “4xx” status code), and most of these are simply malformed PURLs, with the rest handled as redirects. The goaccess log analyzer [<xref ref-type="bibr" rid="ref010">10</xref>] (version 1.3) classifies 75% of hits as “Crawlers” (with Google appearing to account for 30%) and 15% as “Unknown”. This indicates that 90% of PURL traffic is from automated agents, and just 10% from humans using web browsers. It is important to note that this is not a measure of the use of OBO identifiers, since many resources and databases use or host OBO terms and ontologies without any need to make HTTP requests for the PURLs.</p>
+<p>The system has been running on a single “t2.micro” virtual server on Amazon Web Service (AWS) Elastic Compute Cloud (EC2). While this is not the cheapest hosting option, AWS is flexible and powerful, and our costs are approximately $20 USD per month. The Apache HTTP Server is very efficient at handling PURL requests, and this very basic virtual server has proved more than adequate for our needs. While AWS is convenient, nothing about our system locks us in to a single hosting provider.</p>
+<p>The most significant problem we have encountered with the OBO PURL system was caused by differences between the Travis CI and production environments [<xref ref-type="bibr" rid="ref022">22</xref>]. The first version of the system used the <monospace>kwalify</monospace> YAML schema validation tool to check configuration files. Although standard packages were installed, the installed path differed between the Vagrant/production environment and the Travis CI environment. The upshot was that, when an edit caused a YAML file to violate our schema, the continuous integration checks would still pass, and developers would merge changes, but then tests would fail on the production server, blocking any updates until the schema violation was fixed. This proved difficult to debug, since our only means of access to the Travis CI environment was by making a commit, waiting for the tests to run, and then checking the log for the commit. In the end, we replaced the <monospace>kwalify</monospace> tool with the <monospace>jsonschema</monospace> Python library, and converted the schema to JSON Schema.</p>
+<p>Initial development of this system, testing, and migration of PURL entries from OCLC took one developer approximately three weeks of full-time effort, with support for design, testing, and review by our small team of core developers who work on shared OBO infrastructure. In early 2019 we assigned a developer who was new to the project to review and revise the code for improved documentation and maintenance, and faster translation of the YAML. This was completed in approximately 40 hours of work. The most interesting part of the refactoring is that we were able to check that the revised code translated each YAML file to exactly the same <monospace>.htaccess</monospace> file as before. This was an unexpected benefit of our two-layer configuration approach, which (along with our other automated tests) assured us that the revisions were correct.</p>
+</sec>
+<sec id="x1-11000-4">
+<label>4.</label>
+<title>Future work</title>
+<p>Although a single small server has easily handled our load, we would like to add a second or third server to improve redundancy and reduce downtime in case one server fails. This is common practise for web applications, but it would increase the complexity and costs of our system significantly. We are currently in the process of implementing a simple two-server configuration with a load-balancer.</p>
+<p>Our YAML configuration files are certainly easier for our users to read and write than <monospace>.htaccess</monospace> files. We would like to make the editing process even simpler, and thereby increase the number of ontology developers who are comfortable maintaining the PURL configuration for their projects. We have developed a prototype web-based editor for our YAML files using the CodeMirror editor [<xref ref-type="bibr" rid="ref006">6</xref>]. The key advantage of this system is immediate validation of the YAML, giving the user direct feedback about mistakes and errors. This prototype is currently under review by our developers. We have also considered a more structured HTML form driven by our JSON Schema.</p>
+<p>The OBO PURL system has been designed for the specific needs of our community, but we would be happy to see others benefit from our work. Our code is distrubted under a BSD3 open source license. Developers from another community requiring PURLs could adapt our YAML configuration format and JSON schema to suit their own requirements, and deploy their own PURL server. They would thereby gain all the advantages that we have over the <ext-link ext-link-type="uri" xlink:href="http://w3id.org">w3id.org</ext-link> system, including easier configuration editing, validation, testing, and refactoring.</p>
+</sec>
+<sec id="x1-12000-5">
+<label>5.</label>
+<title>Conclusion</title>
+<p>FAIR data is not possible without unique and persistent identifiers. Maintaining these identifiers requires managing the tides of change, both for technology such as hosting providers, but also for the people who develop, use, and maintain that technology. PURL systems introduce a layer of abstraction that allows the same PURL to redirect to different URIs over time. As long as users and their tools use the PURLs, and developers maintain the PURL mappings, the same PURL will continue to point to the same resource indefinitely.</p>
+<p>Maintaining a PURL system has real costs. For open source projects and communities such as OBO that rely on volunteer efforts and donated resources, these costs are significant. It is tempting to outsource your PURL system to a third party. While that may be the right choice in many cases, there are also risks. The OBO community was forced to quickly migrate away from OCLC, and decided that building and maintaining our own PURL system was the better choice for our needs.</p>
+<p>Here we have described a low-cost, low-maintenance PURL system that suits the specific needs of the OBO community. It was carefully designed not to be exciting or cutting-edge. We rely on the time-tested Apache HTTP Server at root, then use well-established open source software such as Python, YAML, and GNU Make to build a customized configuration layer. We combine free and low-cost services such as GitHub, Travis CI, and AWS EC2 to implement the system, while being careful to ensure that we will be able to migrate away from any of these services when the need arises.</p>
+<p>The OBO PURL system has been a success story for our community. Despite pressure to replace the failing OCLC system quite quickly, the migration to the new system went smoothly. The system has run reliably. More than 50 ontology developers have contributed, making more than one thousand changes to manage PURLs for 175 projects, and counting. Tens of thousands of PURLs are handled every day, ensuring that OBO terms and ontologies continue to be Findable, so that they can also be Accessible, Interoperable, and Reusable.</p>
+</sec>
+</body>
+<back>
+<ack>
+<title>Acknowledgements</title>
+<p><list list-type="bullet">
+<list-item>
+<p>From the National Human Genome Research Institute (NIH) for “Services to support the OBO foundry standards” (R24-HG010032).</p>
+</list-item>
+<list-item>
+<p>From the Department of Health and Human Services (NIH) for “Immune Epitope Database and Analysis Resource Program” (HHSN272201200010C).</p>
+</list-item>
+<list-item>
+<p>From the National Human Genome Research Institute (NIH) for “Gene Ontology Consortium” (U41HG002273)</p>
+</list-item>
+</list></p>
+</ack>
+<ref-list>
+<title>References</title>
+<ref id="ref001">
+<label>[1]</label><mixed-citation publication-type="other">Ansible is simple IT automation, <uri>https://www.ansible.com</uri> (last visited June 1, 2019).</mixed-citation>
+</ref>
+<ref id="ref002">
+<label>[2]</label><mixed-citation publication-type="other">Apache HTTP server project, <uri>https://httpd.apache.org</uri> (last visited June 1, 2019).</mixed-citation>
+</ref>
+<ref id="ref003">
+<label>[3]</label><mixed-citation publication-type="journal"><string-name><given-names>M.</given-names> <surname>Ashburner</surname></string-name>, <string-name><given-names>C.A.</given-names> <surname>Ball</surname></string-name>, <string-name><given-names>J.A.</given-names> <surname>Blake</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Botstein</surname></string-name>, <string-name><given-names>H.</given-names> <surname>Butler</surname></string-name>, <string-name><given-names>J.M.</given-names> <surname>Cherry</surname></string-name> <etal>et al.</etal>, <article-title>Gene ontology: Tool for the unification of biology</article-title>, <source>Nature Genetics</source> <volume>25</volume>(<issue>1</issue>) (<year>2000</year>), <fpage>25</fpage>. doi:<pub-id pub-id-type="doi">10.1038/75556</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref004">
+<label>[4]</label><mixed-citation publication-type="other">August 2018 web server survey, <uri>https://news.netcraft.com/archives/2018/08/24/august-2018-web-server-survey.html</uri> (last visited June 1, 2019).</mixed-citation>
+</ref>
+<ref id="ref005">
+<label>[5]</label><mixed-citation publication-type="other"><string-name><given-names>A.</given-names> <surname>Bandrowski</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Brinkman</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Brochhausen</surname></string-name>, <string-name><given-names>M.H.</given-names> <surname>Brush</surname></string-name>, <string-name><given-names>B.</given-names> <surname>Bug</surname></string-name>, <string-name><given-names>M.C.</given-names> <surname>Chibucos</surname></string-name> <etal>et al.</etal>, <article-title>The ontology for biomedical investigations</article-title>, <source>PloS ONE</source> <volume>11</volume>(<issue>4</issue>) (<year>2016</year>), <elocation-id>e0154556</elocation-id>. doi:<pub-id pub-id-type="doi">10.1371/journal.pone.0154556</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref006">
+<label>[6]</label><mixed-citation publication-type="other"><collab>CodeMirror</collab>, <uri>https://codemirror.net</uri> (last visited June 1, 2019).</mixed-citation>
+</ref>
+<ref id="ref007">
+<label>[7]</label><mixed-citation publication-type="other"><collab>Git</collab>, <uri>https://git-scm.com</uri> (last visited June 1, 2019).</mixed-citation>
+</ref>
+<ref id="ref008">
+<label>[8]</label><mixed-citation publication-type="other"><collab>GitHub</collab>, <uri>https://github.com</uri> (last visited June 1, 2019).</mixed-citation>
+</ref>
+<ref id="ref009">
+<label>[9]</label><mixed-citation publication-type="other">GNU Make, <uri>https://www.gnu.org/software/make/</uri> (last visited June 1, 2019).</mixed-citation>
+</ref>
+<ref id="ref010">
+<label>[10]</label><mixed-citation publication-type="other"><collab>GoAccess</collab>, Visual web log analyzer, <uri>https://goaccess.io</uri> (last visited June 1, 2019).</mixed-citation>
+</ref>
+<ref id="ref011">
+<label>[11]</label><mixed-citation publication-type="other"><string-name><given-names>P.</given-names> <surname>Hitzler</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Krötzsch</surname></string-name>, <string-name><given-names>B.</given-names> <surname>Parsia</surname></string-name> and <string-name><given-names>S.</given-names> <surname>Rudolph</surname></string-name>, OWL 2 web ontology language primer, <uri>https://www.w3.org/TR/owl2-overview/</uri>, 2009.</mixed-citation>
+</ref>
+<ref id="ref012">
+<label>[12]</label><mixed-citation publication-type="other">JSON Schema, <uri>https://json-schema.org</uri> (last visited June 1, 2019).</mixed-citation>
+</ref>
+<ref id="ref013">
+<label>[13]</label><mixed-citation publication-type="chapter"><string-name><given-names>S.</given-names> <surname>Jupp</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Burdett</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Leroy</surname></string-name> and <string-name><given-names>H.E.</given-names> <surname>Parkinson</surname></string-name>, <chapter-title>A new ontology lookup service at EMBL-EBI</chapter-title>, in: <source>SWAT4LS</source>, <year>2015</year>, pp. <fpage>118</fpage>–<lpage>119</lpage>, <uri>http://ceur-ws.org/Vol-1546/paper_29.pdf</uri>.</mixed-citation>
+</ref>
+<ref id="ref014">
+<label>[14]</label><mixed-citation publication-type="other">OBO Foundry identifier policy, <uri>http://obofoundry.org/id-policy.html</uri> (last visited June 1, 2019).</mixed-citation>
+</ref>
+<ref id="ref015">
+<label>[15]</label><mixed-citation publication-type="other">OBO Foundry principle 3 “URI/identifier space”, <uri>http://obofoundry.org/principles/fp-003-uris.html</uri> (last visited June 1, 2019).</mixed-citation>
+</ref>
+<ref id="ref016">
+<label>[16]</label><mixed-citation publication-type="other"><collab>OCLC</collab>, Worldwide, member-driven library cooperative, <uri>https://oclc.org</uri> (last visited June 1, 2019).</mixed-citation>
+</ref>
+<ref id="ref017">
+<label>[17]</label><mixed-citation publication-type="journal"><string-name><given-names>E.</given-names> <surname>Ong</surname></string-name>, <string-name><given-names>Z.</given-names> <surname>Xiang</surname></string-name>, <string-name><given-names>B.</given-names> <surname>Zhao</surname></string-name>, <string-name><given-names>Y.</given-names> <surname>Liu</surname></string-name>, <string-name><given-names>Y.</given-names> <surname>Lin</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Zheng</surname></string-name> <etal>et al.</etal>, <article-title>Ontobee: A linked ontology data server to support ontology term dereferencing, linkage, query and integration</article-title>, <source>Nucleic Acids Research</source> <volume>45</volume>(<issue>D1</issue>) (<year>2016</year>), <fpage>D347</fpage>–<lpage>D352</lpage>. doi:<pub-id pub-id-type="doi">10.1093/nar/gkw918</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref018">
+<label>[18]</label><mixed-citation publication-type="other">Python jsonschema library, <uri>https://github.com/Julian/jsonschema</uri> (last visited June 1, 2019).</mixed-citation>
+</ref>
+<ref id="ref019">
+<label>[19]</label><mixed-citation publication-type="journal"><string-name><given-names>B.</given-names> <surname>Smith</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Ashburner</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Rosse</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Bard</surname></string-name>, <string-name><given-names>W.</given-names> <surname>Bug</surname></string-name>, <string-name><given-names>W.</given-names> <surname>Ceusters</surname></string-name> <etal>et al.</etal>, <article-title>The OBO Foundry: Coordinated evolution of ontologies to support biomedical data integration</article-title>, <source>Nature Biotechnology</source> <volume>25</volume>(<issue>11</issue>) (<year>2007</year>), <fpage>1251</fpage>. doi:<pub-id pub-id-type="doi">10.1038/nbt1346</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref020">
+<label>[20]</label><mixed-citation publication-type="other">The offical YAML website, <uri>https://yaml.org</uri> (last visited June 1, 2019).</mixed-citation>
+</ref>
+<ref id="ref021">
+<label>[21]</label><mixed-citation publication-type="other"><collab>Travis CI</collab>, Test and deploy with confidence, <uri>https://travis-ci.com</uri> (last visited June 1, 2019).</mixed-citation>
+</ref>
+<ref id="ref022">
+<label>[22]</label><mixed-citation publication-type="other">Travis false positive on schema validation, <uri>https://github.com/OBOFoundry/purl.obolibrary.org/issues/290</uri> (last visited June 1, 2019).</mixed-citation>
+</ref>
+<ref id="ref023">
+<label>[23]</label><mixed-citation publication-type="other">Ubuntu Linux, <uri>https://www.ubuntu.com</uri> (last visited June 1, 2019).</mixed-citation>
+</ref>
+<ref id="ref024">
+<label>[24]</label><mixed-citation publication-type="other">Vagrant by HashiCorp, <uri>https://www.vagrantup.com</uri> (last visited June 1, 2019).</mixed-citation>
+</ref>
+<ref id="ref025">
+<label>[25]</label><mixed-citation publication-type="other"><collab>w3id.org</collab>, Permanent identifiers for the web, <uri>http://w3id.org</uri> (last visited June 1, 2019).</mixed-citation>
+</ref>
+<ref id="ref026">
+<label>[26]</label><mixed-citation publication-type="other"><string-name><given-names>M.D.</given-names> <surname>Wilkinson</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Dumontier</surname></string-name>, <string-name><given-names>I.J.</given-names> <surname>Aalbersberg</surname></string-name>, <string-name><given-names>G.</given-names> <surname>Appleton</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Axton</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Baak</surname></string-name> <etal>et al.</etal>, <article-title>The FAIR guiding principles for scientific data management and stewardship</article-title>, <source>Scientific Data</source> <volume>3</volume> (<year>2016</year>). doi:<pub-id pub-id-type="doi">10.1038/sdata.2016.18</pub-id>.</mixed-citation>
+</ref>
+</ref-list>
+</back>
+</article>

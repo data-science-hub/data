@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.0 20120330//EN" "JATS-journalpublishing1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="resource-paper" dtd-version="1.0">
+<front>
+<journal-meta>
+<journal-id journal-id-type="publisher-id">DS</journal-id>
+<journal-title-group><journal-title>Data Science</journal-title></journal-title-group>
+<issn pub-type="epub">2451-8492</issn><issn pub-type="ppub">2451-8484</issn><issn-l>2451-8484</issn-l>
+<publisher>
+<publisher-name>IOS Press</publisher-name><publisher-loc>Nieuwe Hemweg 6B, 1013 BG Amsterdam, The Netherlands</publisher-loc>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">DS210034</article-id>
+<article-id pub-id-type="doi">10.3233/DS-210034</article-id>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Resource Paper</subject></subj-group></article-categories>
+<title-group>
+<article-title>Arangopipe, a tool for machine learning meta-data management</article-title>
+</title-group>
+<contrib-group content-type="Editor">
+<contrib contrib-type="editor">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-5759-2655</contrib-id>
+<name><surname>Davis</surname><given-names>Brian</given-names></name>
+</contrib>
+</contrib-group>
+<contrib-group>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-1552-382X</contrib-id>
+<name><surname>Schad</surname><given-names>Jörg</given-names></name><xref ref-type="aff" rid="affa">a</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-4865-7218</contrib-id>
+<name><surname>Sambasivan</surname><given-names>Rajiv</given-names></name><xref ref-type="aff" rid="affb">b</xref><xref ref-type="corresp" rid="cor2">*</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0003-4850-3101</contrib-id>
+<name><surname>Woodward</surname><given-names>Christopher</given-names></name><xref ref-type="aff" rid="affc">c</xref>
+</contrib>
+<aff id="affa"><label>a</label><institution>ArangoDB</institution>, CA, <country>USA</country>. E-mail: <email>joerg@arangodb.com</email></aff>
+<aff id="affb"><label>b</label><institution>ArangoDB</institution>, CA, <country>USA</country>. E-mail: <email>rajiv@arangodb.com</email></aff>
+<aff id="affc"><label>c</label><institution>ArangoDB</institution>, CA, <country>USA</country>. E-mail: <email>christopher@arangodb.com</email></aff>
+</contrib-group>
+<author-notes>
+<corresp id="cor2"><label>*</label>Corresponding author. E-mail: <email>rajiv@arangodb.com</email>.</corresp>
+</author-notes>
+<pub-date date-type="preprint" publication-format="electronic"><day>13</day><month>10</month><year>2021</year></pub-date><pub-date date-type="pub" publication-format="electronic"><day>13</day><month>10</month><year>2021</year></pub-date><pub-date date-type="collection" publication-format="electronic"><year>2021</year></pub-date><volume>4</volume><issue>2</issue><fpage>85</fpage><lpage>99</lpage><history><date date-type="received"><day>26</day><month>03</month><year>2021</year></date><date date-type="accepted"><day>12</day><month>07</month><year>2021</year></date></history>
+<permissions><copyright-statement>© 2021 – The authors. Published by IOS Press.</copyright-statement><copyright-year>2021</copyright-year>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/" license-type="open-access" xlink:type="simple">
+<license-p>This is an open access article distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/" xlink:type="simple">Creative Commons Attribution (CC BY 4.0) License</ext-link>, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions>
+<abstract>
+<p>Experimenting with different models, documenting results and findings, and repeating these tasks are day-to-day activities for machine learning engineers and data scientists. There is a need to keep control of the machine-learning pipeline and its metadata. This allows users to iterate quickly through experiments and retrieve key findings and observations from historical activity. This is the need that Arangopipe serves. Arangopipe is an open-source tool that provides a data model that captures the essential components of any machine learning life cycle. Arangopipe provides an application programming interface that permits machine-learning engineers to record the details of the salient steps in building their machine learning models. The components of the data model and an overview of the application programming interface is provided. Illustrative examples of basic and advanced machine learning workflows are provided. Arangopipe is not only useful for users involved in developing machine learning models but also useful for users deploying and maintaining them.</p>
+</abstract>
+<kwd-group>
+<label>Keywords</label>
+<kwd>Machine learning pipelines</kwd>
+<kwd>reproducibility</kwd>
+<kwd>data lineage</kwd>
+<kwd>machine learning meta-data</kwd>
+</kwd-group>
+</article-meta>
+</front>
+<body>
+<sec id="x1-1000-1">
+<label>1.</label>
+<title>Overview</title>
+<p>The outlook for the adoption of machine learning-based solutions into technology-enabled aspects of business is strong [<xref ref-type="bibr" rid="ref025">25</xref>]. This recent survey by McKinsey suggests that companies attribute their growth to the adoption of Artificial Intelligence (AI) in their application software. The companies that see the strongest growth are those associated with a core set of best practices and processes around developing and implementing AI-based solutions. Other surveys such as [<xref ref-type="bibr" rid="ref002">2</xref>,<xref ref-type="bibr" rid="ref031">31</xref>] and [<xref ref-type="bibr" rid="ref003">3</xref>] offer insights into the current state of affairs in developing enterprise machine learning solutions. These surveys suggest that reproducibility of results and tracing the lineage of activities performed on data science projects is a pain point in operationalizing machine learning solutions. This is consistent with the technical debt in the machine learning life-cycle discussed in [<xref ref-type="bibr" rid="ref019">19</xref>]. One of the recommendations of [<xref ref-type="bibr" rid="ref003">3</xref>] is the integration of open-source tools to circumvent these challenges. Reproducibility of results has plagued the research community too [<xref ref-type="bibr" rid="ref018">18</xref>]. Therefore, tools that facilitate reproducibility can benefit both the practitioner and the research community. Not surprisingly, tools and methods to address this problem have attracted the attention of researchers in this area [<xref ref-type="bibr" rid="ref039">39</xref>,<xref ref-type="bibr" rid="ref045">45</xref>,<xref ref-type="bibr" rid="ref046">46</xref>] and [<xref ref-type="bibr" rid="ref032">32</xref>]. Arangopipe is a solution that was developed to address this pain point leveraging the unique features that a multi-model database supporting a graph data model offers in developing solutions for this problem.</p>
+<p>Much of model development for machine learning and data analytic applications involves analyzing activities and findings that went into building earlier models, such as examining distribution characteristics of features, effective modeling choices, and results from hyper-parameter tuning experiments. Similarly, when these models are deployed, there is a frequent need to review data from previous deployments to verify configuration and deployment steps. These activities are those associated with reproducibility and traceability in surveys such as [<xref ref-type="bibr" rid="ref003">3</xref>] and [<xref ref-type="bibr" rid="ref002">2</xref>]. Therefore, applications and tools that record relevant information about machine learning model development tasks and facilitate the easy access and search of this information are of importance to teams involved in the development, deployment, and maintenance of machine learning applications. Arangopipe is a tool that provides these features. The process of developing and deploying machine learning models is often abstracted as a pipeline of activities. A graph is a natural data structure to represent the activities in the pipeline. Many machine learning tools and libraries routinely model the activities related to model development as a graph. There is great diversity in the range of machine learning applications and the complexity associated with developing these applications. Consequently, there is great diversity in data that needs to be captured from the development and deployment of these applications. A document-oriented data model is a good fit to accommodate this diverse range of data capture. With a document-oriented data model, there is no need to define the structure of the data before storing it. A database that permits both a graph and a document-oriented data model is ideal to capture data from machine learning model development and deployment activity. Arango DB provides these features. The rest of this article is structured as follows. In Section <xref rid="x1-2000-2">2</xref>, the nature of data collected from machine learning projects is discussed. In Section <xref rid="x1-8000-3">3</xref>, a series of illustrative examples illustrating the features of Arangopipe is provided. The details of building and testing Arangopipe are discussed in Section <xref rid="x1-17000-4">4</xref>. In Section <xref rid="x1-18000-5">5</xref>, work that is closely related to the problem solved by Arangopipe is discussed. In Section <xref rid="x1-19000-6">6</xref>, the salient observations and facts about using Arangopipe in data science projects are summarized.</p>
+</sec>
+<sec id="x1-2000-2">
+<label>2.</label>
+<title>Data science workflow</title>
+<p>Arangopipe provides a data model that permits the capture of information about activities performed as part of a data science project. The information captured about the activity is also referred to as meta-data about the activity. The reference data model for Arangopipe was developed after critically reviewing the nature of meta-data captured across a range of projects from our own experience as well as standardization efforts such as [<xref ref-type="bibr" rid="ref040">40</xref>] and [<xref ref-type="bibr" rid="ref034">34</xref>]. While these efforts aim to standardize the operations and the data captured in productionalizing machine learning applications, it can be easily adapted thanks to the flexibility of the graph data model. A schematic representation of the data model is shown in Fig. <xref rid="x1-2001-1">1</xref>. A graph data model is used to capture a comprehensive set and relations of activities that are performed in a data science project.</p>
+<fig id="x1-2001-1">
+<label>Fig. 1.</label>
+<caption>
+<p>Reference Arangopipe schema.</p>
+</caption>
+<graphic xlink:href="ds-4-ds210034-g001.jpg"/>
+</fig>
+<p>The purpose of each vertex type and its relevant relationships are as follows. Arangopipe provides two interfaces to capture and track data science activities. These are the administrative interface and the project interface. The administrative interface is called <italic>arangopipe admin</italic> and the project interface is called <italic>arangopipe</italic>. The administrative interface is used to provision arangopipe for use in an organization. The project interface is used to capture data from project activities. To use Arangopipe in your organization, the graph used to track machine learning and data science activities needs to be provisioned. This graph is called <italic>Enterprise ML Tracker Graph</italic> and is provisioned using the administrative interface. Machine learning and data science activities are organized by <italic>projects</italic>. The administrative interface is used to add machine learning projects that need to be tracked. Each <italic>project</italic> can track multiple model-building activities. A <italic>model</italic> is any data science activity that is tracked by the project. This can include a wide range of tasks performed by the data science team, such as:</p>
+<list>
+<list-item id="x1-2002x-2">
+<label>(1)</label>
+<p>Data analysis experiments to profile attribute characteristics in a dataset</p>
+</list-item>
+<list-item id="x1-2003x-2">
+<label>(2)</label>
+<p>Experiments to evaluate candidate models for a particular machine learning task.</p>
+</list-item>
+<list-item id="x1-2004x-2">
+<label>(3)</label>
+<p>Hyper-parameter tuning experiments.</p>
+</list-item>
+<list-item id="x1-2005x-2">
+<label>(4)</label>
+<p>Experiments to evaluate <italic>data drift</italic>.</p>
+</list-item>
+</list>
+<p>Machine learning models use a <italic>featureset</italic> to train the model. A <italic>featureset</italic> is constructed from a <italic>dataset</italic> using transformations if required. A <italic>run</italic> captures the execution of a <italic>model</italic>. It links the inputs and the outputs associated with the execution of a <italic>model</italic>. A <italic>run</italic> executes a <italic>model</italic> with a set of <italic>model parameters</italic>. The model performance observed during the <italic>run</italic> is captured by the <italic>dev performance</italic> vertex type. A model with an acceptable level of performance is deployed to production. A <italic>deployment</italic> is used to capture such models. A <italic>deployment</italic> is created using the administrative interface. A <italic>deployment</italic> links the assets used by the deployed <italic>model</italic>. These include the <italic>dataset</italic>, the <italic>featureset</italic>, the <italic>model</italic>, and its <italic>model parameters</italic>. As a deployed model serves requests, we get to observe its performance. This performance is captured by the <italic>serving performance</italic> vertex type. See Section <xref rid="x1-8000-3">3</xref> for the details of examples that illustrate how machine learning project activity can be captured with Arangopipe. It will be evident that each of the illustrative examples represents an instance of the data model described above. An example of an instance of this data model from a model-building experiment is shown in Fig. <xref rid="x1-2006-2">2</xref>.</p>
+<fig id="x1-2006-2">
+<label>Fig. 2.</label>
+<caption>
+<p>Model building activity as a graph.</p>
+</caption>
+<graphic xlink:href="ds-4-ds210034-g002.jpg"/>
+</fig>
+<p>The same data model can be used to capture the meta-data from a variety of common machine learning experiments. Each of these examples follows the same template to capture meta-data. For new data assets, the properties of the asset are defined as a document. The asset is then registered and linked to the project. If it is an existing resource, it is retrieved using a search function and then its properties are updated. The data model discussed above should be sufficient for the meta-data capture from a wide range of experiments. However, if there is a need to introduce new elements into this data model for a specific application, that is also possible. For example, if you need to track a new type of meta-data for your machine learning experiments and you wish to capture this as a separate vertex type and create edges from existing vertices to the new vertex type, that can be done. Note that no schema constraint enforces the kind of data that you can capture with each vertex type described above. This benefit comes from using a document-oriented model for node data. This feature can be exploited for the following purposes. The same <italic>model</italic> vertex type can be used to capture models from multiple machine learning libraries. The <italic>github</italic> repository for this project contains examples that illustrate the use of identical workflow steps for model development tasks from different libraries such as <italic>scikit-learn</italic>, <italic>tensorflow</italic>, and <italic>pytorch</italic>. The artifacts and results produced from modeling tasks can be stored as node data. These results can be retrieved and re-materialized as programmatic objects. An example of this feature to store and re-materialize results from <italic>Tensor Flow Data Validation</italic> is available in the Arangopipe repository. In general, as long as the vertex data has a JSON representation and is not too large, for example, the weights associated with a massive neural network, it can be captured as part of the vertex data. To associate large data with vertices, the data can be stored in appropriate file formats such as <italic>HDF5</italic>, and the URL to the data file could be stored as a node property.</p>
+<sec id="x1-3000-2.1">
+<label>2.1.</label>
+<title>Software implementation</title>
+<p>Arangopipe consists of the following components:</p>
+<sec id="x1-4000-2.1.1">
+<label>2.1.1.</label>
+<title><monospace>python-package</monospace> interface</title>
+<p>The <monospace>python</monospace> package is primarily meant for data scientists to track and log data science activities they perform for projects. The package provides the administrative and project interfaces discussed above. A project administrator should first provision Arangopipe for use in the organization using the administrative interface. Provisioning sets up the database and graph to track machine learning projects as well as the connection to the provisioned database. The administrator then adds projects that need to be tracked to Arangopipe. At this point, project members can use the connection and project information to start logging model development activities.</p>
+</sec>
+<sec id="x1-5000-2.1.2">
+<label>2.1.2.</label>
+<title>Arango DB</title>
+<p>This is the database used with Arangopipe. Project administrators and personnel involved in deploying and maintaining machine learning models can use the <italic>Arango Query Language (AQL)</italic> through the web interface of Arango DB to run queries on the Arangopipe database if needed.</p>
+</sec>
+<sec id="x1-6000-2.1.3">
+<label>2.1.3.</label>
+<title>A web user interface</title>
+<p>A web interface to track, view, and search for information about assets and model building activity is provided. The web interface is primarily meant to be used by personnel deploying or managing machine applications to obtain historic information about model development activity, deployments, serving performance details, etc.</p>
+</sec>
+<sec id="x1-7000-2.1.4">
+<label>2.1.4.</label>
+<title>Container images</title>
+<p>Docker images of Arangopipe bundled with major deep learning toolkits, <italic>pytorch</italic> and <italic>tensorflow</italic> are available. These images contain the above components along with <italic>pytorch</italic> or <italic>tensorflow</italic>. Since these toolkits are widely used, data scientists and machine learning engineers can use these images to start using Arangopipe in their organizations.</p>
+<p>It is possible to use Arangopipe with <italic>Oasis</italic>, Arango DB’s managed service offering on the cloud. This would require no installations or downloads. The details of doing this are provided in Section <xref rid="x1-8000-3">3</xref>.</p>
+<fig id="x1-7001-3">
+<label>Fig. 3.</label>
+<caption>
+<p>Using Arangopipe with analytics applications.</p>
+</caption>
+<graphic xlink:href="ds-4-ds210034-g003.jpg"/>
+</fig>
+<p>A schematic illustration of how the components discussed above are used with Arangopipe and ArangoDB is shown in Fig. <xref rid="x1-7001-3">3</xref>. An Arangopipe Administrator can use a Jupyter notebook to provision Arangopipe for a project. The administrator would use the <italic>administration interface</italic> for this purpose. Project team members, for example, data scientists, can use a Jupyter notebook (or a python script) to log meta-data about project activities using the <italic>arangopipe interface</italic>. This interface exposes two other interfaces. The <italic>arangopipe_storage interface</italic> offers functionality related to capturing meta-data from machine-learning pipeline activities in ArangoDB. The <italic>arangopipe_analytics interface</italic> offers functionality implemented with machine learning, such as methods to identify dataset drift. Dev-Ops personnel involved in operationalizing machine learning applications can use the web user interface to look up details of deployments or assets such as models or datasets. Arango DB offers an interface to develop analytic applications with ArangoDB. These applications can generate machine learning meta-data, for example, embeddings of graphs used in these applications. These applications can use the Arangopipe methods to store this meta-data in ArangoDB.</p>
+<p>For more information about these components or to evaluate Arangopipe, please visit the <ext-link ext-link-type="uri" xlink:href="https://github.com/arangoml/arangopipe/blob/master/documentation/README.md">project github repository</ext-link> [<xref ref-type="bibr" rid="ref013">13</xref>]. The repository contains examples that illustrate the features of Arangopipe using Google’s Colab [<xref ref-type="bibr" rid="ref026">26</xref>] notebooks (see Section <xref rid="x1-8000-3">3</xref>). Working through these notebooks does not require the installation of software on your machine. These examples use Oasis, a managed service version of ArangoDB.</p>
+</sec>
+</sec>
+</sec>
+<sec id="x1-8000-3">
+<label>3.</label>
+<title>Illustrative examples of Arangopipe</title>
+<p>A comprehensive discussion of the advantages of using a graph data model to capture machine learning meta-data and a narrative detailing the progress of a data science project using Arangopipe is available in <ext-link ext-link-type="uri" xlink:href="https://www.arangodb.com/2021/01/arangoml-series-multi-model-collaboration/">arangopipe-overview</ext-link> [<xref ref-type="bibr" rid="ref007">7</xref>] and <ext-link ext-link-type="uri" xlink:href="https://www.arangodb.com/2021/01/arangoml-series-multi-model-collaboration/">collaboration with arangopipe</ext-link> [<xref ref-type="bibr" rid="ref008">8</xref>]. In this section, we present examples that illustrate the key features of Arangopipe. These features are illustrated with model building activity using the California Housing dataset [<xref ref-type="bibr" rid="ref036">36</xref>] from the CMU statlib repository [<xref ref-type="bibr" rid="ref022">22</xref>]. Each section below discusses a salient aspect of using Arangopipe with your model development efforts.</p>
+<p>The basic template to use Arangopipe to capture machine learning meta-data from project activity is as follows. The first step involves installing Arangopipe and the dependencies needed for the machine learning project activity. An illustrative installation segment in a notebook is shown in Appendix <xref rid="x1-22000-A.1">A.1</xref>. The second step is to provision Arangopipe for use with the project. This can be done with the administrative interface. An illustrative excerpt of code showing how this is done is shown in Appendix <xref rid="x1-23000-A.2">A.2</xref>. After provisioning Arangopipe for a project, a project can register assets captured by the data model, for example, a dataset, using Arangopipe. An illustrative excerpt showing registering a dataset is shown in Appendix <xref rid="x1-24000-A.3">A.3</xref>. Alternatively, a project can retrieve an existing asset, for example, a dataset using a lookup method, as shown in Appendix <xref rid="x1-25000-A.4">A.4</xref>, and then update its properties. In this scenario, a provisioned Arangopipe installation is used for the model tracking activity. The examples that follow illustrate the use of Arangopipe in a set of representative application scenarios.</p>
+<sec id="x1-9000-3.1">
+<label>3.1.</label>
+<title>Basic workflow</title>
+<p>Please see <ext-link ext-link-type="uri" xlink:href="https://github.com/arangoml/arangopipe/blob/master/examples/Arangopipe_Feature_Examples.ipynb">Arangopipe Basic Workflow</ext-link> [<xref ref-type="bibr" rid="ref009">9</xref>] for an illustration of the basic workflow with Arangopipe. It can be run as a <italic>colab</italic> notebook, so no installation is necessary to work through the notebook. The notebook develops a <italic>Linear Regression</italic> model using the <italic>scikit-learn</italic> [<xref ref-type="bibr" rid="ref037">37</xref>] library and logs the results of the model development activity in Arangopipe. The notebook uses Arango DB’s managed service offering, <italic>Oasis</italic>, as the database. The notebook execution begins with specifying a set of connection parameters to connect to the ArangoDB database instance to be used with Arangopipe. A method call is made through the administrative interface to provision the database for use with Arangopipe. This connection information can be saved and reused in subsequent interactions with the Arangopipe database instance. The project interface with which modeling activity is logged is then created with connection information used in the provisioning step. The notebook illustrates the typical administrative and project activities involved in using Arangopipe in a data science project.</p>
+</sec>
+<sec id="x1-10000-3.2">
+<label>3.2.</label>
+<title>Reusing archived steps</title>
+<p>The sequence of steps illustrated with the basic workflow can be used to capture data science project activities from a variety of tasks. Data scientists can store key results from model building experiments in Arangopipe. These results can be programmatic artifacts, such as results from exploratory data analysis or a hyper-parameter tuning experiment. A colleague can retrieve these artifacts from Arangopipe in a subsequent session and re-materialize them as programmatic entities. Please see <ext-link ext-link-type="uri" xlink:href="https://colab.research.google.com/github/arangodb/interactive_tutorials/blob/master/notebooks/ML_Collab_Article/example_output/Arangopipe_Generate_TF_Visualization_output.ipynb">using Arangopipe with TFDV for exploratory data analysis</ext-link> [<xref ref-type="bibr" rid="ref042">42</xref>] for an example of performing this in an exploratory data analysis task using <italic>tensor flow data validation</italic> <ext-link ext-link-type="uri" xlink:href="https://www.tensorflow.org/tfx/data_validation/get_started"><italic>tensorflow data validation</italic></ext-link>. Please see <ext-link ext-link-type="uri" xlink:href="https://colab.research.google.com/github/arangodb/interactive_tutorials/blob/master/notebooks/ML_Collab_Article/example_output/ML_Collaboration_Hyperopt_Integration_output.ipynb">performing hyper-parameter optimization with Arangopipe</ext-link> [<xref ref-type="bibr" rid="ref029">29</xref>] for an example with a hyperparameter tuning experiment. The capability to store node data as documents is exploited in these examples. Node data and results from modeling are easily converted into JSON, which is the format that ArangoDB stores documents in. Tools to serialize programmatic objects into JSON and conversely, create programmatic objects from JSON, such as <monospace>jsonpickle</monospace> [<xref ref-type="bibr" rid="ref030">30</xref>] are available. In some cases, like with <monospace>TFDV</monospace>, these are available from the tool used for the machine learning task. In a subsequent project activity, these model results can be retrieved from Arangopipe and re-materialized to programmatic objects native to the tool library that created them. Excerpts illustrating this for the hyper-parameter tuning experiment are shown in Appendix <xref rid="x1-26000-A.5">A.5</xref> and Appendix <xref rid="x1-27000-A.6">A.6</xref>. The hyper-parameter tuning experiment stores the result of the experiment. The result can be subsequently retrieved. These examples illustrate another aspect of the utility of Arangopipe. Not all activities in a machine learning project are targeted at developing a machine learning model. There is much effort expended in activities like descriptive and exploratory analysis of the data, transforming the data to a form amenable for model building, experiments to determine parameters for model building, etc. Meta-data from these activities can also be captured by Arangopipe.</p>
+</sec>
+<sec id="x1-11000-3.3">
+<label>3.3.</label>
+<title>Extending the data model</title>
+<p>It is possible to extend the Arangopipe data model to suit the custom needs that a project may have. For example, if an organization would like to capture notebooks as a separate asset that is tracked, this can be done. Please see the “Advanced Modeling” section of <ext-link ext-link-type="uri" xlink:href="https://colab.research.google.com/github/arangodb/interactive_tutorials/blob/master/notebooks/ML_Collab_Article/example_output/ML_Collaboration_Hyperopt_Integration_output.ipynb">performing hyper-parameter optimization with Arangopipe</ext-link> for an example illustrating this. Projects that need to change or define a different data model in their projects can do so as illustrated in this example. This example illustrates the process of adding a vertex to the data model to capture project notebooks. An excerpt illustrating the code segment is shown in Appendix <xref rid="x1-28000-A.7">A.7</xref>.</p>
+</sec>
+<sec id="x1-12000-3.4">
+<label>3.4.</label>
+<title>Experimenting and documenting facts about models and data</title>
+<p>Documenting facts about models is a routine task for data scientists. The bias and variance of a developed model are of interest to data scientists on regression tasks. Please see <ext-link ext-link-type="uri" xlink:href="https://colab.research.google.com/github/arangoml/arangopipe/blob/master/examples/Arangopipe_Feature_Example_ext1.ipynb">using arangopipe to document model bias</ext-link> [<xref ref-type="bibr" rid="ref012">12</xref>] for an example showing how model bias can be captured and stored with Arangopipe.</p>
+</sec>
+<sec id="x1-13000-3.5">
+<label>3.5.</label>
+<title>Checking the validity and effectiveness of machine learning models after deployment</title>
+<p>Data drift and concept drift are known issues with maintaining and managing machine learning solutions. Arangopipe provides an extensible method to check for dataset drift. To detect dataset drift, a machine learning classifier is used to discriminate between the dataset used to develop the model and the data the model is receiving. A reference implementation using a RandomForest [<xref ref-type="bibr" rid="ref020">20</xref>] classifier is provided. By implementing the abstract class, users can use the same idea, but use a different classifier for the task. An excerpt illustrating the use of this feature is shown in Appendix <xref rid="x1-29000-A.8">A.8</xref>. Please see <ext-link ext-link-type="uri" xlink:href="https://colab.research.google.com/github/arangoml/arangopipe/blob/master/examples/Arangopipe_Feature_ext2.ipynb">capturing dataset drift with Arangopipe</ext-link> [<xref ref-type="bibr" rid="ref023">23</xref>] for an example of using Arangopipe to evaluate data drift.</p>
+</sec>
+<sec id="x1-14000-3.6">
+<label>3.6.</label>
+<title>Using the Arangopipe web user-interface</title>
+<p>The easiest path to exploring the Arangopipe Web-User-Interface is by running one of the Arangopipe container images. Container images with <ext-link ext-link-type="uri" xlink:href="https://pytorch.org/">pytorch</ext-link> [<xref ref-type="bibr" rid="ref038">38</xref>] and <ext-link ext-link-type="uri" xlink:href="https://www.tensorflow.org/">tensorflow</ext-link> [<xref ref-type="bibr" rid="ref041">41</xref>] are available. The <ext-link ext-link-type="uri" xlink:href="https://github.com/arangoml/arangopipe/tree/master/documentation">project documentation</ext-link> [<xref ref-type="bibr" rid="ref013">13</xref>] provides detailed instructions on launching one of these containers. After running the docker image, the web-user interface should be accessible. The section “Arangopipe User Interface” on the <ext-link ext-link-type="uri" xlink:href="https://github.com/arangoml/arangopipe/tree/master/documentation">project documentation</ext-link> page provides information about the organization of the user interface and the details of using key features like <italic>asset search</italic> and <italic>asset lineage tracking</italic>. The Arangopipe Web-User Interface is primarily meant to be used by dev-ops personnel who operationalize machine learning applications. Searching for assets, tracing asset lineage, and obtaining information about past deployments are common tasks for personnel involved in operationalizing machine learning models. It is also possible to use AQL to query assets tracked by Arango DB. A comprehensive introduction along with detailed examples of using AQL to create and update data stored in ArangoDB is available at the <ext-link ext-link-type="uri" xlink:href="https://www.arangodb.com/docs/stable/aql/">AQL web page</ext-link> [<xref ref-type="bibr" rid="ref005">5</xref>]. AQL queries may be executed from the Web-User-Interface. A detailed description of using AQL with the web user interface is available at <ext-link ext-link-type="uri" xlink:href="https://www.arangodb.com/docs/stable/aql/invocation-with-web-interface.html">AQL web interface documentation</ext-link> [<xref ref-type="bibr" rid="ref004">4</xref>]. Figure <xref rid="x1-14001-4">4</xref> shows the web user interface that can be used to execute AQL queries.</p>
+<fig id="x1-14001-4">
+<label>Fig. 4.</label>
+<caption>
+<p>Web user interface.</p>
+</caption>
+<graphic xlink:href="ds-4-ds210034-g004.jpg"/>
+</fig>
+</sec>
+<sec id="x1-15000-3.7">
+<label>3.7.</label>
+<title>Storing features from model development</title>
+<p>Feature engineering is very important in many machine learning tasks [<xref ref-type="bibr" rid="ref024">24</xref>]. Arangopipe can be used to capture features generated from machine development. Graph embedding can be used to obtain a Euclidean representation of graph-structured data. These embeddings can be used as features in machine learning models. A variety of techniques exist to obtain these embeddings with each finding favor in particular applications [<xref ref-type="bibr" rid="ref027">27</xref>]. Please see <ext-link ext-link-type="uri" xlink:href="https://github.com/arangoml/networkx-adapter/blob/master/examples/IMDB_Networkx_Adapter.ipynb">IMDB-Networkx-ArangoDB-Adapter</ext-link> [<xref ref-type="bibr" rid="ref006">6</xref>] for an example of using Arangopipe along with the networkx adapter to store results from embeddings generated from node2vec [<xref ref-type="bibr" rid="ref028">28</xref>].</p>
+</sec>
+<sec id="x1-16000-3.8">
+<label>3.8.</label>
+<title>Support for R models</title>
+<p>Using the <italic>reticulate</italic> R package, it is possible to capture meta-data from R data science tasks in Arangopipe. Please see an <ext-link ext-link-type="uri" xlink:href="https://rstudio.github.io/reticulate/articles/calling_python.html">overview of reticulate</ext-link> [<xref ref-type="bibr" rid="ref021">21</xref>] for information about this package and details of type conversion between R and python. Please see <ext-link ext-link-type="uri" xlink:href="https://github.com/arangoml/arangopipe/blob/master/examples/R_Example_Colab.ipynb">using R with Arangopipe</ext-link> [<xref ref-type="bibr" rid="ref044">44</xref>] for an example of illustrating the capture of meta-data from R model development activity with Arangopipe.</p>
+</sec>
+</sec>
+<sec id="x1-17000-4">
+<label>4.</label>
+<title>Building and testing</title>
+<p>The <ext-link ext-link-type="uri" xlink:href="https://github.com/arangoml/arangopipe/tree/master/documentation/">project repository</ext-link> [<xref ref-type="bibr" rid="ref014">14</xref>] provides detailed information on the various options to try Arangopipe on a project. Arangopipe is open source, contributions are welcome! For details of building Arangopipe, please see the <ext-link ext-link-type="uri" xlink:href="https://github.com/arangoml/arangopipe/blob/master/documentation/build/maintainers.md">build instructions</ext-link> [<xref ref-type="bibr" rid="ref010">10</xref>] in the project repository. Unit tests that illustrate how each method in Arangopipe is to be invoked are <ext-link ext-link-type="uri" xlink:href="https://github.com/arangoml/arangopipe/blob/master/arangopipe/tests/CItests/arangopipe_testcases.py">available</ext-link> [<xref ref-type="bibr" rid="ref015">15</xref>]. For each method in the Arangopipe, a test case is available. A review of the test cases should provide the complete details of invoking each method in the Arangopipe. New users of Arangopipe can use the test cases as a reference for logging their project activity with Arangopipe. To facilitate exploration of Arangopipe and the Web UI, a <ext-link ext-link-type="uri" xlink:href="https://github.com/arangoml/arangopipe/blob/master/arangopipe/tests/test_data_generator/generate_model_data.py">test data generator</ext-link> [<xref ref-type="bibr" rid="ref016">16</xref>] that provides example meta-data is also provided. The test data generation utility runs <italic>linear regression</italic> models on bootstrapped versions of the California Housing dataset and logs meta-data from model evaluations.</p>
+</sec>
+<sec id="x1-18000-5">
+<label>5.</label>
+<title>Related work</title>
+<p>Efforts to standardize operations and data related to managing meta-data from machine learning were considered and are actively monitored in the development of Arangopipe. An <ext-link ext-link-type="uri" xlink:href="https://github.com/arangoml/arangopipe/blob/master/examples/MLSpec_AP_Example.ipynb">example</ext-link> [<xref ref-type="bibr" rid="ref011">11</xref>] illustrating the use of the elements of ML Spec in an Arangopipe model is available. The <ext-link ext-link-type="uri" xlink:href="https://onnx.ai/">Open Neural Network Exchange</ext-link> [<xref ref-type="bibr" rid="ref035">35</xref>] is a standard for the development of interoperable machine learning models. This standard defines a standard set of data elements and operations for a machine learning model. In this standard, as well as in most machine learning model development tools, the computation associated with developing the machine learning model is abstracted as a graph. Many tools to build data science pipelines such as <ext-link ext-link-type="uri" xlink:href="https://airflow.apache.org/docs/apache-airflow/stable/concepts.html">Airflow</ext-link> [<xref ref-type="bibr" rid="ref001">1</xref>] and <ext-link ext-link-type="uri" xlink:href="https://luigi.readthedocs.io/en/stable/execution_model.htmll">Luigi</ext-link> [<xref ref-type="bibr" rid="ref033">33</xref>] model the pipeline computation as a graph. In particular, the computation associated with the model or data science pipeline is expressed as a Directed Acyclic Graph. As execution flows through this graph, there is meta-data is produced. This is the meta-data that is captured by Arangopipe. Since a graph is used to express computation, a graph data model is a natural fit to capture meta-data about data science workflows. The meta-data are stored as documents in the nodes and edges of the graph. If there is a need to enforce schema constraints on the meta-data obtained as the computation progresses, this can be done. If the nature of meta-data obtained from the computation is dynamic and structural constraints for the data are not known apriori, the document-oriented storage model can offer the flexibility to capture such data. There is no need to define constraints about the data before it is captured as a document. In some data models, for example, the relational model, these constraints must be defined before the system starts ingesting data. This implies that structural constraints of the meta-data must be codified and set up before using the model to capture meta-data. The multi-model aspect of ArangoDB that permits the use of both a graph and a document-oriented data model to capture data is, therefore, a data model that provides both native expressiveness and flexibility for the capture of meta-data from machine learning pipelines. For the reasons discussed in Section <xref rid="x1-1000-1">1</xref>, the need to develop tools that facilitate reproducibility and tracking the provenance of models has attracted the attention of the research community. [<xref ref-type="bibr" rid="ref017">17</xref>,<xref ref-type="bibr" rid="ref045">45</xref>,<xref ref-type="bibr" rid="ref046">46</xref>], and [<xref ref-type="bibr" rid="ref043">43</xref>] are tools developed to solve the reproducibility problem. We believe that the graph and document-oriented storage models of ArangoDB offer considerable versatility and flexibility in capturing and analyzing meta-data from machine learning pipelines. As discussed, the provided data model was derived after reviewing solutions from our own experience, other solutions to the problem, a survey of research on this problem, and standardization efforts related to this area. If applications or projects need to use a different data model or extend the provided data model, Arangopipe provides methods for this purpose. As standardization efforts in this application area progress, new ideas that need to be captured by the data model can be added using the provided <monospace>python</monospace> package.</p>
+</sec>
+<sec id="x1-19000-6">
+<label>6.</label>
+<title>Conclusion</title>
+<p>The capture of meta-data from the machine learning life cycle is important to both researchers and practitioners. Tools that capture and facilitate analysis of such meta-data are therefore useful to both these communities. The multi-model feature of ArangoDB presents some unique advantages in the capture and analysis of data from machine learning pipelines. A graph is a natural abstraction for this application since most tools used in developing machine learning pipelines model the computation as a graph. The document-oriented feature of ArangoDB offers flexibility in capturing meta-data from custom machine learning pipelines. Pipelines do not have to define the structural constraints about the types of elements in the meta-data obtained from machine learning pipelines before persisting it, as is the case for example with relational databases. However, if such constraints are desired, then it is possible to enforce them with a schema. The data model offered with Arangopipe captures the basic elements of any machine learning pipeline. This model is extensible and should a particular application need it, the package offers methods to make the desired changes. ArangoDB is tracking standards development initiatives around machine learning meta-data, such as ML spec. ArangoDB is committed to the further development of Arangopipe. Feedback and questions about Arangopipe are welcome in the ArangoML <ext-link ext-link-type="uri" xlink:href="https://arangodb-community.slack.com/archives/CN9LVJ24S">slack channel</ext-link> and the issues section of the <ext-link ext-link-type="uri" xlink:href="https://github.com/arangoml/arangopipe/tree/master/documentation">project repository</ext-link>.</p>
+</sec>
+</body>
+<back>
+<app-group>
+<app id="x1-21000-x"><label>Appendix</label>
+<title>Code excerpts</title>
+<sec id="x1-22000-A.1">
+<label>A.1.</label>
+<title>Installing Arangopipe</title>
+<fig id="x1-22001-5">
+<label>Fig. 5.</label>
+<caption>
+<p>Installing Arangopipe in a Jupyter notebook.</p>
+</caption>
+<graphic xlink:href="ds-4-ds210034-g005.jpg"/>
+</fig>
+</sec>
+<sec id="x1-23000-A.2">
+<label>A.2.</label>
+<title>Provisioning Arangopipe</title>
+<fig id="x1-23001-6">
+<label>Fig. 6.</label>
+<caption>
+<p>Provision Arangopipe.</p>
+</caption>
+<graphic xlink:href="ds-4-ds210034-g006.jpg"/>
+</fig>
+</sec>
+<sec id="x1-24000-A.3">
+<label>A.3.</label>
+<title>Registering an asset</title>
+<fig id="x1-24001-7">
+<label>Fig. 7.</label>
+<caption>
+<p>Register a dataset.</p>
+</caption>
+<graphic xlink:href="ds-4-ds210034-g007.jpg"/>
+</fig>
+</sec>
+<sec id="x1-25000-A.4">
+<label>A.4.</label>
+<title>Lookup an asset</title>
+<fig id="x1-25001-8">
+<label>Fig. 8.</label>
+<caption>
+<p>Lookup a dataset.</p>
+</caption>
+<graphic xlink:href="ds-4-ds210034-g008.jpg"/>
+</fig>
+</sec>
+<sec id="x1-26000-A.5">
+<label>A.5.</label>
+<title>Serialize JSON data</title>
+<fig id="x1-26001-9">
+<label>Fig. 9.</label>
+<caption>
+<p>Store hyper-parameter tuning result in Arangopipe.</p>
+</caption>
+<graphic xlink:href="ds-4-ds210034-g009.jpg"/>
+</fig>
+</sec>
+<sec id="x1-27000-A.6">
+<label>A.6.</label>
+<title>Deserialize JSON data</title>
+<fig id="x1-27001-10">
+<label>Fig. 10.</label>
+<caption>
+<p>Subsequent retrieval of best parameter values.</p>
+</caption>
+<graphic xlink:href="ds-4-ds210034-g010.jpg"/>
+</fig>
+</sec>
+<sec id="x1-28000-A.7">
+<label>A.7.</label>
+<title>Adding a vertex</title>
+<fig id="x1-28001-11">
+<label>Fig. 11.</label>
+<caption>
+<p>Adding a notebook vertex to the data model.</p>
+</caption>
+<graphic xlink:href="ds-4-ds210034-g011.jpg"/>
+</fig>
+</sec>
+<sec id="x1-29000-A.8">
+<label>A.8.</label>
+<title>Dataset drift detection</title>
+<fig id="x1-29001-12">
+<label>Fig. 12.</label>
+<caption>
+<p>Dataset shift detection with Arangopipe.</p>
+</caption>
+<graphic xlink:href="ds-4-ds210034-g012.jpg"/>
+</fig>
+</sec>
+</app></app-group>
+<ref-list>
+<title>References</title>
+<ref id="ref001">
+<label>[1]</label><mixed-citation publication-type="other">Airflow, <uri>https://airflow.apache.org/docs/apache-airflow/stable/concepts.html</uri>.</mixed-citation>
+</ref>
+<ref id="ref002">
+<label>[2]</label><mixed-citation publication-type="other">Algorithmia, state of enterprise ML, a 2020 survey, <uri>https://info.algorithmia.com/hubfs/2019/Whitepapers/The-State-of-Enterprise-ML-2020/Algorithmia_2020_State_of_Enterprise_ML.pdf</uri>.</mixed-citation>
+</ref>
+<ref id="ref003">
+<label>[3]</label><mixed-citation publication-type="other">Anaconda, state of data science 2020, <uri>https://www.anaconda.com/state-of-data-science-2020</uri>.</mixed-citation>
+</ref>
+<ref id="ref004">
+<label>[4]</label><mixed-citation publication-type="other">AQL web interface, <uri>https://www.arangodb.com/docs/stable/aql/invocation-with-web-interface.html</uri>.</mixed-citation>
+</ref>
+<ref id="ref005">
+<label>[5]</label><mixed-citation publication-type="other">Arango Query Language, <uri>https://www.arangodb.com/docs/stable/aql/</uri>.</mixed-citation>
+</ref>
+<ref id="ref006">
+<label>[6]</label><mixed-citation publication-type="other">ArangoDB Networkx adapter, <uri>https://github.com/arangoml/networkx-adapter/blob/master/examples/IMDB_Networkx_Adapter.ipynb</uri>.</mixed-citation>
+</ref>
+<ref id="ref007">
+<label>[7]</label><mixed-citation publication-type="other">Arangopipe, an overview, <uri>https://www.arangodb.com/2021/01/arangoml-series-multi-model-collaboration/</uri>.</mixed-citation>
+</ref>
+<ref id="ref008">
+<label>[8]</label><mixed-citation publication-type="other">Arangopipe, a collaboration scenario, <uri>https://www.arangodb.com/2021/01/arangoml-series-multi-model-collaboration/</uri>.</mixed-citation>
+</ref>
+<ref id="ref009">
+<label>[9]</label><mixed-citation publication-type="other">Arangopipe basic workflow, <uri>https://github.com/arangoml/arangopipe/blob/master/examples/Arangopipe_Feature_Examples.ipynb</uri>.</mixed-citation>
+</ref>
+<ref id="ref010">
+<label>[10]</label><mixed-citation publication-type="other">Arangopipe build instructions, <uri>https://github.com/arangoml/arangopipe/tree/master/documentation</uri>.</mixed-citation>
+</ref>
+<ref id="ref011">
+<label>[11]</label><mixed-citation publication-type="other">Arangopipe ML Spec integration, <uri>https://github.com/arangoml/arangopipe/blob/master/examples/MLSpec_AP_Example.ipynb</uri>.</mixed-citation>
+</ref>
+<ref id="ref012">
+<label>[12]</label><mixed-citation publication-type="other">Arangopipe model bias, <uri>https://colab.research.google.com/github/arangoml/arangopipe/blob/master/examples/Arangopipe_Feature_Example_ext1.ipynb</uri>.</mixed-citation>
+</ref>
+<ref id="ref013">
+<label>[13]</label><mixed-citation publication-type="other">Arangopipe project repository, <uri>https://github.com/arangoml/arangopipe/blob/master/documentation/README.md</uri>.</mixed-citation>
+</ref>
+<ref id="ref014">
+<label>[14]</label><mixed-citation publication-type="other">Arangopipe project repository, <uri>https://github.com/arangoml/arangopipe/tree/master/documentation</uri>.</mixed-citation>
+</ref>
+<ref id="ref015">
+<label>[15]</label><mixed-citation publication-type="other">Arangopipe test cases, <uri>https://github.com/arangoml/arangopipe/blob/master/arangopipe/tests/CItests/arangopipe_testcases.py</uri>.</mixed-citation>
+</ref>
+<ref id="ref016">
+<label>[16]</label><mixed-citation publication-type="other">Arangopipe test data generator, <uri>https://github.com/arangoml/arangopipe/blob/master/arangopipe/tests/test_data_generator/generate_model_data.py</uri>.</mixed-citation>
+</ref>
+<ref id="ref017">
+<label>[17]</label><mixed-citation publication-type="chapter"><string-name><given-names>D.</given-names> <surname>Baylor</surname></string-name>, <string-name><given-names>E.</given-names> <surname>Breck</surname></string-name>, <string-name><given-names>H.-T.</given-names> <surname>Cheng</surname></string-name>, <string-name><given-names>N.</given-names> <surname>Fiedel</surname></string-name>, <string-name><given-names>C.Y.</given-names> <surname>Foo</surname></string-name>, <string-name><given-names>Z.</given-names> <surname>Haque</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Haykal</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Ispir</surname></string-name>, <string-name><given-names>V.</given-names> <surname>Jain</surname></string-name>, <string-name><given-names>L.</given-names> <surname>Koc</surname></string-name> <etal>et al.</etal>, <chapter-title>Tfx: A tensorflow-based production-scale machine learning platform</chapter-title>, in: <source>Proceedings of the 23rd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining</source>, <year>2017</year>, pp. <fpage>1387</fpage>–<lpage>1395</lpage>. doi:<pub-id pub-id-type="doi">10.1145/3097983.3098021</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref018">
+<label>[18]</label><mixed-citation publication-type="chapter"><string-name><given-names>X.</given-names> <surname>Bouthillier</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Laurent</surname></string-name> and <string-name><given-names>P.</given-names> <surname>Vincent</surname></string-name>, <chapter-title>Unreproducible research is reproducible</chapter-title>, in: <source>International Conference on Machine Learning</source>, <publisher-name>PMLR</publisher-name>, <year>2019</year>, pp. <fpage>725</fpage>–<lpage>734</lpage>, <uri>http://proceedings.mlr.press/v97/bouthillier19a.html</uri>.</mixed-citation>
+</ref>
+<ref id="ref019">
+<label>[19]</label><mixed-citation publication-type="chapter"><string-name><given-names>E.</given-names> <surname>Breck</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Cai</surname></string-name>, <string-name><given-names>E.</given-names> <surname>Nielsen</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Salib</surname></string-name> and <string-name><given-names>D.</given-names> <surname>Sculley</surname></string-name>, <chapter-title>The ml test score: A rubric for ml production readiness and technical debt reduction</chapter-title>, in: <source>2017 IEEE International Conference on Big Data (Big Data)</source>, <publisher-name>IEEE</publisher-name>, <year>2017</year>, pp. <fpage>1123</fpage>–<lpage>1132</lpage>. doi:<pub-id pub-id-type="doi">10.1109/BigData.2017.8258038</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref020">
+<label>[20]</label><mixed-citation publication-type="journal"><string-name><given-names>L.</given-names> <surname>Breiman</surname></string-name>, <article-title>Random forests</article-title>, <source>Machine Learning</source>, <volume>45</volume>(<issue>1</issue>) (<year>2001</year>), <fpage>5</fpage>–<lpage>32</lpage>. doi:<pub-id pub-id-type="doi">10.1023/A:1010933404324</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref021">
+<label>[21]</label><mixed-citation publication-type="other">Calling R from Python, <uri>https://rstudio.github.io/reticulate/articles/calling_python.html</uri>.</mixed-citation>
+</ref>
+<ref id="ref022">
+<label>[22]</label><mixed-citation publication-type="other">CMU Statlib, <uri>http://lib.stat.cmu.edu/datasets/</uri>.</mixed-citation>
+</ref>
+<ref id="ref023">
+<label>[23]</label><mixed-citation publication-type="other">Dataset Drift, <uri>https://colab.research.google.com/github/arangoml/arangopipe/blob/master/examples/Arangopipe_Feature_ext2.ipynb</uri>.</mixed-citation>
+</ref>
+<ref id="ref024">
+<label>[24]</label><mixed-citation publication-type="journal"><string-name><given-names>P.</given-names> <surname>Domingos</surname></string-name>, <article-title>A few useful things to know about machine learning</article-title>, <source>Communications of the ACM</source> <volume>55</volume>(<issue>10</issue>) (<year>2012</year>), <fpage>78</fpage>–<lpage>87</lpage>. doi:<pub-id pub-id-type="doi">10.1145/2347736.2347755</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref025">
+<label>[25]</label><mixed-citation publication-type="other">Global survey: The state of AI in 2020, McKinsey, <uri>https://www.mckinsey.com/business-functions/mckinsey-analytics/our-insights/global-survey-the-state-of-ai-in-2020</uri>.</mixed-citation>
+</ref>
+<ref id="ref026">
+<label>[26]</label><mixed-citation publication-type="other">Google Colab, <uri>https://colab.research.google.com/notebooks/</uri>.</mixed-citation>
+</ref>
+<ref id="ref027">
+<label>[27]</label><mixed-citation publication-type="journal"><string-name><given-names>P.</given-names> <surname>Goyal</surname></string-name> and <string-name><given-names>E.</given-names> <surname>Ferrara</surname></string-name>, <article-title>Graph embedding techniques, applications, and performance: A survey</article-title>, <source>Knowledge-Based Systems</source>, <volume>151</volume> (<year>2018</year>), <fpage>78</fpage>–<lpage>94</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.knosys.2018.03.022</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref028">
+<label>[28]</label><mixed-citation publication-type="chapter"><string-name><given-names>A.</given-names> <surname>Grover</surname></string-name> and <string-name><given-names>J.</given-names> <surname>Leskovec</surname></string-name>, <chapter-title>node2vec: Scalable feature learning for networks</chapter-title>, in: <source>Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining</source>, <year>2016</year>, pp. <fpage>855</fpage>–<lpage>864</lpage>. doi:<pub-id pub-id-type="doi">10.1145/2939672.2939754</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref029">
+<label>[29]</label><mixed-citation publication-type="other">Hyper-parameter Optimization, <uri>https://colab.research.google.com/github/arangodb/interactive_tutorials/blob/master/notebooks/ML_Collab_Article/example_output/ML_Collaboration_Hyperopt_Integration_output.ipynb</uri>.</mixed-citation>
+</ref>
+<ref id="ref030">
+<label>[30]</label><mixed-citation publication-type="other">JSON pickle, <uri>https://jsonpickle.readthedocs.io/en/latest/</uri>.</mixed-citation>
+</ref>
+<ref id="ref031">
+<label>[31]</label><mixed-citation publication-type="other">Kaggle, state of data science and machine learning 2020, <uri>https://www.kaggle.com/kaggle-survey-2020</uri>.</mixed-citation>
+</ref>
+<ref id="ref032">
+<label>[32]</label><mixed-citation publication-type="chapter"><string-name><given-names>K.</given-names> <surname>Katsiapis</surname></string-name> and <string-name><given-names>K.</given-names> <surname>Haas</surname></string-name>, <chapter-title>Towards ML engineering with TensorFlow extended (TFX)</chapter-title>, in: <source>Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery &amp; Data Mining</source>, <year>2019</year>, pp. <fpage>3182</fpage>. doi:<pub-id pub-id-type="doi">10.1145/3292500.3340408</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref033">
+<label>[33]</label><mixed-citation publication-type="other">Luigi, <uri>https://luigi.readthedocs.io/en/stable/execution_model.html</uri>.</mixed-citation>
+</ref>
+<ref id="ref034">
+<label>[34]</label><mixed-citation publication-type="other">ML Spec, <uri>https://github.com/mlspec/MLSpec</uri>.</mixed-citation>
+</ref>
+<ref id="ref035">
+<label>[35]</label><mixed-citation publication-type="other">ONNX, <uri>https://onnx.ai/</uri>.</mixed-citation>
+</ref>
+<ref id="ref036">
+<label>[36]</label><mixed-citation publication-type="journal"><string-name><given-names>R.K.</given-names> <surname>Pace</surname></string-name> and <string-name><given-names>R.</given-names> <surname>Barry</surname></string-name>, <article-title>Sparse spatial autoregressions</article-title>, <source>Statistics &amp; Probability Letters</source> <volume>33</volume>(<issue>3</issue>) (<year>1997</year>), <fpage>291</fpage>–<lpage>297</lpage>. doi:<pub-id pub-id-type="doi">10.1016/S0167-7152(96)00140-X</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref037">
+<label>[37]</label><mixed-citation publication-type="journal"><string-name><given-names>F.</given-names> <surname>Pedregosa</surname></string-name>, <string-name><given-names>G.</given-names> <surname>Varoquaux</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Gramfort</surname></string-name>, <string-name><given-names>V.</given-names> <surname>Michel</surname></string-name>, <string-name><given-names>B.</given-names> <surname>Thirion</surname></string-name>, <string-name><given-names>O.</given-names> <surname>Grisel</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Blondel</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Prettenhofer</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Weiss</surname></string-name>, <string-name><given-names>V.</given-names> <surname>Dubourg</surname></string-name> <etal>et al.</etal>, <article-title>Scikit-learn: Machine learning in Python</article-title>, <source>the Journal of Machine Learning Research</source> <volume>12</volume> (<year>2011</year>), <fpage>2825</fpage>–<lpage>2830</lpage>, <uri>https://www.jmlr.org/papers/volume12/pedregosa11a/pedregosa11a.pdf</uri>.</mixed-citation>
+</ref>
+<ref id="ref038">
+<label>[38]</label><mixed-citation publication-type="other">Pytorch, <uri>https://pytorch.org/</uri>.</mixed-citation>
+</ref>
+<ref id="ref039">
+<label>[39]</label><mixed-citation publication-type="journal"><string-name><given-names>S.</given-names> <surname>Schelter</surname></string-name>, <string-name><given-names>F.</given-names> <surname>Bießmann</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Januschowski</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Salinas</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Seufert</surname></string-name> and <string-name><given-names>G.</given-names> <surname>Szarvas</surname></string-name>, <article-title>On challenges in machine learning model management</article-title>, <source>IEEE Data Eng. Bull.</source> <volume>41</volume>(<issue>4</issue>) (<year>2018</year>), <fpage>5</fpage>–<lpage>15</lpage>, <uri>http://sites.computer.org/debull/A18dec/p5.pdf</uri>.</mixed-citation>
+</ref>
+<ref id="ref040">
+<label>[40]</label><mixed-citation publication-type="chapter"><string-name><given-names>S.</given-names> <surname>Schelter</surname></string-name>, <string-name><given-names>J.-H.</given-names> <surname>Boese</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Kirschnick</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Klein</surname></string-name> and <string-name><given-names>S.</given-names> <surname>Seufert</surname></string-name>, <chapter-title>Automatically tracking metadata and provenance of machine learning experiments</chapter-title>, in: <source>Machine Learning Systems Workshop at NIPS</source>, <year>2017</year>, pp. <fpage>27</fpage>–<lpage>29</lpage>, <uri>http://learningsys.org/nips17/assets/papers/paper_13.pdf</uri>.</mixed-citation>
+</ref>
+<ref id="ref041">
+<label>[41]</label><mixed-citation publication-type="other">Tensorflow, <uri>https://www.tensorflow.org/</uri>.</mixed-citation>
+</ref>
+<ref id="ref042">
+<label>[42]</label><mixed-citation publication-type="other">Tensorflow data validation, <uri>https://colab.research.google.com/github/arangodb/interactive_tutorials/blob/master/notebooks/ML_Collab_Article/example_output/Arangopipe_Generate_TF_Visualization_output.ipynb</uri>.</mixed-citation>
+</ref>
+<ref id="ref043">
+<label>[43]</label><mixed-citation publication-type="other"><string-name><given-names>J.</given-names> <surname>Tsay</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Mummert</surname></string-name>, <string-name><given-names>N.</given-names> <surname>Bobroff</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Braz</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Westerink</surname></string-name> and <string-name><given-names>M.</given-names> <surname>Hirzel</surname></string-name>, <chapter-title>Runway: Machine learning model experiment management tool</chapter-title>, in: <source>Conference on Systems and Machine Learning (SysML)</source>, <year>2018</year>, <uri>https://mlsys.org/Conferences/doc/2018/26.pdf</uri>.</mixed-citation>
+</ref>
+<ref id="ref044">
+<label>[44]</label><mixed-citation publication-type="other">Using R with Arangopipe, <uri>https://github.com/arangoml/arangopipe/blob/master/examples/R_Example_Colab.ipynb</uri>.</mixed-citation>
+</ref>
+<ref id="ref045">
+<label>[45]</label><mixed-citation publication-type="journal"><string-name><given-names>M.</given-names> <surname>Vartak</surname></string-name> and <string-name><given-names>S.</given-names> <surname>Madden</surname></string-name>, <article-title>MODELDB: Opportunities and challenges in managing machine learning models</article-title>, <source>IEEE Data Eng. Bull.</source> <volume>41</volume>(<issue>4</issue>) (<year>2018</year>), <fpage>16</fpage>–<lpage>25</lpage>, <uri>http://sites.computer.org/debull/A18dec/p16.pdf</uri>.</mixed-citation>
+</ref>
+<ref id="ref046">
+<label>[46]</label><mixed-citation publication-type="journal"><string-name><given-names>M.</given-names> <surname>Zaharia</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Chen</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Davidson</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Ghodsi</surname></string-name>, <string-name><given-names>S.A.</given-names> <surname>Hong</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Konwinski</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Murching</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Nykodym</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Ogilvie</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Parkhe</surname></string-name>, <string-name><given-names>F.</given-names> <surname>Xie</surname></string-name> and <string-name><given-names>C.</given-names> <surname>Zumar</surname></string-name>, <article-title>Accelerating the machine learning lifecycle with MLflow</article-title>, <source>IEEE Data Eng. Bull.</source> <volume>41</volume>(<issue>4</issue>) (<year>2018</year>), <fpage>39</fpage>–<lpage>45</lpage>, <uri>http://sites.computer.org/debull/A18dec/p39.pdf</uri>.</mixed-citation>
+</ref>
+</ref-list>
+</back>
+</article>

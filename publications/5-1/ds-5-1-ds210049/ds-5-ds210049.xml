@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.0 20120330//EN" "JATS-journalpublishing1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="formalization-paper" dtd-version="1.0">
+<front>
+<journal-meta>
+<journal-id journal-id-type="publisher-id">DS</journal-id>
+<journal-title-group><journal-title>Data Science</journal-title></journal-title-group>
+<issn pub-type="epub">2451-8492</issn><issn pub-type="ppub">2451-8484</issn><issn-l>2451-8484</issn-l>
+<publisher>
+<publisher-name>IOS Press</publisher-name><publisher-loc>Nieuwe Hemweg 6B, 1013 BG Amsterdam, The Netherlands</publisher-loc>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">DS210049</article-id>
+<article-id pub-id-type="doi">10.3233/DS-210049</article-id>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Formalization Paper</subject></subj-group></article-categories>
+<title-group>
+<article-title>A formalization of one of the main claims of “‘Dunbar’s number’ deconstructed” by Lindenfors et al. 2021<xref ref-type="fn" rid="thanks1"><sup>1</sup></xref></article-title>
+</title-group>
+<contrib-group content-type="Editor">
+<contrib contrib-type="editor">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-7114-6459</contrib-id>
+<name><surname>Bucur</surname><given-names>Cristina-Iulia</given-names></name>
+</contrib>
+</contrib-group>
+<contrib-group content-type="Review comments from">
+<contrib contrib-type="reviewer">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-1267-0234</contrib-id>
+<name><surname>Kuhn</surname><given-names>Tobias</given-names></name>
+</contrib>
+<contrib contrib-type="reviewer">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0003-4727-9435</contrib-id>
+<name><surname>Dumontier</surname><given-names>Michel</given-names></name>
+</contrib>
+<contrib contrib-type="reviewer">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-7114-6459</contrib-id>
+<name><surname>Bucur</surname><given-names>Cristina-Iulia</given-names></name>
+</contrib>
+</contrib-group>
+<contrib-group>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-0191-7211</contrib-id>
+<name><surname>Usbeck</surname><given-names>Ricardo</given-names></name><email>ricardo.usbeck@uni-hamburg.de</email><email>ricardo.usbeck@googlemail.com</email><xref ref-type="aff" rid="affa"/><xref ref-type="corresp" rid="cor2">*</xref>
+</contrib>
+<aff id="affa"><institution>University of Hamburg</institution>, <country>Germany</country></aff>
+</contrib-group>
+<contrib-group content-type="guest-editors">
+<contrib contrib-type="guest-editor">
+<name><surname>Bucur</surname><given-names>Cristina-Iulia</given-names></name>
+</contrib>
+<contrib contrib-type="guest-editor">
+<name><surname>Kuhn</surname><given-names>Tobias</given-names></name>
+</contrib>
+</contrib-group>
+<author-notes>
+<fn id="thanks1"><label>1</label>
+<p>As RDF/nanopublication: <uri>http://purl.org/np/RAbWbJCYlLhlYBDn9PVxdJP_WUbbi058aRcK-3sOJsRwY</uri></p></fn><corresp id="cor2"><label>*</label>Corresponding author. E-mail: <email>ricardo.usbeck@uni-hamburg.de</email>.</corresp>
+</author-notes>
+<pub-date date-type="preprint" publication-format="electronic"><day>25</day><month>1</month><year>2022</year></pub-date><pub-date date-type="pub" publication-format="electronic"><day>22</day><month>3</month><year>2022</year></pub-date><pub-date date-type="collection" publication-format="electronic"><year>2022</year></pub-date><volume>5</volume><issue>1</issue><issue-title>Semantic Publishing with Formalization Papers</issue-title><fpage>61</fpage><lpage>64</lpage><history><date date-type="received"><day>22</day><month>06</month><year>2021</year></date><date date-type="accepted"><day>17</day><month>11</month><year>2021</year></date></history>
+<permissions><copyright-statement>© 2022 – The authors. Published by IOS Press.</copyright-statement><copyright-year>2022</copyright-year>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/" license-type="open-access" xlink:type="simple">
+<license-p>This is an open access article distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/" xlink:type="simple">Creative Commons Attribution (CC BY 4.0) License</ext-link>, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions>
+<abstract>
+<p>Lindenfors et al. claimed in previous work that the cortex size of humans does not relate to their social group size. We present here a formalization of that claim, stating that all things of class “relative neocortex size” that are in the context of a thing of class “social group” never have a relation of type “affects” to a thing of class “social group size” in the same context.</p>
+</abstract>
+<kwd-group>
+<label>Keywords</label>
+<kwd>Social group</kwd>
+<kwd>relative neocortex size</kwd>
+<kwd>social group size</kwd>
+</kwd-group>
+</article-meta>
+</front>
+<body>
+<sec id="x1-1000-1">
+<label>1.</label>
+<title>Introduction</title>
+<p>Lindenfors et al. [<xref ref-type="bibr" rid="ref002">2</xref>] state that “A cognitive limit on human group size cannot be derived in this manner.”. We present here a formalization of the main scientific claim from this quote by using a semantic template called the super-pattern [<xref ref-type="bibr" rid="ref001">1</xref>].</p>
+</sec>
+<sec id="x1-2000-2">
+<label>2.</label>
+<title>Formalization</title>
+<p>Our formalization looks as follows:</p>
+<table-wrap>
+<table>
+<tbody>
+<tr>
+<td valign="top" align="left">CONTEXT-CLASS (“in the context of all ...”):</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://www.wikidata.org/wiki/Q874405">social group</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left">SUBJECT-CLASS (“things of type ...”):</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAhnnsMWVM8M29NixCJfVDLWzRzwwCPnUD7LI2kxT-FME#relative-neocortex-size">relative neocortex size</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left">QUALIFIER:</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/generallyQualifierhttps://w3id.org/linkflows/superpattern/terms/neverQualifier">never</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left">RELATION-TYPE (“have a relation of type...”):</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/affects">affects</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left">OBJECT-CLASS (“to things of type...”):</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAlKYv_sE8qwiSqsRdcr7KrkU1bsqlqiFmhDPtPBwpLrM#social-group-size">social group size</ext-link></td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+<p>In the context class, we use “social group” (Q874405) from Wikidata. In the subject class, we use a new minted class “relative neocortex size” that is related to the class “size”(Q1152227) and “neocortex” (Q726562) from Wikidata. In the object class, we minted a new class “social group size” that is a subclass of “social group” (Q874405) from Wikidata.</p>
+</sec>
+<sec id="x1-3000-3">
+<label>3.</label>
+<title>RDF code</title>
+<p>This is our formalization as a nanopublication in TriG format:</p><preformat><monospace>@prefix this: &lt;http://purl.org/np/RAbWbJCYlLhlYBDn9PVxdJP_WUbbi058aRcK-3sOJsRwY&gt; .</monospace>
+<monospace>@prefix sub: &lt;http://purl.org/np/RAbWbJCYlLhlYBDn9PVxdJP_WUbbi058aRcK-3sOJsRwY#&gt; .</monospace>
+<monospace>@prefix np: &lt;http://www.nanopub.org/nschema#&gt; .</monospace>
+<monospace>@prefix dct: &lt;http://purl.org/dc/terms/&gt; .</monospace>
+<monospace>@prefix nt: &lt;https://w3id.org/np/o/ntemplate/&gt; .</monospace>
+<monospace>@prefix npx: &lt;http://purl.org/nanopub/x/&gt; .</monospace>
+<monospace>@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .</monospace>
+<monospace>@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .</monospace>
+<monospace>@prefix orcid: &lt;https://orcid.org/&gt; .</monospace>
+<monospace>@prefix prov: &lt;http://www.w3.org/ns/prov#&gt; .</monospace>
+<monospace>@prefix sp: &lt;https://w3id.org/linkflows/superpattern/terms/&gt; .</monospace>
+
+<monospace>sub:Head {</monospace>
+<monospace>  this: np:hasAssertion sub:assertion ;</monospace>
+<monospace>    np:hasProvenance sub:provenance ;</monospace>
+<monospace>    np:hasPublicationInfo sub:pubinfo ;</monospace>
+<monospace>    a np:Nanopublication .</monospace>
+<monospace>}</monospace>
+<monospace>sub:assertion {</monospace>
+<monospace>  sub:spi a sp:SuperPatternInstance ;</monospace>
+<monospace>    rdfs:label "The cortex size of humans does not relate to their social group size" ;</monospace>
+<monospace>    sp:hasContextClass &lt;http://www.wikidata.org/entity/Q874405&gt; ;</monospace>
+<monospace>    sp:hasSubjectClass &lt;http://purl.org/np/RAhnnsMWVM8M29NixCJfVDLWzRzwwCPnUD7LI2kxT-FME#relative-neocortex-size&gt; ;</monospace>
+<monospace>    sp:hasQualifier sp:neverQualifier ;</monospace>
+<monospace>    sp:hasRelation sp:affects ;</monospace>
+<monospace>    sp:hasObjectClass &lt;http://purl.org/np/RAlKYv_sE8qwiSqsRdcr7KrkU1bsqlqiFmhDPtPBwpLrM#social-group-size&gt; .</monospace>
+<monospace>}</monospace>
+<monospace>sub:provenance {</monospace>
+<monospace>  sub:activity a sp:FormalizationActivity ;</monospace>
+<monospace>    prov:used sub:quote , &lt;https://royalsocietypublishing.org/doi/10.1098/rsbl.2021.0158&gt; ;</monospace>
+<monospace>    prov:wasAssociatedWith orcid:0000-0002-0191-7211 .</monospace>
+<monospace>  sub:assertion prov:wasGeneratedBy sub:activity .</monospace>
+<monospace>  sub:quote prov:value "A cognitive limit on human group size cannot be derived in this manner." ;</monospace>
+<monospace>    prov:wasQuotedFrom &lt;https://royalsocietypublishing.org/doi/10.1098/rsbl.2021.0158&gt; .</monospace>
+<monospace>}</monospace>
+<monospace>sub:pubinfo {</monospace>
+<monospace>  sub:sig npx:hasAlgorithm "RSA" ;</monospace>
+<monospace>    npx:hasPublicKey "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC3cICbOHZ1ecuLOsgovKwUlFRRvNWNgBJxoXCFAYWtU2OK97i/</monospace>
+<monospace>SjoIaxFphg9tkv9WxOjtPqYJ4cuM0E76wxeRZ7VBMHBrBIyCAGTvAfESWVQZCDgulG46VjffEzXuRmqOka/</monospace>
+<monospace>C5Ur6beLijFPMtiWEg6I2Mbj8z9vuHPxReIu4JwIDAQAB" ;</monospace>
+<monospace>    npx:hasSignature "ZFigeQHif/2IZT/QsVTqDThjV1P0Uy4IkGEmOC8W/Iygn8sGpJt4DOBDLDrT2egAwiesYqFxVqSDQnWCeY2C/</monospace>
+<monospace>yaVIob6j49CYlZor+VZQo1HdsGvEq3V7xiLobl/w4sMPxA690y9DF5zp8w3wggXaJxMjrAESSCpaPxtnKGhxt0=" ;</monospace>
+<monospace>    npx:hasSignatureTarget this: .</monospace>
+<monospace>  this: dct:created "2021-11-17T18:03:20.686+01:00"^^xsd:dateTime ;</monospace>
+<monospace>    dct:creator orcid:0000-0002-0191-7211 ;</monospace>
+<monospace>    npx:introduces sub:spi ;</monospace>
+<monospace>    npx:supersedes &lt;http://purl.org/np/RA7MgxMCcVykE2RBJHm-Ou_CuuhPXqfcinswtIfjXReOc&gt; ;</monospace>
+<monospace>    &lt;https://w3id.org/linkflows/reviews/isUpdateOf&gt; &lt;http://purl.org/np/RAYJe1ruxzvy8idQGuxziYN4ri8OFeKZxzK-QdJPvDug0&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromProvenanceTemplate &lt;http://purl.org/np/RAB_oy10D3XUP-zYlqGz7Uj58AsUXhEKeGqmRFg5LSgDM&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromPubinfoTemplate &lt;http://purl.org/np/RA2vCBXZf-icEcVRGhulJXugTGxpsV5yVr9yqCI1bQh4A&gt; ,</monospace>
+<monospace>&lt;http://purl.org/np/RAA2MfqdBCzmz9yVWjKLXNbyfBNcwsMmOqcNUxkk1maIM&gt; ,</monospace>
+<monospace>&lt;http://purl.org/np/RAjpBMlw3owYhJUBo3DtsuDlXsNAJ8cnGeWAutDVjuAuI&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromTemplate &lt;http://purl.org/np/RAv68imZrEjfcp2rnEg1hzoBqEVc0cQMtp9_1Za0BxNM4&gt; .</monospace>
+<monospace>}</monospace>
+</preformat>
+<p>The following nanopublications introduce the newly minted classes in TriG format.</p>
+<p>This is the class definition of “relative neocortex size”:</p><preformat><monospace>@prefix this: &lt;http://purl.org/np/RAhnnsMWVM8M29NixCJfVDLWzRzwwCPnUD7LI2kxT-FME&gt; .</monospace>
+<monospace>@prefix sub: &lt;http://purl.org/np/RAhnnsMWVM8M29NixCJfVDLWzRzwwCPnUD7LI2kxT-FME#&gt; .</monospace>
+<monospace>@prefix np: &lt;http://www.nanopub.org/nschema#&gt; .</monospace>
+<monospace>@prefix dct: &lt;http://purl.org/dc/terms/&gt; .</monospace>
+<monospace>@prefix nt: &lt;https://w3id.org/np/o/ntemplate/&gt; .</monospace>
+<monospace>@prefix npx: &lt;http://purl.org/nanopub/x/&gt; .</monospace>
+<monospace>@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .</monospace>
+<monospace>@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .</monospace>
+<monospace>@prefix orcid: &lt;https://orcid.org/&gt; .</monospace>
+<monospace>@prefix prov: &lt;http://www.w3.org/ns/prov#&gt; .</monospace>
+<monospace>@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .</monospace>
+
+<monospace>sub:Head {</monospace>
+<monospace>  this: np:hasAssertion sub:assertion ;</monospace>
+<monospace>    np:hasProvenance sub:provenance ;</monospace>
+<monospace>    np:hasPublicationInfo sub:pubinfo ;</monospace>
+<monospace>    a np:Nanopublication .</monospace>
+<monospace>}</monospace>
+<monospace>sub:assertion {</monospace>
+<monospace>  sub:relative-neocortex-size a &lt;http://www.w3.org/2002/07/owl#Class&gt; ;</monospace>
+<monospace>    rdfs:label "Relative size of the neocortex" ;</monospace>
+<monospace>    skos:definition "This class signifies the weight or volume of a part of the brain called neocortex." ;</monospace>
+<monospace>    skos:relatedMatch &lt;http://www.wikidata.org/entity/Q322481&gt; , &lt;http://www.wikidata.org/entity/Q726562&gt; .</monospace>
+<monospace>}</monospace>
+<monospace>sub:provenance {</monospace>
+<monospace>  sub:assertion prov:wasAttributedTo orcid:0000-0002-0191-7211 .</monospace>
+<monospace>}</monospace>
+<monospace>sub:pubinfo {</monospace>
+<monospace>  sub:sig npx:hasAlgorithm "RSA" ;</monospace>
+<monospace>    npx:hasPublicKey "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC3cICbOHZ1ecuLOsgovKwUlFRRvNWNgBJxoXCFAYWtU2OK97i/</monospace>
+<monospace>SjoIaxFphg9tkv9WxOjtPqYJ4cuM0E76wxeRZ7VBMHBrBIyCAGTvAfESWVQZCDgulG46VjffEzXuRmqOka/</monospace>
+<monospace>C5Ur6beLijFPMtiWEg6I2Mbj8z9vuHPxReIu4JwIDAQAB" ;</monospace>
+<monospace>    npx:hasSignature</monospace>
+<monospace>"NMWYJ3I459BEnN7NgKELsfNucMayG4MXMMjOrZm0h+g/5Mbu8vbLVhkSi5C9N+SGc67qW6YtdndVxrMS7qpWfzUTv+FzVOgydGqs30VKUC5F0TNBzvTnTNvT9Bq61</monospace>
+<monospace>oQ5cNIxUHef6/Mqte2auchZPLgY8yap3ImLEaNTWwdQpTM=" ;</monospace>
+<monospace>    npx:hasSignatureTarget this: .</monospace>
+<monospace>  this: dct:created "2021-10-19T14:07:44.194+02:00"^^xsd:dateTime ;</monospace>
+<monospace>    dct:creator orcid:0000-0002-0191-7211 ;</monospace>
+<monospace>    npx:introduces sub:relative-neocortex-size ;</monospace>
+<monospace>    npx:supersedes &lt;http://purl.org/np/RAIwMZ0StXU9DCY1WGoJMwD2NAc30mijCb0FML8TXIB0Y&gt; ;</monospace>
+<monospace>    &lt;https://w3id.org/linkflows/reviews/isUpdateOf&gt; &lt;http://purl.org/np/RAIwMZ0StXU9DCY1WGoJMwD2NAc30mijCb0FML8TXIB0Y&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromProvenanceTemplate &lt;http://purl.org/np/RANwQa4ICWS5SOjw7gp99nBpXBasapwtZF1fIM3H2gYTM&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromPubinfoTemplate &lt;http://purl.org/np/RAA2MfqdBCzmz9yVWjKLXNbyfBNcwsMmOqcNUxkk1maIM&gt; ,</monospace>
+<monospace>&lt;http://purl.org/np/RAOGu9Lh0BD4tbIRB9RG6RGRA_ObDh75NTbIqaWgxxs8M&gt; ,</monospace>
+<monospace>&lt;http://purl.org/np/RAjpBMlw3owYhJUBo3DtsuDlXsNAJ8cnGeWAutDVjuAuI&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromTemplate &lt;http://purl.org/np/RAdpgRpigXtt8iPV9uOPf3wIT3qzOI8Sg2Q72CNV8g-Yo&gt; .</monospace>
+<monospace>}</monospace>
+</preformat>
+<p>This is the class definition of “social group size”:</p><preformat><monospace>@prefix this: &lt;http://purl.org/np/RAlKYv_sE8qwiSqsRdcr7KrkU1bsqlqiFmhDPtPBwpLrM&gt; .</monospace>
+<monospace>@prefix sub: &lt;http://purl.org/np/RAlKYv_sE8qwiSqsRdcr7KrkU1bsqlqiFmhDPtPBwpLrM#&gt; .</monospace>
+<monospace>@prefix np: &lt;http://www.nanopub.org/nschema#&gt; .</monospace>
+<monospace>@prefix dct: &lt;http://purl.org/dc/terms/&gt; .</monospace>
+<monospace>@prefix nt: &lt;https://w3id.org/np/o/ntemplate/&gt; .</monospace>
+<monospace>@prefix npx: &lt;http://purl.org/nanopub/x/&gt; .</monospace>
+<monospace>@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .</monospace>
+<monospace>@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .</monospace>
+<monospace>@prefix orcid: &lt;https://orcid.org/&gt; .</monospace>
+<monospace>@prefix prov: &lt;http://www.w3.org/ns/prov#&gt; .</monospace>
+<monospace>@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .</monospace>
+
+<monospace>sub:Head {</monospace>
+<monospace>  this: np:hasAssertion sub:assertion ;</monospace>
+<monospace>    np:hasProvenance sub:provenance ;</monospace>
+<monospace>    np:hasPublicationInfo sub:pubinfo ;</monospace>
+<monospace>    a np:Nanopublication .</monospace>
+<monospace>}</monospace>
+<monospace>sub:assertion {</monospace>
+<monospace>  sub:social-group-size a &lt;http://www.w3.org/2002/07/owl#Class&gt; ;</monospace>
+<monospace>    rdfs:label "Social group size" ;</monospace>
+<monospace>    rdfs:subClassOf &lt;https://www.wikidata.org/wiki/Q874405&gt; ;</monospace>
+<monospace>    skos:definition "Social group size is the size of a group of humans that a person socially interacts with (on a regular</monospace>
+<monospace>basis)." .</monospace>
+<monospace>}</monospace>
+<monospace>sub:provenance {</monospace>
+<monospace>  sub:assertion prov:wasAttributedTo orcid:0000-0002-0191-7211 .</monospace>
+<monospace>}</monospace>
+<monospace>sub:pubinfo {</monospace>
+<monospace>  sub:sig npx:hasAlgorithm "RSA" ;</monospace>
+<monospace>    npx:hasPublicKey "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC3cICbOHZ1ecuLOsgovKwUlFRRvNWNgBJxoXCFAYWtU2OK97i/</monospace>
+<monospace>SjoIaxFphg9tkv9WxOjtPqYJ4cuM0E76wxeRZ7VBMHBrBIyCAGTvAfESWVQZCDgulG46VjffEzXuRmqOka/</monospace>
+<monospace>C5Ur6beLijFPMtiWEg6I2Mbj8z9vuHPxReIu4JwIDAQAB" ;</monospace>
+<monospace>    npx:hasSignature</monospace>
+<monospace>"WBZ10x+hSX0zXoXQAGBkM89SWDOnViMI8NoLH8w1GsjOWSjT/pasNugo6CEDZkWb5ZyHsXSSzG7JDCldnhVQkH64Nuok6C3QvV9+EUVMZaDHByMhObzJ3Pld8p</monospace>
+<monospace>YNHWtW1wNve4xkb91Mzq5zYfBw+Y4ufB5Kqi39zH1dr6XRZRo=" ;</monospace>
+<monospace>    npx:hasSignatureTarget this: .</monospace>
+<monospace>  this: dct:created "2021-06-22T09:49:42.152Z"^^xsd:dateTime ;</monospace>
+<monospace>    dct:creator orcid:0000-0002-0191-7211 ;</monospace>
+<monospace>    npx:introduces sub:social-group-size ;</monospace>
+<monospace>    nt:wasCreatedFromProvenanceTemplate &lt;http://purl.org/np/RANwQa4ICWS5SOjw7gp99nBpXBasapwtZF1fIM3H2gYTM&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromPubinfoTemplate &lt;http://purl.org/np/RAA2MfqdBCzmz9yVWjKLXNbyfBNcwsMmOqcNUxkk1maIM&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromTemplate &lt;http://purl.org/np/RAdpgRpigXtt8iPV9uOPf3wIT3qzOI8Sg2Q72CNV8g-Yo&gt; .</monospace>
+<monospace>}</monospace>
+</preformat>
+</sec>
+</body>
+<back>
+<ref-list>
+<title>References</title>
+<ref id="ref001">
+<label>[1]</label><mixed-citation publication-type="other"><string-name><given-names>C.I.</given-names> <surname>Bucur</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Kuhn</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Ceolin</surname></string-name> and <string-name><given-names>J.</given-names> <surname>van Ossenbruggen</surname></string-name>, <chapter-title>Expressing high-level scientific claims with formal semantics</chapter-title>, in: <source>Proceedings of the 11th Knowledge Capture Conference 2021</source>, <year>2021</year>. doi:<pub-id pub-id-type="doi">10.1145/3460210.3493561</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref002">
+<label>[2]</label><mixed-citation publication-type="other"><string-name><given-names>P.</given-names> <surname>Lindenfors</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Wartel</surname></string-name> and <string-name><given-names>J.</given-names> <surname>Lind</surname></string-name>, <article-title>‘Dunbar’s number’ deconstructed</article-title>, <source>Biol. Lett.</source> (<year>2021</year>). doi:<pub-id pub-id-type="doi">10.1098/rsbl.2021.0158</pub-id>.</mixed-citation>
+</ref>
+</ref-list>
+</back>
+</article>

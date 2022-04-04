@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.0 20120330//EN" "JATS-journalpublishing1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="editorial">
+<front>
+<journal-meta>
+<journal-id journal-id-type="publisher-id">DS</journal-id>
+<journal-title-group><journal-title>Data Science</journal-title></journal-title-group>
+<issn pub-type="epub">2451-8492</issn><issn pub-type="ppub">2451-8484</issn><issn-l>2451-8484</issn-l>
+<publisher>
+<publisher-name>IOS Press</publisher-name><publisher-loc>Nieuwe Hemweg 6B, 1013 BG Amsterdam, The Netherlands</publisher-loc>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">DS190023</article-id>
+<article-id pub-id-type="doi">10.3233/DS-190023</article-id>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Editorial</subject></subj-group></article-categories>
+<title-group>
+<article-title>Editorial: Special Issue on Scholarly Data Analysis (Semantics, Analytics, Visualisation)</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0003-3499-8262</contrib-id>
+<name><surname>Gonzalez-Beltran</surname><given-names>Alejandra</given-names></name><xref ref-type="aff" rid="affa">a</xref><xref ref-type="corresp" rid="cor1">*</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0001-6557-3131</contrib-id>
+<name><surname>Osborne</surname><given-names>Francesco</given-names></name><xref ref-type="aff" rid="affb">b</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0003-0530-4305</contrib-id>
+<name><surname>Peroni</surname><given-names>Silvio</given-names></name><xref ref-type="aff" rid="affc">c</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-7171-169X</contrib-id>
+<name><surname>Vahdati</surname><given-names>Sahar</given-names></name><xref ref-type="aff" rid="affd">d</xref>
+</contrib>
+<aff id="affa"><label>a</label>Scientific Computing Department, <institution>Science and Technology Facilities Council</institution>, Rutherford Appleton Laboratory, Harwell Campus, Didcot, OX11 0QX, <country>United Kingdom</country>. E-mail: <email>alejandra.gonzalez-beltran@stfc.ac.uk</email></aff>
+<aff id="affb"><label>b</label>Knowledge Media Institute, <institution>The Open University</institution>, Walton Hall, MK7 6AA, <country>United Kingdom</country>. E-mail: <email>francesco.osborne@open.ac.uk</email></aff>
+<aff id="affc"><label>c</label>Digital Humanities Advanced Research Centre (DHARC), Department of Classical Philology and Italian Studies, <institution>University of Bologna</institution>, Via Zamboni 32, 40126, <country>Italy</country>. E-mail: <email>silvio.peroni@unibo.it</email></aff>
+<aff id="affd"><label>d</label>Department of Computer Science, <institution>University of Oxford</institution>, Parks Rd, OX1 3QD, <country>United Kingdom</country>. E-mail: <email>sahar.vahdati@cs.ox.ac.uk</email></aff>
+</contrib-group>
+<contrib-group content-type="guest-editors">
+<contrib contrib-type="guest-editor">
+<name><surname>Gonzalez-Beltran</surname><given-names>Alejandra</given-names></name>
+</contrib>
+<contrib contrib-type="guest-editor">
+<name><surname>Osborne</surname><given-names>Francesco</given-names></name>
+</contrib>
+<contrib contrib-type="guest-editor">
+<name><surname>Peroni</surname><given-names>Silvio</given-names></name>
+</contrib>
+<contrib contrib-type="guest-editor">
+<name><surname>Vahdati</surname><given-names>Sahar</given-names></name>
+</contrib>
+</contrib-group>
+<author-notes>
+<corresp id="cor1"><label>*</label>Corresponding author. E-mail: <email>alejandra.gonzalez-beltran@stfc.ac.uk</email>.</corresp>
+</author-notes>
+<pub-date date-type="preprint" publication-format="electronic"><day>20</day><month>11</month><year>2019</year></pub-date><pub-date date-type="pub" publication-format="electronic"><day>25</day><month>11</month><year>2019</year></pub-date><pub-date date-type="collection" publication-format="electronic"><year>2019</year></pub-date><volume>2</volume><issue>1-2</issue><issue-title>Scholarly Data Analysis (Semantics, Analytics, Visualisation)</issue-title><fpage>177</fpage><lpage>179</lpage>
+<permissions><copyright-statement>© 2019 – IOS Press and the authors.</copyright-statement><copyright-year>2019</copyright-year>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/" license-type="open-access" xlink:type="simple">
+<license-p>This is an open access article distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/" xlink:type="simple">Creative Commons Attribution (CC BY 4.0) License</ext-link>, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions>
+<abstract>
+<p>The increasing interest in analysing, describing, and improving the research process requires the development of new forms of scholarly data publication and analysis that integrates lessons and approaches from the field of Semantic Technologies, Science of Science, Digital Libraries, and Artificial Intelligence. This editorial summarises the content of the Special Issue on Scholarly Data Analysis (Semantics, Analytics, Visualisation), which aims to showcase some of the most interesting research efforts in the field. This issue includes an extended version of the best papers of the last two editions of the “Semantics, Analytics, Visualisation: Enhancing Scholarly Dissemination” (SAVE-SD 2017 and 2018) workshop at The Web Conference.</p>
+</abstract>
+<kwd-group>
+<label>Keywords</label>
+<kwd>Semantic publishing</kwd>
+<kwd>visual analytics</kwd>
+<kwd>ontologies</kwd>
+<kwd>data mining</kwd>
+<kwd>scholarly data</kwd>
+</kwd-group>
+</article-meta>
+</front>
+<body>
+<p>In recent years, we have seen an increasing interest in analysing, describing, and improving the research process with the aim of tackling the reproducibility crisis [<xref ref-type="bibr" rid="ref006">6</xref>], informing research policies [<xref ref-type="bibr" rid="ref002">2</xref>], enriching representation of research papers semantically [<xref ref-type="bibr" rid="ref007">7</xref>], identifying promising research directions [<xref ref-type="bibr" rid="ref009">9</xref>], monitoring the evolution of research topics [<xref ref-type="bibr" rid="ref004">4</xref>], and, ultimately, accelerating the scientific progress [<xref ref-type="bibr" rid="ref003">3</xref>]. These efforts require the development and publishing of new forms of scholarly artifacts and their analysis which integrates lessons and approaches from the field of semantic technologies, science of science, digital libraries, and artificial intelligence.</p>
+<p>While nowadays mostly set on the digital world, the document-based nature of current scholarly communication comes from the long-running practice followed by scholars of exchanging knowledge in form of paper-based articles. Therefore, most of the information is still stored in textual form, or unstructured artifacts, such as PDF files. Describing research knowledge and outputs in a more machine-actionable way can revolutionise how we perform and communicate research, but it is still an open challenge. Indeed, while several stakeholders (e.g., publishers, libraries, project managers, researchers) are moving towards providing services in modern technologies such as scholarly knowledge graphs, in practice, we are still far from the knowledge-based communication vision stated by Vannevar Bush in his influential 1945 essay “As We May Think” [<xref ref-type="bibr" rid="ref001">1</xref>]. Primary meta-research tasks with complex combination of metadata such as tracing citations back or forward, retrieving publications of a particular topic with a focus on a particular component e.g., methodology or evaluation, exploration of relevant research groups, grants, and other research-related artifacts are still time consuming with no totally satisfactory results.</p>
+<p>The latest web technologies – the Semantic Web, Knowledge Graphs, Question Answering, Management Systems and Recommendation-based services – combined with Artificial Intelligence are expected to provide the required pillars for addressing the aforementioned issues. We are in a stage where scholarly data are being increasingly released as Linked Open Data (e.g., ScholarlyData [<xref ref-type="bibr" rid="ref005">5</xref>] and OpenCitations [<xref ref-type="bibr" rid="ref008">8</xref>]) by using Semantic Web formats that facilitate the integration and connection between different repositories. In particular, seminal works suggest to push the on-going digital publishing revolution towards its natural next step, i.e., Semantic Publishing [<xref ref-type="bibr" rid="ref010">10</xref>,<xref ref-type="bibr" rid="ref011">11</xref>]: the semantic enhancement of scholarly data, their publication on the Web, and the creation of novel and smart services built on top of them. In order to push the current state of research on scholarly data to the next level, we need to broaden the range of technologies to be explored, e.g.: applying Web data mining techniques to support better use of scholarly data; applying more thorough and large scale analytics to understand the pattern of data usage; and, finally, exploring personalisation and analysing the user’s behaviour in interacting with these data to provide the best user experience. The realisation of such vision requires community involvement in facilitating the creation and curation of scholarly metadata and of scholarly knowledge bases.</p>
+<p>These topics have attracted high priority attention from international funding councils and community forums, such as FORCE11 and the Research Data Alliance (RDA). Supporting open and accessible data is one of the major themes in the EU Horizon2020 programme and the US National Institutes of Health Big Data to Knowledge (BD2K) initiative. It also attracted interest from industrial companies. We already see the provision of scholarly data as a service by area leaders like Thomson Reuters, Google, Microsoft and Elsevier, support for data publication and preservation (e.g., Figshare, Dryad, Zenodo), offering of alternative metrics for assessing academic performance (e.g., Altmetrics), and many other innovative services based on research data (e.g., Index Labs, Linknovate). This interest from the business world presents an unprecedented opportunity for rapidly transforming academic knowledge into practice and achieving the data-driven science and innovation that is promised by the Big Data era.</p>
+<p>This special issue aims to showcase some of the most recent and interesting research efforts in the field and start a conversation about the next steps that we will have to take as scientific community in the next few years. This special issue contains the extended version of the best selected papers of the last two editions of the “Semantics, Analytics, Visualisation: Enhancing Scholarly Dissemination” (SAVE-SD) workshop at the Web Conference. The aim of SAVE-SD was to bring together publishers, technology companies and researchers from different fields (including Document and Knowledge Engineering, Semantic Web, Natural Language Processing, Scholarly Communication, Bibliometrics, Human-Computer Interaction, Information Visualisation, Bioinformatics, and Life Sciences) in order to bridge the gap between the theoretical/academic and practical/industrial aspects in regards to scholarly data.</p>
+<p>The special issue consists in four contributions.</p>
+<p>In <italic>“Geographical trends in academic conferences: an analysis on authors’ affiliations”</italic>, the authors present a study on conference proceedings that illustrates insightful geographical trends and highlights the unbalanced growth of competitive research institutions worldwide in the 1996–2016 period. The analysis shows that the annual and overall turnover rate of country rankings is extremely low and steadily declines over time, suggesting an alarmingly static landscape in which new entries struggle to emerge.</p>
+<p>In <italic>“Enabling text search on SPARQL-endpoints through OSCAR”</italic>, the authors introduce the latest version of OSCAR (Version 2.0), the OpenCitations RDF Search Application, which has several improved features and extends the query workflow comparing with the previous version. OSCAR is a user-friendly search platform that can be used to search any RDF triplestore providing a SPARQL endpoint, while hiding the complexities of SPARQL, making the searching operations operable by those who are not experts in Semantic Web technologies with required backgrounds.</p>
+<p>In <italic>“Identifying PIDs playing FAIR”</italic>, the author presents a view on the findability and interoperability of PIDs and their compliance with the FAIR data principles. The paper discusses the failure to use PIDs for citation and suggest to add context and meaning to PIDs, making them easier to identify through namespace prefixes and object types.</p>
+<p>Finally, in <italic>“Towards a scientific data framework to support scientific model development”</italic>, the authors present an innovative framework to automatically take advantage of large amounts of scientific data extracted from the literature for supporting research and specifically scientific model development. The paper discusses a set of use cases in the field of combustion kinetics and a prototype of the framework that can be generalised to other domains.</p>
+<p>We would like to thank all the people that contributed to this special issue. We thank the Editors-in-Chief, Michel Dumontier and Tobias Kuhn, which gave us the opportunity to run this special issue and supported us during the whole process. We thank all the authors for their insightful contributions that represent an excellent example of the efforts that are taking place in this field. Finally, we would like to thank all the reviewers for their suggestions and discussions that contributed greatly to improve the quality of this issue: Riccardo Albertoni, Phil Archer, Aliaksandr Birukou, Simon Cox, Hanna Ćwiek-Kupczyńska, Scott Edmunds, Patricia Feeney, Jeff Grethe, Laurel L. Haak, John Kunze, Cameron Neylon, Eric Prud’hommeaux, Stian Soiland-Reyes, Sarala Wimalaratne and anonymous reviewers.</p>
+</body>
+<back>
+<ref-list>
+<title>References</title>
+<ref id="ref001">
+<label>[1]</label><mixed-citation publication-type="journal"><string-name><given-names>V.</given-names> <surname>Bush</surname></string-name>, <article-title>As we may think</article-title>, <source>The Atlantic Monthly</source> <volume>176</volume>(<issue>1</issue>) (<year>1945</year>), <fpage>101</fpage>–<lpage>108</lpage>. <uri>https://www.ias.ac.in/article/fulltext/reso/005/11/0094-0103</uri>.</mixed-citation>
+</ref>
+<ref id="ref002">
+<label>[2]</label><mixed-citation publication-type="journal"><string-name><given-names>B.</given-names> <surname>Daniel</surname></string-name>, <article-title>Big data and analytics in higher education: Opportunities and challenges</article-title>, <source>British journal of educational technology</source> <volume>46</volume>(<issue>5</issue>) (<year>2015</year>), <fpage>904</fpage>–<lpage>920</lpage>. doi:<pub-id pub-id-type="doi">10.1111/bjet.12230</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref003">
+<label>[3]</label><mixed-citation publication-type="other"><string-name><given-names>S.</given-names> <surname>Fortunato</surname></string-name>, <string-name><given-names>C.T.</given-names> <surname>Bergstrom</surname></string-name>, <string-name><given-names>K.</given-names> <surname>Börner</surname></string-name>, <string-name><given-names>J.A.</given-names> <surname>Evans</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Helbing</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Milojević</surname></string-name>, <string-name><given-names>A.M.</given-names> <surname>Petersen</surname></string-name>, <string-name><given-names>F.</given-names> <surname>Radicchi</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Sinatra</surname></string-name>, <string-name><given-names>B.</given-names> <surname>Uzzi</surname></string-name> <etal>et al.</etal>, <article-title>Science of science</article-title>, <source>Science</source> <volume>359</volume>(<issue>6379</issue>) (<year>2018</year>), <elocation-id>eaao0185</elocation-id>. doi:<pub-id pub-id-type="doi">10.1126/science.aao0185</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref004">
+<label>[4]</label><mixed-citation publication-type="journal"><string-name><given-names>A.</given-names> <surname>Mannocci</surname></string-name>, <string-name><given-names>F.</given-names> <surname>Osborne</surname></string-name> and <string-name><given-names>E.</given-names> <surname>Motta</surname></string-name>, <article-title>The evolution of IJHCS and CHI: A quantitative analysis</article-title>, <source>International Journal of Human–Computer Studies</source> <volume>131</volume> (<year>2019</year>), <fpage>23</fpage>–<lpage>40</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.ijhcs.2019.05.009</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref005">
+<label>[5]</label><mixed-citation publication-type="chapter"><string-name><given-names>A.G.</given-names> <surname>Nuzzolese</surname></string-name>, <string-name><given-names>A.L.</given-names> <surname>Gentile</surname></string-name>, <string-name><given-names>V.</given-names> <surname>Presutti</surname></string-name> and <string-name><given-names>A.</given-names> <surname>Gangemi</surname></string-name>, <chapter-title>Conference linked data: The ScholarlyData project</chapter-title>, in: <source>International Semantic Web Conference</source>, <publisher-name>Springer</publisher-name>, <year>2016</year>, pp. <fpage>150</fpage>–<lpage>158</lpage>. doi:<pub-id pub-id-type="doi">10.1007/978-3-319-46547-0_16</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref006">
+<label>[6]</label><mixed-citation publication-type="journal"><string-name><given-names>R.</given-names> <surname>Peng</surname></string-name>, <article-title>The reproducibility crisis in science: A statistical counterattack</article-title>, <source>Significance</source> <volume>12</volume>(<issue>3</issue>) (<year>2015</year>), <fpage>30</fpage>–<lpage>32</lpage>. doi:<pub-id pub-id-type="doi">10.1111/j.1740-9713.2015.00827.x</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref007">
+<label>[7]</label><mixed-citation publication-type="other"><string-name><given-names>S.</given-names> <surname>Peroni</surname></string-name>, <string-name><given-names>F.</given-names> <surname>Osborne</surname></string-name>, <string-name><given-names>A.D.</given-names> <surname>Iorio</surname></string-name>, <string-name><given-names>A.G.</given-names> <surname>Nuzzolese</surname></string-name>, <string-name><given-names>F.</given-names> <surname>Poggi</surname></string-name>, <string-name><given-names>F.</given-names> <surname>Vitali</surname></string-name> and <string-name><given-names>E.</given-names> <surname>Motta</surname></string-name>, <article-title>Research articles in simplified HTML: A web-first format for HTML-based scholarly articles</article-title>, <source>PeerJ Computer Science</source> <volume>3</volume> (<year>2017</year>), <elocation-id>e132</elocation-id>. doi:<pub-id pub-id-type="doi">10.7717/peerj-cs.132</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref008">
+<label>[8]</label><mixed-citation publication-type="chapter"><string-name><given-names>S.</given-names> <surname>Peroni</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Shotton</surname></string-name> and <string-name><given-names>F.</given-names> <surname>Vitali</surname></string-name>, <chapter-title>One year of the OpenCitations Corpus</chapter-title>, in: <source>International Semantic Web Conference</source>, <publisher-name>Springer</publisher-name>, <year>2017</year>, pp. <fpage>184</fpage>–<lpage>192</lpage>. doi:<pub-id pub-id-type="doi">10.1007/978-3-319-68204-4_19</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref009">
+<label>[9]</label><mixed-citation publication-type="chapter"><string-name><given-names>A.A.</given-names> <surname>Salatino</surname></string-name>, <string-name><given-names>F.</given-names> <surname>Osborne</surname></string-name> and <string-name><given-names>E.</given-names> <surname>Motta</surname></string-name>, <chapter-title>AUGUR: Forecasting the emergence of new research topics</chapter-title>, in: <source>Proceedings of the 18th ACM/IEEE on Joint Conference on Digital Libraries</source>, <publisher-name>ACM</publisher-name>, <year>2018</year>, pp. <fpage>303</fpage>–<lpage>312</lpage>. doi:<pub-id pub-id-type="doi">10.1145/3197026.3197052</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref010">
+<label>[10]</label><mixed-citation publication-type="journal"><string-name><given-names>D.</given-names> <surname>Shotton</surname></string-name>, <article-title>Semantic publishing: The coming revolution in scientific journal publishing</article-title>, <source>Learned Publishing</source> <volume>22</volume>(<issue>2</issue>) (<year>2009</year>), <fpage>85</fpage>–<lpage>94</lpage>. doi:<pub-id pub-id-type="doi">10.1087/2009202</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref011">
+<label>[11]</label><mixed-citation publication-type="chapter"><string-name><given-names>S.</given-names> <surname>Vahdati</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Dimou</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Lange</surname></string-name> and <string-name><given-names>A.</given-names> <surname>Di Iorio</surname></string-name>, <chapter-title>Semantic publishing challenge: Bootstrapping a value chain for scientific data</chapter-title>, in: <source>International Workshop on Semantic, Analytics, Visualization</source>, <publisher-name>Springer</publisher-name>, <year>2016</year>, pp. <fpage>73</fpage>–<lpage>89</lpage>. doi:<pub-id pub-id-type="doi">10.1007/978-3-319-53637-8_9</pub-id>.</mixed-citation>
+</ref>
+</ref-list>
+</back>
+</article>

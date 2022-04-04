@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.0 20120330//EN" "JATS-journalpublishing1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="formalization-paper" dtd-version="1.0">
+<front>
+<journal-meta>
+<journal-id journal-id-type="publisher-id">DS</journal-id>
+<journal-title-group><journal-title>Data Science</journal-title></journal-title-group>
+<issn pub-type="epub">2451-8492</issn><issn pub-type="ppub">2451-8484</issn><issn-l>2451-8484</issn-l>
+<publisher>
+<publisher-name>IOS Press</publisher-name><publisher-loc>Nieuwe Hemweg 6B, 1013 BG Amsterdam, The Netherlands</publisher-loc>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">DS210047</article-id>
+<article-id pub-id-type="doi">10.3233/DS-210047</article-id>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Formalization Paper</subject></subj-group></article-categories>
+<title-group>
+<article-title>A formalization of one of the main claims of “The FAIR Guiding Principles for scientific data management and stewardship” by Wilkinson et al. 2016<xref ref-type="fn" rid="thanks1"><sup>1</sup></xref></article-title>
+</title-group>
+<contrib-group content-type="Editor">
+<contrib contrib-type="editor">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-7114-6459</contrib-id>
+<name><surname>Bucur</surname><given-names>Cristina-Iulia</given-names></name>
+</contrib>
+</contrib-group>
+<contrib-group content-type="Review comments from">
+<contrib contrib-type="reviewer">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-1267-0234</contrib-id>
+<name><surname>Kuhn</surname><given-names>Tobias</given-names></name>
+</contrib>
+<contrib contrib-type="reviewer">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-0191-7211</contrib-id>
+<name><surname>Usbeck</surname><given-names>Ricardo</given-names></name>
+</contrib>
+<contrib contrib-type="reviewer">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0001-8004-0464</contrib-id>
+<name><surname>Martorana</surname><given-names>Margherita</given-names></name>
+</contrib>
+<contrib contrib-type="reviewer">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-7114-6459</contrib-id>
+<name><surname>Bucur</surname><given-names>Cristina-Iulia</given-names></name>
+</contrib>
+</contrib-group>
+<contrib-group>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0003-4727-9435</contrib-id>
+<name><surname>Dumontier</surname><given-names>Michel</given-names></name><email>michel.dumontier@maastrichtuniversity.nl</email><email>michel.dumontier@gmail.com</email><xref ref-type="aff" rid="affa"/><xref ref-type="corresp" rid="cor2">*</xref>
+</contrib>
+<aff id="affa"><institution>Maastricht University</institution>, <country>The Netherlands</country></aff>
+</contrib-group>
+<contrib-group content-type="guest-editors">
+<contrib contrib-type="guest-editor">
+<name><surname>Bucur</surname><given-names>Cristina-Iulia</given-names></name>
+</contrib>
+<contrib contrib-type="guest-editor">
+<name><surname>Kuhn</surname><given-names>Tobias</given-names></name>
+</contrib>
+</contrib-group>
+<author-notes>
+<fn id="thanks1"><label>1</label>
+<p>As RDF/nanopublication: <uri>http://purl.org/np/RA22JAQihYeiJkNIjvwnxLPmjuG74yPcRXpPyVX8DV6fA</uri></p></fn><corresp id="cor2"><label>*</label>Corresponding author. E-mail: <email>michel.dumontier@maastrichtuniversity.nl</email>.</corresp>
+</author-notes>
+<pub-date date-type="preprint" publication-format="electronic"><day>25</day><month>1</month><year>2022</year></pub-date><pub-date date-type="pub" publication-format="electronic"><day>22</day><month>3</month><year>2022</year></pub-date><pub-date date-type="collection" publication-format="electronic"><year>2022</year></pub-date><volume>5</volume><issue>1</issue><issue-title>Semantic Publishing with Formalization Papers</issue-title><fpage>53</fpage><lpage>56</lpage><history><date date-type="received"><day>25</day><month>06</month><year>2021</year></date><date date-type="accepted"><day>17</day><month>11</month><year>2021</year></date></history>
+<permissions><copyright-statement>© 2022 – The authors. Published by IOS Press.</copyright-statement><copyright-year>2022</copyright-year>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/" license-type="open-access" xlink:type="simple">
+<license-p>This is an open access article distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/" xlink:type="simple">Creative Commons Attribution (CC BY 4.0) License</ext-link>, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions>
+<abstract>
+<p>Wilkinson et al. claimed in previous work that Adherence of a dataset to the FAIR Guiding Principles enables its automated discovery. We present here a formalization of that claim, stating that all things of class “adherence to the FAIR Guiding principles” that are in the context of a thing of class “data set” can generally have a relation of type “enables” to a thing of class “automated discovery” in the same context.</p>
+</abstract>
+<kwd-group>
+<label>Keywords</label>
+<kwd>Data set</kwd>
+<kwd>adherence to the FAIR guiding principles</kwd>
+<kwd>automated discovery</kwd>
+</kwd-group>
+</article-meta>
+</front>
+<body>
+<sec id="x1-1000-1">
+<label>1.</label>
+<title>Introduction</title>
+<p>Wilkinson et al. state that “the FAIR Principles put specific emphasis on enhancing the ability of machines to automatically find and use the data” [<xref ref-type="bibr" rid="ref002">2</xref>]. We present here a formalization of the main scientific claim from this quote by using a semantic template called the super-pattern [<xref ref-type="bibr" rid="ref001">1</xref>].</p>
+</sec>
+<sec id="x1-2000-2">
+<label>2.</label>
+<title>Formalization</title>
+<p>Our formalization looks as follows:</p>
+<table-wrap>
+<table>
+<tbody>
+<tr>
+<td valign="top" align="left">CONTEXT-CLASS (“in the context of all ...”):</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://www.wikidata.org/wiki/Q1172284">data set</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left">SUBJECT-CLASS (“things of type ...”):</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAodU4AmRjfzyjwtJK3luO0iyRJJPUBjkijKWdlMHvack#adherenceToTheFAIRGuidingPrinciples">adherence to the FAIR guiding principles</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left">QUALIFIER:</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/canGenerallyQualifier">can generally</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left">RELATION-TYPE (“have a relation of type...”):</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/enables">enables</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left">OBJECT-CLASS (“to things of type...”):</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAFQovt9yQD7nZ2tdZ9_Uhpb7CsfT3k64pK7dh63xd-50#automatedDiscovery">automated discovery</ext-link></td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+<p>In the context class we use the “data set” (Q1172284) class from Wikidata. In subject class, we use a new minted class “adherence to the FAIR guiding principles” that is a subclass of “adherence” (Q85315455) and is related to the class “FAIR data principles” (Q29032644) from Wikidata. In the object class we minted a new class “automated discovery” that is a subclass of “discovery” (Q12772819) and is related to the class “automation” (Q184199) from Wikidata.</p>
+</sec>
+<sec id="x1-3000-3">
+<label>3.</label>
+<title>RDF code</title>
+<p>This is our formalization as a nanopublication in TriG format:</p><preformat><monospace>@prefix this: &lt;http://purl.org/np/RA22JAQihYeiJkNIjvwnxLPmjuG74yPcRXpPyVX8DV6fA&gt; .</monospace>
+<monospace>@prefix sub: &lt;http://purl.org/np/RA22JAQihYeiJkNIjvwnxLPmjuG74yPcRXpPyVX8DV6fA#&gt; .</monospace>
+<monospace>@prefix np: &lt;http://www.nanopub.org/nschema#&gt; .</monospace>
+<monospace>@prefix dct: &lt;http://purl.org/dc/terms/&gt; .</monospace>
+<monospace>@prefix nt: &lt;https://w3id.org/np/o/ntemplate/&gt; .</monospace>
+<monospace>@prefix npx: &lt;http://purl.org/nanopub/x/&gt; .</monospace>
+<monospace>@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .</monospace>
+<monospace>@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .</monospace>
+<monospace>@prefix orcid: &lt;https://orcid.org/&gt; .</monospace>
+<monospace>@prefix prov: &lt;http://www.w3.org/ns/prov#&gt; .</monospace>
+<monospace>@prefix sp: &lt;https://w3id.org/linkflows/superpattern/terms/&gt; .</monospace>
+
+<monospace>sub:Head {</monospace>
+<monospace>  this: np:hasAssertion sub:assertion ;</monospace>
+<monospace>    np:hasProvenance sub:provenance ;</monospace>
+<monospace>    np:hasPublicationInfo sub:pubinfo ;</monospace>
+<monospace>    a np:Nanopublication .</monospace>
+<monospace>}</monospace>
+<monospace>sub:assertion {</monospace>
+<monospace>  sub:spi a &lt;https://w3id.org/linkflows/superpattern/terms/SuperPatternInstance&gt; ;</monospace>
+<monospace>    rdfs:label "Adherence of a dataset to the FAIR Guiding Principles enables its automated discovery." ;</monospace>
+<monospace>    sp:hasContextClass &lt;http://www.wikidata.org/entity/Q1172284&gt; ;</monospace>
+<monospace>    sp:hasSubjectClass &lt;http://purl.org/np/RAodU4AmRjfzyjwtJK3luO0iyRJJPUBjkijKWdlMHvack#adherenceToTheFAIRGuidingPrinciples&gt; ;</monospace>
+<monospace>    sp:hasQualifier sp:canGenerallyQualifier ;</monospace>
+<monospace>    sp:hasRelation sp:enables ;</monospace>
+<monospace>    sp:hasObjectClass &lt;http://purl.org/np/RAFQovt9yQD7nZ2tdZ9_Uhpb7CsfT3k64pK7dh63xd-50#automatedDiscovery&gt; .</monospace>
+<monospace>}</monospace>
+<monospace>sub:provenance {</monospace>
+<monospace>  sub:activity a sp:FormalizationActivity ;</monospace>
+<monospace>    prov:used sub:quote , &lt;https://doi.org/10.1038/sdata.2016.18&gt; ;</monospace>
+<monospace>    prov:wasAssociatedWith orcid:0000-0003-4727-9435 .</monospace>
+<monospace>  sub:assertion prov:wasGeneratedBy sub:activity .</monospace>
+<monospace>  sub:quote prov:value "the FAIR Principles put specific emphasis on enhancing the ability of machines to automatically find and</monospace>
+<monospace>use the data" ;</monospace>
+<monospace>    prov:wasQuotedFrom &lt;https://doi.org/10.1038/sdata.2016.18&gt; .</monospace>
+<monospace>}</monospace>
+<monospace>sub:pubinfo {</monospace>
+<monospace>  sub:sig npx:hasAlgorithm "RSA" ;</monospace>
+<monospace>    npx:hasPublicKey</monospace>
+<monospace>"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCTQs+mANCSHWhIW/YPio468UdGNHsPvADpjfaW8um/v2L4AoDIANginfoU65VNbPT5D0ADt1y0uFNne3VEMr9Y+I2H</monospace>
+<monospace>Faz6IKj+LdYMJk6VUf5WJoImRHIX6BZQwcUc22CbTBFYxvqvp3UmmHrCrhLIZjDSyutExK3tOTRoMDjGowIDAQAB" ;</monospace>
+<monospace>    npx:hasSignature</monospace>
+<monospace>"hHeN9qAHbRXgslk6ztdFWPThPTPYrIjclGL+nH6YX7A88Qqj70dJFXZYBFGcv7OpOiEmEVsAlNs2Xn7oefCmpsfBTIivwVPLf8SWzXrpnDU2p9naIr6YMlyrNJ3wLg61</monospace>
+<monospace>pXWaOH82njsVr1GMtL7y0VGw8cCmhdvzASigRCfLAQs=" ;</monospace>
+<monospace>    npx:hasSignatureTarget this: .</monospace>
+<monospace>  this: dct:created "2021-11-08T09:09:11.999+01:00"^^xsd:dateTime ;</monospace>
+<monospace>    dct:creator orcid:0000-0003-4727-9435 ;</monospace>
+<monospace>    npx:introduces sub:spi ;</monospace>
+<monospace>    &lt;https://w3id.org/linkflows/reviews/isUpdateOf&gt; &lt;http://purl.org/np/RAPLWOEA5t6_Kx6vVHtibWm92pg1XTN6FIZdWuaTyoy9g&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromProvenanceTemplate &lt;http://purl.org/np/RAE1wniOy0yO39PlK9QkQ-wqbC3q-R2nXraP5huu8W39k&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromPubinfoTemplate &lt;http://purl.org/np/RAA2MfqdBCzmz9yVWjKLXNbyfBNcwsMmOqcNUxkk1maIM&gt; ,</monospace>
+<monospace>&lt;http://purl.org/np/RAOGu9Lh0BD4tbIRB9RG6RGRA_ObDh75NTbIqaWgxxs8M&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromTemplate &lt;http://purl.org/np/RAv68imZrEjfcp2rnEg1hzoBqEVc0cQMtp9_1Za0BxNM4&gt; .</monospace>
+<monospace>}</monospace>
+</preformat>
+<p>The following nanopublications introduce the newly minted classes in TriG format.</p>
+<p>This is the class definition of “adherence to the FAIR guiding principles”:</p><preformat><monospace>@prefix this: &lt;http://purl.org/np/RAodU4AmRjfzyjwtJK3luO0iyRJJPUBjkijKWdlMHvack&gt; .</monospace>
+<monospace>@prefix sub: &lt;http://purl.org/np/RAodU4AmRjfzyjwtJK3luO0iyRJJPUBjkijKWdlMHvack#&gt; .</monospace>
+<monospace>@prefix np: &lt;http://www.nanopub.org/nschema#&gt; .</monospace>
+<monospace>@prefix dct: &lt;http://purl.org/dc/terms/&gt; .</monospace>
+<monospace>@prefix nt: &lt;https://w3id.org/np/o/ntemplate/&gt; .</monospace>
+<monospace>@prefix npx: &lt;http://purl.org/nanopub/x/&gt; .</monospace>
+<monospace>@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .</monospace>
+<monospace>@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .</monospace>
+<monospace>@prefix orcid: &lt;https://orcid.org/&gt; .</monospace>
+<monospace>@prefix prov: &lt;http://www.w3.org/ns/prov#&gt; .</monospace>
+<monospace>@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .</monospace>
+
+<monospace>sub:Head {</monospace>
+<monospace>  this: np:hasAssertion sub:assertion ;</monospace>
+<monospace>    np:hasProvenance sub:provenance ;</monospace>
+<monospace>    np:hasPublicationInfo sub:pubinfo ;</monospace>
+<monospace>    a np:Nanopublication .</monospace>
+<monospace>}</monospace>
+<monospace>sub:assertion {</monospace>
+<monospace>  sub:adherenceToTheFAIRGuidingPrinciples a &lt;http://www.w3.org/2002/07/owl#Class&gt; ;</monospace>
+<monospace>    rdfs:label "adherence to the FAIR Guiding Principles" ;</monospace>
+<monospace>    rdfs:subClassOf &lt;http://www.wikidata.org/entity/Q85315455&gt; ;</monospace>
+<monospace>    skos:definition "everything that adheres to the FAIR Guiding Principles" ;</monospace>
+<monospace>    skos:relatedMatch &lt;http://www.wikidata.org/entity/Q29032644&gt; .</monospace>
+<monospace>}</monospace>
+<monospace>sub:provenance {</monospace>
+<monospace>  sub:assertion prov:wasAttributedTo orcid:0000-0003-4727-9435 .</monospace>
+<monospace>}</monospace>
+<monospace>sub:pubinfo {</monospace>
+<monospace>  sub:sig npx:hasAlgorithm "RSA" ;</monospace>
+<monospace>    npx:hasPublicKey</monospace>
+<monospace>"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCTQs+mANCSHWhIW/YPio468UdGNHsPvADpjfaW8um/v2L4AoDIANginfoU65VNbPT5D0ADt1y0uFNne3VEMr9Y+I2H</monospace>
+<monospace>Faz6IKj+LdYMJk6VUf5WJoImRHIX6BZQwcUc22CbTBFYxvqvp3UmmHrCrhLIZjDSyutExK3tOTRoMDjGowIDAQAB" ;</monospace>
+<monospace>    npx:hasSignature</monospace>
+<monospace>"FU2AFDaNFi5T1Fg9rVBkFRUGzO1XkE+kB6avmaGd2vxwc+1qHRQ39yVXfLs4lEZll9QURYWVcAT9ogv+rs/ZMkyboGgEHPSFzogtUPykLqimfEh+XK2TMvcPP71W3GRJ</monospace>
+<monospace>qjmo/ZJ/7CGocR022MkmYf0IeyzPWRTrAdD41IXDvfs=" ;</monospace>
+<monospace>    npx:hasSignatureTarget this: .</monospace>
+<monospace>  this: dct:created "2021-06-25T16:31:54.801+02:00"^^xsd:dateTime ;</monospace>
+<monospace>    dct:creator orcid:0000-0003-4727-9435 ;</monospace>
+<monospace>    npx:introduces sub:adherenceToTheFAIRGuidingPrinciples ;</monospace>
+<monospace>    nt:wasCreatedFromProvenanceTemplate &lt;http://purl.org/np/RANwQa4ICWS5SOjw7gp99nBpXBasapwtZF1fIM3H2gYTM&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromPubinfoTemplate &lt;http://purl.org/np/RAA2MfqdBCzmz9yVWjKLXNbyfBNcwsMmOqcNUxkk1maIM&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromTemplate &lt;http://purl.org/np/RAdpgRpigXtt8iPV9uOPf3wIT3qzOI8Sg2Q72CNV8g-Yo&gt; .</monospace>
+<monospace>}</monospace>
+</preformat>
+<p>This is the class definition of “automated discovery”:</p><preformat><monospace>@prefix this: &lt;http://purl.org/np/RAFQovt9yQD7nZ2tdZ9_Uhpb7CsfT3k64pK7dh63xd-50&gt; .</monospace>
+<monospace>@prefix sub: &lt;http://purl.org/np/RAFQovt9yQD7nZ2tdZ9_Uhpb7CsfT3k64pK7dh63xd-50#&gt; .</monospace>
+<monospace>@prefix np: &lt;http://www.nanopub.org/nschema#&gt; .</monospace>
+<monospace>@prefix dct: &lt;http://purl.org/dc/terms/&gt; .</monospace>
+<monospace>@prefix nt: &lt;https://w3id.org/np/o/ntemplate/&gt; .</monospace>
+<monospace>@prefix npx: &lt;http://purl.org/nanopub/x/&gt; .</monospace>
+<monospace>@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .</monospace>
+<monospace>@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .</monospace>
+<monospace>@prefix orcid: &lt;https://orcid.org/&gt; .</monospace>
+<monospace>@prefix prov: &lt;http://www.w3.org/ns/prov#&gt; .</monospace>
+<monospace>@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .</monospace>
+
+<monospace>sub:Head {</monospace>
+<monospace>  this: np:hasAssertion sub:assertion ;</monospace>
+<monospace>    np:hasProvenance sub:provenance ;</monospace>
+<monospace>    np:hasPublicationInfo sub:pubinfo ;</monospace>
+<monospace>    a np:Nanopublication .</monospace>
+<monospace>}</monospace>
+<monospace>sub:assertion {</monospace>
+<monospace>  sub:automatedDiscovery a &lt;http://www.w3.org/2002/07/owl#Class&gt; ;</monospace>
+<monospace>    rdfs:label "Automated Discovery" ;</monospace>
+<monospace>    rdfs:subClassOf &lt;http://www.wikidata.org/entity/Q12772819&gt; ;</monospace>
+<monospace>    skos:definition "Everything that is discoverable through automation" ;</monospace>
+<monospace>    skos:relatedMatch &lt;http://www.wikidata.org/entity/Q184199&gt; .</monospace>
+<monospace>}</monospace>
+<monospace>sub:provenance {</monospace>
+<monospace>  sub:assertion prov:wasAttributedTo orcid:0000-0003-4727-9435 .</monospace>
+<monospace>}</monospace>
+<monospace>sub:pubinfo {</monospace>
+<monospace>  sub:sig npx:hasAlgorithm "RSA" ;</monospace>
+<monospace>    npx:hasPublicKey</monospace>
+<monospace>"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCTQs+mANCSHWhIW/YPio468UdGNHsPvADpjfaW8um/v2L4AoDIANginfoU65VNbPT5D0ADt1y0uFNne3VEMr9Y+I2H</monospace>
+<monospace>Faz6IKj+LdYMJk6VUf5WJoImRHIX6BZQwcUc22CbTBFYxvqvp3UmmHrCrhLIZjDSyutExK3tOTRoMDjGowIDAQAB" ;</monospace>
+<monospace>    npx:hasSignature</monospace>
+<monospace>"hji2+/D20zQjL8dUsjumjW760vBuClRwU4luJQL8PvMjaenF0hFWf/1qRIqqVLjJ9/unF5nVM2kWKi8frsruGqZdGzy3/8gKnuH6D1RROX3Z1lVqEJJQ8a5gG18ZpArQ</monospace>
+<monospace>7JNRUFYnCDsfFgEaGlFM8HNw4ECttpJUvDlYlnuPxKU=" ;</monospace>
+<monospace>    npx:hasSignatureTarget this: .</monospace>
+<monospace>  this: dct:created "2021-06-25T16:45:52.256+02:00"^^xsd:dateTime ;</monospace>
+<monospace>    dct:creator orcid:0000-0003-4727-9435 ;</monospace>
+<monospace>    npx:introduces sub:automatedDiscovery ;</monospace>
+<monospace>    nt:wasCreatedFromProvenanceTemplate &lt;http://purl.org/np/RANwQa4ICWS5SOjw7gp99nBpXBasapwtZF1fIM3H2gYTM&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromPubinfoTemplate &lt;http://purl.org/np/RAA2MfqdBCzmz9yVWjKLXNbyfBNcwsMmOqcNUxkk1maIM&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromTemplate &lt;http://purl.org/np/RAdpgRpigXtt8iPV9uOPf3wIT3qzOI8Sg2Q72CNV8g-Yo&gt; .</monospace>
+<monospace>}</monospace>
+</preformat>
+</sec>
+</body>
+<back>
+<ref-list>
+<title>References</title>
+<ref id="ref001">
+<label>[1]</label><mixed-citation publication-type="other"><string-name><given-names>C.I.</given-names> <surname>Bucur</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Kuhn</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Ceolin</surname></string-name> and <string-name><given-names>J.</given-names> <surname>van Ossenbruggen</surname></string-name>, <chapter-title>Expressing high-level scientific claims with formal semantics</chapter-title>, in: <source>Proceedings of the 11th Knowledge Capture Conference</source>, <year>2021</year>. doi:<pub-id pub-id-type="doi">10.1145/3460210.3493561</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref002">
+<label>[2]</label><mixed-citation publication-type="other"><string-name><given-names>M.</given-names> <surname>Wilkinson</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Dumontier</surname></string-name>, <string-name><given-names>I.</given-names> <surname>Aalbersberg</surname></string-name> <etal>et al.</etal>, <article-title>The FAIR Guiding Principles for scientific data management and stewardship</article-title>, <source>Sci Data</source> <volume>3</volume> (<year>2016</year>), <elocation-id>160018</elocation-id>. doi:<pub-id pub-id-type="doi">10.1038/sdata.2016.18</pub-id>.</mixed-citation>
+</ref>
+</ref-list>
+</back>
+</article>

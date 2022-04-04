@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.0 20120330//EN" "JATS-journalpublishing1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="position-paper">
+<front>
+<journal-meta>
+<journal-id journal-id-type="publisher-id">DS</journal-id>
+<journal-title-group><journal-title>Data Science</journal-title></journal-title-group>
+<issn pub-type="epub">2451-8492</issn><issn pub-type="ppub">2451-8484</issn><issn-l>2451-8484</issn-l>
+<publisher>
+<publisher-name>IOS Press</publisher-name><publisher-loc>Nieuwe Hemweg 6B, 1013 BG Amsterdam, The Netherlands</publisher-loc>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">DS190020</article-id>
+<article-id pub-id-type="doi">10.3233/DS-190020</article-id>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Position Paper</subject></subj-group></article-categories>
+<title-group>
+<article-title>The ten commandments of translational research informatics</article-title>
+</title-group>
+<contrib-group content-type="Editor">
+<contrib contrib-type="editor">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-6949-2651</contrib-id>
+<name><surname>Desai</surname><given-names>Manisha</given-names></name>
+</contrib>
+</contrib-group>
+<contrib-group>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-0208-8443</contrib-id>
+<name><surname>Hulsen</surname><given-names>Tim</given-names></name><xref ref-type="aff" rid="affa"/><xref ref-type="corresp" rid="cor1">*</xref>
+</contrib>
+<aff id="affa">Department of Professional Health Solutions &amp; Services, <institution>Philips Research</institution>, Eindhoven, <country>The Netherlands</country>. E-mail: <email>tim.hulsen@philips.com</email></aff>
+</contrib-group>
+<author-notes>
+<corresp id="cor1"><label>*</label>Corresponding author. E-mail: <email>tim.hulsen@philips.com</email>.</corresp>
+</author-notes>
+<pub-date date-type="preprint" publication-format="electronic"><day>3</day><month>10</month><year>2019</year></pub-date><pub-date date-type="pub" publication-format="electronic"><day>25</day><month>11</month><year>2019</year></pub-date><pub-date date-type="collection" publication-format="electronic"><year>2019</year></pub-date><volume>2</volume><issue>1-2</issue><fpage>341</fpage><lpage>352</lpage><history><date date-type="received"><day>23</day><month>03</month><year>2019</year></date><date date-type="accepted"><day>26</day><month>07</month><year>2019</year></date></history>
+<permissions><copyright-statement>© 2019 – IOS Press and the authors.</copyright-statement><copyright-year>2019</copyright-year>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/" license-type="open-access" xlink:type="simple">
+<license-p>This is an open access article distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/" xlink:type="simple">Creative Commons Attribution (CC BY 4.0) License</ext-link>, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions>
+<abstract>
+<p>Translational research applies findings from basic science to enhance human health and well-being. In translational research projects, academia and industry work together to improve healthcare, often through public-private partnerships. This “translation” is often not easy, because it means that the so-called “valley of death” will need to be crossed: many interesting findings from fundamental research do not result in new treatments, diagnostics and prevention. To cross the valley of death, fundamental researchers need to collaborate with clinical researchers and with industry so that promising results can be implemented in a product. The success of translational research projects often does not depend only on the fundamental science and the applied science, but also on the informatics needed to connect everything: the translational research informatics. This informatics, which includes data management, data stewardship and data governance, enables researchers to store and analyze their ‘big data’ in a meaningful way, and enable application in the clinic. The author has worked on the information technology infrastructure for several translational research projects in oncology for the past nine years, and presents his lessons learned in this paper in the form of ten commandments. These commandments are not only useful for the data managers, but for all involved in a translational research project. Some of the commandments deal with topics that are currently in the spotlight, such as machine readability, the FAIR Guiding Principles and the GDPR regulations. Others are mentioned less in the literature, but are just as crucial for the success of a translational research project.</p>
+</abstract>
+<kwd-group>
+<label>Keywords</label>
+<kwd>Translational research</kwd>
+<kwd>medical informatics</kwd>
+<kwd>data management</kwd>
+<kwd>data curation</kwd>
+<kwd>data science</kwd>
+</kwd-group>
+</article-meta>
+</front>
+<body>
+<sec id="x1-1000-1">
+<label>1.</label>
+<title>Introduction</title>
+<p>Translational research applies findings from basic science to enhance human health and well-being. In a medical research context, it aims to “translate” findings in fundamental research into medical practice and meaningful health outcomes. In translational research projects, academia and industry work together to improve healthcare, often through public-private partnerships [<xref ref-type="bibr" rid="ref028">28</xref>]. This “translation” is often not easy, because it means that the so-called “valley of death” [<xref ref-type="bibr" rid="ref004">4</xref>] will need to be crossed: many interesting findings from fundamental research do not result in new treatments, diagnostics and prevention. To cross the valley of death, fundamental researchers need to collaborate with clinical researchers and with industry so that promising results can be implemented in a product. Examples of initiatives supporting translational research are EATRIS [<xref ref-type="bibr" rid="ref003">3</xref>], the European Infrastructure for Translational Medicine and NCATS [<xref ref-type="bibr" rid="ref024">24</xref>], the National Center for Advancing Translational Sciences in the USA.</p>
+<p>The success of translational research projects often does not depend only on the fundamental science and the applied science, but also on the informatics needed to connect everything: the ‘translational research informatics’. This type of informatics was first described in 2005 by Payne et al. [<xref ref-type="bibr" rid="ref036">36</xref>], as the intersection between biomedical informatics and translational research. Translational research informatics should enable the researchers to store and analyze their ‘big data’ in a meaningful way, and enable application in the clinic [<xref ref-type="bibr" rid="ref019">19</xref>]. This translational research informatics field includes data management, data stewardship and data governance, which are receiving more attention recently. Data management (in research) is the care and maintenance of the data that are produced during the course of a research cycle. It is an integral part of the research process and helps to ensure that your data are properly organized, described, preserved, and shared [<xref ref-type="bibr" rid="ref040">40</xref>]. Data management ensures that the story of a researcher’s data collection process is organized, understandable, and transparent [<xref ref-type="bibr" rid="ref048">48</xref>]. According to Rosenbaum, 2010 [<xref ref-type="bibr" rid="ref041">41</xref>], data stewardship is a concept with deep roots in the science and practice of data collection, sharing, and analysis. It denotes an approach to the management of data, particularly data that can identify individuals. Data governance is the process by which responsibilities of stewardship are conceptualized and carried out. Perrier et al. (2017) presents an extensive overview of 301 articles on data management, distributed over the six phases of the Research Data Lifecycle [<xref ref-type="bibr" rid="ref015">15</xref>]: (1) Creating Data, (2) Processing Data, (3) Analysing Data, (4) Preserving Data, (5) Giving Access to Data and (6) Re-Using Data. It shows that most publications focus on phases 4 to 6 (especially phase 5), but not so much on phases 1 to 3, while these are equally important.</p>
+<p>The author has worked on the information technology (IT) infrastructure, data integration and data management for several translational research projects in oncology [<xref ref-type="bibr" rid="ref020">20</xref>–<xref ref-type="bibr" rid="ref022">22</xref>,<xref ref-type="bibr" rid="ref027">27</xref>,<xref ref-type="bibr" rid="ref039">39</xref>] for the past nine years, as well as on a large Dutch translational research informatics project [<xref ref-type="bibr" rid="ref032">32</xref>], and presents his lessons learned in this paper in the form of ten commandments. These commandments are not only useful for the data managers, but for all involved in a translational research project, since they touch upon crucial elements such as data quality, data access and sustainability, and cover all phases of the research data lifecycle. As opposed to most publications in the field of data management, this article even puts an emphasis on the early phases of the research data lifecycle.</p>
+</sec>
+<sec id="x1-2000-2">
+<label>2.</label>
+<title>The ten commandments</title>
+<sec id="x1-3000-2.1">
+<label>2.1.</label>
+<title>Commandment 1: Create a separate data management work package</title>
+<p>When clinicians, biologists and other researchers come together in a translational research project, they often do not think about data management, data curation, data integration and the IT infrastructure, except for when it is already too late: the data sit on several computers scattered over different organizations, and nobody knows how to combine them and make sense of them. The solution: create a separate work package or work stream on data management. This work package can be thought of as a sub-project, which has its own goal (or even a list of milestones and deliverables) and has full-time equivalents (FTEs) and other financial resources allocated. Within this work package, a data management plan (DMP) will be created which describes exactly how the data management will take place (such a DMP is obligated nowadays in several funding programmes such as Horizon 2020 [<xref ref-type="bibr" rid="ref017">17</xref>], and with good reason). Since this data management work package will have touchpoints with the other (data generating) work packages, the data management work package leader needs to be involved in all project meetings. It is also advised to create a separate work package on data analysis, which gets its input from the data management / data integration work package (Fig. <xref rid="x1-3001-1">1</xref>).</p>
+<fig id="x1-3001-1">
+<label>Fig. 1.</label>
+<caption>
+<p>A proposed work package (WP) structure for a translational research project.</p>
+</caption>
+<graphic xlink:href="ds-2-ds190020-g001.jpg"/>
+</fig>
+</sec>
+<sec id="x1-4000-2.2">
+<label>2.2.</label>
+<title>Commandment 2: Reserve time and money for data entry</title>
+<p>Investigators tasked with generating the hypotheses may not have the expertise to understand the complexities of processing and managing data that are not clean and ready for analysis. For example, they usually lack knowledge about an Electronic Data Capture (EDC) system such as OpenClinica [<xref ref-type="bibr" rid="ref035">35</xref>], Castor EDC [<xref ref-type="bibr" rid="ref006">6</xref>] or REDCap [<xref ref-type="bibr" rid="ref016">16</xref>], as part of work package 1 in Fig. <xref rid="x1-3001-1">1</xref>. This work is often assigned to trial nurses, who usually already have a high workload. The data entry work is on the bottom of their priority list, which can cause delays and even errors. Which is a large concern, because data quality is an important matter when it comes to data analysis [<xref ref-type="bibr" rid="ref005">5</xref>]. Even when the data are extracted from an Electronic Health Record (EHR) and entered into the EDC system automatically, this needs to be checked by someone. The term “Garbage in, garbage out” (GIGO) comes from computer science, but applies to medical data as well [<xref ref-type="bibr" rid="ref026">26</xref>]. The solution here is to reserve money to hire people who can do this job for a certain amount of hours per week. By spending relatively little money on data entry, one can save a lot of time and money by not having to redo analyses because of missing or erroneous data.</p>
+<p>This commandment does not apply to just clinical data but to the other data types as well: imaging and digital pathology data often need to be annotated, biobank data usually need to be exported from a Laboratory Information Management System (LIMS), and raw genomics data need to be processed first before they can be used in an integrated database. All these steps need sufficient resources to make sure that they are executed correctly.</p>
+</sec>
+<sec id="x1-5000-2.3">
+<label>2.3.</label>
+<title>Commandment 3: Define all data fields up front together with the help of data analysis experts</title>
+<p>Within the Prostate Cancer Molecular Medicine (PCMM [<xref ref-type="bibr" rid="ref020">20</xref>]) project, we noticed after a few years that some information that was essential to answer certain research questions was not being collected in the electronic case report form (eCRF). A second eCRF needed to be constructed, which resulted in a lot of time being spent on going back to the patient’s entries in the hospital system and collecting the data, if they were there at all. We learned our lesson. Within the Movember Global Action Plan 3 (GAP3) project [<xref ref-type="bibr" rid="ref021">21</xref>], all parties together created the Movember GAP3 codebook, which was an extensive list of data fields designed to answer all research questions that we could think of at the start of the project. The statisticians within the project were very much involved in the codebook creation, because they had the clearest insights on what was needed here. Besides the data field name, we stored the data type (integer, float, string, categorical, etc.) and the unit (days, years, cm, kg, kg/m<sup>2</sup>, ng/ml, etc.), and (in case of a categorical data type) listed the categories (e.g. the TNM staging system). In case of a derived data field, the codebook explains how this data field is calculated. Examples here are data fields such as age, BMI and days since diagnosis. Because part of the Movember GAP3 data was retrospective, we created some data model mapping scripts [<xref ref-type="bibr" rid="ref023">23</xref>] to map the existing data to this codebook, as well as some data curation scripts that check if the data fall into the expected range and do not contain any discrepancies.</p>
+<p>Figure <xref rid="x1-5001-2">2</xref> describes the clinical data collection process. The green parts are these steps of the process that are necessary, whereas the red parts are steps that are unnecessary in modern translational research. The green parts include the construction of the codebook, the eCRF creation, the data entry into the eCRF, the data integration into the database and the data analysis leading to results. The red parts include the creation of and the data entry into the paper CRF, which ideally should be avoided because this gives the data entry person double work. The information should be entered directly into the eCRF instead. The yellow line should only be followed when, even after carefully constructing the codebook, more data fields need to be included. Ideally, the codebook should also be compliant with ontologies for translational research such as the Basic Formal Ontology (BFO), the ontologies listed by the Open Biological and Biomedical Ontology (OBO) foundry and the Relation Ontology (RO) [<xref ref-type="bibr" rid="ref046">46</xref>].</p>
+<fig id="x1-5001-2">
+<label>Fig. 2.</label>
+<caption>
+<p>The clinical data collection process.</p>
+</caption>
+<graphic xlink:href="ds-2-ds190020-g002.jpg"/>
+</fig>
+<p>Other data types that are important in translational research, as listed in Fig. <xref rid="x1-3001-1">1</xref> (WP 2–5), often do not need a codebook because they are stored in standardized file formats such as Digital Imaging and Communications in Medicine (DICOM, for imaging and digital pathology data). However, information derived from these data types, such as PI-RADS scores (from prostate cancer MR images) and Gleason scores (from prostate cancer digital pathology images) should be stored in the codebook as well, to ensure that these values can be compared with the clinical data gathered in the eCRF.</p>
+</sec>
+<sec id="x1-6000-2.4">
+<label>2.4.</label>
+<title>Commandment 4: Make clear arrangements about data access</title>
+<p>In large consortia, especially consortia with both academic partners and commercial partners, data access can be a sensitive issue. Therefore, it needs a clear arrangement up front. Of course, data access needs to be arranged in the informed consent as well, as patients are the data owners, and the General Data Protection Regulation (GDPR [<xref ref-type="bibr" rid="ref010">10</xref>], within the EU) and the Health Insurance Portability and Accountability Act (HIPAA [<xref ref-type="bibr" rid="ref012">12</xref>], within the US) have strict regulations about the patient’s privacy. The GDPR puts some constraints on data sharing, e.g., if a data controller wants to share data with a third party, and that third party is a processor, then a Data Processor Agreement (DPA) needs to be created. Furthermore, the informed consent that the patient signs before participating in a study needs to state clearly for what purposes their data will be used.</p>
+<p>Ideally, at the end of the project, when all goals have been met and results have been published, the de-identified data should be shared with the whole world, if privacy regulations allow it. After all, the goal of a translational research project is to “translate” findings in fundamental research into medical practice and meaningful health outcomes, which can only be achieved if data are being shared as soon as possible, because then the whole world can use the data. This future public availability of the data should be included in the informed consent as well. As GDPR article 4 [<xref ref-type="bibr" rid="ref010">10</xref>] states that “consent of the data subject means any freely given, specific, informed and unambiguous indication of the data subject’s wishes by which he or she, by a statement or by a clear affirmative action, signifies agreement to the processing of personal data relating to him or her”, this means that there should be a “yes/no” question or checkbox for the option to share the data in a public repository at the end of the study. If the patient answers “no” or does not check the box, the patient should still be allowed to enter the study, but his/her data cannot be submitted to a public repository.</p>
+</sec>
+<sec id="x1-7000-2.5">
+<label>2.5.</label>
+<title>Commandment 5: Agree about de-identification and anonymization</title>
+<p>The responsibility for proper de-identification of the data often lies with the organization that collects the data (usually the hospital), because they are the ones that have the EHR. They should create a study subject ID for each subject, which can only be mapped to the original subject ID by a mapping table residing at the hospital. If the party performing the data integration receives data that are not properly de-identified by the hospital, the data should be destroyed immediately, the breach should be reported, and a new data submission should be requested. If a subject at any time requests to have his/her data removed from the central database, the hospital should inform the data manager about which data belonging to which study subject ID need to be removed. In the case that the data integration expert also needs to do the de-identification and anonymization, this should be arranged very clearly in the informed consent and the data processor agreement. For textual and numerical data, open-source software packages are available that can help with anonymization, such as the ARX anonymization tool [<xref ref-type="bibr" rid="ref038">38</xref>]. For imaging data, anonymization tools are available that can strip any identifiable information from DICOM tags, such as the DICOM anonymizer [<xref ref-type="bibr" rid="ref008">8</xref>] and the DicomCleaner [<xref ref-type="bibr" rid="ref009">9</xref>].</p>
+</sec>
+<sec id="x1-8000-2.6">
+<label>2.6.</label>
+<title>Commandment 6: Reuse existing software where possible</title>
+<p>There is usually no need to develop tools for data capturing, data management, data quality control, etc. from scratch, because there are many open source tools available for this, which can not only be used freely but also developed further. Within the Translational Research IT (TraIT) project [<xref ref-type="bibr" rid="ref032">32</xref>] of the Center for Translational Molecular Medicine (CTMM), a list of suitable open source tools was created, which included OpenClinica [<xref ref-type="bibr" rid="ref035">35</xref>], XNAT [<xref ref-type="bibr" rid="ref029">29</xref>] and tranSMART [<xref ref-type="bibr" rid="ref043">43</xref>]. For areas where there was no tool available, software was created. An overview of the TraIT tools can be found at <uri>https://trait.health-ri.nl/trait-tools/</uri>. Most translational research projects have similar problems, so when starting a new project, it is generally a good idea to see how they solved these problems, and if their solution can be reused. This reusability also increases the reproducibility of the research, because there is no reliance on obscure, custom-made computer scripts or websites. Table <xref rid="x1-8001-1">1</xref> shows an up-to-date list of freely available software related to translational research, including a description and the main data type it processes. This list was created by combining the overview of TraIT tools with an extensive PubMed search. It might be out of date soon, but provides a useful summary of the currently available tools.</p>
+<table-wrap id="x1-8001-1">
+<label>Table 1</label>
+<caption>
+<p>Freely available software in the area of translational research informatics</p>
+</caption>
+<table frame="hsides" rules="groups">
+<thead>
+<tr>
+<td valign="top" align="left">Name</td>
+<td valign="top" align="center">Main data type</td>
+<td valign="top" align="center">Description</td>
+<td valign="top" align="center">URL</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top" align="left">cBioPortal [<xref ref-type="bibr" rid="ref011">11</xref>]</td>
+<td valign="top" align="left">Genomics</td>
+<td valign="top" align="left">The open source cBioPortal for Cancer Genomics provides visualization, analysis, and download of large-scale cancer genomics data sets. A public instance of cBioPortal (<uri>https://www.cbioportal.org</uri>) is hosted and maintained by Memorial Sloan Kettering Cancer Center. It provides access to data by The Cancer Genome Atlas as well as many carefully curated published data sets. The cBioPortal software can be used to create local instances that provide access to private data.</td>
+<td valign="top" align="left"><uri>https://github.com/cBioPortal/</uri></td>
+</tr>
+<tr>
+<td valign="top" align="left">Dicoogle [<xref ref-type="bibr" rid="ref007">7</xref>]</td>
+<td valign="top" align="left">Imaging</td>
+<td valign="top" align="left">Dicoogle is an open source Picture Archiving and Communications System (PACS) archive. Its modular architecture allows the quick development of new functionalities, due to the availability of a Software Development Kit (SDK).</td>
+<td valign="top" align="left"><uri>http://www.dicoogle.com/</uri></td>
+</tr>
+<tr>
+<td valign="top" align="left">Galaxy [<xref ref-type="bibr" rid="ref001">1</xref>]</td>
+<td valign="top" align="left">Genomics</td>
+<td valign="top" align="left">Galaxy is a scientific workflow, data integration, and digital preservation platform that aims to make computational biology accessible to research scientists that do not have computer programming or systems administration experience. Although it was initially developed for genomics research, it is largely domain agnostic and is now used as a general bioinformatics workflow management system.</td>
+<td valign="top" align="left"><uri>https://usegalaxy.org/</uri></td>
+</tr>
+<tr>
+<td valign="top" align="left">I2B2 [<xref ref-type="bibr" rid="ref033">33</xref>]</td>
+<td valign="top" align="left">Clinical</td>
+<td valign="top" align="left">Informatics for Integrating Biology and the Bedside (i2b2) is one of the sponsored initiatives of the NIH Roadmap National Centers for Biomedical Computing. One of the goals of i2b2 is to provide clinical investigators with the software tools necessary to collect and manage project-related clinical research data in the genomics age as a cohesive entity; a software suite to construct and manage the modern clinical research chart.</td>
+<td valign="top" align="left"><uri>https://www.i2b2.org/</uri></td>
+</tr>
+<tr>
+<td valign="top" align="left">Occhiolino [<xref ref-type="bibr" rid="ref034">34</xref>]</td>
+<td valign="top" align="left">Biobank</td>
+<td valign="top" align="left">GNU LIMS, also known as Occhiolino is an open source laboratory information management system (LIMS), aiming for healthcare laboratories. It is fully compatible with GNU-Health with complete workflow process control integration.</td>
+<td valign="top" align="left"><uri>http://lims.gnu.org/</uri></td>
+</tr>
+<tr>
+<td valign="top" align="left">OpenClinica Community Edition [<xref ref-type="bibr" rid="ref035">35</xref>]</td>
+<td valign="top" align="left">Clinical</td>
+<td valign="top" align="left">The world’s first commercial open source clinical trial software serving for the purpose of clinical data management and electronic data capture.</td>
+<td valign="top" align="left"><uri>https://www.openclinica.com/</uri></td>
+</tr>
+<tr>
+<td valign="top" align="left">OpenSpecimen [<xref ref-type="bibr" rid="ref030">30</xref>]</td>
+<td valign="top" align="left">Biobank</td>
+<td valign="top" align="left">The OpenSpecimen LIMS application allows bio-repositories to track biospecimens from collection to utilization across multiple projects, collect annotations, storage containers, track requests and distribution, and has multiple reporting options. It streamlines management across collection, consent, quality control, request and distribution and is highly configurable and customizable.</td>
+<td valign="top" align="left"><uri>https://www.openspecimen.org/</uri></td>
+</tr>
+<tr>
+<td valign="top" align="left">Orthanc [<xref ref-type="bibr" rid="ref025">25</xref>]</td>
+<td valign="top" align="left">Imaging</td>
+<td valign="top" align="left">Orthanc aims at providing a simple, yet powerful standalone DICOM server. It is designed to improve the DICOM flows in hospitals and to support research about the automated analysis of medical images.</td>
+<td valign="top" align="left"><uri>https://www.orthanc-server.com/</uri></td>
+</tr>
+<tr>
+<td valign="top" align="left">QuPath [<xref ref-type="bibr" rid="ref002">2</xref>]</td>
+<td valign="top" align="left">Digital pathology</td>
+<td valign="top" align="left">QuPath is new bioimage analysis software designed to meet the growing need for a user-friendly, extensible, open-source solution for digital pathology and whole slide image analysis.</td>
+<td valign="top" align="left"><uri>https://qupath.github.io/</uri></td>
+</tr>
+<tr>
+<td valign="top" align="left">REDCap [<xref ref-type="bibr" rid="ref016">16</xref>]</td>
+<td valign="top" align="left">Clinical</td>
+<td valign="top" align="left">REDCap (Research Electronic Data Capture) is a browser-based, metadata-driven electronic data capture software solution and workflow methodology for designing clinical and translational research databases. Development of the software takes place by collaborative software development through the REDCap consortium.</td>
+<td valign="top" align="left"><uri>https://projectredcap.org/</uri></td>
+</tr>
+<tr>
+<td valign="top" align="left">SlideAtlas [<xref ref-type="bibr" rid="ref045">45</xref>]</td>
+<td valign="top" align="left">Digital pathology</td>
+<td valign="top" align="left">SlideAtlas is an open-source, web-based, whole slide imaging platform. It provides features for multiple stages of a digital pathology workflow, including automated image uploading, image organization and management, automatic alignment and high-performance viewing of 3D image stacks, online annotation/markup and collaborative viewing of images.</td>
+<td valign="top" align="left"><uri>https://slide-atlas.org/</uri></td>
+</tr>
+<tr>
+<td valign="top" align="left">tranSMART [<xref ref-type="bibr" rid="ref043">43</xref>]</td>
+<td valign="top" align="left">Integration</td>
+<td valign="top" align="left">tranSMART is a suite of data exploration, visualization, and extract-transform-load (ETL) tools, which were originally developed by Johnson &amp; Johnson for translational research studies. The software was released in 2012 as an open-source platform. It continues to be developed and maintained by a community effort, coordinated by the i2b2 tranSMART Foundation.</td>
+<td valign="top" align="left"><uri>https://transmartfoundation.org/current-transmart-platform-release/</uri></td>
+</tr>
+<tr>
+<td valign="top" align="left">XNAT [<xref ref-type="bibr" rid="ref029">29</xref>]</td>
+<td valign="top" align="left">Imaging</td>
+<td valign="top" align="left">XNAT is an open-source imaging informatics software platform dedicated to helping perform imaging-based research. XNAT’s core functions manage importing, archiving, processing and securely distributing imaging and related study data.</td>
+<td valign="top" align="left"><uri>https://www.xnat.org/</uri></td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+</sec>
+<sec id="x1-9000-2.7">
+<label>2.7.</label>
+<title>Commandment 7: Make newly created software reusable</title>
+<p>Although it is proposed at commandment 6 that existing software should be reused as much as possible, there might be cases where study-specific software needs to be created, for example to perform novel analyses. If there are no intellectual property issues, this newly created software can be submitted to repositories such as GitHub [<xref ref-type="bibr" rid="ref037">37</xref>], SourceForge [<xref ref-type="bibr" rid="ref047">47</xref>] or FigShare [<xref ref-type="bibr" rid="ref044">44</xref>], or it can be made available on a custom-made website, and then referenced on Zenodo [<xref ref-type="bibr" rid="ref052">52</xref>]. Griffin et al. [<xref ref-type="bibr" rid="ref013">13</xref>] gives a good overview of the possibilities. This way, future translational researchers can reuse the software and do not need to reinvent the wheel. Github already hosts several scientific data management packages, such as Rucio (<uri>https://github.com/rucio/rucio</uri>), ISA tools (<uri>https://github.com/ISA-tools/isa-api</uri>) and Clowder (<uri>https://github.com/ncsa/clowder</uri>). There is also an overview of all 1,720 bioinformatics repositories on GitHub available [<xref ref-type="bibr" rid="ref042">42</xref>]. If the software is submitted to one of these popular repositories, and it is accompanied with metadata that describes accurately what the software can do, it will be much easier for researchers to find the software and share it with other potential users.</p>
+</sec>
+<sec id="x1-10000-2.8">
+<label>2.8.</label>
+<title>Commandment 8: Adhere to the FAIR guiding principles</title>
+<p>In 2016, the FAIR Guiding Principles for scientific data management and stewardship [<xref ref-type="bibr" rid="ref050">50</xref>] were published. FAIR stands for the four foundational principles – Findability, Accessibility, Interoperability, and Reusability – that serve to guide data producers and publishers as they navigate around the obstacles around data management and stewardship. The difference with similar initiatives is that the FAIR principle do not only support the reuse of data by individuals, but also put emphasis on enhancing the ability of machines to automatically find and use the data. The elements of the FAIR Guiding Principles are related, but independent and separable:</p>
+<list>
+<list-item>
+<label>–</label>
+<p>Findability is about making sure that the data can be found, e.g. by using a unique and persistent identifier and by the use of rich metadata which is registered or indexed in a searchable resource.</p>
+</list-item>
+<list-item>
+<label>–</label>
+<p>Accessibility refers to the retrievability of the data and metadata by their identifier using a standardized communications protocol, and the access to the metadata even when the data are no longer available.</p>
+</list-item>
+<list-item>
+<label>–</label>
+<p>Interoperability is about the usage of ontologies, vocabularies and qualified references to other (meta)data so that the data can be integrated with other data.</p>
+</list-item>
+<list-item>
+<label>–</label>
+<p>Reusability refers to describing the (meta)data with a plurality of accurate and relevant attributes, releasing with a clear and accessible data usage license, etc., in order to enable reuse of the data.</p>
+</list-item>
+</list>
+<p>The FAIR Guiding Principles should be applied to both data and software created in a translational research project, to achieve transparency and scientific reproducibility. An example of a FAIR-compliant dataset, is the Rembrandt brain cancer dataset [<xref ref-type="bibr" rid="ref014">14</xref>]. This dataset is ‘findable’: it is hosted in the Georgetown Database of Cancer (G-DOC), with provenance and raw data available in the National Institute of Health (NIH) Gene Expression Omnibus (GEO) data repository. These resources are publicly available and thus ‘accessible’. The gene expression and copy number data are in standard data matrix formats that support formal sharing and satisfy the ‘interoperable’ condition. Finally, this dataset can be ‘reused’ for additional research through either the G-DOC platform or GEO.</p>
+</sec>
+<sec id="x1-11000-2.9">
+<label>2.9.</label>
+<title>Commandment 9: Make sure that successors are being instructed correctly</title>
+<p>Translational research projects usually take 4 to 5 years. Clinicians, researchers and data managers, but also trial nurses, might come and go during this period. If these trial nurses performed the data entry for the study, they probably spent quite some time learning how to enter data into the eCRF. To avoid that the new data entry person needs to spend a similar amount of time to learn about this data entry, the old data entry person should properly instruct the new person, reducing the learning time. The same holds for the data managers. The leader of the data management work package (see commandment 1) might even make a data entry manual together with the data entry person, to ensure that any transfers of data entry tasks will go smoothly. As stated in commandment 2: data quality is extremely important and thus correct data entry should be a priority.</p>
+</sec>
+<sec id="x1-12000-2.10">
+<label>2.10.</label>
+<title>Commandment 10: Make it sustainable: What happens after the project?</title>
+<p>When starting a new translational research project, big plans are made for the duration of the project, but very often not so much for the period after. What will happen when the project is finished? For example: who will pay for the continued storage of left-over biomaterials? Who will keep the database running? The researchers might even want to continue the project with yearly updates, because long-term follow-up information could be very valuable in these type of projects. Or they want to submit the data to a repository such as Dataverse [<xref ref-type="bibr" rid="ref031">31</xref>] or Dryad [<xref ref-type="bibr" rid="ref049">49</xref>], if the informed consent allows it. Publicly available datasets can be a goldmine for future research [<xref ref-type="bibr" rid="ref018">18</xref>], certainly with the rise of artificial intelligence methods. At the start of the project, the researchers should already make a plan for what happens at the end of the study, when funding runs out, to avoid that data and biomaterials are lost for future research. This planning should also include a financial paragraph, because hosting of data (and storage of biomaterials) will need to be financed somehow, especially if the data are not submitted to a public repository.</p>
+<table-wrap id="x1-12001-2">
+<label>Table 2</label>
+<caption>
+<p>Summary of the ten commandments of translational research informatics</p>
+</caption>
+<table frame="hsides">
+<tbody>
+<tr>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="left">Create a separate data management work package</td>
+</tr>
+<tr>
+<td valign="top" align="char" char=".">2</td>
+<td valign="top" align="left">Reserve time and money for data entry</td>
+</tr>
+<tr>
+<td valign="top" align="char" char=".">3</td>
+<td valign="top" align="left">Define all data fields up front with the help of data analysis experts</td>
+</tr>
+<tr>
+<td valign="top" align="char" char=".">4</td>
+<td valign="top" align="left">Make clear arrangements about data access</td>
+</tr>
+<tr>
+<td valign="top" align="char" char=".">5</td>
+<td valign="top" align="left">Agree about de-identification and anonymization</td>
+</tr>
+<tr>
+<td valign="top" align="char" char=".">6</td>
+<td valign="top" align="left">Reuse existing software where possible</td>
+</tr>
+<tr>
+<td valign="top" align="char" char=".">7</td>
+<td valign="top" align="left">Make newly created software reusable</td>
+</tr>
+<tr>
+<td valign="top" align="char" char=".">8</td>
+<td valign="top" align="left">Adhere to the FAIR Guiding Principles</td>
+</tr>
+<tr>
+<td valign="top" align="char" char=".">9</td>
+<td valign="top" align="left">Make sure that successors are being instructed correctly</td>
+</tr>
+<tr>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="left">Make it sustainable: what happens after the project?</td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+</sec>
+</sec>
+<sec id="x1-13000-3">
+<label>3.</label>
+<title>Summary and conclusions</title>
+<p>Translational research informatics is a field that is linked to data science and big data analytics, because of the ever growing size of the datasets and the need for analysis by machines. This means that the research output generated by the studies should be machine-readable, i.e. properly described by metadata, standardized according to ontologies, etc. [<xref ref-type="bibr" rid="ref050">50</xref>]. The field is also heavily influenced by new privacy laws such as the GDPR: the infrastructure that is created needs to comply with stricter security and privacy rules than ever before. More emphasis is being placed on the importance of de-identification, pseudonymization and anonymization, certainly now that there is a trend to connect translational research informatics systems directly to the EHR [<xref ref-type="bibr" rid="ref051">51</xref>], which contains personal data. Moreover, security measures such as multi-factor authentication (MFA) and data encryption are getting more common. The ten commandments presented in this article (see Table <xref rid="x1-12001-2">2</xref> for the summary) reflect the current state of the field, and might be subject change in a rapidly developing field. The rise of ‘open science’ and, related to this, the FAIR Guiding Principles, gives much-needed attention to data sharing, reuse of data and methods, and reproducibility. In some funding programs, such as Horizon 2020 from the EU, projects are already instructed to adhere to the FAIR Guiding Principles, and to create a Data Management Plan (DMP) which helps to think about data sharing, what will happen to the data after the project, etc. The other commandments listed here are mentioned less in the literature, but are just as crucial for the success of a translational research project.</p>
+</sec>
+<sec id="x1-14000-x">
+<title>Competing interest statement</title>
+<p>Dr. Hulsen is employed by Philips Research.</p>
+</sec>
+<sec id="x1-15000-x">
+<title>Disclaimer</title>
+<p>This manuscript reflects an interpretation of the GDPR by the author, who is not a legal expert.</p>
+</sec>
+</body>
+<back>
+<ref-list>
+<title>References</title>
+<ref id="ref001">
+<label>[1]</label><mixed-citation publication-type="journal"><string-name><given-names>E.</given-names> <surname>Afgan</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Baker</surname></string-name>, <string-name><given-names>B.</given-names> <surname>Batut</surname></string-name>, <string-name><given-names>M.</given-names> <surname>van den Beek</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Bouvier</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Cech</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Chilton</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Clements</surname></string-name>, <string-name><given-names>N.</given-names> <surname>Coraor</surname></string-name>, <string-name><given-names>B.A.</given-names> <surname>Gruning</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Guerler</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Hillman-Jackson</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Hiltemann</surname></string-name>, <string-name><given-names>V.</given-names> <surname>Jalili</surname></string-name>, <string-name><given-names>H.</given-names> <surname>Rasche</surname></string-name>, <string-name><given-names>N.</given-names> <surname>Soranzo</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Goecks</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Taylor</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Nekrutenko</surname></string-name> and <string-name><given-names>D.</given-names> <surname>Blankenberg</surname></string-name>, <article-title>The Galaxy platform for accessible, reproducible and collaborative biomedical analyses: 2018 update</article-title>, <source>Nucleic Acids Res</source> <volume>46</volume> (<year>2018</year>), <fpage>W537</fpage>–<lpage>W544</lpage>. <object-id pub-id-type="pmid">29790989</object-id>. doi:<pub-id pub-id-type="doi">10.1093/nar/gky379</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref002">
+<label>[2]</label><mixed-citation publication-type="other"><string-name><given-names>P.</given-names> <surname>Bankhead</surname></string-name>, <string-name><given-names>M.B.</given-names> <surname>Loughrey</surname></string-name>, <string-name><given-names>J.A.</given-names> <surname>Fernandez</surname></string-name>, <string-name><given-names>Y.</given-names> <surname>Dombrowski</surname></string-name>, <string-name><given-names>D.G.</given-names> <surname>McArt</surname></string-name>, <string-name><given-names>P.D.</given-names> <surname>Dunne</surname></string-name>, <string-name><given-names>S.</given-names> <surname>McQuaid</surname></string-name>, <string-name><given-names>R.T.</given-names> <surname>Gray</surname></string-name>, <string-name><given-names>L.J.</given-names> <surname>Murray</surname></string-name>, <string-name><given-names>H.G.</given-names> <surname>Coleman</surname></string-name>, <string-name><given-names>J.A.</given-names> <surname>James</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Salto-Tellez</surname></string-name> and <string-name><given-names>P.W.</given-names> <surname>Hamilton</surname></string-name>, <article-title>QuPath: Open source software for digital pathology image analysis</article-title>, <source>Sci Rep</source> <volume>7</volume> (<year>2017</year>), <elocation-id>16878</elocation-id>. <object-id pub-id-type="pmid">29203879</object-id>. doi:<pub-id pub-id-type="doi">10.1038/s41598-017-17204-5</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref003">
+<label>[3]</label><mixed-citation publication-type="journal"><string-name><given-names>R.</given-names> <surname>Becker</surname></string-name> and <string-name><given-names>G.A.</given-names> <surname>van Dongen</surname></string-name>, <article-title>EATRIS, a vision for translational research in Europe</article-title>, <source>J Cardiovasc Transl Res</source> <volume>4</volume> (<year>2011</year>), <fpage>231</fpage>–<lpage>237</lpage>. <object-id pub-id-type="pmid">21544739</object-id>. doi:<pub-id pub-id-type="doi">10.1007/s12265-011-9260-8</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref004">
+<label>[4]</label><mixed-citation publication-type="journal"><string-name><given-names>D.</given-names> <surname>Butler</surname></string-name>, <article-title>Translational research: Crossing the valley of death</article-title>, <source>Nature</source> <volume>453</volume> (<year>2008</year>), <fpage>840</fpage>–<lpage>842</lpage>. <object-id pub-id-type="pmid">18548043</object-id>. doi:<pub-id pub-id-type="doi">10.1038/453840a</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref005">
+<label>[5]</label><mixed-citation publication-type="other"><string-name><given-names>L.</given-names> <surname>Cai</surname></string-name> and <string-name><given-names>Y.</given-names> <surname>Zhu</surname></string-name>, <article-title>The challenges of data quality and data quality assessment in the big data era</article-title>, <source>Data Science Journal</source> <volume>14</volume> (<year>2015</year>), <elocation-id>2</elocation-id>. doi:<pub-id pub-id-type="doi">10.5334/dsj-2015-002</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref006">
+<label>[6]</label><mixed-citation publication-type="other"><string-name><surname>Castor</surname></string-name>, Castor EDC – Cloud-based electronic data capture platform, <uri>https://www.castoredc.com</uri>.</mixed-citation>
+</ref>
+<ref id="ref007">
+<label>[7]</label><mixed-citation publication-type="journal"><string-name><given-names>C.</given-names> <surname>Costa</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Ferreira</surname></string-name>, <string-name><given-names>L.</given-names> <surname>Bastiao</surname></string-name>, <string-name><given-names>L.</given-names> <surname>Ribeiro</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Silva</surname></string-name> and <string-name><given-names>J.L.</given-names> <surname>Oliveira</surname></string-name>, <article-title>Dicoogle – An open source peer-to-peer PACS</article-title>, <source>J Digit Imaging</source> <volume>24</volume> (<year>2011</year>), <fpage>848</fpage>–<lpage>856</lpage>. <object-id pub-id-type="pmid">20981467</object-id>. doi:<pub-id pub-id-type="doi">10.1007/s10278-010-9347-9</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref008">
+<label>[8]</label><mixed-citation publication-type="other">DICOM Anonymizer, <uri>https://dicomanonymizer.com/</uri>.</mixed-citation>
+</ref>
+<ref id="ref009">
+<label>[9]</label><mixed-citation publication-type="other">DicomCleaner, <uri>http://www.dclunie.com/pixelmed/software/webstart/DicomCleanerUsage.html</uri>.</mixed-citation>
+</ref>
+<ref id="ref010">
+<label>[10]</label><mixed-citation publication-type="journal"><collab>The European Parliament and the Council of the European Union</collab>, <article-title>Regulation on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (Data Protection Directive)</article-title>, <source>Official Journal of the European Union</source> <volume>59</volume> (<year>2016</year>), <fpage>1</fpage>–<lpage>88</lpage>. <uri>https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L:2016:119:TOC</uri>.</mixed-citation>
+</ref>
+<ref id="ref011">
+<label>[11]</label><mixed-citation publication-type="other"><string-name><given-names>J.</given-names> <surname>Gao</surname></string-name>, <string-name><given-names>B.A.</given-names> <surname>Aksoy</surname></string-name>, <string-name><given-names>U.</given-names> <surname>Dogrusoz</surname></string-name>, <string-name><given-names>G.</given-names> <surname>Dresdner</surname></string-name>, <string-name><given-names>B.</given-names> <surname>Gross</surname></string-name>, <string-name><given-names>S.O.</given-names> <surname>Sumer</surname></string-name>, <string-name><given-names>Y.</given-names> <surname>Sun</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Jacobsen</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Sinha</surname></string-name>, <string-name><given-names>E.</given-names> <surname>Larsson</surname></string-name>, <string-name><given-names>E.</given-names> <surname>Cerami</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Sander</surname></string-name> and <string-name><given-names>N.</given-names> <surname>Schultz</surname></string-name>, <article-title>Integrative analysis of complex cancer genomics and clinical profiles using the cBioPortal</article-title>, <source>Sci Signal</source> <volume>6</volume> (<year>2013</year>), <elocation-id>pl1</elocation-id>. <object-id pub-id-type="pmid">23550210</object-id>. doi:<pub-id pub-id-type="doi">10.1126/scisignal.2004088</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref012">
+<label>[12]</label><mixed-citation publication-type="other"><collab>U.S. Government</collab>, <article-title>Health Insurance Portability and Accountability Act Of 1996</article-title>, <uri>https://www.govinfo.gov/content/pkg/PLAW-104publ191/html/PLAW-104publ191.htm</uri>.</mixed-citation>
+</ref>
+<ref id="ref013">
+<label>[13]</label><mixed-citation publication-type="other"><string-name><given-names>P.C.</given-names> <surname>Griffin</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Khadake</surname></string-name>, <string-name><given-names>K.S.</given-names> <surname>LeMay</surname></string-name>, <string-name><given-names>S.E.</given-names> <surname>Lewis</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Orchard</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Pask</surname></string-name>, <string-name><given-names>B.</given-names> <surname>Pope</surname></string-name>, <string-name><given-names>U.</given-names> <surname>Roessner</surname></string-name>, <string-name><given-names>K.</given-names> <surname>Russell</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Seemann</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Treloar</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Tyagi</surname></string-name>, <string-name><given-names>J.H.</given-names> <surname>Christiansen</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Dayalan</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Gladman</surname></string-name>, <string-name><given-names>S.B.</given-names> <surname>Hangartner</surname></string-name>, <string-name><given-names>H.L.</given-names> <surname>Hayden</surname></string-name>, <string-name><given-names>W.W.H.</given-names> <surname>Ho</surname></string-name>, <string-name><given-names>G.</given-names> <surname>Keeble-Gagnere</surname></string-name>, <string-name><given-names>P.K.</given-names> <surname>Korhonen</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Neish</surname></string-name>, <string-name><given-names>P.R.</given-names> <surname>Prestes</surname></string-name>, <string-name><given-names>M.F.</given-names> <surname>Richardson</surname></string-name>, <string-name><given-names>N.S.</given-names> <surname>Watson-Haigh</surname></string-name>, <string-name><given-names>K.L.</given-names> <surname>Wyres</surname></string-name>, <string-name><given-names>N.D.</given-names> <surname>Young</surname></string-name> and <string-name><given-names>M.V.</given-names> <surname>Schneider</surname></string-name>, <article-title>Best practice data life cycle approaches for the life sciences</article-title>, <source>F1000Res</source> <volume>6</volume> (<year>2017</year>), <elocation-id>1618</elocation-id>. <object-id pub-id-type="pmid">30109017</object-id>. doi:<pub-id pub-id-type="doi">10.12688/f1000research.12344.1</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref014">
+<label>[14]</label><mixed-citation publication-type="other"><string-name><given-names>Y.</given-names> <surname>Gusev</surname></string-name>, <string-name><given-names>K.</given-names> <surname>Bhuvaneshwar</surname></string-name>, <string-name><given-names>L.</given-names> <surname>Song</surname></string-name>, <string-name><given-names>J.C.</given-names> <surname>Zenklusen</surname></string-name>, <string-name><given-names>H.</given-names> <surname>Fine</surname></string-name> and <string-name><given-names>S.</given-names> <surname>Madhavan</surname></string-name>, <article-title>The REMBRANDT study, a large collection of genomic data from brain cancer patients</article-title>, <source>Sci Data</source> <volume>5</volume> (<year>2018</year>), <elocation-id>180158</elocation-id>. <object-id pub-id-type="pmid">30106394</object-id>. doi:<pub-id pub-id-type="doi">10.1038/sdata.2018.158</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref015">
+<label>[15]</label><mixed-citation publication-type="other">Handbook for adequate natural data stewardship (HANDS) – Data stewardship, <uri>https://data4lifesciences.nl/hands2/data-stewardship/</uri>.</mixed-citation>
+</ref>
+<ref id="ref016">
+<label>[16]</label><mixed-citation publication-type="journal"><string-name><given-names>P.A.</given-names> <surname>Harris</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Taylor</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Thielke</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Payne</surname></string-name>, <string-name><given-names>N.</given-names> <surname>Gonzalez</surname></string-name> and <string-name><given-names>J.G.</given-names> <surname>Conde</surname></string-name>, <article-title>Research electronic data capture (REDCap) – A metadata-driven methodology and workflow process for providing translational research informatics support</article-title>, <source>J Biomed Inform</source> <volume>42</volume> (<year>2009</year>), <fpage>377</fpage>–<lpage>381</lpage>. <object-id pub-id-type="pmid">18929686</object-id>. doi:<pub-id pub-id-type="doi">10.1016/j.jbi.2008.08.010</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref017">
+<label>[17]</label><mixed-citation publication-type="other">Horizon 2020 – The EU framework programme for research and innovation, <uri>https://ec.europa.eu/programmes/horizon2020/en</uri>.</mixed-citation>
+</ref>
+<ref id="ref018">
+<label>[18]</label><mixed-citation publication-type="journal"><string-name><given-names>T.</given-names> <surname>Hulsen</surname></string-name>, <article-title>An overview of publicly available patient-centered prostate cancer datasets</article-title>, <source>Transl Androl Urol</source> <volume>8</volume> (<year>2019</year>), <fpage>S64</fpage>–<lpage>S77</lpage>. <object-id pub-id-type="pmid">31143673</object-id>. doi:<pub-id pub-id-type="doi">10.21037/tau.2019.03.01</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref019">
+<label>[19]</label><mixed-citation publication-type="other"><string-name><given-names>T.</given-names> <surname>Hulsen</surname></string-name>, <string-name><given-names>S.S.</given-names> <surname>Jamuar</surname></string-name>, <string-name><given-names>A.R.</given-names> <surname>Moody</surname></string-name>, <string-name><given-names>J.H.</given-names> <surname>Karnes</surname></string-name>, <string-name><given-names>O.</given-names> <surname>Varga</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Hedensted</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Spreafico</surname></string-name>, <string-name><given-names>D.A.</given-names> <surname>Hafler</surname></string-name> and <string-name><given-names>E.F.</given-names> <surname>McKinney</surname></string-name>, <article-title>From big data to precision medicine</article-title>, <source>Front Med (Lausanne)</source> <volume>6</volume> (<year>2019</year>), <elocation-id>34</elocation-id>. <object-id pub-id-type="pmid">30881956</object-id>. doi:<pub-id pub-id-type="doi">10.3389/fmed.2019.00034</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref020">
+<label>[20]</label><mixed-citation publication-type="other"><string-name><given-names>T.</given-names> <surname>Hulsen</surname></string-name>, <string-name><given-names>J.H.</given-names> <surname>Obbink</surname></string-name>, <string-name><given-names>E.A.M.</given-names> <surname>Schenk</surname></string-name>, <string-name><given-names>M.F.</given-names> <surname>Wildhagen</surname></string-name> and <string-name><given-names>C.H.</given-names> <surname>Bangma</surname></string-name>, PCMM Biobank, IT-infrastructure and decision support, 2013. <uri>http://tim.hulsen.net/documents/pcmm_wp3_130912.pdf</uri>. doi:<pub-id pub-id-type="doi">10.13140/RG.2.2.32121.01123</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref021">
+<label>[21]</label><mixed-citation publication-type="other"><string-name><given-names>T.</given-names> <surname>Hulsen</surname></string-name>, <string-name><given-names>J.H.</given-names> <surname>Obbink</surname></string-name>, <string-name><given-names>W.</given-names> <surname>Van der Linden</surname></string-name>, <string-name><given-names>C.</given-names> <surname>De Jonge</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Nieboer</surname></string-name>, <string-name><given-names>S.M.</given-names> <surname>Bruinsma</surname></string-name>, <string-name><given-names>M.J.</given-names> <surname>Roobol</surname></string-name> and <string-name><given-names>C.H.</given-names> <surname>Bangma</surname></string-name>, <article-title>958 integrating large datasets for the Movember Global Action Plan on active surveillance for low risk prostate cancer</article-title>, <source>European Urology Supplements</source> <volume>15</volume> (<year>2016</year>), <elocation-id>e958</elocation-id>. doi:<pub-id pub-id-type="doi">10.1016/S1569-9056(16)60959-4</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref022">
+<label>[22]</label><mixed-citation publication-type="other"><string-name><given-names>T.</given-names> <surname>Hulsen</surname></string-name>, <string-name><given-names>W.</given-names> <surname>Van der Linden</surname></string-name>, <string-name><given-names>C.</given-names> <surname>De Jonge</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Hugosson</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Auvinen</surname></string-name> and <string-name><given-names>M.J.</given-names> <surname>Roobol</surname></string-name>, <article-title>Developing a future-proof database for the European randomized study of screening for prostate cancer (ERSPC)</article-title>, <source>European Urology Supplements</source> <volume>18</volume> (<year>2019</year>), <elocation-id>e1766</elocation-id>. <object-id pub-id-type="pmid">9088276</object-id>. doi:<pub-id pub-id-type="doi">10.1016/S1569-9056(19)31278-3</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref023">
+<label>[23]</label><mixed-citation publication-type="other"><string-name><given-names>T.</given-names> <surname>Hulsen</surname></string-name>, <string-name><given-names>W.</given-names> <surname>Van der Linden</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Pletea</surname></string-name>, <string-name><given-names>J.H.</given-names> <surname>Obbink</surname></string-name> and <string-name><given-names>M.J.</given-names> <surname>Quist</surname></string-name>, Data model mapping, 2017. <uri>https://patentscope.wipo.int/search/en/detail.jsf?docId=WO2017167628</uri>.</mixed-citation>
+</ref>
+<ref id="ref024">
+<label>[24]</label><mixed-citation publication-type="journal"><collab>CTSA Principal Investigators</collab>, <string-name><given-names>H.</given-names> <surname>Shamoon</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Center</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Davis</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Tuchman</surname></string-name>, <string-name><given-names>H.</given-names> <surname>Ginsberg</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Califf</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Stephens</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Mellman</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Verbalis</surname></string-name>, <string-name><given-names>L.</given-names> <surname>Nadler</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Shekhar</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Ford</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Rizza</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Shaker</surname></string-name>, <string-name><given-names>K.</given-names> <surname>Brady</surname></string-name>, <string-name><given-names>B.</given-names> <surname>Murphy</surname></string-name>, <string-name><given-names>B.</given-names> <surname>Cronstein</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Hochman</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Greenland</surname></string-name>, <string-name><given-names>E.</given-names> <surname>Orwoll</surname></string-name>, <string-name><given-names>L.</given-names> <surname>Sinoway</surname></string-name>, <string-name><given-names>H.</given-names> <surname>Greenberg</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Jackson</surname></string-name>, <string-name><given-names>B.</given-names> <surname>Coller</surname></string-name>, <string-name><given-names>E.</given-names> <surname>Topol</surname></string-name>, <string-name><given-names>L.</given-names> <surname>Guay-Woodford</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Runge</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Clark</surname></string-name>, <string-name><given-names>D.</given-names> <surname>McClain</surname></string-name>, <string-name><given-names>H.</given-names> <surname>Selker</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Lowery</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Dubinett</surname></string-name>, <string-name><given-names>L.</given-names> <surname>Berglund</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Cooper</surname></string-name>, <string-name><given-names>G.</given-names> <surname>Firestein</surname></string-name>, <string-name><given-names>S.C.</given-names> <surname>Johnston</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Solway</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Heubi</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Sokol</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Nelson</surname></string-name>, <string-name><given-names>L.</given-names> <surname>Tobacman</surname></string-name>, <string-name><given-names>G.</given-names> <surname>Rosenthal</surname></string-name>, <string-name><given-names>L.</given-names> <surname>Aaronson</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Barohn</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Kern</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Sullivan</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Shanley</surname></string-name>, <string-name><given-names>B.</given-names> <surname>Blazar</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Larson</surname></string-name>, <string-name><given-names>G.</given-names> <surname>FitzGerald</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Reis</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Pearson</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Buchanan</surname></string-name>, <string-name><given-names>D.</given-names> <surname>McPherson</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Brasier</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Toto</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Disis</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Drezner</surname></string-name>, <string-name><given-names>G.</given-names> <surname>Bernard</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Clore</surname></string-name>, <string-name><given-names>B.</given-names> <surname>Evanoff</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Imperato-McGinley</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Sherwin</surname></string-name> and <string-name><given-names>J.</given-names> <surname>Pulley</surname></string-name>, <article-title>Preparedness of the CTSA’s structural and scientific assets to support the mission of the National Center for Advancing Translational Sciences (NCATS)</article-title>, <source>Clin Transl Sci</source> <volume>5</volume> (<year>2012</year>), <fpage>121</fpage>–<lpage>129</lpage>. <object-id pub-id-type="pmid">22507116</object-id>. doi:<pub-id pub-id-type="doi">10.1111/j.1752-8062.2012.00401.x</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref025">
+<label>[25]</label><mixed-citation publication-type="journal"><string-name><given-names>S.</given-names> <surname>Jodogne</surname></string-name>, <article-title>The Orthanc ecosystem for medical imaging</article-title>, <source>J Digit Imaging</source> <volume>31</volume> (<year>2018</year>), <fpage>341</fpage>–<lpage>352</lpage>. <object-id pub-id-type="pmid">29725964</object-id>. doi:<pub-id pub-id-type="doi">10.1007/s10278-018-0082-y</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref026">
+<label>[26]</label><mixed-citation publication-type="journal"><string-name><given-names>M.F.</given-names> <surname>Kilkenny</surname></string-name> and <string-name><given-names>K.M.</given-names> <surname>Robinson</surname></string-name>, <article-title>Data quality: “Garbage in–garbage out”</article-title>, <source>Health Inf Manag</source> <volume>47</volume> (<year>2018</year>), <fpage>103</fpage>–<lpage>105</lpage>. <object-id pub-id-type="pmid">29719995</object-id>. doi:<pub-id pub-id-type="doi">10.1177/1833358318774357</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref027">
+<label>[27]</label><mixed-citation publication-type="other">LIMA – Liquid biopsies and imaging, <uri>https://lima-project.eu/</uri>.</mixed-citation>
+</ref>
+<ref id="ref028">
+<label>[28]</label><mixed-citation publication-type="journal"><string-name><given-names>P.R.</given-names> <surname>Luijten</surname></string-name>, <string-name><given-names>G.A.</given-names> <surname>van Dongen</surname></string-name>, <string-name><given-names>C.T.</given-names> <surname>Moonen</surname></string-name>, <string-name><given-names>G.</given-names> <surname>Storm</surname></string-name> and <string-name><given-names>D.J.</given-names> <surname>Crommelin</surname></string-name>, <article-title>Public-private partnerships in translational medicine: Concepts and practical examples</article-title>, <source>J Control Release</source> <volume>161</volume> (<year>2012</year>), <fpage>416</fpage>–<lpage>421</lpage>. <object-id pub-id-type="pmid">22465390</object-id>. doi:<pub-id pub-id-type="doi">10.1016/j.jconrel.2012.03.012</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref029">
+<label>[29]</label><mixed-citation publication-type="journal"><string-name><given-names>D.S.</given-names> <surname>Marcus</surname></string-name>, <string-name><given-names>T.R.</given-names> <surname>Olsen</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Ramaratnam</surname></string-name> and <string-name><given-names>R.L.</given-names> <surname>Buckner</surname></string-name>, <article-title>The extensible neuroimaging archive toolkit: An informatics platform for managing, exploring, and sharing neuroimaging data</article-title>, <source>Neuroinformatics</source> <volume>5</volume> (<year>2007</year>), <fpage>11</fpage>–<lpage>34</lpage>. <object-id pub-id-type="pmid">17426351</object-id>. doi:<pub-id pub-id-type="doi">10.1385/NI:5:1:11</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref030">
+<label>[30]</label><mixed-citation publication-type="journal"><string-name><given-names>L.D.</given-names> <surname>McIntosh</surname></string-name>, <string-name><given-names>M.K.</given-names> <surname>Sharma</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Mulvihill</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Gupta</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Juehne</surname></string-name>, <string-name><given-names>B.</given-names> <surname>George</surname></string-name>, <string-name><given-names>S.B.</given-names> <surname>Khot</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Kaushal</surname></string-name>, <string-name><given-names>M.A.</given-names> <surname>Watson</surname></string-name> and <string-name><given-names>R.</given-names> <surname>Nagarajan</surname></string-name>, <article-title>caTissue Suite to OpenSpecimen: Developing an extensible, open source, web-based biobanking management system</article-title>, <source>J Biomed Inform</source> <volume>57</volume> (<year>2015</year>), <fpage>456</fpage>–<lpage>464</lpage>. <object-id pub-id-type="pmid">26325296</object-id>. doi:<pub-id pub-id-type="doi">10.1016/j.jbi.2015.08.020</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref031">
+<label>[31]</label><mixed-citation publication-type="journal"><string-name><given-names>B.</given-names> <surname>McKinney</surname></string-name>, <string-name><given-names>P.A.</given-names> <surname>Meyer</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Crosas</surname></string-name> and <string-name><given-names>P.</given-names> <surname>Sliz</surname></string-name>, <article-title>Extension of research data repository system to support direct compute access to biomedical datasets: Enhancing dataverse to support large datasets</article-title>, <source>Ann N Y Acad Sci</source> <volume>1387</volume> (<year>2017</year>), <fpage>95</fpage>–<lpage>104</lpage>. <object-id pub-id-type="pmid">27862010</object-id>. doi:<pub-id pub-id-type="doi">10.1111/nyas.13272</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref032">
+<label>[32]</label><mixed-citation publication-type="other"><string-name><given-names>G.A.</given-names> <surname>Meijer</surname></string-name>, <string-name><given-names>J.W.</given-names> <surname>Boiten</surname></string-name>, <string-name><given-names>J.A.M.</given-names> <surname>Beliën</surname></string-name>, <string-name><given-names>H.M.W.</given-names> <surname>Verheul</surname></string-name>, <string-name><given-names>M.N.</given-names> <surname>Cavelaars</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Dekker</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Lansberg</surname></string-name>, <string-name><given-names>R.J.A.</given-names> <surname>Fijneman</surname></string-name>, <string-name><given-names>W.</given-names> <surname>Van der Linden</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Azevedo</surname></string-name> and <string-name><given-names>N.</given-names> <surname>Stathonikos</surname></string-name>, TraIT – Translational research IT, 2017. <uri>https://trait.health-ri.nl/TraITbookletFinalHR.pdf</uri>.</mixed-citation>
+</ref>
+<ref id="ref033">
+<label>[33]</label><mixed-citation publication-type="journal"><string-name><given-names>S.N.</given-names> <surname>Murphy</surname></string-name>, <string-name><given-names>G.</given-names> <surname>Weber</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Mendis</surname></string-name>, <string-name><given-names>V.</given-names> <surname>Gainer</surname></string-name>, <string-name><given-names>H.C.</given-names> <surname>Chueh</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Churchill</surname></string-name> and <string-name><given-names>I.</given-names> <surname>Kohane</surname></string-name>, <article-title>Serving the enterprise and beyond with informatics for integrating biology and the bedside (i2b2)</article-title>, <source>J Am Med Inform Assoc</source> <volume>17</volume> (<year>2010</year>), <fpage>124</fpage>–<lpage>130</lpage>. <object-id pub-id-type="pmid">20190053</object-id>. doi:<pub-id pub-id-type="doi">10.1136/jamia.2009.000893</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref034">
+<label>[34]</label><mixed-citation publication-type="other">Occhiolino – Laboratory information management system for healthcare and biomedicine, <uri>http://lims.gnu.org</uri>.</mixed-citation>
+</ref>
+<ref id="ref035">
+<label>[35]</label><mixed-citation publication-type="other">OpenClinica – Electronic data capture for clinical research, <uri>https://www.openclinica.com</uri>.</mixed-citation>
+</ref>
+<ref id="ref036">
+<label>[36]</label><mixed-citation publication-type="journal"><string-name><given-names>P.R.</given-names> <surname>Payne</surname></string-name>, <string-name><given-names>S.B.</given-names> <surname>Johnson</surname></string-name>, <string-name><given-names>J.B.</given-names> <surname>Starren</surname></string-name>, <string-name><given-names>H.H.</given-names> <surname>Tilson</surname></string-name> and <string-name><given-names>D.</given-names> <surname>Dowdy</surname></string-name>, <article-title>Breaking the translational barriers: The value of integrating biomedical informatics and translational research</article-title>, <source>J Investig Med</source> <volume>53</volume> (<year>2005</year>), <fpage>192</fpage>–<lpage>200</lpage>. <object-id pub-id-type="pmid">15974245</object-id>. doi:<pub-id pub-id-type="doi">10.2310/6650.2005.00402</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref037">
+<label>[37]</label><mixed-citation publication-type="journal"><string-name><given-names>J.</given-names> <surname>Perkel</surname></string-name>, <article-title>Democratic databases: Science on GitHub</article-title>, <source>Nature</source> <volume>538</volume> (<year>2016</year>), <fpage>127</fpage>–<lpage>128</lpage>. <object-id pub-id-type="pmid">27708327</object-id>. doi:<pub-id pub-id-type="doi">10.1038/538127a</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref038">
+<label>[38]</label><mixed-citation publication-type="journal"><string-name><given-names>F.</given-names> <surname>Prasser</surname></string-name>, <string-name><given-names>F.</given-names> <surname>Kohlmayer</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Lautenschlager</surname></string-name> and <string-name><given-names>K.A.</given-names> <surname>Kuhn</surname></string-name>, <article-title>ARX – A comprehensive tool for anonymizing biomedical data</article-title>, <source>AMIA Annu Symp Proc</source> <volume>2014</volume> (<year>2014</year>), <fpage>984</fpage>–<lpage>993</lpage>. <object-id pub-id-type="pmid">25954407</object-id>.</mixed-citation>
+</ref>
+<ref id="ref039">
+<label>[39]</label><mixed-citation publication-type="other">RE-IMAGINE – Correcting five decades of error through enabling image-based risk stratification of localised prostate cancer, <uri>https://www.reimagine-pca.org/</uri>.</mixed-citation>
+</ref>
+<ref id="ref040">
+<label>[40]</label><mixed-citation publication-type="other">Research data management (a how-to guide): Research data management definition, <uri>https://libguides.depaul.edu/c.php?g=620925&amp;p=4324498</uri>.</mixed-citation>
+</ref>
+<ref id="ref041">
+<label>[41]</label><mixed-citation publication-type="journal"><string-name><given-names>S.</given-names> <surname>Rosenbaum</surname></string-name>, <article-title>Data governance and stewardship: Designing data stewardship entities and advancing data access</article-title>, <source>Health Serv Res</source> <volume>45</volume> (<year>2010</year>), <fpage>1442</fpage>–<lpage>1455</lpage>. <object-id pub-id-type="pmid">21054365</object-id>. doi:<pub-id pub-id-type="doi">10.1111/j.1475-6773.2010.01140.x</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref042">
+<label>[42]</label><mixed-citation publication-type="other"><string-name><given-names>P.H.</given-names> <surname>Russell</surname></string-name>, <string-name><given-names>R.L.</given-names> <surname>Johnson</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Ananthan</surname></string-name>, <string-name><given-names>B.</given-names> <surname>Harnke</surname></string-name> and <string-name><given-names>N.E.</given-names> <surname>Carlson</surname></string-name>, <article-title>A large-scale analysis of bioinformatics code on GitHub</article-title>, <source>PLoS One</source> <volume>13</volume> (<year>2018</year>), <elocation-id>e0205898</elocation-id>. <object-id pub-id-type="pmid">30109017</object-id>. doi:<pub-id pub-id-type="doi">10.1371/journal.pone.0205898</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref043">
+<label>[43]</label><mixed-citation publication-type="journal"><string-name><given-names>E.</given-names> <surname>Scheufele</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Aronzon</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Coopersmith</surname></string-name>, <string-name><given-names>M.T.</given-names> <surname>McDuffie</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Kapoor</surname></string-name>, <string-name><given-names>C.A.</given-names> <surname>Uhrich</surname></string-name>, <string-name><given-names>J.E.</given-names> <surname>Avitabile</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Liu</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Housman</surname></string-name> and <string-name><given-names>M.B.</given-names> <surname>Palchuk</surname></string-name>, <article-title>tranSMART: An open source knowledge management and high content data analytics platform</article-title>, <source>AMIA Jt Summits Transl Sci Proc</source> <volume>2014</volume> (<year>2014</year>), <fpage>96</fpage>–<lpage>101</lpage>. <object-id pub-id-type="pmid">25717408</object-id>.</mixed-citation>
+</ref>
+<ref id="ref044">
+<label>[44]</label><mixed-citation publication-type="journal"><string-name><given-names>J.</given-names> <surname>Singh</surname></string-name>, <article-title>FigShare</article-title>, <source>J Pharmacol Pharmacother</source> <volume>2</volume> (<year>2011</year>), <fpage>138</fpage>–<lpage>139</lpage>. <object-id pub-id-type="pmid">21772785</object-id>. doi:<pub-id pub-id-type="doi">10.4103/0976-500X.81919</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref045">
+<label>[45]</label><mixed-citation publication-type="other">SlideAtlas – Whole slide image viewer, <uri>https://slide-atlas.org/</uri>.</mixed-citation>
+</ref>
+<ref id="ref046">
+<label>[46]</label><mixed-citation publication-type="journal"><string-name><given-names>B.</given-names> <surname>Smith</surname></string-name> and <string-name><given-names>R.H.</given-names> <surname>Scheuermann</surname></string-name>, <article-title>Ontologies for clinical and translational research: Introduction</article-title>, <source>J Biomed Inform</source> <volume>44</volume> (<year>2011</year>), <fpage>3</fpage>–<lpage>7</lpage>. <object-id pub-id-type="pmid">21241822</object-id>. doi:<pub-id pub-id-type="doi">10.1016/j.jbi.2011.01.002</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref047">
+<label>[47]</label><mixed-citation publication-type="other">SourceForge – The complete open-source and business software platform, <uri>https://sourceforge.net/</uri>.</mixed-citation>
+</ref>
+<ref id="ref048">
+<label>[48]</label><mixed-citation publication-type="journal"><string-name><given-names>A.</given-names> <surname>Surkis</surname></string-name> and <string-name><given-names>K.</given-names> <surname>Read</surname></string-name>, <article-title>Research data management</article-title>, <source>J Med Libr Assoc</source> <volume>103</volume> (<year>2015</year>), <fpage>154</fpage>–<lpage>156</lpage>. <object-id pub-id-type="pmid">26213510</object-id>. doi:<pub-id pub-id-type="doi">10.3163/1536-5050.103.3.011</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref049">
+<label>[49]</label><mixed-citation publication-type="chapter"><string-name><given-names>H.C.</given-names> <surname>White</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Carrier</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Thompson</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Greenberg</surname></string-name> and <string-name><given-names>R.</given-names> <surname>Scherle</surname></string-name>, <chapter-title>The Dryad data repository: A Singapore framework metadata architecture in a DSpace environment</chapter-title>, in: <source>DCMI ’08 Proceedings of the 2008 International Conference on Dublin Core and Metadata Applications</source>, <year>2008</year>, pp. <fpage>157</fpage>–<lpage>162</lpage>. <uri>https://dl.acm.org/citation.cfm?id=1503435</uri>.</mixed-citation>
+</ref>
+<ref id="ref050">
+<label>[50]</label><mixed-citation publication-type="other"><string-name><given-names>M.D.</given-names> <surname>Wilkinson</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Dumontier</surname></string-name>, <string-name><given-names>I.J.</given-names> <surname>Aalbersberg</surname></string-name>, <string-name><given-names>G.</given-names> <surname>Appleton</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Axton</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Baak</surname></string-name>, <string-name><given-names>N.</given-names> <surname>Blomberg</surname></string-name>, <string-name><given-names>J.W.</given-names> <surname>Boiten</surname></string-name>, <string-name><given-names>L.B.</given-names> <surname>da Silva Santos</surname></string-name>, <string-name><given-names>P.E.</given-names> <surname>Bourne</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Bouwman</surname></string-name>, <string-name><given-names>A.J.</given-names> <surname>Brookes</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Clark</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Crosas</surname></string-name>, <string-name><given-names>I.</given-names> <surname>Dillo</surname></string-name>, <string-name><given-names>O.</given-names> <surname>Dumon</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Edmunds</surname></string-name>, <string-name><given-names>C.T.</given-names> <surname>Evelo</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Finkers</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Gonzalez-Beltran</surname></string-name>, <string-name><given-names>A.J.</given-names> <surname>Gray</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Groth</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Goble</surname></string-name>, <string-name><given-names>J.S.</given-names> <surname>Grethe</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Heringa</surname></string-name>, <string-name><given-names>P.A.</given-names> <surname>t Hoen</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Hooft</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Kuhn</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Kok</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Kok</surname></string-name>, <string-name><given-names>S.J.</given-names> <surname>Lusher</surname></string-name>, <string-name><given-names>M.E.</given-names> <surname>Martone</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Mons</surname></string-name>, <string-name><given-names>A.L.</given-names> <surname>Packer</surname></string-name>, <string-name><given-names>B.</given-names> <surname>Persson</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Rocca-Serra</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Roos</surname></string-name>, <string-name><given-names>R.</given-names> <surname>van Schaik</surname></string-name>, <string-name><given-names>S.A.</given-names> <surname>Sansone</surname></string-name>, <string-name><given-names>E.</given-names> <surname>Schultes</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Sengstag</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Slater</surname></string-name>, <string-name><given-names>G.</given-names> <surname>Strawn</surname></string-name>, <string-name><given-names>M.A.</given-names> <surname>Swertz</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Thompson</surname></string-name>, <string-name><given-names>J.</given-names> <surname>van der Lei</surname></string-name>, <string-name><given-names>E.</given-names> <surname>van Mulligen</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Velterop</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Waagmeester</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Wittenburg</surname></string-name>, <string-name><given-names>K.</given-names> <surname>Wolstencroft</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Zhao</surname></string-name> and <string-name><given-names>B.</given-names> <surname>Mons</surname></string-name>, <article-title>The FAIR guiding principles for scientific data management and stewardship</article-title>, <source>Sci Data</source> <volume>3</volume> (<year>2016</year>), <elocation-id>160018</elocation-id>. <object-id pub-id-type="pmid">26978244</object-id>. doi:<pub-id pub-id-type="doi">10.1038/sdata.2016.18</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref051">
+<label>[51]</label><mixed-citation publication-type="journal"><string-name><given-names>Y.L.</given-names> <surname>Yip</surname></string-name>, <article-title>Unlocking the potential of electronic health records for translational research. Findings from the section on bioinformatics and translational informatics</article-title>, <source>Yearb Med Inform</source> <volume>7</volume> (<year>2012</year>), <fpage>135</fpage>–<lpage>138</lpage>. <object-id pub-id-type="pmid">22890355</object-id>. doi:<pub-id pub-id-type="doi">10.1055/s-0038-1639444</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref052">
+<label>[52]</label><mixed-citation publication-type="other">Zenodo – Research. Shared, <uri>https://zenodo.org/</uri>.</mixed-citation>
+</ref>
+</ref-list>
+</back>
+</article>

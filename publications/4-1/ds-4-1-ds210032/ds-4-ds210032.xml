@@ -1,0 +1,758 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.0 20120330//EN" "JATS-journalpublishing1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="resource-paper">
+<front>
+<journal-meta>
+<journal-id journal-id-type="publisher-id">DS</journal-id>
+<journal-title-group><journal-title>Data Science</journal-title></journal-title-group>
+<issn pub-type="epub">2451-8492</issn><issn pub-type="ppub">2451-8484</issn><issn-l>2451-8484</issn-l>
+<publisher>
+<publisher-name>IOS Press</publisher-name><publisher-loc>Nieuwe Hemweg 6B, 1013 BG Amsterdam, The Netherlands</publisher-loc>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">DS210032</article-id>
+<article-id pub-id-type="doi">10.3233/DS-210032</article-id>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Resource Paper</subject></subj-group></article-categories>
+<title-group>
+<article-title>BioVenn – an R and Python package for the comparison and visualization of biological lists using area-proportional Venn diagrams</article-title>
+</title-group>
+<contrib-group content-type="Editor">
+<contrib contrib-type="editor">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-1314-7824</contrib-id>
+<name><surname>Datta</surname><given-names>Gargi</given-names></name>
+</contrib>
+</contrib-group>
+<contrib-group>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-0208-8443</contrib-id>
+<name><surname>Hulsen</surname><given-names>Tim</given-names></name><xref ref-type="aff" rid="affa"/><xref ref-type="corresp" rid="cor1">*</xref>
+</contrib>
+<aff id="affa">Department of Hospital Services &amp; Informatics, <institution>Philips Research</institution>, Eindhoven, <country>The Netherlands</country>. E-mail: <email>tim.hulsen@philips.com</email></aff>
+</contrib-group>
+<author-notes>
+<corresp id="cor1"><label>*</label>Corresponding author. E-mail: <email>tim.hulsen@philips.com</email>.</corresp>
+</author-notes>
+<pub-date date-type="preprint" publication-format="electronic"><day>29</day><month>3</month><year>2021</year></pub-date><pub-date date-type="pub" publication-format="electronic"><day>21</day><month>5</month><year>2021</year></pub-date><pub-date date-type="collection" publication-format="electronic"><year>2021</year></pub-date><volume>4</volume><issue>1</issue><fpage>51</fpage><lpage>61</lpage><history><date date-type="received"><day>7</day><month>12</month><year>2020</year></date><date date-type="accepted"><day>28</day><month>02</month><year>2021</year></date></history>
+<permissions><copyright-statement>© 2021 – The authors. Published by IOS Press.</copyright-statement><copyright-year>2021</copyright-year>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/" license-type="open-access" xlink:type="simple">
+<license-p>This is an open access article distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/" xlink:type="simple">Creative Commons Attribution (CC BY 4.0) License</ext-link>, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions>
+<abstract>
+<p>One of the most popular methods to visualize the overlap and differences between data sets is the Venn diagram. Venn diagrams are especially useful when they are ‘area-proportional’ i.e. the sizes of the circles and the overlaps correspond to the sizes of the data sets. In 2007, the BioVenn web interface was launched, which is being used by many researchers. However, this web implementation requires users to copy and paste (or upload) lists of IDs into the web browser, which is not always convenient and makes it difficult for researchers to create Venn diagrams ‘in batch’, or to automatically update the diagram when the source data changes. This is only possible by using software such as R or Python. This paper describes the BioVenn R and Python packages, which are very easy-to-use packages that can generate accurate area-proportional Venn diagrams of two or three circles directly from lists of (biological) IDs. The only required input is two or three lists of IDs. Optional parameters include the main title, the subtitle, the printing of absolute numbers or percentages within the diagram, colors and fonts. The function can show the diagram on the screen, or it can export the diagram in one of the supported file formats. The function also returns all thirteen lists. The BioVenn R package and Python package were created for biological IDs, but they can be used for other IDs as well. Finally, BioVenn can map Affymetrix and EntrezGene to Ensembl IDs. The BioVenn R package is available in the CRAN repository, and can be installed by running ‘install.packages(“BioVenn”)’. The BioVenn Python package is available in the PyPI repository, and can be installed by running ‘pip install BioVenn’. The BioVenn web interface remains available at <uri>https://www.biovenn.nl</uri>.</p>
+</abstract>
+<kwd-group>
+<label>Keywords</label>
+<kwd>Bioinformatics</kwd>
+<kwd>visualization</kwd>
+<kwd>Venn diagram</kwd>
+<kwd>combinatorics</kwd>
+<kwd>set theory</kwd>
+<kwd>genomics</kwd>
+<kwd>data science</kwd>
+<kwd>R</kwd>
+<kwd>Python</kwd>
+</kwd-group>
+</article-meta>
+</front>
+<body>
+<sec id="x1-1000-1">
+<label>1.</label>
+<title>Introduction</title>
+<p>In many ‘big data’ projects, it can be very useful to see the overlap between different data sets, in terms of patient IDs, gene names, etc. One of the most popular methods to visualize the overlap between data sets is the Venn diagram: a diagram consisting of two or more circles in which each circle corresponds to a data set, and the overlap between the circles corresponds to the overlap between these data sets. Venn diagrams are especially useful when they are ‘area-proportional’ i.e. the sizes of the circles and the overlaps correspond to the sizes of the data sets. Some web-based tools were created that can create area-proportional Venn diagrams, such as the (deprecated) tools VennMaster [<xref ref-type="bibr" rid="ref013">13</xref>] and DrawEuler [<xref ref-type="bibr" rid="ref017">17</xref>]. In 2003, the website <ext-link ext-link-type="uri" xlink:href="http://Venndiagram.tk">Venndiagram.tk</ext-link> [<xref ref-type="bibr" rid="ref009">9</xref>] was launched, followed in 2007 by the BioVenn web interface [<xref ref-type="bibr" rid="ref012">12</xref>], which has been used to create publication figures by many researchers [<xref ref-type="bibr" rid="ref007">7</xref>], and is still available at this moment. The “Bio” in BioVenn showcases that it can do mapping of biological identifiers before determining sets and overlaps. Another useful functionality of BioVenn is that it displays the list of elements belonging to each of the subsets in the Venn diagram, i.e., the thirteen subsets resulting from the overlaps between the circles X, Y and Z. However, the BioVenn web application requires users to copy and paste lists of IDs (or upload files with lists of IDs) into the web browser, which is not always convenient and makes it difficult for researchers to create Venn diagrams ‘in batch’. Moreover, when the source data changes, it needs to be copy-and-pasted again into the web interface. Using programming languages, it is possible to do batch processing and to quickly rerun a script when the source data has changed. Two of the most popular programming languages used within many scientific fields are R and Python. There are some R and Python packages available that can create Venn diagrams, which are listed in the following two sections.</p>
+</sec>
+<sec id="x1-2000-2">
+<label>2.</label>
+<title>Existing R packages</title>
+<sec id="x1-3000-2.1">
+<label>2.1.</label>
+<title>colorfulVennPlot</title>
+<p>The first package is ‘colorfulVennPlot’ [<xref ref-type="bibr" rid="ref015">15</xref>]. This package can create 2-circle and 3-circle Venn diagrams, and use ellipses for diagrams of 4 sets. Only the 2-circle diagrams can be made area-proportional, but the user needs to calculate the circles’ sizes and overlap by using the separate ‘resizeCircles’ function.</p>
+</sec>
+<sec id="x1-4000-2.2">
+<label>2.2.</label>
+<title>eulerr</title>
+<p>A second package is ‘eulerr’ [<xref ref-type="bibr" rid="ref014">14</xref>], which can generate area-proportional Euler diagrams. A Euler diagram is a generalization of a Venn diagram, relaxing the criterion that all interactions need to be represented. In practice, both terms are used interchangeably. This package uses both ellipses and circles.</p>
+</sec>
+<sec id="x1-5000-2.3">
+<label>2.3.</label>
+<title>nVennR</title>
+<p>A third package is ‘nVennR’ [<xref ref-type="bibr" rid="ref016">16</xref>]. This package can create “quasi-proportional Venn and Euler diagrams” for an unlimited number of sets. For a large number of sets, the algorithm might be very slow, because it needs to run many simulation cycles. Because of the resulting complicated shapes, the diagrams might not be easy to read.</p>
+</sec>
+<sec id="x1-6000-2.4">
+<label>2.4.</label>
+<title>venn</title>
+<p>A fourth package is ‘venn’ [<xref ref-type="bibr" rid="ref006">6</xref>], which can generate Venn diagrams up to 7 sets, but not in an area-proportional manner. For more than three sets, it uses pre-set polygon shapes.</p>
+</sec>
+<sec id="x1-7000-2.5">
+<label>2.5.</label>
+<title>VennDiagram</title>
+<p>The most popular package at this moment is ‘VennDiagram’ [<xref ref-type="bibr" rid="ref003">3</xref>]. This package can generate Venn and Euler diagrams of up to five sets, but these are not area-proportional, unless the user calculates the radii and distances between the circles by him- or herself, and passes these numbers through to one of the draw.*.venn functions.</p>
+</sec>
+<sec id="x1-8000-2.6">
+<label>2.6.</label>
+<title>venneuler</title>
+<p>A sixth package is ‘venneuler’ [<xref ref-type="bibr" rid="ref019">19</xref>]. This package can create area-proportional Venn diagrams as well, if the sizes of the overlaps are passed to its venneuler function. The returned object also gives some mathematical information such as the residuals (percentage difference between input intersection area and fitted inter-section area) and stress values.</p>
+</sec>
+<sec id="x1-9000-2.7">
+<label>2.7.</label>
+<title>vennplot</title>
+<p>The seventh and final package is ‘vennplot’ [<xref ref-type="bibr" rid="ref020">20</xref>]. It can create area-proportional Venn diagrams in 2D or 3D, with two or three circles or balls. The 3D functionality is interesting (the diagram can be rotated), but the mathematics behind it is actually the same as for the 2D plot.</p>
+</sec>
+</sec>
+<sec id="x1-10000-3">
+<label>3.</label>
+<title>Existing Python packages</title>
+<sec id="x1-11000-3.1">
+<label>3.1.</label>
+<title>matplotlib-venn</title>
+<p>The most popular package at this moment is ‘matplotlib-venn’ [<xref ref-type="bibr" rid="ref018">18</xref>]. Its ‘venn2’ and ‘venn3’ functions can create area-proportional Venn diagrams of two and three circles, respectively. However, they don’t offer the ID mapping functionality of BioVenn, and the ‘drag-and-drop’ functionality for repositioning of titles and labels in the SVG mode of BioVenn is missing as well.</p>
+</sec>
+<sec id="x1-12000-3.2">
+<label>3.2.</label>
+<title>PyVenn</title>
+<p>A second package is ‘PyVenn’ [<xref ref-type="bibr" rid="ref008">8</xref>]. This package offers plotting of Venn diagrams of two to six circles, but these are not area-proportional like in BioVenn or Matplotlib-Venn: the shapes are always the same.</p>
+</sec>
+</sec>
+<sec id="x1-13000-4" sec-type="methods">
+<label>4.</label>
+<title>Methods</title>
+<p>The PHP script that forms the basis for the BioVenn web interface, was rewritten in the R and Python languages. The only function in the package is “draw.venn” (R) or “draw_venn” (Python), and it follows these steps:</p>
+<list>
+<list-item id="x1-13001x-4">
+<label>1.</label>
+<p>Remove duplicate IDs (note: BioVenn is case-sensitive)</p>
+</list-item>
+<list-item id="x1-13002x-4">
+<label>2.</label>
+<p>Map EntrezGene and Affymetrix IDs to Ensembl IDs (using the ‘hsapiens_gene_ensembl’ dataset of the ‘biomaRt’ R package [<xref ref-type="bibr" rid="ref005">5</xref>] or the ‘biomart’ Python package [<xref ref-type="bibr" rid="ref002">2</xref>], only used when the optional ‘map2ens’ parameter is set to ‘True’)</p>
+</list-item>
+<list-item id="x1-13003x-4">
+<label>3.</label>
+<p>Generate lists of IDs for the thirteen possible sets, and count the number of IDs within each set</p>
+</list-item>
+<list-item id="x1-13004x-4">
+<label>4.</label>
+<p>Calculate the radii of the circles so that the areas of the circles correspond to the size of the datasets they represent</p>
+</list-item>
+<list-item id="x1-13005x-4">
+<label>5.</label>
+<p>Calculate the distances between the centers of the circles, so that the areas of the two-circle overlaps correspond to the size of the datasets they represent (see Fig. 1 of [<xref ref-type="bibr" rid="ref012">12</xref>]); in cases where an 100% accurate three-circle diagram cannot be drawn, this method gives the optimal solution</p>
+</list-item>
+<list-item id="x1-13006x-4">
+<label>6.</label>
+<p>Calculate the angles of the XYZ triangle, formed by connecting the three centers of the circles</p>
+</list-item>
+<list-item id="x1-13007x-4">
+<label>7.</label>
+<p>Calculate the centers of the circles</p>
+</list-item>
+<list-item id="x1-13008x-4">
+<label>8.</label>
+<p>Calculate the intersection points of the circles</p>
+</list-item>
+<list-item id="x1-13009x-4">
+<label>9.</label>
+<p>Calculate the points where the numbers will be printed</p>
+</list-item>
+<list-item id="x1-13010x-4">
+<label>10.</label>
+<p>Set output type to file or screen (depending on the output parameter)</p>
+</list-item>
+<list-item id="x1-13011x-4">
+<label>11.</label>
+<p>Print the title and subtitle</p>
+</list-item>
+<list-item id="x1-13012x-4">
+<label>12.</label>
+<p>Print the circles with the calculated centers and radii</p>
+</list-item>
+<list-item id="x1-13013x-4">
+<label>13.</label>
+<p>Print the absolute numbers/percentages</p>
+</list-item>
+<list-item id="x1-13014x-4">
+<label>14.</label>
+<p>Print the texts for the three circles</p>
+</list-item>
+<list-item id="x1-13015x-4">
+<label>15.</label>
+<p>Write to the selected output type and filename</p>
+</list-item>
+<list-item id="x1-13016x-4">
+<label>16.</label>
+<p>If SVG is selected as output type, do some post-processing in order to create the drag-and-drop functionality for repositioning titles and labels</p>
+</list-item>
+<list-item id="x1-13017x-4">
+<label>17.</label>
+<p>Return the contents of the thirteen lists: X, Y, Z, X only, Y only, Z only, XY, XZ, YZ, XY only, XZ only, YZ only and XYZ.</p>
+</list-item>
+</list>
+<p>Whereas the BioVenn web interface only supports PNG and SVG as output formats, the Python package also supports JPEG, PDF and TIFF. The R package even supports all of these file formats and BMP.</p>
+</sec>
+<sec id="x1-14000-5">
+<label>5.</label>
+<title>Results</title>
+<p>The BioVenn R/Python package can generate area-proportional Venn diagrams of two or three circles from lists of (biological) identifiers. It is a lightweight package, depending on only a small number of other packages, making it more likely that the package will still work in the future. The only function in the first version is the ‘draw.venn’ function (in R; ‘draw_venn’ in Python), for which the only required input is two or three lists of identifiers. Optional parameters include the main title, the subtitle, the printing of absolute numbers or percentages within the diagram, colors and fonts. The function can show the diagram on the screen, or it can export the diagram in one of the supported file formats. The SVG mode also supports drag-and-drop of titles and labels, which is a new functionality compared to the original publication of the web interface [<xref ref-type="bibr" rid="ref012">12</xref>]. The function also returns the lists of IDs for the thirteen possible sets. The BioVenn R/Python package was created for biological identifiers, but it can be used for other identifiers as well. Finally, BioVenn can map Affymetrix and EntrezGene IDs to Ensembl IDs.</p>
+<fig id="x1-14001-1">
+<label>Fig. 1.</label>
+<caption>
+<p>Example BioVenn diagram. This example was created by just entering three lists of IDs and setting two other parameters (subtitle and nrtype).</p>
+</caption>
+<graphic xlink:href="ds-4-ds210032-g001.jpg"/>
+</fig>
+<table-wrap id="x1-14002-1">
+<label>Table 1</label>
+<caption>
+<p>Example output. This example was created by just entering three lists of IDs and setting two other parameters (subtitle and nrtype)</p>
+</caption>
+<table frame="hsides" rules="groups">
+<thead>
+<tr>
+<td valign="top" align="left">Variable</td>
+<td valign="top" align="left">Data type</td>
+<td valign="top" align="left">Contents</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top" align="left">$x</td>
+<td valign="top" align="left">character [6]</td>
+<td valign="top" align="left">1007_s_at, 1053_at, 117_at, 121_at, 1255_g_at, 1294_at</td>
+</tr>
+<tr>
+<td valign="top" align="left">$y</td>
+<td valign="top" align="left">character [5]</td>
+<td valign="top" align="left">1255_g_at, 1294_at, 1316_at, 1320_at, 1405_i_at</td>
+</tr>
+<tr>
+<td valign="top" align="left">$z</td>
+<td valign="top" align="left">character [7]</td>
+<td valign="top" align="left">1007_s_at, 1405_i_at, 1255_g_at, 1431_at, 1438_at, 1487_at, 1494_f_at</td>
+</tr>
+<tr>
+<td valign="top" align="left">$x_only</td>
+<td valign="top" align="left">character [3]</td>
+<td valign="top" align="left">1053_at, 117_at, 121_at</td>
+</tr>
+<tr>
+<td valign="top" align="left">$y_only</td>
+<td valign="top" align="left">character [2]</td>
+<td valign="top" align="left">1316_at, 1320_at</td>
+</tr>
+<tr>
+<td valign="top" align="left">$z_only</td>
+<td valign="top" align="left">character [4]</td>
+<td valign="top" align="left">1431_at, 1438_at, 1487_at, 1494_f_at</td>
+</tr>
+<tr>
+<td valign="top" align="left">$xy</td>
+<td valign="top" align="left">character [2]</td>
+<td valign="top" align="left">1255_g_at, 1294_at</td>
+</tr>
+<tr>
+<td valign="top" align="left">$xz</td>
+<td valign="top" align="left">character [2]</td>
+<td valign="top" align="left">1007_s_at, 1255_g_at</td>
+</tr>
+<tr>
+<td valign="top" align="left">$yz</td>
+<td valign="top" align="left">character [2]</td>
+<td valign="top" align="left">1255_g_at, 1405_i_at</td>
+</tr>
+<tr>
+<td valign="top" align="left">$xy_only</td>
+<td valign="top" align="left">character [1]</td>
+<td valign="top" align="left">1294_at</td>
+</tr>
+<tr>
+<td valign="top" align="left">$xz_only</td>
+<td valign="top" align="left">character [1]</td>
+<td valign="top" align="left">1007_s_at</td>
+</tr>
+<tr>
+<td valign="top" align="left">$yz_only</td>
+<td valign="top" align="left">character [1]</td>
+<td valign="top" align="left">1405_i_at</td>
+</tr>
+<tr>
+<td valign="top" align="left">$xyz</td>
+<td valign="top" align="left">character [1]</td>
+<td valign="top" align="left">1255_g_at</td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+<sec id="x1-15000-5.1">
+<label>5.1.</label>
+<title>R example</title>
+<p>The following very simple R code creates the example plot of Fig. <xref rid="x1-14001-1">1</xref>, and returns the data of Table <xref rid="x1-14002-1">1</xref>: 
+<list>
+<list-item>
+<p>list_x &lt;- c(”1007_s_at”, ”1053_at”, ”117_at”, ”121_at”, ”1255_g_at”, ”1294_at”)</p>
+</list-item>
+<list-item>
+<p>list_y &lt;- c(”1255_g_at”, ”1294_at”, ”1316_at”, ”1320_at”, ”1405_i_at”)</p>
+</list-item>
+<list-item>
+<p>list_z &lt;- c(”1007_s_at”, ”1405_i_at”, ”1255_g_at”, ”1431_at”, ”1438_at”, ”1487_at”, ”1494_f_at”)</p>
+</list-item>
+<list-item>
+<p>biovenn &lt;- draw.venn(list_x, list_y, list_z, subtitle=”Example diagram”, nrtype=”abs”)</p>
+</list-item>
+</list>
+</p>
+</sec>
+<sec id="x1-16000-5.2">
+<label>5.2.</label>
+<title>Python example</title>
+<p>The Python code works in a very similar manner:</p>
+<list>
+<list-item>
+<p>list_x = (”1007_s_at”, ”1053_at”, ”117_at”, ”121_at”, ”1255_g_at”, ”1294_at”)</p>
+</list-item>
+<list-item>
+<p>list_y = (”1255_g_at”, ”1294_at”, ”1316_at”, ”1320_at”, ”1405_i_at”)</p>
+</list-item>
+<list-item>
+<p>list_z = (”1007_s_at”, ”1405_i_at”, ”1255_g_at”, ”1431_at”, ”1438_at”, ”1487_at”, ”1494_f_at”)</p>
+</list-item>
+<list-item>
+<p>biovenn = draw_venn(list_x, list_y, list_z, subtitle=”Example diagram”, nrtype=”abs”)</p>
+</list-item>
+</list>
+<p>Note that the code in both R and Python could be even compressed into one line, by adding the lists directly to the draw.venn or draw_venn command. For improved readability we use a four-line code.</p>
+</sec>
+<sec id="x1-17000-5.3">
+<label>5.3.</label>
+<title>Biological ID mapping</title>
+<p>To enable the mapping of Affymetrix or Entrez identifiers to Ensembl identifiers, the parameter ‘map2ens’ should be set to ‘TRUE’, e.g. in R:</p>
+<list>
+<list-item>
+<p>list_x &lt;- c(”1007_s_at”, ”1053_at”, ”117_at”, ”121_at”, ”1255_g_at”, ”1294_at”)</p>
+</list-item>
+<list-item>
+<p>list_y &lt;- c(”1255_g_at”, ”1294_at”, ”1316_at”, ”1320_at”, ”1405_i_at”)</p>
+</list-item>
+<list-item>
+<p>list_z &lt;- c(”1007_s_at”, ”1405_i_at”, ”1255_g_at”, ”1431_at”, ”1438_at”, ”1487_at”, ”1494_f_at”)</p>
+<p>
+<fig id="x1-17001-2">
+<label>Fig. 2.</label>
+<caption>
+<p>Example BioVenn diagram, created with biological ID mapping. This example was created by just entering three lists of IDs and setting three other parameters (subtitle, nrtype and map2ens).</p>
+</caption>
+<graphic xlink:href="ds-4-ds210032-g002.jpg"/>
+</fig>
+</p>
+</list-item>
+<list-item>
+<p>biovenn &lt;- draw.venn(list_x, list_y, list_z, subtitle=”Example diagram”, nrtype=”abs”, map2ens=TRUE)</p>
+</list-item>
+</list>
+<p>This code creates the example plot of Fig. <xref rid="x1-17001-2">2</xref> and returns the data of Table <xref rid="x1-17002-2">2</xref>. Note that, in comparison to Fig. <xref rid="x1-14001-1">1</xref> and Table <xref rid="x1-14002-1">1</xref>, some lists contain more identifiers. This is because some Affymetrix IDs map to multiple Ensembl Gene IDs (possibly homologous genes). With the ‘map2ens’ function, BioVenn automatically converts the Affymetrix IDs to their corresponding Ensembl Gene IDs, and draws the Venn diagrams using the Ensembl Gene IDs. This is useful for researchers that want to do a gene-based comparison from expression data.</p>
+<table-wrap id="x1-17002-2">
+<label>Table 2</label>
+<caption>
+<p>Example output, created with biological ID mapping. This example was created by just entering three lists of IDs and setting three other parameters (subtitle, nrtype and map2ens)</p>
+</caption>
+<table frame="hsides" rules="groups">
+<thead>
+<tr>
+<td valign="top" align="left">Variable</td>
+<td valign="top" align="left">Data type</td>
+<td valign="top" align="left">Contents</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top" align="left">$x</td>
+<td valign="top" align="left">character [13]</td>
+<td valign="top" align="left">ENSG00000234078, ENSG00000137332, ENSG00000230456, ENSG00000215522, ENSG00000204580, ENSG00000049541, ENSG00000287363, ENSG00000048545, ENSG00000182179, ENSG00000283726, ENSG00000125618, ENSG00000173110, ENSG00000225217</td>
+</tr>
+<tr>
+<td valign="top" align="left">$y</td>
+<td valign="top" align="left">character [8]</td>
+<td valign="top" align="left">ENSG00000274233, ENSG00000070778, ENSG00000287363, ENSG00000048545, ENSG00000182179, ENSG00000283726, ENSG00000271503, ENSG00000126351</td>
+</tr>
+<tr>
+<td valign="top" align="left">$z</td>
+<td valign="top" align="left">character [15]</td>
+<td valign="top" align="left">ENSG00000234078, ENSG00000137332, ENSG00000230456, ENSG00000215522, ENSG00000274233, ENSG00000215572, ENSG00000204580, ENSG00000287363, ENSG00000048545, ENSG00000255974, ENSG00000198077, ENSG00000130649, ENSG00000173153, ENSG00000182580, ENSG00000271503</td>
+</tr>
+<tr>
+<td valign="top" align="left">$x_only</td>
+<td valign="top" align="left">character [4]</td>
+<td valign="top" align="left">ENSG00000049541, ENSG00000125618, ENSG00000173110, ENSG00000225217</td>
+</tr>
+<tr>
+<td valign="top" align="left">$y_only</td>
+<td valign="top" align="left">character [2]</td>
+<td valign="top" align="left">ENSG00000070778, ENSG00000126351</td>
+</tr>
+<tr>
+<td valign="top" align="left">$z_only</td>
+<td valign="top" align="left">character [6]</td>
+<td valign="top" align="left">ENSG00000215572, ENSG00000255974, ENSG00000198077, ENSG00000130649, ENSG00000173153, ENSG00000182580</td>
+</tr>
+<tr>
+<td valign="top" align="left">$xy</td>
+<td valign="top" align="left">character [4]</td>
+<td valign="top" align="left">ENSG00000287363, ENSG00000048545, ENSG00000182179, ENSG00000283726</td>
+</tr>
+<tr>
+<td valign="top" align="left">$xz</td>
+<td valign="top" align="left">character [7]</td>
+<td valign="top" align="left">ENSG00000234078, ENSG00000137332, ENSG00000230456, ENSG00000215522, ENSG00000204580, ENSG00000287363, ENSG00000048545</td>
+</tr>
+<tr>
+<td valign="top" align="left">$yz</td>
+<td valign="top" align="left">character [4]</td>
+<td valign="top" align="left">ENSG00000274233, ENSG00000287363, ENSG00000048545, ENSG00000271503</td>
+</tr>
+<tr>
+<td valign="top" align="left">$xy_only</td>
+<td valign="top" align="left">character [2]</td>
+<td valign="top" align="left">ENSG00000182179, ENSG00000283726</td>
+</tr>
+<tr>
+<td valign="top" align="left">$xz_only</td>
+<td valign="top" align="left">character [5]</td>
+<td valign="top" align="left">ENSG00000234078, ENSG00000137332, ENSG00000230456, ENSG00000215522, ENSG00000204580</td>
+</tr>
+<tr>
+<td valign="top" align="left">$yz_only</td>
+<td valign="top" align="left">character [2]</td>
+<td valign="top" align="left">ENSG00000274233, ENSG00000271503</td>
+</tr>
+<tr>
+<td valign="top" align="left">$xyz</td>
+<td valign="top" align="left">character [2]</td>
+<td valign="top" align="left">ENSG00000287363, ENSG00000048545</td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+</sec>
+<sec id="x1-18000-5.4">
+<label>5.4.</label>
+<title>Overall comparison</title>
+<p>To compare the different R and Python packages, we created Venn diagrams of a dataset showing orthologous genes that are present in human (<italic>Homo sapiens</italic>), mouse (<italic>Mus musculus</italic>) or the African clawed frog (<italic>Xenopus laevis</italic>) (available at the OMA Browser [<xref ref-type="bibr" rid="ref001">1</xref>] through <uri>https://omabrowser.org/All/oma-groups.txt.gz</uri>). Since human and mouse are more closely related than human and Xenopus (and mouse and Xenopus), we expect that the circles of human and mouse have a larger overlap. Furthermore, Xenopus has more genes, so its circle should be larger than the circles of human and mouse.</p>
+<p>Figure <xref rid="x1-18001-3">3</xref> shows the Venn Diagrams created in each of the R packages, in alphabetical order. For each of the plots, the colours red, green and blue were used, titles were removed, and numbers were printed in the diagram (if that option was available). The code used to generate the plots can be viewed at <uri>https://www.biovenn.nl/r_python/</uri>. We can see that the packages that create area-proportional diagrams (a, c, d, g, h) give a better impression of what the data looks like: the human and mouse circles indeed have a larger overlap than with the Xenopus circle, and the Xenopus circle is larger than the other ones. The nVennR diagram (d) might be visually less appealing, but it displays the information correctly as well. The non-area-proportional diagrams (b, e, f) need some careful reading of the numbers in the figure before they can be interpreted.</p>
+<fig id="x1-18001-3">
+<label>Fig. 3.</label>
+<caption>
+<p>Venn diagrams created by each of the R packages: <bold>a)</bold> BioVenn, <bold>b)</bold> colorfulVennPlot, <bold>c)</bold> eulerr, <bold>d)</bold> nVennR, <bold>e)</bold> venn, <bold>f)</bold> VennDiagram, <bold>g)</bold> venneuler and <bold>h)</bold> vennplot.</p>
+</caption>
+<graphic xlink:href="ds-4-ds210032-g003.jpg"/>
+</fig>
+<fig id="x1-18002-4">
+<label>Fig. 4.</label>
+<caption>
+<p>Venn diagrams created by each of the Python packages: <bold>a)</bold> BioVenn, <bold>b)</bold> matplotlib-venn and <bold>c)</bold> PyVenn.</p>
+</caption>
+<graphic xlink:href="ds-4-ds210032-g004.jpg"/>
+</fig>
+<p>Figure <xref rid="x1-18002-4">4</xref> shows the Venn Diagrams created in each of the Python packages, in alphabetical order, with the same method as described above. Again, the area-proportional diagrams (a, b) can be understood much more easily than the non-area-proportional diagram (c).</p>
+<p>Table <xref rid="x1-18003-3">3</xref> shows a comparison of all features of BioVenn and the seven other packages mentioned above. BioVenn is the only package that is available in both R and Python (as well as a web interface). There are packages that can generate Venn diagrams from more than three sets, but these are either not area-proportional or inaccurate. For three sets, it is sometimes impossible to create a completely accurate area-proportional Venn diagram; when more sets are added, this becomes an even larger issue. Only BioVenn has built-in biological ID mapping functionality, which earns it the prefix ‘bio’. Some programs support not only the input of IDs, but also the numbers of the sets and their overlaps. In BioVenn, these are automatically calculated from the ID lists. This also makes sure that the user cannot input mathematically impossible numbers (e.g. overlaps larger than the sets themselves). BioVenn supports a large number of output formats as well. It needs to be noted here that this table only lists built-in functionality; some functionality such as plotting to certain file formats might be possible by using other R or Python functions (e.g. the ‘matplotlib.pyplot’ functions in Python). BioVenn is the only package that supports drag-and-drop of the titles and labels (in SVG mode), which can be a very useful functionality when a set or overlap is very small compared to the rest of the figure, or when the circle title (e.g. ‘Set X’, ‘Set Y’, ‘Set Z’) overlaps with a number. BioVenn uses only circles, whereas other packages also use ellipses, polygons or even 3D balls. There are four packages (BioVenn, eulerr, PyVenn and VennDiagram) that are able to print absolute numbers or percentages in the diagram. Finally, BioVenn offers the most flexibility in formatting: title, subtitle and circle texts can be changed (as well as their fonts and colors), and the background color and the circle colors can be set.</p>
+<table-wrap id="x1-18003-3">
+<label>Table 3</label>
+<caption>
+<p>Venn diagram package comparison. All currently available R and Python packages that can generate Venn diagrams compared. Note that this table only lists built-in functionality; some functionality such as plotting to certain file formats might be possible by using other R or Python functions</p>
+</caption>
+<table frame="hsides" rules="groups">
+<thead>
+<tr>
+<td valign="top" align="left">Package name</td>
+<td valign="top" align="left">BioVenn</td>
+<td valign="top" align="left">colorfulVennPlot</td>
+<td valign="top" align="left">eulerr</td>
+<td valign="top" align="left">matplotlib-Venn</td>
+<td valign="top" align="left">nVennR</td>
+<td valign="top" align="left">PyVenn</td>
+<td valign="top" align="left">venn</td>
+<td valign="top" align="left">vennDiagram</td>
+<td valign="top" align="left">venneuler</td>
+<td valign="top" align="left">vennplot</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top" align="left">Programming language</td>
+<td valign="top" align="left">R, Python (and web)</td>
+<td valign="top" align="left">R</td>
+<td valign="top" align="left">R (and web)</td>
+<td valign="top" align="left">Python</td>
+<td valign="top" align="left">R (and web)</td>
+<td valign="top" align="left">Python</td>
+<td valign="top" align="left">R</td>
+<td valign="top" align="left">R (and Cytoscape and web)</td>
+<td valign="top" align="left">R</td>
+<td valign="top" align="left">R</td>
+</tr>
+<tr>
+<td valign="top" align="left">Max. number of sets</td>
+<td valign="top" align="left">3</td>
+<td valign="top" align="left">4 (&gt;3 uses ellipses)</td>
+<td valign="top" align="left">Unlimited (in theory)</td>
+<td valign="top" align="left">3</td>
+<td valign="top" align="left">Unlimited (in theory)</td>
+<td valign="top" align="left">6</td>
+<td valign="top" align="left">7</td>
+<td valign="top" align="left">5</td>
+<td valign="top" align="left">Unlimited (in theory)</td>
+<td valign="top" align="left">3</td>
+</tr>
+<tr>
+<td valign="top" align="left">Area proportionality</td>
+<td valign="top" align="left">Automatically</td>
+<td valign="top" align="left">Manually (only for 2-circle diagrams)</td>
+<td valign="top" align="left">Automatically</td>
+<td valign="top" align="left">Automatically</td>
+<td valign="top" align="left">Automatically</td>
+<td valign="top" align="left">No</td>
+<td valign="top" align="left">No</td>
+<td valign="top" align="left">Manually</td>
+<td valign="top" align="left">Manually</td>
+<td valign="top" align="left">Automatically</td>
+</tr>
+<tr>
+<td valign="top" align="left">Built-in biological ID mapping</td>
+<td valign="top" align="left">Yes</td>
+<td valign="top" align="left">No</td>
+<td valign="top" align="left">No</td>
+<td valign="top" align="left">No</td>
+<td valign="top" align="left">No</td>
+<td valign="top" align="left">No</td>
+<td valign="top" align="left">No</td>
+<td valign="top" align="left">No</td>
+<td valign="top" align="left">No</td>
+<td valign="top" align="left">No</td>
+</tr>
+<tr>
+<td valign="top" align="left">Input format</td>
+<td valign="top" align="left">Sets of IDs</td>
+<td valign="top" align="left">Sets of IDs, numbers</td>
+<td valign="top" align="left">Sets of IDs, numbers</td>
+<td valign="top" align="left">Sets of IDs, numbers</td>
+<td valign="top" align="left">Sets of ID, numbers</td>
+<td valign="top" align="left">Sets of IDs, numbers</td>
+<td valign="top" align="left">Numbers</td>
+<td valign="top" align="left">Sets of IDs, numbers</td>
+<td valign="top" align="left">Sets of IDs, numbers</td>
+<td valign="top" align="left">Sets of IDs, numbers</td>
+</tr>
+<tr>
+<td valign="top" align="left">Output format</td>
+<td valign="top" align="left">BMP (only in R), JPEG, PDF, PNG, SVG, TIFF, R/Python graphics</td>
+<td valign="top" align="left">R graphics</td>
+<td valign="top" align="left">R graphics</td>
+<td valign="top" align="left">Python graphics</td>
+<td valign="top" align="left">SVG, R graphics</td>
+<td valign="top" align="left">Python graphics</td>
+<td valign="top" align="left">R graphics</td>
+<td valign="top" align="left">R graphics, TIFF</td>
+<td valign="top" align="left">R graphics</td>
+<td valign="top" align="left">R graphics</td>
+</tr>
+<tr>
+<td valign="top" align="left">Drag-and-drop of titles, labels</td>
+<td valign="top" align="left">Only in SVG mode</td>
+<td valign="top" align="left">No</td>
+<td valign="top" align="left">No</td>
+<td valign="top" align="left">No</td>
+<td valign="top" align="left">No</td>
+<td valign="top" align="left">No</td>
+<td valign="top" align="left">No</td>
+<td valign="top" align="left">No</td>
+<td valign="top" align="left">No</td>
+<td valign="top" align="left">No</td>
+</tr>
+<tr>
+<td valign="top" align="left">Shapes used</td>
+<td valign="top" align="left">Circles</td>
+<td valign="top" align="left">Circles/Ellipses</td>
+<td valign="top" align="left">Circles/Ellipses</td>
+<td valign="top" align="left">Circles</td>
+<td valign="top" align="left">Polygons</td>
+<td valign="top" align="left">Circles/Ellipses/Polygons</td>
+<td valign="top" align="left">Circles/Ellipses/Polygons</td>
+<td valign="top" align="left">Circles/Ellipses</td>
+<td valign="top" align="left">Circles</td>
+<td valign="top" align="left">Circles/Balls</td>
+</tr>
+<tr>
+<td valign="top" align="left">Print absolute numbers/percentages</td>
+<td valign="top" align="left">Both</td>
+<td valign="top" align="left">Only absolute numbers</td>
+<td valign="top" align="left">Both</td>
+<td valign="top" align="left">Only absolute numbers</td>
+<td valign="top" align="left">Only absolute numbers</td>
+<td valign="top" align="left">Both</td>
+<td valign="top" align="left">Only absolute numbers</td>
+<td valign="top" align="left">Both</td>
+<td valign="top" align="left">No</td>
+<td valign="top" align="left">No</td>
+</tr>
+<tr>
+<td valign="top" align="left">Set title(s)</td>
+<td valign="top" align="left">Title and subtitle</td>
+<td valign="top" align="left">Only title</td>
+<td valign="top" align="left">Only title</td>
+<td valign="top" align="left">No</td>
+<td valign="top" align="left">No</td>
+<td valign="top" align="left">No</td>
+<td valign="top" align="left">No</td>
+<td valign="top" align="left">Title and subtitle</td>
+<td valign="top" align="left">No</td>
+<td valign="top" align="left">No</td>
+</tr>
+<tr>
+<td valign="top" align="left">Set circle colors</td>
+<td valign="top" align="left">Yes</td>
+<td valign="top" align="left">Yes</td>
+<td valign="top" align="left">Yes</td>
+<td valign="top" align="left">Yes</td>
+<td valign="top" align="left">Yes</td>
+<td valign="top" align="left">Yes</td>
+<td valign="top" align="left">Yes</td>
+<td valign="top" align="left">Yes</td>
+<td valign="top" align="left">Yes</td>
+<td valign="top" align="left">Yes</td>
+</tr>
+<tr>
+<td valign="top" align="left">Set circle texts</td>
+<td valign="top" align="left">Yes</td>
+<td valign="top" align="left">Yes</td>
+<td valign="top" align="left">Yes</td>
+<td valign="top" align="left">Yes</td>
+<td valign="top" align="left">Yes</td>
+<td valign="top" align="left">Yes</td>
+<td valign="top" align="left">Yes</td>
+<td valign="top" align="left">Yes</td>
+<td valign="top" align="left">Yes</td>
+<td valign="top" align="left">Yes</td>
+</tr>
+<tr>
+<td valign="top" align="left">Set background color</td>
+<td valign="top" align="left">Yes</td>
+<td valign="top" align="left">No</td>
+<td valign="top" align="left">No</td>
+<td valign="top" align="left">No</td>
+<td valign="top" align="left">No</td>
+<td valign="top" align="left">No</td>
+<td valign="top" align="left">No</td>
+<td valign="top" align="left">No</td>
+<td valign="top" align="left">No</td>
+<td valign="top" align="left">No</td>
+</tr>
+<tr>
+<td valign="top" align="left">Set text colors</td>
+<td valign="top" align="left">Yes</td>
+<td valign="top" align="left">No</td>
+<td valign="top" align="left">No</td>
+<td valign="top" align="left">No</td>
+<td valign="top" align="left">No</td>
+<td valign="top" align="left">No</td>
+<td valign="top" align="left">No</td>
+<td valign="top" align="left">Yes</td>
+<td valign="top" align="left">No</td>
+<td valign="top" align="left">No</td>
+</tr>
+<tr>
+<td valign="top" align="left">Set text fonts (family, face, size)</td>
+<td valign="top" align="left">Yes</td>
+<td valign="top" align="left">No</td>
+<td valign="top" align="left">No</td>
+<td valign="top" align="left">No</td>
+<td valign="top" align="left">Only font size</td>
+<td valign="top" align="left">Only font size</td>
+<td valign="top" align="left">Only font size</td>
+<td valign="top" align="left">Yes</td>
+<td valign="top" align="left">No</td>
+<td valign="top" align="left">No</td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+</sec>
+</sec>
+<sec id="x1-19000-6">
+<label>6.</label>
+<title>Conclusion</title>
+<p>Although there are currently many tools available that can visualize sets and intersections using Venn and/or Euler diagrams or other ways (e.g. UpSetR [<xref ref-type="bibr" rid="ref004">4</xref>], which employs a scalable matrix-based visualization), BioVenn still has added value. The BioVenn R and Python packages are a useful addition to the existing web interface, and they have some unique advantages over existing packages that can create Venn diagrams, such as the mapping of biological IDs and the drag-and-drop functionality in SVG mode. Other useful functions are the area-proportionality, printing absolute numbers or percentages, and the possibility to change all colors (including text and background) and fonts. The BioVenn R package is available in the CRAN repository [<xref ref-type="bibr" rid="ref010">10</xref>], and can be installed by running ‘install.packages(“BioVenn”)’. The Python package is available in the PyPI repository [<xref ref-type="bibr" rid="ref011">11</xref>], and can be installed by running ‘pip install BioVenn’. The BioVenn web interface remains available at <uri>https://www.biovenn.nl</uri>.</p>
+</sec>
+</body>
+<back>
+<ack>
+<title>Acknowledgements</title>
+<p>The author would like to thank the numerous people who have sent their suggestions for improvements over the past years, which have resulted in a more precise web tool (and now also an R package as well as a Python package).</p></ack>
+<sec id="x1-21000-x">
+<title>Competing interest statement</title>
+<p>Dr. Hulsen is employed by Philips Research.</p>
+</sec>
+<ref-list>
+<title>References</title>
+<ref id="ref001">
+<label>[1]</label><mixed-citation publication-type="other"><string-name><given-names>A.M.</given-names> <surname>Altenhoff</surname></string-name>, <string-name><given-names>C.M.</given-names> <surname>Train</surname></string-name>, <string-name><given-names>K.J.</given-names> <surname>Gilbert</surname></string-name>, <string-name><given-names>I.</given-names> <surname>Mediratta</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Mendes de Farias</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Moi</surname></string-name>, <string-name><given-names>Y.</given-names> <surname>Nevers</surname></string-name>, <string-name><given-names>H.S.</given-names> <surname>Radoykova</surname></string-name>, <string-name><given-names>V.</given-names> <surname>Rossier</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Warwick Vesztrocy</surname></string-name>, <string-name><given-names>N.M.</given-names> <surname>Glover</surname></string-name> and <string-name><given-names>C.</given-names> <surname>Dessimoz</surname></string-name>, <article-title>OMA orthology in 2021: Website overhaul, conserved isoforms, ancestral gene order and more</article-title>, <source>Nucleic Acids Res</source> (<year>2020</year>). doi:<pub-id pub-id-type="doi">10.1093/nar/gkaa1007</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref002">
+<label>[2]</label><mixed-citation publication-type="other"><string-name><given-names>S.</given-names> <surname>Briois</surname></string-name>, Biomart – Python API that consumes the biomart webservice. Python Package Version 0.9.2, <year>2020</year>, <uri>https://pypi.org/project/biomart/</uri>.</mixed-citation>
+</ref>
+<ref id="ref003">
+<label>[3]</label><mixed-citation publication-type="other"><string-name><given-names>H.</given-names> <surname>Chen</surname></string-name> and <string-name><given-names>P.C.</given-names> <surname>Boutros</surname></string-name>, <article-title>VennDiagram: A package for the generation of highly-customizable Venn and Euler diagrams in R</article-title>, <source>BMC Bioinformatics</source> <volume>12</volume> (<year>2011</year>), <elocation-id>35</elocation-id>. doi:<pub-id pub-id-type="doi">10.1186/1471-2105-12-35</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref004">
+<label>[4]</label><mixed-citation publication-type="journal"><string-name><given-names>J.R.</given-names> <surname>Conway</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Lex</surname></string-name> and <string-name><given-names>N.</given-names> <surname>Gehlenborg</surname></string-name>, <article-title>UpSetR: An R package for the visualization of intersecting sets and their properties</article-title>, <source>Bioinformatics</source> <volume>33</volume> (<year>2017</year>), <fpage>2938</fpage>–<lpage>2940</lpage>. doi:<pub-id pub-id-type="doi">10.1093/bioinformatics/btx364</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref005">
+<label>[5]</label><mixed-citation publication-type="journal"><string-name><given-names>S.</given-names> <surname>Durinck</surname></string-name>, <string-name><given-names>P.T.</given-names> <surname>Spellman</surname></string-name>, <string-name><given-names>E.</given-names> <surname>Birney</surname></string-name> and <string-name><given-names>W.</given-names> <surname>Huber</surname></string-name>, <article-title>Mapping identifiers for the integration of genomic datasets with the R/bioconductor package biomaRt</article-title>, <source>Nat Protoc</source> <volume>4</volume> (<year>2009</year>), <fpage>1184</fpage>–<lpage>1191</lpage>. doi:<pub-id pub-id-type="doi">10.1038/nprot.2009.97</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref006">
+<label>[6]</label><mixed-citation publication-type="other"><string-name><given-names>A.</given-names> <surname>Dusa</surname></string-name>, Venn: Draw Venn diagrams. R Package Version 1.9, <year>2021</year>, <uri>https://CRAN.R-project.org/package=venn</uri>.</mixed-citation>
+</ref>
+<ref id="ref007">
+<label>[7]</label><mixed-citation publication-type="other">Google Scholar Citations for ‘BioVenn – a web application for the comparison and visualization of biological lists using area-proportional Venn diagrams’, <uri>https://scholar.google.com/scholar?cites=16587750604719531070</uri>.</mixed-citation>
+</ref>
+<ref id="ref008">
+<label>[8]</label><mixed-citation publication-type="other"><string-name><given-names>K.</given-names> <surname>Grigorev</surname></string-name>, PyVenn: Venn diagrams for 2, 3, 4, 5, 6 sets. Python package Version 0.1.3, <year>2018</year>, <uri>https://pypi.org/project/venn/</uri>.</mixed-citation>
+</ref>
+<ref id="ref009">
+<label>[9]</label><mixed-citation publication-type="other"><string-name><given-names>T.</given-names> <surname>Hulsen</surname></string-name>, VennDiagram.tk, <uri>http://www.venndiagram.tk</uri>.</mixed-citation>
+</ref>
+<ref id="ref010">
+<label>[10]</label><mixed-citation publication-type="other"><string-name><given-names>T.</given-names> <surname>Hulsen</surname></string-name>, BioVenn: Create area-proportional Venn diagrams from biological lists. R Package Version 1.1.1, <year>2021</year>, <uri>https://cran.r-project.org/package=BioVenn</uri>.</mixed-citation>
+</ref>
+<ref id="ref011">
+<label>[11]</label><mixed-citation publication-type="other"><string-name><given-names>T.</given-names> <surname>Hulsen</surname></string-name>, BioVenn: Create area-proportional Venn diagrams from biological lists. Python Package Version 1.1.1, <year>2021</year>, <uri>https://pypi.org/project/BioVenn/</uri>.</mixed-citation>
+</ref>
+<ref id="ref012">
+<label>[12]</label><mixed-citation publication-type="other"><string-name><given-names>T.</given-names> <surname>Hulsen</surname></string-name>, <string-name><given-names>J.</given-names> <surname>de Vlieg</surname></string-name> and <string-name><given-names>W.</given-names> <surname>Alkema</surname></string-name>, <article-title>BioVenn – a web application for the comparison and visualization of biological lists using area-proportional Venn diagrams</article-title>, <source>BMC Genomics</source> <volume>9</volume> (<year>2008</year>), <elocation-id>488</elocation-id>. doi:<pub-id pub-id-type="doi">10.1186/1471-2164-9-488</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref013">
+<label>[13]</label><mixed-citation publication-type="other"><string-name><given-names>H.A.</given-names> <surname>Kestler</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Muller</surname></string-name>, <string-name><given-names>J.M.</given-names> <surname>Kraus</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Buchholz</surname></string-name>, <string-name><given-names>T.M.</given-names> <surname>Gress</surname></string-name>, <string-name><given-names>H.</given-names> <surname>Liu</surname></string-name>, <string-name><given-names>D.W.</given-names> <surname>Kane</surname></string-name>, <string-name><given-names>B.R.</given-names> <surname>Zeeberg</surname></string-name> and <string-name><given-names>J.N.</given-names> <surname>Weinstein</surname></string-name>, <article-title>VennMaster: Area-proportional Euler diagrams for functional GO analysis of microarrays</article-title>, <source>BMC Bioinformatics</source> <volume>9</volume> (<year>2008</year>), <elocation-id>67</elocation-id>. doi:<pub-id pub-id-type="doi">10.1186/1471-2105-9-67</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref014">
+<label>[14]</label><mixed-citation publication-type="other"><string-name><given-names>J.</given-names> <surname>Larsson</surname></string-name>, Eulerr: Area-proportional Euler and Venn diagrams with ellipses. R Package Version 6.1.0, <year>2020</year>, <uri>https://cran.r-project.org/package=eulerr</uri>.</mixed-citation>
+</ref>
+<ref id="ref015">
+<label>[15]</label><mixed-citation publication-type="other"><string-name><given-names>E.</given-names> <surname>Noma</surname></string-name> and <string-name><given-names>A.</given-names> <surname>Manvae</surname></string-name>, ColorfulVennPlot: Plot and add custom coloring to Venn diagrams for 2-dimensional, 3-dimensional and 4-dimensional data. R Package Version 2.4, <year>2013</year>, <uri>https://CRAN.R-project.org/package=colorfulVennPlot</uri>.</mixed-citation>
+</ref>
+<ref id="ref016">
+<label>[16]</label><mixed-citation publication-type="journal"><string-name><given-names>J.G.</given-names> <surname>Perez-Silva</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Araujo-Voces</surname></string-name> and <string-name><given-names>V.</given-names> <surname>Quesada</surname></string-name>, <article-title>nVenn: Generalized, quasi-proportional Venn and Euler diagrams</article-title>, <source>Bioinformatics</source> <volume>34</volume> (<year>2018</year>), <fpage>2322</fpage>–<lpage>2324</lpage>. doi:<pub-id pub-id-type="doi">10.1093/bioinformatics/bty109</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref017">
+<label>[17]</label><mixed-citation publication-type="journal"><string-name><given-names>G.</given-names> <surname>Stapleton</surname></string-name>, <string-name><given-names>Z.</given-names> <surname>Leishi</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Howse</surname></string-name> and <string-name><given-names>P.</given-names> <surname>Rodgers</surname></string-name>, <article-title>Drawing Euler diagrams with circles: The theory of piercings</article-title>, <source>IEEE Trans Vis Comput Graph</source> <volume>17</volume> (<year>2011</year>), <fpage>1020</fpage>–<lpage>1032</lpage>. doi:<pub-id pub-id-type="doi">10.1109/TVCG.2010.119</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref018">
+<label>[18]</label><mixed-citation publication-type="other"><string-name><given-names>K.</given-names> <surname>Tretyakov</surname></string-name>, Matplotlib-Venn – functions for plotting area-proportional two- and three-way Venn diagrams in matplotlib. Python Package Version 0.11.6, <year>2020</year>, <uri>https://pypi.org/project/matplotlib-venn/</uri>.</mixed-citation>
+</ref>
+<ref id="ref019">
+<label>[19]</label><mixed-citation publication-type="other"><string-name><given-names>L.</given-names> <surname>Wilkinson</surname></string-name> and <string-name><given-names>S.</given-names> <surname>Urbanek</surname></string-name>, Venneuler: Venn and Euler diagrams. R Package Version 1.1-0, <year>2011</year>, <uri>https://cran.r-project.org/package=venneuler</uri>.</mixed-citation>
+</ref>
+<ref id="ref020">
+<label>[20]</label><mixed-citation publication-type="other"><string-name><given-names>Z.</given-names> <surname>Xu</surname></string-name>, <string-name><given-names>R.W.</given-names> <surname>Oldford</surname></string-name> and <string-name><given-names>M.</given-names> <surname>Lysy</surname></string-name>, Vennplot: Venn diagrams in 2D and 3D. R Package Version 1.0, <year>2017</year>, <uri>https://cran.r-project.org/package=vennplot</uri>.</mixed-citation>
+</ref>
+</ref-list>
+</back>
+</article>

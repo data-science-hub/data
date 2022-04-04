@@ -1,0 +1,2098 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.0 20120330//EN" "JATS-journalpublishing1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.0">
+<front>
+<journal-meta>
+<journal-id journal-id-type="publisher-id">DS</journal-id>
+<journal-title-group><journal-title>Data Science</journal-title></journal-title-group>
+<issn pub-type="epub">2451-8492</issn><issn pub-type="ppub">2451-8484</issn><issn-l>2451-8484</issn-l>
+<publisher>
+<publisher-name>IOS Press</publisher-name><publisher-loc>Nieuwe Hemweg 6B, 1013 BG Amsterdam, The Netherlands</publisher-loc>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">DS210035</article-id>
+<article-id pub-id-type="doi">10.3233/DS-210035</article-id>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Research Article</subject></subj-group></article-categories>
+<title-group>
+<article-title>Automatic de-identification of data download packages</article-title>
+</title-group>
+<contrib-group content-type="Editor">
+<contrib contrib-type="editor">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-5747-9927</contrib-id>
+<name><surname>Maillart</surname><given-names>Thomas</given-names></name>
+</contrib>
+</contrib-group>
+<contrib-group>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-3536-0474</contrib-id>
+<name><surname>Boeschoten</surname><given-names>Laura</given-names></name><xref ref-type="aff" rid="affa">a</xref><xref ref-type="corresp" rid="cor2">*</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-4411-8495</contrib-id>
+<name><surname>Voorvaart</surname><given-names>Roos</given-names></name><xref ref-type="aff" rid="affb">b</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0003-3229-3015</contrib-id>
+<name><surname>Van Den Goorbergh</surname><given-names>Ruben</given-names></name><xref ref-type="aff" rid="affc">c</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0001-6326-6680</contrib-id>
+<name><surname>Kaandorp</surname><given-names>Casper</given-names></name><xref ref-type="aff" rid="affd">d</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0001-5301-1713</contrib-id>
+<name><surname>De Vos</surname><given-names>Martine</given-names></name><xref ref-type="aff" rid="affe">e</xref>
+</contrib>
+<aff id="affa"><label>a</label>Department of Methodology and Statistics, <institution>Utrecht University</institution>, Utrecht, <country>The Netherlands</country>. E-mail: <email>l.boeschoten@uu.nl</email></aff>
+<aff id="affb"><label>b</label>Research and Data Management Services, <institution>Utrecht University</institution>, Utrecht, <country>The Netherlands</country>. E-mail: <email>r.voorvaart@uu.nl</email></aff>
+<aff id="affc"><label>c</label>Department of Methodology and Statistics, <institution>Utrecht University</institution>, Utrecht, <country>The Netherlands</country>. E-mail: <email>r.vandengoorbergh@uu.nl</email></aff>
+<aff id="affd"><label>d</label>Research and Data Management Services, <institution>Utrecht University</institution>, Utrecht, <country>The Netherlands</country>. E-mail: <email>c.s.kaandorp@uu.nl</email></aff>
+<aff id="affe"><label>e</label>Research and Data Management Services, <institution>Utrecht University</institution>, Utrecht, <country>The Netherlands</country>. E-mail: <email>m.g.devos@uu.nl</email></aff>
+</contrib-group>
+<author-notes>
+<corresp id="cor2"><label>*</label>Corresponding author. E-mail: <email>l.boeschoten@uu.nl</email>.</corresp>
+</author-notes>
+<pub-date date-type="preprint" publication-format="electronic"><day>6</day><month>9</month><year>2021</year></pub-date><pub-date date-type="pub" publication-format="electronic"><day>13</day><month>10</month><year>2021</year></pub-date><pub-date date-type="collection" publication-format="electronic"><year>2021</year></pub-date><volume>4</volume><issue>2</issue><fpage>101</fpage><lpage>120</lpage><history><date date-type="received"><day>29</day><month>04</month><year>2021</year></date><date date-type="accepted"><day>26</day><month>07</month><year>2021</year></date></history>
+<permissions><copyright-statement>© 2021 – The authors. Published by IOS Press.</copyright-statement><copyright-year>2021</copyright-year>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/" license-type="open-access" xlink:type="simple">
+<license-p>This is an open access article distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/" xlink:type="simple">Creative Commons Attribution (CC BY 4.0) License</ext-link>, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions>
+<abstract>
+<p>The General Data Protection Regulation (GDPR) grants all natural persons the right to access their personal data if this is being processed by data controllers. The data controllers are obliged to share the data in an electronic format and often provide the data in a so called Data Download Package (DDP). These DDPs contain all data collected by public and private entities during the course of a citizens’ digital life and form a treasure trove for social scientists. However, the data can be deeply private. To protect the privacy of research participants while using their DDPs for scientific research, we developed a de-identification algorithm that is able to handle typical characteristics of DDPs. These include regularly changing file structures, visual and textual content, differing file formats, differing file structures and private information like usernames. We investigate the performance of the algorithm and illustrate how the algorithm can be tailored towards specific DDP structures.</p>
+</abstract>
+<kwd-group>
+<label>Keywords</label>
+<kwd>Data Download Package</kwd>
+<kwd>Instagram</kwd>
+<kwd>de-identification</kwd>
+<kwd>anonymization</kwd>
+<kwd>pseudonymization</kwd>
+</kwd-group>
+</article-meta>
+</front>
+<body>
+<sec id="x1-1000-1">
+<label>1.</label>
+<title>Introduction</title>
+<p>Although the European Union (EU)s General Data Protection Regulation (GDPR) is often known for restricting the possibilities for owners of databases (“data controllers”), Article 15 of the GDPR unexpectedly also provides many opportunities for data analysts [<xref ref-type="bibr" rid="ref012">12</xref>]. This article grants data subjects the right to receive a copy of all their personal data collected by a data controller in a machine-readable electronic format. Most data controllers currently comply with this article by providing a so called “Data Download Package” (DDP) to the data subjects upon request. The GDPR also grants the data subject the right to share the DDP with third parties, such as researchers. As these DDPs represent the unique digital fingerprint of individuals who use digital platforms, ranging from bank transactions and purchase history to social media interactions and location history, DDPs form a (still undiscovered) treasure trove for research [<xref ref-type="bibr" rid="ref015">15</xref>].</p>
+<p>However, the data present in DDPs can be deeply private and potentially sensitive. This poses a major challenge to using DDPs for scientific research. Participants might not be willing to share this sensitive data. However, researchers are often only interested in a part of the DDP and do not need the sensitive data. Although an interesting solution is to extract relevant features locally on the device of the participant [<xref ref-type="bibr" rid="ref006">6</xref>], this workflow is not suitable for all research purposes. When, for example, an exploratory approach is of interest, or when the aim is to develop or improve the performance of an extraction algorithm, local extraction would limit the analytic possibilities. In such situations, collection of the <italic>complete</italic> DDP is desired, which requires challenges caused by the sensitivity of the data to be overcome. An example of such a research project is Project AWeSome [<xref ref-type="bibr" rid="ref005">5</xref>], which collects complete Instagram DDPs from research participants. The participants’ DDPs are stored in a secured environment where they are de-identified using the de-identification algorithm proposed in this manuscript. Only after the sensitive information is adequately masked, can the DDPs be shared with the applied researchers for substantive analyses.</p>
+<p>We argue that in situations where complete DDPs are collected for research, the DDPs should be treated in a similar fashion as any other sensitive data that is collected for research purposes. We therefore follow the guidelines for sensitive research data,<xref ref-type="fn" rid="fn-1">1</xref><fn id="fn-1"><label><sup>1</sup></label>
+<p><uri>https://www.uu.nl/en/research/research-data-management/faq</uri></p></fn> which were established by Utrecht University for handling sensitive data from official statistical agencies and governmental bodies like Statistics Netherlands [<xref ref-type="bibr" rid="ref014">14</xref>] and the European Commission [<xref ref-type="bibr" rid="ref001">1</xref>]. From these guidelines it can be concluded that two important measures should be taken. First, security measures such as using shielded (cloud) environments for data storage should be used. Second, the privacy of participants should be preserved while their data is analysed by researchers.</p>
+<p>An automatic de-identification approach is required since a manual approach would by definition violate the privacy of participants. Besides, a manual approach would be prone to errors and too labor intensive due to the potential size of the DDPs. Many different approaches to automatically de-identify data have been developed over the past years for medical documents (e.g., [<xref ref-type="bibr" rid="ref018">18</xref>,<xref ref-type="bibr" rid="ref021">21</xref>,<xref ref-type="bibr" rid="ref029">29</xref>,<xref ref-type="bibr" rid="ref032">32</xref>]), twitter data (e.g., [<xref ref-type="bibr" rid="ref008">8</xref>,<xref ref-type="bibr" rid="ref009">9</xref>]) and relational or tabular data (e.g., [<xref ref-type="bibr" rid="ref027">27</xref>,<xref ref-type="bibr" rid="ref031">31</xref>]). De-identification of DDPs poses a challenge because the structure and content of DDPs deviate from the structure and content of the data for which these methods were developed. In addition, DDPs show a wide variety and are collected for different research purposes. In this paper we propose an automatic de-identification algorithm that can handle the structure and content of DDPs and is able to deal with the large variability.</p>
+<p>Our contributions are the following:</p>
+<list list-type="bullet">
+<list-item>
+<p>We give insight in the structure and content of DDPs in general and Instagram DDPs in particular.</p>
+</list-item>
+<list-item>
+<p>We develop an open source de-identification algorithm.</p>
+</list-item>
+<list-item>
+<p>We create an open source evaluation data corpus.</p>
+</list-item>
+<list-item>
+<p>We provide statistics that illustrate the performance of the developed de-identification algorithm.</p>
+</list-item>
+<list-item>
+<p>We provide an open source validation algorithm and ground truth.</p>
+</list-item>
+</list>
+<p>In Section <xref rid="x1-2000-2">2</xref>, we illustrate how DDPs from different platforms can vary greatly in structure and content. In Section <xref rid="x1-3000-3">3</xref>, we discuss the current state-of-the-art in terms of de-identification methods and illustrate why these current methods do not suffice for our aim. In Section <xref rid="x1-4000-4">4</xref> we describe the data used for the development and evaluation of our proposed algorithm, which is extensively discussed in Section <xref rid="x1-10000-5">5</xref>. The outcome of the evaluation study is presented in Section <xref rid="x1-20000-6">6</xref>, followed by suggestions for future work in Section <xref rid="x1-24000-7">7</xref> and conclusions in Section <xref rid="x1-25000-8">8</xref>.</p>
+</sec>
+<sec id="x1-2000-2">
+<label>2.</label>
+<title>Data download packages</title>
+<table-wrap id="x1-2001-1">
+<label>Table 1</label>
+<caption>
+<p>Overview of content and structure of DDPs of five data controllers. Note that if a certain object is present in DDPs, this is indicated with +. If it often occurs within the DDP, a -/+ is used. Finally, if said object is not present, a - is used</p>
+</caption>
+<table frame="hsides" rules="groups">
+<thead>
+<tr>
+<td valign="top" align="left"/>
+<td valign="top" align="left"/>
+<td valign="top" align="center">FACEBOOK<xref rid="table1-tab1a"><sup>a</sup></xref></td>
+<td valign="top" align="center">WHATSAPP<xref rid="table1-tab1b"><sup>b</sup></xref></td>
+<td valign="top" align="center">TWITTER<xref rid="table1-tab1c"><sup>c</sup></xref></td>
+<td valign="top" align="center">SNAPCHAT<xref rid="table1-tab1d"><sup>d</sup></xref></td>
+<td valign="top" align="center">INSTAGRAM<xref rid="table1-tab1e"><sup>e</sup></xref></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top" align="left" rowspan="4">DDP INFO</td>
+<td valign="top" align="left">DDP name</td>
+<td valign="top" align="left">facebook-&lt;profile_name&gt;</td>
+<td valign="top" align="left">My account information.zip WhatsApp chat-&lt;group or contactname&gt;.zip</td>
+<td valign="top" align="left">Archive</td>
+<td valign="top" align="left">mydata~&lt;hashed_code&gt;</td>
+<td valign="top" align="left">username_&lt;date_of_download&gt;</td>
+</tr>
+<tr>
+<td valign="top" align="left">DDP format</td>
+<td valign="top" align="left">.zip</td>
+<td valign="top" align="left">.zip</td>
+<td valign="top" align="left">.zip</td>
+<td valign="top" align="left">.zip</td>
+<td valign="top" align="left">.zip</td>
+</tr>
+<tr>
+<td valign="top" align="left">Type of files</td>
+<td valign="top" align="left">media, text</td>
+<td valign="top" align="left">media, text</td>
+<td valign="top" align="left">media, text</td>
+<td valign="top" align="left">text</td>
+<td valign="top" align="left">media, text</td>
+</tr>
+<tr>
+<td valign="top" align="left">Structure</td>
+<td valign="top" align="left">Content folders &gt; content files</td>
+<td valign="top" align="left">Separate DDP per conversation</td>
+<td valign="top" align="left">Content folders &lt; content files</td>
+<td valign="top" align="left">Index file &amp; Format (i.e., json and html) folders &gt; content files</td>
+<td valign="top" align="left">Content text files and Content folders &gt; content media files</td>
+</tr>
+<tr>
+<td valign="top" align="left" rowspan="2">MEDIA FILES</td>
+<td valign="top" align="left">Format of media files</td>
+<td valign="top" align="left">.PNG, .JPG, .MP4</td>
+<td valign="top" align="left">.JPG, .MP4, .HTML</td>
+<td valign="top" align="left">.PNG</td>
+<td valign="top" align="left">-</td>
+<td valign="top" align="left">.JPG, .MP4</td>
+</tr>
+<tr>
+<td valign="top" align="left">Folder structure</td>
+<td valign="top" align="left">All images, videos, stickers are categorized and stored in corresponding folders. There are no loose files.</td>
+<td valign="top" align="left">All images, videos, stickers in single folder</td>
+<td valign="top" align="left">-</td>
+<td valign="top" align="left">All images and videos are categorized and stored in corresponding folders. There are no loose files.</td>
+</tr>
+<tr>
+<td valign="top" align="left" rowspan="2">PII IN MEDIA</td>
+<td valign="top" align="left">Faces</td>
+<td valign="top" align="left">-/+</td>
+<td valign="top" align="left">-/+</td>
+<td valign="top" align="left">-/+</td>
+<td valign="top" align="left">-</td>
+<td valign="top" align="left">-/+</td>
+</tr>
+<tr>
+<td valign="top" align="left">Written text</td>
+<td valign="top" align="left">-/+</td>
+<td valign="top" align="left">-/+</td>
+<td valign="top" align="left">-/+</td>
+<td valign="top" align="left">-</td>
+<td valign="top" align="left">-/+</td>
+</tr>
+<tr>
+<td valign="top" align="left"/>
+<td valign="top" align="left">(user)name tags</td>
+<td valign="top" align="left">-</td>
+<td valign="top" align="left">-</td>
+<td valign="top" align="left">-</td>
+<td valign="top" align="left">-</td>
+<td valign="top" align="left">-/+</td>
+</tr>
+<tr>
+<td valign="top" align="left" rowspan="4">TEXT FILES</td>
+<td valign="top" align="left">Format of text files</td>
+<td valign="top" align="left">.JSON or .HTML</td>
+<td valign="top" align="left">.TXT, .OPUS, .HTML</td>
+<td valign="top" align="left">.JS or .HTML</td>
+<td valign="top" align="left">.JSON and .HTML</td>
+<td valign="top" align="left">.JSON</td>
+</tr>
+<tr>
+<td valign="top" align="left">Folder structure</td>
+<td valign="top" align="left">All text files are categorized and stored in corresponding folders. There are no loose files.</td>
+<td valign="top" align="left">All text in single file per conversation</td>
+<td valign="top" align="left">There is one text file per month.</td>
+<td valign="top" align="left">Text files are not categorized and stored in (sub) folders. They are displayed as loose files.</td>
+<td valign="top" align="left">Text files are not categorized and stored in (sub) folders. They are displayed as loose files.</td>
+</tr>
+<tr>
+<td valign="top" align="left">Structured data</td>
+<td valign="top" align="left">+</td>
+<td valign="top" align="left">+</td>
+<td valign="top" align="left">+</td>
+<td valign="top" align="left">+</td>
+<td valign="top" align="left">+</td>
+</tr>
+<tr>
+<td valign="top" align="left">Unstructured data (i.e., containing free text)</td>
+<td valign="top" align="left">+</td>
+<td valign="top" align="left">+</td>
+<td valign="top" align="left">+</td>
+<td valign="top" align="left">-/+</td>
+<td valign="top" align="left">+</td>
+</tr>
+<tr>
+<td valign="top" align="left" rowspan="5">PII IN TEXT</td>
+<td valign="top" align="left">Usernames</td>
+<td valign="top" align="left">-/+</td>
+<td valign="top" align="left">-/+</td>
+<td valign="top" align="left">+</td>
+<td valign="top" align="left">+</td>
+<td valign="top" align="left">+</td>
+</tr>
+<tr>
+<td valign="top" align="left">(first) Names</td>
+<td valign="top" align="left">+</td>
+<td valign="top" align="left">+</td>
+<td valign="top" align="left">-/+</td>
+<td valign="top" align="left">-/+</td>
+<td valign="top" align="left">+</td>
+</tr>
+<tr>
+<td valign="top" align="left">Email addresses</td>
+<td valign="top" align="left">+</td>
+<td valign="top" align="left">+</td>
+<td valign="top" align="left">+</td>
+<td valign="top" align="left">-/+</td>
+<td valign="top" align="left">+</td>
+</tr>
+<tr>
+<td valign="top" align="left">Phone numbers</td>
+<td valign="top" align="left">-/+</td>
+<td valign="top" align="left">+</td>
+<td valign="top" align="left">-/+</td>
+<td valign="top" align="left">-/+</td>
+<td valign="top" align="left">-/+</td>
+</tr>
+<tr>
+<td valign="top" align="left">Locations</td>
+<td valign="top" align="left">-/+</td>
+<td valign="top" align="left">-/+</td>
+<td valign="top" align="left">-/+</td>
+<td valign="top" align="left">-/+</td>
+<td valign="top" align="left">-/+</td>
+</tr>
+</tbody>
+</table>
+<table-wrap-foot>
+<fn id="table1-tab1a"><label><sup>a</sup></label>
+<p><uri>https://www.facebook.com/help/1701730696756992</uri></p></fn><fn id="table1-tab1b"><label><sup>b</sup></label>
+<p><uri>https://faq.whatsapp.com/general/account-and-profile/how-to-request-your-account-information/</uri></p></fn><fn id="table1-tab1c"><label><sup>c</sup></label>
+<p><uri>https://help.twitter.com/nl/managing-your-account/how-to-download-your-twitter-archive</uri></p></fn><fn id="table1-tab1d"><label><sup>d</sup></label>
+<p><uri>https://support.snapchat.com/en-US/a/download-my-data</uri></p></fn><fn id="table1-tab1e"><label><sup>e</sup></label>
+<p><uri>https://help.instagram.com/181231772500920?helpref</uri></p></fn>
+</table-wrap-foot>
+</table-wrap>
+<p>Most large data controllers currently comply with the right of data access by providing users with the option to retrieve an electronic DDP. This DDP typically comes as a compressed folder containing text and/or media files in which all the digital traces left behind by the data subject with respect to the data controller are stored. Table <xref rid="x1-2001-1">1</xref> shows that the content and structure of DDPs differs among data controllers. Differences between DDPs from the same data controller can also occur among data subjects and over time. These differences may be caused by data subjects using different features provided by the data controller or by the fact that the DDP is a snapshot of the data collected by the data subject up to that point. However, other important factors also play a role. First, data controllers can develop new features through which new types of data of the data subject are collected. Second, other features may be phased out. Third, some data (for example search history) is only saved for a limited amount of time and is destroyed by the data controller after that period. In that case, it will also not be present in the DDP anymore. Finally, the GDPR is still relatively new and data controllers continue to optimize the processes used to transfer the relevant data to its subjects, leading to changes in the structure of DDPs.</p>
+<p>From Table <xref rid="x1-2001-1">1</xref> it can be concluded that the Instagram DDP contains many features that can also be found in DDPs of other data controllers. Common features are the presence of both text and/or media files, the presence of both structured and unstructured text and the presence of specific types of personal identifiable information (PII). Therefore, an algorithm that is able to de-identify Instagram DDPs also contains the features needed to de-identify many of the DDPs of other data controllers. To summarize, the developed algorithm is able to handle:</p>
+<list list-type="bullet">
+<list-item>
+<p>An ever changing file structure,</p>
+</list-item>
+<list-item>
+<p>both visual and textual content,</p>
+</list-item>
+<list-item>
+<p>different file formats,</p>
+</list-item>
+<list-item>
+<p>files ranging from highly structured to highly unstructured formats,</p>
+</list-item>
+<list-item>
+<p>the masking of usernames of natural persons or other users.</p>
+</list-item>
+</list>
+</sec>
+<sec id="x1-3000-3">
+<label>3.</label>
+<title>Related work</title>
+<p>De-identification of data in the medical domain has extensively been researched. Medical patient data, like electronic health records and clinical notes, are increasingly used for clinical research. As imposed by privacy legislations such as the US Health Insurance Portability and Accountability Act (HIPAA) [<xref ref-type="bibr" rid="ref024">24</xref>] and the GDPR, the privacy of patients included in these data has to be protected. Medical data are therefore de-identified by removing all categories of protected health information (PHI) that are defined by the HIPAA. PHI types typically found in medical data are person names and initials, names of institutions, social security numbers and dates [<xref ref-type="bibr" rid="ref017">17</xref>,<xref ref-type="bibr" rid="ref021">21</xref>,<xref ref-type="bibr" rid="ref032">32</xref>,<xref ref-type="bibr" rid="ref033">33</xref>]. Automatic de-identification approaches in the literature are either rule-based, machine learning based or a combination of both, where machine-learning approaches show the best performance [<xref ref-type="bibr" rid="ref017">17</xref>,<xref ref-type="bibr" rid="ref032">32</xref>,<xref ref-type="bibr" rid="ref033">33</xref>]. Scientific open-source de-identification tools are available such as DEDUCE [<xref ref-type="bibr" rid="ref021">21</xref>] and Amnesia [<xref ref-type="bibr" rid="ref025">25</xref>] as well as commercial tools, such as Amazon Comprehend [<xref ref-type="bibr" rid="ref029">29</xref>] and CliniDeID [<xref ref-type="bibr" rid="ref013">13</xref>,<xref ref-type="bibr" rid="ref018">18</xref>]. Most automatic de-identification approaches are constrained to English medical documents and little is known about their generalizability across languages or domains. Although neural networks have shown good generalization performance compared to rule-based and feature-based approaches, a substantial decrease of performance has to be expected when applying these out of the box to new languages or domains [<xref ref-type="bibr" rid="ref032">32</xref>].</p>
+<p>User privacy in social media is an emerging research area and has attracted increasing attention recently. To avoid privacy attacks, like identity disclosure and attribute disclosure, publishers of social media data are obliged to protect users’ privacy by anonymizing these data before they are published publicly [<xref ref-type="bibr" rid="ref003">3</xref>]. Anonymizing social media data is a challenging task due to their heterogeneous, highly unstructured and noisy nature [<xref ref-type="bibr" rid="ref003">3</xref>]. Commonly used statistical disclosure control approaches [<xref ref-type="bibr" rid="ref010">10</xref>,<xref ref-type="bibr" rid="ref025">25</xref>,<xref ref-type="bibr" rid="ref027">27</xref>,<xref ref-type="bibr" rid="ref030">30</xref>,<xref ref-type="bibr" rid="ref031">31</xref>] are designed for relational and tabular data and cannot be directly applied to social media data. In addition, PHI types that are common in medical data are unlikely to be found in textual social media data. These data rather contain person names, usernames or IDs, email addresses and locations [<xref ref-type="bibr" rid="ref008">8</xref>,<xref ref-type="bibr" rid="ref009">9</xref>], but in fact there is limited work on the types of personal identifiable information (PII) that may be present in textual social media data and how these should be removed [<xref ref-type="bibr" rid="ref004">4</xref>,<xref ref-type="bibr" rid="ref009">9</xref>]. Yet, removing such information has been shown to be far from sufficient in preserving privacy since users’ identity or attributes may be inferred from the public data available on social media platforms [<xref ref-type="bibr" rid="ref002">2</xref>,<xref ref-type="bibr" rid="ref003">3</xref>,<xref ref-type="bibr" rid="ref019">19</xref>,<xref ref-type="bibr" rid="ref023">23</xref>]. Finally, social media data may also consist of visual content. Many different types of both open source and commercial software are available to identify and blur faces on images and videos, such as Microsoft Azure [<xref ref-type="bibr" rid="ref022">22</xref>], and Facenet-PyTorch [<xref ref-type="bibr" rid="ref011">11</xref>]. However, modern image recognition methods based on deep learning have demonstrated that hidden information in blurred images can be recovered [<xref ref-type="bibr" rid="ref020">20</xref>].</p>
+<p>Like social media data, DDPs are heterogeneous and unstructured and are likely to contain the same types of sensitive information. Yet, the limited de-identification approaches that are available for social media data focus either on textual or visual content and the presence of both types of information within one DDP poses a major de-identification challenge [<xref ref-type="bibr" rid="ref028">28</xref>]. An important difference is that on social media platforms information on large groups of users is widely available, whereas DDPs are only available for a single individual. The goal of this research is not to prepare the DDPs for public sharing. DDPs will either be stored on the owner’s device or in a shielded (cloud)environment and analyzed using privacy-preserving algorithms. In that sense, handling DDP’s is comparable to handling medical data and we therefore assume that the risk of privacy attacks is very low. However, for ethical reasons and in the unlikely event of a data breach, DDPs should still be de-identified.</p>
+<p>To summarize, we need a de-identification procedure that is able to handle unstructured and heterogeneous data, and can de-identify both visual and textual content within one procedure. It should be able to recognize usernames as the primary identifier for natural persons, while other types of PII, such as person names, phone numbers and e-mail addresses, should also be accounted for.</p>
+</sec>
+<sec id="x1-4000-4">
+<label>4.</label>
+<title>Data</title>
+<sec id="x1-5000-4.1">
+<label>4.1.</label>
+<title>Development set</title>
+<p>For the development of this new de-identification procedure, the researchers initially used two DDPs of their own personal Instagram accounts. The functionality of the algorithm was based on the typical Instagram DDP file structure (see Table <xref rid="x1-5001-2">2</xref>). To ensure that the developed algorithm can adequately handle possible varieties in DDP structures (over different Instagram accounts), a validation data corpus was created. Using this corpus, the de-identification procedure could be tested and improved, maximizing its effectiveness.</p>
+<table-wrap id="x1-5001-2">
+<label>Table 2</label>
+<caption>
+<p>The content of a typical Instagram DDP of a Dutch user</p>
+</caption>
+<table frame="hsides" rules="groups">
+<thead>
+<tr>
+<td valign="top" align="left"/>
+<td valign="top" align="center">Information</td>
+<td valign="top" align="center">Instagram DDP</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top" align="left">Overall</td>
+<td valign="top" align="left">Main language</td>
+<td valign="top" align="left">Dutch; English</td>
+</tr>
+<tr>
+<td valign="top" align="left" rowspan="4">Text</td>
+<td valign="top" align="left">Structure</td>
+<td valign="top" align="left">Unstructured; Loose text files</td>
+</tr>
+<tr>
+<td valign="top" align="left">Number of files</td>
+<td valign="top" align="left">20</td>
+</tr>
+<tr>
+<td valign="top" align="left">File names</td>
+<td valign="top" align="left">account_history; autofill; comments; connections; devices; events; fundraisers; guides; information_about_you; likes; media; messages; profile; saved; searches; seen_content; settings; shopping; stories_activities; uploaded_contacts;</td>
+</tr>
+<tr>
+<td valign="top" align="left">File format</td>
+<td valign="top" align="left">.JSON</td>
+</tr>
+<tr>
+<td valign="top" align="left" rowspan="4">Media</td>
+<td valign="top" align="left">Structure</td>
+<td valign="top" align="left">Structured: Folder &gt; subfolder &gt; media files</td>
+</tr>
+<tr>
+<td valign="top" align="left">Folders</td>
+<td valign="top" align="left">photos; profile; stories; videos</td>
+</tr>
+<tr>
+<td valign="top" align="left">Subfolders</td>
+<td valign="top" align="left">Date (format: YYYYMM)</td>
+</tr>
+<tr>
+<td valign="top" align="left">File format</td>
+<td valign="top" align="left">.JPG/.MP4</td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+</sec>
+<sec id="x1-6000-4.2">
+<label>4.2.</label>
+<title>Validation corpus sampling</title>
+<p>A group of 11 participants generated Instagram DDPs by actively using a new Instagram account for approximately a week. The participants were instructed not to share any of their own personal information via the Instagram accounts. Instead, participants were instructed to share either fake or publicly available information by, for example, sharing URLs of news websites, posting images of celebrities, or liking and following verified Instagram accounts. As the final data corpus does not contain any personal information it is publicly available at <uri>http://doi.org/10.5281/zenodo.4472606</uri>.</p>
+</sec>
+<sec id="x1-7000-4.3">
+<label>4.3.</label>
+<title>Annotating validation corpus</title>
+<fig id="x1-7001-1">
+<label>Fig. 1.</label>
+<caption>
+<p>An example of how labeling a comments.json file would look like in Label-Studio.</p>
+</caption>
+<graphic xlink:href="ds-4-ds210035-g001.jpg"/>
+</fig>
+<sec id="x1-8000-4.3.1">
+<label>4.3.1.</label>
+<title>Textual content</title>
+<p>A human rater manually annotated the text files of the validation corpus, labelling all PII occurrences per DDP.<xref ref-type="fn" rid="fn-2">2</xref><fn id="fn-2"><label><sup>2</sup></label>
+<p>N.B. Establishing this <italic>ground truth</italic> only has to be done once. The labeling output, together with the 11 Instagram DDPs, are publicly available.</p></fn> The PII were categorized into usernames, first names, phone numbers, e-mail addresses, and URLs that linked to a personal Instagram account. To make the counting of the labels more efficient and less prone to errors, the labeling process was done in Label-Studio (Fig. <xref rid="x1-7001-1">1</xref>). Label-Studio returns an output file (result.json) that consists of one dictionary per file (e.g., ‘messages.json’) per package (e.g., ‘100billionfaces_20201021’). Each dictionary contains the labeled PII (e.g., ‘horsesarecool52’) and corresponding labels (e.g., ‘Username’) for that particular file.</p>
+<p>After this <italic>ground truth</italic> was established, the number of PII occurrences per text file, per DDP could be determined. As can be seen in Table <xref rid="x1-8001-3">3</xref>, the PII frequency varies highly per file. For example, approximately 72% of all first names present in the entire validation corpus were found in messages.json files only.</p>
+<table-wrap id="x1-8001-3">
+<label>Table 3</label>
+<caption>
+<p>Descriptive statistics of visual and textual content in the generated Instagram DDP validation corpus</p>
+</caption>
+<table frame="below" rules="groups">
+<thead>
+<tr>
+<td valign="top" align="center" colspan="5">Textual</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top" align="left">PII</td>
+<td valign="top" align="center">File</td>
+<td valign="top" align="center">N</td>
+<td valign="top" align="center">Count</td>
+<td valign="top" align="center">Proportion</td>
+</tr>
+</tbody><tbody>
+<tr>
+<td valign="top" align="left" rowspan="11">Username</td>
+<td valign="top" align="left">comments.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">261</td>
+<td valign="top" align="center">0.03</td>
+</tr>
+<tr>
+<td valign="top" align="left">connections.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">1222</td>
+<td valign="top" align="center">0.14</td>
+</tr>
+<tr>
+<td valign="top" align="left">likes.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">883</td>
+<td valign="top" align="center">0.10</td>
+</tr>
+<tr>
+<td valign="top" align="left">media.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">43</td>
+<td valign="top" align="center">0.00</td>
+</tr>
+<tr>
+<td valign="top" align="left">messages.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">2947</td>
+<td valign="top" align="center">0.33</td>
+</tr>
+<tr>
+<td valign="top" align="left">profile.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="center">0.00</td>
+</tr>
+<tr>
+<td valign="top" align="left">saved.json</td>
+<td valign="top" align="char" char=".">11</td>
+<td valign="top" align="char" char=".">6</td>
+<td valign="top" align="center">0.00</td>
+</tr>
+<tr>
+<td valign="top" align="left">searches.json</td>
+<td valign="top" align="char" char=".">11</td>
+<td valign="top" align="char" char=".">314</td>
+<td valign="top" align="center">0.04</td>
+</tr>
+<tr>
+<td valign="top" align="left">seen_content.json</td>
+<td valign="top" align="char" char=".">11</td>
+<td valign="top" align="char" char=".">3144</td>
+<td valign="top" align="center">0.35</td>
+</tr>
+<tr>
+<td valign="top" align="left">shopping.json</td>
+<td valign="top" align="char" char=".">11</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="center">0.00</td>
+</tr>
+<tr>
+<td valign="top" align="left">stories_activities.json</td>
+<td valign="top" align="char" char=".">11</td>
+<td valign="top" align="char" char=".">35</td>
+<td valign="top" align="center">0.00</td>
+</tr>
+<tr>
+<td valign="top" align="left"/>
+<td valign="top" align="right"><bold>Total</bold></td>
+<td valign="top" align="char" char="."><bold>115</bold></td>
+<td valign="top" align="char" char="."><bold>8866</bold></td>
+<td valign="top" align="center"><bold>1.00</bold></td>
+</tr>
+<tr>
+<td valign="top" align="left" rowspan="4">Name</td>
+<td valign="top" align="left">comments.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">105</td>
+<td valign="top" align="center">0.18</td>
+</tr>
+<tr>
+<td valign="top" align="left">media.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">54</td>
+<td valign="top" align="center">0.09</td>
+</tr>
+<tr>
+<td valign="top" align="left">messages.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">427</td>
+<td valign="top" align="center">0.72</td>
+</tr>
+<tr>
+<td valign="top" align="left">profile.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="center">0.02</td>
+</tr>
+<tr>
+<td valign="top" align="left"/>
+<td valign="top" align="right"><bold>Total</bold></td>
+<td valign="top" align="char" char="."><bold>40</bold></td>
+<td valign="top" align="char" char="."><bold>596</bold></td>
+<td valign="top" align="center"><bold>1.00</bold></td>
+</tr>
+<tr>
+<td valign="top" align="left" rowspan="4">Email</td>
+<td valign="top" align="left">comments.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">28</td>
+<td valign="top" align="center">0.13</td>
+</tr>
+<tr>
+<td valign="top" align="left">media.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">28</td>
+<td valign="top" align="center">0.13</td>
+</tr>
+<tr>
+<td valign="top" align="left">messages.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">152</td>
+<td valign="top" align="center">0.70</td>
+</tr>
+<tr>
+<td valign="top" align="left">profile.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="center">0.05</td>
+</tr>
+<tr>
+<td valign="top" align="left"/>
+<td valign="top" align="right"><bold>Total</bold></td>
+<td valign="top" align="char" char="."><bold>40</bold></td>
+<td valign="top" align="char" char="."><bold>218</bold></td>
+<td valign="top" align="center"><bold>1.00</bold></td>
+</tr>
+<tr>
+<td valign="top" align="left" rowspan="3">Phone</td>
+<td valign="top" align="left">comments.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">29</td>
+<td valign="top" align="center">0.16</td>
+</tr>
+<tr>
+<td valign="top" align="left">media.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">9</td>
+<td valign="top" align="center">0.05</td>
+</tr>
+<tr>
+<td valign="top" align="left">messages.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">140</td>
+<td valign="top" align="center">0.79</td>
+</tr>
+<tr>
+<td valign="top" align="left"/>
+<td valign="top" align="right"><bold>Total</bold></td>
+<td valign="top" align="char" char="."><bold>30</bold></td>
+<td valign="top" align="char" char="."><bold>178</bold></td>
+<td valign="top" align="center"><bold>1.00</bold></td>
+</tr>
+<tr>
+<td valign="top" align="left" rowspan="3">URL</td>
+<td valign="top" align="left">comments.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="center">0.00</td>
+</tr>
+<tr>
+<td valign="top" align="left">messages.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">267</td>
+<td valign="top" align="center">0.96</td>
+</tr>
+<tr>
+<td valign="top" align="left">profile.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="center">0.04</td>
+</tr>
+<tr>
+<td valign="top" align="left"/>
+<td valign="top" align="right"><bold>Total</bold></td>
+<td valign="top" align="char" char="."><bold>30</bold></td>
+<td valign="top" align="char" char="."><bold>278</bold></td>
+<td valign="top" align="center"><bold>1.00</bold></td>
+</tr>
+</tbody>
+</table>
+<table frame="below" rules="groups">
+<thead>
+<tr>
+<td valign="top" align="center" colspan="5">Visual</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top" align="left">PII</td>
+<td valign="top" align="center">Folder</td>
+<td valign="top" align="center">.JPG</td>
+<td valign="top" align="center">.MP4</td>
+<td valign="top" align="center">Proportion</td>
+</tr>
+</tbody><tbody>
+<tr>
+<td valign="top" align="left" rowspan="3">Username</td>
+<td valign="top" align="left">photos</td>
+<td valign="top" align="char" char=".">49</td>
+<td valign="top" align="center">–</td>
+<td valign="top" align="center">0.11</td>
+</tr>
+<tr>
+<td valign="top" align="left">stories</td>
+<td valign="top" align="char" char=".">255</td>
+<td valign="top" align="char" char=".">105</td>
+<td valign="top" align="center">0.84</td>
+</tr>
+<tr>
+<td valign="top" align="left">videos</td>
+<td valign="top" align="center">–</td>
+<td valign="top" align="char" char=".">21</td>
+<td valign="top" align="center">0.05</td>
+</tr>
+<tr>
+<td valign="top" align="left"/>
+<td valign="top" align="right"><bold>Total</bold></td>
+<td valign="top" align="char" char="."><bold>304</bold></td>
+<td valign="top" align="char" char="."><bold>126</bold></td>
+<td valign="top" align="center"><bold>1.00</bold></td>
+</tr>
+<tr>
+<td valign="top" align="left" rowspan="4">Face</td>
+<td valign="top" align="left">direct</td>
+<td valign="top" align="char" char=".">20</td>
+<td valign="top" align="center">–</td>
+<td valign="top" align="center">0.01</td>
+</tr>
+<tr>
+<td valign="top" align="left">photos</td>
+<td valign="top" align="char" char=".">1046</td>
+<td valign="top" align="center">–</td>
+<td valign="top" align="center">0.67</td>
+</tr>
+<tr>
+<td valign="top" align="left">stories</td>
+<td valign="top" align="char" char=".">290</td>
+<td valign="top" align="char" char=".">163</td>
+<td valign="top" align="center">0.29</td>
+</tr>
+<tr>
+<td valign="top" align="left">videos</td>
+<td valign="top" align="center">–</td>
+<td valign="top" align="char" char=".">36</td>
+<td valign="top" align="center">0.02</td>
+</tr>
+<tr>
+<td valign="top" align="left"/>
+<td valign="top" align="right"><bold>Total</bold></td>
+<td valign="top" align="char" char="."><bold>1356</bold></td>
+<td valign="top" align="char" char="."><bold>199</bold></td>
+<td valign="top" align="center"><bold>1.00</bold></td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+</sec>
+<sec id="x1-9000-4.3.2">
+<label>4.3.2.</label>
+<title>Visual content</title>
+<p>To annotate visual content, a procedure was carried out by hand. For each media file, it was determined whether there were one or multiple identifiable faces present. To determine whether a face was identifiable, we used a pragmatic definition where we defined a face as identifiable if at least three out of five facial landmarks were visible (right eye, left eye, nose, right mouth corner and left mouth corner) [<xref ref-type="bibr" rid="ref036">36</xref>].</p>
+</sec>
+</sec>
+</sec>
+<sec id="x1-10000-5" sec-type="methods">
+<label>5.</label>
+<title>Method</title>
+<p>To de-identify a set of collected Instagram DDPs, the algorithm performs three steps on each DDP of the collected set separately (Fig. <xref rid="x1-10004-2">2</xref>):</p>
+<list>
+<list-item id="x1-10001x-5">
+<label>(1)</label>
+<p>Pre-process DDP</p>
+</list-item>
+<list-item id="x1-10002x-5">
+<label>(2)</label>
+<p>De-identify text files:</p>
+<list list-type="bullet">
+<list-item>
+<p>Detecting PII in (structured) text</p>
+</list-item>
+<list-item>
+<p>De-identify PII with corresponding de-identification codes</p>
+</list-item>
+</list>
+</list-item>
+<list-item id="x1-10003x-5">
+<label>(3)</label>
+<p>De-identify media files by detecting and blurring human faces and text</p>
+</list-item>
+</list>
+<fig id="x1-10004-2">
+<label>Fig. 2.</label>
+<caption>
+<p>The algorithm takes a zipped DDP as input. Looping over the text (.json) files, all unique instances of PII are detected in the structured part of the data using pattern- and label recognition. The extracted info, together with the most common Dutch first names and, optionally, the participant file, is added to a key file. All occurrences of the keys in the DDP will be replaced with the corresponding hash. Finally, occurrences of human faces and text in media files are detected and blurred. The algorithm will return a de-identified copy of the DDP in the output folder.</p>
+</caption>
+<graphic xlink:href="ds-4-ds210035-g002.jpg"/>
+</fig>
+<sec id="x1-11000-5.1">
+<label>5.1.</label>
+<title>Pre-processing</title>
+<p>The software consists of a wrapper and de-identification algorithms. The wrapper handles the pre-processing of the DDP and contains steps specific for Instagram. It unpacks the DDP and removes all files that are not considered relevant for social science research, like “autofill.json” and “account history.json”. The user’s profile “profile.json” is de-identified separately in this pre-processing phase, as its content and structure deviate from the other text files in the DDP. After the DDP is cleaned, the PII should be extracted.</p>
+<fig id="x1-11001-3">
+<label>Fig. 3.</label>
+<caption>
+<p>Example of key-value structure in .json files with structured and unstructured text.</p>
+</caption>
+<graphic xlink:href="ds-4-ds210035-g003.jpg"/>
+</fig>
+<table-wrap id="x1-11002-4">
+<label>Table 4</label>
+<caption>
+<p>Overview of the Personal Identifiable Information (PII) categories and their extraction methods</p>
+</caption>
+<table frame="hsides" rules="groups">
+<thead>
+<tr>
+<td valign="top" align="left" rowspan="3">Category</td>
+<td valign="top" align="center" rowspan="3">Description</td>
+<td valign="top" align="center" colspan="2">Structured</td>
+<td valign="top" align="center" colspan="2">Unstructured</td>
+</tr>
+<tr>
+<td valign="top" colspan="2"><hr/></td>
+<td valign="top" colspan="2"><hr/></td>
+</tr>
+<tr>
+<td valign="top" align="center">Detection method</td>
+<td valign="top" align="center">Example</td>
+<td valign="top" align="center">Detection method</td>
+<td valign="top" align="center">Example</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top" align="left">Name</td>
+<td valign="top" align="left">First names</td>
+<td valign="top" align="left">–</td>
+<td valign="top" align="left">–</td>
+<td valign="top" align="left">List of 1000 most common Dutch names (is interchangable)</td>
+<td valign="top" align="left">{“text”: “Hi Tom, hoe gaat het met jou?”}</td>
+</tr>
+<tr>
+<td valign="top" align="left">Username</td>
+<td valign="top" align="left">Unique name created by the Instagram DDPs owner. Has a minimum length of 3 characters and a maximum of 30. Can exist of letters, numbers, points, and underscores.</td>
+<td valign="top" align="left">key-value pairing: e.g., ‘author’, ‘sender’, ‘participants’.</td>
+<td valign="top" align="left">{“timestamp”: “2020-10-23T11: 16:45+00:00”, “author”: “kippie_toktok”}</td>
+<td valign="top" align="left">Pattern search: i.e., username tags (i.e., @&lt;username&gt;) or shared stories (i.e., Shared &lt;username&gt;’s story)</td>
+<td valign="top" align="left">{“text”: “Hebben jullie @kippie_toktok nog gezien?”} or {“story_share”: “Shared kippie_toktok’s story”}</td>
+</tr>
+<tr>
+<td valign="top" align="left">Emailadress</td>
+<td valign="top" align="left">emailadress, can contain letters, numbers, letters, numbers, or other 7bit ASCII special characters</td>
+<td valign="top" align="left">key-value pairing: i.e., ‘*mail’.</td>
+<td valign="top" align="left">{email: “blabla@kippietok.nl”}</td>
+<td valign="top" align="left">Pattern search: i.e., ‘letters/numbers/ special characters @letters/numbers.letters’</td>
+<td valign="top" align="left">{“text”: “You can mail me at anne7809@iclouq.nl”}</td>
+</tr>
+<tr>
+<td valign="top" align="left">Phone number</td>
+<td valign="top" align="left">A phone number can contain numbers, spaces and/or dashes</td>
+<td valign="top" align="left">–</td>
+<td valign="top" align="left">–</td>
+<td valign="top" align="left">Pattern search: i.e., minimum of 6 and maximum of 13 numbers</td>
+<td valign="top" align="left">{“text”: “This is my number: 06 123 456 78”}</td>
+</tr>
+<tr>
+<td valign="top" align="left">URL</td>
+<td valign="top" align="left">Only URLs referring to other instagram accounts will be pseudonymized.</td>
+<td valign="top" align="left">–</td>
+<td valign="top" align="left">–</td>
+<td valign="top" align="left">Pattern search: i.e., a string starting with ‘https://’ followed by letters/numbers/special characters and ‘instagram’</td>
+<td valign="top" align="left">{“media_share _url”: “https://scontent-atl3-2.cdninstagram.com/v”}</td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+</sec>
+<sec id="x1-12000-5.2">
+<label>5.2.</label>
+<title>De-identify text files</title>
+<sec id="x1-13000-5.2.1">
+<label>5.2.1.</label>
+<title>Detecting PII in (structured) text</title>
+<p>All text files in an Instagram DDP contain a nested structure of keys and values (see Fig. <xref rid="x1-11001-3">3</xref>). To extract PII from these structured parts, we have determined which key-value combinations and which patterns are indicative for each PII category (see Table <xref rid="x1-11002-4">4</xref>). The algorithm parses over the nested structure in each text file in the DDP. Here, it searches the key-value combinations and patterns. By doing this, it extracts the PII. All detected PII instances are added to the key file.</p>
+<p>Part of the PII instances in the DDP are not found in the structured part but do appear in the free text. These PII instances include names, phone numbers, and URLs, but also usernames, for example tagged people ‘@username’. We use regular expressions to detect these PII instances. The free text is parsed to detect individual usernames which are then added to the key file. For email-addresses, phone numbers, and URLs we directly add the regular expression to the key file, as this will increase the performance of the de-identification algorithm.</p>
+<p>An important side note is that the regular expressions will only look for Instagram URLs that link to users’ personal pages. The remaining URLs in the DDP are left unchanged, as these represent links to public websites, which cannot be traced to individual users and which may be valuable for social science research.</p>
+<p>As (first) names exclusively occur in free text and not in a structured format, it was not possible to systematically extract this type of PII. Therefore, instead of working bottom-up, we apply a top-down approach. After all text files are parsed and the key dictionary is filled, a list of the <inline-formula><mml:math id="math001">
+<mml:mn>10</mml:mn>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mn>000</mml:mn></mml:math></inline-formula> most common Dutch names is added to this dictionary (which we obtained from the DEDUCE software [<xref ref-type="bibr" rid="ref021">21</xref>]). Of course, it is also possible to add another list (of another country), making the algorithm applicable in multiple languages.</p>
+</sec>
+<sec id="x1-14000-5.2.2">
+<label>5.2.2.</label>
+<title>De-identifying PII in text files</title>
+<p>After all PII are extracted, PII specific pseudonyms are added to the key file. Usernames and names receive a unique hexadecimal code, while email-addresses, phone numbers and URLs will be hashed with the general ‘__emailaddress’, ‘__phonenumber’, and ‘__url’ codes, respectively. Note that the same (user)name will always receive the same code. This way it is still possible to perform a network analysis after de-identification is complete.</p>
+<p>Additionally, it is possible to provide the algorithm with a list of (user)names (and/or other information) and your own corresponding pseudonyms. This might be interesting for scientific research in which the (user)names of participants need to be distinguishable from other (user)names.</p>
+<p>When the key file is complete, the algorithm will parse over the listed PII, search for any occurrences in the entire DDP and replace them with the corresponding pseudonyms. The replacement is also performed on the file/folder names, resulting in an entirely de-identified DDP. There is also an option to save the key file, making it possible to (partly) decode the DDP.</p>
+</sec>
+</sec>
+<sec id="x1-15000-5.3">
+<label>5.3.</label>
+<title>De-identifying PII in media</title>
+<p>Besides being able to link textual data to specific individuals, individuals may also be identified by their presence in the images or videos in a DDP. In addition, the images or videos can contain text which may include usernames, person names or other sensitive information. We detect faces in visual content using multi-task Cascaded Convolutional Networks [<xref ref-type="bibr" rid="ref036">36</xref>] in Facenet Pytorch [<xref ref-type="bibr" rid="ref011">11</xref>] and blur all occurrences using the Python Imaging Library [<xref ref-type="bibr" rid="ref034">34</xref>]. We detect text using a pre-trained [<xref ref-type="bibr" rid="ref035">35</xref>] EAST text detection model [<xref ref-type="bibr" rid="ref037">37</xref>] and blur all occurrences using the Gaussian blur option provided by OpenCV [<xref ref-type="bibr" rid="ref007">7</xref>].</p>
+</sec>
+<sec id="x1-16000-5.4">
+<label>5.4.</label>
+<title>Evaluation approach</title>
+<p>The developed de-identification procedure is applied to the annotated validation corpus, using the options of applying participant codes for a selected group of users and capital sensitivity for first names.</p>
+<sec id="x1-17000-5.4.1">
+<label>5.4.1.</label>
+<title>Textual content</title>
+<fig id="x1-17001-4">
+<label>Fig. 4.</label>
+<caption>
+<p>The raw DDPs in which all PII categories are labeled (i.e., the ground truth) is compared with the de-identified DDPs. The algorithm counts the number of PII categories (total), correctly hashed PII (TP), falsely hashed information (FP), and unhashed PII (FN). Subsequently, a recall-, precision-, and F1-score can be calculated.</p>
+</caption>
+<graphic xlink:href="ds-4-ds210035-g004.jpg"/>
+</fig>
+<p>The effectiveness of the de-identification performance on textual content is assessed by determining the number of times PII has been correctly de-identified (True Positive, TP), incorrectly de-identified (False Positive, FP), and not de-identified (False Negative, FN) (Fig. <xref rid="x1-17001-4">4</xref>). Using these statistics, the recall-, precision-, and F1-score are calculated.</p>
+</sec>
+<sec id="x1-18000-5.4.2">
+<label>5.4.2.</label>
+<title>Visual content</title>
+<p>The human rater determined for each detected face whether it was indeed de-identified by the algorithm. The definition of identifiable used (i.e., at least three out of five facial landmarks were visible [<xref ref-type="bibr" rid="ref036">36</xref>]), will not hold if, for example, a person will actively try to identify individuals by combining multiple images where a person is partly visible. However, it is sufficient for the level of de-identification we are currently aiming at.</p>
+<p>For each piece of visual content an identified face is considered a single observation which can be either appropriately de-identified (TP) or not (FN). Note that although a video consists of multiple frames in which the possibility arises that a face is identifiable, an instance of one frame showing an identifiable face following our definition results in one FN for this face in the movie.</p>
+<p>As the determination of whether a face is defined identifiable or not is performed by a human rater and this distinction is sometimes not straightforward, the questionable cases are independently rated by two raters and classification is performed based on consensus. In addition, a set of 100 .JPEG files and 20 .MP4 files were independently annotated by two separate annotators.</p>
+<p>On the .JPEG files, 204 faces were identified and from these, 193 were identified by both raters. On this subset, a Cohen’s <italic>κ</italic> inter-rater reliability was calculated of 1, so the raters highly agreed on which faces were appropriately de-identified and which were not. For the .MP4 files, 49 faces were identified and from these, 41 were identified by both raters. On this subset, a Cohen’s <italic>κ</italic> inter-rater reliability was calculated of 0.62. The sample of faces was much smaller for .MP4 compared to .JPEG, and it was apparently also a lot more difficult to determine whether a face was appropriately identified when the image was moving compared to when it was a still image.</p>
+<p>In addition, particularly on Instagram, visual content can contain usernames. The algorithm is not able to distinguish between usernames and other types of text. therefore all text is de-identified, without distinctions between text and usernames, or without replacing usernames for their key value. Therefore, de-identified usernames are counted as true positives (TP) and usernames not de-identified are counted as false negatives (FN). False positives cannot be quantified in the current procedure.</p>
+</sec>
+</sec>
+<sec id="x1-19000-5.5">
+<label>5.5.</label>
+<title>Evaluation criteria</title>
+<p>We use scikit-learn to further evaluate the performance of the procedure on the different aspects [<xref ref-type="bibr" rid="ref026">26</xref>]. First, we calculate the recall, or the sensitivity, as 
+<disp-formula>
+<mml:math display="block" id="math002">
+<mml:mtable displaystyle="true"><mml:mlabeledtr>
+<mml:mtd>
+<mml:mtext>(1)</mml:mtext>
+</mml:mtd>
+<mml:mtd>
+<mml:mi mathvariant="italic">Recall</mml:mi>
+<mml:mo>=</mml:mo><mml:mstyle displaystyle="true">
+<mml:mfrac>
+<mml:mrow>
+<mml:mi mathvariant="italic">TP</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">TP</mml:mi>
+<mml:mo>+</mml:mo>
+<mml:mi mathvariant="italic">FN</mml:mi>
+</mml:mrow>
+</mml:mfrac>
+</mml:mstyle>
+<mml:mo>.</mml:mo>
+</mml:mtd>
+</mml:mlabeledtr></mml:mtable></mml:math>
+</disp-formula> 
+Here, we measure the ratio of the correctly de-identified cases to all the cases that were supposed to be de-identified (i.e. ground truth). Each false negative potentially results in not preserving the privacy of a research participant and therefore a high value for the recall is particularly important. The precision is calculated as 
+<disp-formula>
+<mml:math display="block" id="math003">
+<mml:mtable displaystyle="true"><mml:mlabeledtr>
+<mml:mtd>
+<mml:mtext>(2)</mml:mtext>
+</mml:mtd>
+<mml:mtd>
+<mml:mi mathvariant="italic">Precision</mml:mi>
+<mml:mo>=</mml:mo><mml:mstyle displaystyle="true">
+<mml:mfrac>
+<mml:mrow>
+<mml:mi mathvariant="italic">TP</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">TP</mml:mi>
+<mml:mo>+</mml:mo>
+<mml:mi mathvariant="italic">FP</mml:mi>
+</mml:mrow>
+</mml:mfrac>
+</mml:mstyle>
+<mml:mo>.</mml:mo>
+</mml:mtd>
+</mml:mlabeledtr></mml:mtable></mml:math>
+</disp-formula> 
+Precision shows the ratio of correctly de-identified observations to the total of de-identified observations and a high precision illustrates that the amount of additional information lost due to unnecessary de-identification is limited. Given that DDPs are typically collected to analyze aspects such as the free text or the images, losing a lot of this information by the de-identification process challenges the intended research goal. At last, we calculate the F1 score 
+<disp-formula>
+<mml:math display="block" id="math004">
+<mml:mtable displaystyle="true"><mml:mlabeledtr>
+<mml:mtd>
+<mml:mtext>(3)</mml:mtext>
+</mml:mtd>
+<mml:mtd>
+<mml:mtext mathvariant="italic">F1-score</mml:mtext>
+<mml:mo>=</mml:mo>
+<mml:mn>2</mml:mn>
+<mml:mo>×</mml:mo><mml:mstyle displaystyle="true">
+<mml:mfrac>
+<mml:mrow>
+<mml:mi mathvariant="italic">precision</mml:mi>
+<mml:mo>×</mml:mo>
+<mml:mi mathvariant="italic">recall</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">precision</mml:mi>
+<mml:mo>+</mml:mo>
+<mml:mi mathvariant="italic">recall</mml:mi>
+</mml:mrow>
+</mml:mfrac>
+</mml:mstyle>
+<mml:mo mathvariant="normal">,</mml:mo>
+</mml:mtd>
+</mml:mlabeledtr></mml:mtable></mml:math>
+</disp-formula> 
+which combined the precision and recall and considered both false positives and false negatives. Note that we do not calculate the accuracy as the number of true negatives cannot be determined appropriately in our data-set.</p>
+</sec>
+</sec>
+<sec id="x1-20000-6">
+<label>6.</label>
+<title>Results</title>
+<sec id="x1-21000-6.1">
+<label>6.1.</label>
+<title>Initial results</title>
+<p>A large proportion of faces on images were appropriately detected and blurred (Table <xref rid="x1-21001-5">5</xref>), while on videos this proportion was substantively lower. Apparently, faces are harder to detect by the algorithm when the images are moving.</p>
+<table-wrap id="x1-21001-5">
+<label>Table 5</label>
+<caption>
+<p>Results in terms of TP, FP, FN, recall, precision and F1</p>
+</caption>
+<table frame="below" rules="groups">
+<thead>
+<tr>
+<td valign="top" align="center" colspan="9">Visual</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top" align="left"/>
+<td valign="top" align="left"/>
+<td valign="top" align="center">Total</td>
+<td valign="top" align="center">TP</td>
+<td valign="top" align="center">FN</td>
+<td valign="top" align="center">FP</td>
+<td valign="top" align="center">Recall</td>
+<td valign="top" align="center">Precision</td>
+<td valign="top" align="center">F1</td>
+</tr>
+</tbody><tbody>
+<tr>
+<td valign="top" align="left" rowspan="3">Faces</td>
+<td valign="top" align="left">.JPEG</td>
+<td valign="top" align="char" char=".">1,356</td>
+<td valign="top" align="char" char=".">1,205</td>
+<td valign="top" align="char" char=".">151</td>
+<td valign="top" align="center">–</td>
+<td valign="top" align="char" char=".">0.89</td>
+<td valign="top" align="center">–</td>
+<td valign="top" align="center">–</td>
+</tr>
+<tr>
+<td valign="top" align="left">.MP4</td>
+<td valign="top" align="char" char=".">199</td>
+<td valign="top" align="char" char=".">131</td>
+<td valign="top" align="char" char=".">68</td>
+<td valign="top" align="center">–</td>
+<td valign="top" align="char" char=".">0.66</td>
+<td valign="top" align="center">–</td>
+<td valign="top" align="center">–</td>
+</tr>
+<tr>
+<td valign="top" align="left">Total</td>
+<td valign="top" align="char" char=".">1,555</td>
+<td valign="top" align="char" char=".">1,336</td>
+<td valign="top" align="char" char=".">219</td>
+<td valign="top" align="center">–</td>
+<td valign="top" align="char" char=".">0.86</td>
+<td valign="top" align="center">–</td>
+<td valign="top" align="center">–</td>
+</tr>
+<tr>
+<td valign="top" align="left" rowspan="3">Usernames</td>
+<td valign="top" align="left">.JPEG</td>
+<td valign="top" align="char" char=".">304</td>
+<td valign="top" align="char" char=".">302</td>
+<td valign="top" align="char" char=".">2</td>
+<td valign="top" align="center">–</td>
+<td valign="top" align="char" char=".">0.99</td>
+<td valign="top" align="center">–</td>
+<td valign="top" align="center">–</td>
+</tr>
+<tr>
+<td valign="top" align="left">.MP4</td>
+<td valign="top" align="char" char=".">126</td>
+<td valign="top" align="char" char=".">125</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="center">–</td>
+<td valign="top" align="char" char=".">0.99</td>
+<td valign="top" align="center">–</td>
+<td valign="top" align="center">–</td>
+</tr>
+<tr>
+<td valign="top" align="left">Total</td>
+<td valign="top" align="char" char=".">430</td>
+<td valign="top" align="char" char=".">427</td>
+<td valign="top" align="char" char=".">3</td>
+<td valign="top" align="center">–</td>
+<td valign="top" align="char" char=".">0.99</td>
+<td valign="top" align="center">–</td>
+<td valign="top" align="center">–</td>
+</tr>
+</tbody>
+</table>
+<table frame="below" rules="groups">
+<thead>
+<tr>
+<td valign="top" align="center" colspan="9">Textual</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top" align="left"/>
+<td valign="top" align="center">File</td>
+<td valign="top" align="center">Total</td>
+<td valign="top" align="center">TP</td>
+<td valign="top" align="center">FN</td>
+<td valign="top" align="center">FP</td>
+<td valign="top" align="center">Recall</td>
+<td valign="top" align="center">Precision</td>
+<td valign="top" align="center">F1</td>
+</tr>
+</tbody><tbody>
+<tr>
+<td valign="top" align="left" rowspan="5">Email</td>
+<td valign="top" align="left">comments.json</td>
+<td valign="top" align="char" char=".">28</td>
+<td valign="top" align="char" char=".">28</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+</tr>
+<tr>
+<td valign="top" align="left">media.json</td>
+<td valign="top" align="char" char=".">28</td>
+<td valign="top" align="char" char=".">28</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+</tr>
+<tr>
+<td valign="top" align="left">messages.json</td>
+<td valign="top" align="char" char=".">152</td>
+<td valign="top" align="char" char=".">152</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+</tr>
+<tr>
+<td valign="top" align="left">profile.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+</tr>
+<tr>
+<td valign="top" align="left">total</td>
+<td valign="top" align="char" char=".">218</td>
+<td valign="top" align="char" char=".">218</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+</tr>
+<tr>
+<td valign="top" align="left" rowspan="5">Name</td>
+<td valign="top" align="left">comments.json</td>
+<td valign="top" align="char" char=".">105</td>
+<td valign="top" align="char" char=".">61</td>
+<td valign="top" align="char" char=".">44</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0.5619</td>
+<td valign="top" align="char" char=".">0.9365</td>
+<td valign="top" align="char" char=".">0.7024</td>
+</tr>
+<tr>
+<td valign="top" align="left">media.json</td>
+<td valign="top" align="char" char=".">54</td>
+<td valign="top" align="char" char=".">41</td>
+<td valign="top" align="char" char=".">13</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0.7593</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">0.8530</td>
+</tr>
+<tr>
+<td valign="top" align="left">messages.json</td>
+<td valign="top" align="char" char=".">427</td>
+<td valign="top" align="char" char=".">386</td>
+<td valign="top" align="char" char=".">41</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0.9040</td>
+<td valign="top" align="char" char=".">0.9836</td>
+<td valign="top" align="char" char=".">0.9374</td>
+</tr>
+<tr>
+<td valign="top" align="left">profile.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">6</td>
+<td valign="top" align="char" char=".">4</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0.6</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">0.75</td>
+</tr>
+<tr>
+<td valign="top" align="left">total</td>
+<td valign="top" align="char" char=".">596</td>
+<td valign="top" align="char" char=".">494</td>
+<td valign="top" align="char" char=".">102</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0.8255</td>
+<td valign="top" align="char" char=".">0.9798</td>
+<td valign="top" align="char" char=".">0.8936</td>
+</tr>
+<tr>
+<td valign="top" align="left" rowspan="4">Phone</td>
+<td valign="top" align="left">comments.json</td>
+<td valign="top" align="char" char=".">29</td>
+<td valign="top" align="char" char=".">26</td>
+<td valign="top" align="char" char=".">3</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0.4828</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">0.6512</td>
+</tr>
+<tr>
+<td valign="top" align="left">media.json</td>
+<td valign="top" align="char" char=".">9</td>
+<td valign="top" align="char" char=".">7</td>
+<td valign="top" align="char" char=".">2</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0.4444</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">0.6154</td>
+</tr>
+<tr>
+<td valign="top" align="left">messages.json</td>
+<td valign="top" align="char" char=".">139</td>
+<td valign="top" align="char" char=".">121</td>
+<td valign="top" align="char" char=".">18</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0.3022</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">0.4641</td>
+</tr>
+<tr>
+<td valign="top" align="left">total</td>
+<td valign="top" align="char" char=".">177</td>
+<td valign="top" align="char" char=".">154</td>
+<td valign="top" align="char" char=".">23</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0.3390</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">0.5063</td>
+</tr>
+<tr>
+<td valign="top" align="left" rowspan="4">URL</td>
+<td valign="top" align="left">comments.json</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+</tr>
+<tr>
+<td valign="top" align="left">messages.json</td>
+<td valign="top" align="char" char=".">267</td>
+<td valign="top" align="char" char=".">168</td>
+<td valign="top" align="char" char=".">99</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0.6180</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">0.7639</td>
+</tr>
+<tr>
+<td valign="top" align="left">profile.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+</tr>
+<tr>
+<td valign="top" align="left">total</td>
+<td valign="top" align="char" char=".">278</td>
+<td valign="top" align="char" char=".">178</td>
+<td valign="top" align="char" char=".">100</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0.6295</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">0.7726</td>
+</tr>
+<tr>
+<td valign="top" align="left" rowspan="12">Username</td>
+<td valign="top" align="left">comments.json</td>
+<td valign="top" align="char" char=".">261</td>
+<td valign="top" align="char" char=".">252</td>
+<td valign="top" align="char" char=".">9</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0.9655</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">0.9813</td>
+</tr>
+<tr>
+<td valign="top" align="left">connections.json</td>
+<td valign="top" align="char" char=".">1,222</td>
+<td valign="top" align="char" char=".">1,190</td>
+<td valign="top" align="char" char=".">32</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0.9722</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">0.9858</td>
+</tr>
+<tr>
+<td valign="top" align="left">likes.json</td>
+<td valign="top" align="char" char=".">883</td>
+<td valign="top" align="char" char=".">823</td>
+<td valign="top" align="char" char=".">60</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0.9320</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">0.9611</td>
+</tr>
+<tr>
+<td valign="top" align="left">media.json</td>
+<td valign="top" align="char" char=".">43</td>
+<td valign="top" align="char" char=".">33</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0.7674</td>
+<td valign="top" align="char" char=".">0.7907</td>
+<td valign="top" align="char" char=".">0.7788</td>
+</tr>
+<tr>
+<td valign="top" align="left">messages.json</td>
+<td valign="top" align="char" char=".">2,947</td>
+<td valign="top" align="char" char=".">2,835</td>
+<td valign="top" align="char" char=".">112</td>
+<td valign="top" align="char" char=".">50</td>
+<td valign="top" align="char" char=".">0.9067</td>
+<td valign="top" align="char" char=".">0.9500</td>
+<td valign="top" align="char" char=".">0.9196</td>
+</tr>
+<tr>
+<td valign="top" align="left">profile.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+</tr>
+<tr>
+<td valign="top" align="left">saved.json</td>
+<td valign="top" align="char" char=".">6</td>
+<td valign="top" align="char" char=".">4</td>
+<td valign="top" align="char" char=".">2</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0.6667</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">0.8</td>
+</tr>
+<tr>
+<td valign="top" align="left">searches.json</td>
+<td valign="top" align="char" char=".">314</td>
+<td valign="top" align="char" char=".">305</td>
+<td valign="top" align="char" char=".">9</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0.9713</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">0.9855</td>
+</tr>
+<tr>
+<td valign="top" align="left">seen_content.json</td>
+<td valign="top" align="char" char=".">3,144</td>
+<td valign="top" align="char" char=".">2,619</td>
+<td valign="top" align="char" char=".">525</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0.8330</td>
+<td valign="top" align="char" char=".">0.9876</td>
+<td valign="top" align="char" char=".">0.8931</td>
+</tr>
+<tr>
+<td valign="top" align="left">shopping.json</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+</tr>
+<tr>
+<td valign="top" align="left">stories_activities.json</td>
+<td valign="top" align="char" char=".">35</td>
+<td valign="top" align="char" char=".">34</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0.9714</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">0.9851</td>
+</tr>
+<tr>
+<td valign="top" align="left">total</td>
+<td valign="top" align="char" char=".">8,866</td>
+<td valign="top" align="char" char=".">8,106</td>
+<td valign="top" align="char" char=".">760</td>
+<td valign="top" align="char" char=".">50</td>
+<td valign="top" align="char" char=".">0.89567</td>
+<td valign="top" align="char" char=".">0.9775</td>
+<td valign="top" align="char" char=".">0.9324</td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+<p>Email addresses were appropriately detected and de-identified throughout all files within the DDPs (Table <xref rid="x1-21001-5">5</xref>), whereas a substantial amount of names were not detected by the algorithm throughout the different files. The quality of the de-identification of usernames differs a lot depending on the file. False positives were only detected in the ‘messages.json’ file. Furthermore, relatively lower recall values were measured for the files ‘media.json’ and ‘saved.json’, although these files have a small number of total observations.</p>
+<p>The annotated validation corpus contains both Dutch and English text; some within the same document. We observed no difference between de-identification of PII in English and Dutch text.</p>
+<p>By critically examining the results of Table <xref rid="x1-21001-5">5</xref> and investigating what coding decisions led to the least optimal results, improvements to the code were made.</p>
+</sec>
+<sec id="x1-22000-6.2">
+<label>6.2.</label>
+<title>Code adjustments</title>
+<p>First of all, we made some changes to how the ‘profile.json’ file was processed. This change implied adding the entire entry that can be found after the key ‘name’ to the key file, receiving the same pseudonym as used for the DDP username. This way, participants can now be recognized throughout the de-identified DDP by both their masked username <italic>and</italic> their (first) name. After the adjustment, these ‘profile’ names and DDP usernames are labeled as ‘DDP_id’, resulting in a shift in the initial username and name frequencies (see Table <xref rid="x1-22001-6">6</xref>).</p>
+<table-wrap id="x1-22001-6">
+<label>Table 6</label>
+<caption>
+<p>Descriptive statistics of textual content in the generated Instagram DDP data corpus after adjustment of the script</p>
+</caption>
+<table frame="hsides" rules="groups">
+<thead>
+<tr>
+<td valign="top" align="left">PII</td>
+<td valign="top" align="center">File</td>
+<td valign="top" align="center">N</td>
+<td valign="top" align="center">Count</td>
+<td valign="top" align="center">Proportion</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top" align="left" rowspan="12">Username</td>
+<td valign="top" align="left">comments.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">261</td>
+<td valign="top" align="center">0.03</td>
+</tr>
+<tr>
+<td valign="top" align="left">connections.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">1222</td>
+<td valign="top" align="center">0.14</td>
+</tr>
+<tr>
+<td valign="top" align="left">likes.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">883</td>
+<td valign="top" align="center">0.10</td>
+</tr>
+<tr>
+<td valign="top" align="left">media.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">43</td>
+<td valign="top" align="center">0.01</td>
+</tr>
+<tr>
+<td valign="top" align="left">messages.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">2659</td>
+<td valign="top" align="center">0.31</td>
+</tr>
+<tr>
+<td valign="top" align="left">profile.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="center">0.00</td>
+</tr>
+<tr>
+<td valign="top" align="left">saved.json</td>
+<td valign="top" align="char" char=".">11</td>
+<td valign="top" align="char" char=".">6</td>
+<td valign="top" align="center">0.00</td>
+</tr>
+<tr>
+<td valign="top" align="left">searches.json</td>
+<td valign="top" align="char" char=".">11</td>
+<td valign="top" align="char" char=".">314</td>
+<td valign="top" align="center">0.04</td>
+</tr>
+<tr>
+<td valign="top" align="left">seen_content.json</td>
+<td valign="top" align="char" char=".">11</td>
+<td valign="top" align="char" char=".">3144</td>
+<td valign="top" align="center">0.37</td>
+</tr>
+<tr>
+<td valign="top" align="left">shopping.json</td>
+<td valign="top" align="char" char=".">11</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="center">0.00</td>
+</tr>
+<tr>
+<td valign="top" align="left">stories_activities.json</td>
+<td valign="top" align="char" char=".">11</td>
+<td valign="top" align="char" char=".">35</td>
+<td valign="top" align="center">0.00</td>
+</tr>
+<tr>
+<td valign="top" align="right"><bold>Total</bold></td>
+<td valign="top" align="char" char="."><bold>115</bold></td>
+<td valign="top" align="char" char="."><bold>8568</bold></td>
+<td valign="top" align="center"><bold>1.00</bold></td>
+</tr>
+<tr>
+<td valign="top" align="left" rowspan="3">DDP_id</td>
+<td valign="top" align="left">messages.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">294</td>
+<td valign="top" align="center">0.94</td>
+</tr>
+<tr>
+<td valign="top" align="left">profile.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">20</td>
+<td valign="top" align="center">0.06</td>
+</tr>
+<tr>
+<td valign="top" align="right"><bold>Total</bold></td>
+<td valign="top" align="char" char="."><bold>20</bold></td>
+<td valign="top" align="char" char="."><bold>314</bold></td>
+<td valign="top" align="center"><bold>1.00</bold></td>
+</tr>
+<tr>
+<td valign="top" align="left" rowspan="5">Name</td>
+<td valign="top" align="left">comments.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">105</td>
+<td valign="top" align="center">0.18</td>
+</tr>
+<tr>
+<td valign="top" align="left">media.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">54</td>
+<td valign="top" align="center">0.09</td>
+</tr>
+<tr>
+<td valign="top" align="left">messages.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">427</td>
+<td valign="top" align="center">0.72</td>
+</tr>
+<tr>
+<td valign="top" align="left">profile.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="center">0.02</td>
+</tr>
+<tr>
+<td valign="top" align="right"><bold>Total</bold></td>
+<td valign="top" align="char" char="."><bold>40</bold></td>
+<td valign="top" align="char" char="."><bold>596</bold></td>
+<td valign="top" align="center"><bold>1.00</bold></td>
+</tr>
+<tr>
+<td valign="top" align="left" rowspan="5">Email</td>
+<td valign="top" align="left">comments.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">28</td>
+<td valign="top" align="center">0.13</td>
+</tr>
+<tr>
+<td valign="top" align="left">media.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">28</td>
+<td valign="top" align="center">0.13</td>
+</tr>
+<tr>
+<td valign="top" align="left">messages.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">152</td>
+<td valign="top" align="center">0.70</td>
+</tr>
+<tr>
+<td valign="top" align="left">profile.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="center">0.05</td>
+</tr>
+<tr>
+<td valign="top" align="right"><bold>Total</bold></td>
+<td valign="top" align="char" char="."><bold>40</bold></td>
+<td valign="top" align="char" char="."><bold>218</bold></td>
+<td valign="top" align="center"><bold>1.00</bold></td>
+</tr>
+<tr>
+<td valign="top" align="left" rowspan="4">URL</td>
+<td valign="top" align="left">comments.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="center">0.00</td>
+</tr>
+<tr>
+<td valign="top" align="left">messages.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">267</td>
+<td valign="top" align="center">0.96</td>
+</tr>
+<tr>
+<td valign="top" align="left">profile.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="center">0.04</td>
+</tr>
+<tr>
+<td valign="top" align="right"><bold>Total</bold></td>
+<td valign="top" align="char" char="."><bold>30</bold></td>
+<td valign="top" align="char" char="."><bold>278</bold></td>
+<td valign="top" align="center"><bold>1.00</bold></td>
+</tr>
+<tr>
+<td valign="top" align="left" rowspan="4">Phone</td>
+<td valign="top" align="left">comments.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">29</td>
+<td valign="top" align="center">0.16</td>
+</tr>
+<tr>
+<td valign="top" align="left">media.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">9</td>
+<td valign="top" align="center">0.05</td>
+</tr>
+<tr>
+<td valign="top" align="left">messages.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">140</td>
+<td valign="top" align="center">0.79</td>
+</tr>
+<tr>
+<td valign="top" align="right"><bold>Total</bold></td>
+<td valign="top" align="char" char="."><bold>30</bold></td>
+<td valign="top" align="char" char="."><bold>178</bold></td>
+<td valign="top" align="center"><bold>1.00</bold></td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+<p>A second improvement has been made after further inspecting the relatively large amount of false positives in the ‘seen_content.json’ file. Based on this, the list of labels that should be exempted from hashing has been extended.</p>
+<p>Third, based on a more thorough inspection of the type of usernames that were not detected by the algorithm, the username format has been adjusted in such a way that usernames are detected as such when they contain at least three characters. The minimum limit in the previous version of the code was six characters.</p>
+<p>After further inspecting the false positive first names, the names ‘Van’, ‘Door’ and ‘Can’ were removed from the list with the <inline-formula><mml:math id="math005">
+<mml:mn>10</mml:mn>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mn>000</mml:mn></mml:math></inline-formula> most frequently used first names because they also represent words commonly used in free text, resulting in a lot of FPs.</p>
+<p>At last, the hash function for usernames became case insensitive, as Instagram does not distinguish between lower cases and upper cases in usernames. Initially, the algorithm generated a different hash as an uppercase was used somewhere in the username compared to when the same username was used without an uppercase.</p>
+</sec>
+<sec id="x1-23000-6.3">
+<label>6.3.</label>
+<title>Final results</title>
+<p>The adjusted algorithm was applied to the annotated validation corpus and the de-identification performance on textual was again evaluated. The adjusted algorithm produces fewer false negatives regarding names, phone numbers and URLs (Table <xref rid="x1-23001-7">7</xref>). Regarding usernames, both the number of false negatives and false positives decreased substantively.</p>
+<table-wrap id="x1-23001-7">
+<label>Table 7</label>
+<caption>
+<p>Results in terms of TP, FP, FN, recall, precision and F1 after improvements to the script have been made</p>
+</caption>
+<table frame="hsides" rules="groups">
+<thead>
+<tr>
+<td valign="top" align="left"/>
+<td valign="top" align="center">File</td>
+<td valign="top" align="center">Total</td>
+<td valign="top" align="center">TP</td>
+<td valign="top" align="center">FN</td>
+<td valign="top" align="center">FP</td>
+<td valign="top" align="center">Recall</td>
+<td valign="top" align="center">Precision</td>
+<td valign="top" align="center">F1</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top" align="left" rowspan="3">DDP_id</td>
+<td valign="top" align="left">messages.json</td>
+<td valign="top" align="char" char=".">294</td>
+<td valign="top" align="char" char=".">294</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+</tr>
+<tr>
+<td valign="top" align="left">profile.json</td>
+<td valign="top" align="char" char=".">18</td>
+<td valign="top" align="char" char=".">18</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+</tr>
+<tr>
+<td valign="top" align="left">total</td>
+<td valign="top" align="char" char=".">312</td>
+<td valign="top" align="char" char=".">312</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+</tr>
+<tr>
+<td valign="top" align="left" rowspan="5">E-mail</td>
+<td valign="top" align="left">comments.json</td>
+<td valign="top" align="char" char=".">28</td>
+<td valign="top" align="char" char=".">28</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+</tr>
+<tr>
+<td valign="top" align="left">media.json</td>
+<td valign="top" align="char" char=".">28</td>
+<td valign="top" align="char" char=".">28</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+</tr>
+<tr>
+<td valign="top" align="left">messages.json</td>
+<td valign="top" align="char" char=".">152</td>
+<td valign="top" align="char" char=".">152</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+</tr>
+<tr>
+<td valign="top" align="left">profile.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+</tr>
+<tr>
+<td valign="top" align="left">total</td>
+<td valign="top" align="char" char=".">218</td>
+<td valign="top" align="char" char=".">218</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+</tr>
+<tr>
+<td valign="top" align="left" rowspan="4">Name</td>
+<td valign="top" align="left">comments.json</td>
+<td valign="top" align="char" char=".">105</td>
+<td valign="top" align="char" char=".">98</td>
+<td valign="top" align="char" char=".">7</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0.9333</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">0.9654</td>
+</tr>
+<tr>
+<td valign="top" align="left">media.json</td>
+<td valign="top" align="char" char=".">54</td>
+<td valign="top" align="char" char=".">45</td>
+<td valign="top" align="char" char=".">9</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0.8333</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">0.9042</td>
+</tr>
+<tr>
+<td valign="top" align="left">messages.json</td>
+<td valign="top" align="char" char=".">421</td>
+<td valign="top" align="char" char=".">385</td>
+<td valign="top" align="char" char=".">36</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0.9145</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">0.9509</td>
+</tr>
+<tr>
+<td valign="top" align="left">total</td>
+<td valign="top" align="char" char=".">580</td>
+<td valign="top" align="char" char=".">528</td>
+<td valign="top" align="char" char=".">52</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0.9103</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">0.9519</td>
+</tr>
+<tr>
+<td valign="top" align="left" rowspan="4">Phone</td>
+<td valign="top" align="left">comments.json</td>
+<td valign="top" align="char" char=".">29</td>
+<td valign="top" align="char" char=".">29</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+</tr>
+<tr>
+<td valign="top" align="left">media.json</td>
+<td valign="top" align="char" char=".">9</td>
+<td valign="top" align="char" char=".">9</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+</tr>
+<tr>
+<td valign="top" align="left">messages.json</td>
+<td valign="top" align="char" char=".">139</td>
+<td valign="top" align="char" char=".">138</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">24</td>
+<td valign="top" align="char" char=".">0.9928</td>
+<td valign="top" align="char" char=".">0.8519</td>
+<td valign="top" align="char" char=".">0.9169</td>
+</tr>
+<tr>
+<td valign="top" align="left">total</td>
+<td valign="top" align="char" char=".">177</td>
+<td valign="top" align="char" char=".">176</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">24</td>
+<td valign="top" align="char" char=".">0.9943</td>
+<td valign="top" align="char" char=".">0.88</td>
+<td valign="top" align="char" char=".">0.9337</td>
+</tr>
+<tr>
+<td valign="top" align="left" rowspan="4">URL</td>
+<td valign="top" align="left">comments.json</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+</tr>
+<tr>
+<td valign="top" align="left">messages.json</td>
+<td valign="top" align="char" char=".">267</td>
+<td valign="top" align="char" char=".">267</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+</tr>
+<tr>
+<td valign="top" align="left">profile.json</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">10</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+</tr>
+<tr>
+<td valign="top" align="left">total</td>
+<td valign="top" align="char" char=".">278</td>
+<td valign="top" align="char" char=".">278</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+</tr>
+<tr>
+<td valign="top" align="left" rowspan="12">Username</td>
+<td valign="top" align="left">comments.json</td>
+<td valign="top" align="char" char=".">261</td>
+<td valign="top" align="char" char=".">258</td>
+<td valign="top" align="char" char=".">3</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0.9885</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">0.9940</td>
+</tr>
+<tr>
+<td valign="top" align="left">connections.json</td>
+<td valign="top" align="char" char=".">1,222</td>
+<td valign="top" align="char" char=".">1,219</td>
+<td valign="top" align="char" char=".">3</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0.9975</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">0.9988</td>
+</tr>
+<tr>
+<td valign="top" align="left">likes.json</td>
+<td valign="top" align="char" char=".">883</td>
+<td valign="top" align="char" char=".">881</td>
+<td valign="top" align="char" char=".">2</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0.9977</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">0.9989</td>
+</tr>
+<tr>
+<td valign="top" align="left">media.json</td>
+<td valign="top" align="char" char=".">43</td>
+<td valign="top" align="char" char=".">42</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0.9767</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">0.9881</td>
+</tr>
+<tr>
+<td valign="top" align="left">messages.json</td>
+<td valign="top" align="char" char=".">2,659</td>
+<td valign="top" align="char" char=".">2,658</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">2</td>
+<td valign="top" align="char" char=".">0.9846</td>
+<td valign="top" align="char" char=".">0.9868</td>
+<td valign="top" align="char" char=".">0.9847</td>
+</tr>
+<tr>
+<td valign="top" align="left">profile.json</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+</tr>
+<tr>
+<td valign="top" align="left">saved.json</td>
+<td valign="top" align="char" char=".">6</td>
+<td valign="top" align="char" char=".">6</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+</tr>
+<tr>
+<td valign="top" align="left">searches.json</td>
+<td valign="top" align="char" char=".">314</td>
+<td valign="top" align="char" char=".">313</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0.9968</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">0.9984</td>
+</tr>
+<tr>
+<td valign="top" align="left">seen_content.json</td>
+<td valign="top" align="char" char=".">3,143</td>
+<td valign="top" align="char" char=".">3,137</td>
+<td valign="top" align="char" char=".">6</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0.9981</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">0.9990</td>
+</tr>
+<tr>
+<td valign="top" align="left">shopping.json</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+</tr>
+<tr>
+<td valign="top" align="left">stories_activities.json</td>
+<td valign="top" align="char" char=".">35</td>
+<td valign="top" align="char" char=".">35</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+<td valign="top" align="char" char=".">1</td>
+</tr>
+<tr>
+<td valign="top" align="left">total</td>
+<td valign="top" align="char" char=".">8,568</td>
+<td valign="top" align="char" char=".">8,551</td>
+<td valign="top" align="char" char=".">17</td>
+<td valign="top" align="char" char=".">3</td>
+<td valign="top" align="char" char=".">0.9932</td>
+<td valign="top" align="char" char=".">0.9985</td>
+<td valign="top" align="char" char=".">0.9952</td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+</sec>
+</sec>
+<sec id="x1-24000-7">
+<label>7.</label>
+<title>Limitations and future work</title>
+<p>The evaluation results show that the developed algorithm is well-suited to de-identify usernames, e-mail addresses and phone numbers in both structured and unstructured text files. In addition, the algorithm appropriately de-identifies faces on .jpg files. Appropriate de-identification of first names appears more challenging, particularly because some first names are also used as words in free text and vice versa. However, when applying the algorithm, researchers can decide if their focus is on precision or on recall and take measures to accommodate this. Furthermore, de-identifying faces on .mp4 files was more difficult compared to .jpg files. This reduced performance can be explained by the fact that in moving image different parts of faces can be visible at different moments, which provide sufficient information to identify a face when combined. Another reason can be that Instagram provides so-called ‘filters’, which also make it more difficult for the software to detect a face for de-identification.</p>
+<p>In terms of generalizability of the developed algorithm, an important first discussion point is the fact that the algorithm has been developed and tested using Instagram DDPs only. As we illustrate in Table <xref rid="x1-2001-1">1</xref>, the Instagram DDP contains a set of specific features that can be found in DDPs of several other data controllers. Our de-identification approach is designed for these features and therefore we consider it plausible that it can also be applied to DDPs of other data controllers. In general, we think that with small adjustments to the algorithm, high performance levels can be reached relatively straightforwardly when applying the algorithm to DDPs of other data controllers. Such adjustments to the algorithm can be further investigated in future research.</p>
+<p>A second point for discussion in terms of generalizability is the fact that data controllers such as social media platforms constantly update their features and develop new ones. Although our algorithm is able to deal with variance in structure and content of DDPs, we envision that small updates may be required when being used on later versions of Instagram DDPs. Third, the de-identification showed good performance on a data-set that was diverse, but limited in size and therefore it is less representative. The algorithm has also been applied in practice to a set of 104 Instagram DDPs as part of the previously described Project AWeSome [<xref ref-type="bibr" rid="ref005">5</xref>]. Since our method is designed for recognizing text patterns that are specific to DDPs rather than language, it performed well on both English and Dutch text. We believe our approach can easily be applied to DDPs in other languages, which only requires adding a list of common names and possibly adjusting some labels.</p>
+<p>Besides generalizability in terms of applications to other data types, the particular research goal should also be considered. For example, if a researcher is interested in the emotions that can be detected on the faces of images in the DDP. This is currently not possible because faces are blurred. In this situation, the researcher can for example replace the blurring algorithm with an algorithm that replaces a face with a deepfake of that face [<xref ref-type="bibr" rid="ref016">16</xref>]. Alternatively, if a researcher is interest in the type of accounts that are followed and liked by the research participant, it is not desirable to de-identify all usernames in the DDP. In a third example, if a researcher is interested in the text that is written on the images and videos posted on Instagram, the currently implemented text detection algorithm should be further refined. At this moment, the algorithm does not distinguish between usernames and other types of information written in text and blurs it all. In a last example, a researcher can also be interested in the sound that accompanies videos. In the current version of the algorithm the sound is completely removed.</p>
+<p>A last point of discussion considers the safety standards that are currently adhered. We have clearly stated that the algorithm aims to prepare the DDPs in such a way that they can be processed as any other type of sensitive research data, supplemented with other measures such as using shielded (cloud) environments. If researchers want to share data more publicly, not all aspects of the current de-identification algorithm provide sufficient safety. For example, the currently used blurring algorithm can be prone to re-identification [<xref ref-type="bibr" rid="ref020">20</xref>].</p>
+</sec>
+<sec id="x1-25000-8">
+<label>8.</label>
+<title>Conclusion</title>
+<p>Data Download Packages (DDPs) contain all data collected by public and private entities during the course of citizens’ digital life. Although they form a treasure trove for social scientists, they contain data that can be deeply private. The privacy of research participants should be protected while they let their DDPs be used for scientific research, as is the case for all type of sensitive data collected for research. Therefore, we first of all provided an overview of the structure and content of DDPs, both in general and for Instagram in particular, which can serve as a valuable reference for researchers interested using DDPs for future research. For them, our generated DDPs are publicly available. In addition, we developed the first algorithm that is able to de-identify data with DDP structure. Furthermore, we evaluated the performance of this algorithm, which appeared to be of very high level. At last, we provide the algorithm, the validation corpus and the evaluation code open source. Thanks to the GDPR, researchers have the opportunity to collect DDPs with consent from research participants. Now, we have developed an algorithm that also allows researchers to process this data in such a way that is in line with that same GDPR.</p>
+</sec>
+<sec id="x1-26000-x">
+<title>Supplementary material</title>
+<p>The de-identification algorithm is available at <ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.5281/zenodo.5211335">10.5281/zenodo.5211335</ext-link>. The validation set containing 11 Instagram DDPs is available at <ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.5281/zenodo.4472606">10.5281/zenodo.4472606</ext-link>.</p>
+</sec>
+</body>
+<back>
+<ack>
+<title>Acknowledgements</title>
+<p>The authors would like to thank the researchers from the Utrecht University Human Data Science Group, the Utrecht University Research Engineers and Project AWeSome for their input and comments on earlier versions of this manuscript and for their participation in the generation of the validation corpus. In addition, the authors would like to thank the reviewers for their useful comments.</p></ack>
+<ref-list>
+<title>References</title>
+<ref id="ref001">
+<label>[1]</label><mixed-citation publication-type="other">Aticle 29 Data protection working party, Opinion 05/2014 on anonymisation techniques, European Commission, 2014, 1–37, <uri>https://ec.europa.eu/justice/article-29/documentation/opinion-recommendation/files/2014/wp216_en.pdf</uri>.</mixed-citation>
+</ref>
+<ref id="ref002">
+<label>[2]</label><mixed-citation publication-type="chapter"><string-name><given-names>L.</given-names> <surname>Backstrom</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Dwork</surname></string-name> and <string-name><given-names>J.</given-names> <surname>Kleinberg</surname></string-name>, <chapter-title>Wherefore art thou R3579X? Anonymized social networks, hidden patterns, and structural steganography</chapter-title>, in: <source>Proceedings of the 16th International Conference on World Wide Web</source>, <year>2007</year>, pp. <fpage>181</fpage>–<lpage>190</lpage>. doi:<pub-id pub-id-type="doi">10.1145/1242572.1242598</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref003">
+<label>[3]</label><mixed-citation publication-type="journal"><string-name><given-names>G.</given-names> <surname>Beigi</surname></string-name> and <string-name><given-names>H.</given-names> <surname>Liu</surname></string-name>, <article-title>A survey on privacy in social media</article-title>, <source>ACM/IMS Transactions on Data Science</source>, <volume>1</volume> (<year>2020</year>), <fpage>1</fpage>–<lpage>38</lpage>. <comment>ISSN 2691-1922. ISBN 0001417126</comment>. doi:<pub-id pub-id-type="doi">10.1145/3343038</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref004">
+<label>[4]</label><mixed-citation publication-type="chapter"><string-name><given-names>G.</given-names> <surname>Beigi</surname></string-name>, <string-name><given-names>K.</given-names> <surname>Shu</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Guo</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Wang</surname></string-name> and <string-name><given-names>H.</given-names> <surname>Liu</surname></string-name>, <chapter-title>Privacy preserving text representation learning</chapter-title>, in: <source>Proceedings of the 30th ACM Conference on Hypertext and Social Media</source>, <year>2019</year>, pp. <fpage>275</fpage>–<lpage>276</lpage>, <uri>https://dl.acm.org/doi/pdf/10.1145/3342220.3344925</uri>.</mixed-citation>
+</ref>
+<ref id="ref005">
+<label>[5]</label><mixed-citation publication-type="journal"><string-name><given-names>I.</given-names> <surname>Beyens</surname></string-name>, <string-name><given-names>J.L.</given-names> <surname>Pouwels</surname></string-name>, <string-name><given-names>I.I.</given-names> <surname>van Driel</surname></string-name>, <string-name><given-names>L.</given-names> <surname>Keijsers</surname></string-name> and <string-name><given-names>P.M.</given-names> <surname>Valkenburg</surname></string-name>, <article-title>The effect of social media on well-being differs from adolescent to adolescent</article-title>, <source>Scientific Reports</source> <volume>10</volume>(<issue>1</issue>) (<year>2020</year>), <fpage>1</fpage>–<lpage>11</lpage>. doi:<pub-id pub-id-type="doi">10.1038/s41598-019-56847-4</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref006">
+<label>[6]</label><mixed-citation publication-type="other"><string-name><given-names>L.</given-names> <surname>Boeschoten</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Ausloos</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Moeller</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Araujo</surname></string-name> and <string-name><given-names>D.L.</given-names> <surname>Oberski</surname></string-name>, Digital trace data collection through data donation, 2020, arXiv preprint <pub-id pub-id-type="arxiv">arXiv:2011.09851</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref007">
+<label>[7]</label><mixed-citation publication-type="other"><string-name><given-names>G.</given-names> <surname>Bradski</surname></string-name>, The OpenCV library, <italic>Dr. Dobb’s Journal of Software Tools</italic> (2000), <uri>https://opencv.org/</uri>.</mixed-citation>
+</ref>
+<ref id="ref008">
+<label>[8]</label><mixed-citation publication-type="chapter"><string-name><given-names>G.</given-names> <surname>Coppersmith</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Dredze</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Harman</surname></string-name>, <string-name><given-names>K.</given-names> <surname>Hollingshead</surname></string-name> and <string-name><given-names>M.</given-names> <surname>Mitchell</surname></string-name>, <chapter-title>CLPsych 2015 shared task: Depression and PTSD on Twitter</chapter-title>, in: <source>Proceedings of the 2nd Workshop on Computational Linguistics and Clinical Psychology: From Linguistic Signal to Clinical Reality</source>, <year>2015</year>, pp. <fpage>31</fpage>–<lpage>39</lpage>. doi:<pub-id pub-id-type="doi">10.3115/v1/W15-1204</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref009">
+<label>[9]</label><mixed-citation publication-type="other"><string-name><given-names>R.</given-names> <surname>Dorn</surname></string-name>, <string-name><given-names>A.L.</given-names> <surname>Nobles</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Rouhizadeh</surname></string-name> and <string-name><given-names>M.</given-names> <surname>Dredze</surname></string-name>, Examining the feasibility of off-the-shelf algorithms for masking directly identifiable information in social media data <bold>1996</bold>, 2020, <uri>http://arxiv.org/abs/2011.08324</uri>.</mixed-citation>
+</ref>
+<ref id="ref010">
+<label>[10]</label><mixed-citation publication-type="journal"><string-name><given-names>K.</given-names> <surname>El Emam</surname></string-name> and <string-name><given-names>F.K.</given-names> <surname>Dankar</surname></string-name>, <article-title>Protecting privacy using k-anonymity</article-title>, <source>Journal of the American Medical Informatics Association</source> <volume>15</volume>(<issue>5</issue>) (<year>2008</year>), <fpage>627</fpage>–<lpage>637</lpage>. doi:<pub-id pub-id-type="doi">10.1197/jamia.M2716</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref011">
+<label>[11]</label><mixed-citation publication-type="other"><string-name><given-names>T.</given-names> <surname>Esler</surname></string-name>, facenet pytorch, 2019. <uri>https://www.kaggle.com/timesler/facenet-pytorch</uri>. doi:<pub-id pub-id-type="doi">10.34740/KAGGLE/DSV/845275</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref012">
+<label>[12]</label><mixed-citation publication-type="other"><collab>G.D.P. Regulation</collab>, <article-title>Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46</article-title>, <source>Official Journal of the European Union (OJ)</source> <volume>59</volume>(<comment>1–88</comment>) (<year>2016</year>), <elocation-id>294</elocation-id>. <comment><uri>https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L:2016:119:FULL&amp;from=EN</uri></comment>.</mixed-citation>
+</ref>
+<ref id="ref013">
+<label>[13]</label><mixed-citation publication-type="other"><string-name><given-names>P.M.</given-names> <surname>Heider</surname></string-name>, <string-name><given-names>J.S.</given-names> <surname>Obeid</surname></string-name> and <string-name><given-names>S.M.</given-names> <surname>Meystre</surname></string-name>, <article-title>A comparative analysis of speed and accuracy for three off-the-shelf de-identification tools</article-title>, <source>AMIA Summits on Translational Science Proceedings</source> <volume>2020</volume> (<year>2020</year>), <elocation-id>241</elocation-id>. <comment><ext-link ext-link-type="uri" xlink:href="https://www.ncbi.nlm.nih.gov/pubmed/32477643">PMCID: PMC7233098</ext-link></comment>.</mixed-citation>
+</ref>
+<ref id="ref014">
+<label>[14]</label><mixed-citation publication-type="other"><string-name><given-names>A.</given-names> <surname>Hundepool</surname></string-name> and <string-name><given-names>P.-P.</given-names> <surname>De Wolf</surname></string-name>, Statistical discosure control, <italic>Method Series</italic> (2012), 1–49. <uri>https://www.cbs.nl/en-gb/our-services/methods/statistical-methods/output/output/statistical-disclosure-control</uri>. doi:<pub-id pub-id-type="doi">10.1002/9781118348239</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref015">
+<label>[15]</label><mixed-citation publication-type="journal"><string-name><given-names>G.</given-names> <surname>King</surname></string-name>, <article-title>Ensuring the data-rich future of the social sciences</article-title>, <source>Science</source> <volume>331</volume>(<issue>6018</issue>) (<year>2011</year>), <fpage>719</fpage>–<lpage>721</lpage>. doi:<pub-id pub-id-type="doi">10.1126/science.1197872</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref016">
+<label>[16]</label><mixed-citation publication-type="other"><string-name><given-names>P.</given-names> <surname>Korshunov</surname></string-name> and <string-name><given-names>S.</given-names> <surname>Marcel</surname></string-name>, Deepfakes: A new threat to face recognition? assessment and detection, 2018, arXiv preprint <pub-id pub-id-type="arxiv">arXiv:1812.08685</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref017">
+<label>[17]</label><mixed-citation publication-type="journal"><string-name><given-names>C.A.</given-names> <surname>Kushida</surname></string-name>, <string-name><given-names>D.A.</given-names> <surname>Nichols</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Jadrnicek</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Miller</surname></string-name>, <string-name><given-names>J.K.</given-names> <surname>Walsh</surname></string-name> and <string-name><given-names>K.</given-names> <surname>Griffin</surname></string-name>, <article-title>Strategies for de-identification and anonymization of electronic health record data for use in multicenter research studies</article-title>, <source>Medical Care</source> <volume>50</volume>(<comment>Suppl</comment>) (<year>2012</year>), <fpage>82</fpage>. doi:<pub-id pub-id-type="doi">10.1097/MLR.0b013e3182585355</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref018">
+<label>[18]</label><mixed-citation publication-type="other"><string-name><given-names>L.</given-names> <surname>Liu</surname></string-name>, <string-name><given-names>O.</given-names> <surname>Perez-Concha</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Nguyen</surname></string-name>, <string-name><given-names>V.</given-names> <surname>Bennett</surname></string-name> and <string-name><given-names>L.</given-names> <surname>Jorm</surname></string-name>, De-identifying hospital discharge summaries: An end-to-end framework using ensemble of de-identifiers, 2020, arXiv preprint <pub-id pub-id-type="arxiv">arXiv:2101.00146</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref019">
+<label>[19]</label><mixed-citation publication-type="chapter"><string-name><given-names>H.</given-names> <surname>Mao</surname></string-name>, <string-name><given-names>X.</given-names> <surname>Shuai</surname></string-name> and <string-name><given-names>A.</given-names> <surname>Kapadia</surname></string-name>, <chapter-title>Loose tweets: An analysis of privacy leaks on Twitter</chapter-title>, in: <source>Proceedings of the 10th Annual ACM Workshop on Privacy in the Electronic Society</source>, <year>2011</year>, pp. <fpage>1</fpage>–<lpage>12</lpage>, <uri>https://dl.acm.org/doi/pdf/10.1145/2046556.2046558</uri>.</mixed-citation>
+</ref>
+<ref id="ref020">
+<label>[20]</label><mixed-citation publication-type="other"><string-name><given-names>R.</given-names> <surname>McPherson</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Shokri</surname></string-name> and <string-name><given-names>V.</given-names> <surname>Shmatikov</surname></string-name>, Defeating image obfuscation with deep learning, 2016, arXiv preprint <pub-id pub-id-type="arxiv">arXiv:1609.00408</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref021">
+<label>[21]</label><mixed-citation publication-type="journal"><string-name><given-names>V.</given-names> <surname>Menger</surname></string-name>, <string-name><given-names>F.</given-names> <surname>Scheepers</surname></string-name>, <string-name><given-names>L.M.</given-names> <surname>van Wijk</surname></string-name> and <string-name><given-names>M.</given-names> <surname>Spruit</surname></string-name>, <article-title>DEDUCE: A pattern matching method for automatic de-identification of Dutch medical text</article-title>, <source>Telematics and Informatics</source> <volume>35</volume>(<issue>4</issue>) (<year>2018</year>), <fpage>727</fpage>–<lpage>736</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.tele.2017.08.002</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref022">
+<label>[22]</label><mixed-citation publication-type="other">Microsoft Azure, Microsoft Azure cognitive services, 2021. <uri>https://azure.microsoft.com/nl-nl/services/cognitive-services/face/</uri>.</mixed-citation>
+</ref>
+<ref id="ref023">
+<label>[23]</label><mixed-citation publication-type="chapter"><string-name><given-names>A.</given-names> <surname>Narayanan</surname></string-name> and <string-name><given-names>V.</given-names> <surname>Shmatikov</surname></string-name>, <chapter-title>Robust de-anonymization of large sparse datasets</chapter-title>, in: <source>2008 IEEE Symposium on Security and Privacy (sp 2008)</source>, <publisher-name>IEEE</publisher-name>, <year>2008</year>, pp. <fpage>111</fpage>–<lpage>125</lpage>. doi:<pub-id pub-id-type="doi">10.1109/SP.2008.33</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref024">
+<label>[24]</label><mixed-citation publication-type="journal"><string-name><given-names>R.</given-names> <surname>Nosowsky</surname></string-name> and <string-name><given-names>T.J.</given-names> <surname>Giordano</surname></string-name>, <article-title>The health insurance portability and accountability act of 1996 (HIPAA) privacy rule: Implications for clinical research</article-title>, <source>Annu. Rev. Med.</source> <volume>57</volume> (<year>2006</year>), <fpage>575</fpage>–<lpage>590</lpage>. doi:<pub-id pub-id-type="doi">10.1146/annurev.med.57.121304.131257</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref025">
+<label>[25]</label><mixed-citation publication-type="other">OpenAIRE, amnesia, <uri>https://amnesia.openaire.eu/index.html</uri>.</mixed-citation>
+</ref>
+<ref id="ref026">
+<label>[26]</label><mixed-citation publication-type="journal"><string-name><given-names>F.</given-names> <surname>Pedregosa</surname></string-name>, <string-name><given-names>G.</given-names> <surname>Varoquaux</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Gramfort</surname></string-name>, <string-name><given-names>V.</given-names> <surname>Michel</surname></string-name>, <string-name><given-names>B.</given-names> <surname>Thirion</surname></string-name>, <string-name><given-names>O.</given-names> <surname>Grisel</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Blondel</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Prettenhofer</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Weiss</surname></string-name>, <string-name><given-names>V.</given-names> <surname>Dubourg</surname></string-name> <etal>et al.</etal>, <article-title>Scikit-learn: Machine learning in Python</article-title>, <source>the Journal of Machine Learning Research</source> <volume>12</volume> (<year>2011</year>), <fpage>2825</fpage>–<lpage>2830</lpage>, <comment><uri>https://www.jmlr.org/papers/volume12/pedregosa11a/pedregosa11a.pdf</uri></comment>.</mixed-citation>
+</ref>
+<ref id="ref027">
+<label>[27]</label><mixed-citation publication-type="chapter"><string-name><given-names>F.</given-names> <surname>Prasser</surname></string-name>, <string-name><given-names>F.</given-names> <surname>Kohlmayer</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Lautenschläger</surname></string-name> and <string-name><given-names>K.A.</given-names> <surname>Kuhn</surname></string-name>, <chapter-title>Arx-a comprehensive tool for anonymizing biomedical data</chapter-title>, in: <source>AMIA Annual Symposium Proceedings</source>, Vol. <volume>2014</volume>, <publisher-name>American Medical Informatics Association</publisher-name>, <year>2014</year>, p. <fpage>984</fpage>, <uri>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4419984/</uri>.</mixed-citation>
+</ref>
+<ref id="ref028">
+<label>[28]</label><mixed-citation publication-type="journal"><string-name><given-names>S.</given-names> <surname>Ribaric</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Ariyaeeinia</surname></string-name> and <string-name><given-names>N.</given-names> <surname>Pavesic</surname></string-name>, <article-title>De-identification for privacy protection in multimedia content: A survey</article-title>, <source>Signal Processing: Image Communication</source> <volume>47</volume> (<year>2016</year>), <fpage>131</fpage>–<lpage>151</lpage>, <uri>https://doi.org/10.1016/j.image.2016.05.020</uri>.</mixed-citation>
+</ref>
+<ref id="ref029">
+<label>[29]</label><mixed-citation publication-type="other"><string-name><given-names>J.</given-names> <surname>Simon</surname></string-name>, Amazon comprehend medical–natural language processing 24 for healthcare customers, Retrieved April 18 (2018), 2019. <uri>https://aws.amazon.com/comprehend/medical/</uri>.</mixed-citation>
+</ref>
+<ref id="ref030">
+<label>[30]</label><mixed-citation publication-type="journal"><string-name><given-names>L.</given-names> <surname>Sweeney</surname></string-name>, <article-title>k-anonymity: A model for protecting privacy</article-title>, <source>International Journal of Uncertainty, Fuzziness and Knowledge-Based Systems</source> <volume>10</volume>(<issue>5</issue>) (<year>2002</year>), <fpage>557</fpage>–<lpage>570</lpage>. doi:<pub-id pub-id-type="doi">10.1142/S0218488502001648</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref031">
+<label>[31]</label><mixed-citation publication-type="other"><string-name><given-names>M.</given-names> <surname>Templ</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Kowarik</surname></string-name> and <string-name><given-names>B.</given-names> <surname>Meindl</surname></string-name>, <article-title>Statistical disclosure control for micro-data using the R package sdcMicro</article-title>, <source>Journal of Statistical Software</source> <volume>67</volume>(<issue>4</issue>) (<year>2015</year>), <comment>ISSN 15487660</comment>. doi:<pub-id pub-id-type="doi">10.18637/jss.v067.i04</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref032">
+<label>[32]</label><mixed-citation publication-type="journal"><string-name><given-names>J.</given-names> <surname>Trienes</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Trieschnigg</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Seifert</surname></string-name> and <string-name><given-names>D.</given-names> <surname>Hiemstra</surname></string-name>, <article-title>Comparing rule-based, feature-based and deep neural methods for de-identification of Dutch medical records</article-title>, <source>CEUR Workshop Proceedings</source> <volume>2551</volume> (<year>2020</year>), <fpage>3</fpage>–<lpage>11</lpage>, <comment>ISSN 16130073</comment>, <uri>https://arxiv.org/pdf/2001.05714.pdf</uri>.</mixed-citation>
+</ref>
+<ref id="ref033">
+<label>[33]</label><mixed-citation publication-type="journal"><string-name><given-names>Ö.</given-names> <surname>Uzuner</surname></string-name>, <string-name><given-names>Y.</given-names> <surname>Luo</surname></string-name> and <string-name><given-names>P.</given-names> <surname>Szolovits</surname></string-name>, <article-title>Evaluating the state-of-the-art in automatic de-identification</article-title>, <source>Journal of the American Medical Informatics Association</source> <volume>14</volume>(<issue>5</issue>) (<year>2007</year>), <fpage>550</fpage>–<lpage>563</lpage>, <comment>ISSN 10675027</comment>. doi:<pub-id pub-id-type="doi">10.1197/jamia.M2444</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref034">
+<label>[34]</label><mixed-citation publication-type="other"><string-name><given-names>H.</given-names> <surname>van Kemenade</surname></string-name>, <string-name><surname>wiredfool</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Murray</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Clark</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Karpinsky</surname></string-name>, <string-name><surname>nulano</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Gohlke</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Dufresne</surname></string-name>, <string-name><given-names>B.</given-names> <surname>Crowell</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Schmidt</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Houghton</surname></string-name>, <string-name><given-names>K.</given-names> <surname>Kopachev</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Mani</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Landey</surname></string-name>, <string-name><surname>vashek</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Ware</surname></string-name>, <string-name><surname>Jason</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Caro</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Kossouho</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Lahd</surname></string-name>, <string-name><given-names>S.T.</given-names></string-name>, <string-name><given-names>A.</given-names> <surname>Lee</surname></string-name>, <string-name><given-names>E.W.</given-names> <surname>Brown</surname></string-name>, <string-name><given-names>O.</given-names> <surname>Tonnhofer</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Bonfill</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Rowlands</surname></string-name>, <string-name><given-names>F.</given-names> <surname>Al-Saidi</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Górny</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Korobov</surname></string-name> and <string-name><given-names>M.</given-names> <surname>Kurczewski</surname></string-name>, python-pillow/Pillow 8.0.0, Zenodo, 2020. doi:<pub-id pub-id-type="doi">10.5281/zenodo.4088798</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref035">
+<label>[35]</label><mixed-citation publication-type="other"><string-name><given-names>O.</given-names> <surname>Yadong</surname></string-name>, frozen east text detection, 2018, <uri>https://github.com/oyyd/frozen_east_text_detection.pb</uri>.</mixed-citation>
+</ref>
+<ref id="ref036">
+<label>[36]</label><mixed-citation publication-type="journal"><string-name><given-names>K.</given-names> <surname>Zhang</surname></string-name>, <string-name><given-names>Z.</given-names> <surname>Zhang</surname></string-name>, <string-name><given-names>Z.</given-names> <surname>Li</surname></string-name> and <string-name><given-names>Y.</given-names> <surname>Qiao</surname></string-name>, <article-title>Joint face detection and alignment using multi-task cascaded convolutional networks</article-title>, <source>IEEE Signal Processing Letters</source> <volume>23</volume>(<issue>10</issue>) (<year>2016</year>), <fpage>1499</fpage>–<lpage>1503</lpage>. doi:<pub-id pub-id-type="doi">10.1109/LSP.2016.2603342</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref037">
+<label>[37]</label><mixed-citation publication-type="chapter"><string-name><given-names>X.</given-names> <surname>Zhou</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Yao</surname></string-name>, <string-name><given-names>H.</given-names> <surname>Wen</surname></string-name>, <string-name><given-names>Y.</given-names> <surname>Wang</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Zhou</surname></string-name>, <string-name><given-names>W.</given-names> <surname>He</surname></string-name> and <string-name><given-names>J.</given-names> <surname>Liang</surname></string-name>, <chapter-title>EAST: An efficient and accurate scene text detector</chapter-title>, in: <source>2017 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)</source>, <year>2017</year>, pp. <fpage>2642</fpage>–<lpage>2651</lpage>. doi:<pub-id pub-id-type="doi">10.1109/CVPR.2017.283</pub-id>.</mixed-citation>
+</ref>
+</ref-list>
+</back>
+</article>

@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.0 20120330//EN" "JATS-journalpublishing1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="formalization-paper" dtd-version="1.0">
+<front>
+<journal-meta>
+<journal-id journal-id-type="publisher-id">DS</journal-id>
+<journal-title-group><journal-title>Data Science</journal-title></journal-title-group>
+<issn pub-type="epub">2451-8492</issn><issn pub-type="ppub">2451-8484</issn><issn-l>2451-8484</issn-l>
+<publisher>
+<publisher-name>IOS Press</publisher-name><publisher-loc>Nieuwe Hemweg 6B, 1013 BG Amsterdam, The Netherlands</publisher-loc>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">DS210051</article-id>
+<article-id pub-id-type="doi">10.3233/DS-210051</article-id>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Formalization Paper</subject></subj-group></article-categories>
+<title-group>
+<article-title>A formalization of one of the main claims of “Mutations in STX1B, encoding a presynaptic protein, cause fever-associated epilepsy syndromes” by Schubert et al. 2014<xref ref-type="fn" rid="thanks1"><sup>1</sup></xref></article-title>
+</title-group>
+<contrib-group content-type="Editor">
+<contrib contrib-type="editor">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-7114-6459</contrib-id>
+<name><surname>Bucur</surname><given-names>Cristina-Iulia</given-names></name>
+</contrib>
+</contrib-group>
+<contrib-group content-type="Review comments from">
+<contrib contrib-type="reviewer">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-1267-0234</contrib-id>
+<name><surname>Kuhn</surname><given-names>Tobias</given-names></name>
+</contrib>
+<contrib contrib-type="reviewer">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0001-9079-039X</contrib-id>
+<name><surname>de Boer</surname><given-names>Victor</given-names></name>
+</contrib>
+<contrib contrib-type="reviewer">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-7114-6459</contrib-id>
+<name><surname>Bucur</surname><given-names>Cristina-Iulia</given-names></name>
+</contrib>
+</contrib-group>
+<contrib-group>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0001-6501-0806</contrib-id>
+<name><surname>Grouès</surname><given-names>Valentin</given-names></name><email>valentin.groues@uni.lu</email><xref ref-type="aff" rid="affa">a</xref><xref ref-type="corresp" rid="cor2">*</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-7979-9921</contrib-id>
+<name><surname>Moreno</surname><given-names>Carlos Vega</given-names></name><email>carlos.vega@uni.lu</email><xref ref-type="aff" rid="affb">b</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-6532-5880</contrib-id>
+<name><surname>Satagopam</surname><given-names>Venkata Pardhasaradhi</given-names></name><email>venkata.satagopam@uni.lu</email><xref ref-type="aff" rid="affc">c</xref>
+</contrib>
+<aff id="affa"><label>a</label>Luxembourg Centre for Systems Biomedicine, <institution>Université du Luxembourg</institution>, <country>Luxemburg</country></aff>
+<aff id="affb"><label>b</label>Luxembourg Centre for Systems Biomedicine, <institution>Université du Luxembourg</institution>, <country>Luxemburg</country></aff>
+<aff id="affc"><label>c</label>Luxembourg Centre for Systems Biomedicine, <institution>Université du Luxembourg</institution>, <country>Luxemburg</country></aff>
+</contrib-group>
+<contrib-group content-type="guest-editors">
+<contrib contrib-type="guest-editor">
+<name><surname>Bucur</surname><given-names>Cristina-Iulia</given-names></name>
+</contrib>
+<contrib contrib-type="guest-editor">
+<name><surname>Kuhn</surname><given-names>Tobias</given-names></name>
+</contrib>
+</contrib-group>
+<author-notes>
+<fn id="thanks1"><label>1</label>
+<p>As RDF/nanopublication: <uri>http://purl.org/np/RAeRSya2qIYymsBxiqOZP_oaQpHXUVXiydKvPCFM-7DDQ</uri></p></fn><corresp id="cor2"><label>*</label>Corresponding author. E-mail: <email>valentin.groues@uni.lu</email>.</corresp>
+</author-notes>
+<pub-date date-type="preprint" publication-format="electronic"><day>28</day><month>2</month><year>2022</year></pub-date><pub-date date-type="pub" publication-format="electronic"><day>22</day><month>3</month><year>2022</year></pub-date><pub-date date-type="collection" publication-format="electronic"><year>2022</year></pub-date><volume>5</volume><issue>1</issue><issue-title>Semantic Publishing with Formalization Papers</issue-title><fpage>71</fpage><lpage>73</lpage><history><date date-type="received"><day>24</day><month>06</month><year>2021</year></date><date date-type="accepted"><day>17</day><month>11</month><year>2021</year></date></history>
+<permissions><copyright-statement>© 2022 – The authors. Published by IOS Press.</copyright-statement><copyright-year>2022</copyright-year>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/" license-type="open-access" xlink:type="simple">
+<license-p>This is an open access article distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/" xlink:type="simple">Creative Commons Attribution (CC BY 4.0) License</ext-link>, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions>
+<abstract>
+<p>Schubert et al. claimed in previous work that mutations in STX1B are associated with epilepsy. We present here a formalization of that claim, stating that all things of class “STX1B mutation” that are in the context of a thing of class “human” frequently have a relation of type “co-occurs with” to a thing of class “epilepsy” in the same context.</p>
+</abstract>
+<kwd-group>
+<label>Keywords</label>
+<kwd>Human</kwd>
+<kwd>STX1B mutation</kwd>
+<kwd>epilepsy</kwd>
+</kwd-group>
+</article-meta>
+</front>
+<body>
+<sec id="x1-1000-1">
+<label>1.</label>
+<title>Introduction</title>
+<p>Schubert et al. [<xref ref-type="bibr" rid="ref002">2</xref>] state that “Our results thus implicate STX1B and the presynaptic release machinery in fever-associated epilepsy syndromes.”. We present here a formalization of the main scientific claim from this quote by using a semantic template called the super-pattern [<xref ref-type="bibr" rid="ref001">1</xref>].</p>
+</sec>
+<sec id="x1-2000-2">
+<label>2.</label>
+<title>Formalization</title>
+<p>Our formalization looks as follows:</p>
+<table-wrap>
+<table>
+<tbody>
+<tr>
+<td valign="top" align="left">CONTEXT-CLASS (“in the context of all ...”):</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://www.wikidata.org/wiki/Q5">human</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left">SUBJECT-CLASS (“things of type ...”):</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAPVWYH0x-xyDa9PfBcGUFly3m1FNEO43KG9s0uH-y6yo#STX1B-mutation">STX1B mutation</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left">QUALIFIER:</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/frequentlyQualifier">frequently</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left">RELATION-TYPE (“have a relation of type...”):</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/coOccursWith">co-occurs with</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left">OBJECT-CLASS (“to things of type...”):</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://www.wikidata.org/wiki/Q41571">epilepsy</ext-link></td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+<p>In the context class we use the class “human” (Q5) from Wikidata. In the subject class, we use a new minted class “STX1B mutation” that is a subclass of “mutation” (Q42918) from Wikidata and is related to the class “STX1B” (Q18048867) from Wikidata. In the object class we use the class “epilepsy” (Q41571) from Wikidata.</p>
+</sec>
+<sec id="x1-3000-3">
+<label>3.</label>
+<title>RDF code</title>
+<p>This is our formalization as a nanopublication in TriG format:</p><preformat>
+<monospace>@prefix this: &lt;http://purl.org/np/RAeRSya2qIYymsBxiqOZP_oaQpHXUVXiydKvPCFM-7DDQ&gt; .</monospace>
+<monospace>@prefix sub: &lt;http://purl.org/np/RAeRSya2qIYymsBxiqOZP_oaQpHXUVXiydKvPCFM-7DDQ#&gt; .</monospace>
+<monospace>@prefix np: &lt;http://www.nanopub.org/nschema#&gt; .</monospace>
+<monospace>@prefix dct: &lt;http://purl.org/dc/terms/&gt; .</monospace>
+<monospace>@prefix nt: &lt;https://w3id.org/np/o/ntemplate/&gt; .</monospace>
+<monospace>@prefix npx: &lt;http://purl.org/nanopub/x/&gt; .</monospace>
+<monospace>@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .</monospace>
+<monospace>@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .</monospace>
+<monospace>@prefix orcid: &lt;https://orcid.org/&gt; .</monospace>
+<monospace>@prefix prov: &lt;http://www.w3.org/ns/prov#&gt; .</monospace>
+<monospace>@prefix sp: &lt;https://w3id.org/linkflows/superpattern/terms/&gt; .</monospace>
+
+<monospace>sub:Head {</monospace>
+<monospace>  this: np:hasAssertion sub:assertion ;</monospace>
+<monospace>    np:hasProvenance sub:provenance ;</monospace>
+<monospace>    np:hasPublicationInfo sub:pubinfo ;</monospace>
+<monospace>    a np:Nanopublication .</monospace>
+<monospace>}</monospace>
+<monospace>sub:assertion {</monospace>
+<monospace>  sub:spi a sp:SuperPatternInstance ;</monospace>
+<monospace>    rdfs:label "Mutations in STX1B are associated with epilepsy" ;</monospace>
+<monospace>    sp:hasContextClass &lt;http://www.wikidata.org/entity/Q5&gt; ;</monospace>
+<monospace>    sp:hasSubjectClass &lt;http://purl.org/np/RAPVWYH0x-xyDa9PfBcGUFly3m1FNEO43KG9s0uH-y6yo#STX1B-mutation&gt; ;</monospace>
+<monospace>    sp:hasQualifier sp:frequentlyQualifier ;</monospace>
+<monospace>    sp:hasRelation sp:cooccursWith ;</monospace>
+<monospace>    sp:hasObjectClass &lt;http://www.wikidata.org/entity/Q41571&gt; .</monospace>
+<monospace>}</monospace>
+<monospace>sub:provenance {</monospace>
+<monospace>  sub:activity a sp:FormalizationActivity ;</monospace>
+<monospace>    prov:used &lt;http://doi.org/10.1038/ng.3130&gt; , sub:quote ;</monospace>
+<monospace>    prov:wasAssociatedWith orcid:0000-0001-6501-0806 , orcid:0000-0002-6532-5880 , orcid:0000-0002-7979-9921 .</monospace>
+<monospace>  sub:assertion prov:wasGeneratedBy sub:activity .</monospace>
+<monospace>  sub:quote prov:value "Our results thus implicate STX1B and the presynaptic release machinery in fever-associated epilepsy</monospace>
+<monospace>  syndromes" ;</monospace>
+<monospace>    prov:wasQuotedFrom &lt;http://doi.org/10.1038/ng.3130&gt; .</monospace>
+<monospace>}</monospace>
+<monospace>sub:pubinfo {</monospace>
+<monospace>  sub:sig npx:hasAlgorithm "RSA" ;</monospace>
+<monospace>    npx:hasPublicKey</monospace>
+<monospace>"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCY36SLWPLee0SZGM108+7dyjGzKFYg9t09XuL3js13jO3CDzqAZygcrwbJsbLQMRHYvWf0Mkly1ePLgdb43NqEb</monospace>
+<monospace>XiDHC4o49nHjhi2bSWeRDJ4jFicvhpL1Sjv5N0oFU3wTA8KGN+rYvQ10xhZXcjuuiCMb6yInj6wJ2S+wI14fwIDAQAB" ;</monospace>
+<monospace>    npx:hasSignature</monospace>
+<monospace>"QF+C9lXmczrn9cJWuimwLG45Mpntk2CcRIWbeWmKvfE9gmQ6MPKa/x6AfNgVQRnPWppJdDoWepK6m/+m8tWY1WQsXn0KZ8sER+graEHQYuE70Mz9JzuBTyYu0vpWj</monospace>
+<monospace>5jteoCve5fyvFkhkYVjoRK9tV40GDW6zh+bHqH5tBwrc/0=" ;</monospace>
+<monospace>    npx:hasSignatureTarget this: .</monospace>
+<monospace>  this: dct:created "2021-10-29T10:35:33.912+02:00"^^xsd:dateTime ;</monospace>
+<monospace>    dct:creator orcid:0000-0001-6501-0806 ;</monospace>
+<monospace>    npx:introduces sub:spi ;</monospace>
+<monospace>    &lt;https://w3id.org/linkflows/reviews/isUpdateOf&gt; &lt;http://purl.org/np/RAGo62Hb_Bx1klF4pn1q1Ty40860e3A7Sz4hr2vojZ2wA&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromProvenanceTemplate &lt;http://purl.org/np/RAB_oy10D3XUP-zYlqGz7Uj58AsUXhEKeGqmRFg5LSgDM&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromPubinfoTemplate &lt;http://purl.org/np/RAA2MfqdBCzmz9yVWjKLXNbyfBNcwsMmOqcNUxkk1maIM&gt; ,</monospace>
+<monospace>&lt;http://purl.org/np/RAOGu9Lh0BD4tbIRB9RG6RGRA_ObDh75NTbIqaWgxxs8M&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromTemplate &lt;http://purl.org/np/RAv68imZrEjfcp2rnEg1hzoBqEVc0cQMtp9_1Za0BxNM4&gt; .</monospace>
+<monospace>}</monospace>
+
+</preformat>
+<p>The following nanopublications introduce the newly minted classes in TriG format.</p>
+<p>This is the class definition of “STX1B mutation”:</p><preformat><monospace>@prefix this: &lt;http://purl.org/np/RAPVWYH0x-xyDa9PfBcGUFly3m1FNEO43KG9s0uH-y6yo&gt; .</monospace>
+<monospace>@prefix sub: &lt;http://purl.org/np/RAPVWYH0x-xyDa9PfBcGUFly3m1FNEO43KG9s0uH-y6yo#&gt; .</monospace>
+<monospace>@prefix np: &lt;http://www.nanopub.org/nschema#&gt; .</monospace>
+<monospace>@prefix dct: &lt;http://purl.org/dc/terms/&gt; .</monospace>
+<monospace>@prefix nt: &lt;https://w3id.org/np/o/ntemplate/&gt; .</monospace>
+<monospace>@prefix npx: &lt;http://purl.org/nanopub/x/&gt; .</monospace>
+<monospace>@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .</monospace>
+<monospace>@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .</monospace>
+<monospace>@prefix orcid: &lt;https://orcid.org/&gt; .</monospace>
+<monospace>@prefix prov: &lt;http://www.w3.org/ns/prov#&gt; .</monospace>
+<monospace>@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .</monospace>
+
+<monospace>sub:Head {</monospace>
+<monospace>  this: np:hasAssertion sub:assertion ;</monospace>
+<monospace>    np:hasProvenance sub:provenance ;</monospace>
+<monospace>    np:hasPublicationInfo sub:pubinfo ;</monospace>
+<monospace>    a np:Nanopublication .</monospace>
+<monospace>}</monospace>
+<monospace>sub:assertion {</monospace>
+<monospace>  sub:STX1B-mutation a &lt;http://www.w3.org/2002/07/owl#Class&gt; ;</monospace>
+<monospace>    rdfs:label "STX1B mutation" ;</monospace>
+<monospace>    rdfs:subClassOf &lt;http://www.wikidata.org/entity/Q42918&gt; ;</monospace>
+<monospace>    skos:definition "mutation in STX1B" ;</monospace>
+<monospace>    skos:relatedMatch &lt;http://www.wikidata.org/entity/Q18048867&gt; .</monospace>
+<monospace>}</monospace>
+<monospace>sub:provenance {</monospace>
+<monospace>  sub:assertion prov:wasAttributedTo orcid:0000-0001-6501-0806 .</monospace>
+<monospace>}</monospace>
+<monospace>sub:pubinfo {</monospace>
+<monospace>  sub:sig npx:hasAlgorithm "RSA" ;</monospace>
+<monospace>    npx:hasPublicKey</monospace>
+<monospace>"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCY36SLWPLee0SZGM108+7dyjGzKFYg9t09XuL3js13jO3CDzqAZygcrwbJsbLQMRHYvWf0Mkly1ePLgdb43NqEb</monospace>
+<monospace>XiDHC4o49nHjhi2bSWeRDJ4jFicvhpL1Sjv5N0oFU3wTA8KGN+rYvQ10xhZXcjuuiCMb6yInj6wJ2S+wI14fwIDAQAB" ;</monospace>
+<monospace>    npx:hasSignature</monospace>
+<monospace>"EVu/+D116w+WZYRCxa5Q4AgDxW7pGuClv6tHouXYSGTCgGu9nZo2pjEqDBmiUyWY8iYyr4FMxGJz2E0bwMU9Ui5svH0EBZPiJQHT6tvfrSRYOP7txHN/LMaxn+IWR</monospace>
+<monospace>p4Ed1kN9/q5J+BUnnD7x6UghL2s/VlnpSWjVq/EJocnDbU=" ;</monospace>
+<monospace>    npx:hasSignatureTarget this: .</monospace>
+<monospace>  this: dct:created "2021-06-21T14:08:44.937+02:00"^^xsd:dateTime ;</monospace>
+<monospace>    dct:creator orcid:0000-0001-6501-0806 ;</monospace>
+<monospace>    npx:introduces sub:STX1B-mutation ;</monospace>
+<monospace>    nt:wasCreatedFromProvenanceTemplate &lt;http://purl.org/np/RANwQa4ICWS5SOjw7gp99nBpXBasapwtZF1fIM3H2gYTM&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromPubinfoTemplate &lt;http://purl.org/np/RAA2MfqdBCzmz9yVWjKLXNbyfBNcwsMmOqcNUxkk1maIM&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromTemplate &lt;http://purl.org/np/RAdpgRpigXtt8iPV9uOPf3wIT3qzOI8Sg2Q72CNV8g-Yo&gt; .</monospace>
+<monospace>}</monospace>
+</preformat>
+</sec>
+</body>
+<back>
+<ref-list>
+<title>References</title>
+<ref id="ref001">
+<label>[1]</label><mixed-citation publication-type="other"><string-name><given-names>C.I.</given-names> <surname>Bucur</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Kuhn</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Ceolin</surname></string-name> and <string-name><given-names>J.</given-names> <surname>van Ossenbruggen</surname></string-name>, <chapter-title>Expressing high-level scientific claims with formal semantics</chapter-title>, in: <source>Proceedings of the 11th Knowledge Capture Conference 2021</source>. doi:<pub-id pub-id-type="doi">10.1145/3460210.3493561</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref002">
+<label>[2]</label><mixed-citation publication-type="journal"><string-name><given-names>J.</given-names> <surname>Schubert</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Siekierska</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Langlois</surname></string-name> <etal>et al.</etal>, <article-title>Mutations in STX1B, encoding a presynaptic protein, cause fever-associated epilepsy syndromes</article-title>, <source>Nat Genet</source> <volume>46</volume> (<year>2014</year>), <fpage>1327</fpage>–<lpage>1332</lpage>. doi:<pub-id pub-id-type="doi">10.1038/ng.3130</pub-id>.</mixed-citation>
+</ref>
+</ref-list>
+</back>
+</article>

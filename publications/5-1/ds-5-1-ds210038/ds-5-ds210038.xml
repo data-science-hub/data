@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.0 20120330//EN" "JATS-journalpublishing1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="formalization-paper" dtd-version="1.0">
+<front>
+<journal-meta>
+<journal-id journal-id-type="publisher-id">DS</journal-id>
+<journal-title-group><journal-title>Data Science</journal-title></journal-title-group>
+<issn pub-type="epub">2451-8492</issn><issn pub-type="ppub">2451-8484</issn><issn-l>2451-8484</issn-l>
+<publisher>
+<publisher-name>IOS Press</publisher-name><publisher-loc>Nieuwe Hemweg 6B, 1013 BG Amsterdam, The Netherlands</publisher-loc>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">DS210038</article-id>
+<article-id pub-id-type="doi">10.3233/DS-210038</article-id>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Formalization Paper</subject></subj-group></article-categories>
+<title-group>
+<article-title>A formalization of one of the main claims of “FTO Obesity Variant Circuitry and Adipocyte Browning in Humans” by Claussnitzer et al. 2015<xref ref-type="fn" rid="thanks1"><sup>1</sup></xref></article-title>
+</title-group>
+<contrib-group content-type="Editor">
+<contrib contrib-type="editor">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-7114-6459</contrib-id>
+<name><surname>Bucur</surname><given-names>Cristina-Iulia</given-names></name>
+</contrib>
+</contrib-group>
+<contrib-group content-type="Review comments from">
+<contrib contrib-type="reviewer">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-8083-6048</contrib-id>
+<name><surname>Dimitrova</surname><given-names>Mariya</given-names></name>
+</contrib>
+<contrib contrib-type="reviewer">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-1267-0234</contrib-id>
+<name><surname>Kuhn</surname><given-names>Tobias</given-names></name>
+</contrib>
+<contrib contrib-type="reviewer">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-3357-9130</contrib-id>
+<name><surname>Ceolin</surname><given-names>Davide</given-names></name>
+</contrib>
+<contrib contrib-type="reviewer">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-7114-6459</contrib-id>
+<name><surname>Bucur</surname><given-names>Cristina-Iulia</given-names></name>
+</contrib>
+</contrib-group>
+<contrib-group>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0003-2432-4125</contrib-id>
+<name><surname>Joslin</surname><given-names>Amelia</given-names></name><email>ajoslin@mazetx.com</email><xref ref-type="aff" rid="affa"/><xref ref-type="corresp" rid="cor2">*</xref>
+</contrib>
+<aff id="affa"><institution>Maze Therapeutics</institution>, <country>USA</country></aff>
+</contrib-group>
+<contrib-group content-type="guest-editors">
+<contrib contrib-type="guest-editor">
+<name><surname>Bucur</surname><given-names>Cristina-Iulia</given-names></name>
+</contrib>
+<contrib contrib-type="guest-editor">
+<name><surname>Kuhn</surname><given-names>Tobias</given-names></name>
+</contrib>
+</contrib-group>
+<author-notes>
+<fn id="thanks1"><label>1</label>
+<p>As RDF/nanopublication: <uri>http://purl.org/np/RAxBBJ2WkonyQNlXfdCAOaCi64J_xqgVGeaLjVQow9M88</uri></p></fn><corresp id="cor2"><label>*</label>Corresponding author. E-mail: <email>ajoslin@mazetx.com</email>.</corresp>
+</author-notes>
+<pub-date date-type="preprint" publication-format="electronic"><day>28</day><month>2</month><year>2022</year></pub-date><pub-date date-type="pub" publication-format="electronic"><day>22</day><month>3</month><year>2022</year></pub-date><pub-date date-type="collection" publication-format="electronic"><year>2022</year></pub-date><volume>5</volume><issue>1</issue><issue-title>Semantic Publishing with Formalization Papers</issue-title><fpage>11</fpage><lpage>15</lpage><history><date date-type="received"><day>21</day><month>06</month><year>2021</year></date><date date-type="accepted"><day>12</day><month>11</month><year>2021</year></date></history>
+<permissions><copyright-statement>© 2022 – The authors. Published by IOS Press.</copyright-statement><copyright-year>2022</copyright-year>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/" license-type="open-access" xlink:type="simple">
+<license-p>This is an open access article distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/" xlink:type="simple">Creative Commons Attribution (CC BY 4.0) License</ext-link>, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions>
+<abstract>
+<p>Claussnitzer et al. claimed in previous work that a regulatory element within the first intron of FTO affects IRX3 and IRX5 expression during early adipogenesis. We present here a formalization of that claim, stating that all things of class “early human adipogenesis” that are in the context of a thing of class “regulatory element within the first intron of FTO” generally have a relation of type “affects” to a thing of class “expression of genes IRX3 and IRX5” in the same context.</p>
+</abstract>
+<kwd-group>
+<label>Keywords</label>
+<kwd>Early human adipogenesis</kwd>
+<kwd>regulatory element within the first intron of FTO</kwd>
+<kwd>expression of genes IRX3 and IRX5</kwd>
+</kwd-group>
+</article-meta>
+</front>
+<body>
+<sec id="x1-1000-1">
+<label>1.</label>
+<title>Introduction</title>
+<p>Claussnitzer et al. [<xref ref-type="bibr" rid="ref001">1</xref>] state that “The rs1421085 T-to-C single-nucleotide variant disrupts a conserved motif for the ARID5B repressor, which leads to derepression of a potent preadipocyte enhancer and a doubling of IRX3 and IRX5 expression during early adipocyte differentiation.”. We present here a formalization of the main scientific claim from this quote by using a semantic template called the super-pattern [<xref ref-type="bibr" rid="ref002">2</xref>].</p>
+</sec>
+<sec id="x1-2000-2">
+<label>2.</label>
+<title>Formalization</title>
+<p>Our formalization looks as follows:</p>
+<table-wrap>
+<table>
+<tbody>
+<tr>
+<td valign="top" align="left">CONTEXT-CLASS (“in the context of all ...”):</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAtsHwzNs36rGrLnoSbGrPD351Qw033Acoe4zmdXhsYlM#early-human-adipogenesis">early human adipogenesis</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left">SUBJECT-CLASS (“things of type ...”):</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAxLYvJ1JrRf2JAowYGbGJleQPmqtpXnXsIvse7GmLeT8#regulatory-element-within-the-first-intron-of-FTO">regulatory element within the first intron of FTO</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left">QUALIFIER:</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/generallyQualifierhttps://w3id.org/linkflows/superpattern/terms/generallyQualifier">generally</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left">RELATION-TYPE (“have a relation of type...”):</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/generallyQualifierhttps://w3id.org/linkflows/superpattern/terms/affects">affects</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left">OBJECT-CLASS (“to things of type...”):</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.org/np/RAwkXiTv7qCtqOYzlR6ozZRGLRtG6mlogrYdRQ1E4dRDg#expression-of-genes-IRX3-and-IRX5">expression of genes IRX3 and IRX5</ext-link></td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+<p>In the context class we use a new minted class “early human adipogenesis” that is a subclass of “adipogenesis” (Q2824461) from Wikidata. In the subject class, we use a new minted class “regulatory element within the first intron of FTO” that is related to the class “FTO” (Q14912501) and “intron” (Q207551) from Wikidata. In the object class we minted a new class “expression of genes IRX3 and IRX5” that is a subclass of “gene expression” (Q26972) from Wikidata and is related to the class “IRX5” (Q18035174) and “IRX3” (Q18046058) from Wikidata.</p>
+</sec>
+<sec id="x1-3000-3">
+<label>3.</label>
+<title>RDF Code</title>
+<p>This is our formalization as a nanopublication in TriG format:</p><preformat><monospace>@prefix this: &lt;http://purl.org/np/RAxBBJ2WkonyQNlXfdCAOaCi64J_xqgVGeaLjVQow9M88&gt; .</monospace>
+<monospace>@prefix sub: &lt;http://purl.org/np/RAxBBJ2WkonyQNlXfdCAOaCi64J_xqgVGeaLjVQow9M88#&gt; .</monospace>
+<monospace>@prefix np: &lt;http://www.nanopub.org/nschema#&gt; .</monospace>
+<monospace>@prefix dct: &lt;http://purl.org/dc/terms/&gt; .</monospace>
+<monospace>@prefix nt: &lt;https://w3id.org/np/o/ntemplate/&gt; .</monospace>
+<monospace>@prefix npx: &lt;http://purl.org/nanopub/x/&gt; .</monospace>
+<monospace>@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .</monospace>
+<monospace>@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .</monospace>
+<monospace>@prefix orcid: &lt;https://orcid.org/&gt; .</monospace>
+<monospace>@prefix prov: &lt;http://www.w3.org/ns/prov#&gt; .</monospace>
+<monospace>@prefix sp: &lt;https://w3id.org/linkflows/superpattern/terms/&gt; .</monospace>
+
+<monospace>sub:Head {</monospace>
+<monospace>  this: np:hasAssertion sub:assertion ;</monospace>
+<monospace>    np:hasProvenance sub:provenance ;</monospace>
+<monospace>    np:hasPublicationInfo sub:pubinfo ;</monospace>
+<monospace>    a np:Nanopublication .</monospace>
+<monospace>}</monospace>
+<monospace>sub:assertion {</monospace>
+<monospace>  sub:spi a sp:SuperPatternInstance ;</monospace>
+<monospace>    rdfs:label "A regulatory element within the first intron of FTO affects IRX3 and IRX5 expression during early</monospace>
+<monospace>adipogenesis" ;</monospace>
+<monospace>    sp:hasContextClass &lt;http://purl.org/np/RAtsHwzNs36rGrLnoSbGrPD351Qw033Acoe4zmdXhsYlM#early-human-adipogenesis&gt; ;</monospace>
+<monospace>    sp:hasSubjectClass &lt;http://purl.org/np/RAxLYvJ1JrRf2JAowYGbGJleQPmqtpXnXsIvse7GmLeT8#regulatory-element-within-the-first</monospace>
+<monospace>-intron-of-FTO&gt; ;</monospace>
+<monospace>    sp:hasQualifier sp:generallyQualifier ;</monospace>
+<monospace>    sp:hasRelation sp:affects ;</monospace>
+<monospace>    sp:hasObjectClass &lt;http://purl.org/np/RAwkXiTv7qCtqOYzlR6ozZRGLRtG6mlogrYdRQ1E4dRDg#expression-of-genes-IRX3-and-IRX5&gt; .</monospace>
+<monospace>}</monospace>
+<monospace>sub:provenance {</monospace>
+<monospace>  sub:activity a sp:FormalizationActivity ;</monospace>
+<monospace>    prov:used sub:quote , &lt;https://doi.org/10.1056/NEJMoa1502214&gt; ;</monospace>
+<monospace>    prov:wasAssociatedWith orcid:0000-0003-2432-4125 .</monospace>
+<monospace>  sub:assertion prov:wasGeneratedBy sub:activity .</monospace>
+<monospace>  sub:quote prov:value "The rs1421085 T-to-C single-nucleotide variant disrupts a conserved motif for the ARID5B repressor,</monospace>
+<monospace>which leads to derepression of a potent preadipocyte enhancer and a doubling of IRX3 and IRX5 expression during</monospace>
+<monospace>early adipocyte differentiation." ;</monospace>
+<monospace>    prov:wasQuotedFrom &lt;https://doi.org/10.1056/NEJMoa1502214&gt; .</monospace>
+<monospace>}</monospace>
+<monospace>sub:pubinfo {</monospace>
+<monospace>  sub:sig npx:hasAlgorithm "RSA" ;</monospace>
+<monospace>    npx:hasPublicKey "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCS1s1OiABv1mrDnFWp9ecwHdQ+UlJn6JCDYXspRsbZgsm2QAiofbnVvf6gfkcjj</monospace>
+<monospace>Scd5fq3sW/W8r/o7bdafVSd6xuTG/vHrO9Ax/guPiJ6O/Z57Hk0nQy6c+l71HpaJ2BPPWKOgYiFZ/8eulmuM6BJ8TDKxoBtcqP5QbvN9KYjlQIDAQAB" ;</monospace>
+<monospace>    npx:hasSignature "MUs9dML4QrzQVnfT2hqnfkif+lpusIVT0o4c74M69kgNQmA0CXVRzUZIHcvavS/pMlobVFBhfkTQ7kHs5a0CZGVrvtOhQJYD17eXzg</monospace>
+<monospace>6dwD/LqdYNYErvWxduyvwInXMasXpDZdYkFtddAFt/5Vny6BSBoiIzclnGfGwahZhFmpg=" ;</monospace>
+<monospace>    npx:hasSignatureTarget this: .</monospace>
+<monospace>  this: dct:created "2021-10-27T10:22:03.671-07:00"^^xsd:dateTime ;</monospace>
+<monospace>    dct:creator orcid:0000-0003-2432-4125 ;</monospace>
+<monospace>    npx:introduces sub:spi ;</monospace>
+<monospace>    &lt;https://w3id.org/linkflows/reviews/isUpdateOf&gt; &lt;http://purl.org/np/RAxxJWyH8OdTJLs-ZY1q5jVq1OWFNOoLFvwEcUFyR8EEo&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromProvenanceTemplate &lt;http://purl.org/np/RAB_oy10D3XUP-zYlqGz7Uj58AsUXhEKeGqmRFg5LSgDM&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromPubinfoTemplate &lt;http://purl.org/np/RAA2MfqdBCzmz9yVWjKLXNbyfBNcwsMmOqcNUxkk1maIM&gt; ,</monospace>
+<monospace>&lt;http://purl.org/np/RAOGu9Lh0BD4tbIRB9RG6RGRA_ObDh75NTbIqaWgxxs8M&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromTemplate &lt;http://purl.org/np/RAv68imZrEjfcp2rnEg1hzoBqEVc0cQMtp9_1Za0BxNM4&gt; .</monospace>
+<monospace>}</monospace>
+</preformat>
+<p>The following nanopublications introduce the newly minted classes in TriG format.</p>
+<p>This is the class definition of “early human adipogenesis”:</p><preformat><monospace>@prefix this: &lt;http://purl.org/np/RAtsHwzNs36rGrLnoSbGrPD351Qw033Acoe4zmdXhsYlM&gt; .</monospace>
+<monospace>@prefix sub: &lt;http://purl.org/np/RAtsHwzNs36rGrLnoSbGrPD351Qw033Acoe4zmdXhsYlM#&gt; .</monospace>
+<monospace>@prefix np: &lt;http://www.nanopub.org/nschema#&gt; .</monospace>
+<monospace>@prefix dct: &lt;http://purl.org/dc/terms/&gt; .</monospace>
+<monospace>@prefix nt: &lt;https://w3id.org/np/o/ntemplate/&gt; .</monospace>
+<monospace>@prefix npx: &lt;http://purl.org/nanopub/x/&gt; .</monospace>
+<monospace>@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .</monospace>
+<monospace>@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .</monospace>
+<monospace>@prefix orcid: &lt;https://orcid.org/&gt; .</monospace>
+<monospace>@prefix prov: &lt;http://www.w3.org/ns/prov#&gt; .</monospace>
+<monospace>@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .</monospace>
+
+<monospace>sub:Head {</monospace>
+<monospace>  this: np:hasAssertion sub:assertion ;</monospace>
+<monospace>    np:hasProvenance sub:provenance ;</monospace>
+<monospace>    np:hasPublicationInfo sub:pubinfo ;</monospace>
+<monospace>    a np:Nanopublication .</monospace>
+<monospace>}</monospace>
+<monospace>sub:assertion {</monospace>
+<monospace>  sub:early-human-adipogenesis a &lt;http://www.w3.org/2002/07/owl#Class&gt; ;</monospace>
+<monospace>    rdfs:label "early human adipogenesis" ;</monospace>
+<monospace>    rdfs:subClassOf &lt;http://www.wikidata.org/entity/Q2824461&gt; ;</monospace>
+<monospace>    skos:definition "early human adipogenesis" .</monospace>
+<monospace>}</monospace>
+<monospace>sub:provenance {</monospace>
+<monospace>  sub:assertion prov:wasAttributedTo orcid:0000-0003-2432-4125 .</monospace>
+<monospace>}</monospace>
+<monospace>sub:pubinfo {</monospace>
+<monospace>  sub:sig npx:hasAlgorithm "RSA" ;</monospace>
+<monospace>    npx:hasPublicKey</monospace>
+<monospace>"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCS1s1OiABv1mrDnFWp9ecwHdQ+UlJn6JCDYXspRsbZgsm2QAiofbnVvf6gfkcjjScd5fq3sW/W8r/</monospace>
+<monospace>o7bdafVSd6xuTG/vHrO9Ax/guPiJ6O/Z57Hk0nQy6c+l71HpaJ2BPPWKOgYiFZ/8eulmuM6BJ8TDKxoBtcqP5QbvN9KYjlQIDAQAB" ;</monospace>
+<monospace>    npx:hasSignature</monospace>
+<monospace>"eiaG+BcxT16aKpKUpVosKrOxB6PON3szX55WGjEnlAwV87u5mA4huRHXOoDdC/4XgPvT40woR34zhB+VQvLJoizmk6rTPEVReNSG8vdxq3Wdbj6W4qJszBlmxb</monospace>
+<monospace>+XFw2Awdj/4IzNIzK1/at9WQvIE5rV8tkYIvSnmLfWTxKvL/A=" ;</monospace>
+<monospace>    npx:hasSignatureTarget this: .</monospace>
+<monospace>  this: dct:created "2021-06-21T16:44:19.998-07:00"^^xsd:dateTime ;</monospace>
+<monospace>    dct:creator orcid:0000-0003-2432-4125 ;</monospace>
+<monospace>    npx:introduces sub:early-human-adipogenesis ;</monospace>
+<monospace>    nt:wasCreatedFromProvenanceTemplate &lt;http://purl.org/np/RANwQa4ICWS5SOjw7gp99nBpXBasapwtZF1fIM3H2gYTM&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromPubinfoTemplate &lt;http://purl.org/np/RAA2MfqdBCzmz9yVWjKLXNbyfBNcwsMmOqcNUxkk1maIM&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromTemplate &lt;http://purl.org/np/RAdpgRpigXtt8iPV9uOPf3wIT3qzOI8Sg2Q72CNV8g-Yo&gt; .</monospace>
+<monospace>}</monospace>
+</preformat>
+<p>This is the class definition of “regulatory element within the first intron of FTO”:</p><preformat><monospace>@prefix this: &lt;http://purl.org/np/RAxLYvJ1JrRf2JAowYGbGJleQPmqtpXnXsIvse7GmLeT8&gt; .</monospace>
+<monospace>@prefix sub: &lt;http://purl.org/np/RAxLYvJ1JrRf2JAowYGbGJleQPmqtpXnXsIvse7GmLeT8#&gt; .</monospace>
+<monospace>@prefix np: &lt;http://www.nanopub.org/nschema#&gt; .</monospace>
+<monospace>@prefix dct: &lt;http://purl.org/dc/terms/&gt; .</monospace>
+<monospace>@prefix nt: &lt;https://w3id.org/np/o/ntemplate/&gt; .</monospace>
+<monospace>@prefix npx: &lt;http://purl.org/nanopub/x/&gt; .</monospace>
+<monospace>@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .</monospace>
+<monospace>@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .</monospace>
+<monospace>@prefix orcid: &lt;https://orcid.org/&gt; .</monospace>
+<monospace>@prefix prov: &lt;http://www.w3.org/ns/prov#&gt; .</monospace>
+<monospace>@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .</monospace>
+
+<monospace>sub:Head {</monospace>
+<monospace>  this: np:hasAssertion sub:assertion ;</monospace>
+<monospace>    np:hasProvenance sub:provenance ;</monospace>
+<monospace>    np:hasPublicationInfo sub:pubinfo ;</monospace>
+<monospace>    a np:Nanopublication .</monospace>
+<monospace>}</monospace>
+<monospace>sub:assertion {</monospace>
+<monospace>  sub:regulatory-element-within-the-first-intron-of-FTO a &lt;http://www.w3.org/2002/07/owl#Class&gt; ;</monospace>
+<monospace>    rdfs:label "regulatory element within the first intron of FTO" ;</monospace>
+<monospace>    skos:definition "a regulatory element present within the first intron of the human gene FTO" ;</monospace>
+<monospace>    skos:relatedMatch &lt;http://www.wikidata.org/entity/Q14912501&gt; , &lt;http://www.wikidata.org/entity/Q207551&gt; .</monospace>
+<monospace>}</monospace>
+<monospace>sub:provenance {</monospace>
+<monospace>  sub:assertion prov:wasAttributedTo orcid:0000-0003-2432-4125 .</monospace>
+<monospace>}</monospace>
+<monospace>sub:pubinfo {</monospace>
+<monospace>  sub:sig npx:hasAlgorithm "RSA" ;</monospace>
+<monospace>    npx:hasPublicKey</monospace>
+<monospace>"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCS1s1OiABv1mrDnFWp9ecwHdQ+UlJn6JCDYXspRsbZgsm2QAiofbnVvf6gfkcjjScd5fq3sW/W8r/</monospace>
+<monospace>o7bdafVSd6xuTG/vHrO9Ax/guPiJ6O/Z57Hk0nQy6c+l71HpaJ2BPPWKOgYiFZ/8eulmuM6BJ8TDKxoBtcqP5QbvN9KYjlQIDAQAB" ;</monospace>
+<monospace>    npx:hasSignature</monospace>
+<monospace>"M8cVwUkflLAuLqLUM+ul7EdLSXQhcSsbERJUcBwTF2Ri78XD6JNdHsF5+Qekg3xefqy7d8530m2RHPxjSkooNi3XAOZWsd2T6OZiZ0lSmAIsaRarmsnHbl/</monospace>
+<monospace>GDf0OS4OiqCL1jVFNXMosdVd9runltov655znbpiFBJxmMd66+v0=" ;</monospace>
+<monospace>    npx:hasSignatureTarget this: .</monospace>
+<monospace>  this: dct:created "2021-10-27T10:04:01.217-07:00"^^xsd:dateTime ;</monospace>
+<monospace>    dct:creator orcid:0000-0003-2432-4125 ;</monospace>
+<monospace>    npx:introduces sub:regulatory-element-within-the-first-intron-of-FTO ;</monospace>
+<monospace>    npx:supersedes &lt;http://purl.org/np/RANAxL2OxGmP9VAN6cUi_0KEK0rJb9bPn4l1A5HquXKrI&gt; ;</monospace>
+<monospace>    &lt;https://w3id.org/linkflows/reviews/isUpdateOf&gt; &lt;http://purl.org/np/RANAxL2OxGmP9VAN6cUi_0KEK0rJb9bPn4l1A5HquXKrI&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromProvenanceTemplate &lt;http://purl.org/np/RANwQa4ICWS5SOjw7gp99nBpXBasapwtZF1fIM3H2gYTM&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromPubinfoTemplate &lt;http://purl.org/np/RAA2MfqdBCzmz9yVWjKLXNbyfBNcwsMmOqcNUxkk1maIM&gt; ,</monospace>
+<monospace>&lt;http://purl.org/np/RAOGu9Lh0BD4tbIRB9RG6RGRA_ObDh75NTbIqaWgxxs8M&gt; ,</monospace>
+<monospace>&lt;http://purl.org/np/RAjpBMlw3owYhJUBo3DtsuDlXsNAJ8cnGeWAutDVjuAuI&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromTemplate &lt;http://purl.org/np/RAdpgRpigXtt8iPV9uOPf3wIT3qzOI8Sg2Q72CNV8g-Yo&gt; .</monospace>
+<monospace>}</monospace>
+</preformat>
+<p>This is the class definition of “expression of genes IRX3 and IRX5”:</p><preformat><monospace>@prefix this: &lt;http://purl.org/np/RAwkXiTv7qCtqOYzlR6ozZRGLRtG6mlogrYdRQ1E4dRDg&gt; .</monospace>
+<monospace>@prefix sub: &lt;http://purl.org/np/RAwkXiTv7qCtqOYzlR6ozZRGLRtG6mlogrYdRQ1E4dRDg#&gt; .</monospace>
+<monospace>@prefix np: &lt;http://www.nanopub.org/nschema#&gt; .</monospace>
+<monospace>@prefix dct: &lt;http://purl.org/dc/terms/&gt; .</monospace>
+<monospace>@prefix nt: &lt;https://w3id.org/np/o/ntemplate/&gt; .</monospace>
+<monospace>@prefix npx: &lt;http://purl.org/nanopub/x/&gt; .</monospace>
+<monospace>@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .</monospace>
+<monospace>@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .</monospace>
+<monospace>@prefix orcid: &lt;https://orcid.org/&gt; .</monospace>
+<monospace>@prefix prov: &lt;http://www.w3.org/ns/prov#&gt; .</monospace>
+<monospace>@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .</monospace>
+
+<monospace>sub:Head {</monospace>
+<monospace>  this: np:hasAssertion sub:assertion ;</monospace>
+<monospace>     np:hasProvenance sub:provenance ;</monospace>
+<monospace>     np:hasPublicationInfo sub:pubinfo ;</monospace>
+<monospace>     a np:Nanopublication .</monospace>
+<monospace>}</monospace>
+<monospace>sub:assertion {</monospace>
+<monospace>  sub:expression-of-genes-IRX3-and-IRX5 a &lt;http://www.w3.org/2002/07/owl#Class&gt; ;</monospace>
+<monospace>    rdfs:label "expression of genes IRX3 and IRX5" ;</monospace>
+<monospace>    rdfs:subClassOf &lt;http://www.wikidata.org/entity/Q26972&gt; ;</monospace>
+<monospace>    skos:definition "Expression of the human genes IRX3 and IRX5" ;</monospace>
+<monospace>    skos:relatedMatch &lt;http://www.wikidata.org/entity/Q18035174&gt; , &lt;http://www.wikidata.org/entity/Q18046058&gt; .</monospace>
+<monospace>}</monospace>
+<monospace>sub:provenance {</monospace>
+<monospace>  sub:assertion prov:wasAttributedTo orcid:0000-0003-2432-4125 .</monospace>
+<monospace>}</monospace>
+<monospace>sub:pubinfo {</monospace>
+<monospace>  sub:sig npx:hasAlgorithm "RSA" ;</monospace>
+<monospace>    npx:hasPublicKey</monospace>
+<monospace>"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCS1s1OiABv1mrDnFWp9ecwHdQ+UlJn6JCDYXspRsbZgsm2QAiofbnVvf6gfkcjjScd5fq3sW/W8r/</monospace>
+<monospace>o7bdafVSd6xuTG/vHrO9Ax/guPiJ6O/Z57Hk0nQy6c+l71HpaJ2BPPWKOgYiFZ/8eulmuM6BJ8TDKxoBtcqP5QbvN9KYjlQIDAQAB" ;</monospace>
+<monospace>    npx:hasSignature</monospace>
+<monospace>"kT9nlq5nE5y03RkSemozwUYzyNGdKTIPvY7WlWiDD2ZlRrHlOxQPbq+VPMEV6Ay3oEgTi/WuE5o6AY+dGK4V6eLcVnDQ1xqC7GsnaD5JGL89a5Z/</monospace>
+<monospace>oEkHf1JG8fHQFOATrg4n62hcjGeRZOZrZLjdnAozGdDQf19gxq78E4QTyOY=" ;</monospace>
+<monospace>    npx:hasSignatureTarget this: .</monospace>
+<monospace>  this: dct:created "2021-10-27T09:44:46.276-07:00"^^xsd:dateTime ;</monospace>
+<monospace>    dct:creator orcid:0000-0003-2432-4125 ;</monospace>
+<monospace>    npx:introduces sub:expression-of-genes-IRX3-and-IRX5 ;</monospace>
+<monospace>    npx:supersedes &lt;http://purl.org/np/RANjcIDg1VkGWDSqxkFyVn__2UEbR-V7y8lqtV4rxcLJk&gt; ;</monospace>
+<monospace>    &lt;https://w3id.org/linkflows/reviews/isUpdateOf&gt;</monospace>
+<monospace>    &lt;http://purl.org/np/RAY3LaUoVtBLj9CN36wyyvTIjSMsACErVtEApnA12zjy0&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromProvenanceTemplate &lt;http://purl.org/np/RANwQa4ICWS5SOjw7gp99nBpXBasapwtZF1fIM3H2gYTM&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromPubinfoTemplate &lt;http://purl.org/np/RA2vCBXZf-icEcVRGhulJXugTGxpsV5yVr9yqCI1bQh4A&gt; ,</monospace>
+<monospace>    &lt;http://purl.org/np/RAA2MfqdBCzmz9yVWjKLXNbyfBNcwsMmOqcNUxkk1maIM&gt; ,</monospace>
+<monospace>    &lt;http://purl.org/np/RAjpBMlw3owYhJUBo3DtsuDlXsNAJ8cnGeWAutDVjuAuI&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromTemplate &lt;http://purl.org/np/RAdpgRpigXtt8iPV9uOPf3wIT3qzOI8Sg2Q72CNV8g-Yo&gt; .</monospace>
+<monospace>}</monospace>
+</preformat>
+</sec>
+</body>
+<back>
+<ref-list>
+<title>References</title>
+<ref id="ref001">
+<label>[1]</label><mixed-citation publication-type="journal"><string-name><given-names>M.</given-names> <surname>Claussnitzer</surname></string-name>, <string-name><given-names>S.N.</given-names> <surname>Dankel</surname></string-name>, <string-name><given-names>K.-H.</given-names> <surname>Kim</surname></string-name>, <string-name><given-names>G.</given-names> <surname>Quon</surname></string-name>, <string-name><given-names>W.</given-names> <surname>Meuleman</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Haugen</surname></string-name>, <string-name><given-names>V.</given-names> <surname>Glunk</surname></string-name>, <string-name><given-names>I.S.</given-names> <surname>Sousa</surname></string-name>, <string-name><given-names>J.L.</given-names> <surname>Beaudry</surname></string-name>, <string-name><given-names>V.</given-names> <surname>Puviindran</surname></string-name>, <string-name><given-names>N.A.</given-names> <surname>Abdennur</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Liu</surname></string-name>, <string-name><given-names>P.-A.</given-names> <surname>Svensson</surname></string-name>, <string-name><given-names>Y.-H.</given-names> <surname>Hsu</surname></string-name>, <string-name><given-names>D.J.</given-names> <surname>Drucker</surname></string-name>, <string-name><given-names>G.</given-names> <surname>Mellgren</surname></string-name>, <string-name><given-names>C.-C.</given-names> <surname>Hui</surname></string-name>, <string-name><given-names>H.</given-names> <surname>Hauner</surname></string-name> and <string-name><given-names>M.</given-names> <surname>Kellis</surname></string-name>, <article-title>FTO Obesity Variant Circuitry and Adipocyte Browning in Humans</article-title>, <source>New England Journal of Medicine</source> <volume>373</volume>(<issue>10</issue>) (<year>2015</year>), <fpage>895</fpage>–<lpage>907</lpage>. doi:<pub-id pub-id-type="doi">10.1056/NEJMoa1502214</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref002">
+<label>[2]</label><mixed-citation publication-type="other"><string-name><given-names>C.I.</given-names> <surname>Bucur</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Kuhn</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Ceolin</surname></string-name> and <string-name><given-names>J.</given-names> <surname>van Ossenbruggen</surname></string-name>, <chapter-title>Expressing high-level scientific claims with formal semantics</chapter-title>, in: <source>Proceedings of the 11th Knowledge Capture Conference 2021</source>. doi:<pub-id pub-id-type="doi">10.1145/3460210.3493561</pub-id>.</mixed-citation>
+</ref>
+</ref-list>
+</back>
+</article>

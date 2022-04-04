@@ -1,0 +1,746 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.0 20120330//EN" "JATS-journalpublishing1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article">
+<front>
+<journal-meta>
+<journal-id journal-id-type="publisher-id">DS</journal-id>
+<journal-title-group><journal-title>Data Science</journal-title></journal-title-group>
+<issn pub-type="epub">2451-8492</issn><issn pub-type="ppub">2451-8484</issn><issn-l>2451-8484</issn-l>
+<publisher>
+<publisher-name>IOS Press</publisher-name><publisher-loc>Nieuwe Hemweg 6B, 1013 BG Amsterdam, The Netherlands</publisher-loc>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">DS190015</article-id>
+<article-id pub-id-type="doi">10.3233/DS-190015</article-id>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Research Article</subject></subj-group></article-categories>
+<title-group>
+<article-title>Geographical trends in academic conferences: An analysis of authors’ affiliations</article-title>
+</title-group>
+<contrib-group content-type="Editor">
+<contrib contrib-type="editor">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-7171-169X</contrib-id>
+<name><surname>Vahdati</surname><given-names>Sahar</given-names></name>
+</contrib>
+</contrib-group>
+<contrib-group>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-5193-7851</contrib-id>
+<name><surname>Mannocci</surname><given-names>Andrea</given-names></name><xref ref-type="aff" rid="affa">a</xref><xref ref-type="corresp" rid="cor2">*</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0001-6557-3131</contrib-id>
+<name><surname>Osborne</surname><given-names>Francesco</given-names></name><xref ref-type="aff" rid="affb">b</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0003-0015-1952</contrib-id>
+<name><surname>Motta</surname><given-names>Enrico</given-names></name><xref ref-type="aff" rid="affc">c</xref>
+</contrib>
+<aff id="affa"><label>a</label>Knowledge Media Institute, <institution>The Open University</institution>, Milton Keynes, <country>UK</country>. E-mail: <email>andrea.mannocci@open.ac.uk</email></aff>
+<aff id="affb"><label>b</label>Knowledge Media Institute, <institution>The Open University</institution>, Milton Keynes, <country>UK</country>. E-mail: <email>francesco.osborne@open.ac.uk</email></aff>
+<aff id="affc"><label>c</label>Knowledge Media Institute, <institution>The Open University</institution>, Milton Keynes, <country>UK</country>. E-mail: <email>enrico.motta@open.ac.uk</email></aff>
+</contrib-group>
+<contrib-group content-type="guest-editors">
+<contrib contrib-type="guest-editor">
+<name><surname>Gonzalez-Beltran</surname><given-names>Alejandra</given-names></name>
+</contrib>
+<contrib contrib-type="guest-editor">
+<name><surname>Osborne</surname><given-names>Francesco</given-names></name>
+</contrib>
+<contrib contrib-type="guest-editor">
+<name><surname>Peroni</surname><given-names>Silvio</given-names></name>
+</contrib>
+<contrib contrib-type="guest-editor">
+<name><surname>Vahdati</surname><given-names>Sahar</given-names></name>
+</contrib>
+</contrib-group>
+<author-notes>
+<corresp id="cor2"><label>*</label>Corresponding author. E-mail: <email>andrea.mannocci@open.ac.uk</email>.</corresp>
+</author-notes>
+<pub-date date-type="preprint" publication-format="electronic"><day>19</day><month>3</month><year>2019</year></pub-date><pub-date date-type="pub" publication-format="electronic"><day>25</day><month>11</month><year>2019</year></pub-date><pub-date date-type="collection" publication-format="electronic"><year>2019</year></pub-date><volume>2</volume><issue>1-2</issue><issue-title>Scholarly Data Analysis (Semantics, Analytics, Visualisation)</issue-title><fpage>181</fpage><lpage>203</lpage><history><date date-type="received"><day>16</day><month>12</month><year>2018</year></date><date date-type="accepted"><day>6</day><month>02</month><year>2019</year></date></history>
+<permissions><copyright-statement>© 2019 – IOS Press and the authors.</copyright-statement><copyright-year>2019</copyright-year>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/" license-type="open-access" xlink:type="simple">
+<license-p>This is an open access article distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/" xlink:type="simple">Creative Commons Attribution (CC BY 4.0) License</ext-link>, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions>
+<abstract>
+<p>In the last decade, the research literature has reached an enormous volume with an unprecedented current annual increase of 1.5 million new publications. As research gets ever more global and new countries and institutions, either from academia or corporate environments, start to contribute, it is important to monitor this complex phenomenon and understand its dynamics and equilibria.</p>
+<p>We present a study on a conference proceedings dataset extracted from Springer Nature SciGraph that illustrates insightful geographical trends and highlights the unbalanced growth of competitive research institutions worldwide in the 1996–2016 period. The main contribution of this work is fourfold. In the first instance, we found that the distributions of institutions and publications among countries follow a power law, consistently with previous literature, i.e., very few countries keep producing most of the papers accepted by high-tier conferences. Secondly, we show how the turnover rate of country rankings is extremely low and steadily declines over time, suggesting an alarmingly static landscape in which new entries struggle to emerge. We also performed an analysis of the venue locations and their effect on the distribution of countries involved in the publications, underlining the central role of Europe and China as knowledge hubs. Finally, we evidence the presence of an increasing gap between the number of institutions initiating and overseeing research endeavours (i.e. first and last authors’ affiliations) and the total number of institutions participating in research.</p>
+<p>The paper also discusses our experience in working with authors’ affiliations: an utterly simple matter at first glance, that is instead revealed to be a complex research and technical challenge.</p>
+</abstract>
+<kwd-group>
+<label>Keywords</label>
+<kwd>Spatial scientometrics</kwd>
+<kwd>scholarly communication</kwd>
+<kwd>scholarly knowledge</kwd>
+<kwd>affiliations</kwd>
+<kwd>conference papers</kwd>
+<kwd>SciGraph</kwd>
+<kwd>grid.ac</kwd>
+</kwd-group>
+</article-meta>
+</front>
+<body>
+<sec id="x1-1000-1">
+<label>1.</label>
+<title>Introduction</title>
+<p>Over the last decade, the scholarly literature has increased dramatically in terms of the volume of papers, authors, and contributing institutions. Nowadays, the research literature is estimated to comprise 100-150 million publications with an annual increase rate around 1.5 million new publications [<xref ref-type="bibr" rid="ref003">3</xref>]. Such a complex, global-scale system is worth studying in order to understand its dynamics and internal equilibria. In particular, the study of authors’ affiliations [<xref ref-type="bibr" rid="ref012">12</xref>,<xref ref-type="bibr" rid="ref025">25</xref>] has a concrete impact on the interpretation of research as a complex phenomenon, inserted in a delicate socioeconomic and geopolitical context.</p>
+<p>In this study, we present an analysis of a dataset of conference proceedings metadata, which was distilled from SciGraph,<xref ref-type="fn" rid="fn-1">1</xref><fn id="fn-1"><label><sup>1</sup></label>
+<p>Springer Nature SciGraph, <uri>https://www.springernature.com/gp/researchers/scigraph</uri>.</p></fn> a free linked open data (LOD) dataset of scholarly knowledge published and curated by Springer Nature. In particular, we first present a <italic>macro analysis</italic> of the full dataset (1996–2016), including conference proceedings across several scientific disciplines (e.g., computer science, life sciences, chemistry, engineering) and then a <italic>micro analysis</italic>, which focuses on three high-tier conferences in our area of expertise: the International Semantic Web Conference (ISWC), the Extended Semantic Web Conference (ESWC), and the International Conference on Theory and Practice of Digital Libraries (TPDL).</p>
+<p>The main contribution of this work is fourfold. In the first instance, we found that, over the observed period, the distributions of institutions and publications among countries follow a power law, consistently with what previously demonstrated in the literature across the 1981–2010 period [<xref ref-type="bibr" rid="ref008">8</xref>,<xref ref-type="bibr" rid="ref018">18</xref>,<xref ref-type="bibr" rid="ref022">22</xref>,<xref ref-type="bibr" rid="ref025">25</xref>]. That is, very few countries keep producing most of the papers accepted by academic conferences. Secondly, we show how the annual and overall turnover rate of country rankings is extremely low and steadily declining over time, suggesting an alarmingly static landscape in which new entries struggle to emerge. We also performed an analysis of the venue locations and their effect on the distribution of countries involved in the publications. This analysis highlights the central role of Europe in the research landscape and other distinctive publishing patterns of countries and continents in our dataset. Finally, we report an increasing gap between the number of institutions initiating and overseeing research endeavours (i.e. first and last authors’ affiliations) and the total number of institutions participating in research.</p>
+<p>This article extends our paper [<xref ref-type="bibr" rid="ref021">21</xref>] presented at the workshop on “Semantics, Analytics, Visualization: Enhancing Scholarly Dissemination (SAVE-SD)” co-located with The Web Conference 2018 held in Lyon, France. The main novel contributions are: (i) an improved version of the dataset exhibiting less noise and new dimensions of analysis, (ii) an enhanced literature review section, (iii) an improved analysis of our hypothesis on author position, (iv) a more comprehensive analysis of the evolution of the country rankings over the years, (v) an analysis of the effect of conference locations on the distribution of involved countries.</p>
+<p>The remainder of this paper is structured as follows. In Section <xref rid="x1-2000-2">2</xref> we summarise the relevant state of the art. In Section <xref rid="x1-3000-3">3</xref> we describe the criteria that drove us to the selection of the dataset, and the data preparation phase we opted for, while in Section <xref rid="x1-4000-4">4</xref> we describe the methodology followed in our analysis. Finally, in Section <xref rid="x1-5000-5">5</xref> we describe the results that emerged from our analysis and in Section <xref rid="x1-8000-6">6</xref> we discuss the main implications of our study and outline future directions of research.</p>
+</sec>
+<sec id="x1-2000-2">
+<label>2.</label>
+<title>Literature review</title>
+<p>A variety of bibliometrics studies in the last 30 years have highlighted the importance of different indicators of the presumed quality of research produced by researchers, institutions, and countries. In particular, many papers have highlighted how researchers’ performance can be affected by factors such as gender [<xref ref-type="bibr" rid="ref017">17</xref>], location [<xref ref-type="bibr" rid="ref005">5</xref>,<xref ref-type="bibr" rid="ref012">12</xref>], reputation [<xref ref-type="bibr" rid="ref028">28</xref>], centrality in the co-authorship network [<xref ref-type="bibr" rid="ref029">29</xref>], online presence [<xref ref-type="bibr" rid="ref033">33</xref>], and so on. For instance, Jadidi et al. [<xref ref-type="bibr" rid="ref017">17</xref>] investigated gender-specific inequality and imbalance on about 1 million computer scientists over the course of 47 years and observed that women are on average less likely to adopt the collaboration patterns associated with a strong research impact. Petersen et al. [<xref ref-type="bibr" rid="ref028">28</xref>] introduced an approach for quantifying the influence of an author reputation on their future research impact and found that reputation is associated with the citation count of articles, but only during the early phase of the citation lifecycle. Sarigol et al. [<xref ref-type="bibr" rid="ref029">29</xref>] demonstrated that a classifier based only on co-authorship network centrality metrics can predict with high precision whether an article will be highly cited within five years after the publication. Thelwall et al. [<xref ref-type="bibr" rid="ref033">33</xref>] showed that there is a significant correlation between eleven tested Altmetrics and citations in the Web of Science dataset.</p>
+<p>Several papers address the field of spatial scientometrics [<xref ref-type="bibr" rid="ref012">12</xref>], which focuses on the spatial distribution of publication and citation impact and the effect of geographical biases. Frenken et al. [<xref ref-type="bibr" rid="ref013">13</xref>] categorise these studies in three main categories: (i) the ones that analyse the distribution of publications or citation impact [<xref ref-type="bibr" rid="ref007">7</xref>,<xref ref-type="bibr" rid="ref015">15</xref>,<xref ref-type="bibr" rid="ref018">18</xref>,<xref ref-type="bibr" rid="ref022">22</xref>,<xref ref-type="bibr" rid="ref025">25</xref>], (ii) the studies that focus on the relationship between scientific impact and the spatial organisation of research activities [<xref ref-type="bibr" rid="ref009">9</xref>,<xref ref-type="bibr" rid="ref014">14</xref>,<xref ref-type="bibr" rid="ref030">30</xref>], and (iii) the studies that design applications and approaches to visualise these dynamics [<xref ref-type="bibr" rid="ref004">4</xref>,<xref ref-type="bibr" rid="ref005">5</xref>].</p>
+<p>In the first category, we found several studies that focused on the role of countries, cities, and organisations (e.g. university, research institutes) and highlighted the great discrepancy in quantity and quality of the research produced by different nations. Here we will mainly focus on the studies that consider country-level dynamics. For instance, May [<xref ref-type="bibr" rid="ref022">22</xref>] analysed the numbers of publications and citations of different countries in the 1981–1994 period using the Institute for Scientific Information database (Ed. then Thomson ISI and, currently, Clarivate Analytics), which included more than 8.4 million papers and 72 million citations. In accordance with our results, the authors found that the countries that produced the highest share of research papers more than 20 years ago were USA, United Kingdom, Japan, Germany, France, Canada, Italy, India, Australia, and Netherlands. King [<xref ref-type="bibr" rid="ref018">18</xref>] built on this work and analysed the 1993–2002 period adopting again the Thomson ISI dataset. Ten years after May’s study, the most important countries regarding research were essentially the same. In particular, King found that the countries that produced most of the top 1% highly cited publications were USA, United Kingdom, Germany, Japan, France, Canada, Italy, Switzerland, Netherlands, and Australia. At a finer level of granularity, Csomós [<xref ref-type="bibr" rid="ref007">7</xref>] analysed the scientific output of nearly 2200 cities worldwide from 1986 to 2015, and examined extensively the associated geographical patterns, collaborations and dynamics over time. Unsurprisingly, the major world cities are the strongest producers of scientific output and knowledge hubs; nonetheless, the gap between such cities and the main ones from emerging/developing countries (e.g. China) is gradually closing up. Pan et al. [<xref ref-type="bibr" rid="ref025">25</xref>] continued this line of work by performing a systematic analysis of citation networks between cities and countries in the 2003–2010 period and reported that the citation distribution of countries and cities follows a power law. According to their citation rank, the main producers of research in that period were USA, United Kingdom, Germany, Japan, France, Canada, China, Italy, Netherlands, and Australia. Interestingly, they also argued that a necessary (but not sufficient) condition for a country to reach an impact larger than the world average is to invest more than about 100,000 USD per researcher annually. Several other studies confirmed that the publication distribution of countries usually follows a power law. For example, Albarrán et al. [<xref ref-type="bibr" rid="ref001">1</xref>] performed a study on the citation distributions of 3.7 million articles published in the period 1998–2002 in 219 Web of Science categories, or sub-fields. They concluded that for 140 out of the 219 sub-fields the existence of a power law could not be rejected, but observed also that power laws are much flatter than usually believed and represent on average 2% of all articles and 13.5% of all citations. Similarly, Carvalho and Batty [<xref ref-type="bibr" rid="ref006">6</xref>] analysed the Citeseer database of Computer Science publications and reported that the productivity of research organisations in USA also follows a power law. Similarly, Huang et al. [<xref ref-type="bibr" rid="ref015">15</xref>] analysed the Web of Science dataset in the 1981–2008 and discovered that most publications were concentrated on a small number of countries, including the USA, the United Kingdom, Japan, Germany, and France. However, they observed that this situation may be changing soon due to the rapid growth of in China and other Asian countries such as Taiwan and Korea. This conclusion is actually in contrast with the output of our study, as we will discuss in Section <xref rid="x1-6000-5.1">5.1</xref>.</p>
+<p>Some studies focus on specific research areas. For example, Hung [<xref ref-type="bibr" rid="ref016">16</xref>] investigated 689 journals in e-Learning with text mining techniques and ranked the countries according to their ability to cover multiple sub-topics. The resulting rank includes England, Taiwan, China, USA, Germany, Italy, Spain, Japan, South Korea, and Australia. Woodson [<xref ref-type="bibr" rid="ref036">36</xref>] studied the inequalities in the field of nanomedicine by analysing the Web of Science and PubMed databases. He found that most nanomedicine research was produced by high income countries and that only 7% of the publications addressing specific diseases focused on diseases which afflict mainly poor countries. Similarly, Falagas et al. [<xref ref-type="bibr" rid="ref011">11</xref>] conducted a study on the biomedical papers in the ISI dataset published in the period 1995–2003. They found that Western Europe and USA dominated the landscape and that the developing regions had only small research contributions. However, a second study from Falagas et al. [<xref ref-type="bibr" rid="ref010">10</xref>] proved that other fields exhibit a different tendency. They analysed the articles published in 12 journals in Tropical Medicine during the period 1995–2003 finding that the developing areas of the world produced a considerable amount of publications. In particular, the first author of 41.6% of the publication was from Africa or Latin America.</p>
+<p>The second category of work proposed by Frenken et al. [<xref ref-type="bibr" rid="ref013">13</xref>] regards the effect of geography on citation impact. For example, He [<xref ref-type="bibr" rid="ref014">14</xref>] analysed a dataset of 1,860 papers written by 65 biomedical scientists in New Zealand and reported that internationally co-authored papers receive more citations than national collaborations. Similarly, Sin [<xref ref-type="bibr" rid="ref030">30</xref>] conducted a study on 7,489 papers in the field of Library and Information Science and found that the articles that included international collaborations, Northern European authors, and authors in high-income nations tend to be cited more. Eisend and Schmidt [<xref ref-type="bibr" rid="ref009">9</xref>] analysed the citation impact of publications from German organisations in the field of Business and reported that international collaborations were particularly beneficial when researchers lack language skills and knowledge of foreign markets. Borner and Penumarthy [<xref ref-type="bibr" rid="ref002">2</xref>] studied the set of papers published in the Proceedings of the National Academy of Sciences (PNAS) in the 1982–2001 period and found that the citation linkages between institutions decrease with the distance between them. Interestingly, the diffusion of the Internet did not appear to change this dynamic.</p>
+<p>Finally, several works proposed applications and techniques to analyse and visualise the spatial aspects of science. For instance, Bornmann and Waltman [<xref ref-type="bibr" rid="ref005">5</xref>] presented a method to generate density maps that highlights regions of scientific excellence. Similarly, Bornmann et al. [<xref ref-type="bibr" rid="ref004">4</xref>] introduced a web application<xref ref-type="fn" rid="fn-2">2</xref><fn id="fn-2"><label><sup>2</sup></label>
+<p>Mapping Scientific Excellence, <ext-link ext-link-type="uri" xlink:href="http://www.excellencemapping.net">www.excellencemapping.net</ext-link>.</p></fn> to visualise institutional performance within specific subject areas.</p>
+<p>The work presented in this paper falls mainly in the first two categories presented in this literature review. Unlike the aforementioned analyses, in this study we (i) focused on the temporal evolution of countries and institutions in conference papers during the 1996–2016 period, (ii) analysed the effect of the venue locations on the distribution of countries involved in the publications, taking into consideration both continental and intercontinental conferences, (iii) performed an analysis on the first and last authors’ affiliations, and (iv) addressed specific high-tier conferences in the domain of semantic web and digital libraries.</p>
+</sec>
+<sec id="x1-3000-3">
+<label>3.</label>
+<title>Data</title>
+<p>A main premise of our study is the availability of a scholarly knowledge dataset containing information about authors’ affiliations sufficiently detailed and structured, i.e. including both institution name and country, possibly disambiguated via a persistent identifier.</p>
+<p>For the sake of Open Science principles and reproducibility best practices [<xref ref-type="bibr" rid="ref035">35</xref>], we intentionally kept out of consideration pay-walled data sources such as Scopus,<xref ref-type="fn" rid="fn-3">3</xref><fn id="fn-3"><label><sup>3</sup></label>
+<p>Scopus, <uri>https://www.scopus.com</uri>.</p></fn> Web of Science<xref ref-type="fn" rid="fn-4">4</xref><fn id="fn-4"><label><sup>4</sup></label>
+<p>Web of Science, <uri>https://clarivate.com/products/web-of-science</uri>.</p></fn> and Microsoft Academic,<xref ref-type="fn" rid="fn-5">5</xref><fn id="fn-5"><label><sup>5</sup></label>
+<p>Microsoft Academic, <uri>https://academic.microsoft.com</uri>. Disclaimer: we have an ongoing collaboration with Microsoft Academic, but the dataset has not been considered for this analysis according to the aforementioned reasons. We consider to integrate it in the future for the creation of dashboards and sense making tools.</p></fn> and we focused on what can be <italic>freely</italic> accessed on the Web.</p>
+<p>Some top-quality scholarly datasets such as DBLP [<xref ref-type="bibr" rid="ref020">20</xref>] and Semantic Scholar<xref ref-type="fn" rid="fn-6">6</xref><fn id="fn-6"><label><sup>6</sup></label>
+<p>Semantic Scholar, <uri>https://www.semanticscholar.org</uri>.</p></fn> are not apt to our study as they lack essential information about authors’ affiliations. Other datasets technically provide authors’ affiliations, but the relevant metadata are often incomplete or far from being ready to use. For example, Crossref<xref ref-type="fn" rid="fn-7">7</xref><fn id="fn-7"><label><sup>7</sup></label>
+<p>Crossref, <uri>https://www.crossref.org</uri>.</p></fn> technically offers a field devised for affiliations in their metadata API JSON format.<xref ref-type="fn" rid="fn-8">8</xref><fn id="fn-8"><label><sup>8</sup></label>
+<p>Crossref Metadata API JSON Format, <uri>https://github.com/Crossref/rest-api-doc/blob/master/api_format.md</uri>.</p></fn> However, we found that the majority of the records currently lack this information, and, when present, this is provided as a simple array of affiliation strings (i.e. a catch-all, unstructured text). Besides, such affiliation strings often exhibit several well-known ambiguity issues due to (i) alternate forms (e.g., “Open University” and “The Open University”), (ii) linguistic variations (e.g., “Università di Pisa” and “University of Pisa”), (iii) different granularity and missing information (e.g., “Knowledge Media Institute, Milton Keynes”), (iv) any combination of the aforementioned three.</p>
+<p>After a thorough analysis of currently available datasets curated at the source with regards to these aspects, we choose SciGraph,<xref ref-type="fn" rid="fn-9">9</xref><fn id="fn-9"><label><sup>9</sup></label>
+<p>SciGraph datasets, <uri>http://scigraph.springernature.com/explorer/downloads/</uri>.</p></fn> a LOD dataset published and curated by Springer Nature. To the best of our knowledge, SciGraph is the only free, large-scale dataset providing reconciliation of authors’ affiliations by disambiguating and linking them to an external authoritative dataset in terms of institutions (in this case GRID,<xref ref-type="fn" rid="fn-10">10</xref><fn id="fn-10"><label><sup>10</sup></label>
+<p>GRID, <uri>https://www.grid.ac</uri>.</p></fn> the Global Research Identifier Database). In its entirety, SciGraph consists<xref ref-type="fn" rid="fn-11">11</xref><fn id="fn-11"><label><sup>11</sup></label>
+<p>As per the last available version at the time of writing, dated November 2017.</p></fn> of 78 distinct datasets and includes about 2 billion triples describing research literature objects such as journal articles, conference papers, books, and monographs published by Springer Nature and spanning over a broad set of topics such as computer science, medicine, life sciences, chemistry, engineering, astronomy, and more.</p>
+<p>For our analysis we focused on conferences proceedings as conferences are the focal point of networking and knowledge exchange among practitioners. To this end, we downloaded from SciGraph the <italic>books</italic> (i.e. proceedings) and <italic>book chapters</italic> (i.e. articles) datasets spanning from 1996 to 2017 and the <italic>conferences</italic> dataset linking together all the books related to the same conference series (i.e. all the instances of a certain conference series, say “The Web Conference”). Additionally, we downloaded the ancillary GRID dataset<xref ref-type="fn" rid="fn-12">12</xref><fn id="fn-12"><label><sup>12</sup></label>
+<p>GRID dataset, <uri>https://www.grid.ac/downloads</uri>.</p></fn> which provides high-quality and curated information of institutions and organisations, academic or not, participating in research. These datasets were loaded in a graph database<xref ref-type="fn" rid="fn-13">13</xref><fn id="fn-13"><label><sup>13</sup></label>
+<p>GraphDB, <uri>http://graphdb.ontotext.com</uri>.</p></fn> resulting in a graph of 313,035,870 triples.<xref ref-type="fn" rid="fn-14">14</xref><fn id="fn-14"><label><sup>14</sup></label>
+<p>This number may vary because the GRID database is actively maintained and enriched over time.</p></fn> Then, we extracted via a SPARQL query<xref ref-type="fn" rid="fn-15">15</xref><fn id="fn-15"><label><sup>15</sup></label>
+<p>SPARQL extraction query, <uri>https://github.com/andremann/SAVE-SD-2018ext/blob/master/src/extract.sparql</uri>.</p></fn> a TSV (tab-separated values) dump describing all authors’ contributions to papers published in conference proceedings. For the sake of clarity, if paper <italic>p</italic> is written by authors <inline-formula><mml:math id="math001">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">a</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>1</mml:mn>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula> and <inline-formula><mml:math id="math002">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">a</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>2</mml:mn>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula>, two distinct <italic>contributions</italic> (i.e. two distinct rows) are present in our dataset, one for each author. This raw dataset counts 1,770,091 contributions for a total of 506,049 unique papers, accepted in 1,028 unique conferences series.</p>
+<p>During our analysis, we realised that, despite the great overall quality of the data in SciGraph, several affiliations were wrongly resolved to an incorrect organisation identifier in the GRID database. For example, for reasons beyond our knowledge, several contributions of authors actually affiliated to the University of Oxford were mistakenly attributed to the Weizmann Institute of Science in Israel. In the attempt to mitigate this problem, we opted for leveraging the affiliation string field that nonetheless is present in SciGraph alongside the GRID identifier. This enabled us to match this affiliation string with the name of the institution in the GRID database, and overwrite whatever information is present in SciGraph, fixing errors similar to the aforementioned one and thus improving the accuracy of the dataset. Finally, we augmented the dataset for further geographical inspection by resolving countries to continents of pertinence and by adding latitude and longitude coordinates of countries’ centroids. Incidentally, we fixed some other minor issues related to spelling mistakes of country names.</p>
+</sec>
+<sec id="x1-4000-4" sec-type="methods">
+<label>4.</label>
+<title>Methodology</title>
+<p>Since we intended to address both general and conference-specific trends, we performed a <italic>macro analysis</italic>, on the full dataset, and a <italic>micro analysis</italic>, on three selected high-tier conferences.</p>
+<p>In the <italic>macro analysis</italic> we considered all conferences in the 1996–2016 period. We discarded 2017, since in this year we observed a fairly lower number of contributions and a significant amount of unresolved affiliations. The resulting <italic>macro</italic> dataset includes 1,664,733 contributions (477,921 unique papers), of which 946,165 contributions (264,534 unique papers) are explicitly attributed to 1,016 unique conference series.</p>
+<p>For the <italic>micro analysis</italic> we focused instead on three high-tier conferences in the fields of semantic web and digital libraries: the International Semantic Web Conference (ISWC), the Extended Semantic Web Conference (ESWC), and the International Conference on Theory and Practice of Digital Libraries (TPDL). We selected them for two main reasons. First, we wanted to perform this analysis on familiar venues near our field of expertise. In the second instance, we were interested in comparing ISWC and ESWC, which are considered the two top conferences in the semantic web domain and traditionally tend to attract quite different demographics. The first draws people from all over the world, while the second (previously called “European Semantic Web Conference”) appeals mainly to a European audience. Focusing the analysis on three conferences enabled us to manually curate and enrich their data and therefore produce a very comprehensive representation of the involved institutions and countries.</p>
+<p>The datasets of these conferences were extracted from the raw dataset by selecting the contributions with the relevant DBLP conference series identifier (respectively <italic>semweb</italic>, <italic>esws</italic> and <italic>ercimdl</italic>). In some cases we deliberately chose to manually reconciliate some conference editions that were found missing from the conference series (e.g., ISWC 2007 and 2015) and drop instead the contributions mistakenly attributed (e.g., the First International Workshop of Semantic Web Services and Web Process Composition). Two conference editions appear to be missing for good (i.e., they are not in our dataset: ESWC 2007 and TPDL 2014, the latter being a joint event with JCDL published by IEEE/ACM), while for TPDL 2015–2017 the number of contributions is surprisingly lower than in earlier years, but still consistent with figures published by Springer Nature.<xref ref-type="fn" rid="fn-16">16</xref><fn id="fn-16"><label><sup>16</sup></label>
+<p>TPDL conference series on SpringerLink, <uri>https://link.springer.com/conference/tpdl</uri>.</p></fn> However, these few missing and circumscribed data points should not affect the overall validity of our analysis.</p>
+<p>The manual curation phase (i.e. a two day, single person, task) principally aimed at resolving missing affiliations and linking them to correct institutions in the GRID database. In particular, for each contribution whose affiliation details (i.e. gridID, organisation name, city, country, and continent) were empty, we used the provided affiliation string (a plain, “catch-all” text field) to manually infer the missing pieces of information. Often, for lack of clarity of such a string, we availed of information accessible on the Springer website, the PDF of the paper itself, and other institutional websites in order to resolve the affiliation correctly. Whenever GRID provided no entry for the institution in question, but we were still able to narrow down at least its country (e.g. aCompany GmbH), we opted for “minting” a fictional identifier. When even this was not possible, we had no other option but to leave the affiliation unresolved. Fortunately, our enrichment procedure left our datasets with a minority of unresolved contributions, as we will discuss later in detail. We argue that this process, even if time consuming, enabled us to analyse affiliations with a good granularity and to take into account also institutions involved in a small number of research outputs. Table <xref rid="x1-4001-1">1</xref> summarises the key features about the datasets used in our analysis.</p>
+<table-wrap id="x1-4001-1">
+<label>Table 1</label>
+<caption>
+<p>Features of the datasets used for our analysis</p>
+</caption>
+<table frame="hsides" rules="groups">
+<thead>
+<tr>
+<td valign="top" align="left"/>
+<td valign="top" align="center" rowspan="3">Macro analysis</td>
+<td valign="top" align="center" colspan="3">Micro analysis</td>
+</tr>
+<tr>
+<td valign="top"/>
+<td valign="top" colspan="3"><hr/></td>
+</tr>
+<tr>
+<td valign="top" align="left"/>
+<td valign="top" align="center">ISWC</td>
+<td valign="top" align="center">ESWC</td>
+<td valign="top" align="center">TPDL</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top" align="left">observation period</td>
+<td valign="top" align="center">1996–2016</td>
+<td valign="top" align="center">2003–2016</td>
+<td valign="top" align="center">2004–2017 (excl. 2007)</td>
+<td valign="top" align="center">2003–2017 (excl. 2014)</td>
+</tr>
+<tr>
+<td valign="top" align="left">contributions</td>
+<td valign="top" align="center">1,664,733</td>
+<td valign="top" align="center">3,924</td>
+<td valign="top" align="center">4,224</td>
+<td valign="top" align="center">3,271</td>
+</tr>
+<tr>
+<td valign="top" align="left">unique papers (DOIs)</td>
+<td valign="top" align="center">477,921</td>
+<td valign="top" align="center">1,028</td>
+<td valign="top" align="center">1,141</td>
+<td valign="top" align="center">919</td>
+</tr>
+<tr>
+<td valign="top" align="left">countries</td>
+<td valign="top" align="center">166</td>
+<td valign="top" align="center">44</td>
+<td valign="top" align="center">54</td>
+<td valign="top" align="center">52</td>
+</tr>
+<tr>
+<td valign="top" align="left">institutions (gridIDs)</td>
+<td valign="top" align="center">15,423</td>
+<td valign="top" align="center">3,739</td>
+<td valign="top" align="center">4,076</td>
+<td valign="top" align="center">3,208</td>
+</tr>
+<tr>
+<td valign="top" align="left">conference series</td>
+<td valign="top" align="center">1,016</td>
+<td valign="top" align="center">–</td>
+<td valign="top" align="center">–</td>
+<td valign="top" align="center">–</td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+<p>For each dataset, we analysed trends about papers (identified by unique Digital Object Identifiers, <italic>DOIs</italic>), countries, and institutions (identified by unique <italic>gridIDs</italic>) over time, as well as their distributions across the entire observed period. Besides, we tried to assess to what extent the research landscape was open (or closed) to changes by measuring the variability of country rankings over the years. To this end, we defined as rate of change <inline-formula><mml:math id="math003">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">r</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="normal">change</mml:mi>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula> the percentage of new entries (not considering permutations) entering in a top-<italic>n</italic> rankings from one year to the following. For example, let <inline-formula><mml:math id="math004">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">c</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">i</mml:mi>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula> be a generic country and <inline-formula><mml:math id="math005">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">r</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">y</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo>=</mml:mo>
+<mml:mo fence="true" stretchy="false">{</mml:mo>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">c</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>1</mml:mn>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">c</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>2</mml:mn>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">c</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>3</mml:mn>
+</mml:mrow>
+</mml:msub>
+<mml:mo fence="true" stretchy="false">}</mml:mo></mml:math></inline-formula>, <inline-formula><mml:math id="math006">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">r</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">y</mml:mi>
+<mml:mo>+</mml:mo>
+<mml:mn>1</mml:mn>
+</mml:mrow>
+</mml:msub>
+<mml:mo>=</mml:mo>
+<mml:mo fence="true" stretchy="false">{</mml:mo>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">c</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>1</mml:mn>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">c</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>3</mml:mn>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">c</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>4</mml:mn>
+</mml:mrow>
+</mml:msub>
+<mml:mo fence="true" stretchy="false">}</mml:mo></mml:math></inline-formula> the top-3 country rankings for years <italic>y</italic> and <inline-formula><mml:math id="math007">
+<mml:mi mathvariant="italic">y</mml:mi>
+<mml:mo>+</mml:mo>
+<mml:mn>1</mml:mn></mml:math></inline-formula> respectively, then <inline-formula><mml:math id="math008">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">r</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="normal">change</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo>=</mml:mo>
+<mml:mn>0.33</mml:mn></mml:math></inline-formula>. For our application, this equals to evaluate the cosine similarity between bit vectors of the form <inline-formula><mml:math id="math009">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">r</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">y</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo>=</mml:mo>
+<mml:mo fence="true" stretchy="false">[</mml:mo>
+<mml:mn>1</mml:mn>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mn>1</mml:mn>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mn>1</mml:mn>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mn>0</mml:mn>
+<mml:mo fence="true" stretchy="false">]</mml:mo></mml:math></inline-formula> and <inline-formula><mml:math id="math010">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">r</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">y</mml:mi>
+<mml:mo>+</mml:mo>
+<mml:mn>1</mml:mn>
+</mml:mrow>
+</mml:msub>
+<mml:mo>=</mml:mo>
+<mml:mo fence="true" stretchy="false">[</mml:mo>
+<mml:mn>1</mml:mn>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mn>0</mml:mn>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mn>1</mml:mn>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mn>1</mml:mn>
+<mml:mo fence="true" stretchy="false">]</mml:mo></mml:math></inline-formula> where the <italic>i</italic>-th position in the vectors encodes the country <inline-formula><mml:math id="math011">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">c</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">i</mml:mi>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula> and a 1 (0) bit indicates that country <inline-formula><mml:math id="math012">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">c</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">i</mml:mi>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula> is present (absent) in the top-3 ranking. We also assessed the similarity of country rankings in subsequent years over the whole set of countries (166) according to Spearman’s rank correlation coefficient (Spearman’s rho) [<xref ref-type="bibr" rid="ref031">31</xref>], which is a non-parametric measure of rank correlation that moves between <inline-formula><mml:math id="math013">
+<mml:mo>−</mml:mo>
+<mml:mn>1</mml:mn></mml:math></inline-formula> and <inline-formula><mml:math id="math014">
+<mml:mo>+</mml:mo>
+<mml:mn>1</mml:mn></mml:math></inline-formula>. The main advantage of this coefficient is that it considers rank permutations and thus it does not require a stratified top-<italic>n</italic> slicing.</p>
+<p>We also took into consideration the very peculiar nature of the data here considered: conference papers, usually not covered by traditional scientometrics and bibliometrics studies that instead mainly focus on journals. Unlike journal papers, having a publication accepted in conference proceedings usually requires at least an author to present the work at the venue. This aspect has major implications that need to be studied further. We thus performed an analysis on the relationship between the country in which a conference was hosted and the countries from which the publications were from. For this purpose, we assumed that the first author is the one who selects or attends the venue, hence the origin of the paper is the country of affiliation of the first author. This heuristic should hold also in the cases in which the first author is a student and the supervisor would choose the venue, since they would have the same affiliation.</p>
+<p>Finally, we took into consideration the author order (present in SciGraph) and formulated the hypothesis that different author contributions weigh differently when writing a paper. In particular, we hypothesised that the first author indicates the <italic>initiator</italic> of a research effort, while the last author indicates the professor or the research line supervisor acting as an <italic>overseer</italic> of the work; a hypothesis that seems reasonable in many disciplines, especially in computer science, which is well represented in our datasets. We validated this intuition both quantitatively and qualitatively. We observed that only 26.8% of papers in our macro dataset happen to have authors ordered alphabetically (single-authored papers being considered as not ordered). Also, among the papers resulting in an ordered author list, 58% is authored by just two authors, indicating that the aforementioned percentage is likely an overestimation of the actual number of papers with alphabetically ordered authors. Finally, the percentage drops to 11.25% when considering papers with three or more authors.</p>
+<p>Checking the “seniority” of authors would be another viable strategy to test further our hypothesis. Unfortunately, author disambiguation and references are not yet modelled in the present version of SciGraph and thus a computational estimation of seniority based on the number of papers produced, citations count, period of activity, or similar factors was not possible. We opted for proceeding from a qualitative point of view and observed the name of the researchers that appeared most as last authors in the datasets under analysis. In the macro dataset, we found a number of very influential (papers, H-index and citations looked up on Google Scholar) scientists who lead significant research groups. We validated that the same stands for the three datasets for the micro analysis. Of course this hypothesis does not hold in all the cases (e.g. papers in which the order is alphabetical or other) and does not reflect a common custom for all academic disciplines (e.g. in Humanities &amp; Social Sciences); however, we believe that this can be a good approximation that works well for this analysis. Indeed, the same hypothesis has been followed in a number of recent studies [<xref ref-type="bibr" rid="ref023">23</xref>,<xref ref-type="bibr" rid="ref032">32</xref>,<xref ref-type="bibr" rid="ref034">34</xref>,<xref ref-type="bibr" rid="ref037">37</xref>].</p>
+<p>The results shown in the following are obtained by analysing the datasets within a Python notebook<xref ref-type="fn" rid="fn-17">17</xref><fn id="fn-17"><label><sup>17</sup></label>
+<p>Jupiter notebook, <uri>https://ipython.org/notebook.html</uri>.</p></fn> availing of Pandas library.<xref ref-type="fn" rid="fn-18">18</xref><fn id="fn-18"><label><sup>18</sup></label>
+<p>Pandas library, <uri>https://pandas.pydata.org</uri>.</p></fn> For reproducibility purposes, the datasets and the Python notebook are accessible on Github,<xref ref-type="fn" rid="fn-19">19</xref><fn id="fn-19"><label><sup>19</sup></label>
+<p>Code and datasets, <uri>https://github.com/andremann/SAVE-SD-2018ext</uri>.</p></fn> as well as on Zenodo<xref ref-type="fn" rid="fn-20">20</xref><fn id="fn-20"><label><sup>20</sup></label>
+<p>Zenodo snapshot, <uri>https://zenodo.org/record/2583139</uri>.</p></fn> for long-term preservation. Nonetheless, the datasets can be easily reconstructed following the methodology we just described. All the plots here included, and many others not reported for the sake of space, are available online.<xref ref-type="fn" rid="fn-21">21</xref><fn id="fn-21"><label><sup>21</sup></label>
+<p>Interactive Jupiter notebook and figures, <uri>https://nbviewer.jupyter.org/github/andremann/SAVE-SD-2018ext/blob/master/Geographical-trends-in-research-Analysis.ipynb</uri>.</p></fn> As the plots are rich in content, the images reported here cannot adequately render all the information available. Therefore, we strongly suggest the interested reader to consult also the online visualisations, which are also interactive.</p>
+</sec>
+<sec id="x1-5000-5">
+<label>5.</label>
+<title>Results</title>
+<p>In this Section, we report the results emerged from our macro and micro analysis. The discussion of such results can be found in Section <xref rid="x1-8000-6">6</xref>.</p>
+<sec id="x1-6000-5.1">
+<label>5.1.</label>
+<title>Macro analysis</title>
+<p>The number of contributions for each year, either with or without resolved affiliations, is reported in Fig. <xref rid="x1-6001-1">1</xref>(a). We can notice how information about authors’ affiliation is present in the majority of contributions in our dataset. Figure <xref rid="x1-6001-1">1</xref>(b) shows the number of unique papers (<italic>DOIs</italic>) and the number of unique institutions (<italic>gridIDs</italic>) over the years. Despite a scale factor, the two trends are correlated with a Pearson’s correlation coefficient [<xref ref-type="bibr" rid="ref027">27</xref>] of <inline-formula><mml:math id="math015">
+<mml:mi mathvariant="italic">r</mml:mi>
+<mml:mo>=</mml:mo>
+<mml:mn>0.987</mml:mn></mml:math></inline-formula>, suggesting that not only the volume of research literature has increased, but also that the number of institutions contributing to research has gone through the same trend.</p>
+<p>Figure <xref rid="x1-6001-1">1</xref>(c) reports the distribution of papers among countries over the observed period without taking initiators and overseers into account (top-30 for the sake of space). The distribution is heavily skewed in favour of USA, China, and Germany. The data points follow a power law<xref ref-type="fn" rid="fn-22">22</xref><fn id="fn-22"><label><sup>22</sup></label>
+<p>The data, sorted from the largest to the lowest number of publications, may be represented by a power law function of the type <inline-formula><mml:math id="math016">
+<mml:mi mathvariant="italic">y</mml:mi>
+<mml:mo>=</mml:mo>
+<mml:mi mathvariant="italic">a</mml:mi>
+<mml:msup>
+<mml:mrow>
+<mml:mi mathvariant="italic">x</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mo>−</mml:mo>
+<mml:mi mathvariant="italic">s</mml:mi>
+</mml:mrow>
+</mml:msup></mml:math></inline-formula>, with <inline-formula><mml:math id="math017">
+<mml:mi mathvariant="italic">a</mml:mi>
+<mml:mo>=</mml:mo>
+<mml:mn>3</mml:mn>
+<mml:mo>×</mml:mo>
+<mml:msup>
+<mml:mrow>
+<mml:mn>10</mml:mn>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>6</mml:mn>
+</mml:mrow>
+</mml:msup></mml:math></inline-formula> and <inline-formula><mml:math id="math018">
+<mml:mi mathvariant="italic">s</mml:mi>
+<mml:mo>=</mml:mo>
+<mml:mn>2.3</mml:mn></mml:math></inline-formula> (<inline-formula><mml:math id="math019">
+<mml:mn>95</mml:mn>
+<mml:mi mathvariant="normal">%</mml:mi></mml:math></inline-formula> confidence interval <inline-formula><mml:math id="math020">
+<mml:mo>−</mml:mo>
+<mml:mn>2.5</mml:mn>
+<mml:mo>;</mml:mo>
+<mml:mo>−</mml:mo>
+<mml:mn>2.2</mml:mn></mml:math></inline-formula>): the coefficient of determination is <inline-formula><mml:math id="math021">
+<mml:mi mathvariant="italic">r</mml:mi>
+<mml:mn>2</mml:mn>
+<mml:mo>=</mml:mo>
+<mml:mn>0.87</mml:mn></mml:math></inline-formula> and the standard error of estimate is 0.37.</p></fn> confirming the results of previous literature [<xref ref-type="bibr" rid="ref008">8</xref> ,<xref ref-type="bibr" rid="ref018">18</xref> ,<xref ref-type="bibr" rid="ref022">22</xref>,<xref ref-type="bibr" rid="ref025">25</xref>]. Interestingly, the power law characteristic of the paper distribution over countries is also valid in each year across the period. The data follow the Pareto distribution [<xref ref-type="bibr" rid="ref026">26</xref>] with 20% of the countries producing more than 80% of the papers. The distribution of institutions over countries (i.e. the number of institutions present in a given country) follows as well a power law, as shown by Fig. <xref rid="x1-6001-1">1</xref>(d). Again, the figure shows the first 30 countries in order to improve the readability. For the sake of space, we omitted the details about the distributions among countries of papers and institutions for first and last authors; the reader can consult them online.</p>
+<fig id="x1-6001-1">
+<label>Fig. 1.</label>
+<caption>
+<p>Results form the <bold>macro</bold> analysis. (a) the trends of contributions with and without resolved authors’ affiliations. The amount of unresolved affiliations (in green) is relatively contained. (b) the trends of unique papers and institutions (highly correlated, despite the scale factor). (c) and (d) the distribution of papers and institutions among countries respectively. In figures’ inlays, the best fitting power law of the two distributions. (e) and (f) the breakdown of unique institutions and countries by authors’ position (i.e. first/last vs middle authors).</p>
+</caption>
+<graphic xlink:href="ds-2-ds190015-g001.jpg"/>
+</fig>
+<p>In order to assess the openness/closeness of the research landscape, we computed the average <inline-formula><mml:math id="math022">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">r</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="normal">change</mml:mi>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula> for the top-5, top-10 and top-25 country rankings across the observed period obtaining 0.12, 0.09, and 0.07 respectively. This suggests that (i) year by year it gets harder for outsiders to break in a top-<italic>n</italic>, and (ii) that it gets harder and harder as the top-<italic>n</italic> set broadens. Over the 21 year span of our observation, the top-5 has been visited by 10 countries, the top-10 by 16, and the top-25 by 34. For example, the top-10 has been visited by USA (21), Germany (21), Japan (21), United Kingdom (21), Italy (21), France (21), Spain (19), Canada (14), China(14), Australia (9), Netherlands (9), South Korea (6), India (6), Poland (3), Russia (3), Switzerland (2). Figure <xref rid="x1-6002-2">2</xref>(a) visually represents the countries that visited the top-10. As it can been noticed, 6 positions out of 10 are stably occupied by the same countries, while the other 4 are contended by 10 more countries. One might argue that, even if the yearly turnover is small (yet not null), there is still room for significant changes in the research landscape in the long term. Indeed, as we can observe in Fig. <xref rid="x1-6002-2">2</xref>(a), some countries that appear to be steadily present in the top-10 in recent years (e.g. China, India and to some extent Spain) did not use to be present at the beginning of the observed period. Incidentally, the stable presence of China (CN, third from the bottom) in the top-10 since 2003, to some extent, could be assimilated to the well-known phenomenon of the “Rise of China”, consequence of the more progressive reforms enacted after the death of Mao Zedong in the 80s [<xref ref-type="bibr" rid="ref038">38</xref>]. This “late rise” dated 2003 can be a mere artefact of this particular dataset and analysis (i.e. restriction to the top-10).</p>
+<fig id="x1-6002-2">
+<label>Fig. 2.</label>
+<caption>
+<p>Yearly top-10 country rankings in the macro analysis (a) and country ranking similarity over the whole observed period according to Spearman’s rho (b).</p>
+</caption>
+<graphic xlink:href="ds-2-ds190015-g002.jpg"/>
+</fig>
+<p>We also evaluated the similarity of country rankings (in terms of papers produced) in subsequent years over the whole set of countries (166) according to Spearman’s rho. As it can be noted in Fig. <xref rid="x1-6002-2">2</xref>(b), the coefficient is globally growing over time, denoting an increasingly static landscape. The average Spearman’s rho in the period under analysis is 0.9, which is traditionally considered a very strong direct correlation, and grows up to 0.96 in 2016. Interestingly, the Spearman’s rho lowers momentarily in 2002–2003, suggesting that the emergence of China and other Asian countries was briefly able to invert the trend, as also indicated by Huang et al. [<xref ref-type="bibr" rid="ref015">15</xref>]. However, from 2004 the Spearman’s rho started to grow again, indicating that the appearance of few new players did not change the long term dynamics. It thus appears that, despite the larger availability of scientific publications online, the research landscape is actually become increasingly impermeable to emerging countries.</p>
+<p>The results of the analysis of conference venues are summarised in Fig. <xref rid="x1-6003-3">3</xref>. Figure <xref rid="x1-6003-3">3</xref>(a) shows a world map where edges represent papers sent from a given country to conferences in another country. Papers are aggregated by country (i.e. thickness of an edge) and continent (i.e. the colour of the edge). For practicality, latitude and longitude are relative to the countries centroids.</p>
+<fig id="x1-6003-3">
+<label>Fig. 3.</label>
+<caption>
+<p>Results from the analysis of conference venues on the macro dataset. In (a), a generic edge originates from a country (i.e. its centroid) contributing to a paper and terminates on a country hosting the venue where it has been presented. The thickness of an edge encodes the number of papers a country contributed to, while the colour encodes the country’s continent of origin. In (b), an heatmap showing how continents of affiliation (on y-axis) split their papers among continents hosting conferences (on x-axis). In (c), the dual heatmap showing in what percentage the papers received by continents hosting conferences (on y-axis) are divided among continents of affiliation (on x-axis). In (d), a bubble chart representing how countries divide their contributions among continental and intercontinental conferences. Each bubble represents a country; the colour encodes the continent the country belongs to, while the area encodes the number of papers published by the country within its own continent.</p>
+</caption>
+<graphic xlink:href="ds-2-ds190015-g003.jpg"/>
+</fig>
+<p>The heatmap in Fig. <xref rid="x1-6003-3">3</xref>(b) shows the patterns with which different continents submit their papers to conferences (rows sum up to 100%) and provides a key to read Fig. <xref rid="x1-6003-3">3</xref>(a). Europe appears to be the main target for all the other continents (Europe: 75.72%, North America: 48.93%, Africa: 53.72%, Oceania: 42.29%, South America: 52.40%) with the notable exception of Asia (only 25.91%). The fact that European countries send so many papers to conferences in Europe is not surprising as the continent is dense of opportunities and exhibits a very tight network of collaborations. What seems surprising is that other continents concentrate the largest part of their volume towards Europe, a signal that we interpret as a global acclamation of research quality: researchers, even from afar, even from developing countries, tend to be attracted to European conferences. In contrast, Asia publishes 58.86% of its papers in conferences hosted in Asia. This might suggest that Asia too has developed over the years a research environment dense of opportunities, and with a tight network of academics. The collaboration networks of Europe and Asia emerge quite clearly in Fig. <xref rid="x1-6004-4">4</xref>(a), which displays <italic>intracontinental</italic> collaborations among countries. Figure <xref rid="x1-6004-4">4</xref>(b) reports instead <italic>intercontinental</italic> collaborations among countries. As before, Europe appears to be the most prominent continent.</p>
+<fig id="x1-6004-4">
+<label>Fig. 4.</label>
+<caption>
+<p>Intracontinental (a) and intercontinental (b) collaborations among countries. Edges represent a collaboration among two countries within a paper; the width of the edge represents the intensity of the collaboration, while the colour encodes the couple of continents involved. As the images are information rich, we suggest exploring them on the online notebook.</p>
+</caption>
+<graphic xlink:href="ds-2-ds190015-g004.jpg"/>
+</fig>
+<p>The dual heatmap in Fig. <xref rid="x1-6003-3">3</xref>(c) reports the number of papers received from conferences aggregated by continent (rows sum to 100%). It may be reasonable to believe that conferences tend to attract especially “local” contributions (on the diagonal in the heatmap). However, this is true only for Asia (65.89%) and Europe (65.88%). Indeed, conferences located in Africa and South America appear to accept mostly European papers (54.09% and 41.25% respectively), while conferences located in Oceania publish mostly Asian papers (41.15%). Interestingly, North America seems to be the less biased scenario, with 38.63% papers received from North America, 34.81% from Europe and 20.69% from Asia.</p>
+<p>Countries will also tend to focus differently on conferences series that frequently change continent (i.e. <italic>intercontinental conferences series</italic>) and those that are generally local to a specific continent (i.e. <italic>continental conferences series</italic>; here defined as conferences series with at least 80% of instances within the same continent). The bubble chart in Fig. <xref rid="x1-6003-3">3</xref>(d) highlights such dynamics. Each bubble represents a country, while its colour encodes the continent, and its area represents the number of papers published by the country in conferences within its own continent. The right hand side of the plot is populated by countries that focus mainly on continental conferences series, while the left hand side by countries that publish mostly in intercontinental ones. European countries (in blue, Germany the biggest) share a similar footprint as they appear strongly focused on continental (European) conferences series. Asian countries (in yellow, China the biggest) behave similarly, but they are slightly more open to intercontinental conferences series. USA (the biggest in red) and South American countries have a very different footprint and present most of the papers in intercontinental conferences series hosted in North America and South America respectively. Finally, Oceania exhibits a more balanced blend (approximately 50/50), while African countries appear fanned out with no remarkable pattern standing out.</p>
+<p>As a conclusion of our macro analysis, we present the results emerged by applying our hypothesis on authors’ position, i.e., first author as the initiator of a research paper, and last author as the overseer. Figure <xref rid="x1-6001-1">1</xref>(e) presents the total number of institutions involved in research over time (in blue) and compares the number of unique institutions appearing as affiliations of the first and last authors (in orange), and the unique institutions appearing only as middle author’s affiliations (in green). The figure suggests that there is a substantial gap between the number of institutions that initiate and oversee a research endeavour versus the total number of institutions involved in research. Also, this gap appears to grow over time raising from 166 unique affiliations never initiating or overseeing research papers in 1996 to over 700 in each of the last 3 years (2014–2016). Interestingly, this phenomenon is present despite the fact that the average number of authors per paper does not exhibit the same growth, oscillating steadily around 3.06 (<inline-formula><mml:math id="math023">
+<mml:mo>±</mml:mo>
+<mml:mn>2.08</mml:mn></mml:math></inline-formula>) in the same time interval (not reported here for the sake of space, but available online). In addition, the ratio between the affiliations non-leading research papers and the total number of affiliations is also globally increasing over the years (i.e., non-monotonically). On a brighter note, the amount of institutions initiating or overseeing research is significantly growing over time rather than plateauing, which indicates that some new players still have the opportunity to lead research efforts. It is important to stress that the sets of institutions appearing as middle authors’ affiliations in subsequent years are very likely to differ. We counted a total of 1,719 institutions appearing only as middle author’s affiliations over the whole period, which is about the 11% of the total affiliations in our dataset.</p>
+<p>For the sake of completeness, we ran the same analysis for countries. Figure <xref rid="x1-6001-1">1</xref>(f) highlights the trend of countries in function of the authors’ positions. Also in this case, we see a gap between the total number of countries involved in research and the number of first and last authors’ countries of affiliation; however, it does not exhibit the same striking growth as in the case of institutions. We believe that this is due to the naturally limited number of countries, as opposed to the virtually unbounded number of new institutions that keep appearing each year. However, the number of affiliation countries of middle authors passes from 0 to 5 over the whole observed period. We finally noticed that the countries that tend to not lead many research contributions are usually developing ones (e.g., Nicaragua, Burundi, Congo) or very little ones (e.g., San Marino, Monaco).</p>
+</sec>
+<sec id="x1-7000-5.2">
+<label>5.2.</label>
+<title>Micro analysis</title>
+<p>Here we summarise the results obtained by analysing the three high-tier conferences (i.e., ISWC, ESWC and TPDL). Figures <xref rid="x1-7001-5">5</xref>(a), <xref rid="x1-7002-6">6</xref>(a), <xref rid="x1-7003-7">7</xref>(a) and Figs <xref rid="x1-7001-5">5</xref>(b), <xref rid="x1-7002-6">6</xref>(b), <xref rid="x1-7003-7">7</xref>(b) show respectively the number of contributions, and the number of papers and institutions contributing to the conferences over the years. Since we manually curated the three datasets, the percentage of unresolved affiliations is much lower than for the macro analysis. Again we can observe a high correlation between the number of papers accepted and the number of contributing institutions. Differently from the macro analysis, however, the number of papers and institutions are within the same order of magnitude. Indeed, the number of papers accepted each year by a conference is naturally limited, whereas there are no limitations to the number of institutions that can apply.</p>
+<fig id="x1-7001-5">
+<label>Fig. 5.</label>
+<caption>
+<p>Results from the micro analysis of <bold>ISWC</bold>. (a) the trends of contributions with and without resolved authors’ affiliations. The amount of unresolved affiliations (in green) is relatively contained. (b) the trends of unique papers and institutions. (c) and (d) the distribution of papers and institutions among countries respectively. In figures’ inlays, the best fitting power law of the two distributions. (e) and (f) the breakdown of unique institutions and countries by authors’ position (i.e. first/last vs middle authors).</p>
+</caption>
+<graphic xlink:href="ds-2-ds190015-g005.jpg"/>
+</fig>
+<fig id="x1-7002-6">
+<label>Fig. 6.</label>
+<caption>
+<p>Results from the micro analysis of <bold>ESWC</bold>. (a) the trends of contributions with and without resolved authors’ affiliations. The amount of unresolved affiliations (in green) is relatively contained. (b) the trends of unique papers and institutions. (c) and (d) the distribution of papers and institutions among countries respectively. In figures’ inlays, the best fitting power law of the two distributions. (e) and (f) the breakdown of unique institutions and countries by authors’ position (i.e. first/last vs middle authors).</p>
+</caption>
+<graphic xlink:href="ds-2-ds190015-g006.jpg"/>
+</fig>
+<fig id="x1-7003-7">
+<label>Fig. 7.</label>
+<caption>
+<p>Results from the micro analysis of <bold>TPDL</bold>. (a) the trends of contributions with and without resolved authors’ affiliations. The amount of unresolved affiliations (in green) is relatively contained. (b) the trends of unique papers and institutions. (c) and (d) the distribution of papers and institutions among countries respectively. In figures’ inlays, the best fitting power law of the two distributions. (e) and (f) the breakdown of unique institutions and countries by authors’ position (i.e. first/last vs middle authors).</p>
+</caption>
+<graphic xlink:href="ds-2-ds190015-g007.jpg"/>
+</fig>
+<p>Figures <xref rid="x1-7001-5">5</xref>(c), <xref rid="x1-7002-6">6</xref>(c), <xref rid="x1-7003-7">7</xref>(c) and Figs <xref rid="x1-7001-5">5</xref>(d), <xref rid="x1-7002-6">6</xref>(d), <xref rid="x1-7003-7">7</xref>(d) confirm the results reported in the previous section showing that even in these conferences the distribution of papers and institutions across countries follows a power law. However, this is not always verified in a specific year mainly because of insufficient data points (i.e. in a single conference edition the number of papers is limited).</p>
+<p>As before, we evaluated the stratified top-<italic>n</italic> rate of change for each single conference. We had to limit our analysis to top-5, top-10 and top-15 since the set of countries participating in a single year to such conferences can be quite limited. Table <xref rid="x1-7004-2">2</xref> reports the analysis on the turnover rates. When considering these specific conferences the situation is slightly more open to changes in yearly country rankings than in the macro analysis. The table also reports the average Spearman’s rho evaluated across the whole period and highlights for example that ISWC seems less prone to variations than its European counterpart, while TPDL appears to be the venue most open to changes among the three. This can be also noticed from the trend of Spearman’s rho over the year reported in Fig. <xref rid="x1-7005-8">8</xref>. The trend for TPDL (in green) is decreasing over the years indicating more variability in country rankings. Not surprisingly, we noticed a stronger presence of European countries in ESWC than in the other two conferences; this is probably due to the initial local target of the conference. Also, China appears quite involved in the semantic web community, but is less active in the TPDL conference and never appears in the top-10.</p>
+<table-wrap id="x1-7004-2">
+<label>Table 2</label>
+<caption>
+<p>Average <inline-formula><mml:math id="math024">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">r</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="normal">change</mml:mi>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula> and Spearman’s rho for the micro analysis</p>
+</caption>
+<table frame="hsides" rules="groups">
+<thead>
+<tr>
+<td valign="top" align="left" rowspan="3"/>
+<td valign="top" align="center" colspan="3">Average <inline-formula><mml:math id="math025">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">r</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="normal">change</mml:mi>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula></td>
+<td valign="top" align="center" rowspan="3">Average Spearman’s rho</td>
+</tr>
+<tr>
+<td valign="top" colspan="3"><hr/></td>
+</tr>
+<tr>
+<td valign="top" align="center">Top-5</td>
+<td valign="top" align="center">Top-10</td>
+<td valign="top" align="center">Top-15</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top" align="left">ISWC</td>
+<td valign="top" align="center">0.21</td>
+<td valign="top" align="center">0.25</td>
+<td valign="top" align="center">0.23</td>
+<td valign="top" align="center">0.73</td>
+</tr>
+<tr>
+<td valign="top" align="left">ESWC</td>
+<td valign="top" align="center">0.30</td>
+<td valign="top" align="center">0.20</td>
+<td valign="top" align="center">0.23</td>
+<td valign="top" align="center">0.66</td>
+</tr>
+<tr>
+<td valign="top" align="left">TPDL</td>
+<td valign="top" align="center">0.26</td>
+<td valign="top" align="center">0.34</td>
+<td valign="top" align="center">0.32</td>
+<td valign="top" align="center">0.60</td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+<fig id="x1-7005-8">
+<label>Fig. 8.</label>
+<caption>
+<p>Country ranking similarity evaluated according to Spearman’s rho for the three selected conferences throughout the whole observed periods.</p>
+</caption>
+<graphic xlink:href="ds-2-ds190015-g008.jpg"/>
+</fig>
+<p>The analysis on authors’ position is fairly aligned with the macro analysis. Figures <xref rid="x1-7001-5">5</xref>(e), <xref rid="x1-7002-6">6</xref>(e), and <xref rid="x1-7003-7">7</xref>(e) report the number of institutions contributing to the conferences and highlight the trends of the ones appearing as first and last authors’ affiliations, and the one relative to institutions appearing only as middle authors’ affiliations. As in the previous analysis, all the three conferences show a growing gap between the institutions associated with first/last authors and the total number of affiliations.</p>
+<p>We investigated further and retrieved the sets of institutions never appearing as either first or last authors’ affiliations throughout the entire observed periods (available online). Here it can be noted how prestigious universities and research centres appear side by side with smaller firms, museums, national libraries, hospitals and less well-known universities. This result indicates that the gap is “populated” by institutions that at some point collaborated in semantic web research (or digital libraries) making it through, whereas they never stand out on their own (for reasons beyond our knowledge) by having affiliated authors in first/last position. Indeed, institutions like national libraries, museums, the European Bioinformatics Institute, the British Geological Survey, the National Institute of Standards and Technology, and so on, provided interesting research case studies or support that eventually culminated in a publication, but apparently never happened to lead a paper on their own (at least not in these communities). We also verified that the intersection between these sets across different conferences is not empty, suggesting that a few institutions struggled to surface as key contributors, despite being present in both communities.</p>
+<p>For completeness, Figs <xref rid="x1-7001-5">5</xref>(f), <xref rid="x1-7002-6">6</xref>(f), and <xref rid="x1-7003-7">7</xref>(f) show the trend of countries contributing to the conferences, highlighting country affiliations of first/last and middle authors. As for the macro analysis, results show that a gap is present most of the time, but this is not enough to spot out a clear, distinctive trend over the observed period. We believe this is due to the narrow focus of the micro analysis that restricts the view to a limited number of papers per year.</p>
+</sec>
+</sec>
+<sec id="x1-8000-6">
+<label>6.</label>
+<title>Discussion</title>
+<p>The study of authors’ affiliations in the research literature has been performed for decades as it can provide answers to socioeconomic questions and frame academic research on a geopolitical canvas rather than studying it as an isolated complex system. In this work we analysed four datasets distilled from Springer Nature SciGraph and provided results on both a macro and a micro scale.</p>
+<p>A possible limitation of our analysis lies immanently in the choice, somewhat forced, of SciGraph as our open dataset of reference, as it contains only Springer Nature material. This introduces a possible selection bias due to (i) single-publisher rather than pan-publisher viewpoint, and (ii) uneven distribution of academic disciplines. Indeed, some fields of study are under-represented in the dataset, while others are over-represented, such as computer science and engineering. Furthermore, SciGraph does not model citations to other papers, and, even so, the majority of them would by any rate fall outside Springer Nature domain. As a consequence, relevant metadata would be unavailable in SciGraph itself or available in other open datasets with insufficient affiliations’ details to support our analysis. Besides, the papers eventually accepted in conferences are a minimal fraction of the whole amount of submissions; a much clearer view about openness/closeness of conferences and research communities may be achieved by analysing also the data about rejected papers from conference management systems such as EasyChair<xref ref-type="fn" rid="fn-23">23</xref><fn id="fn-23"><label><sup>23</sup></label>
+<p>EasyChair conference management system, <uri>http://easychair.org</uri>.</p></fn> or ConfTool.<xref ref-type="fn" rid="fn-24">24</xref><fn id="fn-24"><label><sup>24</sup></label>
+<p>ConfTool conference &amp; event management software, <uri>http://www.conftool.net</uri>.</p></fn> However, these data are only released by a very small group of conferences.</p>
+<p>The results, in accordance with previous studies [<xref ref-type="bibr" rid="ref018">18</xref>,<xref ref-type="bibr" rid="ref022">22</xref>,<xref ref-type="bibr" rid="ref025">25</xref>], showed that distributions of papers and institutions across countries still follow a power law in the period 1996–2016. In addition, our analysis of the turnover rate in country rankings highlights that not only top ranks in research are generally limited to a handful of countries and institutions, but that the situation appears also to be stagnant towards the lower ranks. In addition, we measured the Spearman’s rho between the ranking in consecutive years and found that it is raising steadily, with the exception of a brief period in which the emergence of China and a few of other countries temporarily inverted the trend. It thus appears that the ranking of countries in terms of scientific production is turning increasingly static over the years. This suggest that specific initiatives ought to be put in place, to widen participation in the relevant scientific venues. In general, this reflects the intuition that well-formed research communities may exhibit resistance towards the permeation of outsiders, not always sharing knowledge and set of best practices consolidated over the years. We believe that this phenomenon is worth studying further.</p>
+<p>We also performed an analysis of the relationship between countries hosting and participating to scientific conferences, unveiling some interesting global trends. Europe stands out for its centrality in the research landscape, nonetheless also Asia exhibits a good network of “local” conferences and tight collaboration networks, probably in the attempt of recreating a fertile environment for knowledge diffusion similar to the one already present in Europe. We believe that considering mobility to venues offers a very context-rich dimension to investigate, which is often subject to economic and geopolitical factors such as geographic distance, budget availability for travels, and travel bans. In some cases, being physically present at the conference venue means taking long-haul flights; for some countries, such as Australia, New Zealand and similarly relatively isolated countries, the chances of being poorly connected to the conference venues are higher. In other cases, physical attendance might be hindered by economic factors, that in turn can depend on strategic and political decisions of specific countries. Finally, a plethora of factors driven by international politics and conflicts can play a major role too. In several occasions, travel bans disrupted scientists’ mobility. For example, in 2013 NASA prevented Chinese nationals to set foot in the space agency’s Ames research centre in California.<xref ref-type="fn" rid="fn-25">25</xref><fn id="fn-25"><label><sup>25</sup></label>
+<p><uri>https://www.theguardian.com/science/2013/oct/05/us-scientists-boycott-nasa-china-ban</uri>.</p></fn> Furthermore, citizens of countries with a Muslim demographic majority are known to encounter more difficulties in getting travel visas to European or North American countries [<xref ref-type="bibr" rid="ref024">24</xref>]. The travel ban<xref ref-type="fn" rid="fn-26">26</xref><fn id="fn-26"><label><sup>26</sup></label>
+<p>Travel ban list, <uri>https://edition.cnn.com/2017/01/29/politics/trump-travel-ban-countries/index.html</uri>.</p></fn> promulgated by USA president Donald Trump in 2017 recently sparkled a interesting discussion on this topic [<xref ref-type="bibr" rid="ref024">24</xref>]. We are unable to analyse directly the effect of this particular travel ban since the current version of SciGraph does not cover 2017 adequately. However, it is interesting to study the trends of the involved countries in previous years. Figure <xref rid="x1-8001-9">9</xref> shows the overall number of publications, accepted in European and North American conferences, whose first authors are affiliated in Iran, Syria, Iraq, Libya, Somalia, Yemen, and Sudan during the 1996–2016 period (i.e. potentially issued visas). Interestingly, the production in North American and European conferences, which previously exhibited a positive trends, declined steadily after 2011 (year of the Syrian Civil War). This effect exist also in countries that did not experience any internal war over this period, such as Iran, suggesting that these trends may not be caused only by the internal turmoil, but also by the increasing difficulties in obtaining visas.</p>
+<fig id="x1-8001-9">
+<label>Fig. 9.</label>
+<caption>
+<p>Number of papers sent to conferences hosted in Europe and North America by first authors affiliated to countries falling in president Trump’s travel ban list (Iran, Syria, Iraq, Libya, Somalia, Yemen, and Sudan).</p>
+</caption>
+<graphic xlink:href="ds-2-ds190015-g009.jpg"/>
+</fig>
+<p>Naturally, the concerns about researchers’ freedom of movement may affect only conference papers in which all the authors are subject to the same kind of restrictions; in the case of papers whose authors have heterogeneous affiliations (and nationalities), for example, the author with less restrictive constraints is, in principle, free to reach the venue and present the findings on behalf of the colleagues. However, in our dataset the average number of affiliation involved per multi-authored paper is <inline-formula><mml:math id="math026">
+<mml:mn>1.44</mml:mn>
+<mml:mo>±</mml:mo>
+<mml:mn>0.78</mml:mn></mml:math></inline-formula>, while for countries is <inline-formula><mml:math id="math027">
+<mml:mn>1.18</mml:mn>
+<mml:mo>±</mml:mo>
+<mml:mn>0.47</mml:mn></mml:math></inline-formula>, indicating that in many cases this solution may not be viable. Therefore, in future work we plan to compare country rankings among high-tier conferences and journals from a controlled set of academic fields in order to analyse whether the mobility factors have an impact on how countries perform.</p>
+<p>Finally, our results from the analysis on first and last authors’ affiliations show that, in principle, weighing authors’ contributions is an intuition that can provide different keys to interpret data. Other studies dealing with researchers’ seniority, for example, take into account the volume of publications produced by a single author throughout a sliding window of <italic>W</italic> years [<xref ref-type="bibr" rid="ref034">34</xref>], or the number of consecutive years of research activity [<xref ref-type="bibr" rid="ref017">17</xref>]. We intend to further investigate these techniques and further test our intuition in order to understand its applicability in other disciplines and extend the approach by including other metrics.</p>
+<p>In conclusion, we advocate openness and transparency for research literature metadata so as to foster reproducibility and evaluation of different approaches within the field of scholarly knowledge analytics [<xref ref-type="bibr" rid="ref019">19</xref>]. It is detrimental to this research to segregate information about venues, papers, authorships and much more in data silos hard (or almost impossible) to access and integrate. Datasets like SciGraph are a bless for researchers working in this field and such initiatives should be praised and set an example. Moreover, new best practices for declaring unambiguous authors’ affiliations should be devised in order to facilitate the work of researchers working with scholarly knowledge. Being able to access high quality, fine-grained research literature metadata is the key to enabling large-scale analytics and cross-correlating scholarly knowledge with external datasets with the aim to get a better and more thorough insight in the existing global dynamics prevailing in academic research.</p>
+</sec>
+</body>
+<back>
+<ack>
+<title>Acknowledgements</title>
+<p>We would like to thank Dr. Michele Pasin and the SciGraph team, whose work and prompt response made this study possible. SciGraph is actively maintained and, currently, a new major update is on the way and will be released in 2019.</p></ack>
+<ref-list>
+<title>References</title>
+<ref id="ref001">
+<label>[1]</label><mixed-citation publication-type="journal"><string-name><given-names>P.</given-names> <surname>Albarrán</surname></string-name>, <string-name><given-names>J.A.</given-names> <surname>Crespo</surname></string-name>, <string-name><given-names>I.</given-names> <surname>Ortuño</surname></string-name> and <string-name><given-names>J.</given-names> <surname>Ruiz-Castillo</surname></string-name>, <article-title>The skewness of science in 219 sub-fields and a number of aggregates</article-title>, <source>Scientometrics</source> <volume>88</volume>(<issue>2</issue>) (<year>2011</year>), <fpage>385</fpage>–<lpage>397</lpage>. doi:<pub-id pub-id-type="doi">10.1007/s11192-011-0407-9</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref002">
+<label>[2]</label><mixed-citation publication-type="journal"><string-name><given-names>K.</given-names> <surname>Börner</surname></string-name> and <string-name><given-names>S.</given-names> <surname>Penumarthy</surname></string-name> and <string-name><given-names>M.</given-names> <surname>Meiss</surname></string-name> and <string-name><given-names>W.</given-names> <surname>Ke</surname></string-name>, <article-title>Mapping the diffusion of scholarly knowledge among major US research institutions</article-title>, <source>Scientometrics</source> <volume>68</volume>(<issue>3</issue>) (<year>2006</year>), <fpage>415</fpage>–<lpage>426</lpage>. url: <uri>https://pdfs.semanticscholar.org/d438/6443e8cadfcae83ae69a4ec036d47def5c7d.pdf</uri>. doi:<pub-id pub-id-type="doi">10.1007/s11192-006-0120-2</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref003">
+<label>[3]</label><mixed-citation publication-type="journal"><string-name><given-names>L.</given-names> <surname>Bornmann</surname></string-name> and <string-name><given-names>R.</given-names> <surname>Mutz</surname></string-name>, <article-title>Growth rates of modern science: A bibliometric analysis based on the number of publications and cited references</article-title>, <source>Journal of the Association for Information Science and Technology</source> <volume>66</volume>(<issue>11</issue>) (<year>2015</year>), <fpage>2215</fpage>–<lpage>2222</lpage>. doi:<pub-id pub-id-type="doi">10.1002/asi.23329</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref004">
+<label>[4]</label><mixed-citation publication-type="journal"><string-name><given-names>L.</given-names> <surname>Bornmann</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Stefaner</surname></string-name>, <string-name><given-names>F.</given-names> <surname>de Moya Anegón</surname></string-name> and <string-name><given-names>R.</given-names> <surname>Mutz</surname></string-name>, <article-title>What is the effect of country-specific characteristics on the research performance of scientific institutions? Using multi-level statistical models to rank and map universities and research-focused institutions worldwide</article-title>, <source>Journal of Informetrics</source> <volume>8</volume>(<issue>3</issue>) (<year>2014</year>), <fpage>581</fpage>–<lpage>593</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.joi.2014.04.008</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref005">
+<label>[5]</label><mixed-citation publication-type="journal"><string-name><given-names>L.</given-names> <surname>Bornmann</surname></string-name> and <string-name><given-names>L.</given-names> <surname>Waltman</surname></string-name>, <article-title>The detection of “hot regions” in the geography of science – A visualization approach by using density maps</article-title>, <source>Journal of informetrics</source> <volume>5</volume>(<issue>4</issue>) (<year>2011</year>), <fpage>547</fpage>–<lpage>553</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.joi.2011.04.006</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref006">
+<label>[6]</label><mixed-citation publication-type="other"><string-name><given-names>R.</given-names> <surname>Carvalho</surname></string-name> and <string-name><given-names>M.</given-names> <surname>Batty</surname></string-name>, <article-title>The geography of scientific productivity: Scaling in US computer science</article-title>, <source>Journal of Statistical Mechanics: Theory and Experiment</source> <volume>10</volume> (<year>2006</year>). ISBN <isbn>1742-5468</isbn>. doi:<pub-id pub-id-type="doi">10.1088/1742-5468/2006/10/P10012</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref007">
+<label>[7]</label><mixed-citation publication-type="journal"><string-name><given-names>G.</given-names> <surname>Csomós</surname></string-name>, <article-title>A spatial scientometric analysis of the publication output of cities worldwide</article-title>, <source>Journal of Informetrics</source> <volume>12</volume>(<issue>2</issue>) (<year>2018</year>), <fpage>547</fpage>–<lpage>566</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.joi.2018.05.003</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref008">
+<label>[8]</label><mixed-citation publication-type="other"><string-name><given-names>L.</given-names> <surname>Egghe</surname></string-name>, <source>Power Laws in the Information Production Process: Lotkaian Informetrics</source>, <publisher-name>Emerald Group Publishing Limited</publisher-name>, <year>2005</year>. ISBN <isbn>978-0-12-088753-8</isbn>. doi:<pub-id pub-id-type="doi">10.1108/S1876-0562(2005)05</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref009">
+<label>[9]</label><mixed-citation publication-type="journal"><string-name><given-names>M.</given-names> <surname>Eisend</surname></string-name> and <string-name><given-names>S.</given-names> <surname>Schmidt</surname></string-name>, <article-title>The influence of knowledge-based resources and business scholars’ internationalization strategies on research performance</article-title>, <source>Research Policy</source> <volume>43</volume>(<issue>1</issue>) (<year>2014</year>), <fpage>48</fpage>–<lpage>59</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.respol.2013.07.011</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref010">
+<label>[10]</label><mixed-citation publication-type="journal"><string-name><given-names>M.E.</given-names> <surname>Falagas</surname></string-name>, <string-name><given-names>A.I.</given-names> <surname>Karavasiou</surname></string-name> and <string-name><given-names>I.A.</given-names> <surname>Bliziotis</surname></string-name>, <article-title>A bibliometric analysis of global trends of research productivity in tropical medicine</article-title>, <source>Acta tropica</source> <volume>99</volume>(<issue>2–3</issue>) (<year>2006</year>), <fpage>155</fpage>–<lpage>159</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.actatropica.2006.07.011</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref011">
+<label>[11]</label><mixed-citation publication-type="journal"><string-name><given-names>M.E.</given-names> <surname>Falagas</surname></string-name>, <string-name><given-names>A.S.</given-names> <surname>Michalopoulos</surname></string-name>, <string-name><given-names>I.A.</given-names> <surname>Bliziotis</surname></string-name> and <string-name><given-names>E.S.</given-names> <surname>Soteriades</surname></string-name>, <article-title>A bibliometric analysis by geographic area of published research in several biomedical fields, 1995–2003</article-title>, <source>Canadian Medical Association Journal</source> <volume>175</volume>(<issue>11</issue>) (<year>2006</year>), <fpage>1389</fpage>–<lpage>1390</lpage>. doi:<pub-id pub-id-type="doi">10.1503/cmaj.060361</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref012">
+<label>[12]</label><mixed-citation publication-type="journal"><string-name><given-names>K.</given-names> <surname>Frenken</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Hardeman</surname></string-name> and <string-name><given-names>J.</given-names> <surname>Hoekman</surname></string-name>, <article-title>Spatial scientometrics: Towards a cumulative research program</article-title>, <source>Journal of Informetrics</source> <volume>3</volume>(<issue>3</issue>) (<year>2009</year>), <fpage>222</fpage>–<lpage>232</lpage>. ISBN <isbn>1751-1577</isbn>. doi:<pub-id pub-id-type="doi">10.1016/j.joi.2009.03.005</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref013">
+<label>[13]</label><mixed-citation publication-type="chapter"><string-name><given-names>K.</given-names> <surname>Frenken</surname></string-name> and <string-name><given-names>J.</given-names> <surname>Hoekman</surname></string-name>, <chapter-title>Spatial scientometrics and scholarly impact: A review of recent studies, tools, and methods</chapter-title>, in: <source>Measuring Scholarly Impact</source>, <publisher-name>Springer</publisher-name>, <year>2014</year>, pp. <fpage>127</fpage>–<lpage>146</lpage>. doi:<pub-id pub-id-type="doi">10.1007/978-3-319-10377-8_6</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref014">
+<label>[14]</label><mixed-citation publication-type="journal"><string-name><given-names>Z.-L.</given-names> <surname>He</surname></string-name>, <article-title>International collaboration does not have greater epistemic authority</article-title>, <source>Journal of the American Society for Information Science and Technology</source> <volume>60</volume>(<issue>10</issue>) (<year>2009</year>), <fpage>2151</fpage>–<lpage>2164</lpage>. doi:<pub-id pub-id-type="doi">10.1002/asi.21150</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref015">
+<label>[15]</label><mixed-citation publication-type="journal"><string-name><given-names>M.-H.</given-names> <surname>Huang</surname></string-name>, <string-name><given-names>H.-W.</given-names> <surname>Chang</surname></string-name> and <string-name><given-names>D.-Z.</given-names> <surname>Chen</surname></string-name>, <article-title>The trend of concentration in scientific research and technological innovation: A reduction of the predominant role of the US in world research &amp; technology</article-title>, <source>Journal of Informetrics</source> <volume>6</volume>(<issue>4</issue>) (<year>2012</year>), <fpage>457</fpage>–<lpage>468</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.joi.2012.03.003</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref016">
+<label>[16]</label><mixed-citation publication-type="journal"><string-name><given-names>J.</given-names> <surname>Hung</surname></string-name>, <article-title>Trends of e-learning research from 2000 to 2008: Use of text mining and bibliometrics</article-title>, <source>British Journal of Educational Technology</source> <volume>43</volume>(<issue>1</issue>) (<year>2012</year>), <fpage>5</fpage>–<lpage>16</lpage>. doi:<pub-id pub-id-type="doi">10.1111/j.1467-8535.2010.01144.x</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref017">
+<label>[17]</label><mixed-citation publication-type="other"><string-name><given-names>M.</given-names> <surname>Jadidi</surname></string-name>, <string-name><given-names>F.</given-names> <surname>Karimi</surname></string-name>, <string-name><given-names>H.</given-names> <surname>Lietz</surname></string-name> and <string-name><given-names>C.</given-names> <surname>Wagner</surname></string-name>, <article-title>Gender disparities in science? Dropout, productivity, collaborations and success of male and female computer scientists</article-title>, <source>Advances in Complex Systems</source> (<year>2017</year>), <elocation-id>1750011</elocation-id>. doi:<pub-id pub-id-type="doi">10.1142/S0219525917500114</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref018">
+<label>[18]</label><mixed-citation publication-type="journal"><string-name><given-names>D.A.</given-names> <surname>King</surname></string-name>, <article-title>The scientific impact of nations</article-title>, <source>Nature</source>, <volume>430</volume> (<year>2004</year>), <fpage>311</fpage>–<lpage>316</lpage>, ISSN 1476-4687. doi:<pub-id pub-id-type="doi">10.1038/430311a</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref019">
+<label>[19]</label><mixed-citation publication-type="chapter"><string-name><given-names>S.</given-names> <surname>La Bruzzo</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Manghi</surname></string-name> and <string-name><given-names>A.</given-names> <surname>Mannocci</surname></string-name>, <chapter-title>OpenAIRE’s DOIBoost – Boosting Crossref for research</chapter-title>, in: <source>Digital Libraries: Supporting Open Science (IRCDL 2019)</source>, <publisher-name>Springer</publisher-name>, <publisher-loc>Cham</publisher-loc>, <year>2019</year>, pp. <fpage>133</fpage>–<lpage>143</lpage>. doi:<pub-id pub-id-type="doi">10.1007/978-3-030-11226-4_11</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref020">
+<label>[20]</label><mixed-citation publication-type="journal"><string-name><given-names>M.</given-names> <surname>Ley</surname></string-name>, <article-title>DBLP: Some lessons learned</article-title>, <source>Proceedings of the VLDB Endowment</source> <volume>2</volume>(<issue>2</issue>) (<year>2009</year>), <fpage>1493</fpage>–<lpage>1500</lpage>. doi:<pub-id pub-id-type="doi">10.14778/1687553.1687577</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref021">
+<label>[21]</label><mixed-citation publication-type="chapter"><string-name><given-names>A.</given-names> <surname>Mannocci</surname></string-name>, <string-name><given-names>F.</given-names> <surname>Osborne</surname></string-name> and <string-name><given-names>E.</given-names> <surname>Motta</surname></string-name>, <chapter-title>Geographical trends in research: A preliminary analysis on authors’ affiliations</chapter-title>, in: <source>Semantics, Analytics, Visualization: Enhancing Scholarly Dissemination (SAVE-SD)</source>, <publisher-name>Springer</publisher-name>, <publisher-loc>Cham</publisher-loc>, <year>2018</year>, pp. <fpage>61</fpage>–<lpage>77</lpage>. doi:<pub-id pub-id-type="doi">10.1007/978-3-030-01379-0_5</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref022">
+<label>[22]</label><mixed-citation publication-type="journal"><string-name><given-names>R.M.</given-names> <surname>May</surname></string-name>, <article-title>The scientific wealth of nations</article-title>, <source>Science</source> <volume>275</volume>(<issue>5301</issue>) (<year>1997</year>), <fpage>793</fpage>–<lpage>796</lpage>. ISBN <isbn>0036-8075</isbn>. doi:<pub-id pub-id-type="doi">10.1126/science.275.5301.793</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref023">
+<label>[23]</label><mixed-citation publication-type="other"><string-name><given-names>S.</given-names> <surname>Mishra</surname></string-name>, <string-name><given-names>B.D.</given-names> <surname>Fegley</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Diesner</surname></string-name> and <string-name><given-names>V.I.</given-names> <surname>Torvik</surname></string-name>, <article-title>Self-citation is the hallmark of productive authors, of any gender</article-title>, <source>PLoS ONE</source> (<year>2018</year>). doi:<pub-id pub-id-type="doi">10.1371/journal.pone.0195773</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref024">
+<label>[24]</label><mixed-citation publication-type="journal"><string-name><given-names>L.</given-names> <surname>Morello</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Reardon</surname></string-name> and <string-name><surname>Others</surname></string-name>, <article-title>Scientists struggle with Trump immigration ban</article-title>, <source>Nature</source> <volume>542</volume>(<issue>7639</issue>) (<year>2017</year>), <fpage>13</fpage>–<lpage>14</lpage>. doi:<pub-id pub-id-type="doi">10.1038/nature.2017.21389</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref025">
+<label>[25]</label><mixed-citation publication-type="other"><string-name><given-names>R.K.</given-names> <surname>Pan</surname></string-name>, <string-name><given-names>K.</given-names> <surname>Kaski</surname></string-name> and <string-name><given-names>S.</given-names> <surname>Fortunato</surname></string-name>, <article-title>World citation and collaboration networks: Uncovering the role of geography in science</article-title>, <source>Scientific Reports</source> <volume>2</volume> (<year>2012</year>). ISBN <isbn>2045-2322</isbn> (Electronic)∖2045-2322 (Linking). doi:<pub-id pub-id-type="doi">10.1038/srep00902</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref026">
+<label>[26]</label><mixed-citation publication-type="other"><string-name><given-names>V.</given-names> <surname>Pareto</surname></string-name>, Manual of political economy: A variorum translation and critical edition, <italic>Oxford University Press UK</italic> (2014). ISBN <isbn>9780199607952</isbn>.</mixed-citation>
+</ref>
+<ref id="ref027">
+<label>[27]</label><mixed-citation publication-type="journal"><string-name><given-names>K.</given-names> <surname>Pearson</surname></string-name>, <article-title>Mathematical contributions to the theory of evolution. III. Regression, heredity, and panmixia</article-title>, <source>Philosophical Transactions of the Royal Society of London. Series A, containing papers of a mathematical or physical character</source> <volume>187</volume> (<year>1896</year>), <fpage>253</fpage>–<lpage>318</lpage>. doi:<pub-id pub-id-type="doi">10.1098/rsta.1896.0007</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref028">
+<label>[28]</label><mixed-citation publication-type="journal"><string-name><given-names>A.M.</given-names> <surname>Petersen</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Fortunato</surname></string-name>, <string-name><given-names>R.K.</given-names> <surname>Pan</surname></string-name>, <string-name><given-names>K.</given-names> <surname>Kaski</surname></string-name>, <string-name><given-names>O.</given-names> <surname>Penner</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Rungi</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Riccaboni</surname></string-name>, <string-name><given-names>H.E.</given-names> <surname>Stanley</surname></string-name> and <string-name><given-names>F.</given-names> <surname>Pammolli</surname></string-name>, <article-title>Reputation and impact in academic careers</article-title>, <source>Proceedings of the National Academy of Sciences</source> <volume>111</volume>(<issue>43</issue>) (<year>2014</year>), <fpage>15316</fpage>–<lpage>15321</lpage>. doi:<pub-id pub-id-type="doi">10.1073/pnas.1323111111</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref029">
+<label>[29]</label><mixed-citation publication-type="other"><string-name><given-names>E.</given-names> <surname>Sarigöl</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Pfitzner</surname></string-name>, <string-name><given-names>I.</given-names> <surname>Scholtes</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Garas</surname></string-name> and <string-name><given-names>F.</given-names> <surname>Schweitzer</surname></string-name>, <article-title>Predicting scientific success based on coauthorship networks</article-title>, <source>EPJ Data Science</source> <volume>3</volume>(<issue>1</issue>) (<year>2014</year>), <elocation-id>9</elocation-id>. doi:<pub-id pub-id-type="doi">10.1140/epjds/s13688-014-0009-x</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref030">
+<label>[30]</label><mixed-citation publication-type="journal"><string-name><given-names>S.-C.J.</given-names> <surname>Sin</surname></string-name>, <article-title>International coauthorship and citation impact: A bibliometric study of six LIS journals, 1980–2008</article-title>, <source>Journal of the American Society for Information Science and Technology</source> <volume>62</volume>(<issue>9</issue>) (<year>2011</year>), <fpage>1770</fpage>–<lpage>1783</lpage>. doi:<pub-id pub-id-type="doi">10.1002/asi.21572</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref031">
+<label>[31]</label><mixed-citation publication-type="journal"><string-name><given-names>C.</given-names> <surname>Spearman</surname></string-name>, <article-title>The proof and measurement of association between two things</article-title>, <source>The American journal of psychology</source> <volume>15</volume>(<issue>1</issue>) (<year>1904</year>), <fpage>72</fpage>–<lpage>101</lpage>. doi:<pub-id pub-id-type="doi">10.2307/1412159</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref032">
+<label>[32]</label><mixed-citation publication-type="journal"><string-name><given-names>M.</given-names> <surname>Thelwall</surname></string-name>, <article-title>Do females create higher impact research? Scopus citations and Mendeley readers for articles from five countries</article-title>, <source>Journal of Informetrics</source> <volume>12</volume>(<issue>4</issue>) (<year>2018</year>), <fpage>1</fpage>–<lpage>18</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.joi.2018.08.005</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref033">
+<label>[33]</label><mixed-citation publication-type="other"><string-name><given-names>M.</given-names> <surname>Thelwall</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Haustein</surname></string-name>, <string-name><given-names>V.</given-names> <surname>Larivière</surname></string-name> and <string-name><given-names>C.R.</given-names> <surname>Sugimoto</surname></string-name>, <article-title>Do altmetrics work? Twitter and ten other social web services</article-title>, <source>PloS one</source> <volume>8</volume>(<issue>5</issue>) (<year>2013</year>), <elocation-id>e64841</elocation-id>. doi:<pub-id pub-id-type="doi">10.1371/journal.pone.0064841</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref034">
+<label>[34]</label><mixed-citation publication-type="journal"><string-name><given-names>F.T.</given-names> <surname>Verleysen</surname></string-name> and <string-name><given-names>A.</given-names> <surname>Weeren</surname></string-name>, <article-title>Clustering by publication patterns of senior authors in the social sciences and humanities</article-title>, <source>Journal of Informetrics</source> <volume>10</volume>(<issue>1</issue>) (<year>2016</year>), <fpage>254</fpage>–<lpage>272</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.joi.2016.01.004</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref035">
+<label>[35]</label><mixed-citation publication-type="other"><string-name><given-names>M.D.</given-names> <surname>Wilkinson</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Dumontier</surname></string-name>, <string-name><given-names>I.J.</given-names> <surname>Aalbersberg</surname></string-name>, <string-name><given-names>G.</given-names> <surname>Appleton</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Axton</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Baak</surname></string-name>, <string-name><given-names>N.</given-names> <surname>Blomberg</surname></string-name>, <string-name><given-names>J.-W.</given-names> <surname>Boiten</surname></string-name>, <string-name><given-names>L.B.</given-names> <surname>da Silva Santos</surname></string-name>, <string-name><given-names>P.E.</given-names> <surname>Bourne</surname></string-name> and <string-name><surname>Others</surname></string-name>, <article-title>The FAIR guiding principles for scientific data management and stewardship</article-title>, <source>Scientific data</source> <volume>3</volume> (<year>2016</year>). doi:<pub-id pub-id-type="doi">10.1038/sdata.2016.18</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref036">
+<label>[36]</label><mixed-citation publication-type="journal"><string-name><given-names>T.S.</given-names> <surname>Woodson</surname></string-name>, <article-title>Research inequality in nanomedicine</article-title>, <source>Journal of Business Chemistry</source> <volume>9</volume>(<issue>3</issue>) (<year>2012</year>), <fpage>133</fpage>–<lpage>146</lpage>. url: <uri>https://www.businesschemistry.org/downloads/issues/Issue10-2012.pdf#page=21</uri>.</mixed-citation>
+</ref>
+<ref id="ref037">
+<label>[37]</label><mixed-citation publication-type="journal"><string-name><given-names>A.</given-names> <surname>Zeng</surname></string-name>, <string-name><given-names>Z.</given-names> <surname>Shen</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Zhou</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Wu</surname></string-name>, <string-name><given-names>Y.</given-names> <surname>Fan</surname></string-name>, <string-name><given-names>Y.</given-names> <surname>Wang</surname></string-name> and <string-name><given-names>H.E.</given-names> <surname>Stanley</surname></string-name>, <article-title>The science of science: From the perspective of complex systems</article-title>, <source>Physics Reports</source> <volume>714–715</volume> (<year>2017</year>), <fpage>1</fpage>–<lpage>73</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.physrep.2017.10.001</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref038">
+<label>[38]</label><mixed-citation publication-type="journal"><string-name><given-names>P.</given-names> <surname>Zhou</surname></string-name> and <string-name><given-names>L.</given-names> <surname>Leydesdorff</surname></string-name>, <article-title>The emergence of China as a leading nation in science</article-title>, <source>Research policy</source> <volume>35</volume>(<issue>1</issue>) (<year>2006</year>), <fpage>83</fpage>–<lpage>104</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.respol.2005.08.006</pub-id>.</mixed-citation>
+</ref>
+</ref-list>
+</back>
+</article>

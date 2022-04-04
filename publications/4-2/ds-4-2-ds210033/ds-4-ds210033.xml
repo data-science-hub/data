@@ -1,0 +1,2028 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.0 20120330//EN" "JATS-journalpublishing1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.0">
+<front>
+<journal-meta>
+<journal-id journal-id-type="publisher-id">DS</journal-id>
+<journal-title-group><journal-title>Data Science</journal-title></journal-title-group>
+<issn pub-type="epub">2451-8492</issn><issn pub-type="ppub">2451-8484</issn><issn-l>2451-8484</issn-l>
+<publisher>
+<publisher-name>IOS Press</publisher-name><publisher-loc>Nieuwe Hemweg 6B, 1013 BG Amsterdam, The Netherlands</publisher-loc>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">DS210033</article-id>
+<article-id pub-id-type="doi">10.3233/DS-210033</article-id>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Research Article</subject></subj-group></article-categories>
+<title-group>
+<article-title>Deep learning based network similarity for model selection</article-title>
+</title-group>
+<contrib-group content-type="Editor">
+<contrib contrib-type="editor">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0001-9416-3211</contrib-id>
+<name><surname>Maes</surname><given-names>Michael</given-names></name>
+</contrib>
+</contrib-group>
+<contrib-group>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0003-1406-215X</contrib-id>
+<name><surname>Singh</surname><given-names>Kushal Veer</given-names></name><xref ref-type="aff" rid="affa">a</xref><xref ref-type="corresp" rid="cor2">*</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-4163-0100</contrib-id>
+<name><surname>Verma</surname><given-names>Ajay Kumar</given-names></name><xref ref-type="aff" rid="affb">b</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0001-9834-3308</contrib-id>
+<name><surname>Vig</surname><given-names>Lovekesh</given-names></name><xref ref-type="aff" rid="affc">c</xref>
+</contrib>
+<aff id="affa"><label>a</label>School of Computational and Integrative Sciences, <institution>Jawaharlal Nehru University</institution>, New Delhi, Delhi, <country>India</country>. E-mail: <email>kushalveer@gmail.com</email></aff>
+<aff id="affb"><label>b</label>School of Computational and Integrative Sciences, <institution>Jawaharlal Nehru University</institution>, New Delhi, Delhi, <country>India</country>. E-mail: <email>ajayverma81@gmail.com</email></aff>
+<aff id="affc"><label>c</label>TCS Innovation Labs, <institution>Tata Research Development and Design Centre</institution>, New Delhi, Delhi, <country>India</country>. E-mail: <email>lovekeshvigin@gmail.com</email></aff>
+</contrib-group>
+<author-notes>
+<corresp id="cor2"><label>*</label>Corresponding author. E-mail: <email>kushalveer@gmail.com</email>.</corresp>
+</author-notes>
+<pub-date date-type="preprint" publication-format="electronic"><day>3</day><month>8</month><year>2021</year></pub-date><pub-date date-type="pub" publication-format="electronic"><day>13</day><month>10</month><year>2021</year></pub-date><pub-date date-type="collection" publication-format="electronic"><year>2021</year></pub-date><volume>4</volume><issue>2</issue><fpage>63</fpage><lpage>83</lpage><history><date date-type="received"><day>28</day><month>03</month><year>2020</year></date><date date-type="accepted"><day>23</day><month>03</month><year>2021</year></date></history>
+<permissions><copyright-statement>© 2021 – The authors. Published by IOS Press.</copyright-statement><copyright-year>2021</copyright-year>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/" license-type="open-access" xlink:type="simple">
+<license-p>This is an open access article distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/" xlink:type="simple">Creative Commons Attribution (CC BY 4.0) License</ext-link>, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions>
+<abstract>
+<p>Capturing data in the form of networks is becoming an increasingly popular approach for modeling, analyzing and visualising complex phenomena, to understand the important properties of the underlying complex processes. Access to many large-scale network datasets is restricted due to the privacy and security concerns. Also for several applications (such as functional connectivity networks), generating large scale real data is expensive. For these reasons, there is a growing need for advanced mathematical and statistical models (also called generative models) that can account for the structure of these large-scale networks, without having to materialize them in the real world. The objective is to provide a comprehensible description of the network properties and to be able to infer previously unobserved properties. Various models have been developed by researchers, which generate synthetic networks that adhere to the structural properties of real networks. However, the selection of the appropriate generative model for a given real-world network remains an important challenge.</p>
+<p>In this paper, we investigate this problem and provide a novel technique (named as TripletFit) for model selection (or network classification) and estimation of structural similarities of the complex networks. The goal of network model selection is to select a generative model that is able to generate a structurally similar synthetic network for a given real-world (target) network. We consider six outstanding generative models as the candidate models. The existing model selection methods mostly suffer from sensitivity to network perturbations, dependency on the size of the networks, and low accuracy. To overcome these limitations, we considered a broad array of network features, with the aim of representing different structural aspects of the network and employed deep learning techniques such as deep triplet network architecture and simple feed-forward network for model selection and estimation of structural similarities of the complex networks. Our proposed method, outperforms existing methods with respect to accuracy, noise-tolerance, and size independence on a number of gold standard data set used in previous studies.</p>
+</abstract>
+<kwd-group>
+<label>Keywords</label>
+<kwd>Complex networks</kwd>
+<kwd>deep learning</kwd>
+<kwd>generative models</kwd>
+<kwd>model selection</kwd>
+</kwd-group>
+</article-meta>
+</front>
+<body>
+<sec id="x1-1000-1">
+<label>1.</label>
+<title>Introduction</title>
+<p>Datasets emerging from different fields such as biology, neuroscience, engineering, social science, economics, <italic>etc.</italic> are often represented as networks to understand the complex systems in these fields.</p>
+<p>To understand the formation and evolution of real-world networks various generative models have been proposed to generate synthetic networks that follow the non-trivial topological properties of real-world networks [<xref ref-type="bibr" rid="ref007">7</xref>,<xref ref-type="bibr" rid="ref013">13</xref>,<xref ref-type="bibr" rid="ref035">35</xref>,<xref ref-type="bibr" rid="ref037">37</xref>,<xref ref-type="bibr" rid="ref057">57</xref>,<xref ref-type="bibr" rid="ref059">59</xref>]. For example, Watts-Strogatz model [<xref ref-type="bibr" rid="ref059">59</xref>] synthesizes small-world networks with small average path length and high clustering coefficient, and Barabási–Albert model [<xref ref-type="bibr" rid="ref007">7</xref>] generate scale-free networks with long-tail (power law) degree distribution. In addition to degree distribution, clustering and path lengths, other structural properties such as modularity, assortativity and special eigenvalues – are also supported in newer generative models [<xref ref-type="bibr" rid="ref003">3</xref>,<xref ref-type="bibr" rid="ref035">35</xref>].</p>
+<p>Despite the progress made in proposing many generative models, there is currently no universal generative model that is applicable for all applications. Therefore, prior to network generation, we have to perform the non-trivial task of choosing the appropriate generative model for a particular application (also called model selection). Since we want to choose the model that is most representative of the real network, model selection involves deep analysis of the properties of the given network (called target network), and accordingly the most appropriate model is chosen. Essentially, model selection attempts to evaluate a library of candidate generative models and predict which the most appropriate for generating complex network instances similar to the real network. There are many applications of model selection including network sampling [<xref ref-type="bibr" rid="ref022">22</xref>,<xref ref-type="bibr" rid="ref034">34</xref>,<xref ref-type="bibr" rid="ref036">36</xref>,<xref ref-type="bibr" rid="ref054">54</xref>], simulation of network dynamics [<xref ref-type="bibr" rid="ref012">12</xref>,<xref ref-type="bibr" rid="ref042">42</xref>,<xref ref-type="bibr" rid="ref046">46</xref>] and summarization [<xref ref-type="bibr" rid="ref002">2</xref>,<xref ref-type="bibr" rid="ref039">39</xref>,<xref ref-type="bibr" rid="ref050">50</xref>] <italic>etc.</italic></p>
+<p>In order to perform effective model selection, we require a similarity measure to compare networks across their topological properties such as average path length, transitivity, clustering coefficient, modularity, <italic>etc.</italic>. A large amount of existing literature discussed the importance of structural similarity metric for complex networks, an appropriate definition of distance similarity metric is the basis for many machine learning and data analysis tasks such as classification and clustering [<xref ref-type="bibr" rid="ref010">10</xref>,<xref ref-type="bibr" rid="ref026">26</xref>,<xref ref-type="bibr" rid="ref031">31</xref>,<xref ref-type="bibr" rid="ref040">40</xref>,<xref ref-type="bibr" rid="ref050">50</xref>]. An important property of the chosen distance metric is that it should be agnostic to network size so that it can compare networks of different scales. This is a departure from other similarity/dissimilarity notions including graph similarity with known node correspondence [<xref ref-type="bibr" rid="ref031">31</xref>] and classical graph similarity approaches (including graph alignment, graph matching, graph isomorphism) [<xref ref-type="bibr" rid="ref060">60</xref>,<xref ref-type="bibr" rid="ref062">62</xref>]. One related approach to developing a network similarity metric is to create a feature vector for each network based on existing network topological properties and then computing the similarity of feature vectors based on Euclidean distance in feature space [<xref ref-type="bibr" rid="ref010">10</xref>,<xref ref-type="bibr" rid="ref049">49</xref>,<xref ref-type="bibr" rid="ref050">50</xref>]. In this paper, we propose a novel method for automatic learning of the similarity metric via a specialized deep neural architecture. The model learns via supervised training wherein it learns from pairs of similar and dissimilar networks and maps the features onto space where distances between similar networks are smaller than distances between dissimilar networks.</p>
+</sec>
+<sec id="x1-2000-2">
+<label>2.</label>
+<title>Related work</title>
+<p>In the literature, several network model selection (or network classification) methods are available most of them are based on graphlet counting feature [<xref ref-type="bibr" rid="ref026">26</xref>,<xref ref-type="bibr" rid="ref041">41</xref>,<xref ref-type="bibr" rid="ref048">48</xref>], and combination of local and global features of network topology [<xref ref-type="bibr" rid="ref002">2</xref>,<xref ref-type="bibr" rid="ref004">4</xref>,<xref ref-type="bibr" rid="ref043">43</xref>] for selecting the best generative model. Other methods are also developed for model selection problem [<xref ref-type="bibr" rid="ref020">20</xref>,<xref ref-type="bibr" rid="ref027">27</xref>].</p>
+<p>To measure the structural similarities between two networks various quantitative measures have been reported [<xref ref-type="bibr" rid="ref004">4</xref>,<xref ref-type="bibr" rid="ref010">10</xref>,<xref ref-type="bibr" rid="ref017">17</xref>,<xref ref-type="bibr" rid="ref040">40</xref>,<xref ref-type="bibr" rid="ref048">48</xref>–<xref ref-type="bibr" rid="ref051">51</xref>,<xref ref-type="bibr" rid="ref062">62</xref>]. Graph isomorphism is one of the classical approaches to compare two graphs. Two graphs are said to be isomorphic if they have an identical topology. Some variants of this approach are also proposed, including subgraph isomorphism and maximum common subgraphs [<xref ref-type="bibr" rid="ref011">11</xref>]. Several isomorphism-inspired methods based on counting the number of spanning trees [<xref ref-type="bibr" rid="ref028">28</xref>] and computing the node-edge similarity scores are also available [<xref ref-type="bibr" rid="ref062">62</xref>]. These different methods are computationally expensive and not suitable for the large complex networks. Various approaches utilized graphlet counts as a measure of network similarity [<xref ref-type="bibr" rid="ref026">26</xref>,<xref ref-type="bibr" rid="ref029">29</xref>,<xref ref-type="bibr" rid="ref048">48</xref>] and distance measures for network comparison in which network are represented in the form of feature vectors that summarize the network topology [<xref ref-type="bibr" rid="ref002">2</xref>,<xref ref-type="bibr" rid="ref011">11</xref>,<xref ref-type="bibr" rid="ref035">35</xref>,<xref ref-type="bibr" rid="ref039">39</xref>,<xref ref-type="bibr" rid="ref050">50</xref>].</p>
+<p>In the analysis of complex networks, a size-independent similarity metric plays an important role in the evaluation of the network generation models [<xref ref-type="bibr" rid="ref007">7</xref>,<xref ref-type="bibr" rid="ref037">37</xref>,<xref ref-type="bibr" rid="ref059">59</xref>,<xref ref-type="bibr" rid="ref060">60</xref>], evaluation of sampling methods [<xref ref-type="bibr" rid="ref022">22</xref>,<xref ref-type="bibr" rid="ref034">34</xref>,<xref ref-type="bibr" rid="ref036">36</xref>,<xref ref-type="bibr" rid="ref054">54</xref>], study of epidemic dynamics [<xref ref-type="bibr" rid="ref012">12</xref>,<xref ref-type="bibr" rid="ref042">42</xref>,<xref ref-type="bibr" rid="ref046">46</xref>], generative model selection [<xref ref-type="bibr" rid="ref026">26</xref>,<xref ref-type="bibr" rid="ref041">41</xref>,<xref ref-type="bibr" rid="ref043">43</xref>], biological networks comparison [<xref ref-type="bibr" rid="ref048">48</xref>,<xref ref-type="bibr" rid="ref049">49</xref>], network classification and clustering [<xref ref-type="bibr" rid="ref002">2</xref>,<xref ref-type="bibr" rid="ref016">16</xref>,<xref ref-type="bibr" rid="ref026">26</xref>,<xref ref-type="bibr" rid="ref041">41</xref>,<xref ref-type="bibr" rid="ref043">43</xref>], and anomaly and discontinuity detection [<xref ref-type="bibr" rid="ref010">10</xref>,<xref ref-type="bibr" rid="ref045">45</xref>].</p>
+</sec>
+<sec id="x1-3000-3" sec-type="materials|methods">
+<label>3.</label>
+<title>Materials and methods</title>
+<p>In this section we describe our model, formly known as ‘TripleFit’, for complex networks. The model consists of two important processes: (a) model selection and (b) structural network similarity. The model selection is based on the structural similarity between two complex networks. For a given target (realistic) network instance, the proposed method chooses the appropriate generative model among six generative models that can generate a synthetic network similar to the target (realistic) network. The selection of the best model is based on the embedded feature space of the target network and various synthetic networks generated from different generative models. In the proposed method, we developed a network distance metric by utilizing topological features for separating the various types of network classes. The simplest choice would be to compute the Euclidean distance between the two topological feature vectors of two networks. In this way, we utilize the triplet neural network architecture to learn the best distance metric [<xref ref-type="bibr" rid="ref024">24</xref>]; the goal will be to learn a transformation from the original feature space to an embedded feature space, in which the euclidean distance between similar networks is smaller than distances between dissimilar networks. We also quantify the structural similarity between two networks by computing the Euclidean distance between the corresponding network topological feature vectors in transformed space.</p>
+<sec id="x1-4000-3.1">
+<label>3.1.</label>
+<title>Dataset description:</title>
+<p>In this study, we have taken a gold standard data set <xref ref-type="fn" rid="fn-1">1</xref><fn id="fn-1"><label><sup>1</sup></label>
+<p>Downloaded from <uri>http://ce.sharif.edu/~aliakbary/datasets.html</uri> on May 5, 2016.</p></fn> named as Reference Networks Datasets (RND) used in the previous study [<xref ref-type="bibr" rid="ref004">4</xref>] that describes a Noise-tolerant model selection method for complex networks. For evaluating the network model selection they consider six network generative models: Kronecker Graphs (KG) [<xref ref-type="bibr" rid="ref035">35</xref>], Forest Fire model (FF) [<xref ref-type="bibr" rid="ref037">37</xref>], Barabási-Albert model (BA) [<xref ref-type="bibr" rid="ref007">7</xref>], Watts-Strogatz model (WS) [<xref ref-type="bibr" rid="ref059">59</xref>], Erdös-Rényi (ER) [<xref ref-type="bibr" rid="ref019">19</xref>] and Random Power Law (RP) [<xref ref-type="bibr" rid="ref057">57</xref>]. The detailed description of the dataset is given in the referred study [<xref ref-type="bibr" rid="ref004">4</xref>].</p>
+<fig id="x1-4001-1">
+<label>Fig. 1.</label>
+<caption>
+<p>The proposed methodology for model selection.</p>
+</caption>
+<graphic xlink:href="ds-4-ds210033-g001.jpg"/>
+</fig>
+</sec>
+<sec id="x1-5000-3.2">
+<label>3.2.</label>
+<title>Overall model selection strategy</title>
+<p>Figure <xref rid="x1-4001-1">1</xref> shows a high-level view of the model selection process. The methodology is configurable by several decision points, such as the set of considered network features, the candidate generative models. The steps for constructing the final network classifier are described here:</p>
+<list>
+<list-item id="x1-5002x-1">
+<label>(1)</label>
+<p>We took 1000 network instances of different size and densities (using different parameters) for each candidate network generative model from RND, for capturing their growth mechanism and generation process. These network instances will form the dataset for learning the triplet neural network.</p>
+</list-item>
+<list-item id="x1-5004x-2">
+<label>(2)</label>
+<p>We extract the topological features (clustering coefficient, modularity, degree distribution, <italic>etc.</italic>) of each network instance. The result is a dataset of labeled structural features in which each record consists of topological features of a synthesized network along with the label of its generative model.</p>
+</list-item>
+<list-item id="x1-5006x-3">
+<label>(3)</label>
+<p>Construct the triplets a from the labeled dataset which comprises of the positive, negative and anchor samples, where the positive and anchor sample is of the same class (or same generative model), and the negative sample is of a different class. These triplets are utilized for learning the distance metric using a triplet network. So, we train the triplet neural network using the different triplets. This trained triplet neural network transforms the feature space into another feature space (called embedding feature space) in which the distance between the positive and anchor sample is smaller than the distance between negative and anchor sample. This new embedding feature space will form the dataset for learning a network classifier.</p>
+</list-item>
+<list-item id="x1-5008x-4">
+<label>(4)</label>
+<p>The labeled embedding feature dataset forms the training and test data for a supervised learning algorithm. The learning algorithm will return a network classifier which can predict the class (the best generative model) for a given network instance.</p>
+</list-item>
+<list-item id="x1-5010x-5">
+<label>(5)</label>
+<p>The same topological features used in Step <xref rid="x1-5004x-2">2</xref> are also extracted from the real world (target) network. Then pass this feature vector into trained triplet neural network, which we trained in Step <xref rid="x1-5006x-3">3</xref> and generate the embedding feature vector of the target network. This embedding feature vector of the target network is used as the input of the learned classifier, which is trained in Step <xref rid="x1-5008x-4">4</xref>.</p>
+<p>The learned network classifier is a customized model selector for finding the model that fits the target network. It gets the topological features of the target network as the input and returns the most compatible generative model.</p>
+</list-item>
+</list>
+<p>Besides the network model selection, proposed method also estimate the structural similarities of networks. For measuring the structural similarity between two networks, we extract the topological features of two given networks as in Step <xref rid="x1-5004x-2">2</xref>. Then we pass both feature vectors into trained triplet neural network, trained in Step <xref rid="x1-5006x-3">3</xref>, and generate embedding feature vectors for both networks. Then we compute the Euclidean distance between the two embedding feature vectors, representing the similarity between two networks. The distances between similar networks are smaller compared to dissimilar networks. Section <xref rid="x1-13000-4.3">4.3</xref> describes the computation of structural similarities between the network instances generated in Step <xref rid="x1-5002x-1">1</xref>. Detailed description of the steps described in the above section are presented below:</p>
+</sec>
+<sec id="x1-6000-3.3">
+<label>3.3.</label>
+<title>Network features</title>
+<p>The process of model selection, as described in Fig. <xref rid="x1-4001-1">1</xref>, utilizes network topological features in the second and fifth steps. There are various features are defined in network literature to quantify the topological properties of the network. We considered only some well-known and frequently studied measures, which are relevant to our study. A diverse set of local and global network features were utilized to construct feature vectors. A brief description of the calculated measures is as follows:</p>
+<list list-type="bullet">
+<list-item>
+<p><bold>Degree distribution:</bold> Degree distribution defined as the probability distribution of the degrees of all nodes of the network. We quantify a degree distribution by computing its variance <inline-formula><mml:math id="math001">
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">V</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo></mml:math></inline-formula> [<xref ref-type="bibr" rid="ref006">6</xref>], gini coefficient <inline-formula><mml:math id="math002">
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">G</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo></mml:math></inline-formula> [<xref ref-type="bibr" rid="ref006">6</xref>]. The Variance and gini coefficient of degree distribution are defined as follows: 
+<disp-formula>
+<mml:math display="block" id="math003">
+<mml:mtable displaystyle="true" columnalign="left"><mml:mlabeledtr>
+<mml:mtd id="x1-6001r-1">
+<mml:mtext>(1)</mml:mtext>
+</mml:mtd>
+<mml:mtd>
+<mml:mi mathvariant="italic">V</mml:mi>
+<mml:mo>=</mml:mo><mml:mstyle displaystyle="true">
+<mml:mfrac>
+<mml:mrow>
+<mml:msqrt>
+<mml:mrow>
+<mml:mstyle displaystyle="false">
+<mml:mfrac>
+<mml:mrow>
+<mml:mn>1</mml:mn>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">N</mml:mi>
+</mml:mrow>
+</mml:mfrac>
+</mml:mstyle>
+<mml:msubsup>
+<mml:mrow>
+<mml:mo largeop="false" movablelimits="false">∑</mml:mo>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">i</mml:mi>
+<mml:mo>=</mml:mo>
+<mml:mn>1</mml:mn>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">N</mml:mi>
+</mml:mrow>
+</mml:msubsup>
+<mml:msup>
+<mml:mrow>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">k</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">i</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo>−</mml:mo>
+<mml:mi mathvariant="italic">μ</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>2</mml:mn>
+</mml:mrow>
+</mml:msup>
+</mml:mrow>
+</mml:msqrt>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">μ</mml:mi>
+</mml:mrow>
+</mml:mfrac>
+</mml:mstyle>
+</mml:mtd>
+</mml:mlabeledtr><mml:mlabeledtr>
+<mml:mtd id="x1-6002r-2">
+<mml:mtext>(2)</mml:mtext>
+</mml:mtd>
+<mml:mtd>
+<mml:mi mathvariant="italic">G</mml:mi>
+<mml:mo>=</mml:mo><mml:mstyle displaystyle="true">
+<mml:mfrac>
+<mml:mrow>
+<mml:mn>1</mml:mn>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">μ</mml:mi>
+</mml:mrow>
+</mml:mfrac>
+</mml:mstyle>
+<mml:mo>∗</mml:mo><mml:mstyle displaystyle="true">
+<mml:mfrac>
+<mml:mrow>
+<mml:mn>1</mml:mn>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>2</mml:mn>
+<mml:msup>
+<mml:mrow>
+<mml:mi mathvariant="italic">N</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>2</mml:mn>
+</mml:mrow>
+</mml:msup>
+</mml:mrow>
+</mml:mfrac>
+</mml:mstyle>
+<mml:munderover accentunder="false" accent="false">
+<mml:mrow>
+<mml:mstyle displaystyle="true">
+<mml:mo largeop="true" movablelimits="false">∑</mml:mo></mml:mstyle>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">i</mml:mi>
+<mml:mo>=</mml:mo>
+<mml:mn>1</mml:mn>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">N</mml:mi>
+</mml:mrow>
+</mml:munderover>
+<mml:munderover accentunder="false" accent="false">
+<mml:mrow>
+<mml:mstyle displaystyle="true">
+<mml:mo largeop="true" movablelimits="false">∑</mml:mo></mml:mstyle>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">j</mml:mi>
+<mml:mo>=</mml:mo>
+<mml:mn>1</mml:mn>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">N</mml:mi>
+</mml:mrow>
+</mml:munderover>
+<mml:mo stretchy="false">|</mml:mo>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">k</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">i</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo>−</mml:mo>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">k</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">j</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo stretchy="false">|</mml:mo>
+</mml:mtd>
+</mml:mlabeledtr></mml:mtable></mml:math>
+</disp-formula>
+</p>
+<p>Where <inline-formula><mml:math id="math004">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">k</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">i</mml:mi>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula> and <inline-formula><mml:math id="math005">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">k</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">j</mml:mi>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula> are the degrees of the nodes. <italic>N</italic> is the number of nodes in the network and <italic>μ</italic> is the mean of the degree.</p>
+</list-item>
+<list-item>
+<p><bold>Entropy:</bold> The entropy of the degree distribution provides an average measurement of the heterogeneity which in turn determines the robustness of the network. Formally, the entropy is defined as [<xref ref-type="bibr" rid="ref016">16</xref>]: 
+<disp-formula>
+<mml:math display="block" id="math006">
+<mml:mtable displaystyle="true"><mml:mlabeledtr>
+<mml:mtd>
+<mml:mtext>(3)</mml:mtext>
+</mml:mtd>
+<mml:mtd>
+<mml:mi mathvariant="italic">E</mml:mi>
+<mml:mo>=</mml:mo>
+<mml:mo>−</mml:mo>
+<mml:munder>
+<mml:mrow>
+<mml:mstyle displaystyle="true">
+<mml:mo largeop="true" movablelimits="false">∑</mml:mo></mml:mstyle>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">k</mml:mi>
+</mml:mrow>
+</mml:munder>
+<mml:mi mathvariant="italic">p</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">k</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo>
+<mml:mo movablelimits="false">log</mml:mo>
+<mml:mo mathvariant="normal" fence="true" maxsize="1.19em" minsize="1.19em">(</mml:mo>
+<mml:mi mathvariant="italic">p</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">k</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo>
+<mml:mo mathvariant="normal" fence="true" maxsize="1.19em" minsize="1.19em">)</mml:mo>
+</mml:mtd>
+</mml:mlabeledtr></mml:mtable></mml:math>
+</disp-formula> 
+Where <inline-formula><mml:math id="math007">
+<mml:mi mathvariant="italic">p</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">k</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo></mml:math></inline-formula> refer the probability of fraction of nodes having degree <italic>k</italic>.</p>
+</list-item>
+<list-item>
+<p><bold>Clustering coefficient:</bold> Clustering coefficient is a measure of segregation in network analysis. Clustering coefficient <inline-formula><mml:math id="math008">
+<mml:mi mathvariant="italic">C</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">v</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo></mml:math></inline-formula> of a node <italic>v</italic> is defined as the number of links that exist between the direct neighbours of that node divided by the maximum number of possible links. Formally, given a node <italic>v</italic> with <inline-formula><mml:math id="math009">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">N</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">v</mml:mi>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula> neighbors and <inline-formula><mml:math id="math010">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">l</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">v</mml:mi>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula> links within the neighbors, the clustering coefficient <inline-formula><mml:math id="math011">
+<mml:mi mathvariant="italic">C</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">v</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo></mml:math></inline-formula> is defined as follows: 
+<disp-formula>
+<mml:math display="block" id="math012">
+<mml:mtable displaystyle="true"><mml:mlabeledtr>
+<mml:mtd>
+<mml:mtext>(4)</mml:mtext>
+</mml:mtd>
+<mml:mtd>
+<mml:mi mathvariant="italic">C</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">v</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo>
+<mml:mo>=</mml:mo><mml:mstyle displaystyle="true">
+<mml:mfrac>
+<mml:mrow>
+<mml:mn>2</mml:mn>
+<mml:mo>×</mml:mo>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">l</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">v</mml:mi>
+</mml:mrow>
+</mml:msub>
+</mml:mrow>
+<mml:mrow>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">N</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">v</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo>.</mml:mo>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">N</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">v</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo>−</mml:mo>
+<mml:mn>1</mml:mn>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo>
+</mml:mrow>
+</mml:mfrac>
+</mml:mstyle>
+</mml:mtd>
+</mml:mlabeledtr></mml:mtable></mml:math>
+</disp-formula> 
+The clustering coefficient <italic>C</italic> for the whole network is calculated by the average value of <inline-formula><mml:math id="math013">
+<mml:mi mathvariant="italic">C</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">v</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo></mml:math></inline-formula> over all <italic>v</italic> [<xref ref-type="bibr" rid="ref059">59</xref>].</p>
+</list-item>
+<list-item>
+<p><bold>Characteristic path length:</bold> The mean of the shortest path length between all pairs of nodes also called the characteristic path length [<xref ref-type="bibr" rid="ref059">59</xref>] and is a measure of network integration. For a graph <italic>G</italic> with <italic>n</italic> nodes, the network characteristic path length is given by: 
+<disp-formula>
+<mml:math display="block" id="math014">
+<mml:mtable displaystyle="true"><mml:mlabeledtr>
+<mml:mtd>
+<mml:mtext>(5)</mml:mtext>
+</mml:mtd>
+<mml:mtd>
+<mml:mi mathvariant="italic">L</mml:mi>
+<mml:mo>=</mml:mo><mml:mstyle displaystyle="true">
+<mml:mfrac>
+<mml:mrow>
+<mml:mn>1</mml:mn>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">n</mml:mi>
+<mml:mo>.</mml:mo>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">n</mml:mi>
+<mml:mo>−</mml:mo>
+<mml:mn>1</mml:mn>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo>
+</mml:mrow>
+</mml:mfrac>
+</mml:mstyle>
+<mml:munder>
+<mml:mrow>
+<mml:mstyle displaystyle="true">
+<mml:mo largeop="true" movablelimits="false">∑</mml:mo></mml:mstyle>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">u</mml:mi>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mi mathvariant="italic">v</mml:mi>
+<mml:mo stretchy="false">∈</mml:mo>
+<mml:mi mathvariant="italic">G</mml:mi>
+<mml:mo>:</mml:mo>
+<mml:mi mathvariant="italic">u</mml:mi>
+<mml:mo stretchy="false">≠</mml:mo>
+<mml:mi mathvariant="italic">v</mml:mi>
+</mml:mrow>
+</mml:munder>
+<mml:mi mathvariant="italic">d</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">u</mml:mi>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mi mathvariant="italic">v</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo>
+</mml:mtd>
+</mml:mlabeledtr></mml:mtable></mml:math>
+</disp-formula> 
+where <inline-formula><mml:math id="math015">
+<mml:mi mathvariant="italic">d</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">u</mml:mi>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mi mathvariant="italic">v</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo></mml:math></inline-formula> is the shortest path length between vertices <italic>u</italic> and <italic>v</italic> in <italic>G</italic>.</p>
+</list-item>
+<list-item>
+<p><bold>Efficiency:</bold> Global efficiency is a measure of integration, that is the calculated by average inverse shortest path length between all pairs of nodes in the network. For a graph <italic>G</italic> with <italic>n</italic> nodes and <italic>k</italic> edges, the global efficiency of a network is defined as [<xref ref-type="bibr" rid="ref001">1</xref>,<xref ref-type="bibr" rid="ref033">33</xref>]: 
+<disp-formula>
+<mml:math display="block" id="math016">
+<mml:mtable displaystyle="true"><mml:mlabeledtr>
+<mml:mtd>
+<mml:mtext>(6)</mml:mtext>
+</mml:mtd>
+<mml:mtd>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">E</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">g</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo>=</mml:mo><mml:mstyle displaystyle="true">
+<mml:mfrac>
+<mml:mrow>
+<mml:mn>1</mml:mn>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">n</mml:mi>
+<mml:mo>.</mml:mo>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">n</mml:mi>
+<mml:mo>−</mml:mo>
+<mml:mn>1</mml:mn>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo>
+</mml:mrow>
+</mml:mfrac>
+</mml:mstyle>
+<mml:munder>
+<mml:mrow>
+<mml:mstyle displaystyle="true">
+<mml:mo largeop="true" movablelimits="false">∑</mml:mo></mml:mstyle>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">u</mml:mi>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mi mathvariant="italic">v</mml:mi>
+<mml:mo stretchy="false">∈</mml:mo>
+<mml:mi mathvariant="italic">G</mml:mi>
+<mml:mo>:</mml:mo>
+<mml:mi mathvariant="italic">u</mml:mi>
+<mml:mo stretchy="false">≠</mml:mo>
+<mml:mi mathvariant="italic">v</mml:mi>
+</mml:mrow>
+</mml:munder><mml:mstyle displaystyle="true">
+<mml:mfrac>
+<mml:mrow>
+<mml:mn>1</mml:mn>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">d</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">u</mml:mi>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mi mathvariant="italic">v</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo>
+</mml:mrow>
+</mml:mfrac>
+</mml:mstyle>
+</mml:mtd>
+</mml:mlabeledtr></mml:mtable></mml:math>
+</disp-formula> 
+where <inline-formula><mml:math id="math017">
+<mml:mi mathvariant="italic">d</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">u</mml:mi>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mi mathvariant="italic">v</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo></mml:math></inline-formula> is the shortest path length between vertices <italic>u</italic> and <italic>v</italic> in <italic>G</italic>.</p>
+</list-item>
+<list-item>
+<p><bold>Assortativity coefficient:</bold> Assortativity is a measure of how well nodes of similar degree are linked to one another in the network. A network is said to show assortative mixing if high degree nodes have a high tendency to connect to other high degree nodes and similarly low degree nodes have a bias towards connecting to low degree nodes. To quantify the level of assortative mixing in a network we define an assortativity coefficient which is defined as [<xref ref-type="bibr" rid="ref044">44</xref>]: 
+<disp-formula>
+<mml:math display="block" id="math018">
+<mml:mtable displaystyle="true"><mml:mlabeledtr>
+<mml:mtd>
+<mml:mtext>(7)</mml:mtext>
+</mml:mtd>
+<mml:mtd>
+<mml:mi mathvariant="italic">r</mml:mi>
+<mml:mo>=</mml:mo><mml:mstyle displaystyle="true">
+<mml:mfrac>
+<mml:mrow>
+<mml:msup>
+<mml:mrow>
+<mml:mi mathvariant="italic">l</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mo>−</mml:mo>
+<mml:mn>1</mml:mn>
+</mml:mrow>
+</mml:msup>
+<mml:msub>
+<mml:mrow>
+<mml:mo largeop="false" movablelimits="false">∑</mml:mo>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">e</mml:mi>
+<mml:mo stretchy="false">∈</mml:mo>
+<mml:mi mathvariant="italic">E</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">d</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">e</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:msubsup>
+<mml:mrow>
+<mml:mi mathvariant="italic">d</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">e</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mo>′</mml:mo>
+</mml:mrow>
+</mml:msubsup>
+<mml:mo>−</mml:mo>
+<mml:msup>
+<mml:mrow>
+<mml:mo fence="true" stretchy="false">[</mml:mo><mml:mstyle displaystyle="false">
+<mml:mfrac>
+<mml:mrow>
+<mml:msup>
+<mml:mrow>
+<mml:mi mathvariant="italic">l</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mo>−</mml:mo>
+<mml:mn>1</mml:mn>
+</mml:mrow>
+</mml:msup>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>2</mml:mn>
+</mml:mrow>
+</mml:mfrac>
+</mml:mstyle>
+<mml:msub>
+<mml:mrow>
+<mml:mo largeop="false" movablelimits="false">∑</mml:mo>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">e</mml:mi>
+<mml:mo stretchy="false">∈</mml:mo>
+<mml:mi mathvariant="italic">E</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">d</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">e</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo>+</mml:mo>
+<mml:msubsup>
+<mml:mrow>
+<mml:mi mathvariant="italic">d</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">e</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mo>′</mml:mo>
+</mml:mrow>
+</mml:msubsup>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo>
+<mml:mo fence="true" stretchy="false">]</mml:mo>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>2</mml:mn>
+</mml:mrow>
+</mml:msup>
+</mml:mrow>
+<mml:mrow>
+<mml:mstyle displaystyle="false">
+<mml:mfrac>
+<mml:mrow>
+<mml:msup>
+<mml:mrow>
+<mml:mi mathvariant="italic">l</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mo>−</mml:mo>
+<mml:mn>1</mml:mn>
+</mml:mrow>
+</mml:msup>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>2</mml:mn>
+</mml:mrow>
+</mml:mfrac>
+</mml:mstyle>
+<mml:msub>
+<mml:mrow>
+<mml:mo largeop="false" movablelimits="false">∑</mml:mo>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">e</mml:mi>
+<mml:mo stretchy="false">∈</mml:mo>
+<mml:mi mathvariant="italic">E</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:msubsup>
+<mml:mrow>
+<mml:mi mathvariant="italic">d</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">e</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>2</mml:mn>
+</mml:mrow>
+</mml:msubsup>
+<mml:mo>+</mml:mo>
+<mml:msubsup>
+<mml:mrow>
+<mml:mi mathvariant="italic">d</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">e</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mo>′</mml:mo>
+<mml:mn>2</mml:mn>
+</mml:mrow>
+</mml:msubsup>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo>
+<mml:mo>−</mml:mo>
+<mml:msup>
+<mml:mrow>
+<mml:mo fence="true" stretchy="false">[</mml:mo><mml:mstyle displaystyle="false">
+<mml:mfrac>
+<mml:mrow>
+<mml:msup>
+<mml:mrow>
+<mml:mi mathvariant="italic">l</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mo>−</mml:mo>
+<mml:mn>1</mml:mn>
+</mml:mrow>
+</mml:msup>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>2</mml:mn>
+</mml:mrow>
+</mml:mfrac>
+</mml:mstyle>
+<mml:msub>
+<mml:mrow>
+<mml:mo largeop="false" movablelimits="false">∑</mml:mo>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">e</mml:mi>
+<mml:mo stretchy="false">∈</mml:mo>
+<mml:mi mathvariant="italic">E</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">d</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">e</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo>+</mml:mo>
+<mml:msubsup>
+<mml:mrow>
+<mml:mi mathvariant="italic">d</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">e</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mo>′</mml:mo>
+</mml:mrow>
+</mml:msubsup>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo>
+<mml:mo fence="true" stretchy="false">]</mml:mo>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>2</mml:mn>
+</mml:mrow>
+</mml:msup>
+</mml:mrow>
+</mml:mfrac>
+</mml:mstyle>
+</mml:mtd>
+</mml:mlabeledtr></mml:mtable></mml:math>
+</disp-formula>
+</p>
+<p>Where <inline-formula><mml:math id="math019">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">d</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">e</mml:mi>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula> and <inline-formula><mml:math id="math020">
+<mml:msubsup>
+<mml:mrow>
+<mml:mi mathvariant="italic">d</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">e</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mo>′</mml:mo>
+</mml:mrow>
+</mml:msubsup></mml:math></inline-formula> are the degrees of the two nodes at either end of the <inline-formula><mml:math id="math021">
+<mml:msup>
+<mml:mrow>
+<mml:mi mathvariant="italic">e</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">t</mml:mi>
+<mml:mi mathvariant="italic">h</mml:mi>
+</mml:mrow>
+</mml:msup></mml:math></inline-formula> edge in the network. <italic>l</italic> is the total number of links, <italic>E</italic> is the set of all links in the network.</p>
+</list-item>
+<list-item>
+<p><bold>Modularity:</bold> Modularity has been widely used as a quality measure for measure the strength of division of a network into modules (also called cluster or communities). Networks with high modularity have dense connections between the nodes within modules but sparse connections between nodes in different modules. The modularity of an unweighted graph partitioned into modules is evaluated by [<xref ref-type="bibr" rid="ref015">15</xref>]: 
+<disp-formula>
+<mml:math display="block" id="math022">
+<mml:mtable displaystyle="true"><mml:mlabeledtr>
+<mml:mtd>
+<mml:mtext>(8)</mml:mtext>
+</mml:mtd>
+<mml:mtd>
+<mml:mi mathvariant="italic">Q</mml:mi>
+<mml:mo>=</mml:mo><mml:mstyle displaystyle="true">
+<mml:mfrac>
+<mml:mrow>
+<mml:mn>1</mml:mn>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>2</mml:mn>
+<mml:mo>.</mml:mo>
+<mml:mi mathvariant="italic">m</mml:mi>
+</mml:mrow>
+</mml:mfrac>
+</mml:mstyle>
+<mml:munder>
+<mml:mrow>
+<mml:mstyle displaystyle="true">
+<mml:mo largeop="true" movablelimits="false">∑</mml:mo></mml:mstyle>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">u</mml:mi>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mi mathvariant="italic">v</mml:mi>
+</mml:mrow>
+</mml:munder>
+<mml:mo fence="true" maxsize="2.03em" minsize="2.03em">[</mml:mo>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">A</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">u</mml:mi>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mi mathvariant="italic">v</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo>−</mml:mo><mml:mstyle displaystyle="true">
+<mml:mfrac>
+<mml:mrow>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">k</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">u</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">k</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">v</mml:mi>
+</mml:mrow>
+</mml:msub>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>2</mml:mn>
+<mml:mo>.</mml:mo>
+<mml:mi mathvariant="italic">m</mml:mi>
+</mml:mrow>
+</mml:mfrac>
+</mml:mstyle>
+<mml:mo fence="true" maxsize="2.03em" minsize="2.03em">]</mml:mo>
+<mml:mi mathvariant="italic">δ</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">c</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">u</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">c</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">v</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo>
+</mml:mtd>
+</mml:mlabeledtr></mml:mtable></mml:math>
+</disp-formula> 
+Where <inline-formula><mml:math id="math023">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">k</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">u</mml:mi>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula> and <inline-formula><mml:math id="math024">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">k</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">v</mml:mi>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula> are the degrees of <italic>u</italic> and <italic>v</italic>, <italic>m</italic> is the number of links of the network, <inline-formula><mml:math id="math025">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">c</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">u</mml:mi>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula> the community of node <italic>u</italic> and <inline-formula><mml:math id="math026">
+<mml:mi mathvariant="italic">δ</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">c</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">u</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">c</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">v</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo>
+<mml:mo>=</mml:mo>
+<mml:mn>1</mml:mn></mml:math></inline-formula> if <inline-formula><mml:math id="math027">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">c</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">u</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo>=</mml:mo>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">c</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">v</mml:mi>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula> and <inline-formula><mml:math id="math028">
+<mml:mi mathvariant="italic">δ</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">c</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">u</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">c</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">v</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo>
+<mml:mo>=</mml:mo>
+<mml:mn>0</mml:mn></mml:math></inline-formula> otherwise. Thus the problem of discovering the modules of a network reduces to optimizing modularity.</p>
+</list-item>
+</list>
+<p>Network features are not standardized i.e. there is no universal best set of features for networks and other features such as shrinking diameter, densification, vulnerability, network resilience, rich-club phenomenon, <italic>etc.</italic> have also been used. The proposed methodology is not limited to the specified network feature set. Hence, one can also utilize another set of features, according to their application domain. In this study, we utilized only 8 network topological features.</p>
+</sec>
+<sec id="x1-7000-3.4">
+<label>3.4.</label>
+<title>Triplet neural network</title>
+<p>Triplet neural network is a deep learning model, which aims to learn useful representations of data by distance comparisons [<xref ref-type="bibr" rid="ref024">24</xref>]. Recently, triplet network architecture have successfully applied in many computer vision tasks [<xref ref-type="bibr" rid="ref014">14</xref>,<xref ref-type="bibr" rid="ref032">32</xref>,<xref ref-type="bibr" rid="ref052">52</xref>,<xref ref-type="bibr" rid="ref058">58</xref>]. In past few years, deep learning models have been widely exploited to solve various machine learning tasks. Deep Learning is automating the extraction of high-level meaningful complex abstractions as data representations (features) through the use of a hierarchical learning approach. The notion of hierarchical features stems from neuroscientific discoveries of the visual cortex that indicate a hierarchy of cells with successively higher level cells firing for more complex visual patterns [<xref ref-type="bibr" rid="ref005">5</xref>,<xref ref-type="bibr" rid="ref008">8</xref>,<xref ref-type="bibr" rid="ref009">9</xref>,<xref ref-type="bibr" rid="ref023">23</xref>,<xref ref-type="bibr" rid="ref061">61</xref>].</p>
+<fig id="x1-7001-2">
+<label>Fig. 2.</label>
+<caption>
+<p>A schematic representation of triplet neural network architecture, which consists three feed forward neural networks of the same instance with shared parameters.</p>
+</caption>
+<graphic xlink:href="ds-4-ds210033-g002.jpg"/>
+</fig>
+<p>Triplet network, as shown in the Fig. <xref rid="x1-7001-2">2</xref>, is a model inspired by the Siamese Network which comprise three feed forward networks of the same instance with shared parameters. The network gives two intermediate values when fed three samples to it. These intermediate values come from <inline-formula><mml:math id="math029">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">L</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>2</mml:mn>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula> distances between the embedded representation of two of its inputs from the representation of third. Symbolically, if we denote these inputs as <inline-formula><mml:math id="math030">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">X</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">a</mml:mi>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula> (anchor), <inline-formula><mml:math id="math031">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">X</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">p</mml:mi>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula> (positive), and <inline-formula><mml:math id="math032">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">X</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">n</mml:mi>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula> (negative) and the embedded representation of network as <inline-formula><mml:math id="math033">
+<mml:mo movablelimits="false">Net</mml:mo>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:mi mathvariant="italic">X</mml:mi>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo></mml:math></inline-formula> then the triplet score just before the last layer computed as: 
+<disp-formula>
+<mml:math display="block" id="math034">
+<mml:mtable displaystyle="true"><mml:mlabeledtr>
+<mml:mtd>
+<mml:mtext>(9)</mml:mtext>
+</mml:mtd>
+<mml:mtd>
+<mml:mo movablelimits="false">TripletNet</mml:mo>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">X</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">p</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">X</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">a</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">X</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">n</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo>
+<mml:mo>=</mml:mo>
+<mml:mfenced separators="" open="{" close="}">
+<mml:mrow>
+<mml:mtable columnspacing="2.4pt" equalrows="false" equalcolumns="false">
+<mml:mtr>
+<mml:mtd class="array" columnalign="center">
+<mml:mo stretchy="false">‖</mml:mo>
+<mml:mo movablelimits="false">Net</mml:mo>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">X</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">a</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo>
+<mml:mo>−</mml:mo>
+<mml:mo movablelimits="false">Net</mml:mo>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">X</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">p</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo>
+<mml:msub>
+<mml:mrow>
+<mml:mo stretchy="false">‖</mml:mo>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>2</mml:mn>
+</mml:mrow>
+</mml:msub>
+</mml:mtd>
+</mml:mtr>
+<mml:mtr>
+<mml:mtd class="array" columnalign="center">
+<mml:mo stretchy="false">‖</mml:mo>
+<mml:mo movablelimits="false">Net</mml:mo>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">X</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">a</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo>
+<mml:mo>−</mml:mo>
+<mml:mo movablelimits="false">Net</mml:mo>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">X</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">n</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo>
+<mml:msub>
+<mml:mrow>
+<mml:mo stretchy="false">‖</mml:mo>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>2</mml:mn>
+</mml:mrow>
+</mml:msub>
+</mml:mtd>
+</mml:mtr>
+</mml:mtable>
+</mml:mrow>
+</mml:mfenced>
+<mml:mo stretchy="false">∈</mml:mo>
+<mml:msubsup>
+<mml:mrow>
+<mml:mi mathvariant="italic">R</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mo>+</mml:mo>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>2</mml:mn>
+</mml:mrow>
+</mml:msubsup>
+</mml:mtd>
+</mml:mlabeledtr></mml:mtable></mml:math>
+</disp-formula>
+</p>
+<p>We train this network for a 2-class classification problem using the triplet input <inline-formula><mml:math id="math035">
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">X</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">p</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">X</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">a</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">X</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">n</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo></mml:math></inline-formula> where <inline-formula><mml:math id="math036">
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">X</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">a</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">X</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">p</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo></mml:math></inline-formula> are chosen from same class and <inline-formula><mml:math id="math037">
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">X</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">a</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">X</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">n</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo></mml:math></inline-formula> from the different class. The training process encourages the network to find an embedding where the distance between <inline-formula><mml:math id="math038">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">X</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">a</mml:mi>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula> and <inline-formula><mml:math id="math039">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">X</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">n</mml:mi>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula> is larger than the distance between <inline-formula><mml:math id="math040">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">X</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">a</mml:mi>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula> and <inline-formula><mml:math id="math041">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">X</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">p</mml:mi>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula> (<italic>i.e.</italic>, minimizes the distance between a pair of examples with the same class label) plus some margin. We utilized the back-propagation algorithm to update the model on all three samples <inline-formula><mml:math id="math042">
+<mml:mo mathvariant="normal" fence="true" stretchy="false">(</mml:mo>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">X</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">a</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">X</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">p</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mtext> and </mml:mtext>
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">X</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mi mathvariant="italic">n</mml:mi>
+</mml:mrow>
+</mml:msub>
+<mml:mo mathvariant="normal" fence="true" stretchy="false">)</mml:mo></mml:math></inline-formula> simultaneously, using the same shared parameters.</p>
+</sec>
+<sec id="x1-8000-3.5">
+<label>3.5.</label>
+<title>Triplet neural network architecture</title>
+<p>Here, we briefly describe the implementation details of Triplet Neural Network. A Triplet Neural Network consists of three feedforward neural networks of shared weights, followed by two layers. An advanced activation function ELU (Exponential Linear Unit) are applied between two consecutive layers. Network configuration (ordered from input to output) consists of layers dimensions <inline-formula><mml:math id="math043">
+<mml:mo fence="true" stretchy="false">{</mml:mo>
+<mml:mn>8</mml:mn>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mn>32</mml:mn>
+<mml:mo mathvariant="normal">,</mml:mo>
+<mml:mn>16</mml:mn>
+<mml:mo fence="true" stretchy="false">}</mml:mo></mml:math></inline-formula> where a 16 the final embedded representation of the feature vector on which the distance has been measured.</p>
+</sec>
+<sec id="x1-9000-3.6">
+<label>3.6.</label>
+<title>Network models</title>
+<p>Among several existing network generative models, we have selected six important models: Kronecker Graphs (KG) [<xref ref-type="bibr" rid="ref035">35</xref>], Forest Fire model (FF) [<xref ref-type="bibr" rid="ref037">37</xref>], Barabási-Albert model (BA) [<xref ref-type="bibr" rid="ref007">7</xref>], Watts-Strogatz model (WS) [<xref ref-type="bibr" rid="ref059">59</xref>], Erdös-Rényi (ER) [<xref ref-type="bibr" rid="ref019">19</xref>] and Random Power Law (RP) [<xref ref-type="bibr" rid="ref057">57</xref>]. The selected models are the state of the art methods of network generation. Existing model selection methods have ignored some new and important generative models such as Kroneckr graphs and Forest Fire [<xref ref-type="bibr" rid="ref004">4</xref>]. All the models are briefly described in the study [<xref ref-type="bibr" rid="ref004">4</xref>]. The characteristic of above six generative models are defined as follows: 
+<list list-type="bullet">
+<list-item>
+<p><bold>Erdös-Rényi (ER):</bold> This model generates completely random networks. The number of nodes and edges are configurable [<xref ref-type="bibr" rid="ref019">19</xref>].</p>
+</list-item>
+<list-item>
+<p><bold>Barabási-Albert model (BA):</bold> This model generates random scale-free networks using a preferential attachment mechanism [<xref ref-type="bibr" rid="ref007">7</xref>].</p>
+</list-item>
+<list-item>
+<p><bold>Watts-Strogatz model (WS):</bold> This model generates synthetic networks with small characteristic path lengths and high clustering coefficient. It starts with a regular lattice and then rewires some edges of the network randomly [<xref ref-type="bibr" rid="ref059">59</xref>].</p>
+</list-item>
+<list-item>
+<p><bold>Forest Fire model (FF):</bold> In this model, edges are added in a process similar to a fire-spreading process. This model is inspired by Copying model and Community Guided Attachment but supports the shrinking diameter property [<xref ref-type="bibr" rid="ref037">37</xref>].</p>
+</list-item>
+<list-item>
+<p><bold>Random Power Law Model (RP):</bold> The RP model generates synthetic networks by following a variation of ER model that supports the power law degree distribution property [<xref ref-type="bibr" rid="ref057">57</xref>].</p>
+</list-item>
+<list-item>
+<p><bold>Kronecker Graphs (KG):</bold> This model generates realistic synthetic networks by applying a non standard matrix operation (the kronecker product) on a small initiator matrix. This model is mathematically tractable and supports many network features, such as heavy tail degree distribution, small diameters, heavy tails for eigenvalues and eigenvectors, and densification and shrinking diameters over time [<xref ref-type="bibr" rid="ref035">35</xref>].</p>
+</list-item>
+</list>
+</p>
+</sec>
+</sec>
+<sec id="x1-10000-4">
+<label>4.</label>
+<title>Results</title>
+<p>In this section, we evaluate our proposed method for network model selection and structural network similarity. We utilize the RND to evaluate our model against other existing methods. The proposed model is evaluated by first transforming the networks dataset into the feature dataset using the topological features mentioned in Section <xref rid="x1-6000-3.3">3.3</xref>. Thus we have several network instances generated using six generative models and many real world networks that correspond to one feature vector representation in feature dataset. In previous methods size (number of nodes) and/or density of a target network is considered in the generation of training data [<xref ref-type="bibr" rid="ref026">26</xref>,<xref ref-type="bibr" rid="ref041">41</xref>,<xref ref-type="bibr" rid="ref043">43</xref>]. In our methodology, the size and density of the target network are not considered in the generation of the training data. In the proposed method, a Triplet Neural Network is utilized to find the best network distance metric, which is capable of separating networks of different classes.</p>
+<sec id="x1-11000-4.1">
+<label>4.1.</label>
+<title>Evaluation of network distance metric</title>
+<p>The TripletFit method is primarily based on learning of network distance metric. The distance metric learning problem is concerned with learning a distance function, which can separate networks of different generative models. In this study, we choose euclidean distance (<inline-formula><mml:math id="math044">
+<mml:msub>
+<mml:mrow>
+<mml:mi mathvariant="italic">L</mml:mi>
+</mml:mrow>
+<mml:mrow>
+<mml:mn>2</mml:mn>
+</mml:mrow>
+</mml:msub></mml:math></inline-formula> <italic>norm</italic>) as a distance function. We utilized Triplet Neural Network [<xref ref-type="bibr" rid="ref024">24</xref>] to learn the distance function. We train the triplet neural network on the feature dataset generated in Step <xref rid="x1-5004x-2">2</xref> of Section <xref rid="x1-5000-3.2">3.2</xref>. The trained triplet neural network transforms the feature dataset into embedded feature dataset, where each generative model is clearly separate (or clustered) in euclidean space (or embedded space).</p>
+<fig id="x1-11001-3">
+<label>Fig. 3.</label>
+<caption>
+<p>Visualization of embedded feature set into two dimensional space using t-SNE method.</p>
+</caption>
+<graphic xlink:href="ds-4-ds210033-g003.jpg"/>
+</fig>
+<p>In this section, we show that learned distance function is capable of separating different class generative models. In this order, we visualize the high-dimensional embedded feature dataset using <italic>T-Distributed Stochastic Neighbor Embedding</italic> (t-SNE) technique, which projects the high-dimensional embedding data into low dimensional embedding. t-SNE is a non-linear dimensionality reduction technique, allowing visualize of high-dimensional data. It learned the low dimensional embedding by minimizing the Kullback-Leibler divergence between the two distributions: a distribution that measures pairwise similarities of the input data points and a distribution that measures pairwise similarities of the corresponding low-dimensional points in the embedding [<xref ref-type="bibr" rid="ref055">55</xref>,<xref ref-type="bibr" rid="ref056">56</xref>]. t-SNE representation of high-dimensional embedded features dataset into two-dimensional space is given in Fig. <xref rid="x1-11001-3">3</xref>, where different colors are shown, different generative models.</p>
+<p>As described in Fig. <xref rid="x1-11001-3">3</xref>, each class of generative model is clearly separate in embedding feature space. Hence, we utilized the embedded feature dataset for both model selection (network classification) and network similarities (network comparison).</p>
+</sec>
+<sec id="x1-12000-4.2">
+<label>4.2.</label>
+<title>Evaluation of the model selection approach</title>
+<p>First, we evaluate the TripletFit for model selection, on the synthetic labeled dataset, which is constructed by the network instances of known generative models mentioned in Section <xref rid="x1-9000-3.6">3.6</xref>. To the best of our knowledge, these are the most widely used generative models in network generation applications, and they also cover a wide range of network structures.</p>
+<p>Each generative model offers a set of parameters for tuning the synthesized networks so that they follow the properties of real (target) networks. The Number of nodes (or network size) is an important parameter of considered models. Unlike other network model selection methods [<xref ref-type="bibr" rid="ref002">2</xref>,<xref ref-type="bibr" rid="ref026">26</xref>,<xref ref-type="bibr" rid="ref041">41</xref>,<xref ref-type="bibr" rid="ref043">43</xref>,<xref ref-type="bibr" rid="ref048">48</xref>], we select the all the parameters randomly. The size of the network is randomly chosen from 1000 to 5000 nodes, and other network parameters are also chosen randomly from the parameter ranges described in study [<xref ref-type="bibr" rid="ref004">4</xref>]. As compared with the size of real (target) network, we generate smaller sizes of the network instances for training the proposed method. This feature increases the efficiency and performance of our proposed method.</p>
+<p>The generative model selection is treated as a network classification problem. In this study, we developed a supervised learning algorithm for network model selection. In this way, we utilized an Artificial Neural Network (ANN) model [<xref ref-type="bibr" rid="ref025">25</xref>,<xref ref-type="bibr" rid="ref030">30</xref>] as a classifier to select an appropriate generative model for a given real network. For training the ANN model, we utilized embedded features dataset generated in Step <xref rid="x1-5006x-3">3</xref> of Section <xref rid="x1-5000-3.2">3.2</xref>. We performed 10-fold cross-validation process for evaluation of our proposed method, where the whole dataset is randomly divided into 10 equal subsets. From the 10 subsets, a single subset is retained as a test set, and the remaining subsets are used as a training data. This process repeated 10 times. We construct the test set in such a way that, every iteration contained an equal number of networks instances (<italic>i.e.</italic>, 100) of each generative model. The final accuracy of proposed method is calculated by mean of accuracies of each iteration. The detailed average results (average outcome of 10-folds) of the classifier is given in Table <xref rid="x1-12001-1">1</xref>.</p>
+<table-wrap id="x1-12001-1">
+<label>Table 1</label>
+<caption>
+<p>Results of TripletFit method on synthetic network dataset</p>
+</caption>
+<table frame="hsides" rules="groups">
+<thead>
+<tr>
+<td valign="top" align="left" rowspan="3">Pred</td>
+<td valign="top" align="center" colspan="7">True</td>
+</tr>
+<tr>
+<td valign="top" colspan="7"><hr/></td>
+</tr>
+<tr>
+<td valign="top" align="center">BA</td>
+<td valign="top" align="center">ER</td>
+<td valign="top" align="center">FF</td>
+<td valign="top" align="center">KG</td>
+<td valign="top" align="center">RP</td>
+<td valign="top" align="center">SW</td>
+<td valign="top" align="center">Class precision</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top" align="left">BA</td>
+<td valign="top" align="char" char=".">100</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="center">100%</td>
+</tr>
+<tr>
+<td valign="top" align="left">ER</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">100</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="center">100%</td>
+</tr>
+<tr>
+<td valign="top" align="left">FF</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">100</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="center">100%</td>
+</tr>
+<tr>
+<td valign="top" align="left">KG</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">100</td>
+<td valign="top" align="char" char=".">2</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="center">98.04%</td>
+</tr>
+<tr>
+<td valign="top" align="left">RP</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">98</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="center">100%</td>
+</tr>
+<tr>
+<td valign="top" align="left">SW</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">0</td>
+<td valign="top" align="char" char=".">100</td>
+<td valign="top" align="center">100%</td>
+</tr>
+<tr>
+<td valign="top" align="left">Class recall</td>
+<td valign="top" align="center">100%</td>
+<td valign="top" align="center">100%</td>
+<td valign="top" align="center">100%</td>
+<td valign="top" align="center">100%</td>
+<td valign="top" align="center">98%</td>
+<td valign="top" align="center">100%</td>
+<td valign="top" align="center"><bold>Accuracy:</bold><break/><bold>99.70 %</bold></td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+<p>Aliakbary et al. [<xref ref-type="bibr" rid="ref004">4</xref>] compared their proposed method (ModelFit) with various existing model selection methods: GMSCN [<xref ref-type="bibr" rid="ref043">43</xref>], SVMFit [<xref ref-type="bibr" rid="ref030">30</xref>,<xref ref-type="bibr" rid="ref047">47</xref>], RGF [<xref ref-type="bibr" rid="ref049">49</xref>], AvgBased, Naïve-Manhattan. GMSCN utilized LADTree decision tree classifier on RND. SVMFit is an SVM-based classification method. AvgBased is a distance based classifier which considers an average distance of the given network with neighbor networks. RGF-method is another distance based method, utilizes the concept of the graphlet count features. Finally, the Naïve-Manhattan distance can be defined as pure Manhattan distance of the network features, where all the network features shares the equal weights during distance calculation. More details about these methods can be found through the research paper [<xref ref-type="bibr" rid="ref004">4</xref>]. We compared our proposed method with other methods reported in the work of Aliakbary et al. [<xref ref-type="bibr" rid="ref004">4</xref>], a comparative summary of results is shown in Fig. <xref rid="x1-12002-4">4</xref>.</p>
+<fig id="x1-12002-4">
+<label>Fig. 4.</label>
+<caption>
+<p>The accuracy comparison of different network selection methods.</p>
+</caption>
+<graphic xlink:href="ds-4-ds210033-g004.jpg"/>
+</fig>
+<p>We also evaluate the robustness of our proposed method by introduce varying noise levels (noise = <inline-formula><mml:math id="math045">
+<mml:mn>5</mml:mn>
+<mml:mi mathvariant="normal">%</mml:mi></mml:math></inline-formula>, <inline-formula><mml:math id="math046">
+<mml:mn>10</mml:mn>
+<mml:mi mathvariant="normal">%</mml:mi></mml:math></inline-formula>, <inline-formula><mml:math id="math047">
+<mml:mn>15</mml:mn>
+<mml:mi mathvariant="normal">%</mml:mi></mml:math></inline-formula>, <inline-formula><mml:math id="math048">
+<mml:mn>20</mml:mn>
+<mml:mi mathvariant="normal">%</mml:mi></mml:math></inline-formula>, and <inline-formula><mml:math id="math049">
+<mml:mn>25</mml:mn>
+<mml:mi mathvariant="normal">%</mml:mi></mml:math></inline-formula>) into the test-case network. The noise was introduced in the network by rewiring a particular fraction of network edges between the randomly selected pair of nodes. For example, to introduce <inline-formula><mml:math id="math050">
+<mml:mn>5</mml:mn>
+<mml:mi mathvariant="normal">%</mml:mi></mml:math></inline-formula> of the noise level in the network, five percent of the network edges were rewired between random pair of nodes. Figure <xref rid="x1-12003-5">5</xref> shows the average accuracy of the proposed method for different noise levels. We observed that upto <inline-formula><mml:math id="math051">
+<mml:mn>10</mml:mn>
+<mml:mi mathvariant="normal">%</mml:mi></mml:math></inline-formula> noise level our model outperforms the rest. Additional noise beyond <inline-formula><mml:math id="math052">
+<mml:mn>10</mml:mn>
+<mml:mi mathvariant="normal">%</mml:mi></mml:math></inline-formula> results in some degradation in performance compared to ModelFit but our model still remains robust compared to other models published in [<xref ref-type="bibr" rid="ref004">4</xref>].</p>
+<fig id="x1-12003-5">
+<label>Fig. 5.</label>
+<caption>
+<p>The robustness of TripleFit with respect to different levels of noise.</p>
+</caption>
+<graphic xlink:href="ds-4-ds210033-g005.jpg"/>
+</fig>
+</sec>
+<sec id="x1-13000-4.3">
+<label>4.3.</label>
+<title>Evaluation of the network similarity approach</title>
+<p>In this section, we measure the structural similarities between different synthetic and real world complex networks. In order to measure the structural network similarity between two networks, we compute the euclidean distance between the embedded feature vectors of corresponding networks.</p>
+<fig id="x1-13001-6">
+<label>Fig. 6.</label>
+<caption>
+<p>Structural similarities between synthetic networks.</p>
+</caption>
+<graphic xlink:href="ds-4-ds210033-g006.jpg"/>
+</fig>
+<p>We employ the Euclidean distance as a structural network similarity measure for comparison of real networks. To measures the structural similarity between two networks, compute euclidean distance between embedded features of these two networks. The question: is the euclidean distance capable of describing the structural similarities in real network data? In order to evaluate this, we compute the euclidean distance between every pair of embedded feature vectors of 6000 network instances, generated by six different generative models as described in Step <xref rid="x1-5008x-4">4</xref> of Section <xref rid="x1-5000-3.2">3.2</xref>. Then we plot a heatmap of this <inline-formula><mml:math id="math053">
+<mml:mn>6000</mml:mn>
+<mml:mo>×</mml:mo>
+<mml:mn>6000</mml:mn></mml:math></inline-formula> distance matrix. Figure <xref rid="x1-13001-6">6</xref> shows the heatmap of pairwise distances between the embedded feature vectors of all network instances of six different generative models. Figure <xref rid="x1-13001-6">6</xref> shows that euclidean distance measurement are consistent with the expectation: euclidean distance calculates the structural similarity of two networks in a way that networks instances of the same class (or same generative model) type are considered more similar (small distance) to each other than to networks of different class.</p>
+</sec>
+<sec id="x1-14000-4.4">
+<label>4.4.</label>
+<title>Effect of network sizes on assortativity measure</title>
+<p>The assortativity coefficient has been shown dependency upon network size [<xref ref-type="bibr" rid="ref038">38</xref>]. Hence, we carried out an extensive analysis of this issue. In the Appendix: Figs <xref rid="x1-21001-7">7</xref> to <xref rid="x1-21006-12">12</xref> shows the boxplots of assortativity in various network size ranges for different network types. We do confirm that a few network types, particularly the Barabási-Albert model, assortativity slightly increases with network size. The major implication of this observation is that the proposed approach should not be used for a very large range of network sizes. It is to be noted that the dependencies are rather weak, with a reasonable range of network sizes, hence the proposed model can be used effectively as has been demonstrated in our study. Further, we carried out an additional experiment in which we removed the assortativity feature from our model and the results shows that this feature is not critical to the overall strategy of the proposed network comparison methodology. Thus, if users intend to reuse our model for a very large range of network sizes, they are advised to remove assortativity features and the cost of doing so in terms of model performance is not very high.</p>
+</sec>
+<sec id="x1-15000-4.5">
+<label>4.5.</label>
+<title>Case study</title>
+<p>In order to find the effectiveness of proposed method for real networks, we have applied TripleFit on some real networks. The real network instances and the results of TripletFit on these networks are described below:</p>
+<list>
+<list-item id="x1-15001x-4.5">
+<label>(1)</label>
+<p>“p2p-Gnutella08”, Gnutella is a small peer to peer file sharing network with about <inline-formula><mml:math id="math054">
+<mml:mn>6</mml:mn>
+<mml:mtext>,</mml:mtext>
+<mml:mn>301</mml:mn></mml:math></inline-formula> nodes from August 8 2002. In Gnutella, network nodes represent the host and edges describe the connection between the host.</p>
+</list-item>
+<list-item id="x1-15002x-4.5">
+<label>(2)</label>
+<p>“Email-URV”, Email-URV is the network of emails interchanges between members of the University Rovira i Virgili of Tarragona, Spain. This data set is collected by Guimera <italic>et al.</italic> [<xref ref-type="bibr" rid="ref021">21</xref>]. The data covers total <inline-formula><mml:math id="math055">
+<mml:mn>1</mml:mn>
+<mml:mtext>,</mml:mtext>
+<mml:mn>133</mml:mn></mml:math></inline-formula> members including faculty, student and technicians <italic>etc.</italic></p>
+</list-item>
+<list-item id="x1-15003x-4.5">
+<label>(3)</label>
+<p>“email-Enron”, email-Enron is the communication network covers all the email communication of Federal Energy Regulatory Commission during its investigation. In this network nodes represent the email addresses and an edge represents the email interchange between two address <italic>i.e.</italic>, an address sent at least one email to other address.</p>
+</list-item>
+<list-item id="x1-15004x-4.5">
+<label>(4)</label>
+<p>“cit-HepPh”, cit-HepPh is a arxiv High Energy Physics Phenomenology paper citation network. Which covers all the citations within a dataset of <inline-formula><mml:math id="math056">
+<mml:mn>34</mml:mn>
+<mml:mtext>,</mml:mtext>
+<mml:mn>546</mml:mn></mml:math></inline-formula> papers with <inline-formula><mml:math id="math057">
+<mml:mn>421</mml:mn>
+<mml:mtext>,</mml:mtext>
+<mml:mn>578</mml:mn></mml:math></inline-formula> edges. The data covers papers in the period from January 1993 to April 2003.</p>
+</list-item>
+<list-item id="x1-15005x-4.5">
+<label>(5)</label>
+<p>“cit-HepTh” cit-HepTh is a arxiv High Energy Physics Theory paper citation network. Which covers all the citations within a dataset of <inline-formula><mml:math id="math058">
+<mml:mn>27</mml:mn>
+<mml:mtext>,</mml:mtext>
+<mml:mn>770</mml:mn></mml:math></inline-formula> papers with <inline-formula><mml:math id="math059">
+<mml:mn>352</mml:mn>
+<mml:mtext>,</mml:mtext>
+<mml:mn>807</mml:mn></mml:math></inline-formula> edges. The data covers papers in the period from January 1993 to April 2003.</p>
+</list-item>
+<list-item id="x1-15006x-4.5">
+<label>(6)</label>
+<p>“ca-HepPh” ca-HepPh is a arxiv High Energy Physics Phenomenology collaboration network (or co-authorship network). Which covers scientific collaborations between authors papers submitted to High Energy Physics – Phenomenology category within a dataset of <inline-formula><mml:math id="math060">
+<mml:mn>12</mml:mn>
+<mml:mtext>,</mml:mtext>
+<mml:mn>008</mml:mn></mml:math></inline-formula> authors with <inline-formula><mml:math id="math061">
+<mml:mn>118</mml:mn>
+<mml:mtext>,</mml:mtext>
+<mml:mn>521</mml:mn></mml:math></inline-formula> edges. The data covers papers in the period from January 1993 to April 2003.</p>
+</list-item>
+<list-item id="x1-15007x-4.5">
+<label>(7)</label>
+<p>“ca-HepTh” ca-HepPh is a arxiv High Energy Physics Theory collaboration network (or co-authorship network). Which covers scientific collaborations between authors papers submitted to High Energy Physics – Theory category within a dataset of <inline-formula><mml:math id="math062">
+<mml:mn>9</mml:mn>
+<mml:mtext>,</mml:mtext>
+<mml:mn>877</mml:mn></mml:math></inline-formula> authors with <inline-formula><mml:math id="math063">
+<mml:mn>25</mml:mn>
+<mml:mtext>,</mml:mtext>
+<mml:mn>998</mml:mn></mml:math></inline-formula> edges. The data covers papers in the period from January 1993 to April 2003.</p>
+</list-item>
+</list>
+<p>Table <xref rid="x1-15008-2">2</xref> shows the results after applying Tripletfit on the real networks as described above. As Table <xref rid="x1-15008-2">2</xref> shows, various real-networks, which are selected from a wide range of sizes, densities and domains, are categorized in different network models by the classifier. This fact indicates that no generative model is dominated in proposed method for real networks and it suggests different models for different network structures. The case study also verifies that no generative model is sufficient for synthesizing networks similar to real networks and we should find the best model fitting the target network in each application. As a result, the task of generative model selection is an important stage before generating network instances. Accordingly for the chosen seven real networks the appropriate generative model selected and shown in last column of Table <xref rid="x1-15008-2">2</xref>.</p>
+<table-wrap id="x1-15008-2">
+<label>Table 2</label>
+<caption>
+<p>Real networks and the selected generative model using network model selection method</p>
+</caption>
+<table frame="hsides" rules="groups">
+<thead>
+<tr>
+<td valign="top" align="left">Network</td>
+<td valign="top" align="center">No. of nodes</td>
+<td valign="top" align="center">No. of edges</td>
+<td valign="top" align="center">Selected model</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top" align="left">p2p-Gnutella08 [<xref ref-type="bibr" rid="ref053">53</xref>]</td>
+<td valign="top" align="char" char=".">6301</td>
+<td valign="top" align="char" char=".">20777</td>
+<td valign="top" align="center">SW</td>
+</tr>
+<tr>
+<td valign="top" align="left">Email-URV [<xref ref-type="bibr" rid="ref018">18</xref>]</td>
+<td valign="top" align="char" char=".">1133</td>
+<td valign="top" align="char" char=".">10903</td>
+<td valign="top" align="center">FF</td>
+</tr>
+<tr>
+<td valign="top" align="left">email-Enron [<xref ref-type="bibr" rid="ref053">53</xref>]</td>
+<td valign="top" align="char" char=".">36692</td>
+<td valign="top" align="char" char=".">367662</td>
+<td valign="top" align="center">SW</td>
+</tr>
+<tr>
+<td valign="top" align="left">cit-HepPh [<xref ref-type="bibr" rid="ref053">53</xref>]</td>
+<td valign="top" align="char" char=".">34546</td>
+<td valign="top" align="char" char=".">421578</td>
+<td valign="top" align="center">BA</td>
+</tr>
+<tr>
+<td valign="top" align="left">cit-HepTh [<xref ref-type="bibr" rid="ref053">53</xref>]</td>
+<td valign="top" align="char" char=".">27770</td>
+<td valign="top" align="char" char=".">352807</td>
+<td valign="top" align="center">FF</td>
+</tr>
+<tr>
+<td valign="top" align="left">ca-HepPh [<xref ref-type="bibr" rid="ref053">53</xref>]</td>
+<td valign="top" align="char" char=".">12008</td>
+<td valign="top" align="char" char=".">237010</td>
+<td valign="top" align="center">SW</td>
+</tr>
+<tr>
+<td valign="top" align="left">ca-HepTh [<xref ref-type="bibr" rid="ref053">53</xref>]</td>
+<td valign="top" align="char" char=".">9877</td>
+<td valign="top" align="char" char=".">51971</td>
+<td valign="top" align="center">BA</td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+<p>As we discussed, we can utilize network similarity method for model selection. So in that way we compute euclidean distance between embedded features of real networks and generative networks (synthesized by generative network models). Table <xref rid="x1-15009-3">3</xref> shows the average euclidean distance between embedded features of a real network and all instances of particular generative network. A smallest average distance shows strong structural similarity between real network and generative network.</p>
+<table-wrap id="x1-15009-3">
+<label>Table 3</label>
+<caption>
+<p>Real networks and the selected generative model using structural network similarity method</p>
+</caption>
+<table frame="hsides" rules="groups">
+<thead>
+<tr>
+<td valign="top" align="left" rowspan="3">Real networks</td>
+<td valign="top" align="center" colspan="7">Generative networks</td>
+</tr>
+<tr>
+<td valign="top" colspan="7"><hr/></td>
+</tr>
+<tr>
+<td valign="top" align="center">BA</td>
+<td valign="top" align="center">ER</td>
+<td valign="top" align="center">FF</td>
+<td valign="top" align="center">KG</td>
+<td valign="top" align="center">RP</td>
+<td valign="top" align="center">SW</td>
+<td valign="top" align="center">Selected model</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top" align="left">p2p-Gnutella08 [<xref ref-type="bibr" rid="ref053">53</xref>]</td>
+<td valign="top" align="char" char=".">44.94</td>
+<td valign="top" align="char" char=".">40.43</td>
+<td valign="top" align="char" char=".">30.71</td>
+<td valign="top" align="char" char=".">44.75</td>
+<td valign="top" align="char" char=".">44.92</td>
+<td valign="top" align="center"><bold>30.21</bold></td>
+<td valign="top" align="center">SW</td>
+</tr>
+<tr>
+<td valign="top" align="left">Email-URV [<xref ref-type="bibr" rid="ref018">18</xref>]</td>
+<td valign="top" align="char" char=".">18.29</td>
+<td valign="top" align="char" char=".">13.78</td>
+<td valign="top" align="center"><bold>3.56</bold></td>
+<td valign="top" align="char" char=".">18.10</td>
+<td valign="top" align="char" char=".">18.28</td>
+<td valign="top" align="char" char=".">4.06</td>
+<td valign="top" align="center">FF</td>
+</tr>
+<tr>
+<td valign="top" align="left">email-Enron [<xref ref-type="bibr" rid="ref053">53</xref>]</td>
+<td valign="top" align="char" char=".">87.8</td>
+<td valign="top" align="char" char=".">83.3</td>
+<td valign="top" align="char" char=".">73.57</td>
+<td valign="top" align="char" char=".">87.61</td>
+<td valign="top" align="char" char=".">87.79</td>
+<td valign="top" align="center"><bold>73.07</bold></td>
+<td valign="top" align="center">SW</td>
+</tr>
+<tr>
+<td valign="top" align="left">cit-HepPh [<xref ref-type="bibr" rid="ref053">53</xref>]</td>
+<td valign="top" align="center"><bold>0.21</bold></td>
+<td valign="top" align="char" char=".">4.29</td>
+<td valign="top" align="char" char=".">14.51</td>
+<td valign="top" align="char" char=".">0.32</td>
+<td valign="top" align="char" char=".">0.29</td>
+<td valign="top" align="char" char=".">14.01</td>
+<td valign="top" align="center">BA</td>
+</tr>
+<tr>
+<td valign="top" align="left">cit-HepTh [<xref ref-type="bibr" rid="ref053">53</xref>]</td>
+<td valign="top" align="char" char=".">16.4</td>
+<td valign="top" align="char" char=".">11.9</td>
+<td valign="top" align="center"><bold>1.72</bold></td>
+<td valign="top" align="char" char=".">16.22</td>
+<td valign="top" align="char" char=".">16.4</td>
+<td valign="top" align="char" char=".">2.18</td>
+<td valign="top" align="center">FF</td>
+</tr>
+<tr>
+<td valign="top" align="left">ca-HepPh [<xref ref-type="bibr" rid="ref053">53</xref>]</td>
+<td valign="top" align="char" char=".">72.85</td>
+<td valign="top" align="char" char=".">68.35</td>
+<td valign="top" align="char" char=".">58.63</td>
+<td valign="top" align="char" char=".">72.67</td>
+<td valign="top" align="char" char=".">72.86</td>
+<td valign="top" align="center"><bold>58.12</bold></td>
+<td valign="top" align="center">SW</td>
+</tr>
+<tr>
+<td valign="top" align="left">ca-HepTh [<xref ref-type="bibr" rid="ref053">53</xref>]</td>
+<td valign="top" align="center"><bold>0.31</bold></td>
+<td valign="top" align="char" char=".">4.19</td>
+<td valign="top" align="char" char=".">14.42</td>
+<td valign="top" align="char" char=".">0.39</td>
+<td valign="top" align="char" char=".">0.34</td>
+<td valign="top" align="char" char=".">13.92</td>
+<td valign="top" align="center">BA</td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+</sec>
+</sec>
+<sec id="x1-16000-5">
+<label>5.</label>
+<title>Discussion</title>
+<p>In this paper, we proposed a novel method for network model selection and network similarity. In this method, we investigated the network distance metric for comparing the topological propoerties (topology) of the complex networks. In simple words for a given real network find the matching generative model using network topology based features. The computational strategy adopted include first generating instances from select group of generative models. Second the triplet set of features characterizing the network property from the above set of instances and thirdly these features are embedded and fed as input to the classifier and the other input to the classifier come from the real network data refer Fig. <xref rid="x1-4001-1">1</xref>. The classifier will provide us to appropriate generative model that fits real network. The second objective is to estimate the network similarity using euclidean distance measure. The result of our analysis with seven real networks shows the usefulness of proposed method refer Tables <xref rid="x1-15008-2">2</xref> and <xref rid="x1-15009-3">3</xref>. We have seen in our study that the model selected through model selection (using classification scheme) and the model selected through network similarity (using euclidean distance measure) agreed completely refer Tables <xref rid="x1-15008-2">2</xref> and <xref rid="x1-15009-3">3</xref>.</p>
+<p>Figure <xref rid="x1-12003-5">5</xref> shown the sensitiveness of proposed method to perturbations in the network topology by introducing various noise levels (or variability i.e. noise = 5%, 10%, 15%, 20%, 25%) into test case network. The noise was introduced in the network by rewiring a particular fraction of network edges between the randomly selected pair of nodes. We observe that the classification performance of proposed methodology do not affected upto 10% of noise after that it drops considerably. In other words the proposed method is less sensitive to perturbation in network topology of test set. Hence it is independent of size and density of the test case network (e.g., a real network). Therefore, variability factor is considered clearly in proposed methodology.</p>
+<p>In our methodology, the size and density of the target network are not considered in the generation of the training data. Size and density independence is an important feature of our method. It enables the classifier to learn from a dataset of generated networks with different sizes and different densities, perhaps smaller than the size of the target network. For example, given a very large size of network instance as the target network, we can prepare the dataset of generated networks with smaller size than the target network. This facility decreases the time of network generation and feature extraction considerably. The proposed method outperforms the various existing methods, which highlight the effectiveness of deep learning architectures in the learning of a distance metric for topological comparison of complex networks. Our proposed method (TripletFit), outperforms the state-of-the-art methods with respect to accuracy and noise tolerance.</p>
+<p>Benefits of our study may help biologist to mimic real word network this may help further insight into the network topology and properties. With the large scale generation of Next Gen Sequencing data and its annotation may further demand fast and reliable model selection software tools. The present study may in the direction too.</p>
+</sec>
+<sec id="x1-17000-x">
+<title>Author contributions</title>
+<p>K.V.S. and L.V. conceived and designed the study. K.V.S. and A.K.V. implemented the algorithm and prepared the figures of the numerical results. K.V.S., A.K.V. and L.V. analyzed and interpreted the results, and wrote the manuscript. All the authors have read and approved the final manuscript.</p>
+</sec>
+<sec id="x1-18000-x">
+<title>Competing interests</title>
+<p>We declare that there is no competing of interests for this work.</p>
+</sec>
+</body>
+<back>
+<ack>
+<title>Acknowledgements</title>
+<p>The authors would like to thank J.N.U. and U.G.C., India for providing the research fellowship to K.V.S. and A.K.V.</p></ack>
+<app-group>
+<app id="x1-21000-x"><label>Appendix</label>
+<title>Assortative plots for different network size</title>
+<p>In this section, we describe the boxplots of assortativity in various network size ranges under different network types.</p>
+<fig id="x1-21001-7">
+<label>Fig. 7.</label>
+<caption>
+<p>Assortativity boxplot for Barabási-Albert model.</p>
+</caption>
+<graphic xlink:href="ds-4-ds210033-g007.jpg"/>
+</fig> 
+<fig id="x1-21002-8">
+<label>Fig. 8.</label>
+<caption>
+<p>Assortativity boxplot for Erdös-Rényi model.</p>
+</caption>
+<graphic xlink:href="ds-4-ds210033-g008.jpg"/>
+</fig> 
+<fig id="x1-21003-9">
+<label>Fig. 9.</label>
+<caption>
+<p>Assortativity boxplot for forest fire model.</p>
+</caption>
+<graphic xlink:href="ds-4-ds210033-g009.jpg"/>
+</fig> 
+<fig id="x1-21004-10">
+<label>Fig. 10.</label>
+<caption>
+<p>Assortativity boxplot for Kronecker graphs.</p>
+</caption>
+<graphic xlink:href="ds-4-ds210033-g010.jpg"/>
+</fig> 
+<fig id="x1-21005-11">
+<label>Fig. 11.</label>
+<caption>
+<p>Assortativity boxplot for random power law model.</p>
+</caption>
+<graphic xlink:href="ds-4-ds210033-g011.jpg"/>
+</fig> 
+<fig id="x1-21006-12">
+<label>Fig. 12.</label>
+<caption>
+<p>Assortativity boxplot for Watts-Strogatz model.</p>
+</caption>
+<graphic xlink:href="ds-4-ds210033-g012.jpg"/>
+</fig>
+</app></app-group>
+<ref-list>
+<title>References</title>
+<ref id="ref001">
+<label>[1]</label><mixed-citation publication-type="other"><string-name><given-names>S.</given-names> <surname>Achard</surname></string-name> and <string-name><given-names>E.</given-names> <surname>Bullmore</surname></string-name>, <article-title>Efficiency and cost of economical brain functional networks</article-title>, <source>PLoS Comput Biol</source> <volume>3</volume>(<issue>2</issue>) (<year>2007</year>), <elocation-id>e17</elocation-id>.</mixed-citation>
+</ref>
+<ref id="ref002">
+<label>[2]</label><mixed-citation publication-type="journal"><string-name><given-names>E.M.</given-names> <surname>Airoldi</surname></string-name>, <string-name><given-names>X.</given-names> <surname>Bai</surname></string-name> and <string-name><given-names>K.M.</given-names> <surname>Carley</surname></string-name>, <article-title>Network sampling and classification: An investigation of network model representations</article-title>, <source>Decision support systems</source> <volume>51</volume>(<issue>3</issue>) (<year>2011</year>), <fpage>506</fpage>–<lpage>518</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.dss.2011.02.014</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref003">
+<label>[3]</label><mixed-citation publication-type="chapter"><string-name><given-names>L.</given-names> <surname>Akoglu</surname></string-name> and <string-name><given-names>C.</given-names> <surname>Faloutsos</surname></string-name>, <chapter-title>RTG: A recursive realistic graph generator using random typing</chapter-title>, in: <source>Joint European Conference on Machine Learning and Knowledge Discovery in Databases</source>, <publisher-name>Springer</publisher-name>, <publisher-loc>Berlin Heidelberg</publisher-loc>, <year>2009</year>, pp. <fpage>13</fpage>–<lpage>28</lpage>. doi:<pub-id pub-id-type="doi">10.1007/978-3-642-04180-8_13</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref004">
+<label>[4]</label><mixed-citation publication-type="journal"><string-name><given-names>S.</given-names> <surname>Aliakbary</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Motallebi</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Rashidian</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Habibi</surname></string-name> and <string-name><given-names>A.</given-names> <surname>Movaghar</surname></string-name>, <article-title>Noise-tolerant model selection and parameter estimation for complex networks</article-title>, <source>Physica A: Statistical Mechanics and its Applications</source> <volume>427</volume> (<year>2015</year>), <fpage>100</fpage>–<lpage>112</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.physa.2015.02.032</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref005">
+<label>[5]</label><mixed-citation publication-type="journal"><string-name><given-names>I.</given-names> <surname>Arel</surname></string-name>, <string-name><given-names>D.C.</given-names> <surname>Rose</surname></string-name> and <string-name><given-names>T.P.</given-names> <surname>Karnowski</surname></string-name>, <article-title>Deep machine learning – a new frontier in artificial intelligence research [research frontier]</article-title>, <source>IEEE Computational Intelligence Magazine</source> <volume>5</volume>(<issue>4</issue>) (<year>2010</year>), <fpage>13</fpage>–<lpage>18</lpage>. doi:<pub-id pub-id-type="doi">10.1109/MCI.2010.938364</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref006">
+<label>[6]</label><mixed-citation publication-type="journal"><string-name><given-names>J.M.</given-names> <surname>Badham</surname></string-name>, <article-title>Commentary: Measuring the shape of degree distributions</article-title>, <source>Network Sci.</source> <volume>1</volume> (<year>2013</year>), <fpage>213</fpage>–<lpage>225</lpage>. doi:<pub-id pub-id-type="doi">10.1017/nws.2013.10</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref007">
+<label>[7]</label><mixed-citation publication-type="journal"><string-name><given-names>A.-L.</given-names> <surname>Barabási</surname></string-name> and <string-name><given-names>R.</given-names> <surname>Albert</surname></string-name>, <article-title>Emergence of scaling in random networks</article-title>, <source>Science</source> <volume>286</volume>(<issue>5439</issue>) (<year>1999</year>), <fpage>509</fpage>–<lpage>512</lpage>. doi:<pub-id pub-id-type="doi">10.1126/science.286.5439.509</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref008">
+<label>[8]</label><mixed-citation publication-type="journal"><string-name><given-names>Y.</given-names> <surname>Bengio</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Courville</surname></string-name> and <string-name><given-names>P.</given-names> <surname>Vincent</surname></string-name>, <article-title>Representation learning: A review and new perspectives</article-title>, <source>IEEE transactions on pattern analysis and machine intelligence</source> <volume>35</volume>(<issue>8</issue>) (<year>2013</year>), <fpage>1798</fpage>–<lpage>1828</lpage>. doi:<pub-id pub-id-type="doi">10.1109/TPAMI.2013.50</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref009">
+<label>[9]</label><mixed-citation publication-type="journal"><string-name><given-names>Y.</given-names> <surname>Bengio</surname></string-name> and <string-name><given-names>Y.</given-names> <surname>LeCun</surname></string-name>, <article-title>Scaling learning algorithms towards AI</article-title>, <source>Large-scale kernel machines</source> <volume>34</volume>(<issue>5</issue>) (<year>2007</year>), <fpage>1</fpage>–<lpage>41</lpage>.</mixed-citation>
+</ref>
+<ref id="ref010">
+<label>[10]</label><mixed-citation publication-type="chapter"><string-name><given-names>M.</given-names> <surname>Berlingerio</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Koutra</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Eliassi-Rad</surname></string-name> and <string-name><given-names>C.</given-names> <surname>Faloutsos</surname></string-name>, <chapter-title>Network similarity via multiple social theories</chapter-title>, in: <source>Advances in Social Networks Analysis and Mining (ASONAM), 2013 IEEE/ACM International Conference on</source>, <publisher-name>IEEE</publisher-name>, <year>2013</year>, pp. <fpage>1439</fpage>–<lpage>1440</lpage>.</mixed-citation>
+</ref>
+<ref id="ref011">
+<label>[11]</label><mixed-citation publication-type="other"><string-name><surname>Borgwardt</surname></string-name> and <string-name><given-names>K.</given-names> <surname>Michael</surname></string-name>, Graph kernels, 2007, PhD diss.</mixed-citation>
+</ref>
+<ref id="ref012">
+<label>[12]</label><mixed-citation publication-type="chapter"><string-name><given-names>L.</given-names> <surname>Briesemeister</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Lincoln</surname></string-name> and <string-name><given-names>P.</given-names> <surname>Porras</surname></string-name>, <chapter-title>Epidemic profiles and defense of scale-free networks</chapter-title>, in: <source>Proceedings of the 2003 ACM Workshop on Rapid Malcode</source>, <publisher-name>ACM</publisher-name>, <year>2003</year>, pp. <fpage>67</fpage>–<lpage>75</lpage>. doi:<pub-id pub-id-type="doi">10.1145/948187.948200</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref013">
+<label>[13]</label><mixed-citation publication-type="journal"><string-name><given-names>D.</given-names> <surname>Chakrabarti</surname></string-name> and <string-name><given-names>C.</given-names> <surname>Faloutsos</surname></string-name>, <article-title>Graph mining: Laws, generators, and algorithms</article-title>, <source>ACM computing surveys (CSUR)</source> <volume>38</volume>(<issue>1</issue>) (<year>2006</year>), <fpage>2</fpage>. doi:<pub-id pub-id-type="doi">10.1145/1132952.1132954</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref014">
+<label>[14]</label><mixed-citation publication-type="journal"><string-name><given-names>G.</given-names> <surname>Chechik</surname></string-name>, <string-name><given-names>V.</given-names> <surname>Sharma</surname></string-name>, <string-name><given-names>U.</given-names> <surname>Shalit</surname></string-name> and <string-name><given-names>S.</given-names> <surname>Bengio</surname></string-name>, <article-title>Large scale online learning of image similarity through ranking</article-title>, <source>Journal of Machine Learning Research</source> <volume>11</volume> (<year>2010</year>), <fpage>1109</fpage>–<lpage>1135</lpage>.</mixed-citation>
+</ref>
+<ref id="ref015">
+<label>[15]</label><mixed-citation publication-type="other"><string-name><given-names>A.</given-names> <surname>Clauset</surname></string-name>, <string-name><given-names>M.E.</given-names> <surname>Newman</surname></string-name> and <string-name><given-names>C.</given-names> <surname>Moore</surname></string-name>, <article-title>Finding community structure in very large networks</article-title>, <source>Physical review E</source> <volume>70</volume>(<issue>6</issue>) (<year>2004</year>), <elocation-id>066111</elocation-id>. doi:<pub-id pub-id-type="doi">10.1103/PhysRevE.70.066111</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref016">
+<label>[16]</label><mixed-citation publication-type="journal"><string-name><surname>Costa</surname>, <given-names>L.da F.</given-names></string-name>, <string-name><given-names>F.A.</given-names> <surname>Rodrigues</surname></string-name>, <string-name><given-names>G.</given-names> <surname>Travieso</surname></string-name> and <string-name><given-names>P.</given-names> <surname>Ribeiro Villas Boas</surname></string-name>, <article-title>Characterization of complex networks: A survey of measurements</article-title>, <source>Advances in physics</source> <volume>56</volume>(<issue>1</issue>) (<year>2007</year>), <fpage>167</fpage>–<lpage>242</lpage>. doi:<pub-id pub-id-type="doi">10.1080/00018730601170527</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref017">
+<label>[17]</label><mixed-citation publication-type="chapter"><string-name><given-names>B.</given-names> <surname>Crawford</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Gera</surname></string-name>, <string-name><given-names>J.</given-names> <surname>House</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Knuth</surname></string-name> and <string-name><given-names>R.</given-names> <surname>Miller</surname></string-name>, <chapter-title>Graph structure similarity using spectral graph theory</chapter-title>, in: <source>International Workshop on Complex Networks and Their Applications</source>, <publisher-name>Springer International Publishing</publisher-name>, <year>2016</year>, pp. <fpage>209</fpage>–<lpage>221</lpage>.</mixed-citation>
+</ref>
+<ref id="ref018">
+<label>[18]</label><mixed-citation publication-type="other">E-mail network URV, Retrieved from <uri>http://deim.urv.cat/~alexandre.arenas/data/welcome.htm</uri> on January 16, 2017.</mixed-citation>
+</ref>
+<ref id="ref019">
+<label>[19]</label><mixed-citation publication-type="journal"><string-name><given-names>P.</given-names> <surname>Erdös</surname></string-name> and <string-name><given-names>A.</given-names> <surname>Rényi</surname></string-name>, <article-title>On the central limit theorem for samples from a finite population</article-title>, <source>Publ. Math. Inst. Hungar. Acad. Sci</source> <volume>4</volume> (<year>1959</year>), <fpage>49</fpage>–<lpage>61</lpage>.</mixed-citation>
+</ref>
+<ref id="ref020">
+<label>[20]</label><mixed-citation publication-type="other"><string-name><surname>Goncalves</surname></string-name>, <string-name><given-names>W.</given-names> <surname>Nunes</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Souto Martinez</surname></string-name> and <string-name><given-names>O.</given-names> <surname>Martinez Bruno</surname></string-name>, <article-title>Complex network classification using partially self-avoiding deterministic walks</article-title>, <source>Chaos: An Interdisciplinary Journal of Nonlinear Science</source> <volume>22</volume>(<issue>3</issue>) (<year>2012</year>), <elocation-id>033139</elocation-id>. doi:<pub-id pub-id-type="doi">10.1063/1.4737515</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref021">
+<label>[21]</label><mixed-citation publication-type="other"><string-name><given-names>R.</given-names> <surname>Guimera</surname></string-name>, <string-name><given-names>L.</given-names> <surname>Danon</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Diaz-Guilera</surname></string-name>, <string-name><given-names>F.</given-names> <surname>Giralt</surname></string-name> and <string-name><given-names>A.</given-names> <surname>Arenas</surname></string-name>, <article-title>Self-similar community structure in a network of human interactions</article-title>, <source>Physical review E</source> <volume>68</volume>(<issue>6</issue>) (<year>2003</year>), <elocation-id>065103</elocation-id>. doi:<pub-id pub-id-type="doi">10.1103/PhysRevE.68.065103</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref022">
+<label>[22]</label><mixed-citation publication-type="journal"><string-name><given-names>J.-D.J.</given-names> <surname>Han</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Dupuy</surname></string-name>, <string-name><given-names>N.</given-names> <surname>Bertin</surname></string-name>, <string-name><given-names>M.E.</given-names> <surname>Cusick</surname></string-name> and <string-name><given-names>M.</given-names> <surname>Vidal</surname></string-name>, <article-title>Effect of sampling on topology predictions of protein-protein interaction networks</article-title>, <source>Nature biotechnology</source> <volume>23</volume>(<issue>7</issue>) (<year>2005</year>), <fpage>839</fpage>–<lpage>844</lpage>. doi:<pub-id pub-id-type="doi">10.1038/nbt1116</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref023">
+<label>[23]</label><mixed-citation publication-type="journal"><string-name><given-names>G.E.</given-names> <surname>Hinton</surname></string-name>, <article-title>Learning multiple layers of representation</article-title>, <source>Trends in cognitive sciences</source> <volume>11</volume>(<issue>10</issue>) (<year>2007</year>), <fpage>428</fpage>–<lpage>434</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.tics.2007.09.004</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref024">
+<label>[24]</label><mixed-citation publication-type="chapter"><string-name><given-names>E.</given-names> <surname>Hoffer</surname></string-name> and <string-name><given-names>N.</given-names> <surname>Ailon</surname></string-name>, <chapter-title>Deep metric learning using triplet network</chapter-title>, in: <source>International Workshop on Similarity-Based Pattern Recognition</source>, <publisher-name>Springer International Publishing</publisher-name>, <year>2015</year>, pp. <fpage>84</fpage>–<lpage>92</lpage>. doi:<pub-id pub-id-type="doi">10.1007/978-3-319-24261-3_7</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref025">
+<label>[25]</label><mixed-citation publication-type="journal"><string-name><given-names>K.</given-names> <surname>Hornik</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Stinchcombe</surname></string-name> and <string-name><given-names>H.</given-names> <surname>White</surname></string-name>, <article-title>Multilayer feedforward networks are universal approximators</article-title>, <source>Neural networks</source> <volume>2</volume>(<issue>5</issue>) (<year>1989</year>), <fpage>359</fpage>–<lpage>366</lpage>. doi:<pub-id pub-id-type="doi">10.1016/0893-6080(89)90020-8</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref026">
+<label>[26]</label><mixed-citation publication-type="journal"><string-name><given-names>J.</given-names> <surname>Janssen</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Hurshman</surname></string-name> and <string-name><given-names>N.</given-names> <surname>Kalyaniwalla</surname></string-name>, <article-title>Model selection for social networks using graphlets</article-title>, <source>Internet Mathematics</source> <volume>8</volume>(<issue>4</issue>) (<year>2012</year>), <fpage>338</fpage>–<lpage>363</lpage>. doi:<pub-id pub-id-type="doi">10.1080/15427951.2012.671149</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref027">
+<label>[27]</label><mixed-citation publication-type="chapter"><string-name><given-names>G.</given-names> <surname>Jurman</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Visintainer</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Filosi</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Riccadonna</surname></string-name> and <string-name><given-names>C.</given-names> <surname>Furlanello</surname></string-name>, <chapter-title>The HIM glocal metric and kernel for network comparison and classification</chapter-title>, in: <source>IEEE International Conference on Data Science and Advanced Analytics (DSAA)</source>, <publisher-name>IEEE</publisher-name>, <year>2015</year>, p. <fpage>1</fpage>–<lpage>10</lpage>.</mixed-citation>
+</ref>
+<ref id="ref028">
+<label>[28]</label><mixed-citation publication-type="journal"><string-name><given-names>A.K.</given-names> <surname>Kelmans</surname></string-name>, <article-title>Comparison of graphs by their number of spanning trees</article-title>, <source>Discrete Mathematics</source> <volume>16</volume>(<issue>3</issue>) (<year>1976</year>), <fpage>241</fpage>–<lpage>261</lpage>. doi:<pub-id pub-id-type="doi">10.1016/0012-365X(76)90102-3</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref029">
+<label>[29]</label><mixed-citation publication-type="chapter"><string-name><given-names>R.</given-names> <surname>Kondor</surname></string-name>, <string-name><given-names>N.</given-names> <surname>Shervashidze</surname></string-name> and <string-name><given-names>K.M.</given-names> <surname>Borgwardt</surname></string-name>, <chapter-title>The graphlet spectrum</chapter-title>, in: <source>Proceedings of the 26th Annual International Conference on Machine Learning</source>, <publisher-name>ACM</publisher-name>, <year>2009</year>, pp. <fpage>529</fpage>–<lpage>536</lpage>.</mixed-citation>
+</ref>
+<ref id="ref030">
+<label>[30]</label><mixed-citation publication-type="other"><string-name><given-names>S.B.</given-names> <surname>Kotsiantis</surname></string-name>, <string-name><given-names>I.</given-names> <surname>Zaharakis</surname></string-name> and <string-name><given-names>P.</given-names> <surname>Pintelas</surname></string-name>, Supervised machine learning: A review of classification techniques, 2007, pp. 3–24.</mixed-citation>
+</ref>
+<ref id="ref031">
+<label>[31]</label><mixed-citation publication-type="chapter"><string-name><given-names>D.</given-names> <surname>Koutra</surname></string-name>, <string-name><given-names>J.T.</given-names> <surname>Vogelstein</surname></string-name> and <string-name><given-names>C.</given-names> <surname>Faloutsos</surname></string-name>, <chapter-title>Deltacon: A principled massive-graph similarity function</chapter-title>, in: <source>Proceedings of the 2013 SIAM International Conference on Data Mining</source>, <publisher-name>Society for Industrial and Applied Mathematics</publisher-name>, <year>2013</year>, pp. <fpage>162</fpage>–<lpage>170</lpage>.</mixed-citation>
+</ref>
+<ref id="ref032">
+<label>[32]</label><mixed-citation publication-type="chapter"><string-name><given-names>B.G.</given-names> <surname>Kumar</surname></string-name>, <string-name><given-names>G.</given-names> <surname>Carneiro</surname></string-name> and <string-name><given-names>I.</given-names> <surname>Reid</surname></string-name>, <chapter-title>Learning local image descriptors with deep Siamese and triplet convolutional networks by minimising global loss functions</chapter-title>, in: <source>Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition</source>, <year>2016</year>, pp. <fpage>5385</fpage>–<lpage>5394</lpage>.</mixed-citation>
+</ref>
+<ref id="ref033">
+<label>[33]</label><mixed-citation publication-type="other"><string-name><given-names>V.</given-names> <surname>Latora</surname></string-name> and <string-name><given-names>M.</given-names> <surname>Marchiori</surname></string-name>, <article-title>Efficient behavior of small-world networks</article-title>, <source>Physical review letters</source> <volume>87</volume>(<issue>19</issue>) (<year>2001</year>), <elocation-id>198701</elocation-id>. doi:<pub-id pub-id-type="doi">10.1103/PhysRevLett.87.198701</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref034">
+<label>[34]</label><mixed-citation publication-type="other"><string-name><surname>Lee</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Hoon</surname></string-name>, <string-name><given-names>P.-J.</given-names> <surname>Kim</surname></string-name> and <string-name><given-names>H.</given-names> <surname>Jeong</surname></string-name>, <article-title>Statistical properties of sampled networks</article-title>, <source>Physical Review E</source> <volume>73</volume>(<issue>1</issue>) (<year>2006</year>), <elocation-id>016102</elocation-id>. doi:<pub-id pub-id-type="doi">10.1103/PhysRevE.73.016102</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref035">
+<label>[35]</label><mixed-citation publication-type="journal"><string-name><given-names>J.</given-names> <surname>Leskovec</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Chakrabarti</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Kleinberg</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Faloutsos</surname></string-name> and <string-name><given-names>Z.</given-names> <surname>Ghahramani</surname></string-name>, <article-title>Kronecker graphs: An approach to modeling networks</article-title>, <source>Journal of Machine Learning Research</source> <volume>11</volume> (<year>2010</year>), <fpage>985</fpage>–<lpage>1042</lpage>.</mixed-citation>
+</ref>
+<ref id="ref036">
+<label>[36]</label><mixed-citation publication-type="chapter"><string-name><given-names>J.</given-names> <surname>Leskovec</surname></string-name> and <string-name><given-names>C.</given-names> <surname>Faloutsos</surname></string-name>, <chapter-title>Sampling from large graphs</chapter-title>, in: <source>Proceedings of the 12th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining</source>, <publisher-name>ACM</publisher-name>, <year>2006</year>, pp. <fpage>631</fpage>–<lpage>636</lpage>. doi:<pub-id pub-id-type="doi">10.1145/1150402.1150479</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref037">
+<label>[37]</label><mixed-citation publication-type="chapter"><string-name><given-names>J.</given-names> <surname>Leskovec</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Kleinberg</surname></string-name> and <string-name><given-names>C.</given-names> <surname>Faloutsos</surname></string-name>, <chapter-title>Graphs over time: Densification laws, shrinking diameters and possible explanations</chapter-title>, in: <source>Proceedings of the Eleventh ACM SIGKDD International Conference on Knowledge Discovery in Data Mining</source>, <publisher-name>ACM</publisher-name>, <year>2005</year>, pp. <fpage>177</fpage>–<lpage>187</lpage>. doi:<pub-id pub-id-type="doi">10.1145/1081870.1081893</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref038">
+<label>[38]</label><mixed-citation publication-type="other"><string-name><given-names>N.</given-names> <surname>Litvak</surname></string-name> and <string-name><given-names>R.</given-names> <surname>Van Der Hofstad</surname></string-name>, <article-title>Uncovering disassortativity in large scale-free networks</article-title>, <source>Physical Review E</source> <volume>87</volume>(<issue>2</issue>) (<year>2013</year>), <elocation-id>022801</elocation-id>. doi:<pub-id pub-id-type="doi">10.1103/PhysRevE.87.022801</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref039">
+<label>[39]</label><mixed-citation publication-type="chapter"><string-name><given-names>P.</given-names> <surname>Mahadevan</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Krioukov</surname></string-name>, <string-name><given-names>K.</given-names> <surname>Fall</surname></string-name> and <string-name><given-names>A.</given-names> <surname>Vahdat</surname></string-name>, <chapter-title>Systematic topology analysis and generation using degree correlations</chapter-title>, in: <source>In ACM SIGCOMM Computer Communication Review</source>, Vol. <volume>36</volume>, <publisher-name>ACM</publisher-name>, <year>2006</year>, pp. <fpage>135</fpage>–<lpage>146</lpage>.</mixed-citation>
+</ref>
+<ref id="ref040">
+<label>[40]</label><mixed-citation publication-type="journal"><string-name><given-names>A.</given-names> <surname>Mehler</surname></string-name>, <article-title>Structural similarities of complex networks: A computational model by example of wiki graphs</article-title>, <source>Applied Artificial Intelligence</source> <volume>22</volume>(<issue>7–8</issue>) (<year>2008</year>), <fpage>619</fpage>–<lpage>683</lpage>. doi:<pub-id pub-id-type="doi">10.1080/08839510802164085</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref041">
+<label>[41]</label><mixed-citation publication-type="journal"><string-name><given-names>M.</given-names> <surname>Middendorf</surname></string-name>, <string-name><given-names>E.</given-names> <surname>Ziv</surname></string-name> and <string-name><given-names>C.H.</given-names> <surname>Wiggins</surname></string-name>, <article-title>Inferring network mechanisms: The Drosophila melanogaster protein interaction network</article-title>, <source>Proceedings of the National Academy of Sciences of the United States of America</source> <volume>102</volume>(<issue>9</issue>) (<year>2005</year>), <fpage>3192</fpage>–<lpage>3197</lpage>. doi:<pub-id pub-id-type="doi">10.1073/pnas.0409515102</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref042">
+<label>[42]</label><mixed-citation publication-type="journal"><string-name><given-names>A.</given-names> <surname>Montanari</surname></string-name> and <string-name><given-names>A.</given-names> <surname>Saberi</surname></string-name>, <article-title>The spread of innovations in social networks</article-title>, <source>Proceedings of the National Academy of Sciences</source> <volume>107</volume>(<issue>47</issue>) (<year>2010</year>), <fpage>20196</fpage>–<lpage>20201</lpage>. doi:<pub-id pub-id-type="doi">10.1073/pnas.1004098107</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref043">
+<label>[43]</label><mixed-citation publication-type="other"><string-name><given-names>S.</given-names> <surname>Motallebi</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Aliakbary</surname></string-name> and <string-name><given-names>J.</given-names> <surname>Habibi</surname></string-name>, <article-title>Generative model selection using a scalable and size-independent complex network classifier</article-title>, <source>Chaos: An Interdisciplinary Journal of Nonlinear Science</source> <volume>23</volume>(<issue>4</issue>) (<year>2013</year>), <elocation-id>043127</elocation-id>. doi:<pub-id pub-id-type="doi">10.1063/1.4840235</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref044">
+<label>[44]</label><mixed-citation publication-type="other"><string-name><given-names>M.E.J.</given-names> <surname>Newman</surname></string-name>, <article-title>Assortative mixing in networks</article-title>, <source>Physical review letters</source> <volume>89</volume>(<issue>20</issue>) (<year>2002</year>), <elocation-id>208701</elocation-id>. doi:<pub-id pub-id-type="doi">10.1103/PhysRevLett.89.208701</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref045">
+<label>[45]</label><mixed-citation publication-type="journal"><string-name><given-names>P.</given-names> <surname>Papadimitriou</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Dasdan</surname></string-name> and <string-name><given-names>H.</given-names> <surname>Garcia-Molina</surname></string-name>, <article-title>Web graph similarity for anomaly detection</article-title>, <source>Journal of Internet Services and Applications</source> <volume>1</volume>(<issue>1</issue>) (<year>2010</year>), <fpage>19</fpage>–<lpage>30</lpage>. doi:<pub-id pub-id-type="doi">10.1007/s13174-010-0003-x</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref046">
+<label>[46]</label><mixed-citation publication-type="other"><string-name><given-names>R.</given-names> <surname>Pastor-Satorras</surname></string-name> and <string-name><given-names>A.</given-names> <surname>Vespignani</surname></string-name>, <article-title>Epidemic dynamics in finite size scale-free networks</article-title>, <source>Physical Review E</source> <volume>65</volume>(<issue>3</issue>) (<year>2002</year>), <elocation-id>035108</elocation-id>. doi:<pub-id pub-id-type="doi">10.1103/PhysRevE.65.035108</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref047">
+<label>[47]</label><mixed-citation publication-type="chapter"><string-name><given-names>J.C.</given-names> <surname>Platt</surname></string-name>, <chapter-title>Fast training of support vector machines using sequential minimal optimization</chapter-title>, in: <source>Advances in Kernel Methods</source>, <publisher-name>MIT Press</publisher-name>, <year>1999</year>, pp. <fpage>185</fpage>–<lpage>208</lpage>.</mixed-citation>
+</ref>
+<ref id="ref048">
+<label>[48]</label><mixed-citation publication-type="journal"><string-name><given-names>N.</given-names> <surname>Pržulj</surname></string-name>, <article-title>Biological network comparison using graphlet degree distribution</article-title>, <source>Bioinformatics</source> <volume>23</volume>(<issue>2</issue>) (<year>2007</year>), <fpage>e177</fpage>–<lpage>e183</lpage>.</mixed-citation>
+</ref>
+<ref id="ref049">
+<label>[49]</label><mixed-citation publication-type="journal"><string-name><given-names>N.</given-names> <surname>Pržulj</surname></string-name>, <string-name><given-names>D.G.</given-names> <surname>Corneil</surname></string-name> and <string-name><given-names>I.</given-names> <surname>Jurisica</surname></string-name>, <article-title>Modeling interactome: Scale-free or geometric?</article-title>, <source>Bioinformatics</source> <volume>20</volume>(<issue>18</issue>) (<year>2004</year>), <fpage>3508</fpage>–<lpage>3515</lpage>. doi:<pub-id pub-id-type="doi">10.1093/bioinformatics/bth436</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref050">
+<label>[50]</label><mixed-citation publication-type="chapter"><string-name><given-names>A.</given-names> <surname>Sala</surname></string-name>, <string-name><given-names>L.</given-names> <surname>Cao</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Wilson</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Zablit</surname></string-name>, <string-name><given-names>H.</given-names> <surname>Zheng</surname></string-name> and <string-name><given-names>Y.</given-names> <surname>Ben Zhao</surname></string-name>, <chapter-title>Measurement-calibrated graph models for social network experiments</chapter-title>, in: <source>Proceedings of the 19th International Conference on World Wide Web</source>, <publisher-name>ACM</publisher-name>, <year>2010</year>, pp. <fpage>861</fpage>–<lpage>870</lpage>. doi:<pub-id pub-id-type="doi">10.1145/1772690.1772778</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref051">
+<label>[51]</label><mixed-citation publication-type="other"><string-name><given-names>T.A.</given-names> <surname>Schieber</surname></string-name>, <string-name><given-names>L.</given-names> <surname>Carpi</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Díaz-Guilera</surname></string-name>, <string-name><given-names>P.M.</given-names> <surname>Pardalos</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Masoller</surname></string-name> and <string-name><given-names>M.G.</given-names> <surname>Ravetti</surname></string-name>, <article-title>Quantification of network structural dissimilarities</article-title>, <source>Nature communications</source> <volume>8</volume> (<year>2017</year>), <elocation-id>13928</elocation-id>. doi:<pub-id pub-id-type="doi">10.1038/ncomms13928</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref052">
+<label>[52]</label><mixed-citation publication-type="chapter"><string-name><given-names>F.</given-names> <surname>Schroff</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Kalenichenko</surname></string-name> and <string-name><given-names>J.</given-names> <surname>Philbin</surname></string-name>, <chapter-title>Facenet: A unified embedding for face recognition and clustering</chapter-title>, in: <source>Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition</source>, <year>2015</year>, pp. <fpage>815</fpage>–<lpage>823</lpage>.</mixed-citation>
+</ref>
+<ref id="ref053">
+<label>[53]</label><mixed-citation publication-type="other">SNAP: Stanford Network Analysis Project, Retrieved from <uri>http://snap.stanford.edu/</uri> on January 16, 2017.</mixed-citation>
+</ref>
+<ref id="ref054">
+<label>[54]</label><mixed-citation publication-type="other"><string-name><surname>Stumpf</surname></string-name>, <string-name><given-names>P.H.</given-names> <surname>Michael</surname></string-name> and <string-name><given-names>C.</given-names> <surname>Wiuf</surname></string-name>, <article-title>Sampling properties of random graphs: The degree distribution</article-title>, <source>Physical Review E</source> <volume>72</volume>(<issue>3</issue>) (<year>2005</year>), <elocation-id>036118</elocation-id>. doi:<pub-id pub-id-type="doi">10.1103/PhysRevE.72.036118</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref055">
+<label>[55]</label><mixed-citation publication-type="journal"><string-name><given-names>L.</given-names> <surname>van der Maaten</surname></string-name> and <string-name><given-names>G.</given-names> <surname>Hinton</surname></string-name>, <article-title>Visualizing data using t-SNE</article-title>, <source>Journal of Machine Learning Research</source> <volume>9</volume> (<year>2008</year>), <fpage>2579</fpage>–<lpage>2605</lpage>.</mixed-citation>
+</ref>
+<ref id="ref056">
+<label>[56]</label><mixed-citation publication-type="chapter"><string-name><given-names>L.J.P.</given-names> <surname>van der Maaten</surname></string-name>, <chapter-title>Learning a parametric embedding by preserving local structure</chapter-title>, in: <source>Proceedings of the Twelfth International Conference on Artificial Intelligence and Statistics (AIS-TATS), JMLR W&amp;CP</source>, Vol. <volume>5</volume>, <year>2009</year>, <fpage>384</fpage>–<lpage>391</lpage>.</mixed-citation>
+</ref>
+<ref id="ref057">
+<label>[57]</label><mixed-citation publication-type="journal"><string-name><given-names>D.</given-names> <surname>Volchenkov</surname></string-name> and <string-name><given-names>P.</given-names> <surname>Blanchard</surname></string-name>, <article-title>An algorithm generating random graphs with power law degree distributions</article-title>, <source>Physica A: Statistical Mechanics and its Applications</source> <volume>315</volume>(<issue>3</issue>) (<year>2002</year>), <fpage>677</fpage>–<lpage>690</lpage>. doi:<pub-id pub-id-type="doi">10.1016/S0378-4371(02)01004-X</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref058">
+<label>[58]</label><mixed-citation publication-type="chapter"><string-name><given-names>J.</given-names> <surname>Wang</surname></string-name>, <string-name><given-names>Y.</given-names> <surname>Song</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Leung</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Rosenberg</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Wang</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Philbin</surname></string-name>, <string-name><given-names>B.</given-names> <surname>Chen</surname></string-name> and <string-name><given-names>Y.</given-names> <surname>Wu</surname></string-name>, <chapter-title>Learning fine-grained image similarity with deep ranking</chapter-title>, in: <source>Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition</source>, <year>2014</year>, pp. <fpage>1386</fpage>–<lpage>1393</lpage>.</mixed-citation>
+</ref>
+<ref id="ref059">
+<label>[59]</label><mixed-citation publication-type="journal"><string-name><given-names>D.J.</given-names> <surname>Watts</surname></string-name> and <string-name><given-names>S.H.</given-names> <surname>Strogatz</surname></string-name>, <article-title>Collective dynamics of ‘small-world’ networks</article-title>, <source>nature</source> <volume>393</volume>(<issue>6684</issue>) (<year>1998</year>), <fpage>440</fpage>–<lpage>442</lpage>. doi:<pub-id pub-id-type="doi">10.1038/30918</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref060">
+<label>[60]</label><mixed-citation publication-type="journal"><string-name><given-names>R.C.</given-names> <surname>Wilson</surname></string-name> and <string-name><given-names>P.</given-names> <surname>Zhu</surname></string-name>, <article-title>A study of graph spectra for comparing graphs and trees</article-title>, <source>Pattern Recognition</source> <volume>41</volume>(<issue>9</issue>) (<year>2008</year>), <fpage>2833</fpage>–<lpage>2841</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.patcog.2008.03.011</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref061">
+<label>[61]</label><mixed-citation publication-type="journal"><string-name><given-names>R.H.</given-names> <surname>Wurtz</surname></string-name>, <article-title>Recounting the impact of hubel and wiesel</article-title>, <source>The Journal of physiology</source> <volume>587</volume>(<issue>12</issue>) (<year>2009</year>), <fpage>2817</fpage>–<lpage>2823</lpage>. doi:<pub-id pub-id-type="doi">10.1113/jphysiol.2009.170209</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref062">
+<label>[62]</label><mixed-citation publication-type="journal"><string-name><given-names>L.A.</given-names> <surname>Zager</surname></string-name> and <string-name><given-names>G.C.</given-names> <surname>Verghese</surname></string-name>, <article-title>Graph similarity scoring and matching</article-title>, <source>Applied mathematics letters</source> <volume>21</volume>(<issue>1</issue>) (<year>2008</year>), <fpage>86</fpage>–<lpage>94</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.aml.2007.01.006</pub-id>.</mixed-citation>
+</ref>
+</ref-list>
+</back>
+</article>

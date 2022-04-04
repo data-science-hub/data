@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.0 20120330//EN" "JATS-journalpublishing1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="formalization-paper" dtd-version="1.0">
+<front>
+<journal-meta>
+<journal-id journal-id-type="publisher-id">DS</journal-id>
+<journal-title-group><journal-title>Data Science</journal-title></journal-title-group>
+<issn pub-type="epub">2451-8492</issn><issn pub-type="ppub">2451-8484</issn><issn-l>2451-8484</issn-l>
+<publisher>
+<publisher-name>IOS Press</publisher-name><publisher-loc>Nieuwe Hemweg 6B, 1013 BG Amsterdam, The Netherlands</publisher-loc>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">DS210043</article-id>
+<article-id pub-id-type="doi">10.3233/DS-210043</article-id>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Formalization Paper</subject></subj-group></article-categories>
+<title-group>
+<article-title>A formalization of one of the main claims of “Sonic hedgehog signaling in astrocytes” by Hill et al. 2021<xref ref-type="fn" rid="thanks1"><sup>1</sup></xref></article-title>
+</title-group>
+<contrib-group content-type="Editor">
+<contrib contrib-type="editor">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-7114-6459</contrib-id>
+<name><surname>Bucur</surname><given-names>Cristina-Iulia</given-names></name>
+</contrib>
+</contrib-group>
+<contrib-group content-type="Review comments from">
+<contrib contrib-type="reviewer">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-1267-0234</contrib-id>
+<name><surname>Kuhn</surname><given-names>Tobias</given-names></name>
+</contrib>
+<contrib contrib-type="reviewer">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0003-4727-9435</contrib-id>
+<name><surname>Dumontier</surname><given-names>Michel</given-names></name>
+</contrib>
+<contrib contrib-type="reviewer">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-7114-6459</contrib-id>
+<name><surname>Bucur</surname><given-names>Cristina-Iulia</given-names></name>
+</contrib>
+</contrib-group>
+<contrib-group>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0001-8004-0464</contrib-id>
+<name><surname>Martorana</surname><given-names>Margherita</given-names></name><email>m.martorana@vu.nl</email><xref ref-type="aff" rid="affa"/><xref ref-type="corresp" rid="cor2">*</xref>
+</contrib>
+<aff id="affa"><institution>Vrije Universiteit Amsterdam</institution>, <country>The Netherlands</country></aff>
+</contrib-group>
+<contrib-group content-type="guest-editors">
+<contrib contrib-type="guest-editor">
+<name><surname>Bucur</surname><given-names>Cristina-Iulia</given-names></name>
+</contrib>
+<contrib contrib-type="guest-editor">
+<name><surname>Kuhn</surname><given-names>Tobias</given-names></name>
+</contrib>
+</contrib-group>
+<author-notes>
+<fn id="thanks1"><label>1</label>
+<p>As RDF/nanopublication: <uri>http://purl.org/np/RA1FoHM9lwJ1XAV1eB871XcMAKfod73G_i4YtgoLpJVH0</uri></p></fn><corresp id="cor2"><label>*</label>Corresponding author. E-mail: <email>m.martorana@vu.nl</email>.</corresp>
+</author-notes>
+<pub-date date-type="preprint" publication-format="electronic"><day>25</day><month>1</month><year>2022</year></pub-date><pub-date date-type="pub" publication-format="electronic"><day>22</day><month>3</month><year>2022</year></pub-date><pub-date date-type="collection" publication-format="electronic"><year>2022</year></pub-date><volume>5</volume><issue>1</issue><issue-title>Semantic Publishing with Formalization Papers</issue-title><fpage>35</fpage><lpage>37</lpage><history><date date-type="received"><day>25</day><month>06</month><year>2021</year></date><date date-type="accepted"><day>12</day><month>11</month><year>2021</year></date></history>
+<permissions><copyright-statement>© 2022 – The authors. Published by IOS Press.</copyright-statement><copyright-year>2022</copyright-year>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/" license-type="open-access" xlink:type="simple">
+<license-p>This is an open access article distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/" xlink:type="simple">Creative Commons Attribution (CC BY 4.0) License</ext-link>, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions>
+<abstract>
+<p>Hill et al. claimed in previous work that sonic hedgehog signalling pathway is an essential regulator of astrocytes development. We present here a formalization of that claim, stating that all things of class “smoothened signaling pathway” that are in the context of a thing of class “human” mostly have a relation of type “affects” to a thing of class “astrocyte development” in the same context.</p>
+</abstract>
+<kwd-group>
+<label>Keywords</label>
+<kwd>Human</kwd>
+<kwd>smoothened signaling pathway</kwd>
+<kwd>astrocyte development</kwd>
+</kwd-group>
+</article-meta>
+</front>
+<body>
+<sec id="x1-1000-1">
+<label>1.</label>
+<title>Introduction</title>
+<p>Hill et al. [<xref ref-type="bibr" rid="ref002">2</xref>] state that “Shh signaling and emerging data point to essential roles for this pleiotropic signaling pathway in regulating various functional properties of astrocytes.”. We present here a formalization of the main scientific claim from this quote by using a semantic template called the super-pattern [<xref ref-type="bibr" rid="ref001">1</xref>].</p>
+</sec>
+<sec id="x1-2000-2">
+<label>2.</label>
+<title>Formalization</title>
+<p>Our formalization looks as follows:</p>
+<table-wrap>
+<table>
+<tbody>
+<tr>
+<td valign="top" align="left">CONTEXT-CLASS (“in the context of all …”):</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://www.wikidata.org/entity/Q5">human</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left">SUBJECT-CLASS (“things of type …”):</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.obolibrary.org/obo/GO_0007224">smoothened signaling pathway</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left">QUALIFIER:</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/mostlyQualifier">mostly</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left">RELATION-TYPE (“have a relation of type …”):</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="https://w3id.org/linkflows/superpattern/terms/affects">affects</ext-link></td>
+</tr>
+<tr>
+<td valign="top" align="left">OBJECT-CLASS (“to things of type …”):</td>
+<td valign="top" align="left"><ext-link ext-link-type="uri" xlink:href="http://purl.obolibrary.org/obo/GO_0014002">astrocyte development</ext-link></td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+<p>In the context class we use the “human” (Q5) class from Wikipedia. In subject class, we use the “smoothened signaling pathway” (GO:0007224) from GeneOntology. In the object class we used the “astrocyte development” (GO:0014002) class from GeneOntology.</p>
+</sec>
+<sec id="x1-3000-3">
+<label>3.</label>
+<title>RDF code</title>
+<p>This is our formalization as a nanopublication in TriG format:</p><preformat><monospace>@prefix this: &lt;http://purl.org/np/RA1FoHM9lwJ1XAV1eB871XcMAKfod73G_i4YtgoLpJVH0&gt; .</monospace>
+<monospace>@prefix sub: &lt;http://purl.org/np/RA1FoHM9lwJ1XAV1eB871XcMAKfod73G_i4YtgoLpJVH0#&gt; .</monospace>
+<monospace>@prefix np: &lt;http://www.nanopub.org/nschema#&gt; .</monospace>
+<monospace>@prefix dct: &lt;http://purl.org/dc/terms/&gt; .</monospace>
+<monospace>@prefix nt: &lt;https://w3id.org/np/o/ntemplate/&gt; .</monospace>
+<monospace>@prefix npx: &lt;http://purl.org/nanopub/x/&gt; .</monospace>
+<monospace>@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .</monospace>
+<monospace>@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .</monospace>
+<monospace>@prefix orcid: &lt;https://orcid.org/&gt; .</monospace>
+<monospace>@prefix prov: &lt;http://www.w3.org/ns/prov#&gt; .</monospace>
+<monospace>@prefix sp: &lt;https://w3id.org/linkflows/superpattern/terms/&gt; .</monospace>
+
+
+<monospace>sub:Head {</monospace>
+<monospace>  this: np:hasAssertion sub:assertion ;</monospace>
+<monospace>    np:hasProvenance sub:provenance ;</monospace>
+<monospace>    np:hasPublicationInfo sub:pubinfo ;</monospace>
+<monospace>    a np:Nanopublication .</monospace>
+<monospace>}</monospace>
+<monospace>sub:assertion {</monospace>
+<monospace>  sub:spi a &lt;https://w3id.org/linkflows/superpattern/terms/SuperPatternInstance&gt; ;</monospace>
+<monospace>    rdfs:label "Sonic hedgehog signalling pathway is an essential regulator of astrocytes development." ;</monospace>
+<monospace>    sp:hasContextClass &lt;http://www.wikidata.org/entity/Q5&gt; ;</monospace>
+<monospace>    sp:hasSubjectClass &lt;http://purl.obolibrary.org/obo/GO_0007224&gt; ;</monospace>
+<monospace>    sp:hasQualifier sp:mostlyQualifier ;</monospace>
+<monospace>    sp:hasRelation sp:affects ;</monospace>
+<monospace>    sp:hasObjectClass &lt;http://purl.obolibrary.org/obo/GO_0014002&gt; .</monospace>
+<monospace>}</monospace>
+<monospace>sub:provenance {</monospace>
+<monospace>  sub:activity a sp:FormalizationActivity ;</monospace>
+<monospace>    prov:used sub:quote , &lt;https://link.springer.com/article/10.1007%2Fs00018-020-03668-8&gt; ;</monospace>
+<monospace>    prov:wasAssociatedWith orcid:0000-0001-8004-0464 .</monospace>
+<monospace>  sub:assertion prov:wasGeneratedBy sub:activity .</monospace>
+<monospace>  sub:quote prov:value "Shh signaling and emerging data point to essential roles for this pleiotropic signaling pathway in</monospace>
+<monospace>regulating various functional properties of astrocytes." ;</monospace>
+<monospace>    prov:wasQuotedFrom &lt;https://link.springer.com/article/10.1007%2Fs00018-020-03668-8&gt; .</monospace>
+<monospace>}</monospace>
+<monospace>sub:pubinfo {</monospace>
+<monospace>  sub:sig npx:hasAlgorithm "RSA" ;</monospace>
+<monospace>    npx:hasPublicKey</monospace>
+<monospace>"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDs0t7O15Wx/NFoleAZFCOuayiJlHtJ7daow/5JX9WuaUi0hjKn+wPdhgxDuxQvTPQIe8D6JE1LZnY2LXBSOzDc</monospace>
+<monospace>HKn+QWB6Zkn/ZisiG24V5C0kGpNji6Ab0gaAFZYl32VdS0qLPr34LLsEDzJRUoZHWxg0KoHw85F0EzlrPH+JpwIDAQAB" ;</monospace>
+<monospace>    npx:hasSignature</monospace>
+<monospace>"k7zk9oeQr6IarkWA3guYqppm8oIdPR8cWvcJWsi+iyQUXLG3s7BOD5oqAPzfTQ0BYwl91ZIIO5kXyJ4sob/m4lSJUc6AQ3XqNbgg5hIsL/F5EUo9XpL511ywLMYV</monospace>
+<monospace>KJ054/HrTvDw0oip/0Z4KKKmRPse7PeyE9b6fOMj/wz8jAo=" ;</monospace>
+<monospace>    npx:hasSignatureTarget this: .</monospace>
+<monospace>  this: dct:created "2021-10-20T12:00:18.181+02:00"^^xsd:dateTime ;</monospace>
+<monospace>    dct:creator orcid:0000-0001-8004-0464 ;</monospace>
+<monospace>    npx:introduces sub:spi ;</monospace>
+<monospace>    &lt;https://w3id.org/linkflows/reviews/isUpdateOf&gt; &lt;http://purl.org/np/RAmfrSLt-WVQVNTrJi6IlNk3ZiQyYBds0NYGJpUEsPjfI&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromProvenanceTemplate &lt;http://purl.org/np/RAB_oy10D3XUP-zYlqGz7Uj58AsUXhEKeGqmRFg5LSgDM&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromPubinfoTemplate &lt;http://purl.org/np/RAA2MfqdBCzmz9yVWjKLXNbyfBNcwsMmOqcNUxkk1maIM&gt; ,</monospace>
+<monospace>&lt;http://purl.org/np/RAOGu9Lh0BD4tbIRB9RG6RGRA_ObDh75NTbIqaWgxxs8M&gt; ;</monospace>
+<monospace>    nt:wasCreatedFromTemplate &lt;http://purl.org/np/RAv68imZrEjfcp2rnEg1hzoBqEVc0cQMtp9_1Za0BxNM4&gt; .</monospace>
+<monospace>}</monospace>
+</preformat>
+</sec>
+</body>
+<back>
+<ref-list>
+<title>References</title>
+<ref id="ref001">
+<label>[1]</label><mixed-citation publication-type="other"><string-name><given-names>C.I.</given-names> <surname>Bucur</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Kuhn</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Ceolin</surname></string-name> and <string-name><given-names>J.</given-names> <surname>van Ossenbruggen</surname></string-name>, <chapter-title>Expressing high-level scientific claims with formal semantics</chapter-title>, in: <source>Proceedings of the 11th Knowledge Capture Conference</source>, <year>2021</year>. doi:<pub-id pub-id-type="doi">10.1145/3460210.3493561</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref002">
+<label>[2]</label><mixed-citation publication-type="journal"><string-name><given-names>S.A.</given-names> <surname>Hill</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Fu</surname></string-name> and <string-name><given-names>A.D.R.</given-names> <surname>Garcia</surname></string-name>, <article-title>Sonic hedgehog signaling in astrocytes</article-title>, <source>Cell. Mol. Life Sci.</source> <volume>78</volume> (<year>2021</year>), <fpage>1393</fpage>–<lpage>1403</lpage>. doi:<pub-id pub-id-type="doi">10.1007/s00018-020-03668-8</pub-id>.</mixed-citation>
+</ref>
+</ref-list>
+</back>
+</article>

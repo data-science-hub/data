@@ -1,0 +1,963 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.0 20120330//EN" "JATS-journalpublishing1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="position-paper">
+<front>
+<journal-meta>
+<journal-id journal-id-type="publisher-id">DS</journal-id>
+<journal-title-group><journal-title>Data Science</journal-title></journal-title-group>
+<issn pub-type="epub">2451-8492</issn><issn pub-type="ppub">2451-8484</issn><issn-l>2451-8484</issn-l>
+<publisher>
+<publisher-name>IOS Press</publisher-name><publisher-loc>Nieuwe Hemweg 6B, 1013 BG Amsterdam, The Netherlands</publisher-loc>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">DS190026</article-id>
+<article-id pub-id-type="doi">10.3233/DS-190026</article-id>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Position Paper</subject></subj-group></article-categories>
+<title-group>
+<article-title>Towards FAIR principles for research software</article-title>
+</title-group>
+<contrib-group content-type="Editor">
+<contrib contrib-type="editor">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0003-0183-6910</contrib-id>
+<name><surname>Groth</surname><given-names>Paul</given-names></name>
+</contrib>
+</contrib-group>
+<contrib-group>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0003-1953-5606</contrib-id>
+<name><surname>Lamprecht</surname><given-names>Anna-Lena</given-names></name><xref ref-type="aff" rid="affa">a</xref><xref ref-type="corresp" rid="cor2">*</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0003-3986-0510</contrib-id>
+<name><surname>Garcia</surname><given-names>Leyla</given-names></name><xref ref-type="aff" rid="affb">b</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0003-0087-6021</contrib-id>
+<name><surname>Kuzak</surname><given-names>Mateusz</given-names></name><xref ref-type="aff" rid="affc">c</xref><xref ref-type="aff" rid="affd">d</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0001-5565-7577</contrib-id>
+<name><surname>Martinez</surname><given-names>Carlos</given-names></name><xref ref-type="aff" rid="affe">e</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-8253-7375</contrib-id>
+<name><surname>Arcila</surname><given-names>Ricardo</given-names></name><xref ref-type="aff" rid="afff">f</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0001-8324-2897</contrib-id>
+<name><surname>Martin Del Pico</surname><given-names>Eva</given-names></name><xref ref-type="aff" rid="affg">g</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-5514-6651</contrib-id>
+<name><surname>Dominguez Del Angel</surname><given-names>Victoria</given-names></name><xref ref-type="aff" rid="affh">h</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-9576-1974</contrib-id>
+<name><surname>van de Sandt</surname><given-names>Stephanie</given-names></name><xref ref-type="aff" rid="affi">i</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0001-6666-1520</contrib-id>
+<name><surname>Ison</surname><given-names>Jon</given-names></name><xref ref-type="aff" rid="affj">j</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-8990-1985</contrib-id>
+<name><surname>Martinez</surname><given-names>Paula Andrea</given-names></name><xref ref-type="aff" rid="affk">k</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0003-2687-1982</contrib-id>
+<name><surname>McQuilton</surname><given-names>Peter</given-names></name><xref ref-type="aff" rid="affl">l</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-8937-6789</contrib-id>
+<name><surname>Valencia</surname><given-names>Alfonso</given-names></name><xref ref-type="aff" rid="affm">m</xref><xref ref-type="aff" rid="affn">n</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0003-0338-3070</contrib-id>
+<name><surname>Harrow</surname><given-names>Jennifer</given-names></name><xref ref-type="aff" rid="affo">o</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-0222-4273</contrib-id>
+<name><surname>Psomopoulos</surname><given-names>Fotis</given-names></name><xref ref-type="aff" rid="affp">p</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-0566-7723</contrib-id>
+<name><surname>Gelpi</surname><given-names>Josep Ll.</given-names></name><xref ref-type="aff" rid="affq">q</xref><xref ref-type="aff" rid="affr">r</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-8876-7606</contrib-id>
+<name><surname>Chue Hong</surname><given-names>Neil</given-names></name><xref ref-type="aff" rid="affs">s</xref><xref ref-type="aff" rid="afft">t</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0003-1219-2137</contrib-id>
+<name><surname>Goble</surname><given-names>Carole</given-names></name><xref ref-type="aff" rid="affu">u</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-0309-604X</contrib-id>
+<name><surname>Capella-Gutierrez</surname><given-names>Salvador</given-names></name><xref ref-type="aff" rid="affv">v</xref><xref ref-type="corresp" rid="cor3">**</xref>
+</contrib>
+<aff id="affa"><label>a</label><institution>Utrecht University</institution>, <country>The Netherlands</country>. E-mail: <email>a.l.lamprecht@uu.nl</email></aff>
+<aff id="affb"><label>b</label><institution>ZBMED Information Centre for Life Sciences</institution>, <country>Germany</country>. E-mail: <email>ljgarcia@zbmed.de</email></aff>
+<aff id="affc"><label>c</label><institution>Netherlands eScience Center</institution>, <country>The Netherlands</country></aff>
+<aff id="affd"><label>d</label><institution>Dutch Techcentre for Life Sciences</institution>, <country>The Netherlands</country>. E-mail: <email>m.kuzak@esciencecenter.nl</email></aff>
+<aff id="affe"><label>e</label><institution>Netherlands eScience Center</institution>, <country>The Netherlands</country>. E-mail: <email>c.martinez@esciencecenter.nl</email></aff>
+<aff id="afff"><label>f</label><institution>EMBL-EBI</institution>, <country>UK</country>. E-mail: <email>arcila@ebi.ac.uk</email></aff>
+<aff id="affg"><label>g</label><institution>Barcelona Supercomputing Center (BSC)</institution>, <country>Spain</country>. E-mail: <email>eva.martin@bsc.es</email></aff>
+<aff id="affh"><label>h</label><institution>L’Institut Français de Bioinformatique (IFB)</institution>, <country>France</country>. E-mail: <email>victoria.dominguez@france-bioinformatique.fr</email></aff>
+<aff id="affi"><label>i</label><institution>CERN</institution>, <country>Switzerland</country>. E-mail: <email>stephanie.van.de.sandt@cern.ch</email></aff>
+<aff id="affj"><label>j</label>National Life Science Supercomputing Center, <institution>Technical University of Denmark</institution>, <country>Denmark</country>. E-mail: <email>jison@cbs.dtu.dk</email></aff>
+<aff id="affk"><label>k</label><institution>National Imaging Facility</institution>, <country>Australia</country>. E-mail: <email>p.martinez@uq.edu.au</email></aff>
+<aff id="affl"><label>l</label><institution>Oxford e-Research Centre</institution>, <country>UK</country>. E-mail: <email>peter.mcquilton@oerc.ox.ac.uk</email></aff>
+<aff id="affm"><label>m</label><institution>Barcelona Supercomputing Center (BSC)</institution>, <country>Spain</country></aff>
+<aff id="affn"><label>n</label><institution>Institució Catalana de Recerca i Estudis Avançats (ICREA)</institution>, <country>Spain</country>. E-mail: <email>alfonso.valencia@bsc.es</email></aff>
+<aff id="affo"><label>o</label><institution>ELIXIR Hub</institution>, <country>UK</country>. E-mail: <email>harrow@ebi.ac.uk</email></aff>
+<aff id="affp"><label>p</label>Institute of Applied Biosciences, <institution>CERTH</institution>, <country>Greece</country>. E-mail: <email>fpsom@certh.gr</email></aff>
+<aff id="affq"><label>q</label><institution>Barcelona Supercomputing Center (BSC)</institution>, <country>Spain</country></aff>
+<aff id="affr"><label>r</label><institution>University of Barcelona</institution>, <country>Spain</country>. E-mail: <email>gelpi@ub.edu</email></aff>
+<aff id="affs"><label>s</label><institution>Software Sustainability Institute</institution>, <country>UK</country></aff>
+<aff id="afft"><label>t</label>EPCC, <institution>University of Edinburgh</institution>, <country>UK</country>. E-mail: <email>n.chuehong@software.ac.uk</email></aff>
+<aff id="affu"><label>u</label><institution>University of Manchester</institution>, <country>UK</country>. E-mail: <email>carole.goble@manchester.ac.uk</email></aff>
+<aff id="affv"><label>v</label><institution>Barcelona Supercomputing Center (BSC)</institution>, <country>Spain</country>. E-mail: <email>salvador.capella@bsc.es</email></aff>
+</contrib-group>
+<contrib-group content-type="guest-editors">
+<contrib contrib-type="guest-editor">
+<name><surname>Groth</surname><given-names>Paul</given-names></name>
+</contrib>
+<contrib contrib-type="guest-editor">
+<name><surname>Dumontier</surname><given-names>Michel</given-names></name>
+</contrib>
+</contrib-group>
+<author-notes>
+<corresp id="cor2"><label>*</label>Corresponding author. E-mail: <email>a.l.lamprecht@uu.nl</email>.</corresp><corresp id="cor3"><label>**</label>Corresponding author. E-mail: <email>salvador.capella@bsc.es</email>.</corresp>
+</author-notes>
+<pub-date date-type="preprint" publication-format="electronic"><day>13</day><month>11</month><year>2019</year></pub-date><pub-date date-type="pub" publication-format="electronic"><day>12</day><month>6</month><year>2020</year></pub-date><pub-date date-type="collection" publication-format="electronic"><year>2020</year></pub-date><volume>3</volume><issue>1</issue><issue-title>FAIR Data, Systems and Analysis</issue-title><fpage>37</fpage><lpage>59</lpage><history><date date-type="received"><day>16</day><month>08</month><year>2019</year></date><date date-type="accepted"><day>4</day><month>10</month><year>2019</year></date></history>
+<permissions><copyright-statement>© 2020 – IOS Press and the authors.</copyright-statement><copyright-year>2020</copyright-year>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/" license-type="open-access" xlink:type="simple">
+<license-p>This is an open access article distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/" xlink:type="simple">Creative Commons Attribution (CC BY 4.0) License</ext-link>, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions>
+<abstract>
+<p>The FAIR Guiding Principles, published in 2016, aim to improve the findability, accessibility, interoperability and reusability of digital research objects for both humans and machines. Until now the FAIR principles have been mostly applied to research data. The ideas behind these principles are, however, also directly relevant to research software. Hence there is a distinct need to explore how the FAIR principles can be applied to software. In this work, we aim to summarize the current status of the debate around FAIR and software, as basis for the development of community-agreed principles for FAIR research software in the future. We discuss what makes software different from data with regard to the application of the FAIR principles, and which desired characteristics of research software go beyond FAIR. Then we present an analysis of where the existing principles can directly be applied to software, where they need to be adapted or reinterpreted, and where the definition of additional principles is required. Here interoperability has proven to be the most challenging principle, calling for particular attention in future discussions. Finally, we outline next steps on the way towards definite FAIR principles for research software.</p>
+</abstract>
+<kwd-group>
+<label>Keywords</label>
+<kwd>FAIR</kwd>
+<kwd>research software</kwd>
+<kwd>software sustainability</kwd>
+<kwd>reproducible research</kwd>
+</kwd-group>
+</article-meta>
+</front>
+<body>
+<sec id="x1-1000-1">
+<label>1.</label>
+<title>Introduction</title>
+<p>The FAIR Guiding Principles [<xref ref-type="bibr" rid="ref001">1</xref>] were published and promoted to improve the reuse of scholarly data by making it more findable, accessible, interoperable and reusable by humans and machines. Implementing FAIR helps researchers demonstrate the impact of their work by enabling the reuse and citation of the data they produce, and can promote collaboration among them. It also helps publishers and funders to define policies for data sharing, and to promote discoverability and reuse. In addition, it helps data stewards and managers to provide guidance on quality criteria for data deposits in digital repositories.</p>
+<p>The intention of Wilkinson et al. [<xref ref-type="bibr" rid="ref001">1</xref>] was that the principles not only apply to data, but also to other digital objects, e.g. algorithms, tools, and workflows, that led to that data, as all these elements must be available to ensure transparency, reproducibility and reusability [<xref ref-type="bibr" rid="ref002">2</xref>]. At the policy level, software is indeed seen as part of FAIR, with the European Commission expert group on FAIR data stating that <italic>“Central to the realisation of FAIR are FAIR Digital Objects, which may represent data,</italic> software <italic>or other research resources.”</italic> [<xref ref-type="bibr" rid="ref003">3</xref>]. Applying the FAIR principles in a useful way to research software will provide similar benefits of enabling transparency, reproducibility and reusability of research, making it easier for industry, science, education and society to have effective access to software-based knowledge. In particular, FAIR software should facilitate making FAIR data.</p>
+<p>However, software is data and software is not data. Over the last three years, numerous discussions have taken place with the aim of understanding how the FAIR principles relate to software (see Table <xref rid="x1-22001-2">2</xref> on page 52 for an overview). It is clear that the four foundational principles in [<xref ref-type="bibr" rid="ref001">1</xref>] are intended to apply to software, but can we apply them in a practical and useful way? The terminology and detail used in the 15 FAIR Guiding Principles is focused on their application to data – particularly in the life sciences – and can be confusing if applied to software without translation. The drivers, stakeholders and incentives, whilst overlapping, are not identical. In addition, the variety of software and its distribution channels poses a challenge when adapting the current FAIR principles.</p>
+<p>In this work, we aim to summarize the current state of the debate around FAIR and software, as a basis for the development of specific principles for FAIR research software. First, we discuss what makes software different from data with regard to the application of the FAIR principles (Section <xref rid="x1-2000-2">2</xref>), and argue why quality considerations about research software go beyond FAIR (Section <xref rid="x1-3000-3">3</xref>). We then present an analysis of where the existing principles can be directly applied to software, where they need to be adapted or reinterpreted, and where the definition of additional principles is required (Section <xref rid="x1-4000-4">4</xref>). The conclusions provide a summary and directives for future work on FAIR for research software.</p>
+</sec>
+<sec id="x1-2000-2">
+<label>2.</label>
+<title>Software is not data</title>
+<p>Technically, software is a special kind of data. In computing, digital data (ultimately sequences of ones and zeros) are used to represent all information, including factual data as well as computer instructions. In the more abstract context of FAIR, software and data are regarded as different kinds of digital research objects next to each other. As such, they share particular characteristics that allow them to be treated alike for certain aspects of FAIR, such as the possibility of having a Digital Object Identifier (DOI) assigned, or having a license. However, as elaborated by Katz et al. [<xref ref-type="bibr" rid="ref004">4</xref>], there are also several significant differences between data and software as digital research objects: Data are facts or observations that provide evidence. In contrast, software is the result of a creative process that provides a tool for doing something, for example with data. As such, software is executable, while data is not. Software is often built using other software. This is especially obvious for software that implements multi-step processes to coordinate multiple tasks and their data dependencies, which are usually referred to as workflows [<xref ref-type="bibr" rid="ref005">5</xref>,<xref ref-type="bibr" rid="ref006">6</xref>]. Generally, all software applications that are not written completely from scratch are of a composite nature that easily leads to complex dependencies. The lifetime of software is generally shorter than that of data, as versioning is applied more frequently and regularly leads to changes in behaviour and/or interfaces. Hence, dependencies as well as dependent software packages are subject to frequent changes.</p>
+<p>Naturally, the work on FAIR principles for software is focused on research software. Research software is defined as <italic>“software that is used to generate, process or analyse results that you intend to appear in a publication (either in a journal, conference paper, monograph, book or thesis)”</italic> [<xref ref-type="bibr" rid="ref007">7</xref>]. Importantly, for the purpose of having a reference definition, software that does not generate, process or analyse results – such as word processing software, or the use of a web search – is not considered research software. Research software is also a digital research object, and provenance around software usage plays a key role in the transparency, reproducibility and reusability of scientific activities, spanning from academic to industrial research. Research software includes but is not limited to source code, binaries and web services, and covers a broad spectrum from short scripts written ad hoc by researchers to produce results for a publication, to software rigorously developed for a mission-critical process [<xref ref-type="bibr" rid="ref008">8</xref>]. Accordingly, research software can be distributed in many ways such as digital repositories e.g., Github, BitBucket, GitLab; or archives like the Software Heritage Project [<xref ref-type="bibr" rid="ref009">9</xref>]; project websites, FTP folders, language specific archive networks e.g., the Comprehensive R Archive Network (CRAN) [<xref ref-type="bibr" rid="ref010">10</xref>], the Comprehensive Perl Archive Network (CPAN) [<xref ref-type="bibr" rid="ref011">11</xref>], the Python Package Index (PyPI) [<xref ref-type="bibr" rid="ref012">12</xref>], Maven, the Node Package Manager (NPM), and others.</p>
+<p>Traditionally, research software has been created and maintained as Free and/or Open Source Software (FOSS). However, while there is a clear overlap between the objectives of FAIR and FOSS with regard to accessibility and reusability, they are not the same (see also [<xref ref-type="bibr" rid="ref013">13</xref>]). FOSS is mostly concerned with source code being open and licensed under an open license. Open source and permissive licenses are desirable for FAIR software, but although FAIR has its roots in the “FOSS-loving” research software community, they are not a requirement as such. Indeed FAIR does not require data to be open, as clearly certain data sets (e.g., patients’ electronic health records, genomics sequences) require adequate access control (see go-fair FAQ [<xref ref-type="bibr" rid="ref014">14</xref>]). However, such privacy and sensitivity concerns are not in the same way valid for research software that relates to published research, where there is an expectation that the methodology is made available. It remains to be discussed how open research software should be in order to meet the intentions behind FAIR.</p>
+</sec>
+<sec id="x1-3000-3">
+<label>3.</label>
+<title>Software quality: Beyond FAIR</title>
+<p>Another much-debated relationship is the one between FAIR and software quality. Ultimately, the quality of the content of digital resources is crucial for obtaining valid research results. However, the FAIR Guiding Principles do not cover content-related quality aspects, and it is an ongoing discussion whether software quality considerations are part of FAIR (e.g., [<xref ref-type="bibr" rid="ref015">15</xref>]). We think that it is important here to distinguish between <italic>form</italic> (that is, how a software is provided, the code itself) and <italic>function</italic> (that is, what a software actually does, how it behaves, the algorithm encoded), as different quality considerations apply. This is also in line with how the FAIR principles are interpreted for data: they address the form of providing data sets to the scientific community, but are not concerned with the functional content or quality of the data themselves.</p>
+<p>Quality aspects concerning the form of software can be considered as covered by FAIR, in particular by the interoperability and reusability principles. It is important to realise that unlike data, software is not static and can only be (re)used if it is sustainable and evolves along with the continuous development of the entire software ecosystem. The quality of its codebase is decisive for a software’s ability to evolve sustainably. This characteristic is often also referred to as maintainability, and includes aspects like modularity, understandability, changeability, analysability and testability [<xref ref-type="bibr" rid="ref016">16</xref>]. Following guidelines for good scientific software development, as well as language- and/or community specific coding standards [<xref ref-type="bibr" rid="ref017">17</xref>] are effective means to making and keeping the code base maintainable. Many of these qualities are measurable/quantifiable and could thus be covered with additional FAIR principles and metrics.</p>
+<p>Quality aspects that concern the functionality of software, on the other hand, go beyond what is covered by the FAIR principles. Arguably, the most important quality criterion for research software is functional correctness, i.e., the production of the correct results every time the software is run. Thorough validation of the functional correctness of research software can, however, be significantly more difficult than the testing that is required for code maintainability as discussed above [<xref ref-type="bibr" rid="ref018">18</xref>,<xref ref-type="bibr" rid="ref019">19</xref>]. For example, testing the software might require specific resources such as access to high performance computing, validated input/output data pairs to test the implementation of an algorithm might not be available yet (as the purpose of the software is to create them), or require the execution of very long computations. Other important quality criteria related to functionality of research software are security measures (guaranteeing privacy and integrity of research data) and computational efficiency (striving to optimise use of resources and runtime performance). The latter cannot be measured statically and may require systematic scientific benchmarking in order to arrive at meaningful performance estimates [<xref ref-type="bibr" rid="ref020">20</xref>,<xref ref-type="bibr" rid="ref021">21</xref>]. Discussion is ongoing to see if for these criteria workable principles and metrics can be developed, but specific training and adequate attention in the development process are certainly key to high functional quality of research software.</p>
+</sec>
+<sec id="x1-4000-4">
+<label>4.</label>
+<title>FAIR principles applied to research software</title>
+<p>We understand the original 15 FAIR Guiding Principles as an instantiation of the four foundational FAIR principles in the context of research data. Here we interpret them in the context of research software. We discuss how they apply to software, and suggest rephrased, extended or additional principles when necessary. Table <xref rid="x1-4001-1">1</xref> provides an overview of the principles in their original and in the proposed software-specific formulation. Tables <xref rid="x1-22002-3">3</xref> (page 53) and <xref rid="x1-22003-4">4</xref> (page 55) illustrate the proposed principles by using them for assessing the FAIRness of two exemplary bioinformatics tools.</p>
+<table-wrap id="x1-4001-1">
+<label>Table 1</label>
+<caption>
+<p>Summary of the proposed FAIR principles for research software and how they relate to the FAIR Guiding Principles for data. It is indicated whether a given FAIR data principle has been simply rephrased to adjust it to software, extended to cover a broader scope, reinterpreted to match the different context, discarded as it does not apply, or newly proposed as it only applies for research software</p>
+</caption>
+<table frame="hsides" rules="groups">
+<thead>
+<tr>
+<td valign="top" align="left"/>
+<td valign="top" align="left">FAIR for data</td>
+<td valign="top" align="left">FAIR for software</td>
+<td valign="top" align="left">Operation</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top" align="left">F1</td>
+<td valign="top" align="left">(Meta)data are assigned a globally unique and persistent identifier.</td>
+<td valign="top" align="left">Software and its associated metadata have a global, unique and persistent identifier for each released version.</td>
+<td valign="top" align="left">Rephrased</td>
+</tr>
+<tr>
+<td valign="top" align="left">F2</td>
+<td valign="top" align="left">Data are described with rich metadata.</td>
+<td valign="top" align="left">Software is described with rich metadata.</td>
+<td valign="top" align="left">Rephrased</td>
+</tr>
+<tr>
+<td valign="top" align="left">F3</td>
+<td valign="top" align="left">Metadata clearly and explicitly include the identifier of the data it describes.</td>
+<td valign="top" align="left">Metadata clearly and explicitly include identifiers for all the versions of the software it describes.</td>
+<td valign="top" align="left">Rephrased and extended</td>
+</tr>
+<tr>
+<td valign="top" align="left">F4</td>
+<td valign="top" align="left">(Meta)data are registered or indexed in a searchable resource.</td>
+<td valign="top" align="left">Software and its associated metadata are included in a searchable software registry.</td>
+<td valign="top" align="left">Rephrased</td>
+</tr>
+<tr>
+<td valign="top" align="left">A1</td>
+<td valign="top" align="left">(Meta)data are retrievable by their identifier using a standardized communications protocol.</td>
+<td valign="top" align="left">Software and its associated metadata are accessible by their identifier using a standardized communications protocol.</td>
+<td valign="top" align="left">Rephrased</td>
+</tr>
+<tr>
+<td valign="top" align="left">A1.1</td>
+<td valign="top" align="left">The protocol is open, free, and universally implementable.</td>
+<td valign="top" align="left">The protocol is open, free, and universally implementable.</td>
+<td valign="top" align="left">Remain the same</td>
+</tr>
+<tr>
+<td valign="top" align="left">A1.2</td>
+<td valign="top" align="left">The protocol allows for an authentication and authorization procedure, where necessary.</td>
+<td valign="top" align="left">The protocol allows for an authentication and authorization procedure, where necessary.</td>
+<td valign="top" align="left">Remain the same</td>
+</tr>
+<tr>
+<td valign="top" align="left">A2</td>
+<td valign="top" align="left">Metadata are accessible, even when the data are no longer available.</td>
+<td valign="top" align="left">Software metadata are accessible, even when the software is no longer available.</td>
+<td valign="top" align="left">Rephrased</td>
+</tr>
+<tr>
+<td valign="top" align="left">I1</td>
+<td valign="top" align="left">(Meta)data use a formal, accessible, shared, and broadly applicable language for knowledge representation.</td>
+<td valign="top" align="left">Software and its associated metadata use a formal, accessible, shared and broadly applicable language to facilitate machine readability and data exchange.</td>
+<td valign="top" align="left">Rephrased and extended</td>
+</tr>
+<tr>
+<td valign="top" align="left">I2</td>
+<td valign="top" align="left">(Meta)data use vocabularies that follow FAIR principles.</td>
+<td valign="top" align="left">–</td>
+<td valign="top" align="left">Reinterpreted, extended and split</td>
+</tr>
+<tr>
+<td valign="top" align="left">I2S.1</td>
+<td valign="top" align="left">–</td>
+<td valign="top" align="left">Software and its associated metadata are formally described using controlled vocabularies that follow the FAIR principles.</td>
+<td valign="top" align="left">Reinterpreted, extended and split</td>
+</tr>
+<tr>
+<td valign="top" align="left">I2S.2</td>
+<td valign="top" align="left">–</td>
+<td valign="top" align="left">Software use and produce data in types and formats that are formally described using controlled vocabularies that follow the FAIR principles.</td>
+<td valign="top" align="left">Reinterpreted, extended and split</td>
+</tr>
+<tr>
+<td valign="top" align="left">I3</td>
+<td valign="top" align="left">(Meta)data include qualified references to other (meta)data.</td>
+<td valign="top" align="left">–</td>
+<td valign="top" align="left">Discarded</td>
+</tr>
+<tr>
+<td valign="top" align="left">I4S</td>
+<td valign="top" align="left">–</td>
+<td valign="top" align="left">Software dependencies are documented and mechanisms to access them exist.</td>
+<td valign="top" align="left">Newly proposed</td>
+</tr>
+<tr>
+<td valign="top" align="left">R1</td>
+<td valign="top" align="left">(Meta)data are richly described with a plurality of accurate and relevant attributes.</td>
+<td valign="top" align="left">Software and its associated metadata are richly described with a plurality of accurate and relevant attributes.</td>
+<td valign="top" align="left">Rephrased</td>
+</tr>
+<tr>
+<td valign="top" align="left">R1.1</td>
+<td valign="top" align="left">(Meta)data are released with a clear and accessible data usage license.</td>
+<td valign="top" align="left">Software and its associated metadata have independent, clear and accessible usage licenses compatible with the software dependencies.</td>
+<td valign="top" align="left">Rephrased and extended</td>
+</tr>
+<tr>
+<td valign="top" align="left">R1.2</td>
+<td valign="top" align="left">(Meta)data are associated with detailed provenance.</td>
+<td valign="top" align="left">Software metadata include detailed provenance, detail level should be community agreed.</td>
+<td valign="top" align="left">Rephrased</td>
+</tr>
+<tr>
+<td valign="top" align="left">R1.3</td>
+<td valign="top" align="left">(Meta)data meet domain-relevant community standards.</td>
+<td valign="top" align="left">Software metadata and documentation meet domain-relevant community standards.</td>
+<td valign="top" align="left">Rephrased</td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+<sec id="x1-5000-4.1">
+<label>4.1.</label>
+<title>Findability</title>
+<p>Findability is a fundamental principle, since it is necessary to find a resource before any other consideration. The main concern of findability for research software is to ensure software can be identified unambiguously when looking for it using common search strategies. Such strategies include the use of keywords in general-purpose search engines like Google, as well as specialised registries (websites hosting software metadata) and repositories (websites hosting software source code and binaries). Findability can be improved by registering the software in a relevant registry, along with the provision of appropriate metadata, providing contextual information about the software. Registries typically render metadata in a web-findable way and can provide a DOI. Some registries and repositories allow annotating software using domain-agnostic or domain-specific controlled vocabularies, increasing findability via search engines further. In the following we discuss how the original four Findability principles apply to the findability of research software.</p>
+<sec id="x1-6000-x">
+<title>F1. (Meta)data are assigned a globally unique and persistent identifier</title>
+<p>Persistent identifiers (PIDs) are long-lasting references to documents, web pages, or any other digital objects [<xref ref-type="bibr" rid="ref022">22</xref>]. Global uniqueness makes PIDs a mechanism that allows for unambiguous identification of the referenced resources. As analysed by project FREYA [<xref ref-type="bibr" rid="ref023">23</xref>], there are several alternatives for assigning PIDs.</p>
+<p>Clearly, research software should have their own PIDs. However, it is not enough to assign a PID to a generic software, but rather needed for all their versions and specific deployments. Software versions should get assigned different PIDs as they represent specific developmental stages of the software. This is important as it will contribute to guaranteeing data provenance and reproducible research processes. Indeed, source code management systems make it easier to track software versions. For example, Git, currently the most popular technology for software source code version control, works with commit hashes (SHA1), which uniquely point to the specific snapshot of the source code. However, this identifier is not globally resolvable and GitHub (one of the most popular repositories for software source code based on Git technologies) does not make any guarantees about the accessibility or sustainability of code on the platform (persistence), and thereby the software published therein. A common community solution to this problem is depositing software releases from GitHub to Zenodo [<xref ref-type="bibr" rid="ref024">24</xref>], an open publishing platform funded by the European Commision, and developed and hosted by Centre Européen Recherche Nucléaire (CERN). Zenodo mints DOIs for each released version of the software, and also creates a concept DOI which refers to all versions of a given software [<xref ref-type="bibr" rid="ref025">25</xref>].</p>
+<p>To the best of our knowledge, there is no unified mechanism to automatically assign PIDs for research software. Thus, software authors need to actively register their software, and associated versions, at least in one registry or/and repository.</p>
+<p>We suggest rephrasing this principle as <bold>“Software and its associated metadata have a global, unique and persistent identifier for each released version”</bold>.</p>
+</sec>
+<sec id="x1-7000-x">
+<title>F2. Data are described with rich metadata</title>
+<p>A software’s name alone does not reveal much about it. In order for others to find and use that software, they need information about what it does, what it depends on and how it works. Metadata provide this information. How detailed software metadata has to be and what is considered to be “rich” depends on the concrete context and cannot be answered in general. In the context of FAIR, software metadata should at least describe where to find a specific version of the software, how to cite it, who are the authors, what are the inputs and outputs, and what are dependencies. Furthermore metadata should include elements related to provenance and should follow community agreements (discussed later as part of the Reusability principles).</p>
+<p>There are currently multiple projects working on concrete solutions to add structured metadata annotations to software. Examples include the biotoolsSchema [<xref ref-type="bibr" rid="ref026">26</xref>], a formalised schema (XSD) used by the bio.tools project [<xref ref-type="bibr" rid="ref027">27</xref>,<xref ref-type="bibr" rid="ref028">28</xref>]; the CodeMeta set of terms [<xref ref-type="bibr" rid="ref029">29</xref>] and Bioschemas Tool profile [<xref ref-type="bibr" rid="ref030">30</xref>]. The latter two work on top of <ext-link ext-link-type="uri" xlink:href="http://schema.org">schema.org</ext-link>, a project aiming to make it easier to add structured markup to web pages, and help search engines to index them. Additionally, some programming languages provide a way to add metadata to software sources, i.e., packages; and often require them to be in a specific format and/or adhere to some guidelines. For instance, R packages must include metadata in the DESCRIPTION file [<xref ref-type="bibr" rid="ref031">31</xref>] while PEP 566 describes metadata for Python software packages.</p>
+<p>Regardless of the metadata description approach used, the use of controlled vocabularies provided by community-approved ontologies is recommended. These will vary dependent on the research domain. The Software Ontology [<xref ref-type="bibr" rid="ref032">32</xref>] is a resource that can be used to describe software, including types, tasks, versions, provenance and associated data. In the case of life sciences, we advise to use elements from ontologies such as EMBRACE Data and Methods ontology (EDAM) [<xref ref-type="bibr" rid="ref033">33</xref>]. EDAM provides unambiguously defined terms for describing the types of data and data identifiers, data formats, operations and topics commonly used in bioinformatics. In the geosciences, OntoSoft [<xref ref-type="bibr" rid="ref034">34</xref>,<xref ref-type="bibr" rid="ref035">35</xref>] is an ontology designed to facilitate the annotation and publication of software with rich metadata.</p>
+<p>We suggest rephrasing this principle as <bold>“Software is described with rich metadata”</bold>.</p>
+</sec>
+<sec id="x1-8000-x">
+<title>F3. Metadata clearly and explicitly include the identifier of the data it describes</title>
+<p>For reproducibility and reusability purposes, any person and/or system examining the metadata needs to be able to identify which version of the software is described by it. F3 extends F1’s focus regarding the precise identification of versions and/or reference deployments beyond the software itself by including the metadata associated with each version and/or reference deployment of the software. This enables the exact version of a given software to be found when reusing and/or reproducing previously generated scientific results. For example, release metadata files on Zenodo should point to specific releases on software source code repositories such as GitHub, BitBucket or GitLab.</p>
+<p>We suggest rephrasing and extending this principle as <bold>“Metadata clearly and explicitly include identifiers for all the versions of the software it describes”</bold>.</p>
+</sec>
+<sec id="x1-9000-x">
+<title>F4. (Meta)data are registered or indexed in a searchable resource</title>
+<p>Software and associated metadata should be registered in a suitable, searchable software registry or repository. There are chiefly three classes of registries and repositories: (i) general ones such as Zenodo, GitHub itself, and comprehensive software archives as run by the Software Heritage project [<xref ref-type="bibr" rid="ref036">36</xref>], (ii) language-specific ones such as CRAN, PyPI, and (iii) domain-specific ones such as the bioinformatics-specific BioConductor [<xref ref-type="bibr" rid="ref037">37</xref>], bio.tools and BioContainers [<xref ref-type="bibr" rid="ref038">38</xref>] registries, the Astrophysics Source Code Library (ASCL) [<xref ref-type="bibr" rid="ref039">39</xref>], swMath [<xref ref-type="bibr" rid="ref040">40</xref>] for mathematical software, CLARIN [<xref ref-type="bibr" rid="ref041">41</xref>] for digital humanities software source code and the different science gateways based on the HUBzero [<xref ref-type="bibr" rid="ref042">42</xref>] open source software platform.</p>
+<p>The choice of the registry/repository may be influenced by the programming language used and/or the operating system most used by the respective community. For example, most of the Python packages are registered in PyPI and/or one of the Conda [<xref ref-type="bibr" rid="ref043">43</xref>] channels. R packages go to CRAN, <ext-link ext-link-type="uri" xlink:href="http://Bioconductor.org">Bioconductor.org</ext-link> and/or source code repositories like GitHub. Linux distributions have their own package managers with software repositories.</p>
+<p>We suggest rephrasing this principle as <bold>“Software and associated metadata are included in a searchable software registry”</bold>.</p>
+</sec>
+</sec>
+<sec id="x1-10000-4.2">
+<label>4.2.</label>
+<title>Accessibility</title>
+<p>In the original FAIR Guiding Principles, accessibility translates into retrievability through a standardized communication protocol (A1) and accessibility of metadata even when the original resource is no longer accessible (A2). These principles clearly also apply to software. Interpreting accessibility also as the ability to actually use the software (access its functionality), however, we found mere retrievability not enough. In order for anyone to use any research software, a working version of the software needs to be available. This is different from just archiving source code, even in comprehensive and long-term collections like the Software Heritage archive. To use software, a working version (binary or code) has to be either downloadable and/or accessible e.g., via a web interface, along with the required documentation and licensing information. Accessibility requirements depend on the software type, e.g., web-applications, command-line tools, etc. For example, software containers allow the use across different operating systems and environments, e.g., local computers, remote servers, and high-performance computing (HPC) installations. Cloud-based servers can execute existing pieces of code as a service, as software made available through a web interface or via Jupyter Notebooks [<xref ref-type="bibr" rid="ref044">44</xref>]. Notebooks allow others to see the results and the narrative alongside the code used to generate them.</p>
+<p>Furthermore, even for software that can be downloaded or accessed without restrictions, being able to run it might also depend on, for example, data samples, (paid) registration, other (proprietary) software packages, or a non-free operating system like Windows or macOS. For data, the FAIR principles demand that “(Meta)data use a formal, accessible, shared, and broadly applicable language for knowledge representation” (I1) and in that sense discourage the use of proprietary data formats. This is in our view, however, different from transparent dependencies for running software.</p>
+<p>It is worth to re-emphasize that research software are not single, isolated, digital objects. As further discussed for Interoperability, research software interoperate at different levels with other digital objects including other software, and might have different available versions and/or web-based deployments. Still, all implementations should be considered as part of a single entity for the considerations on accessibility with metadata, as to ensure appropriate links among them (see F1, F3). Since accessibility, interoperability and (re)usability are intrinsically connected for research software, we consider aspects of installation instructions (R1.3), software dependencies (I4S), and licensing (R1.1) as part of other principles here, rather than adding another Accessibility principle.</p>
+<sec id="x1-11000-x">
+<title>A1. (Meta)data are retrievable by their identifier using a standardized communications protocol</title>
+<p>Retrievability of research software and its metadata can be achieved by depositing it in an appropriate repository and/or registry. We will discuss later in this paper that retrieving software source code and/or binaries is however only the first step towards being able to actually use it.</p>
+<p>We suggest rephrasing this principle as <bold>“Software and associated metadata are retrievable by their identifier using a standardized communications protocol”</bold>.</p>
+<p><italic>A1.1. The protocol is open, free, and universally implementable.</italic> Usually software (and its metadata) can be downloaded directly from the repository and/or website via standard protocols (HTTP/SSH).</p>
+<p>There is no need to rephrase this specific item as it generally applies to any digital resource exposed via the web, and thus to both data and software.</p>
+<p><italic>A1.2. The protocol allows for an authentication and authorization procedure, where necessary.</italic> Authentication and authorization are relevant for accessing research software source code (open and closed source), binaries and/or web applications. Collaborative development platforms like GitHub and BitBucket implement mechanisms to support authentication and authorisation, and control the access to the code base. Similarly, it might be possible that users might need to register, and/or authenticate, before downloading binaries or, in the case of web applications, using the software. In all cases, access conditions should be justified and documented.</p>
+<p>There is no need to rephrase this specific item as it generally applies to any digital resource, and thus to both data and software.</p>
+</sec>
+<sec id="x1-12000-x">
+<title>A2. Metadata are accessible, even when the data are no longer available</title>
+<p>Metadata provides the context for understanding research software, and this should persist even when the software itself is no longer available. To achieve this, metadata should be available separately from research software objects, here understood as either the source code, binaries and/or web servers hosting the deployed software. For example, GitHub can host the software source code and can be connected to Zendo, FigShare, bio.tools or <ext-link ext-link-type="uri" xlink:href="http://FAIRsharing.org">FAIRsharing.org</ext-link> [<xref ref-type="bibr" rid="ref045">45</xref>] for hosting additional copies of the research software metadata. Zenodo promises metadata, and a snapshot of the software release, to be available for the upcoming 20 years, even when the versioned source code on GitHub may not be accessible any more. Metadata should follow community agreements. In this way, it will contribute towards the findability of the metadata as well as the software it references and provide details on how the software interoperates with other digital objects and how it may be (re)used.</p>
+<p>We suggest rephrasing this principles as <bold>“Software metadata are accessible, even when the software is no longer available”</bold>.</p>
+</sec>
+</sec>
+<sec id="x1-13000-4.3">
+<label>4.3.</label>
+<title>Interoperability</title>
+<p>The IEEE Standard Glossary of Software Engineering Terminology [<xref ref-type="bibr" rid="ref046">46</xref>] defines interoperability as the <italic>“ability of two or more systems or components to exchange information and to use the information that has been exchanged”</italic>. This definition is further complemented by semantic interoperability, ensuring <italic>“that these exchanges make sense – that the requester and the provider have a common understanding of the ‘meanings’ of the requested services and data.”</italic> [<xref ref-type="bibr" rid="ref047">47</xref>]. When examining the FAIR data principles from a research software perspective, interoperability turns out to be the most challenging among the four high-level principles. This is not surprising given the complexity of the software interoperability challenges that form a research area of its own [<xref ref-type="bibr" rid="ref048">48</xref>–<xref ref-type="bibr" rid="ref052">52</xref>].</p>
+<p>Already for data and its associated metadata, interoperability has been found to be “the most challenging of the four FAIR principles. This, in part, is due to interoperability not being well understood” [<xref ref-type="bibr" rid="ref053">53</xref>]. In contrast to the rather static nature of data, research software are live digital objects that interact at different levels with other objects, e.g., other software, managed data, execution environments; and either directly and/or indirectly, as scripts or as part of a workflow (see Fig. <xref rid="x1-13001-1">1</xref>). The interoperability principles are therefore even more challenging to apply to software, some are not directly applicable, others need to be rephrased and even new principles need to be defined to appropriately address the dynamic nature of software.</p>
+<fig id="x1-13001-1">
+<label>Fig. 1.</label>
+<caption>
+<p>Interoperability for research software can be understood in two dimensions: as part of workflows (horizontal dimension) and as stack of digital objects that need to work together at compilation and execution times (vertical dimension). Importantly, workflows do not need to use the same physical hardware or the same operating system, as long as there are agreed mechanisms for software to interoperate with one another.</p>
+</caption>
+<graphic xlink:href="ds-3-ds190026-g001.jpg"/>
+</fig>
+<p>Software interoperability can be defined from three different angles:</p>
+<list>
+<list-item id="x1-13002x-4.3">
+<label>1.</label>
+<p>for a set of independent but interoperable objects to produce a runnable version of the software, including libraries, software source code, APIs and data formats, and any other resources for facilitating that task;</p>
+</list-item>
+<list-item id="x1-13003x-4.3">
+<label>2.</label>
+<p>for a stack of digital objects that should work together for being able to execute a given task including the software itself, its dependencies, other indirect dependencies, the whole execution environment including runtime dependencies and the operating system, the execution environment, dependencies, and the software itself; and</p>
+</list-item>
+<list-item id="x1-13004x-4.3">
+<label>3.</label>
+<p>for workflows, which interconnect different standalone software tools for transforming one or more data sets into one or more output data sets through agreed protocols and standards.</p>
+</list-item>
+</list>
+<p>Thus, interoperability for software can be considered both for individual objects, which are the final product of a digital stack, and as part of broader digital ecosystems, which includes complex processes and workflows as well as their interaction [<xref ref-type="bibr" rid="ref006">6</xref>,<xref ref-type="bibr" rid="ref054">54</xref>,<xref ref-type="bibr" rid="ref055">55</xref>]. Different pieces of software can also work together independent of programming languages, operating systems and specific hardware requirements through the use of APIs and/or other communication protocols.</p>
+<p>Software metadata are a necessity for interoperability. They provide the context in which the software is used and contributes towards provenance, reproducibility and reusability. However, a balance is needed between the detail level and its generation cost. Depending on whether research software is considered as an individual product or as part of an ecosystem, the associated metadata might differ [<xref ref-type="bibr" rid="ref028">28</xref>,<xref ref-type="bibr" rid="ref056">56</xref>,<xref ref-type="bibr" rid="ref057">57</xref>], with workflows having specific mechanisms to capture it through their specifications, e.g., using Common Workflow Language (CWL) [<xref ref-type="bibr" rid="ref058">58</xref>,<xref ref-type="bibr" rid="ref059">59</xref>] and/or Workflow Description Language (WDL) [<xref ref-type="bibr" rid="ref060">60</xref>], among others. This metadata should include software version, dependencies (including which version), input and output data types and formats (preferably using a controlled vocabulary), communication interfaces (specified using standards like OpenAPI), and/or deployment options.</p>
+<p>Another aspect associated with interoperability is the ability to run the software in different operating systems, i.e. software portability. Software portability strongly depends on the availability of the full execution stack in other operating systems (vertical axis in Fig. <xref rid="x1-13001-1">1</xref>), which may not always be given. This dependency on other digital objects to have a working software is further extended in the newly introduced FAIR principle I4S. The present tendency to package software and its dependencies, in software containers e.g., Docker, Singularity, Rocket, contributes to enhanced software portability. Although these differences are not negligible, given that these terms are often used interchangeably, we will be considering both under the FAIR principle of interoperability, highlighting any issues that arise due to this divergence.</p>
+<sec id="x1-14000-x">
+<title>I1. (Meta)data use a formal, accessible, shared, and broadly applicable language for knowledge representation</title>
+<p>In contrast to data, which can be represented in very informal ways, software source code is written in a programming language, and is thus formal by design. The use of openly accessible, shared and broadly applicable programming languages facilitates the interaction with the execution environment. When considering research software as part of a workflow, software should be able to share input and/or output data sets with other software. The proper specification and use of formally defined, shared and broadly applicable data types, models and formats for the data consumed and/or produced by the software are key to facilitating the syntactically and semantically correct interconnection of different pieces of software via their associated metadata.</p>
+<p>We suggest rephrasing and extending this principles as <bold>“Software and its associated metadata use a formal, accessible, shared and broadly applicable language to facilitate machine readability and data exchange”</bold>.</p>
+</sec>
+<sec id="x1-15000-x">
+<title>I2. (Meta)data use vocabularies that follow the FAIR principles</title>
+<p>Following on from the previous interoperability principle, and considering the differences between data and software, we consider two different cases here: the software itself and the data that it operates on (i.e. inputs and outputs). In both cases, ontologies and controlled vocabularies that are themselves FAIR should be used for the formal description. FAIR software should operate on FAIR data, and not undermine the principles by, e.g., producing outputs only in proprietary data formats. Without using FAIR vocabularies, it might become impossible to understand, for both machines and humans, what is described (software) and/or to what it refers (software metadata). Whenever possible, those descriptions should be generated, agreed and maintained by communities as a mechanism towards the sustainability of such resources, keeping metadata understandable even if the resources disappear for unforeseen reasons. A registry of the available controlled vocabularies, data types, formats and schemas that may be used by the software can be found at <ext-link ext-link-type="uri" xlink:href="http://FAIRsharing.org">FAIRsharing.org</ext-link>.</p>
+<p>Thus, we propose to reinterpret and extend I2 by splitting it into two sub-principles to account for such differences: 
+<list list-type="bullet">
+<list-item>
+<p>I2S.1 <bold>“Software and its associated metadata are formally described using controlled vocabularies that follow the FAIR principles”.</bold></p>
+</list-item>
+<list-item>
+<p>I2S.2 <bold>“Software use and produce data in types and formats that are formally described using controlled vocabularies that follow the FAIR principles”.</bold></p>
+</list-item>
+</list>
+</p>
+</sec>
+<sec id="x1-16000-x">
+<title>I3. (Meta)data include qualified references to other (meta)data</title>
+<p>I3 aims to interconnect data sets by semantically meaningful relationships. This approach is useful to prevent information silos and to facilitate machine interpretability of existing relationships between data sets, enabling the automated combination and reasoning over data, and even the inference of new knowledge. However, such relationships are difficult to translate to the case of research software. We found the closest resemblance of this principle to be in software dependencies.</p>
+<p>Dependencies are a key element for building working software. Building software usually requires a number of additional modules, libraries and/or other research software that are not included in the original software distribution (see Fig. <xref rid="x1-13001-1">1</xref>). Such dependencies include not only those modules directly used within the software, but also (recursively) dependencies to additional libraries used by the imported modules. The scenario often builds a complex network of interconnected modules that precludes the software building. Despite all the complexity associated with software dependencies, the semantically meaningful information required is rather limited, essentially boiling down to the “dependsOn” relationship. Although there are additional concepts involved, such as “relatedTo” and “derivedFrom”, they are not utilized in a software dependency context.</p>
+<p>This leads us to propose a new FAIR principle I4S for research software: <bold>“Software dependencies are documented and mechanisms to access them exist”</bold>.</p>
+<p>The present tendency to package software and its dependencies, either in virtual environments and/or software containers, alleviates the practical concerns for the final user, and simply moves the issue to the generation of those packages. Software deployment systems (PyPI, Conda, CRAN, …) provide solutions for this, and this information can be aggregated by services such as Libraries.io. In order to follow this principle, software dependencies need to be clearly documented in a formal, accessible, machine-readable, and shared way, and formally described following each programming language format.</p>
+</sec>
+</sec>
+<sec id="x1-17000-4.4">
+<label>4.4.</label>
+<title>Reusability</title>
+<p>Reusability in the context of software has many dimensions. At its core, reusability aims for someone to be able to re-use software reproducibly as described by Benureau and Rougier 2018 [<xref ref-type="bibr" rid="ref061">61</xref>]. The context of this usage can vary and should cover different scenarios: (i) reproducing the same outputs reported by the research supported by the software, (ii) (re)using the code with data other than the test one provided to obtain compatible outputs, (iii) (re)using the software for additional cases other than those stated as supported, or (iv) extending the software in order to add to its functionality.</p>
+<p>Software reusability depends to a high degree on software maintainability (see also Section Software quality: beyond FAIR), including proper documentation at various levels of detail. The legal framework, e.g., software licenses, is also important in terms of reusability as it determines how software can be built, modified, used, accessed and distributed. Furthermore, as research software is an integral part of the scientific process, credit attribution (citation) is another important aspect to consider with regard to (re)usability.</p>
+<sec id="x1-18000-x">
+<title>R1. Meta(data) are richly described with a plurality of accurate and relevant attributes</title>
+<p>Based on the revision of principles R1.1, R1.2 and R1.3 as detailed below, we suggest rephrasing principle R1 as <bold>“Software and its associated metadata are richly described with a plurality of accurate and relevant attributes”</bold>.</p>
+<p><italic>R1.1. (Meta)data are released with a clear and accessible data usage license.</italic> Licenses are useful to protect intellectual property. Software licenses let others know what they are allowed to do, e.g., using the software for free with their own data, and how they are restricted, e.g., not modifying or redistributing it. Without a license, others cannot legally use software in any way as the usage rules are not even defined. Metadata should have separate (data) usage licenses. Licenses for metadata are mainly needed to establish mechanisms on how the software is referenced via its metadata by third parties. A clear example is the indexing of software metadata by registries.</p>
+<p>Proper management of software licenses is a challenging task considering the multi-faceted nature of research software, which is often the product of combining libraries, modules, and execution environments with the software itself. The legal implications of misusing software by not considering dependencies and incompatibilities between the associated licenses can be severe. Therefore, it is necessary that licenses for research software are included as part of the available documentation and are structured to facilitate its machine-readability. For example, the Software Package Data Exchange standard [<xref ref-type="bibr" rid="ref062">62</xref>] facilitates that software licenses becomes machine readable. This is important because licenses go beyond the software itself and have to take into account limitations established by the licenses of all of its dependencies. If every piece of software has made available its license information, then it should be possible to automatically derive potential incompatibilities on software usage as well as to establish whether licenses between software components and dependencies are compatible at the build stage.</p>
+<p>Metadata usage licenses are independent of software licenses. Data usage licenses for metadata establish how the metadata can be consumed by third-parties for purposes of indexing, citing and/or referencing software. As there are no dependencies between pieces of software in terms of metadata, there is no need to propagate the data usage licenses among them. Similarly to metadata, if any data is distributed with the software, e.g. as demo input data, it should have its own data usage licenses, where the terms for third parties to make use of it are clearly stated.</p>
+<p>We suggest rephrasing and extending this principle as <bold>“Software and its associated metadata have independent, clear and accessible usage licenses compatible with the software dependencies”</bold>.</p>
+<p><italic>R1.2. (Meta)data are associated with detailed provenance.</italic> Provenance refers to the origin, source and history of software and its metadata. It is recommended to use well-known provenance vocabularies, for instance PROV-O [<xref ref-type="bibr" rid="ref063">63</xref>], that are FAIR themselves. There are some elements commonly presented on any provenance data, including a person or organization providing the resource and how to contact them, published date, location and other resources used to produce the one described.</p>
+<p>There are standards to capture how software is being used while transforming a given data set. To track the provenance of the software itself, specific software versions is the minimum required information. Software versions reference specific algorithmic implementations which might change over time and/or be included/removed among major software releases. This aspect connects with principles F1 and F3 on identifying specific software versions and its associated metadata. Software provenance also incorporates aspects of how the software is produced. Specifically referring to executable compiled software, provenance should include information on how the software has been compiled and which dependencies it incorporates. This is in line with the newly proposed interoperability principle I4S.</p>
+<p>Furthermore, information on how to cite software and how to contribute to it [<xref ref-type="bibr" rid="ref064">64</xref>] are related to provenance, as they provide information about the people involved in creating the software. Citation information should be included in the metadata, since it makes it easier for others (re)using the software to acknowledge the developers. Although there is no standard way to cite software currently, the Software Sustainability Institute provides more information and discussions on this topic, and there are guidelines developed for particular domains e.g. earth sciences [<xref ref-type="bibr" rid="ref065">65</xref>] and mathematics [<xref ref-type="bibr" rid="ref066">66</xref>], as well as generic guidelines defined by the FORCE11 Software Citation Working Group based on the Software Citation Principles [<xref ref-type="bibr" rid="ref064">64</xref>].</p>
+<p>We suggest rephrasing this principle as <bold>“Software metadata include detailed provenance information”</bold>.</p>
+<p><italic>R1.3. (Meta)data meet domain-relevant community standards.</italic> Community standards are important as they provide guidelines on what is the minimum expected information about certain kinds of research object. These standards might even influence reviewing and certification processes. Given the multi-faceted nature of software and their strong dependencies on other pieces of software, non-compliance with community standards might render software unable to be reused. Indeed, non-compliance with standards will also prevent to integrate research software within other applications. The software’s documentation should provide information on how to install, run and use a software. In order to make it easier for users, it should include examples with inputs and expected outputs. Any dependency should be clearly stated as it contributes not only to (re)usability but also accessibility and interoperability.</p>
+<p>Initiatives such as CodeMeta [<xref ref-type="bibr" rid="ref029">29</xref>], Bioschemas [<xref ref-type="bibr" rid="ref067">67</xref>] and the RDA Research Schemas [<xref ref-type="bibr" rid="ref068">68</xref>] have made preliminary recommendations for community-agreed software descriptors, but broader work, especially regarding the mapping across different vocabularies, is still needed.</p>
+<p>We suggest rephrasing this principle as <bold>“Software metadata and documentation meet domain-relevant community standards”</bold>.</p>
+</sec>
+</sec>
+</sec>
+<sec id="x1-19000-5">
+<label>5.</label>
+<title>Conclusions</title>
+<p>Software has become an essential constituent of scientific research. It is therefore desirable to apply the FAIR Guiding Principles, which have so far mostly been interpreted as principles for scientific data management and stewardship, also to research software. As we have discussed in this work, many of the FAIR principles can be directly applied to research software, where software and data can be treated as the same kind of digital research objects. However, when specific characteristics of software are involved, such as their executability, composite nature, and continuous evolution accompanied by frequent versioning, it is necessary to revise and extend the original principles. Furthermore, it can be argued that considerations about the functionality of software (as opposed to the form in which it is provided) are by definition out of the scope of FAIR, and thus need to be addressed by other guiding principles, for example based on best practices for (research) software development [<xref ref-type="bibr" rid="ref017">17</xref>].</p>
+<p>This work aims to become the starting point for further community-led discussions and proposals on how to effectively apply FAIR principles to research software, and eventually the development of specific FAIR principles for research software. In addition to the work on the principles, the development of community-specific metadata schemes for software has to play an important role, as defined metadata standards are key to the successful application of many of the principles. There are groups within the wider research software community beginning to address these issues. For example, recently the Software Source Code Identification Working Group [<xref ref-type="bibr" rid="ref069">69</xref>] has been initiated in the scope of the Research Data Alliance (RDA) and FORCE11 to produce an initial collection of software identification use cases and corresponding schemas as well as to give an overview of the different contexts in which software artifact identification is relevant. Results from this working group can assist in the definition of principles related to software annotation.</p>
+<p>Another important aspect discussed during the work on this paper is the need of a governance model for the FAIR principles. A governance model is crucial to enable an open and transparent process for updating the FAIR principles and should be defined in the scope of the community discussions for each of the domains where they are applied e.g., research data, workflows, research software, etc.</p>
+<p>Finally, the aim of this work is to set the foundations to develop metrics and associated maturity models that can ultimately inform software users and developers how FAIR their software is. Making software FAIR comes with a cost due to the required efforts. Hence, software developed to be used by others, such as libraries, can be expected to reach a higher degree of FAIRness than software that has not been implemented with reuse as a primary goal, for example a script that has been created as a side-effect of demonstrating an algorithm. Based on FAIR software metrics, communities will be able to agree on degrees of FAIRness that the different kinds of software should comply to, in order to reflect their Open Science ideals.</p>
+</sec>
+</body>
+<back>
+<ack>
+<title>Acknowledgements</title>
+<p>We are grateful to the numerous people who contributed to the discussions around FAIR research software at different occasions preceding the work on this paper. Making no claims to completeness, these include Peter Doorn, Michel Dumontier, Chris Erdmann, José María Fernández, Rafael C. Jimenez, Katrin Leinweber, Jason Maassen, Mustapha Mokrane, Jurriaan Spaaks, Mark Wilkinson and Amrapali Zaveri. We also thank the Japan BioHackathon for sponsoring a FAIR software related project for the 2018 edition. Furthermore, we would like to thank Stian Soiland-Reyes for his valuable comments on earlier versions of this manuscript.</p>
+<p>NCH and CAG were supported by EP/N006410/1 and EP/S021779/1 for the UK Software Sustainability Institute. AV, JLG, SCG and CAG were supported by ELIXIR-EXCELERATE 676559. EM, AV, JLG and SCG has been additionally supported by PT17/0009/0001. EM and SCG has been additionally supported by IMI2 FAIRplus 802750.</p></ack>
+<app-group>
+<app id="x1-22000-x"><label>Appendix</label>
+<table-wrap id="x1-22001-2">
+<label>Table 2</label>
+<caption>
+<p>Recent events with discussions around FAIR and software. This paper is a result of the lessons learned from these discussions</p>
+</caption>
+<table frame="hsides" rules="groups">
+<thead>
+<tr>
+<td valign="top" align="left">Event</td>
+<td valign="top" align="left">Main outcomes</td>
+<td valign="top" align="left">Publications</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top" align="left">“FAIR principles for Software” at 2019 Workshop on Sustainable Software Sustainability (WOSSS19) (<uri>https://www.software.ac.uk/wosss19</uri>)</td>
+<td valign="top" align="left">FAIR principles can serve as a baseline for enabling software sustainability. However, in contrast to data, software is dynamic, depends on the environment it is executed in, and needs to evolve along with the changing research software ecosystem. It is unclear if and how such software sustainability principles are covered by FAIR.</td>
+<td valign="top" align="left">[<xref ref-type="bibr" rid="ref070">70</xref>]</td>
+</tr>
+<tr>
+<td valign="top" align="left">“FAIR Software” Birds of a Feather meeting (<uri>https://www.derse.org/en/conf2019/talk/S8T8HW/</uri>) at deRSE 2019</td>
+<td valign="top" align="left">FAIR and FOSS are not the same, but they do overlap with regard to their intentions about reusability. For discussing the relationship between FAIR and software sustainability, we should distinguish between the code/implementation and the provided functionality. FAIR provides a useful baseline for research software engineering, but developers should be more concerned about software quality.</td>
+<td valign="top" align="left"/>
+</tr>
+<tr>
+<td valign="top" align="left">Top 10 FAIR Data &amp; Software Global Sprint, including “10 easy things to make your software FAIR” (<uri>https://librarycarpentry.org/Top-10-FAIR/2018/12/01/research-software/</uri>)</td>
+<td valign="top" align="left">Identification and description of 10 “low hanging fruits” that help developers of research software to make their software FAIRer.</td>
+<td valign="top" align="left">[<xref ref-type="bibr" rid="ref071">71</xref>]</td>
+</tr>
+<tr>
+<td valign="top" align="left">“Sharing Your Software – What is FAIR?” at the 2018 American Geophysical Union (AGU) Fall Meeting</td>
+<td valign="top" align="left">A lot of support for making software FAIR is already there. People seem to find writing metadata much more difficult than writing software. Better community software development practices will help here.</td>
+<td valign="top" align="left">[<xref ref-type="bibr" rid="ref072">72</xref>]</td>
+</tr>
+<tr>
+<td valign="top" align="left">“FAIRness assessment for software” (<uri>https://github.com/dbcls/bh18/wiki/FAIRnessassessment-for-software</uri>) at the ELIXIR 2018 BioHackathon</td>
+<td valign="top" align="left">Applying the general FAIR principles to software is mainly a question of suitable metadata. Community efforts are needed to define these.</td>
+<td valign="top" align="left"/>
+</tr>
+<tr>
+<td valign="top" align="left">“Making Software FAIR” (<uri>https://www.aanmelder.nl/dtl2018/makingsoftware-fair</uri>) at the DTL Communities@Work 2018 Conference</td>
+<td valign="top" align="left">Generally the FAIR principles are applicable also to research software, the F and A however more directly than the I and R. Re-interpretation and/or extension of the original principles seems to be required.</td>
+<td valign="top" align="left"/>
+</tr>
+<tr>
+<td valign="top" align="left">TIB Training workshops on FAIR Data and Software</td>
+<td valign="top" align="left">Practical tips on improving the citation ability and long-term usability of software as part of making it FAIR.</td>
+<td valign="top" align="left"/>
+</tr>
+<tr>
+<td valign="top" align="left">“Applying FAIR Principles to Software” at the 2017 Workshop on Sustainable Software Sustainability (WOSSS17)</td>
+<td valign="top" align="left">Criteria for evaluating software and software sustainability already exist. It is desirable, but not trivial, to align and combine them with FAIR.</td>
+<td valign="top" align="left">[<xref ref-type="bibr" rid="ref073">73</xref>]</td>
+</tr>
+<tr>
+<td valign="top" align="left">CodeMeta Workshop (<uri>https://codemeta.github.io/workshop/</uri>) 2016 on The Future of Software Metadata</td>
+<td valign="top" align="left">Community-driven consensus for software metadata. Developed before FAIR, but absolutely applicable to it.</td>
+<td valign="top" align="left"/>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+<table-wrap id="x1-22002-3">
+<label>Table 3</label>
+<caption>
+<p>FAIRness assessment of the Fastme tool</p>
+</caption>
+<table frame="hsides" rules="groups">
+<thead>
+<tr>
+<td valign="top" align="left">Principle</td>
+<td valign="top" align="left">Description</td>
+<td valign="top" align="left">Fulfilled</td>
+<td valign="top" align="left">Comment</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top" align="left">F1</td>
+<td valign="top" align="left">Software and its associated metadata have a global, unique and persistent identifier for each released version.</td>
+<td valign="top" align="left">YES (partially)</td>
+<td valign="top" align="left">Identifier is ‘fastme’ or ‘FastMe’ plus version in X.x in all metadata sources. Sources: bio.tools, webpage, FastMe 2.0’s publication, GitLab and Galaxy. It complies with this principle from version 2.0. It does not have a specific PID, but it can be easily found across different repositories and registries including version information.</td>
+</tr>
+<tr>
+<td valign="top" align="left">F2</td>
+<td valign="top" align="left">Software is described with rich metadata.</td>
+<td valign="top" align="left">YES</td>
+<td valign="top" align="left">Metadata covers the description, usage and accessibility of the software. Regarding the degree of structure and content formalization, metadata in bio.tools is available in biotoolsSchema format and makes use of EDAM terms as well as others that belong to the project’s own vocabulary. Galaxy’s metadata is structured (XML), but does not use any controlled vocabulary. In the remaining sources, metadata is unstructured and does not use any controlled vocabulary.</td>
+</tr>
+<tr>
+<td valign="top" align="left">F3</td>
+<td valign="top" align="left">Metadata clearly and explicitly include identifiers for all the versions of the software it describes.</td>
+<td valign="top" align="left">YES (partially)</td>
+<td valign="top" align="left">All metadata include the version they apply to. However, it is unclear if that same metadata apply to posterior releases of the software. There is a lot of metadata about FastMe 2.0 (webpage, FastMe 2.0’s publication), but not so much for posterior ones. Observation: bio.tools metadata, which refers to FastMe 2.1.4, contains cross-references to metadata belonging to FastMe 2.0.</td>
+</tr>
+<tr>
+<td valign="top" align="left">F4</td>
+<td valign="top" align="left">Software and its associated metadata are included in a searchable software registry.</td>
+<td valign="top" align="left">YES</td>
+<td valign="top" align="left">bio.tools.</td>
+</tr>
+<tr>
+<td valign="top" align="left">A1</td>
+<td valign="top" align="left">Software and its associated metadata are accessible by their identifier using a standardized communications protocol.</td>
+<td valign="top" align="left">YES</td>
+<td valign="top" align="left">Both software and metadata are accessible through HTTP/S: bio.tools, webpage, FastMe 2.0’s publication, GitLab, Galaxy.</td>
+</tr>
+<tr>
+<td valign="top" align="left">A1.1</td>
+<td valign="top" align="left">The protocol is open, free, and universally implementable.</td>
+<td valign="top" align="left">YES</td>
+<td valign="top" align="left">All software and associated metadata are available using HTTP/s across various sites: bio.tools (open), webpage (open), FastMe 2.0’s publication (open access), GitLab (public source code repository) and Galaxy (Galaxy instance at Institut Pasteur, open).</td>
+</tr>
+<tr>
+<td valign="top" align="left">A1.2</td>
+<td valign="top" align="left">The protocol allows for an authentication and authorization procedure, where necessary.</td>
+<td valign="top" align="left">NA</td>
+<td valign="top" align="left">Not necessary.</td>
+</tr>
+<tr>
+<td valign="top" align="left">A2</td>
+<td valign="top" align="left">Software metadata are accessible, even when the software is no longer available.</td>
+<td valign="top" align="left">YES</td>
+<td valign="top" align="left">Metadata is independent of software accessibility in the cases of bio.tools, webpage, FastMe 2.0’s publication and GitLab.</td>
+</tr>
+<tr>
+<td valign="top" align="left">I1</td>
+<td valign="top" align="left">Software and its associated metadata use a formal, accessible, shared and broadly applicable language to facilitate machine readability and data exchange.</td>
+<td valign="top" align="left">YES</td>
+<td valign="top" align="left">Software: This program is written in C (source code available at the src folder in GitLab), a formal, machine readable and widely used language. Metadata: bio.tools metadata is available in JSON and XML formats (following biotoolsSchema). Galaxy fastme metadata is also available in XML. Metadata at webpage and GitLab are not machine readable.</td>
+</tr>
+<tr>
+<td valign="top" align="left">I2S.1</td>
+<td valign="top" align="left">Software and its associated metadata are formally described using controlled vocabularies that follow the FAIR principles.</td>
+<td valign="top" align="left">YES</td>
+<td valign="top" align="left">Software: bio.tools metadata use EDAM terms as well as others that belong to the project’s own vocabulary. In the remaining cases, used terms do not belong to any controlled vocabulary. Metadata: bio.tools metadata is described in an XML schema.</td>
+</tr>
+<tr>
+<td valign="top" align="left">I2S.2</td>
+<td valign="top" align="left">Software use and produce data types and formats that are formally described using controlled vocabularies that follow the FAIR principles.</td>
+<td valign="top" align="left">YES</td>
+<td valign="top" align="left">Software uses and produces phylogenetic trees in NEWICK format, consumes multiple sequence alignment files in PHYLIP format and produce distance matrices in PHYLIP format as well. All these formats have been formally described using EDAM (<ext-link ext-link-type="uri" xlink:href="http://edamontology.org/format_1910">edamontology.org/format_1910</ext-link>, <ext-link ext-link-type="uri" xlink:href="http://edamontology.org/format_1997">edamontology.org/format_1997</ext-link>, <ext-link ext-link-type="uri" xlink:href="http://edamontology.org/format_1445">edamontology.org/format_1445</ext-link>). NETWICK is also contained in the Eagle-I Research Resource Ontology (<ext-link ext-link-type="uri" xlink:href="http://ebi.ac.uk/efo/swo/SWO_0000634">ebi.ac.uk/efo/swo/SWO_0000634</ext-link>) and Ensembl Glossary (<ext-link ext-link-type="uri" xlink:href="http://ensembl.org/glossary/ENSGLOSSARY_0000289">ensembl.org/glossary/ENSGLOSSARY_0000289</ext-link>).</td>
+</tr>
+<tr>
+<td valign="top" align="left">I4S</td>
+<td valign="top" align="left">Software dependencies are documented and mechanisms to access them exist.</td>
+<td valign="top" align="left">NO</td>
+<td valign="top" align="left">Dependencies are not mentioned anywhere in the metadata. An exception is Galaxy, but it regards ‘galaxy dependencies’.</td>
+</tr>
+<tr>
+<td valign="top" align="left">R1</td>
+<td valign="top" align="left">Software and its associated metadata are richly described with a plurality of accurate and relevant attributes.</td>
+<td valign="top" align="left">YES</td>
+<td valign="top" align="left">See comments for R1.1 and R1.2.</td>
+</tr>
+<tr>
+<td valign="top" align="left">R1.1</td>
+<td valign="top" align="left">Software and its associated metadata have independent, clear and accessible usage licenses compatible with the software dependencies.</td>
+<td valign="top" align="left">YES</td>
+<td valign="top" align="left">Software: GNU General Public License as published by the Free Software Foundation, either version 3 of the license or later versions, in webpage, bio.tools, GitLab. No conditions of use in Galaxy. Metadata: bio.tools: Attribution 4.0 International (CC BY 4.0) license. GitLab: not stated. Webpage: Creative Commons Attribution 4.0 International license. Galaxy: not stated.</td>
+</tr>
+<tr>
+<td valign="top" align="left">R1.2</td>
+<td valign="top" align="left">Software metadata include detailed provenance, detail level should be community agreed.</td>
+<td valign="top" align="left">YES (partially)</td>
+<td valign="top" align="left">To some extent in metadata at GitLab, as there is not available the whole history of releases, the first ones are missing. No provenance in the remaining metadata.</td>
+</tr>
+<tr>
+<td valign="top" align="left">R1.3</td>
+<td valign="top" align="left">Software metadata and documentation meet domain-relevant community standards.</td>
+<td valign="top" align="left">YES (partially)</td>
+<td valign="top" align="left">Authors do provide documentation but do not follow any community-agreed standard for doing that. Metadata do not follow any community-agreed standard at the authors’ repository and webpage. Metadata registered in bio.tools and Galaxy do follow the standards established by those initiatives.</td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+<table-wrap id="x1-22003-4">
+<label>Table 4</label>
+<caption>
+<p>FAIRness assessment of the ChIPseeker tool</p>
+</caption>
+<table frame="hsides" rules="groups">
+<thead>
+<tr>
+<td valign="top" align="left">Principle</td>
+<td valign="top" align="left">Description</td>
+<td valign="top" align="left">Fulfilled</td>
+<td valign="top" align="left">Comment</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top" align="left">F1</td>
+<td valign="top" align="left">Software and its associated metadata have a global, unique and persistent identifier for each released version.</td>
+<td valign="top" align="left">YES</td>
+<td valign="top" align="left">Bioconductor: 10.18129/B9.bioc.ChIPseeker. It resolves to the latest stable version. Each version in X.x.x form. This DOI is mentioned in neither bio.tools nor the GitHub repository.</td>
+</tr>
+<tr>
+<td valign="top" align="left">F2</td>
+<td valign="top" align="left">Software is described with rich metadata.</td>
+<td valign="top" align="left">YES</td>
+<td valign="top" align="left">Metadata covers the description, usage and accessibility of the software. Regarding the degree of structure and content formalization, metadata in bio.tools follows the structure set by the biotoolsSchema and makes use of EDAM terms as well as others that belong to the project own vocabulary. Bioconductor and GitHub DESCRIPTION follow Bioconductor’s metadata standardized structure and vocabulary. In the remaining sources, metadata is unstructured and does not make use of any controlled vocabulary.</td>
+</tr>
+<tr>
+<td valign="top" align="left">F3</td>
+<td valign="top" align="left">Metadata clearly and explicitly include identifiers for all the versions of the software it describes.</td>
+<td valign="top" align="left">YES</td>
+<td valign="top" align="left">All metadata include the version they apply to.</td>
+</tr>
+<tr>
+<td valign="top" align="left">F4</td>
+<td valign="top" align="left">Software and its associated metadata are included in a searchable software registry.</td>
+<td valign="top" align="left">YES</td>
+<td valign="top" align="left">Bioconductor and bio.tools.</td>
+</tr>
+<tr>
+<td valign="top" align="left">A1</td>
+<td valign="top" align="left">Software and its associated metadata are accessible by their identifier using a standardized communications protocol.</td>
+<td valign="top" align="left">YES</td>
+<td valign="top" align="left">Both software and metadata are accessible through HTTP/S: bio.tools, GitHub and webpage, Bioconductor.</td>
+</tr>
+<tr>
+<td valign="top" align="left">A1.1</td>
+<td valign="top" align="left">The protocol is open, free, and universally implementable.</td>
+<td valign="top" align="left">YES</td>
+<td valign="top" align="left">All software and associated metadata are available using HTTP/s across various sites: bio.tools (open), webpage (open), Bioconductor (open), and GitHub (public source code repository).</td>
+</tr>
+<tr>
+<td valign="top" align="left">A1.2</td>
+<td valign="top" align="left">The protocol allows for an authentication and authorization procedure, where necessary.</td>
+<td valign="top" align="left">YES</td>
+<td valign="top" align="left">Not necessary.</td>
+</tr>
+<tr>
+<td valign="top" align="left">A2</td>
+<td valign="top" align="left">Software metadata are accessible, even when the software is no longer available.</td>
+<td valign="top" align="left">YES</td>
+<td valign="top" align="left">Available in bio.tools, webpage, Bioconductor, and GitHub. GitHub contains DESCRIPTION files since version 0.99.6.</td>
+</tr>
+<tr>
+<td valign="top" align="left">I1</td>
+<td valign="top" align="left">Software and its associated metadata use a formal, accessible, shared and broadly applicable language to facilitate machine readability and data exchange.</td>
+<td valign="top" align="left">YES</td>
+<td valign="top" align="left">Software: The software is written in R, a formal, machine readable and widely used language. Metadata: bio.tools metadata is available in JSON and XML (following biotoolsSchema). Galaxy metadata is available in XML format. Bioconductor and GitHub DESCRIPTION follow Bioconductors metadata standardized structure, which is not a widely used format and thus less interoperable than the previous ones. Metadata at the software’s webpage is not machine readable.</td>
+</tr>
+<tr>
+<td valign="top" align="left">I2S.1</td>
+<td valign="top" align="left">Software and its associated metadata are formally described using controlled vocabularies that follow the FAIR principles.</td>
+<td valign="top" align="left">YES</td>
+<td valign="top" align="left">Software: bio.tools metadata uses EDAM terms as well as others that belong to the project own vocabulary. In the remaining cases, used terms do not belong to any controlled vocabulary. Metadata: bio.tools metadata is described in an XML schema. Bioconductor and GitHub DESCRIPTION use Bioconductor’s metadata accepted terms.</td>
+</tr>
+<tr>
+<td valign="top" align="left">I2S.2</td>
+<td valign="top" align="left">Software use and produce data types and formats that are formally described using controlled vocabularies that follow the FAIR principles.</td>
+<td valign="top" align="left">YES</td>
+<td valign="top" align="left">The software accepts BED files as an input and produce GRanges objects as output. Sources: In manual, referenced in Bioconductor and bio.tools.</td>
+</tr>
+<tr>
+<td valign="top" align="left">I4S</td>
+<td valign="top" align="left">Software dependencies are documented and mechanisms to access them exist.</td>
+<td valign="top" align="left">YES</td>
+<td valign="top" align="left">Stated in Bioconductor and GitHub DESCRIPTION. Automatically downlodable and installable through Bioconductor.</td>
+</tr>
+<tr>
+<td valign="top" align="left">R1</td>
+<td valign="top" align="left">Software and its associated metadata are richly described with a plurality of accurate and relevant attributes.</td>
+<td valign="top" align="left">YES</td>
+<td valign="top" align="left">See comments for R1.1 and R1.2.</td>
+</tr>
+<tr>
+<td valign="top" align="left">R1.1</td>
+<td valign="top" align="left">Software and its associated metadata have independent, clear and accessible usage licenses compatible with the software dependencies.</td>
+<td valign="top" align="left">YES</td>
+<td valign="top" align="left">Software: Artistic-2.0, coherent across metadata sources. Metadata: Depends on the resource used to gather it. bio.tools: Attribution 4.0 International (CC BY 4.0) license. Bioconductor: not stated. Webpage: Artistic-2.0 license. GitHub: not stated.</td>
+</tr>
+<tr>
+<td valign="top" align="left">R1.2</td>
+<td valign="top" align="left">Software metadata include detailed provenance, detail level should be community agreed.</td>
+<td valign="top" align="left">YES</td>
+<td valign="top" align="left">Commits on GitHub since version 0.99. No provenance in the remaining metadata.</td>
+</tr>
+<tr>
+<td valign="top" align="left">R1.3</td>
+<td valign="top" align="left">Software metadata and documentation meet domain-relevant community standards.</td>
+<td valign="top" align="left">YES</td>
+<td valign="top" align="left">Authors follow the standards by Bioconductor, bio.tools and GitHub DESCRIPTION to structure metadata and documentation.</td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+</app></app-group>
+<ref-list>
+<title>References</title>
+<ref id="ref001">
+<label>[1]</label><mixed-citation publication-type="other"><string-name><given-names>M.D.</given-names> <surname>Wilkinson</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Dumontier</surname></string-name>, <string-name><given-names>I.J.</given-names> <surname>Aalbersberg</surname></string-name>, <string-name><given-names>G.</given-names> <surname>Appleton</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Axton</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Baak</surname></string-name>, <string-name><given-names>N.</given-names> <surname>Blomberg</surname></string-name> <etal>et al.</etal>, <article-title>The FAIR guiding principles for scientific data management and stewardship</article-title>, <source>Scientific Data</source> <volume>3</volume> (<year>2016</year>), <elocation-id>160018</elocation-id>. doi:<pub-id pub-id-type="doi">10.1038/sdata.2016.18</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref002">
+<label>[2]</label><mixed-citation publication-type="other"><string-name><given-names>M.D.</given-names> <surname>Wilkinson</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Verborgh</surname></string-name>, <string-name><given-names>L.</given-names> <surname>Olavo Bonino da Silva Santos</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Clark</surname></string-name>, <string-name><given-names>M.A.</given-names> <surname>Swertz</surname></string-name>, <string-name><given-names>F.D.L.</given-names> <surname>Kelpin</surname></string-name>, <string-name><given-names>A.J.G.</given-names> <surname>Gray</surname></string-name> <etal>et al.</etal>, <article-title>Interoperability and FAIRness through a novel combination of web technologies</article-title>, <source>PeerJ Computer Science</source> <volume>3</volume> (<year>2017</year>), <elocation-id>e110</elocation-id>. doi:<pub-id pub-id-type="doi">10.7717/peerj-cs.110</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref003">
+<label>[3]</label><mixed-citation publication-type="other">RTD (Directorate-general for research), Turning FAIR into reality: Final report and action plan from the European Commission Expert Group on FAIR Data. Publications Office of the European Union, 2018. <uri>https://publications.europa.eu/en/publication-detail/-/publication/7769a148-f1f6-11e8-9982-01aa75ed71a1/language-en</uri> (accessed August 16, 2019).</mixed-citation>
+</ref>
+<ref id="ref004">
+<label>[4]</label><mixed-citation publication-type="other"><string-name><given-names>D.S.</given-names> <surname>Katz</surname></string-name>, <string-name><given-names>K.E.</given-names> <surname>Niemeyer</surname></string-name>, <string-name><given-names>A.M.</given-names> <surname>Smith</surname></string-name>, <string-name><given-names>W.L.</given-names> <surname>Anderson</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Boettiger</surname></string-name>, <string-name><given-names>K.</given-names> <surname>Hinsen</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Hooft</surname></string-name> <etal>et al.</etal>, Software vs. data in the context of citation, PeerJ Preprints, e2630v1, 2016. doi:<pub-id pub-id-type="doi">10.7287/peerj.preprints.2630v1</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref005">
+<label>[5]</label><mixed-citation publication-type="journal"><string-name><given-names>M.G.</given-names> <surname>Atkinson</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Montagnat</surname></string-name> and <string-name><given-names>I.</given-names> <surname>Johan Taylor</surname></string-name>, <article-title>Scientific workflows: Past, present and future</article-title>, <source>Future Generation Computer Systems</source> <volume>75</volume> (<year>2017</year>), <fpage>216</fpage>–<lpage>227</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.future.2017.05.041</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref006">
+<label>[6]</label><mixed-citation publication-type="other"><string-name><given-names>C.</given-names> <surname>Goble</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Cohen-Boulakia</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Soiland-Reyes</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Garijo</surname></string-name>, <string-name><given-names>Y.</given-names> <surname>Gil</surname></string-name>, <string-name><given-names>M.R.</given-names> <surname>Crusoe</surname></string-name>, <string-name><given-names>K.</given-names> <surname>Peters</surname></string-name> and <string-name><given-names>D.</given-names> <surname>Schober</surname></string-name>, <article-title>FAIR computational workflows</article-title>, <source>Data Intelligence</source>, <year>2019</year>. doi:<pub-id pub-id-type="doi">10.1162/dint_a_00033</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref007">
+<label>[7]</label><mixed-citation publication-type="other"><string-name><given-names>S.</given-names> <surname>Hettrick</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Antonioletti</surname></string-name>, <string-name><given-names>L.</given-names> <surname>Carr</surname></string-name>, <string-name><given-names>N.</given-names> <surname>Chue Hong</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Crouch</surname></string-name>, <string-name><given-names>D.</given-names> <surname>De Roure</surname></string-name>, <string-name><given-names>I.</given-names> <surname>Emsley</surname></string-name> <etal>et al.</etal>, UK Research Software Survey 2014, Zenodo, 2014. doi:<pub-id pub-id-type="doi">10.5281/zenodo.14809</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref008">
+<label>[8]</label><mixed-citation publication-type="other"><string-name><given-names>T.</given-names> <surname>Schlauch</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Meinel</surname></string-name> and <string-name><given-names>C.</given-names> <surname>Haupt</surname></string-name>, DLR software engineering guidelines (version 1.0.0), Zenodo, 2018. doi:<pub-id pub-id-type="doi">10.5281/zenodo.1344612</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref009">
+<label>[9]</label><mixed-citation publication-type="journal"><string-name><given-names>J.-F.</given-names> <surname>Abramatic</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Di Cosmo</surname></string-name> and <string-name><given-names>S.</given-names> <surname>Zacchiroli</surname></string-name>, <article-title>Building the universal archive of source code</article-title>, <source>Communications of the ACM</source> <volume>61</volume>(<issue>10</issue>) (<year>2018</year>), <fpage>29</fpage>–<lpage>31</lpage>. doi:<pub-id pub-id-type="doi">10.1145/3183558</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref010">
+<label>[10]</label><mixed-citation publication-type="other">CRAN, The comprehensive R archive network. <uri>https://cran.r-project.org/</uri> (accessed August 16, 2019).</mixed-citation>
+</ref>
+<ref id="ref011">
+<label>[11]</label><mixed-citation publication-type="other">CPAN, The comprehensive Perl archive network. <uri>https://www.cpan.org/</uri> (accessed August 16, 2019).</mixed-citation>
+</ref>
+<ref id="ref012">
+<label>[12]</label><mixed-citation publication-type="other">Warehouse Project, PyPI · The Python package index. <uri>https://pypi.org/</uri> (accessed August 16, 2019).</mixed-citation>
+</ref>
+<ref id="ref013">
+<label>[13]</label><mixed-citation publication-type="other"><string-name><given-names>R.</given-names> <surname>Higman</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Bangert</surname></string-name> and <string-name><given-names>S.</given-names> <surname>Jones</surname></string-name>, <article-title>Three camps, one destination: The intersections of research data management, FAIR and Open</article-title>, <source>Insights</source> <volume>32</volume> (<year>2019</year>), <elocation-id>18</elocation-id>. doi:<pub-id pub-id-type="doi">10.1629/uksg.468</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref014">
+<label>[14]</label><mixed-citation publication-type="other">GO FAIR, What is the difference between ‘FAIR Data’ and ‘Open Data’ if there is one? <uri>https://www.go-fair.org/faq/ask-question-difference-fair-data-open-data/</uri> (accessed August 16, 2019).</mixed-citation>
+</ref>
+<ref id="ref015">
+<label>[15]</label><mixed-citation publication-type="other"><string-name><given-names>P.</given-names> <surname>Doorn</surname></string-name>, Does it make sense to apply the FAIR data principles to software?, SlidePlayer, 2017. <uri>https://slideplayer.com/slide/12849777/</uri>.</mixed-citation>
+</ref>
+<ref id="ref016">
+<label>[16]</label><mixed-citation publication-type="other">Object Management Group, Automated source code maintainability measure. <uri>https://www.omg.org/spec/ASCMM/1.0/PDF</uri> (accessed August 16, 2019).</mixed-citation>
+</ref>
+<ref id="ref017">
+<label>[17]</label><mixed-citation publication-type="other"><string-name><given-names>R.C.</given-names> <surname>Jiménez</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Kuzak</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Alhamdoosh</surname></string-name> <etal>et al.</etal>, <article-title>Four simple recommendations to encourage best practices in research software</article-title>, <source>F1000Research</source> <volume>6</volume> (<year>2017</year>), <elocation-id>876</elocation-id>. doi:<pub-id pub-id-type="doi">10.12688/f1000research.11407.1</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref018">
+<label>[18]</label><mixed-citation publication-type="journal"><string-name><given-names>D.</given-names> <surname>Heaton</surname></string-name> and <string-name><given-names>J.C.</given-names> <surname>Carver</surname></string-name>, <article-title>Claims about the use of software engineering practices in science: A systematic literature review</article-title>, <source>Informaion and Software Technology</source> <volume>67</volume> (<year>2015</year>), <fpage>207</fpage>–<lpage>219</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.infsof.2015.07.011</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref019">
+<label>[19]</label><mixed-citation publication-type="journal"><string-name><given-names>U.</given-names> <surname>Kanewala</surname></string-name> and <string-name><given-names>J.M.</given-names> <surname>Bieman</surname></string-name>, <article-title>Testing scientific software: A systematic literature review</article-title>, <source>Information and Software Technology</source> <volume>56</volume>(<issue>10</issue>) (<year>2014</year>), <fpage>1219</fpage>–<lpage>1232</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.infsof.2014.05.006</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref020">
+<label>[20]</label><mixed-citation publication-type="other"><string-name><given-names>S.</given-names> <surname>Capella-Gutierrez</surname></string-name>, <string-name><given-names>D.</given-names> <surname>de la Iglesia</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Haas</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Lourenco</surname></string-name>, <string-name><given-names>J.M.</given-names> <surname>Fernández</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Repchevsky</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Dessimoz</surname></string-name> <etal>et al.</etal>, Lessons learned: Recommendations for establishing critical periodic scientific benchmarking, 2017. doi:<pub-id pub-id-type="doi">10.1101/181677</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref021">
+<label>[21]</label><mixed-citation publication-type="other"><string-name><given-names>S.</given-names> <surname>Mangul</surname></string-name>, <string-name><given-names>L.S.</given-names> <surname>Martin</surname></string-name>, <string-name><given-names>B.L.</given-names> <surname>Hill</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Ka-Mei Lam</surname></string-name>, <string-name><given-names>M.G.</given-names> <surname>Distler</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Zelikovsky</surname></string-name>, <string-name><given-names>E.</given-names> <surname>Eskin</surname></string-name> and <string-name><given-names>J.</given-names> <surname>Flint</surname></string-name>, <article-title>Systematic benchmarking of omics computational tools</article-title>, <source>Nature Communications</source> <volume>10</volume>(<issue>1</issue>) (<year>2019</year>), <elocation-id>1393</elocation-id>. doi:<pub-id pub-id-type="doi">10.1038/s41467-019-09406-4</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref022">
+<label>[22]</label><mixed-citation publication-type="other">Wikimedia Foundation, Inc., Persistent identifier. <uri>https://en.wikipedia.org/wiki/Persistent_identifier</uri> (accessed August 16, 2019).</mixed-citation>
+</ref>
+<ref id="ref023">
+<label>[23]</label><mixed-citation publication-type="other"><string-name><given-names>C.</given-names> <surname>Ferguson</surname></string-name>, <string-name><given-names>J.</given-names> <surname>McEntrye</surname></string-name>, <string-name><given-names>V.</given-names> <surname>Bunakov</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Lambert</surname></string-name>, <string-name><given-names>S.</given-names> <surname>van der Sandt</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Kotarski</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Stewart</surname></string-name> <etal>et al.</etal>, D3.1 Survey of current PID services landscape, Zenodo, 2018. doi:<pub-id pub-id-type="doi">10.5281/zenodo.1324296</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref024">
+<label>[24]</label><mixed-citation publication-type="other">GitHub, Making your code citable. <uri>https://guides.github.com/activities/citable-code/</uri> (accessed August 16, 2019).</mixed-citation>
+</ref>
+<ref id="ref025">
+<label>[25]</label><mixed-citation publication-type="other">Zenodo, Frequently asked questions | DOI versioning. <uri>https://help.zenodo.org/</uri> (accessed August 16, 2019).</mixed-citation>
+</ref>
+<ref id="ref026">
+<label>[26]</label><mixed-citation publication-type="other">bio.tools, biotoolsSchema – resource description model for bioinformatics software. <uri>https://github.com/bio-tools/biotoolsSchema</uri> (accessed August 16, 2019).</mixed-citation>
+</ref>
+<ref id="ref027">
+<label>[27]</label><mixed-citation publication-type="journal"><string-name><given-names>J.</given-names> <surname>Ison</surname></string-name>, <string-name><given-names>H.</given-names> <surname>Ienasescu</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Chmura</surname></string-name>, <string-name><given-names>E.</given-names> <surname>Rydza</surname></string-name>, <string-name><given-names>H.</given-names> <surname>Ménager</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Kalaš</surname></string-name>, <string-name><given-names>V.</given-names> <surname>Schwämmle</surname></string-name> <etal>et al.</etal>, <article-title>The Bio.tools registry of software tools and data resources for the life sciences</article-title>, <source>Genome Biology</source> <volume>20</volume>(<issue>1</issue>) (<year>2019</year>), <fpage>1</fpage>–<lpage>4</lpage>. doi:<pub-id pub-id-type="doi">10.1186/s13059-019-1772-6</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref028">
+<label>[28]</label><mixed-citation publication-type="other"><string-name><given-names>J.</given-names> <surname>Ison</surname></string-name>, <string-name><given-names>H.</given-names> <surname>Ménager</surname></string-name>, <string-name><given-names>B.</given-names> <surname>Brancotte</surname></string-name> <etal>et al.</etal>, <article-title>Community curation of bioinformatics software and data resources</article-title>, <source>Briefings in Bioinformatics</source> (<year>2019</year>), <elocation-id>bbz075</elocation-id>. doi:<pub-id pub-id-type="doi">10.1093/bib/bbz075</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref029">
+<label>[29]</label><mixed-citation publication-type="other">Codemeta, The CodeMeta Project user guide. <uri>https://codemeta.github.io/user-guide/</uri> (accessed August 16, 2019).</mixed-citation>
+</ref>
+<ref id="ref030">
+<label>[30]</label><mixed-citation publication-type="other">Bioschemas community, Bioschemas – Tools, vr 0.1. <uri>https://bioschemas.org/specifications/Tool/</uri> (accessed August 16, 2019).</mixed-citation>
+</ref>
+<ref id="ref031">
+<label>[31]</label><mixed-citation publication-type="other"><string-name><given-names>H.</given-names> <surname>Wickham</surname></string-name>, Package metadata, R Packages. <uri>http://r-pkgs.had.co.nz/description.html</uri> (accessed August 16, 2019).</mixed-citation>
+</ref>
+<ref id="ref032">
+<label>[32]</label><mixed-citation publication-type="other">The Software Ontology. <uri>http://theswo.sourceforge.net/</uri> (accessed August 16, 2019).</mixed-citation>
+</ref>
+<ref id="ref033">
+<label>[33]</label><mixed-citation publication-type="journal"><string-name><given-names>J.</given-names> <surname>Ison</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Kalas</surname></string-name>, <string-name><given-names>I.</given-names> <surname>Jonassen</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Bolser</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Uludag</surname></string-name>, <string-name><given-names>H.</given-names> <surname>McWilliam</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Malone</surname></string-name>, <string-name><given-names>R.</given-names> <surname>Lopez</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Pettifer</surname></string-name> and <string-name><given-names>P.</given-names> <surname>Rice</surname></string-name>, <article-title>EDAM: An ontology of bioinformatics operations, types of data and identifiers, topics and formats</article-title>, <source>Bioinformatics</source> <volume>29</volume>(<issue>10</issue>) (<year>2013</year>), <fpage>1325</fpage>–<lpage>1332</lpage>. doi:<pub-id pub-id-type="doi">10.1093/bioinformatics/btt113</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref034">
+<label>[34]</label><mixed-citation publication-type="other">OntoSoft. <uri>http://www.ontosoft.org/</uri> (accessed August 16, 2019).</mixed-citation>
+</ref>
+<ref id="ref035">
+<label>[35]</label><mixed-citation publication-type="other"><string-name><given-names>Y.</given-names> <surname>Gil</surname></string-name> and <string-name><given-names>R.</given-names> <surname>Varun</surname></string-name>, OntoSoft: Capturing scientific software metadata. <uri>http://www.ontosoft.org/</uri> (accessed August 16, 2019).</mixed-citation>
+</ref>
+<ref id="ref036">
+<label>[36]</label><mixed-citation publication-type="other">Software Heritage, The Software Heritage archive. <uri>https://www.softwareheritage.org/archive/</uri> (accessed August 16, 2019).</mixed-citation>
+</ref>
+<ref id="ref037">
+<label>[37]</label><mixed-citation publication-type="other">Bioconductor. <uri>https://www.bioconductor.org/</uri> (accessed August 16, 2019).</mixed-citation>
+</ref>
+<ref id="ref038">
+<label>[38]</label><mixed-citation publication-type="journal"><string-name><given-names>F.</given-names> <surname>da Veiga Leprevost</surname></string-name>, <string-name><given-names>B.A.</given-names> <surname>Grüning</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Alves Aflitos</surname></string-name>, <string-name><given-names>H.L.</given-names> <surname>Röst</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Uszkoreit</surname></string-name>, <string-name><given-names>H.</given-names> <surname>Barsnes</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Vaudel</surname></string-name> <etal>et al.</etal>, <article-title>BioContainers: An open-source and community-driven framework for software standardization</article-title>, <source>Bioinformatics</source> <volume>33</volume>(<issue>16</issue>) (<year>2017</year>), <fpage>2580</fpage>–<lpage>2582</lpage>. doi:<pub-id pub-id-type="doi">10.1093/bioinformatics/btx192</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref039">
+<label>[39]</label><mixed-citation publication-type="other">ASCL.net, Astrophysics source code library. <uri>http://ascl.net</uri> (accessed August 16, 2019).</mixed-citation>
+</ref>
+<ref id="ref040">
+<label>[40]</label><mixed-citation publication-type="other">swMATH, An information service for mathematical software. <uri>https://swmath.org/</uri> (accessed August 16, 2019).</mixed-citation>
+</ref>
+<ref id="ref041">
+<label>[41]</label><mixed-citation publication-type="other">CLARIN-NL, CLARIN NL resource list. <uri>https://dev.clarin.nl/clarin-resource-list-fs</uri> (accessed August 16, 2019).</mixed-citation>
+</ref>
+<ref id="ref042">
+<label>[42]</label><mixed-citation publication-type="other">HUBzero. <uri>https://hubzero.org</uri> (accessed August 16, 2019).</mixed-citation>
+</ref>
+<ref id="ref043">
+<label>[43]</label><mixed-citation publication-type="other">Anaconda Inc., Conda documentation. <uri>https://docs.conda.io/en/latest/</uri> (accessed August 16, 2019).</mixed-citation>
+</ref>
+<ref id="ref044">
+<label>[44]</label><mixed-citation publication-type="other">Jupyter Project and Community, Project Jupyter. <uri>https://www.jupyter.org</uri> (accessed August 16, 2019).</mixed-citation>
+</ref>
+<ref id="ref045">
+<label>[45]</label><mixed-citation publication-type="journal"><string-name><given-names>S.-A.</given-names> <surname>Sansone</surname></string-name>, <string-name><given-names>P.</given-names> <surname>McQuilton</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Rocca-Serra</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Gonzalez-Beltran</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Izzo</surname></string-name>, <string-name><given-names>A.L.</given-names> <surname>Lister</surname></string-name> and <string-name><given-names>M.</given-names> <surname>Thurston</surname></string-name>, <article-title>FAIRsharing as a community approach to standards, repositories and policies</article-title>, <source>Nature Biotechnology</source> <volume>37</volume>(<issue>4</issue>) (<year>2019</year>), <fpage>358</fpage>–<lpage>367</lpage>. doi:<pub-id pub-id-type="doi">10.1038/s41587-019-0080-8</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref046">
+<label>[46]</label><mixed-citation publication-type="other">IEEE, Standard glossary of software engineering terminology, IEEE Std 610.12-1990, 1990. doi:<pub-id pub-id-type="doi">10.1109/IEEESTD.1990.101064</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref047">
+<label>[47]</label><mixed-citation publication-type="journal"><string-name><given-names>S.</given-names> <surname>Heiler</surname></string-name>, <article-title>Semantic interoperability</article-title>, <source>ACM Computing Surveys (CSUR)</source> <volume>27</volume>(<issue>2</issue>) (<year>1995</year>), <fpage>271</fpage>–<lpage>273</lpage>. doi:<pub-id pub-id-type="doi">10.1145/210376.210392</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref048">
+<label>[48]</label><mixed-citation publication-type="chapter"><string-name><given-names>Y.</given-names> <surname>Charalabidis</surname></string-name>, <string-name><given-names>R.J.</given-names> <surname>Gonçalves</surname></string-name> and <string-name><given-names>K.</given-names> <surname>Popplewell</surname></string-name>, <chapter-title>Towards a scientific foundation for interoperability</chapter-title>, in: <source>Interoperability in Digital Public Services and Administration: Bridging E-Government and E-Business</source>, <year>2011</year>, pp. <fpage>355</fpage>–<lpage>373</lpage>. doi:<pub-id pub-id-type="doi">10.4018/978-1-61520-887-6.ch019</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref049">
+<label>[49]</label><mixed-citation publication-type="journal"><string-name><given-names>G.</given-names> <surname>da Silva Serapião Leal</surname></string-name>, <string-name><given-names>W.</given-names> <surname>Guédria</surname></string-name> and <string-name><given-names>H.</given-names> <surname>Panetto</surname></string-name>, <article-title>Interoperability assessment: A systematic literature review</article-title>, <source>Computers in Industry</source> <volume>106</volume> (<year>2019</year>), <fpage>111</fpage>–<lpage>132</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.compind.2019.01.002</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref050">
+<label>[50]</label><mixed-citation publication-type="journal"><string-name><given-names>Y.</given-names> <surname>Naudet</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Latour</surname></string-name>, <string-name><given-names>W.</given-names> <surname>Guedria</surname></string-name> and <string-name><given-names>D.</given-names> <surname>Chen</surname></string-name>, <article-title>Enterprise interoperability with SOA: A survey of service composition approaches</article-title>, <source>Computers in Industry</source> <volume>61</volume>(<issue>2</issue>) (<year>2010</year>), <fpage>176</fpage>–<lpage>185</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.compind.2009.10.014</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref051">
+<label>[51]</label><mixed-citation publication-type="journal"><string-name><given-names>R.</given-names> <surname>Rezaei</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Chiew</surname></string-name> and <string-name><given-names>S.</given-names> <surname>Lee</surname></string-name>, <article-title>A review of interoperability assessment models</article-title>, <source>Journal of Zhejiang University SCIENCE C</source> <volume>14</volume>(<issue>9</issue>) (<year>2013</year>), <fpage>663</fpage>–<lpage>681</lpage>. doi:<pub-id pub-id-type="doi">10.1631/jzus.C1300013</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref052">
+<label>[52]</label><mixed-citation publication-type="journal"><string-name><given-names>R.</given-names> <surname>Rezaei</surname></string-name>, <string-name><given-names>T.K.</given-names> <surname>Chiew</surname></string-name>, <string-name><given-names>S.P.</given-names> <surname>Lee</surname></string-name> and <string-name><given-names>Z.S.</given-names> <surname>Aliee</surname></string-name>, <article-title>Interoperability evaluation models: A systematic review</article-title>, <source>Computers in Industry</source> <volume>65</volume>(<issue>1</issue>) (<year>2014</year>), <fpage>1</fpage>–<lpage>23</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.compind.2013.09.001</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref053">
+<label>[53]</label><mixed-citation publication-type="other"><string-name><given-names>R.</given-names> <surname>Allen</surname></string-name> and <string-name><given-names>D.</given-names> <surname>Hartland</surname></string-name>, FAIR in practice – Jisc report on the findable accessible interoperable and reuseable data principles, Zenodo, 2018. doi:<pub-id pub-id-type="doi">10.5281/zenodo.1245568</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref054">
+<label>[54]</label><mixed-citation publication-type="journal"><string-name><given-names>E.</given-names> <surname>Elmroth</surname></string-name>, <string-name><given-names>F.</given-names> <surname>Hernández</surname></string-name> and <string-name><given-names>J.</given-names> <surname>Tordsson</surname></string-name>, <article-title>Three fundamental dimensions of scientific workflow interoperability: Model of computation, language, and execution environment</article-title>, <source>Future Generation Computer Systems</source> <volume>26</volume>(<issue>2</issue>) (<year>2010</year>), <fpage>245</fpage>–<lpage>256</lpage>. doi:<pub-id pub-id-type="doi">10.1016/j.future.2009.08.011</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref055">
+<label>[55]</label><mixed-citation publication-type="chapter"><string-name><given-names>R.</given-names> <surname>Mantovaneli Pessoa</surname></string-name>, <string-name><given-names>E.</given-names> <surname>Silva</surname></string-name>, <string-name><given-names>M.</given-names> <surname>van Sinderen</surname></string-name> <etal>et al.</etal>, <chapter-title>Enterprise interoperability with SOA: A survey of service composition approaches</chapter-title>, in: <source>12th Enterprise Distributed Object Computing Conference Workshops</source>, <year>2008</year>, pp. <fpage>238</fpage>–<lpage>251</lpage>. doi:<pub-id pub-id-type="doi">10.1109/EDOCW.2008.32</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref056">
+<label>[56]</label><mixed-citation publication-type="journal"><string-name><given-names>M.</given-names> <surname>Palmblad</surname></string-name>, <string-name><given-names>A.-L.</given-names> <surname>Lamprecht</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Ison</surname></string-name> and <string-name><given-names>V.</given-names> <surname>Schwämmle</surname></string-name>, <article-title>Automated workflow composition in mass spectrometry-based proteomics</article-title>, <source>Bioinformatics</source> <volume>35</volume>(<issue>4</issue>) (<year>2019</year>), <fpage>656</fpage>–<lpage>664</lpage>. doi:<pub-id pub-id-type="doi">10.1093/bioinformatics/bty646</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref057">
+<label>[57]</label><mixed-citation publication-type="journal"><string-name><given-names>C.</given-names> <surname>Wroe</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Goble</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Greenwood</surname></string-name>, <string-name><given-names>P.</given-names> <surname>Lord</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Miles</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Papay</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Payne</surname></string-name> and <string-name><given-names>L.</given-names> <surname>Moreau</surname></string-name>, <article-title>Automating experiments using semantic data in a bioinformatics grid</article-title>, <source>IEEE Intelligent Systems</source> <volume>19</volume>(<issue>1</issue>) (<year>2004</year>), <fpage>48</fpage>–<lpage>55</lpage>. doi:<pub-id pub-id-type="doi">10.1109/MIS.2004.1265885</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref058">
+<label>[58]</label><mixed-citation publication-type="other">Common Workflow Language, v1.0, figshare, 2016. doi:<pub-id pub-id-type="doi">10.6084/m9.figshare.3115156.v2</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref059">
+<label>[59]</label><mixed-citation publication-type="other"><string-name><given-names>F.</given-names> <surname>Khan</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Soiland-Reyes</surname></string-name>, <string-name><given-names>R.O.</given-names> <surname>Sinnott</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Lonie</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Goble</surname></string-name> and <string-name><given-names>M.R.</given-names> <surname>Crusoe</surname></string-name>, <article-title>Sharing interoperable workflow provenance: A review of best practices and their practical application in CWLProv</article-title>, <source>GigaScience</source> <volume>8</volume>(<issue>11</issue>) (<year>2018</year>), <elocation-id>giz095</elocation-id>. doi:<pub-id pub-id-type="doi">10.1093/gigascience/giz095</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref060">
+<label>[60]</label><mixed-citation publication-type="other">Open WDL. <uri>http://www.openwdl.org/</uri> (accessed August 16, 2019).</mixed-citation>
+</ref>
+<ref id="ref061">
+<label>[61]</label><mixed-citation publication-type="other"><string-name><given-names>F.C.Y.</given-names> <surname>Benureau</surname></string-name> and <string-name><given-names>N.P.</given-names> <surname>Rougier</surname></string-name>, <article-title>Re-run, repeat, reproduce, reuse, replicate: Transforming code into scientific contributions</article-title>, <source>Frontiers in Neuroinformatics</source> <volume>11</volume> (<year>2018</year>), <elocation-id>69</elocation-id>. doi:<pub-id pub-id-type="doi">10.3389/fninf.2017.00069</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref062">
+<label>[62]</label><mixed-citation publication-type="other">SPDX Workgroup – a Linux Foundation Project, Software package data exchange. <uri>https://spdx.org/</uri> (accessed August 16, 2019).</mixed-citation>
+</ref>
+<ref id="ref063">
+<label>[63]</label><mixed-citation publication-type="other"><string-name><given-names>T.</given-names> <surname>Lebo</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Sahu</surname></string-name> and <string-name><given-names>D.</given-names> <surname>MacGuiness</surname></string-name>, PROV-O: The PROV ontology. <uri>https://www.w3.org/TR/prov-o/</uri> (accessed August 16, 2019).</mixed-citation>
+</ref>
+<ref id="ref064">
+<label>[64]</label><mixed-citation publication-type="other"><string-name><given-names>A.M.</given-names> <surname>Smith</surname></string-name>, <string-name><given-names>D.S.</given-names> <surname>Katz</surname></string-name> and <string-name><given-names>K.E.</given-names> <surname>Niemeyer</surname></string-name>, <article-title>Software citation principles</article-title>, <source>PeerJ Computer Science</source> <volume>2</volume> (<year>2016</year>), <elocation-id>e86</elocation-id>. doi:<pub-id pub-id-type="doi">10.7717/peerj-cs.86</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref065">
+<label>[65]</label><mixed-citation publication-type="other"><string-name><given-names>J.</given-names> <surname>Hausman</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Stall</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Gallagher</surname></string-name> and <string-name><given-names>M.</given-names> <surname>Wu</surname></string-name>, Software and services citation guidelines and examples ver 1, ESIP, 2019. doi:<pub-id pub-id-type="doi">10.6084/m9.figshare.7640426.v4</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref066">
+<label>[66]</label><mixed-citation publication-type="other"><string-name><given-names>D.S.</given-names> <surname>Katz</surname></string-name> and <string-name><given-names>N.P.</given-names> <surname>Chue Hong</surname></string-name>, Software citation in theory and practice, 2018. doi:<pub-id pub-id-type="doi">10.1007/978-3-319-96418-8_34</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref067">
+<label>[67]</label><mixed-citation publication-type="other"><string-name><given-names>A.J.G.</given-names> <surname>Gray</surname></string-name>, <string-name><given-names>C.A.</given-names> <surname>Goble</surname></string-name> and <string-name><given-names>R.</given-names> <surname>Jimenez</surname></string-name>, <chapter-title>Bioschemas: From potato salad to protein annotation</chapter-title>, in: <source>International Semantic Web Conference (Posters, Demos &amp; Industry Tracks)</source>, <year>2017</year>. <comment><uri>https://iswc2017.semanticweb.org/paper-579/</uri> (accessed August 16, 2019)</comment>.</mixed-citation>
+</ref>
+<ref id="ref068">
+<label>[68]</label><mixed-citation publication-type="other">RDA Research Metadata Schemas WG. <uri>https://www.rd-alliance.org/groups/research-metadata-schemas-wg</uri> (accessed August 16, 2019).</mixed-citation>
+</ref>
+<ref id="ref069">
+<label>[69]</label><mixed-citation publication-type="other">RDA Software Source Code Identification WG. <uri>https://rd-alliance.org/groups/software-source-code-identification-wg</uri>.</mixed-citation>
+</ref>
+<ref id="ref070">
+<label>[70]</label><mixed-citation publication-type="other"><string-name><given-names>P.J.C.</given-names> <surname>Aerts</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Hof</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Sufi</surname></string-name> and <string-name><given-names>C.</given-names> <surname>Martinez-Ortiz</surname></string-name>, Sustainable software sustainability – Workshop report, DANS, SSI, Netherlands eScience Center, 2019. <uri>https://www.software.ac.uk/wosss19</uri> (accessed August 16, 2019).</mixed-citation>
+</ref>
+<ref id="ref071">
+<label>[71]</label><mixed-citation publication-type="other"><string-name><given-names>P.A.</given-names> <surname>Martinez</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Erdmann</surname></string-name>, <string-name><given-names>N.</given-names> <surname>Simons</surname></string-name> <etal>et al.</etal>, Top 10 FAIR data &amp; software things, Zenodo, 2019. doi:<pub-id pub-id-type="doi">10.5281/zenodo.2555498</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref072">
+<label>[72]</label><mixed-citation publication-type="other"><string-name><given-names>N.</given-names> <surname>Chue Hong</surname></string-name> and <string-name><given-names>D.S.</given-names> <surname>Katz</surname></string-name>, FAIR enough? Can we (already) benefit from applying the FAIR data principles to software?, figshare, 2018. doi:<pub-id pub-id-type="doi">10.6084/m9.figshare.7449239.v2</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref073">
+<label>[73]</label><mixed-citation publication-type="other"><string-name><given-names>P.J.C.</given-names> <surname>Aerts</surname></string-name>, Sustainable software sustainability – Workshop report, DANS, 2017. doi:<pub-id pub-id-type="doi">10.17026/dans-xfe-rn2w</pub-id>.</mixed-citation>
+</ref>
+</ref-list>
+</back>
+</article>

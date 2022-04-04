@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.0 20120330//EN" "JATS-journalpublishing1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="resource-paper">
+<front>
+<journal-meta>
+<journal-id journal-id-type="publisher-id">DS</journal-id>
+<journal-title-group><journal-title>Data Science</journal-title></journal-title-group>
+<issn pub-type="epub">2451-8492</issn><issn pub-type="ppub">2451-8484</issn><issn-l>2451-8484</issn-l>
+<publisher>
+<publisher-name>IOS Press</publisher-name><publisher-loc>Nieuwe Hemweg 6B, 1013 BG Amsterdam, The Netherlands</publisher-loc>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">DS190016A</article-id>
+<article-id pub-id-type="doi">10.3233/DS-190016</article-id>
+<article-categories><subj-group subj-group-type="heading">
+<subject>Resource Paper</subject></subj-group></article-categories>
+<title-group>
+<article-title>Enabling text search on SPARQL endpoints through OSCAR</article-title>
+</title-group>
+<contrib-group content-type="Editor">
+<contrib contrib-type="editor">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0003-3499-8262</contrib-id>
+<name><surname>Gonzalez-Beltran</surname><given-names>Alejandra</given-names></name>
+</contrib>
+</contrib-group>
+<contrib-group>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0001-5366-5194</contrib-id>
+<name><surname>Heibi</surname><given-names>Ivan</given-names></name><xref ref-type="aff" rid="affa">a</xref><xref ref-type="corresp" rid="cor2">*</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0003-0530-4305</contrib-id>
+<name><surname>Peroni</surname><given-names>Silvio</given-names></name><xref ref-type="aff" rid="affb">b</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0001-5506-523X</contrib-id>
+<name><surname>Shotton</surname><given-names>David</given-names></name><xref ref-type="aff" rid="affc">c</xref>
+</contrib>
+<aff id="affa"><label>a</label>Digital Humanities Advanced Research Centre, Department of Classical Philology and Italian Studies, <institution>University of Bologna</institution>, Bologna, <country>Italy</country>. E-mail: <email>ivan.heibi2@unibo.it</email></aff>
+<aff id="affb"><label>b</label>Digital Humanities Advanced Research Centre, Department of Classical Philology and Italian Studies, <institution>University of Bologna</institution>, Bologna, <country>Italy</country>. E-mail: <email>silvio.peroni@unibo.it</email></aff>
+<aff id="affc"><label>c</label>Oxford e-Research Centre, <institution>University of Oxford</institution>, Oxford, <country>UK</country>. E-mail: <email>david.shotton@oerc.ox.ac.uk</email></aff>
+</contrib-group>
+<contrib-group content-type="guest-editors">
+<contrib contrib-type="guest-editor">
+<name><surname>Gonzalez-Beltran</surname><given-names>Alejandra</given-names></name>
+</contrib>
+<contrib contrib-type="guest-editor">
+<name><surname>Osborne</surname><given-names>Francesco</given-names></name>
+</contrib>
+<contrib contrib-type="guest-editor">
+<name><surname>Peroni</surname><given-names>Silvio</given-names></name>
+</contrib>
+<contrib contrib-type="guest-editor">
+<name><surname>Vahdati</surname><given-names>Sahar</given-names></name>
+</contrib>
+</contrib-group>
+<author-notes>
+<corresp id="cor2"><label>*</label>Corresponding author. E-mail: <email>ivan.heibi2@unibo.it</email>.</corresp>
+</author-notes>
+<pub-date date-type="preprint" publication-format="electronic"><day>10</day><month>4</month><year>2019</year></pub-date><pub-date date-type="pub" publication-format="electronic"><day>25</day><month>11</month><year>2019</year></pub-date><pub-date date-type="collection" publication-format="electronic"><year>2019</year></pub-date><volume>2</volume><issue>1-2</issue><issue-title>Scholarly Data Analysis (Semantics, Analytics, Visualisation)</issue-title><fpage>205</fpage><lpage>227</lpage><history><date date-type="received"><day>19</day><month>12</month><year>2018</year></date><date date-type="accepted"><day>13</day><month>02</month><year>2019</year></date></history>
+<permissions><copyright-statement>© 2019 – IOS Press and the authors.</copyright-statement><copyright-year>2019</copyright-year>
+<license xlink:href="https://creativecommons.org/licenses/by/4.0/" license-type="open-access" xlink:type="simple">
+<license-p>This is an open access article distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/" xlink:type="simple">Creative Commons Attribution (CC BY 4.0) License</ext-link>, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions>
+<abstract>
+<p>In this paper we introduce the latest version (Version 2.0) of OSCAR, the OpenCitations RDF Search Application, which has several improved features and extends the query workflow comparing with the previous version (Version 1.0) that we presented at the workshop entitled <italic>Semantics, Analytics, Visualisation: Enhancing Scholarly Dissemination</italic> (SAVE-SD 2018), held in conjunction with The Web Conference 2018. OSCAR is a user-friendly search platform that can be used to search any RDF triplestore providing a SPARQL endpoint, while hiding the complexities of SPARQL, thus making the search operations accessible to those who are not experts in Semantic Web technologies. We present here the basic features and the main extensions of this latest version of OSCAR. In addition, we demonstrate how it can be adapted to work with different SPARQL endpoints containing scholarly data, using as examples the OpenCitations Corpus (OCC) and the OpenCitations Index of Crossref open DOI-to-DOI citations (COCI), both provided by OpenCitations, and also the Wikidata dataset provided by the Wikimedia Foundation. We conclude by reporting the usage statistics of OSCAR, retrieved from the OpenCitations website logs, so as to demonstrate its uptake.</p>
+</abstract>
+<kwd-group>
+<label>Keywords</label>
+<kwd>OSCAR</kwd>
+<kwd>OpenCitations</kwd>
+<kwd>OCC</kwd>
+<kwd>COCI</kwd>
+<kwd>SPARQL</kwd>
+<kwd>free-text search</kwd>
+<kwd>scholarly data</kwd>
+<kwd>advanced search</kwd>
+</kwd-group>
+</article-meta>
+</front>
+<body>
+<sec id="x1-1000-1">
+<label>1.</label>
+<title>Introduction</title>
+<p>The amount of data available on the World Wide Web (the Web) is increasing rapidly, and finding relevant information by searching the Web is a daily challenge. Traditional search techniques rely on a textual matching of words and do not take into consideration the semantic information behind the textual content. The Semantic Web [<xref ref-type="bibr" rid="ref001">1</xref>] is an approach which attempts to overcome these limitations by representing knowledge on the World Wide Web in a way that can be interpreted by machines. In particular, these data are expressed by means of RDF [<xref ref-type="bibr" rid="ref002">2</xref>], a data model that enables one to define information in the form of machine-readable subject-predicate-object statements. Usually, these RDF statements are stored in a particular kind of RDF database called <italic>triplestore</italic>, which can be queried by means of SPARQL [<xref ref-type="bibr" rid="ref004">4</xref>], the query language for RDF data.</p>
+<p>SPARQL is a very powerful query language that can be used to look for data that follow specific patterns. When institutions such as the British Library<xref ref-type="fn" rid="fn-1">1</xref><fn id="fn-1"><label><sup>1</sup></label>
+<p><uri>http://bnb.data.bl.uk/</uri></p></fn> and the British Museum,<xref ref-type="fn" rid="fn-2">2</xref><fn id="fn-2"><label><sup>2</sup></label>
+<p><uri>https://collection.britishmuseum.org/</uri></p></fn> and projects such as Wikidata<xref ref-type="fn" rid="fn-3">3</xref><fn id="fn-3"><label><sup>3</sup></label>
+<p><uri>https://www.wikidata.org/</uri></p></fn> and DBpedia,<xref ref-type="fn" rid="fn-4">4</xref><fn id="fn-4"><label><sup>4</sup></label>
+<p><uri>http://dbpedia.org/sparql</uri></p></fn> want to make available their RDF data to the public, they usually provide a specialised Web interface to a SPARQL endpoint of their triplestore, so as to enable users to conduct programmatic searches for particular information, which is returned in one or more formats (usually HTML, XML, JSON and CSV). However, this SPARQL query language is quite complex to learn and is normally usable only by experts in Semantic Web technologies, remaining completely obscure to ordinary Web users.</p>
+<p>In order to make such SPARQL endpoints usable by a broader audience, without obliging such users to become experts in Semantic Web technology, we have developed OSCAR, the OpenCitations RDF Search Application, previously described at the SAVE-SD 2018 Workshop<xref ref-type="fn" rid="fn-5">5</xref><fn id="fn-5"><label><sup>5</sup></label>
+<p><uri>https://save-sd.github.io/2018/</uri></p></fn> (co-located with The Web Conference 2018<xref ref-type="fn" rid="fn-6">6</xref><fn id="fn-6"><label><sup>6</sup></label>
+<p><uri>https://www2018.thewebconf.org/</uri></p></fn>) [<xref ref-type="bibr" rid="ref006">6</xref>]. OSCAR is a user-friendly search platform that can be used with any RDF triplestore providing a SPARQL endpoint, and which is entirely built without the need for integration of external application components. It provides a configurable mechanism that allows one to query a triplestore by means of a textual user input following definable rules, while in the background one or more SPARQL queries elaborate the user requests. The main idea is that Semantic Web experts need only be employed in the initial configuration of the system to work with a particular triplestore, by customizing a particular configuration file that provides the text-search interface and that then enables any user to query and filter the results returned by the underlying SPARQL queries by means of appropriate facets and parameters.</p>
+<p>The development of OSCAR is one of the outcomes of the OpenCitations Enhancement Project,<xref ref-type="fn" rid="fn-7">7</xref><fn id="fn-7"><label><sup>7</sup></label>
+<p><uri>https://opencitations.wordpress.com/2017/05/15/the-sloan-foundation-funds-opencitations/</uri></p></fn> funded by the Alfred P. Sloan Foundation<xref ref-type="fn" rid="fn-8">8</xref><fn id="fn-8"><label><sup>8</sup></label>
+<p><uri>https://sloan.org/</uri></p></fn> and run by OpenCitations<xref ref-type="fn" rid="fn-9">9</xref><fn id="fn-9"><label><sup>9</sup></label>
+<p><uri>http://opencitations.net/</uri></p></fn> [<xref ref-type="bibr" rid="ref013">13</xref>,<xref ref-type="bibr" rid="ref018">18</xref>]. One of the main aims of OpenCitations is to build open repositories of scholarly citation data with accurate citation information (bibliographic references) harvested from the scholarly literature. Currently, OpenCitations provides two different datasets, i.e. the OCC<xref ref-type="fn" rid="fn-10">10</xref><fn id="fn-10"><label><sup>10</sup></label>
+<p><uri>https://w3id.org/oc/corpus</uri></p></fn> (the OpenCitations Corpus) [<xref ref-type="bibr" rid="ref014">14</xref>] and COCI<xref ref-type="fn" rid="fn-11">11</xref><fn id="fn-11"><label><sup>11</sup></label>
+<p><uri>https://w3id.org/oc/index/coci</uri></p></fn> (the OpenCitations Index of Crossref open DOI-to-DOI citations). These datasets are provided in RDF format and available for querying via two separate SPARQL endpoints. OSCAR was successfully configured and integrated inside the OpenCitations website so as to enable searches on these datasets, thus permitting ordinary Web users to compose and obtain responses to simple textual queries.</p>
+<p>The original version of OSCAR (Version 1.0), described in [<xref ref-type="bibr" rid="ref006">6</xref>], was able to accept free-text queries that were analysed so as to understand the user intent, and then executed in the background by employing the appropriate SPARQL query. Since then, we have developed new features in response to users needs and the outcomes of the usability studies described in [<xref ref-type="bibr" rid="ref006">6</xref>]. This paper reports these new features, made possible by additions of the OSCAR architecture. Specifically:</p>
+<list list-type="bullet">
+<list-item>
+<p>Users now have the ability, using an advanced query interface, to create multiple field queries and to combine them using logical connectors. For example, it is possible to query for articles published in 2015 that have ‘John Michael’ as one of the authors. The logical connectors available are “AND”, “OR”, and “AND NOT”, as in existing approaches for building such complex queries, such as that implemented in Scopus.<xref ref-type="fn" rid="fn-12">12</xref><fn id="fn-12"><label><sup>12</sup></label>
+<p><uri>https://www.scopus.com/</uri></p></fn></p>
+</list-item>
+<list-item>
+<p>A set of preprocessing functions are available that can be applied to the initial input in order to modify its form, so as to make it suitable for use within the specified SPARQL queries – e.g. “provide the lowercase version of the input DOI”.</p>
+</list-item>
+<list-item>
+<p>The table of results returned by a SPARQL query is extended, with new columns containing additional data retrieved by calling external services, such as REST APIs.</p>
+</list-item>
+<list-item>
+<p>Users can specify conversion rules, which are employed to modify the values in the results table into formats more appropriate for visualisation purposes – e.g. an ISO date such as “2018-11-27” can be presented as “27 November 2018”.</p>
+</list-item>
+<list-item>
+<p>The organisation of the configuration file that has to be created to customise OSCAR for a particular SPARQL endpoint has been restructured into a more intuitive and comprehensible form. In addition, the customization of additional stylistic and filtering features are enabled.</p>
+</list-item>
+</list>
+<p>To demonstrate the current usage of OSCAR, and its reusability in contexts different from the one for which had been developed (i.e. searching the OpenCitations Corpus), we have analysed the traffic log of its use on the OpenCitations databases, and we demonstrate a configuration of an OSCAR instance that works the Wikidata SPARQL endpoint [<xref ref-type="bibr" rid="ref019">19</xref>]. Although our focus is on the scholarly domain, from which we take our examples of SPARQL endpoints to query, we would like to stress the fact that OSCAR is fully customizable to any domain and applicable for SPARQL endpoints of RDF triplestores containing other types of data.</p>
+<p>The rest of the article is organized as follows. In Section <xref rid="x1-2000-2">2</xref>, we describe some of the most important existing SPARQL-based searching tools. In Section <xref rid="x1-4000-3">3</xref>, we describe OSCAR and discuss its model definition and architectural form, with a special focus on the new features introduced in Version 2.0. In Section <xref rid="x1-8000-4">4</xref>, we demonstrate its use with two OpenCitations datasets (COCI and OCC) and with Wikidata, while, in Section <xref rid="x1-12000-5">5</xref>, we give some statistics about its use within OpenCitations. Finally, in Section <xref rid="x1-15000-6">6</xref>, we conclude the article and sketch out some future works.</p>
+</sec>
+<sec id="x1-2000-2">
+<label>2.</label>
+<title>Related works</title>
+<p>In the past, several projects that allow the customisation of SPARQL queries according to user needs have been presented. They can be classified into two categories. The first generate and apply SPARQL queries starting from a free text or a form-based input search, hiding the complexities of the SPARQL query behind a simple and familiar-looking search interface. We say that these interfaces are ’unaware-user’ tools since they permit users to make textual queries without needing to understand the complexity of the Semantic Web languages used for storing and querying the data.</p>
+<p>Scholia [<xref ref-type="bibr" rid="ref011">11</xref>] is such a tool. It is a Web application to expose scientific bibliographic information through Wikidata. In particular, its Web service creates on-the-fly scholarly profiles for researchers, organizations, journals, publishers, individual scholarly works, and research topics, by querying the SPARQL-based Wikidata Query Service. A search field on the front page of Wikidata permits a user to look for a particular name and displays its data by means of well-structured visual interfaces.</p>
+<p>Another tool of this type is BioCarian [<xref ref-type="bibr" rid="ref020">20</xref>]. This is an efficient and user-friendly search engine for performing exploratory searches on biological databases, providing an interface for SPARQL queries over RDF triplestores, and providing a graphical interface for the results based on facets. It allows complex queries to be constructed and has additional features like filtering and ranking the results according to user-selected facet values.</p>
+<p>A further striking example of this category of tools, fully customisability by users wishing to define a user-friendly SPARQL query service on their datasets, is Elda, the Epimorphics implementation of the Linked Data API.<xref ref-type="fn" rid="fn-13">13</xref><fn id="fn-13"><label><sup>13</sup></label>
+<p><uri>http://www.epimorphics.com/web/tools/elda.html</uri></p></fn> ELDA is a Java implementation of the Linked Data API,<xref ref-type="fn" rid="fn-14">14</xref><fn id="fn-14"><label><sup>14</sup></label>
+<p><uri>https://code.google.com/p/linkeddata-api</uri></p></fn> that provides a configurable way to create an API to access RDF datasets using simple RESTful URLs. These URLs are mapped into the corresponding SPARQL queries to be executed on the defined SPARQL endpoints. It can be configured into a web application that permits users to access and view the data easily through a web browser.</p>
+<p>OSCAR, of course, is a further member of this category of ‘unaware-user’ tools.</p>
+<p>The other category refers to tools that aim at helping the user to build a SPARQL query by using specific visual constructs that mimic the various operations made available by SPARQL (filters, values selections, etc.). In this case, the users are very aware that they are using Semantic Web technologies, and the function of these tools is only to guide the user in creating the query of interest. These tools are grouped under the label ‘aware-user’ tools.</p>
+<p>Within this category, we have the Wikidata Query Service (WDQS) [<xref ref-type="bibr" rid="ref010">10</xref>], which is a Web interface that enables the creation of a SPARQL query by writing the actual label associated to each item and property, instead of employing the URL customarily used for identifying it. In addition, it makes available several visualisation interfaces for the results, from a simple table to very complex diagrams and graphs. The strategy adopted in WDQS is close to that proposed by two other tools: NITELIGHT [<xref ref-type="bibr" rid="ref017">17</xref>], a Graphical Tool for Semantic Query Construction, and YASGUI [<xref ref-type="bibr" rid="ref015">15</xref>] [<xref ref-type="bibr" rid="ref016">16</xref>] (Yet Another SPARQL GUI). YASGUI does not actually offer the possibility of building the SPARQL query graphically, nor does it translate the SPARQL query in any graphical representation. However, an important feature of YASGUI is that it provides the automatic completion of the query at real time.</p>
+<p>ViziQuer [<xref ref-type="bibr" rid="ref021">21</xref>] is another tool which extracts and visualizes graphically the data schema of the endpoint. The user is then able to overview the data schema and use the understanding gained to construct a SPARQL query according to that schema.</p>
+<p>Along the same lines is Visual SPARQL Builder (VSB),<xref ref-type="fn" rid="fn-15">15</xref><fn id="fn-15"><label><sup>15</sup></label>
+<p><uri>https://leipert.github.io/vsb/</uri></p></fn> a tool which allows users to create and run SPARQL queries with a browser’s graphical interface. While WDQS exposes the SPARQL query to the user, VSB hides it entirely behind blocks which explicitly represent all the SPARQL constructs, including filters. Upon execution, the visual queries are translated to SPARQL code, which is made accessible to the user, and the results are shown in structured tables.</p>
+<sec id="x1-3000-2.1">
+<label>2.1.</label>
+<title>Tools comparison</title>
+<p>Here we compare these aforementioned tools with OSCAR. The comparison is based on a set of relevant features common to SPARQL-based searching engines. The chosen features are based on our personal observations of the related tools and of OSCAR usage. Table <xref rid="x1-3001-1">1</xref> lists the selected features and provides a brief description of each one.</p>
+<table-wrap id="x1-3001-1">
+<label>Table 1</label>
+<caption>
+<p>A brief description of the features used to compare the tools mentioned in the previous section. These features cover important common aspects of SPARQL-based search engines</p>
+</caption>
+<table frame="hsides" rules="groups">
+<thead>
+<tr>
+<td valign="top" align="left">Feature</td>
+<td valign="top" align="center">Description</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top" align="left">Searching options</td>
+<td valign="top" align="left">The type of actions available in the tool interface to let users query the RDF dataset</td>
+</tr>
+<tr>
+<td valign="top" align="left">Dataset</td>
+<td valign="top" align="left">The type of datasets the tool handles</td>
+</tr>
+<tr>
+<td valign="top" align="left">Pre-processing</td>
+<td valign="top" align="left">The set of operations the tool performs before the SPARQL query execution</td>
+</tr>
+<tr>
+<td valign="top" align="left">Post-processing</td>
+<td valign="top" align="left">The set of operations the tool performs after the SPARQL query execution, these operations taking effect on the retrieved SPARQL query results</td>
+</tr>
+<tr>
+<td valign="top" align="left">Filtering options</td>
+<td valign="top" align="left">The filters that can be applied to the results from the tool interface</td>
+</tr>
+<tr>
+<td valign="top" align="left">View and edit the SPARQL query</td>
+<td valign="top" align="left">Indicates that it is possible to preview the SPARQL query and edit it manually</td>
+</tr>
+<tr>
+<td valign="top" align="left">Statistics and performances of the executed Query</td>
+<td valign="top" align="left">Indicates that the tool calculates and shows statistics regarding the SPARQL query execution (e.g. time of execution)</td>
+</tr>
+<tr>
+<td valign="top" align="left">Layout</td>
+<td valign="top" align="left">The way results are represented and shown</td>
+</tr>
+<tr>
+<td valign="top" align="left">Presentation</td>
+<td valign="top" align="left">The set of available operations to alter the graphical presentation of the results</td>
+</tr>
+<tr>
+<td valign="top" align="left">Export data</td>
+<td valign="top" align="left">Whether is possible to export the shown results, the data-format will also be specified</td>
+</tr>
+<tr>
+<td valign="top" align="left">Customisability</td>
+<td valign="top" align="left">The options the tool guarantee to let users customize it to there own needs and usage through one or more configuration file</td>
+</tr>
+<tr>
+<td valign="top" align="left">Programming language</td>
+<td valign="top" align="left">The programming language used to develop the tool</td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+<fig id="x1-3002-1">
+<label>Fig. 1.</label>
+<caption>
+<p>Comparison table for SPARQL-based searching tools. The first column lists the features used to compare the tools presented individually in each following column. The features are: searching options; dataset; pre-processing; post-processing; filtering options; view and edit the SPARQL query; layout; presentation; export data; system requirements; customisability, programming language. The tools are represented in 3 categories: (1) OSCAR, our proposed tool, (2) other ‘unaware-user’ tools: Scholia, Elda and BioCarian, (3) ‘aware-user’ tools: ViziQuer, VSB, NITELIGHT, YASGUI and WDSQ.</p>
+</caption>
+<graphic xlink:href="ds-2-ds190016a-g001.jpg"/>
+</fig>
+<p>Taking into consideration these features, we have built a comparison table, shown in Fig. <xref rid="x1-3002-1">1</xref>, illustrating how each tool rates for these features. OSCAR is included, although detailed descriptions of all its properties are given later in this paper. The tools having a green background indicate the ‘unaware-user’ tools: applications that let users query the dataset without explicit knowledge of the SPARQL query, using instead simple textual values as input. The tools with yellow background indicate the ‘aware-user’ tools: applications that let users edit a shown SPARQL query directly, in some cases with the assistance of visual constructs and graphical instruments provided by the tool.</p>
+<p>From the data presented in Fig. <xref rid="x1-3002-1">1</xref>, we notice that ELDA is the closest tool to OSCAR. The main difference is regarding the ‘Post operations’. In OSCAR we wanted to let the adopter permit additional customizable actions over the results retrieved from the SPARQL query execution. We achieve this by combining SPARQL with Javascript to build a more powerful mechanism to control the display of the final results generated in response to the SPARQL query. On the other hand, ELDA upstages OSCAR in supporting the customization of the SPARQL query and presenting query execution statistics.</p>
+<p>When looking at the ‘Layout’ feature, we can see that Scholia is the one that offers the greatest number of graphical presentations, these visual representations being generated by the integration of the WDQS components. While the main purpose of OSCAR is for searching a triplestore and presenting a list of the items matching the search criteria, the additional activity of browsing the resources is the function of a separate additional application we have created, called LUCINDA. LUCINDA<xref ref-type="fn" rid="fn-16">16</xref><fn id="fn-16"><label><sup>16</sup></label>
+<p><uri>https://github.com/opencitations/lucinda</uri></p></fn> is compatible with and integrates with OSCAR, but is separate from it.</p>
+<p>From the listed tools, there are only three (including OSCAR) which can be customized and redefined according to personal needs. Of these, only OSCAR and ELDA provide a customizable configuration for the generated GUI.</p>
+<p>Of those ‘aware-user’ tools (with yellow background), where the user acts explicitly on the SPARQL queries, few permit any pre/post query operations. The common approach is to work directly on the SPARQL query, by helping users build queries that satisfy their needs, without additional post-processing. The fact that they don’t have any pre-processing operation is due to the fact that users have full control of the values inserted inside the SPARQL queries.</p>
+</sec>
+</sec>
+<sec id="x1-4000-3">
+<label>3.</label>
+<title>OSCAR, the OpenCitations RDF Search Application</title>
+<p>OSCAR, the OpenCitations RDF Search Application, is an open-source stand-alone javascript application which can be embedded in a webpage so as to provide a human-friendly interface to search for data within RDF triplestores by means of SPARQL queries. It is possible to configure OSCAR to work with a particular SPARQL endpoint by configuring a JSON document which specifies how the SPARQL queries are sent to that endpoint, and how the returned query results should be visualized, according to the predefined tabular view that OSCAR provides. The source code and documentation of OSCAR are available on GitHub at <uri>https://github.com/opencitations/oscar</uri>. OSCAR is currently licensed under the ISC License.<xref ref-type="fn" rid="fn-17">17</xref><fn id="fn-17"><label><sup>17</sup></label>
+<p><uri>https://github.com/opencitations/oscar/blob/master/LICENSE</uri></p></fn> The second version of OSCAR presented in this paper is also available for download through the Zenodo service [<xref ref-type="bibr" rid="ref005">5</xref>]. This published version of OSCAR on Zenodo is a stable one, uploaded after the last commit made on the GitHub repository before submitting this paper.</p>
+<p>When OSCAR was presented for the first time at the SAVE-SD 2018 Workshop [<xref ref-type="bibr" rid="ref006">6</xref>], we had configured it to meet the need for a number of specific requirements, based on our experience and observation of the requirements of users while requesting data included in the OpenCitations datasets. In particular:</p>
+<list list-type="bullet">
+<list-item>
+<p>OSCAR must permit one to operate on and post-process the result set returned by the execution of a SPARQL query. These operations could be applied to one or more of the result fields included in the tabular interface presented to a user, and needed to be done dynamically at real time without any further querying of the SPARQL endpoint;</p>
+</list-item>
+<list-item>
+<p>each part of OSCAR – interface, functionalities and queries – must be customizable according to the user needs. This operation should be handled easily through a specific configuration module;</p>
+</list-item>
+<list-item>
+<p>OSCAR must be easily configured to work with any RDF triplestore providing a SPARQL endpoint, and must also be easy to integrate as a new module within any webpage.</p>
+</list-item>
+</list>
+<p>As a consequence of the outcomes of the usability test described in [<xref ref-type="bibr" rid="ref006">6</xref>] and in response to additional feedback gathered from users of OSCAR through personal communication, we have extended the aforementioned requirements with the following ones, so as to significantly improve the searching experience and potentials of OSCAR:</p>
+<list list-type="bullet">
+<list-item>
+<p>To allow an additional more sophisticated advanced search form, which connects a number of rule-oriented queries using logical connectors, specifically “AND”, “OR” and “AND NOT”.</p>
+</list-item>
+<list-item>
+<p>To pre-process the query input provided by a user into a more useful form for the construction of the SPARQL query, by the application of some heuristics.</p>
+</list-item>
+<list-item>
+<p>To make available additional post-processing operations, such as to integrate additional data on the table of results by calling external services (e.g. REST API) and/or converting specific values in the result table into a more appropriate form for visualisation purposes, e.g. converting ISO dates (“2018-11-27”) into natural dates (“27 November 2018”).</p>
+</list-item>
+</list>
+<p>In the following subsections, we describe the general architecture of OSCAR, its workflow, and how its customisation (via the configuration file) works, focusing in particular on the new components integrated into Version 2.0 of OSCAR presented in this article, since a detailed discussion of the features of Version 1.0 has already been provided [<xref ref-type="bibr" rid="ref006">6</xref>].</p>
+<sec id="x1-5000-3.1">
+<label>3.1.</label>
+<title>Architecture of OSCAR</title>
+<p>All the functionalities implemented by OSCAR are executed in the browser (client side), so as to make it easily reusable in different contexts and with different Web sites without the need of handling specific programming languages for running the back-end scripts. In particular, each OSCAR instance is defined by three files:</p>
+<list>
+<list-item id="x1-5002x-1">
+<label>(1)</label>
+<p><italic>search.js</italic>, the main core of the tool, which handles its behaviour and defines its model;</p>
+</list-item>
+<list-item id="x1-5004x-2">
+<label>(2)</label>
+<p><italic>search-conf.js</italic>, the configuration file which defines all the parameters and customises OSCAR to work with a specific SPARQL-endpoint;</p>
+</list-item>
+<list-item id="x1-5006x-3">
+<label>(3)</label>
+<p><italic>search.css</italic>, the CSS stylesheet that defines the layout and other stylistic aspects of the OSCAR user interface.</p>
+</list-item>
+</list>
+<p>All these files need first to be imported into an HTML page that will provide the user with the OSCAR text query interface. In addition, a skeleton HTML snippet needs to be included in such a Web page, that will be populated with the result of the OSCAR search operation. This snippet is defined as follows:</p><graphic xlink:href="ds-2-ds190016a-g002.jpg"/>
+<p>The skeleton layout of the aforementioned OSCAR results interface (element div with attribute <monospace>@id = search</monospace>) is composed of three main sections, defined by specific div elements: the section <italic>extra</italic> (<monospace>@id = search_extra</monospace>), the section <italic>header</italic> (<monospace>@id = search_header</monospace>), and the section <italic>body</italic> (<monospace>@id = search_body</monospace>).</p>
+<p>The section <italic>extra</italic> can be used to make available additional functionalities and operations to the results of a search operation. Currently, it includes a mechanism for exporting the results shown as a CSV file. The section <italic>header</italic> contains components that allow one to modify the table of results from a visual perspective – e.g. by specifying the maximum number of rows to be visualized per page, and by sorting the results according to a specific column or field. Finally, the section <italic>body</italic> is where the results are actually shown. It contains a table populated with the results obtained from the query execution, and a series of filters that enable a user to refine the results, so as to retain or exclude specific values.</p>
+<p>The organisation of the structure of the aforementioned sections (and of all the subsections they contain) can be customized according to particular needs. In particular, one can decide which components are to be included within or excluded from the results Web page by keeping within that Web page the relevant HTML fragment, or by omitting it. Furthermore, while OSCAR provides a set of basic layout rules for all the components, these can be freely customised so as to align them with the particular style required by the Web site under consideration.</p>
+</sec>
+<sec id="x1-6000-3.2">
+<label>3.2.</label>
+<title>The workflow</title>
+<p>The workflow implemented by OSCAR is described in Fig. <xref rid="x1-6001-2">2</xref>, where we introduce all the operations that OSCAR enables, and the various steps it runs as consequences of such operations. The process starts with the generation of the search interface, which is the mechanism used to permit someone to decide between two searching options: either (1) to input a simple free textual query within the text search box provided by the interface, or (2) to perform an advanced search using multiple field queries, connecting them by means of the “AND”, “OR”, and “AND NOT” logical operations. This results in two different workflows, according to the searching choice made by the user.</p>
+<fig id="x1-6001-2">
+<label>Fig. 2.</label>
+<caption>
+<p>The workflow implemented by OSCAR (in blue, at the top) and the set of operations that a user can perform by using the search interface and the results interface (in yellow, below). The bold elements are the new extensions added in Version 2.0 as a result of the feedback gathered during the usability testing session described in the SAVE-SD 2018 workshop [<xref ref-type="bibr" rid="ref006">6</xref>]. The red arrows define the specific workflow of the advanced search. Each operation is connected to the particular step within the workflow that will be executed as a consequence of that operation. The set of operations are possible only after precise steps in the workflow (the dashed lines specify these steps). After the execution of an operation, the workflow execution will move to the next linked step.</p>
+</caption>
+<graphic xlink:href="ds-2-ds190016a-g003.jpg"/>
+</fig>
+<p>In case of a free text search, when a query is run (by pressing the enter key or by clicking on the lens provided in the interface to the right of the free-text field), OSCAR determines which SPARQL query it has to execute in order to provide results to match the particular textual input specified. As described in more detail in Section <xref rid="x1-7000-3.3">3.3</xref>, the configuration file allows one to specify a sequence of rules, each defining a SPARQL query and a particular regular expression. OSCAR iterates each rule as it appears in the sequence, and it runs the related SPARQL query with the application of a number of heuristics (defined in the configuration file) only if the input text matches the regular expression specified in the rule under consideration. If no results are returned by that particular SPARQL query, OSCAR iterates to the next rule and its associated SPARQL query until a result is returned, or until no result is found.</p>
+<p>On the other hand, if a user chooses to run an advanced search, the workflow will directly start from the application of the heuristics and the execution of a complex SPARQL query, which is made through the combination of several SPARQL group patterns combined through the appropriate connectors (e.g. “UNION” and “FILTER NOT EXISTS”) according to the logical connectors chosen by the user from the Web interface. Once we have a set of results returned by the SPARQL query, we move directly to the post-processing phase. This workflow is shown by means of red arrows in Fig. <xref rid="x1-6001-2">2</xref>.</p>
+<p>Once a result is returned, additional operations are executed. First, OSCAR checks if some of the fields returned in the result table actually represent URL links for values of other fields – according to what is specified in the configuration file – and, if that is the case, it creates explicit links in the resulting Web page. For instance, if we consider a simple two-column table where each row describes the title of an article and the URL from which one can retrieve its full metadata, OSCAR can be configured to show the article title as a clickable link that allows one to go to the descriptive page for that article, by incorporating into the title the related URL that would otherwise have been displayed in the second column.</p>
+<p>Then, OSCAR performs two new operations we have built for Version 2.0 if they are activated in the configuration file. First, it calls external services using as parameters the values present in the table returned by the SPARQL query, so as to integrate and/or extend the current table of results with additional information (e.g. a new column). For instance, considering the metadata describing a particular bibliographic resource (such as those available in the OpenCitations Corpus), it is possible to call the Crossref API<xref ref-type="fn" rid="fn-18">18</xref><fn id="fn-18"><label><sup>18</sup></label>
+<p><uri>https://api.crossref.org/</uri></p></fn> with the DOI of the bibliographic resource (already specified in the table returned after the SPARQL query), to retrieve the ISSN of the related journal where such bibliographic resource has been published, and then to integrate such a new value under a new ‘issn’ column. Second, OSCAR enables one to expose the values of specific columns in the table according to a new format following precise transformation rules (expressed as regular expressions) specified in the configuration file. For instance, the given name of a person (e.g. “John”) could be mapped into a new shape which keeps only its first letter followed by a dot (e.g. “J.”).</p>
+<p>After these passages, OSCAR performs a grouping operation following the parameters indicated in the configuration file. This kind of operation allows one to group multiple rows of the results table according to a particular field (a key). All the fields of such rows will be collected together, for example by concatenating their textual values. For instance, consider the following query to be executed on the OpenCitations Corpus SPARQL endpoint:</p><preformat><monospace>SELECT ?title ?iri ?author {</monospace>
+<monospace>  ?iri</monospace>
+<monospace>    dcterms:title ?title ;</monospace>
+<monospace>    pro:isDocumentContextFor [</monospace>
+<monospace>      pro:withRole pro:author ;</monospace>
+<monospace>      pro:isHeldBy [</monospace>
+<monospace>        foaf:familyName ?author</monospace>
+<monospace>      ]</monospace>
+<monospace>    ]</monospace>
+<monospace>}</monospace>
+</preformat>
+<p>This query will return a three column table which includes the title of a bibliographic resource, its IRI, and the name of the author. Where a certain bibliographic resource has multiple authors, multiple rows will be returned (one for each author of the article), each repeating the title and IRI of the bibliographic resource and listing one of its authors in the third field. The grouping operation performed by OSCAR groups all of these authors into one “author” cell in the third column, so as to provide just one row per bibliographic resource in the result table.</p>
+<p>Finally, OSCAR allows one to specify just a specific subset of the fields returned by the SPARQL endpoint to display in the Web page, according to the specification given within the configuration file. For instance, using the same example provided above, in this phase we can exclude the second column depicting the IRI of the bibliographic resource since this IRI could have already been incorporated into a clickable link added to the article title in the first column.</p>
+<p>All the data obtained by the aforementioned operations are initialized and stored internally in four different forms, called <italic>native data</italic>, <italic>filtered data</italic>, <italic>sorted data</italic> and <italic>visualised data</italic> respectively. Native data are the complete original result-set after the execution of the aforementioned search operations. Filtered data are the subset of the native data after the application of filtering operations executed by a user through the OSCAR web interface (e.g. “show only the articles published in 2016”). Sorted data are the subset of the filtered data after the execution (still by the user, through the Web interface) of sorting operations (e.g. “sort the rows in descending order according to the number of citations that the bibliographic resources have received”). Finally, visualised data are the subset of the sorted data that are displayed in the Web page (for example, the first twenty results), while the others are hidden behind a pagination mechanism so as to avoid filling up the entire page with all the results.</p>
+<p>It is worth mentioning that, in the initialization phase, before filtering and sorting, all the filtered data and sorted data are equivalent to the native data, while the visualised data (i.e. those actually shown in the webpage) are a subset of the sorted data initially created using the display parameters specified in the configuration file. The filtered and sorted data are then subsequently modified as a consequence of the filtering and sorting operations undertaken by a user through the OSCAR Web interface. In fact, once all the various data are initialised, OSCAR builds its layout and interface, and thus enables the user to interact with the results by executing certain types of operation on the data – i.e. exporting, filtering, sorting and visualising – introduced above. All the aforementioned operations, with the exception of the exporting operation, result in updating the user interface, which shows only the new subset of visualised data obtained as a consequence of each operation, as summarized in Table <xref rid="x1-6002-2">2</xref>.</p>
+<table-wrap id="x1-6002-2">
+<label>Table 2</label>
+<caption>
+<p>All the possible operations that a user can perform on the results returned by a free-text search, arranged by the steps in the OSCAR workflow in the order that they are executed</p>
+</caption>
+<table frame="hsides" rules="groups">
+<thead>
+<tr>
+<td valign="top" align="left">Step</td>
+<td valign="top" align="center">Operation</td>
+<td valign="top" align="center">Data modified</td>
+<td valign="top" align="center">Description</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top" align="left">Export</td>
+<td valign="top" align="left">Export into a CSV file</td>
+<td valign="top" align="left">Sorted data</td>
+<td valign="top" align="left">The sorted data are exported into a CSV file</td>
+</tr>
+<tr>
+<td valign="top" align="left">Filter</td>
+<td valign="top" align="left">Show all results</td>
+<td valign="top" align="left">Filtered data</td>
+<td valign="top" align="left">The filtered data are reset to the native data</td>
+</tr>
+<tr>
+<td valign="top" align="left">Filter</td>
+<td valign="top" align="left">Modify number of results</td>
+<td valign="top" align="left">Filtered data</td>
+<td valign="top" align="left">Reduce the filtered data to a specified number of rows</td>
+</tr>
+<tr>
+<td valign="top" align="left">Filter</td>
+<td valign="top" align="left">Filter by field</td>
+<td valign="top" align="left">Filtered data</td>
+<td valign="top" align="left">Exclude or show only the filtered data equal to some specific values of a certain field</td>
+</tr>
+<tr>
+<td valign="top" align="left">Sort</td>
+<td valign="top" align="left">Sort results by field</td>
+<td valign="top" align="left">Filtered data</td>
+<td valign="top" align="left">Sort (in ascending or descending order) all the filtered data according to the value of a particular field</td>
+</tr>
+<tr>
+<td valign="top" align="left">Visualize</td>
+<td valign="top" align="left">Browse pages</td>
+<td valign="top" align="left">Visualised data</td>
+<td valign="top" align="left">Show the visualized data, organized into pages, page by page</td>
+</tr>
+<tr>
+<td valign="top" align="left">Visualize</td>
+<td valign="top" align="left">Modify number of rows</td>
+<td valign="top" align="left">Visualised data</td>
+<td valign="top" align="left">Increase or decrease the number of visualized data row shown at any one time in the Web page</td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+</sec>
+<sec id="x1-7000-3.3">
+<label>3.3.</label>
+<title>Customising OSCAR</title>
+<p>OSCAR offers a flexible way to customise its behaviour according to different needs. In particular, an adopter has to modify a particular configuration file (i.e. <italic>search-conf.js</italic>, which contains a JSON object) so as to customize the tool for the particular SPARQL endpoint to be queried – as illustrated in the documentation of the tool available on the GitHub repository.<xref ref-type="fn" rid="fn-19">19</xref><fn id="fn-19"><label><sup>19</sup></label>
+<p><uri>https://github.com/opencitations/oscar/blob/master/doc/README.md</uri></p></fn> An excerpt of an exemplary configuration file is shown as follows (while a full example<xref ref-type="fn" rid="fn-20">20</xref><fn id="fn-20"><label><sup>20</sup></label>
+<p><uri>http://opencitations.net/static/js/search-conf.js</uri></p></fn> is available online):</p><graphic xlink:href="ds-2-ds190016a-g004.jpg"/>
+<p>This configuration file allows one to specify the SPARQL endpoint against which the SPARQL queries are to be run, and the SPARQL prefixes to use in the various queries. In addition, it enables the specification of the rules for executing the appropriate SPARQL queries. In particular, each rule includes a name, an activator (i.e. a regular expression shaping a particular string pattern), a category describing the types of data that will be collected (see below), and the SPARQL query to include into the macro query, defined under the specified category, in order to build the correct sequence of SPARQL group patterns to execute once the activator matches with the textual input query provided by the user. In the case of an advanced search, we might have multiple queries from several rules which need to be connected, following the logical connectors specified in the user interface (“AND”, “OR”, and “AND NOT”), with the corresponding SPARQL constructs. These segments are then moved inside the extended macro query defined under the corresponding category of the rule. A specific boolean flag can determine whether a specific rule should be taken into consideration for the free-text and/or the advanced search. The pre-processing functions (key “heuristics”) are also defined in the ‘rule’ block. They are listed in the order they must be called, and the result returned by the first will be used as the input for the second, and so on.</p>
+<p>Finally, the configuration file also comprises the categories, i.e. particular descriptive operations that are applied to the results returned by the built SPARQL query defined inside them, after the combination of the queries for the selected rules. Each category includes a name and a set of SPARQL query SELECT variables. Each of these variables is accompanied by information about its presentation mechanisms (e.g. the label to use for presenting it in the Web page, and the width of the table column in which to put the related values), and about other filtering operations that can be applied to the values associated with that variable (e.g. the operations link, group and select described in Section <xref rid="x1-6000-3.2">3.2</xref>).</p>
+</sec>
+</sec>
+<sec id="x1-8000-4">
+<label>4.</label>
+<title>Configuring OSCAR for OpenCitations and Wikidata</title>
+<p>An important aspect of OSCAR concerns its flexibility to be adapted to work with any SPARQL endpoint. The first version of OSCAR, presented at the SAVE-SD workshop [<xref ref-type="bibr" rid="ref006">6</xref>], was demonstrated to work with three RDF datasets: the OpenCitations Corpus [<xref ref-type="bibr" rid="ref014">14</xref>], ScholarlyData [<xref ref-type="bibr" rid="ref012">12</xref>] and Wikidata [<xref ref-type="bibr" rid="ref019">19</xref>].</p>
+<p>In this article, we present new and more detailed configurations compliant with the new version of OSCAR which enables one to search on the two main datasets of OpenCitations, i.e. the OpenCitations Corpus (OCC) and COCI, and on a precise Wikidata subset, i.e. that dedicated to the description of scholarly articles. In the following subsections, we analyse each case separately and show the configurations made to OSCAR for each chosen search strategy (free-text and advanced search), the features included, and the appearance of the final interface generated.</p>
+<sec id="x1-9000-4.1">
+<label>4.1.</label>
+<title>The OpenCitations Corpus</title>
+<p>The OpenCitations Corpus (OCC) is an open repository of scholarly citation data and bibliographic information that we have developed. Originally this database was the main target and incentive for the development of OSCAR. Currently, the OCC contains 14 million citation links between more than 7 million bibliographic resources.</p>
+<p>The OSCAR search interface for the OCC is available at <uri>http://opencitations.net/search</uri>. The use of OSCAR, in this case, enables the search of two entities included in the OCC: documents (bibliographic resources) and authors.</p>
+<p>We have now configured OSCAR for both the free-textual and advanced search. In particular:</p>
+<list list-type="bullet">
+<list-item>
+<p>The free-text search allows the recognition of two different types of input: unique global identifiers (DOIs and ORCIDs, that identify published articles and authors, respectively), and any other textual string which could be used to identify the title of a document or the name of an author. It is worth mentioning that this text search string is not matched against the abstracts and the keywords of documents since these data are not currently stored within the OCC. In Fig. <xref rid="x1-9001-3">3</xref>, we show a screenshot of OSCAR after the execution of a free text search using the string ‘machine learning’.</p>
+</list-item>
+<list-item>
+<p>The form used for the advanced search changes, depending on the kind of entities we are looking for. In the case of bibliographic resources (i.e. published articles), three searching parameters are available which can be combined/connected by using logical operations: the DOI value, a keyword to search for inside the title/subtitle of the bibliographic resource, and the author last name of such resource. Alternatively, where the user is interested in searching for authors, three parameters are available through the interface: the ORCID, the last name, the first name of the author. In Fig. <xref rid="x1-9002-4">4</xref>, we show a screenshot of the advanced search interface available for the OCC. In that example, we are looking for all the documents containing either the words ‘semantic’ or ‘open citations’ in their title/subtitle, and having “shotton” as string specified to one of the authors’ last name. Once the button ‘Search in OC’ is clicked and the query is executed, the results will appear in a table which looks like the one in Fig. <xref rid="x1-9001-3">3</xref>.</p>
+</list-item>
+</list>
+<fig id="x1-9001-3">
+<label>Fig. 3.</label>
+<caption>
+<p>The Results interface of OSCAR for the OCC: the results shown are those obtained after the application of a free-text search using the string ‘machine learning’ (<uri>http://opencitations.net/search?text=machine+learning</uri>). Each row represents a bibliographic resource, while the fields represent (from left to right): the resource identifier in the OpenCitations Corpus (Corpus ID), the year of publication (Year), the title (Title), the list of authors (Authors), and how many times the bibliographic resource has been cited by other resources according to the data available in the OCC (Cited by).</p>
+</caption>
+<graphic xlink:href="ds-2-ds190016a-g005.jpg"/>
+</fig>
+<fig id="x1-9002-4">
+<label>Fig. 4.</label>
+<caption>
+<p>The advanced search interface for the OCC. In this example we are looking for all the documents containing either the words ‘semantic’ or ‘open citations’ in their title/subtitle, and having one of the authors with last name ‘shotton’ – <ext-link ext-link-type="uri" xlink:href="http://opencitations.net/search?text=shotton&amp;rule=author_text&amp;bc_1=and&amp;text=semantic&amp;rule=any_text&amp;bc_2=or&amp;text=shotton&amp;rule=author_text&amp;bc_3=and&amp;text=open+citations&amp;rule=any_text">http://opencitations.net/search?text=shotton&amp;rule=author_text&amp;bc_1=and&amp;text=semantic&amp;rule=any_text&amp;bc_2=or&amp;text=shotton&amp;rule=author_text&amp;bc_3=and&amp;text=open+citations&amp;rule=any_text</ext-link>.</p>
+</caption>
+<graphic xlink:href="ds-2-ds190016a-g006.jpg"/>
+</fig>
+<p>The configuration file of this instance of OSCAR is available online at <uri>http://opencitations.net/static/js/search-conf.js</uri>.</p>
+</sec>
+<sec id="x1-10000-4.2">
+<label>4.2.</label>
+<title>The COCI dataset</title>
+<p>COCI, the OpenCitations Index of Crossref open DOI-to-DOI references, is an RDF dataset containing details of all the citations that are specified by the open references to DOI-identified works present in Crossref. These citations are treated as first-class data entities, with accompanying properties including the citation timespan, modelled according to the data model described in the Open Citation model webpage.<xref ref-type="fn" rid="fn-21">21</xref><fn id="fn-21"><label><sup>21</sup></label>
+<p><uri>https://w3id.org/oc/model</uri></p></fn> COCI was first created and released on June 2018, and currently contains almost 450 million citations link between 46 million bibliographic resources.</p>
+<p>For searching COCI, we have configured OSCAR to be used only through an advanced search interface, which is currently available at <uri>http://opencitations.net/index/coci/search</uri>. Users will have three possible searching parameters available to be combined: the value of the citing DOI, the value of the cited DOI, the Open Citation Identifier (OCI) of the citation. These fields may be combined and connected in a complex query using the usual logical connectors. Figure <xref rid="x1-10001-5">5</xref> shows the result interface of OSCAR after searching for the value ‘10.1186/1756-8722-6-59’ as citing DOI in COCI. In this case, the values within the fields “Citing references” and “Cited references” are provided by querying the Crossref REST API with the DOI of the citing and cited entities.</p>
+<fig id="x1-10001-5">
+<label>Fig. 5.</label>
+<caption>
+<p>The results interface for COCI in the OpenCitations OSCAR website after using its advanced search option and executing a query to look for all the resources (citation entities) having the value ‘10.1186/1756-8722-6-59’ as citing DOI – <uri>http://opencitations.net/index/coci/search?text=10.1186%2F1756-8722-6-59&amp;rule=citingdoi</uri>.</p>
+</caption>
+<graphic xlink:href="ds-2-ds190016a-g007.jpg"/>
+</fig>
+<p>The configuration file of this instance of OSCAR is available online at <uri>http://opencitations.net/static/js/search-conf-coci.js</uri>.</p>
+</sec>
+<sec id="x1-11000-4.3">
+<label>4.3.</label>
+<title>Wikidata</title>
+<p>Wikidata is a free open knowledge base which acts as a central store for the structured data of Wikimedia Foundation projects including Wikipedia, and of other sites and services. Wikidata offers a SPARQL query service and already has its own powerful Web graphical user interface for facilitating the users to construct SPARQL queries. Our OSCAR customisation to the Wikidata SPARQL endpoint is thus made entirely for demonstration purposes, rather than to provide new functionality for Wikidata users. While Wikidata contains a wide variety of information, we decided to limit our customisation of OSCAR to bibliographic entities within the scholarly domain.</p>
+<p>We have consulted previous articles which talk about how to query the Wikidata dataset [<xref ref-type="bibr" rid="ref009">9</xref>], and the actual data model used by Wikidata [<xref ref-type="bibr" rid="ref003">3</xref>]. Based on this information, we have built an entirely new OSCAR interface dedicated to Wikidata querying, available at the following link <uri>https://opencitations.github.io/oscar/example/v2/wikidata.html</uri>. This interface has been also recently presented at the WikiCite 2018 conference in Berkeley, California [<xref ref-type="bibr" rid="ref007">7</xref>].</p>
+<p>The OSCAR configuration for Wikidata includes both the free-text and the advanced search options. Users can decide whether they want to search for scholarly documents or their authors. In the case of scholarly documents, users can retrieve them by typing: (1) a DOI, (2) the name of the journal where such document has been published, (3) the cited articles, (4) the articles referenced, (5) the earliest publication year, (6) the Wikidata QID, or (7) a free textual input. All these options can be combined to build a complex query through the advanced searching option. For instance, in Fig. <xref rid="x1-11001-6">6</xref> the advanced query built asks to retrieve all the articles citing the scholarly document with DOI “10.1145/2362499.2362502”, where the citing articles have been published in the “Journal of Documentation”.</p>
+<fig id="x1-11001-6">
+<label>Fig. 6.</label>
+<caption>
+<p>The OSCAR interface for querying the Wikidata scholarly documents. On the top right of the page we have an input box for free-text search, while on the bottom we have a section dedicated to advanced search. The constructed query retrieves all the articlesciting “10.1145/2362499.2362502” published in “Journal of Documentation”.</p>
+</caption>
+<graphic xlink:href="ds-2-ds190016a-g008.jpg"/>
+</fig>
+<p>Where the required results concern authors rather than publications, users can retrieve results by typing: (1) the ORCID, (2) a DOI of a specific work, (3) the job or profession of the author, (4) the last name, or (5) the first name. As for queries concerning publications, users can also decide to build a complex query and combine these options using the “AND” / “OR” / “AND NOT” logical connectors.</p>
+<p>The current demo available online already presents a set of query examples to try. In Fig. <xref rid="x1-11002-7">7</xref> we demonstrate the way OSCAR shows the results retrieved after asking for the list of articles citing the scholarly article with DOI “10.1016/J.WEBSEM.2012.08.001”, with a publication year no earlier than 2015.</p>
+<fig id="x1-11002-7">
+<label>Fig. 7.</label>
+<caption>
+<p>The results interface of OSCAR for Wikidata after using its advanced search, after asking OSCAR to retrieve the list of articles citing 10.1016/J.WEBSEM.2012.08.001, where the citing publications have a publication year of 2015 or later. Each row represents a publication, while the fields represent (from left to right): the resource identifier in Wikidata (Q-ID), the title (Work title), the list of authors (Authors), the number of citations (Cited), and the year of publication (Date).</p>
+</caption>
+<graphic xlink:href="ds-2-ds190016a-g009.jpg"/>
+</fig>
+<p>The configuration file of this instance of OSCAR is available online at <uri>https://opencitations.github.io/oscar/example/v2/static/js/search-conf-wikidata.js</uri>.</p>
+</sec>
+</sec>
+<sec id="x1-12000-5">
+<label>5.</label>
+<title>Usage statistics from OpenCitations</title>
+<p>We have been collecting and monitoring the usage of OSCAR within the OpenCitations website for searches of both the OCC and COCI datasets. These data refer to the access information to OSCAR since its launch in OpenCitations in February 2018. The statistics and graphics we show in this section highlight the community uptake of OSCAR, and the way it has been used by the users.</p>
+<p>This section of the paper is divided in two parts. First, we discuss the general usage of OSCAR since its first integration within the OpenCitations website. In the second part, we analyse the different kinds of query that have been performed by the users.</p>
+<p>All the data of the charts described in this section are freely available for download and further analysis [<xref ref-type="bibr" rid="ref008">8</xref>].</p>
+<sec id="x1-13000-5.1">
+<label>5.1.</label>
+<title>General usage</title>
+<p>We gathered the statistics regarding the accesses to OSCAR through the OpenCitations website on both the OCC and COCI datasets maintained by OpenCitations. In Fig. <xref rid="x1-13001-8">8</xref> the graph shows the number of queries launched for each different dataset, from February 2018 (the date when OSCAR was launched and integrated inside the OpenCitations website) to September 2018. In addition to the total number of accesses, the graph shows the number of queries that led to further navigation to browse one or more of the resources that had been found and listed in the results table (OCC-browse, COCI-browse). In particular, this navigation starts by clicking on the contents of the results table, so as to access the metadata related to that particular entity (e.g. a document or an author). The resources are browsed using another tool called LUCINDA, which is a separate tool made available by OpenCitations to provide an HTML presentation of the data of a particular entity included the OpenCitations datasets. The description of LUCINDA goes beyond the scope of this paper – for further details we recommend visiting the repository and documentation of LUCINDA at <uri>https://github.com/opencitations/lucinda</uri>.</p>
+<p>From Fig. <xref rid="x1-13001-8">8</xref> we can notice a peak in the usage of OSCAR for OCC during March 2018 (the month after its launch) and June 2018. The latter peak is probably due to the integration of LUCINDA in the website, enabling the searched items to be browsed and visualized. We can see a high number of accesses that led to a redirection from OSCAR to the LUCINDA resource browser page. In the COCI case, the peak point happened in July 2018, i.e. the month after its official release.</p>
+<fig id="x1-13001-8">
+<label>Fig. 8.</label>
+<caption>
+<p>The number of queries launched through OSCAR from the OpenCitations web site, searching for OCC or COCI resources, for each different month starting from February 2018 to September 2018. For each dataset we show the number of queries that led to subsequent LUCINDA browsing of the metadata returned by the OSCAR search. Note that the vertical axis uses a logarithmic scale.</p>
+</caption>
+<graphic xlink:href="ds-2-ds190016a-g010.jpg"/>
+</fig>
+<p>We wanted also to monitor the usage of the new advanced search feature added to OSCAR Version 2.0, and its ability to build complex queries with multiple restrictions by means of logical connectors. From Fig. <xref rid="x1-13002-9">9</xref> we can notice that this new feature is still not so popular among the users searching the OpenCitations datasets. This statistic is significant and might suggest the need to make further analysis of the usability of the advanced search and how we could improve it, to encourage users using it.</p>
+<fig id="x1-13002-9">
+<label>Fig. 9.</label>
+<caption>
+<p>The number of complex queries (with logical connectors) launched through OSCAR from the OpenCitations web site, searching for COCI or OCC resources, for each different month starting from February 2018 to September 2018.</p>
+</caption>
+<graphic xlink:href="ds-2-ds190016a-g011.jpg"/>
+</fig>
+<fig id="x1-13003-10">
+<label>Fig. 10.</label>
+<caption>
+<p>The number of queries launched through OSCAR from the OpenCitations web site, searching for author or document resources inside the OCC corpus, for each different month starting from February 2018 to September 2018.</p>
+</caption>
+<graphic xlink:href="ds-2-ds190016a-g012.jpg"/>
+</fig>
+</sec>
+<sec id="x1-14000-5.2">
+<label>5.2.</label>
+<title>Queries</title>
+<p>In this section, we wanted to answer the question ‘what type of queries users do?’. We made two different analysis for the OCC and the COCI case.</p>
+<fig id="x1-14001-11">
+<label>Fig. 11.</label>
+<caption>
+<p>The number of queries launched through OSCAR from the OpenCitations web site, searching inside the COCI dataset, for each different month starting from April 2018 to September 2018. The results show the number of searches per month for a citing entity by specifying its DOI (blue), for a cited entity by specifying its DOI (orange), and for a citation itself by specifying its open citation identifier (OCI),<xref ref-type="fn" rid="fn-23">23</xref> the globally unique persistent identifier for a bibliographic citation.</p>
+</caption>
+<graphic xlink:href="ds-2-ds190016a-g013.jpg"/>
+</fig>
+<p>In the case of the OCC dataset, we wanted to see which are the categories mostly searched by users among documents and authors. Figure <xref rid="x1-13003-10">10</xref> shows these queries for each month starting from March to September 2018. No values are reported for February 2018, due to the fact that the first version of OSCAR did not have any feature to distinguish between an author query or a document query since the input accepted was only free-text without any category attribution to it. The results show that users search for documents more frequently than they do for authors. However, since the results returned for a document query includes the authors’ names, which could be further browsed, it may be that users search for authors indirectly by first looking up one of their works.</p>
+<p>In the OSCAR instance for COCI, we have just one possible category, since the only type of resources included in the dataset are citations. Therefore, we made an analysis on the type of queries that users specified, among the three possible queries that can be made to retrieve information from COCI: (1) a query for a citing bibliographic resource, made by specifying its DOI, (2) a query for a cited bibliographic resource, made by specifying its DOI, or (3) a query for a citation, made by specifying its Open Citation Identifier (OCI),<xref ref-type="fn" rid="fn-22">22</xref><fn id="fn-22"><label><sup>22</sup></label>
+<p><uri>http://opencitations.net/oci</uri></p></fn> the globally unique persistent identifier for a bibliographic citation. As we can see from the histogram in Fig. <xref rid="x1-14001-11">11</xref>, the number of queries increases markedly from the month of July 2018 (as is also confirmed from the previous Fig. <xref rid="x1-13001-8">8</xref>), and we notice that users prefer typing a citing DOI as input, and retrieve the list of all the citations made by that paper (i.e. its reference list). It is not unexpected to see the low numbers of OCI searches since it is uncommon for a user to know the specific OCI identifier of the citation.</p>
+</sec>
+</sec>
+<sec id="x1-15000-6">
+<label>6.</label>
+<title>Conclusions</title>
+<p>In this paper, we have introduced a new extended version, Version 2.0, of OSCAR, the OpenCitations RDF Search Application. OSCAR is a user-friendly searching tool to use with RDF triplestores having a SPARQL endpoint. We have introduced its main features and discussed its additional features, mainly concerning the new advanced search option.</p>
+<p>To test its adaptability to work with different SPARQL endpoints, we defined three different configurations of OSCAR, to permit it to search three datasets: OCC and COCI (both maintained by OpenCitations), and the Wikidata sub-dataset of scholarly data. To monitor the usage of OSCAR we retrieved access statistics from the OpenCitations website and analysed the frequency of different types of queries and the types of results users most frequently looked for.</p>
+<p>As mentioned in the Section <xref rid="x1-12000-5">5</xref>, we have separately developed a related tool, named LUCINDA, to browse the resources accessible through a SPARQL endpoint. In particular, LUCINDA has the ability to visualize the attributes of the resources and provide detailed information about bibliographic resources such as journal names, page numbers, and additional identifiers. As with OSCAR, this new browsing tool is already integrated within the OpenCitations website so as to provide human-readable descriptions of the OpenCitations Corpus and COCI entities, but it is also fully customizable to work with OSCAR over other SPARQL endpoints. LUCINDA will be described in a separate paper. Future extensions of OSCAR will focus on its strong integration with this browsing tool.</p>
+<p>OSCAR is currently licensed under the ISC License and is available to be integrated as a Web application for any service wishing to build an RDF dataset text search engine. OSCAR is available for download through the Zenodo service [<xref ref-type="bibr" rid="ref005">5</xref>]. While this integration and configuration of OSCAR is made using a single configuration file which contains all the parameters (SPARQL and GUI), we have not yet published a properly structured user guide describing how to define such configuration file from scratch. We are planning to rectify this deficiency with the next version of OSCAR. In the meantime, we highly recommend anyone interested to try configuring and using OSCAR, and we are available to provide advice and help as required.<fn id="fn-23"><label><sup>23</sup></label>
+<p><uri>http://opencitations.net/oci</uri></p></fn></p>
+</sec>
+</body>
+<back>
+<ack>
+<title>Acknowledgements</title>
+<p>We gratefully acknowledge the financial support provided to us by the Alfred P. Sloan Foundation for the OpenCitations Enhancement Project (grant number G-2017-9800).</p></ack>
+<ref-list>
+<title>References</title>
+<ref id="ref001">
+<label>[1]</label><mixed-citation publication-type="journal"><string-name><given-names>T.</given-names> <surname>Berners-Lee</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Hendler</surname></string-name> and <string-name><given-names>O.</given-names> <surname>Lassila</surname></string-name>, <article-title>The semantic web</article-title>, <source>Scientific American</source> <volume>284</volume>(<issue>5</issue>) (<year>2001</year>), <fpage>34</fpage>–<lpage>43</lpage>. doi:<pub-id pub-id-type="doi">10.1038/scientificamerican0501-34</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref002">
+<label>[2]</label><mixed-citation publication-type="other"><string-name><given-names>R.</given-names> <surname>Cyganiak</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Wood</surname></string-name> and <string-name><given-names>M.</given-names> <surname>Lanthaler</surname></string-name>, RDF 1.1 Concepts and abstract syntax, 2014, W3C Recommendation 25 February 2014, <uri>https://www.w3.org/TR/rdf11-concepts/</uri>.</mixed-citation>
+</ref>
+<ref id="ref003">
+<label>[3]</label><mixed-citation publication-type="chapter"><string-name><given-names>F.</given-names> <surname>Erxleben</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Günther</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Krötzsch</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Mendez</surname></string-name> and <string-name><given-names>D.</given-names> <surname>Vrandečić</surname></string-name>, <chapter-title>Introducing Wikidata to the linked data web</chapter-title>, in: <source><italic>Proceedings of the 13</italic><sup><italic>th</italic></sup> <italic>International Semantic Web Conference (ISWC 2013)</italic></source>, <year>2014</year>, pp. <fpage>50</fpage>–<lpage>65</lpage>. doi:<pub-id pub-id-type="doi">10.1007/978-3-319-11964-9_4</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref004">
+<label>[4]</label><mixed-citation publication-type="other"><string-name><given-names>S.</given-names> <surname>Harris</surname></string-name> and <string-name><given-names>A.</given-names> <surname>Seaborne</surname></string-name>, SPARQL 1.1 Query Language, 2013, W3C Recommendation 21 March 2013, <uri>https://www.w3.org/TR/sparql11-query/</uri>.</mixed-citation>
+</ref>
+<ref id="ref005">
+<label>[5]</label><mixed-citation publication-type="other"><string-name><given-names>I.</given-names> <surname>Heibi</surname></string-name> and <string-name><given-names>S.</given-names> <surname>Peroni</surname></string-name>, 2019, opencitations/oscar: OSCAR v2.0.0. Zenodo, DOI, <uri>http://doi.org/10.5281/zenodo.2587541</uri>.</mixed-citation>
+</ref>
+<ref id="ref006">
+<label>[6]</label><mixed-citation publication-type="chapter"><string-name><given-names>I.</given-names> <surname>Heibi</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Peroni</surname></string-name> and <string-name><given-names>D.</given-names> <surname>Shotton</surname></string-name>, <chapter-title>OSCAR: A customisable tool for free – text search over SPARQL endpoints</chapter-title>, in: <source>Proceedings of the 2018 International Workshop on Semantics, Analytics, Visualization: Enhancing Scholarly Dissemination (SAVE-SD 2018)</source>, <year>2018</year>, pp. <fpage>121</fpage>–<lpage>137</lpage>, doi:<pub-id pub-id-type="doi">10.1007/978-3-030-01379-0_9</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref007">
+<label>[7]</label><mixed-citation publication-type="other"><string-name><given-names>I.</given-names> <surname>Heibi</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Peroni</surname></string-name> and <string-name><given-names>D.</given-names> <surname>Shotton</surname></string-name>, OSCAR and LUCINDA with Wikidata (WikiCite2018 presentation), Figshare, 2018, doi:<pub-id pub-id-type="doi">10.6084/m9.figshare.7396667</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref008">
+<label>[8]</label><mixed-citation publication-type="other"><string-name><given-names>I.</given-names> <surname>Heibi</surname></string-name>, <string-name><given-names>S.</given-names> <surname>Peroni</surname></string-name> and <string-name><given-names>D.</given-names> <surname>Shotton</surname></string-name>, Statistical data for the paper “Enabling text search on SPARQL endpoints through OSCAR”. Figshare, 2019. doi:<pub-id pub-id-type="doi">10.6084/m9.figshare.7785092.v1</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref009">
+<label>[9]</label><mixed-citation publication-type="chapter"><string-name><given-names>D.</given-names> <surname>Hernández</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Hogan</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Riveros</surname></string-name>, <string-name><given-names>C.</given-names> <surname>Rojas</surname></string-name> and <string-name><given-names>E.</given-names> <surname>Zerega</surname></string-name>, <chapter-title>Querying wikidata: Comparing SPARQL, relational and graph databases</chapter-title>, in: <source><italic>Proceedings of the 15</italic><sup><italic>th</italic></sup> <italic>International Semantic Web Conference (ISWC 2015)</italic></source>, <year>2016</year>, pp. <fpage>88</fpage>–<lpage>103</lpage>. doi:<pub-id pub-id-type="doi">10.1007/978-3-319-46547-0_10</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref010">
+<label>[10]</label><mixed-citation publication-type="chapter"><string-name><given-names>S.</given-names> <surname>Malyshev</surname></string-name>, <string-name><given-names>M.</given-names> <surname>Krötzsch</surname></string-name>, <string-name><given-names>L.</given-names> <surname>González</surname></string-name>, <string-name><given-names>J.</given-names> <surname>Gonsior</surname></string-name> and <string-name><given-names>A.</given-names> <surname>Bielefeldt</surname></string-name>, <chapter-title>Getting the most out of wikidata: Semantic technology usage in Wikipedia’s knowledge graph</chapter-title>, in: <source><italic>Proceedings of the 17</italic><sup><italic>th</italic></sup> <italic>International Semantic Web Conference (ISWC 2018)</italic></source>, <year>2018</year>, pp. <fpage>376</fpage>–<lpage>394</lpage>. doi:<pub-id pub-id-type="doi">10.1007/978-3-030-00668-6_23</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref011">
+<label>[11]</label><mixed-citation publication-type="chapter"><string-name><given-names>F.</given-names> <surname>Nielsen</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Mietchen</surname></string-name> and <string-name><given-names>E.</given-names> <surname>Willighagen</surname></string-name>, <chapter-title>Scholia, scientometrics and Wikidata</chapter-title>, in: <source><italic>Proceedings of the Satellite Events of the 14</italic><sup><italic>th</italic></sup> <italic>Extended Semantic Web Conference (ESWC 2017)</italic></source>, <year>2017</year>, pp. <fpage>237</fpage>–<lpage>259</lpage>. doi:<pub-id pub-id-type="doi">10.1007/978-3-319-70407-4_36</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref012">
+<label>[12]</label><mixed-citation publication-type="chapter"><string-name><given-names>A.G.</given-names> <surname>Nuzzolese</surname></string-name>, <string-name><given-names>A.L.</given-names> <surname>Gentile</surname></string-name>, <string-name><given-names>V.</given-names> <surname>Presutti</surname></string-name> and <string-name><given-names>A.</given-names> <surname>Gangemi</surname></string-name>, <chapter-title>Conference linked data: The ScholarlyData project</chapter-title>, in: <source><italic>Proceedings of the 15</italic><sup><italic>th</italic></sup> <italic>International Semantic Web Conference (ISWC 2015)</italic></source>, <year>2016</year>, pp. <fpage>150</fpage>–<lpage>158</lpage>. doi:<pub-id pub-id-type="doi">10.1007/978-3-319-46547-0_16</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref013">
+<label>[13]</label><mixed-citation publication-type="journal"><string-name><given-names>S.</given-names> <surname>Peroni</surname></string-name>, <string-name><given-names>A.</given-names> <surname>Dutton</surname></string-name>, <string-name><given-names>T.</given-names> <surname>Gray</surname></string-name> and <string-name><given-names>S.</given-names> <surname>Shotton</surname></string-name>, <article-title>Setting our bibliographic references free: Towards open citation data</article-title>, <source>Journal of Documentation</source> <volume>71</volume>(<issue>2</issue>) (<year>2015</year>), <fpage>253</fpage>–<lpage>277</lpage>. doi:<pub-id pub-id-type="doi">10.1108/JD-12-2013-0166</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref014">
+<label>[14]</label><mixed-citation publication-type="chapter"><string-name><given-names>S.</given-names> <surname>Peroni</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Shotton</surname></string-name> and <string-name><given-names>F.</given-names> <surname>Vitali</surname></string-name>, <chapter-title>One year of the OpenCitations corpus – releasing RDF-based scholarly citation data into the public domain</chapter-title>, in: <source><italic>Proceedings of the 16</italic><sup><italic>th</italic></sup> <italic>International Semantic Web Conference (ISWC 2017)</italic></source>, <year>2017</year>, pp. <fpage>184</fpage>–<lpage>192</lpage>. doi:<pub-id pub-id-type="doi">10.1007/978-3-319-68204-4_19</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref015">
+<label>[15]</label><mixed-citation publication-type="chapter"><string-name><given-names>L.</given-names> <surname>Rietveld</surname></string-name> and <string-name><given-names>R.</given-names> <surname>Hoekstra</surname></string-name>, <chapter-title>May. YASGUI: Not just another SPARQL client</chapter-title>, in: <source><italic>Proceedings of the Satellite Events of the 10</italic><sup><italic>th</italic></sup> <italic>Extended Semantic Web Conference (ESWC 2013)</italic></source>, <year>2013</year>, pp. <fpage>78</fpage>–<lpage>86</lpage>. doi:<pub-id pub-id-type="doi">10.1007/978-3-642-41242-4_7</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref016">
+<label>[16]</label><mixed-citation publication-type="journal"><string-name><given-names>L.</given-names> <surname>Rietveld</surname></string-name> and <string-name><given-names>R.</given-names> <surname>Hoekstra</surname></string-name>, <article-title>The YASGUI family of SPARQL clients</article-title>, <source>Semantic Web</source> <volume>8</volume>(<issue>3</issue>) (<year>2017</year>), <fpage>373</fpage>–<lpage>383</lpage>. doi:<pub-id pub-id-type="doi">10.3233/SW-150197</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref017">
+<label>[17]</label><mixed-citation publication-type="other"><string-name><given-names>A.</given-names> <surname>Russell</surname></string-name>, <string-name><given-names>P.R.</given-names> <surname>Smart</surname></string-name>, <string-name><given-names>D.</given-names> <surname>Braines</surname></string-name> and <string-name><given-names>N.R.</given-names> <surname>Shadbolt</surname></string-name>, <chapter-title>Nitelight: A graphical tool for semantic query construction</chapter-title>, in: <source><italic>Proceedings of the 5</italic><sup><italic>th</italic></sup> <italic>International Workshop on Semantic Web User Interaction (SWUI 2008)</italic></source>, <year>2008</year>, <uri>http://ceur-ws.org/Vol-543/russell_swui2008.pdf</uri>.</mixed-citation>
+</ref>
+<ref id="ref018">
+<label>[18]</label><mixed-citation publication-type="journal"><string-name><given-names>D.</given-names> <surname>Shotton</surname></string-name>, <article-title>Open citations</article-title>, <source>Nature</source> <volume>502</volume>(<issue>7471</issue>) (<year>2013</year>), <fpage>295</fpage>–<lpage>297</lpage>. doi:<pub-id pub-id-type="doi">10.1038/502295a</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref019">
+<label>[19]</label><mixed-citation publication-type="journal"><string-name><given-names>D.</given-names> <surname>Vrandečić</surname></string-name> and <string-name><given-names>M.</given-names> <surname>Krötzsch</surname></string-name>, <article-title>Wikidata: A free collaborative knowledge base</article-title>, <source>Communications of the ACM</source> <volume>57</volume>(<issue>10</issue>) (<year>2014</year>), <fpage>78</fpage>–<lpage>85</lpage>. doi:<pub-id pub-id-type="doi">10.1145/2629489</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref020">
+<label>[20]</label><mixed-citation publication-type="journal"><string-name><given-names>N.</given-names> <surname>Zaki</surname></string-name> and <string-name><given-names>C.</given-names> <surname>Tennakoon</surname></string-name>, <article-title>BioCarian: Search engine for exploratory searches in heterogeneous biological databases</article-title>, <source>BMC Bioinformatics</source> <volume>18</volume> (<year>2017</year>), <fpage>435</fpage>. doi:<pub-id pub-id-type="doi">10.1186/s12859-017-1840-4</pub-id>.</mixed-citation>
+</ref>
+<ref id="ref021">
+<label>[21]</label><mixed-citation publication-type="chapter"><string-name><given-names>M.</given-names> <surname>Zviedris</surname></string-name> and <string-name><given-names>G.</given-names> <surname>Barzdins</surname></string-name>, <chapter-title>ViziQuer: A tool to explore and query SPARQL endpoints</chapter-title>, in: <source><italic>Proceedings of the 8</italic><sup><italic>th</italic></sup> <italic>Extended Semantic Web Conference (ESWC 2011)</italic></source>, <year>2011</year>, pp. <fpage>441</fpage>–<lpage>445</lpage>. doi:<pub-id pub-id-type="doi">10.1007/978-3-642-21064-8_31</pub-id>.</mixed-citation>
+</ref>
+</ref-list>
+</back>
+</article>
