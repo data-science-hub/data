@@ -1,0 +1,271 @@
+@prefix this: <http://www.tkuhn.org/pub/sempub/sempub.trig#np1.RAMOV3dNu6TlkqdosNWvyeVJ54wCnRQP4--NfxJrWUe_E> .
+@prefix sub: <http://www.tkuhn.org/pub/sempub/sempub.trig#np1.RAMOV3dNu6TlkqdosNWvyeVJ54wCnRQP4--NfxJrWUe_E.> .
+@prefix paper: <http://www.tkuhn.org/pub/sempub/> .
+@prefix : <http://www.tkuhn.org/pub/sempub/#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix np: <http://www.nanopub.org/nschema#> .
+@prefix orcid: <http://orcid.org/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix schema: <http://schema.org/> .
+
+sub:Head {
+	this: np:hasAssertion sub:assertion ;
+		np:hasProvenance sub:provenance ;
+		np:hasPublicationInfo sub:pubinfo ;
+		a np:Nanopublication .
+}
+
+sub:assertion {
+	orcid:0000-0002-1267-0234 schema:affiliation :vu-cs ;
+		schema:email "t.kuhn@vu.nl" ;
+		schema:name "Tobias Kuhn" ;
+		a foaf:Person .
+	
+	orcid:0000-0003-4727-9435 schema:affiliation :mu-ids ;
+		schema:email "michel.dumontier@maastrichtuniversity.nl" ;
+		schema:name "Michel Dumontier" ;
+		a foaf:Person .
+	
+	:mu-ids schema:name "Institute of Data Science, Maastricht University, Netherlands" .
+	
+	:vu-cs schema:name "Department of Computer Science, VU University Amsterdam, Netherlands" .
+	
+	paper: prism:keyword "Linked Data" , "scholarly communication" , "semantic publishing" ;
+		dct:title "Genuine Semantic Publishing" ;
+		pav:authoredBy orcid:0000-0002-1267-0234 , orcid:0000-0003-4727-9435 ;
+		a fabio:ResearchPaper .
+}
+
+sub:provenance {
+	sub:assertion prov:wasAttributedTo orcid:0000-0002-1267-0234 , orcid:0000-0003-4727-9435 .
+}
+
+sub:pubinfo {
+	this: dct:created "2017-06-15T14:39:51+02:00"^^xsd:dateTime ;
+		pav:createdBy orcid:0000-0002-1267-0234 .
+}
+@prefix this: <http://www.tkuhn.org/pub/sempub/sempub.trig#np2.RA8tL7TWDOtL6oz3dhhYZ6JIBB9YlroOFIMKcQk7nFEr8> .
+@prefix sub: <http://www.tkuhn.org/pub/sempub/sempub.trig#np2.RA8tL7TWDOtL6oz3dhhYZ6JIBB9YlroOFIMKcQk7nFEr8.> .
+@prefix paper: <http://www.tkuhn.org/pub/sempub/> .
+@prefix : <http://www.tkuhn.org/pub/sempub/#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix np: <http://www.nanopub.org/nschema#> .
+@prefix orcid: <http://orcid.org/> .
+@prefix dbpedia: <http://dbpedia.org/resource/> .
+@prefix cito: <http://purl.org/spar/cito/> .
+
+sub:Head {
+	this: np:hasAssertion sub:assertion ;
+		np:hasProvenance sub:provenance ;
+		np:hasPublicationInfo sub:pubinfo ;
+		a np:Nanopublication .
+}
+
+sub:assertion {
+	paper: cito:critiques dbpedia:Semantic_publishing ;
+		cito:describes :GenuineSemanticPublishing ;
+		cito:supports :GenuineSemanticPublishing .
+}
+
+sub:provenance {
+	sub:assertion prov:wasAttributedTo orcid:0000-0002-1267-0234 , orcid:0000-0003-4727-9435 .
+}
+
+sub:pubinfo {
+	this: dct:created "2017-06-15T14:39:51+02:00"^^xsd:dateTime ;
+		pav:createdBy orcid:0000-0002-1267-0234 .
+}
+@prefix this: <http://www.tkuhn.org/pub/sempub/sempub.trig#np3.RAvut2XgfSAZNJDIEFBBR6LHyXB5ACahdnWkm9G0mqvMw> .
+@prefix sub: <http://www.tkuhn.org/pub/sempub/sempub.trig#np3.RAvut2XgfSAZNJDIEFBBR6LHyXB5ACahdnWkm9G0mqvMw.> .
+@prefix : <http://www.tkuhn.org/pub/sempub/#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix np: <http://www.nanopub.org/nschema#> .
+@prefix orcid: <http://orcid.org/> .
+@prefix schema: <http://schema.org/> .
+@prefix dbpedia: <http://dbpedia.org/resource/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+sub:Head {
+	this: np:hasAssertion sub:assertion ;
+		np:hasProvenance sub:provenance ;
+		np:hasPublicationInfo sub:pubinfo ;
+		a np:Nanopublication .
+}
+
+sub:assertion {
+	:GenuineSemanticPublishing schema:name "genuine semantic publishing" ;
+		skos:definition :GenuineSemanticPublishingCriteria ;
+		skos:related dbpedia:Semantic_publishing .
+	
+	:GenuineSemanticPublishingCriteria dct:hasPart :GenuineSemanticPublishingCriterion1 , :GenuineSemanticPublishingCriterion2 , :GenuineSemanticPublishingCriterion3 , :GenuineSemanticPublishingCriterion4 , :GenuineSemanticPublishingCriterion5 .
+}
+
+sub:provenance {
+	sub:assertion prov:wasAttributedTo orcid:0000-0002-1267-0234 , orcid:0000-0003-4727-9435 .
+}
+
+sub:pubinfo {
+	this: dct:created "2017-06-15T14:39:51+02:00"^^xsd:dateTime ;
+		pav:createdBy orcid:0000-0002-1267-0234 .
+}
+@prefix this: <http://www.tkuhn.org/pub/sempub/sempub.trig#np4.RAjLwcmo4jqKhVcTiHRhJ-lvBb-EXtwNv_787HWn3qgaE> .
+@prefix sub: <http://www.tkuhn.org/pub/sempub/sempub.trig#np4.RAjLwcmo4jqKhVcTiHRhJ-lvBb-EXtwNv_787HWn3qgaE.> .
+@prefix : <http://www.tkuhn.org/pub/sempub/#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix np: <http://www.nanopub.org/nschema#> .
+@prefix orcid: <http://orcid.org/> .
+
+sub:Head {
+	this: np:hasAssertion sub:assertion ;
+		np:hasProvenance sub:provenance ;
+		np:hasPublicationInfo sub:pubinfo ;
+		a np:Nanopublication .
+}
+
+sub:assertion {
+	:GenuineSemanticPublishingCriterion1 dct:description "With genuine semantic publishing, a scientific work needs to come with formal representations that are semantic, in the sense that they are not just machine processable but machine interpretable, and that are linked so they add to the existing formal body of knowledge." ;
+		dct:title "First criterion of genuine semantic publishing: machine interpretability" .
+}
+
+sub:provenance {
+	sub:assertion prov:wasAttributedTo orcid:0000-0002-1267-0234 , orcid:0000-0003-4727-9435 .
+}
+
+sub:pubinfo {
+	this: dct:created "2017-06-15T14:39:51+02:00"^^xsd:dateTime ;
+		pav:createdBy orcid:0000-0002-1267-0234 .
+}
+@prefix this: <http://www.tkuhn.org/pub/sempub/sempub.trig#np5.RAOY-UjpamEhpYa-8Z9AfjWF3ljrqU5USmLNC9G-sM4aQ> .
+@prefix sub: <http://www.tkuhn.org/pub/sempub/sempub.trig#np5.RAOY-UjpamEhpYa-8Z9AfjWF3ljrqU5USmLNC9G-sM4aQ.> .
+@prefix : <http://www.tkuhn.org/pub/sempub/#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix np: <http://www.nanopub.org/nschema#> .
+@prefix orcid: <http://orcid.org/> .
+
+sub:Head {
+	this: np:hasAssertion sub:assertion ;
+		np:hasProvenance sub:provenance ;
+		np:hasPublicationInfo sub:pubinfo ;
+		a np:Nanopublication .
+}
+
+sub:assertion {
+	:GenuineSemanticPublishingCriterion2 dct:description "With genuine semantic publishing, the semantic representations might be underspecified but need to have essential coverage in the sense that they cover (at least) the core of the main claims of the given work." ;
+		dct:title "Second criterion of genuine semantic publishing: essential coverage" .
+}
+
+sub:provenance {
+	sub:assertion prov:wasAttributedTo orcid:0000-0002-1267-0234 , orcid:0000-0003-4727-9435 .
+}
+
+sub:pubinfo {
+	this: dct:created "2017-06-15T14:39:51+02:00"^^xsd:dateTime ;
+		pav:createdBy orcid:0000-0002-1267-0234 .
+}
+@prefix this: <http://www.tkuhn.org/pub/sempub/sempub.trig#np6.RARJXq8wM8h_2r-ztzLc22-h1ODrCx13ytkkhLlnSHrx4> .
+@prefix sub: <http://www.tkuhn.org/pub/sempub/sempub.trig#np6.RARJXq8wM8h_2r-ztzLc22-h1ODrCx13ytkkhLlnSHrx4.> .
+@prefix : <http://www.tkuhn.org/pub/sempub/#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix np: <http://www.nanopub.org/nschema#> .
+@prefix orcid: <http://orcid.org/> .
+
+sub:Head {
+	this: np:hasAssertion sub:assertion ;
+		np:hasProvenance sub:provenance ;
+		np:hasPublicationInfo sub:pubinfo ;
+		a np:Nanopublication .
+}
+
+sub:assertion {
+	:GenuineSemanticPublishingCriterion3 dct:description "With genuine semantic publishing, the semantic representations need to be authentic in the sense that the respective authoritative persons create or approve the semantic representations. Domain data can only come from the researchers, and meta data has to come from the people responsible for the form of the published work, i.e. the researchers and/or the editors." ;
+		dct:title "Third criterion of genuine semantic publishing: authenticity" .
+}
+
+sub:provenance {
+	sub:assertion prov:wasAttributedTo orcid:0000-0002-1267-0234 , orcid:0000-0003-4727-9435 .
+}
+
+sub:pubinfo {
+	this: dct:created "2017-06-15T14:39:51+02:00"^^xsd:dateTime ;
+		pav:createdBy orcid:0000-0002-1267-0234 .
+}
+@prefix this: <http://www.tkuhn.org/pub/sempub/sempub.trig#np7.RAgbARQXFST3jPe-Dbg4iho0cxu5DjftadgJmEqCRvLmg> .
+@prefix sub: <http://www.tkuhn.org/pub/sempub/sempub.trig#np7.RAgbARQXFST3jPe-Dbg4iho0cxu5DjftadgJmEqCRvLmg.> .
+@prefix : <http://www.tkuhn.org/pub/sempub/#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix np: <http://www.nanopub.org/nschema#> .
+@prefix orcid: <http://orcid.org/> .
+
+sub:Head {
+	this: np:hasAssertion sub:assertion ;
+		np:hasProvenance sub:provenance ;
+		np:hasPublicationInfo sub:pubinfo ;
+		a np:Nanopublication .
+}
+
+sub:assertion {
+	:GenuineSemanticPublishingCriterion4 dct:description "With genuine semantic publishing, the semantic representations need to be a primary component of the published work, made available together with everything else at the time of publication. They must furthermore have an independent existence in their own right and not merely be appended or attached to the main entity as noncommittal extra data." ;
+		dct:title "Fourth criterion of genuine semantic publishing: primary component" .
+}
+
+sub:provenance {
+	sub:assertion prov:wasAttributedTo orcid:0000-0002-1267-0234 , orcid:0000-0003-4727-9435 .
+}
+
+sub:pubinfo {
+	this: dct:created "2017-06-15T14:39:51+02:00"^^xsd:dateTime ;
+		pav:createdBy orcid:0000-0002-1267-0234 .
+}
+@prefix this: <http://www.tkuhn.org/pub/sempub/sempub.trig#np8.RANy8ZtbNxJasvfVgpyQC-GIlQ3uFeRGvPibEuPdjrlxI> .
+@prefix sub: <http://www.tkuhn.org/pub/sempub/sempub.trig#np8.RANy8ZtbNxJasvfVgpyQC-GIlQ3uFeRGvPibEuPdjrlxI.> .
+@prefix : <http://www.tkuhn.org/pub/sempub/#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix np: <http://www.nanopub.org/nschema#> .
+@prefix orcid: <http://orcid.org/> .
+
+sub:Head {
+	this: np:hasAssertion sub:assertion ;
+		np:hasProvenance sub:provenance ;
+		np:hasPublicationInfo sub:pubinfo ;
+		a np:Nanopublication .
+}
+
+sub:assertion {
+	:GenuineSemanticPublishingCriterion5 dct:description "With genuine semantic publishing, the semantic representations and their containers need to be fine-grained and light-weight. Even though such semantic representations might often be published in larger collections, the publication of minimal additions and corrections needs to be possible without a large overhead." ;
+		dct:title "Fifth criterion of genuine semantic publishing: fine-grainedness" .
+}
+
+sub:provenance {
+	sub:assertion prov:wasAttributedTo orcid:0000-0002-1267-0234 , orcid:0000-0003-4727-9435 .
+}
+
+sub:pubinfo {
+	this: dct:created "2017-06-15T14:39:51+02:00"^^xsd:dateTime ;
+		pav:createdBy orcid:0000-0002-1267-0234 .
+}

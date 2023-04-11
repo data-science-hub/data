@@ -1,0 +1,91 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct:	<http://purl.org/dc/terms/> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix foaf: <http://xmlns.com/foaf/spec/#>.
+@prefix schema: <https://schema.org/> .
+@prefix dbpedia: <http://dbpedia.org/ontology/> .
+
+<https://use.doi.once.published>
+    rdfs:type dct:identifier;
+    dc:title "A Systematic Review on Privacy-Preserving Distributed Data Mining"^^xml:string;
+    dct:created "2021-03-18"^^xsd:date;
+    dct:abstract "Combining and analysing sensitive data from multiple sources offers considerable potential for knowledge discovery. However, there are a number of issues that pose problems for such analyses, including technical barriers, privacy restrictions, security concerns, and trust issues. Privacy-preserving distributed data mining techniques (PPDDM) aim to overcome these challenges by extracting knowledge from partitioned data while minimizing the release of sensitive information. 
+    This paper reports the results and findings of a systematic review of PPDDM techniques from 231 scientific articles published in the past 20 years. We summarize the state of the art, compare the problems they address, and identify the outstanding challenges in the field. This review identifies the consequence of the lack of standard metrics to evaluate new PPDDM methods and proposes comprehensive evaluation metrics with 10 key factors. We discuss the ambiguous definitions of privacy and confusion between privacy and security in the field, and provide suggestions of how to make a clear and applicable privacy description for new PPDDM techniques. The findings from our review enhance the understanding of the challenges of applying theoretical PPDDM methods to real-life use cases, and the importance of involving legal-ethical and social experts in implementing PPDDM methods. This comprehensive review will serve as a helpful guide to the past research and future opportunities in the area of PPDDM"^^xml:string;
+    dc:subject "Survey", "Data mining", "Privacy preserving", "Distributed learning";
+    dct:Publisher "None"^^xml:string;
+    dct:type "Survey paper"^^xml:string;
+    dct:language <https://lov.linkeddata.es/dataset/lov/languages/eng>;
+    pav:authoredBy <https://orcid.org/0000-0001-8325-8848>,<https://orcid.org/0000-0001-8314-0305>,<https://orcid.org/0000-0002-0422-7996>,<https://orcid.org/0000-0003-4727-9435>,<https://orcid.org/0000-0003-2548-0330>;
+    pav:createdAt <http://dbpedia.org/resource/Maastricht>.
+
+<https://orcid.org/0000-0001-8325-8848>
+    rdfs:type schema:identifier;
+    schema:givenName "Chang", ^^xml:string;
+    schema:familyName "Sun", ^^xml:string;
+    schema:affiliation <https://www.maastrichtuniversity.nl/research/institute-data-science>;
+    schema:email "chang.sun@maastrichtuniversity.nl".
+
+<https://orcid.org/0000-0001-8314-0305>
+    rdfs:type schema:identifier;
+    schema:givenName "Lianne", ^^xml:string;
+    schema:familyName "Ippel", ^^xml:string;
+    schema:affiliation <https://www.maastrichtuniversity.nl/research/institute-data-science>;
+    schema:email "gje.ippel@cbs.nl".
+
+<https://orcid.org/0000-0002-0422-7996>
+    rdfs:type schema:identifier;
+    schema:givenName "Andre", ^^xml:string;
+    schema:familyName "Dekker", ^^xml:string;
+    schema:affiliation <https://maastro.nl/research/data-science/>, <https://www.maastrichtuniversity.nl/research/school-oncology-and-developmental-biology>;
+    schema:email "andre.dekker@maastro.nl".
+
+<https://orcid.org/0000-0003-4727-9435>
+    rdfs:type schema:identifier;
+    schema:givenName "Michel", ^^xml:string;
+    schema:familyName "Dumontier", ^^xml:string;
+    schema:affiliation <https://www.maastrichtuniversity.nl/research/institute-data-science>;
+    schema:email "michel.dumontier@maastrichtuniversity.nl".
+
+<https://orcid.org/0000-0003-2548-0330>
+    rdfs:type schema:identifier;
+    schema:givenName "Johan", ^^xml:string;
+    schema:familyName "van Soest", ^^xml:string;
+    schema:affiliation <https://maastro.nl/research/data-science/>, <https://www.maastrichtuniversity.nl/research/school-oncology-and-developmental-biology>;
+    schema:email "j.vansoest@maastrichtuniversity.nl".
+
+
+<https://www.maastrichtuniversity.nl/research/institute-data-science>
+    rdfs:type schema:department;
+    schema:legalName "Institute of Data Science"^^xml:string;
+    schema:address "Paul-Henri Spaaklaan 1 (PHS1), 6229 EN, Maastricht, The Netherlands"^^xml:string;
+    schema:parentOrganization <https://www.maastrichtuniversity.nl/>;
+    dbpedia:locatedInArea <http://dbpedia.org/resource/Maastricht>.
+
+<https://maastro.nl/research/data-science/>
+    rdfs:type schema:department;
+    schema:legalName "Department of Radiation Oncology (MAASTRO)"^^xml:string;
+    schema:address "Dr. Tanslaan 12, 6229 ET, Maastricht, The Netherlands"^^xml:string;
+    schema:parentOrganization <https://www.mumc.nl/>;
+    dbpedia:locatedInArea <http://dbpedia.org/resource/Maastricht>.
+
+<https://www.maastrichtuniversity.nl/research/school-oncology-and-developmental-biology>
+    rdfs:type schema:department;
+    schema:legalName "School for Oncology and Developmental Biology"^^xml:string;
+    schema:address "Universiteitssingel 40, 6229 ER, Maastricht, The Netherlands"^^xml:string;
+    schema:parentOrganization <https://www.maastrichtuniversity.nl/>;
+    dbpedia:locatedInArea <http://dbpedia.org/resource/Maastricht>.
+
+
+<https://www.maastrichtuniversity.nl/>
+    rdfs:type schema:EducationalOrganization.
+
+<https://www.mumc.nl/>
+    rdfs:type schema:Hospital.
+
+<http://dbpedia.org/resource/Maastricht>
+    rdfs:type dbpedia:city;
+    schema:isPartOf <http://dbpedia.org/resource/Netherlands>.
+
+
